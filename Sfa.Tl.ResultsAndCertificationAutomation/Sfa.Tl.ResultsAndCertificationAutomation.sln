@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sfa.Tl.ResultsAndCertificationAutomation", "Sfa.Tl.ResultsAndCertificationAutomation\Sfa.Tl.ResultsAndCertificationAutomation.csproj", "{9F56C455-D896-4E3F-8487-2DA4C8579820}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F56C455-D896-4E3F-8487-2DA4C8579820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F56C455-D896-4E3F-8487-2DA4C8579820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F56C455-D896-4E3F-8487-2DA4C8579820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F56C455-D896-4E3F-8487-2DA4C8579820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82FDE724-A400-4801-9424-CAA5DA1FC586}
+	EndGlobalSection
+EndGlobal
