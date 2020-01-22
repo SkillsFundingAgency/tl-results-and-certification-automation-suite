@@ -9,27 +9,27 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
     {
        public static void FindElementContainingText(string text)
        {
-            Driver.FindElement(By.XPath($"//*[contains(text(),'{text}')]"));
+            WebDriver.FindElement(By.XPath($"//*[contains(text(),'{text}')]"));
        }
-        
-       public static void FindAnyAnchorLinkingToUrl(string url)
+
+        public static void FindAnyAnchorLinkingToUrl(string url)
        {
-           Driver.FindElement(By.XPath($"//*[contains(text(),'{url}')]"));
+           WebDriver.FindElement(By.XPath($"//*[contains(text(),'{url}')]"));
        }
-       
-       public static void ClickElement(IWebElement element)
+
+        public static void ClickElement(IWebElement element)
        {
            element.Click();
        }
 
         public static void ClickElement(By locator)
         {
-            Driver.FindElement(locator).Click();
+            WebDriver.FindElement(locator).Click();
         }
 
         public static void ClearText(By locator)
         {
-            Driver.FindElement(locator).Clear();
+            WebDriver.FindElement(locator).Clear();
         }
 
         public static void EnterText(IWebElement element, string text)
@@ -40,8 +40,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void EnterText(By locator, string text)
         {
-            Driver.FindElement(locator).Clear();
-            Driver.FindElement(locator).SendKeys(text);
+            WebDriver.FindElement(locator).Clear();
+            WebDriver.FindElement(locator).SendKeys(text);
         }
 
         public static void EnterText(IWebElement element, int value)
@@ -55,7 +55,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void PressTabKey()
         {
-            IWebElement element = Driver.FindElement(By.TagName("body"));
+            IWebElement element = WebDriver.FindElement(By.TagName("body"));
             element.SendKeys(Keys.Tab);
         }
 
@@ -67,14 +67,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void SelectFromDropDownByValue(By locator, string value)
         {
-            IWebElement element = Driver.FindElement(locator);
+            IWebElement element = WebDriver.FindElement(locator);
             var selectElement = new SelectElement(element);
             selectElement.SelectByValue(value);
         }
 
         public static void SelectFromDropDownByText(By locator, string value)
         {
-            IWebElement element = Driver.FindElement(locator);
+            IWebElement element = WebDriver.FindElement(locator);
             var selectElement = new SelectElement(element);
             selectElement.SelectByText(value);
         }
@@ -95,13 +95,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void SelectCheckBox(By locator)
         {
-            IWebElement element = Driver.FindElement(locator);
+            IWebElement element = WebDriver.FindElement(locator);
             SelectCheckBox(element);
         }
 
         public static void SelectRadioOptionByForAttribute(By locator, string forAttribute)
         {
-            IList<IWebElement> radios = Driver.FindElements(locator);
+            IList<IWebElement> radios = WebDriver.FindElements(locator);
             var radioToSelect = radios.FirstOrDefault(radio => radio.GetAttribute("for") == forAttribute);
 
             if (radioToSelect != null)
@@ -110,13 +110,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void PressEnter()
         {
-            IWebElement element = Driver.FindElement(By.TagName("body"));
+            IWebElement element = WebDriver.FindElement(By.TagName("body"));
             element.SendKeys(Keys.Enter);
         }
 
         public static void ClickButtonByName(string buttonName)
         {
-            var buttonElement = Driver.FindElement(By.Name(buttonName));
+            var buttonElement = WebDriver.FindElement(By.Name(buttonName));
             buttonElement.Click();
         }
     }

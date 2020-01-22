@@ -1,4 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.IO;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using TechTalk.SpecFlow;
 
@@ -7,29 +10,62 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
     [Binding]
     public class Hooks
     {
-        public static IWebDriver Driver { get; set; }
+        public static IWebDriver WebDriver { get; set;}
 
-        [BeforeScenario]
+        [Before]
         public static void SetUp()
         {
-            var webDriverFactory = new WebDriverFactory();
-            var browser = webDriverFactory.GetSetting("Browser");
-            var driver = webDriverFactory.GetWebDriver(browser);
-            Driver = driver;
+            WebDriver = new ChromeDriver();
+            //var webDriverFactory = new WebDriverFactory();
+            //var browser = webDriverFactory.GetSetting("Browser");
+            //var driver = webDriverFactory.GetWebDriver(browser);
+            //WebDriver = driver;
 
-            driver.Manage().Window.Maximize();
+            WebDriver.Manage().Window.Maximize();
         }
 
-        [AfterScenario]
-        public static void TearDown()
-        {
-            Driver.Quit();
-        }
-
-        [AfterTestRun]
+        [After]
         public static void CleanUp()
         {
-            Driver.Dispose();
+            WebDriver.Dispose();
+        }
+
+        public static void TakeScreenshotOnFailure()
+        {
+            if (ScenarioContext.Current.TestError != null)
+            {
+                try
+                {
+                    DateTime dateTime = DateTime.Now;
+                    String featureTitle = FeatureContext.Current.FeatureInfo.Title;
+                    String scenarioTitle = ScenarioContext.Current.ScenarioInfo.Title;
+                    String failureImageName = dateTime.ToString("HH-mm-ss")
+                                              + "_"
+                                              + scenarioTitle
+                                              + ".png";
+                    String screenshotsDirectory = AppDomain.CurrentDomain.BaseDirectory
+                                                  + "../../"
+                                                  + "\\Project\\Screenshots\\"
+                                                  + dateTime.ToString("dd-MM-yyyy")
+                                                  + "\\";
+                    if (!Directory.Exists(screenshotsDirectory))
+                    {
+                        Directory.CreateDirectory(screenshotsDirectory);
+                    }
+
+                    ITakesScreenshot screenshotHandler = WebDriver as ITakesScreenshot;
+                    Screenshot screenshot = screenshotHandler.GetScreenshot();
+                    String screenshotPath = Path.Combine(screenshotsDirectory, failureImageName);
+                    screenshot.SaveAsFile(screenshotPath, ScreenshotImageFormat.Png);
+                    Console.WriteLine(scenarioTitle
+                                      + " -- Sceario failed and the screenshot is available at -- "
+                                      + screenshotPath);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine("Exception occurred while taking screenshot - " + exception);
+                }
+            }
         }
     }
 }
