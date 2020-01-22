@@ -9,43 +9,43 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
     {
         public static bool CheckForLink(string url)
         {
-            var element = Driver.FindElement(By.LinkText(url));
+            var element = WebDriver.FindElement(By.LinkText(url));
             return element != null;
         }
 
         public static string TitleByTag(string titleTag)
         {
-            var titleText = Driver.FindElement(By.TagName(titleTag)).Text;
+            var titleText = WebDriver.FindElement(By.TagName(titleTag)).Text;
             return string.IsNullOrWhiteSpace(titleText) ? string.Empty : titleText;
         }
 
         public static string TitleByxPath(string xPath)
         {
-            var titleText = Driver.FindElement(By.XPath(xPath)).Text;
+            var titleText = WebDriver.FindElement(By.XPath(xPath)).Text;
             return string.IsNullOrWhiteSpace(titleText) ? string.Empty : titleText;
         }
 
         public static string TitelById(string iD)
         {
-            var titleText = Driver.FindElement(By.Id(iD)).Text;
+            var titleText = WebDriver.FindElement(By.Id(iD)).Text;
             return string.IsNullOrWhiteSpace(titleText) ? string.Empty : titleText;
         }
 
         public static string TextDisplayByCss(string displayText)
         {
-            var header = Driver.FindElement(By.CssSelector(displayText));
+            var header = WebDriver.FindElement(By.CssSelector(displayText));
             return header != null ? header.Text : string.Empty;
         }
 
         public static bool CssElement(string name)
         {
-            var element = Driver.FindElement(By.CssSelector(name));
+            var element = WebDriver.FindElement(By.CssSelector(name));
             return element != null;
         }
 
         public static void WaitForPageElement(string elementId, int maxWaitTimeInSeconds)
         {
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(maxWaitTimeInSeconds));
+            var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(maxWaitTimeInSeconds));
 
             wait.Until(
                 d =>
@@ -54,7 +54,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
                     try
                     {
-                        result = Driver.FindElement(By.Id(elementId)) != null;
+                        result = WebDriver.FindElement(By.Id(elementId)) != null;
                     }
                     catch (NoSuchElementException)
                     {
@@ -67,7 +67,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void WaitForPageElementBy(int maxWaitTimeInSeconds, By @by)
         {
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(maxWaitTimeInSeconds));
+            var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(maxWaitTimeInSeconds));
 
             wait.Until(d =>
             {
@@ -75,7 +75,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
                 try
                 {
-                    result = Driver.FindElement(@by) != null;
+                    result = WebDriver.FindElement(@by) != null;
                 }
                 catch (NoSuchElementException)
                 {
@@ -87,26 +87,93 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void InputBoxByName(string boxId, string term)
         {
-            var searchBox = Driver.FindElement(By.Name(boxId));
+            var searchBox = WebDriver.FindElement(By.Name(boxId));
+            searchBox.SendKeys(term);
+        }
+
+        public static void InputBoxById(string boxId, string term)
+        {
+            var searchBox = WebDriver.FindElement(By.Id(boxId));
             searchBox.SendKeys(term);
         }
 
         public static void SelectRadioButtonById(string radioButtonId)
         {
-            var radioButton = Driver.FindElement(By.Id(radioButtonId));
+            var radioButton = WebDriver.FindElement(By.Id(radioButtonId));
             radioButton.Click();
         }
 
         public static void ClickOnLink(string text)
         {
-            var linkText = Driver.FindElement(By.Id(text));
+            var linkText = WebDriver.FindElement(By.Id(text));
             linkText.Click();
         }
 
         public static IWebElement FindElementIfExists(By by)
         {
-            var elements = Driver.FindElements(by);
+            var elements = WebDriver.FindElements(by);
             return (elements.Count >= 1) ? elements.First() : null;
+        }
+
+        public static Boolean VerifyPageURL(String actual, String expected)
+        {
+            if (actual.Contains(expected))
+            {
+                return true;
+            }
+
+            throw new Exception("Page URL verification failed:"
+                                + "\n Expected URL: " + expected
+                                + "\n Found URL: " + actual);
+        }
+
+        public static Boolean VerifyLinkIsPresent(By locator, String expected)
+        {
+            String actual = WebDriver.FindElement(locator).Text;
+            if (actual.Contains(expected))
+            {
+                return true;
+            }
+
+            throw new Exception("The following link was not found: "
+                                + "\n Expected: " + expected
+                                + "\n Found: " + actual);
+        }
+
+        public static Boolean VerifyPageHeading(String actual, String expected)
+        {
+            if (actual.Contains(expected))
+            {
+                return true;
+            }
+
+            throw new Exception("Page verification failed:"
+                                + "\n Expected page: " + expected
+                                + "\n Found page: " + actual);
+        }
+
+        public static Boolean VerifyText(String actual, String expected)
+        {
+            if (actual.Contains(expected))
+            {
+                return true;
+            }
+
+            throw new Exception("Text verification failed: "
+                                + "\n Expected: " + expected
+                                + "\n Found: " + actual);
+        }
+
+        public static Boolean VerifyText(By locator, int expected)
+        {
+            String expectedText = Convert.ToString(expected);
+            return VerifyText(locator, expectedText);
+        }
+
+        public static Boolean VerifyText(By locator, String expected)
+        {
+            String actual = WebDriver.FindElement(locator).Text;
+            return VerifyText(actual, expected);
         }
     }
 }

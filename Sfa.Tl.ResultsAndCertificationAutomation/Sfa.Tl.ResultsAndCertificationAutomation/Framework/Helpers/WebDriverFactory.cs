@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Configuration;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
@@ -12,32 +14,43 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
     {
         public IWebDriver GetWebDriver(string browser)
         {
-            IWebDriver driver;
+            IWebDriver webDriver;
             switch (browser)
             {
                 case "FireFox":
-                    driver = new FirefoxDriver();
+                    webDriver = new FirefoxDriver();
                     break;
                 case "Edge":
-                    driver = new EdgeDriver();
+                    webDriver = new EdgeDriver();
                     break;
                 case "IE":
-                    driver = new InternetExplorerDriver();
+                    webDriver = new InternetExplorerDriver();
                     break;
                 case "Chrome":
-                    driver = new ChromeDriver();
+                    webDriver = new ChromeDriver();
                     break;
                 default:
                     throw new Exception("Driver name - " + browser + "does not match OR this framework does not support the webDriver specified");
             }
 
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(30);
-            return driver;
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(30);
+            return webDriver;
         }
 
-        public string GetSetting(string name)
+        public static string GetSetting(string name)
         {
             return ConfigurationManager.AppSettings[name];
+        }
+
+        public static void Main1(string[] args)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            IConfigurationRoot configuration = builder.Build();
+
+            Console.WriteLine(configuration.GetConnectionString("Storage"));
         }
     }
 }
