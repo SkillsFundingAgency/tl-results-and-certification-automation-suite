@@ -1,6 +1,6 @@
-﻿using TechTalk.SpecFlow;
+﻿using System.Threading;
+using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {

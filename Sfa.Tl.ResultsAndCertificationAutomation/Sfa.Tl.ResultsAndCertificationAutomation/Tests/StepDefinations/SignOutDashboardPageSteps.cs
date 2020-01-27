@@ -1,7 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System.Threading;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Xunit;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
@@ -9,8 +9,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class SignOutDashboardPageSteps : StartPage
     {
-        private static string DfEUserName = Constants.DfEUserName;
-        private static string DfEPassword = Constants.DfEPassword;
+        private static string DfEUserName = WebDriverFactory.Config["DfEUserName"];
+        private static string DfEPassword = WebDriverFactory.Config["DfEPassword"];
 
         [Given(@"i sign in with valid DfE Username and password")]
         public void GivenISignInWithValidDfEUsernameAndPassword()

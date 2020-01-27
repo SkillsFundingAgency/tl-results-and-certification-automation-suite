@@ -1,6 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System.Threading;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using Xunit;
 
@@ -9,8 +10,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class VerifyBannerSteps : StartPage
     {
-        private static string DfEUserName = Constants.DfEUserName;
-        private static string DfEPassword = Constants.DfEPassword;
+        private static string DfEUserName = WebDriverFactory.Config["DfEUserName"];
+        private static string DfEPassword = WebDriverFactory.Config["DfEPassword"];
         
         [Given(@"A Tlevel start page")]
         public void GivenATlevelStartPage()
