@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -115,7 +116,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return (elements.Count >= 1) ? elements.First() : null;
         }
 
-        public static Boolean VerifyPageURL(String actual, String expected)
+        public static Boolean VerifyPageUrl(String actual, String expected)
         {
             if (actual.Contains(expected))
             {
@@ -174,6 +175,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             String actual = WebDriver.FindElement(locator).Text;
             return VerifyText(actual, expected);
+        }
+
+        public static void WaitForPageLoad(int waitinseconds)
+        {
+            Thread.Sleep(waitinseconds);
         }
     }
 }

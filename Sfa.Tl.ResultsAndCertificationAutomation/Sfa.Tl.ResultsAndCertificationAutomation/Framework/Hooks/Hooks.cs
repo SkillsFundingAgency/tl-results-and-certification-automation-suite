@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using TechTalk.SpecFlow;
 
@@ -15,11 +14,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         [Before]
         public static void SetUp()
         {
-            WebDriver = new ChromeDriver();
-            //var webDriverFactory = new WebDriverFactory();
-            //var browser = webDriverFactory.GetSetting("Browser");
-            //var driver = webDriverFactory.GetWebDriver(browser);
-            //WebDriver = driver;
+            var webDriverFactory = new WebDriverFactory();
+            var browser = WebDriverFactory.Config["Browser"];
+            var driver = webDriverFactory.GetWebDriver(browser);
+            WebDriver = driver;
 
             WebDriver.Manage().Window.Maximize();
         }

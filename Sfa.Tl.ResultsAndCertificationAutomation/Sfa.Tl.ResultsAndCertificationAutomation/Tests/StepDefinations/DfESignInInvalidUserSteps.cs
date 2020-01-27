@@ -11,8 +11,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Given(@"I have entered invalid Username or Password")]
         public void GivenIHaveEnteredInvalidUsernameOrPassword()
         {
-            WebDriver.FindElement(UserIdTxtBox).SendKeys(dfeInvalidUserName);
-            WebDriver.FindElement(PasswordTxtBox).SendKeys(dfeInvalidPassword);
+            WebDriver.FindElement(UserIdTxtBox).SendKeys(DfeInvalidUserName);
+            WebDriver.FindElement(PasswordTxtBox).SendKeys(DfeInvalidPassword);
         }
         
         [Then(@"User should not logged to see Tlevel Dashboard page")]
@@ -24,7 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"an Error Message should be displayed for Invalid username")]
         public void ThenAnErrorMessageShouldBeDisplayedForInvalidUsername()
         {
-            Assert.Equal(DfSigninError, WebDriver.FindElement(DfESignInErrorMessage).Text);
+            Assert.Equal(SigninError, WebDriver.FindElement(DfESignInErrorMessage).Text);
         }
     }
 }

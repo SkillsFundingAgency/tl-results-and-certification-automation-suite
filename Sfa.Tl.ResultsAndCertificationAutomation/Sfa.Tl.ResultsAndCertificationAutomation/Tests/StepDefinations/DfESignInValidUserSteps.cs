@@ -12,14 +12,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Given(@"I have navigated to DfE sign in page")]
         public void GivenIHaveNavigatedToDfESignInPage()
         {
-            WebDriver.Navigate().GoToUrl(dfeSignInUrl);
+            WebDriver.Navigate().GoToUrl(DfeSignInUrl);
         }
         
         [Given(@"I have entered valid username and password")]
         public void GivenIHaveEnteredValidUsernameAndPassword()
         {
-            WebDriver.FindElement(UserIdTxtBox).SendKeys(dfeUserName);
-            WebDriver.FindElement(PasswordTxtBox).SendKeys(dfePassword);
+            WebDriver.FindElement(UserIdTxtBox).SendKeys(DfeUserName);
+            WebDriver.FindElement(PasswordTxtBox).SendKeys(DfePassword);
         }
         
         [When(@"I have clicked on sign in button")]

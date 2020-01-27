@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using OpenQA.Selenium;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.ObjectRepository;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
@@ -8,25 +9,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class DfESignInPage : Hooks
     {
-        public static string dfeSignInUrl;
-        public static string dfeUserName;
-        public static string dfePassword;
-        public static string dfeInvalidUserName;
-        public static string dfeInvalidPassword;
+        public static string DfeSignInUrl;
+        public static string DfeUserName;
+        public static string DfePassword;
+        public static string DfeInvalidUserName;
+        public static string DfeInvalidPassword;
         public By UserIdTxtBox = By.Id("username");
         public By PasswordTxtBox = By.Id("password");
         public By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
-        public string expectedUrl = DfESignInPageElements.DfEExpectedUrl;
-        public const string DfSigninError = "Information missing or incorrect";
+        public string ExpectedUrl = DfESignInPageElements.DfEExpectedUrl;
+        public const string SigninError = "Information missing or incorrect";
         public By DfESignInErrorMessage = By.Id("error-summary");
         
         public DfESignInPage()
         {
-            dfeSignInUrl = Constants.DfESignInUrl;
-            dfeUserName = Constants.DfEUserName;
-            dfePassword = Constants.DfEPassword;
-            dfeInvalidUserName = Constants.DfEInvalidUserName;
-            dfeInvalidPassword = Constants.DfEInvalidPassword;
+            DfeSignInUrl = WebDriverFactory.Config["DfESignInUrl"];
+            DfeUserName = WebDriverFactory.Config["DfEUserName"];
+            DfePassword = WebDriverFactory.Config["DfEPassword"];
+            DfeInvalidUserName = Constants.DfEInvalidUserName;
+            DfeInvalidPassword = Constants.DfEInvalidPassword;
         }
         
         public static void DfESignIn(string username, string password)
