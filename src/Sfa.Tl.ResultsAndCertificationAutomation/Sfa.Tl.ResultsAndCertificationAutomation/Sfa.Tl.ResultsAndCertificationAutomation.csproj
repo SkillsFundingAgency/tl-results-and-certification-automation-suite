@@ -52,6 +52,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Sfa.Tl.ResultsAndCertificationAutomation.runtimeconfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
