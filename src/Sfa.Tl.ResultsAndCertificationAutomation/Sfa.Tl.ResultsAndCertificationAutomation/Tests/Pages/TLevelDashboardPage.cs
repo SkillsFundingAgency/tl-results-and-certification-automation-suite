@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 

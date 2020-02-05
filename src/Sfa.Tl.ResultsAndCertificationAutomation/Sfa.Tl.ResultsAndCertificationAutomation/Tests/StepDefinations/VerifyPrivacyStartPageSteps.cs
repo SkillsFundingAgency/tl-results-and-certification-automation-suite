@@ -1,6 +1,5 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using NUnit;
 using System.Threading;
 using NUnit.Framework;
 

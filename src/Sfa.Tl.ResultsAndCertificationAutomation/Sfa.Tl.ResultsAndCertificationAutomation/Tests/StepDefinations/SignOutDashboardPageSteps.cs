@@ -2,7 +2,6 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System.Threading;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using NUnit;
 using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations

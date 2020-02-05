@@ -3,7 +3,6 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
-using NUnit;
 using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
