@@ -36,18 +36,31 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public IWebDriver GetWebDriver(string browser)
         {
-            var webDriver = browser switch
+            switch (browser)
             {
-                "FireFox" => (IWebDriver) new FirefoxDriver(),
-                "Edge" => new EdgeDriver(),
-                "IE" => new InternetExplorerDriver(),
-                "Chrome" => new ChromeDriver(),
-                _ => throw new Exception("Driver name - " + browser +
-                                         "does not match OR this framework does not support the webDriver specified")
-            };
+                case var _ when browser == "FireFox":
+                    return new FirefoxDriver();
+                case var _ when browser == "Edge":
+                    return new EdgeDriver();
+                case var _ when browser == "IE":
+                    return new InternetExplorerDriver();
+                case var _ when browser == "Chrome":
+                    return new ChromeDriver();
+                default:
+                    throw new Exception("Driver name - " + browser +
+                                             "does not match OR this framework does not support the webDriver specified");
+            }
 
-            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(10);
-            return webDriver;
+
+            //var webDriver = browser switch
+            //{
+            //    "FireFox" => (IWebDriver) new FirefoxDriver(),
+            //    "Edge" => new EdgeDriver(),
+            //    "IE" => new InternetExplorerDriver(),
+            //    "Chrome" => new ChromeDriver(),
+            //    _ => throw new Exception("Driver name - " + browser +
+            //                             "does not match OR this framework does not support the webDriver specified")
+            //};
         }
 
         public static string GetSetting(string name)
