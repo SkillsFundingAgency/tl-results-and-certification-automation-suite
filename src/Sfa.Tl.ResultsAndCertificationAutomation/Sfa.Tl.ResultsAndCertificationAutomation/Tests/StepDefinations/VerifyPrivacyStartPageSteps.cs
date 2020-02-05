@@ -1,7 +1,8 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Xunit;
+using NUnit;
 using System.Threading;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -25,8 +26,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"Privacy page should open")]
         public void ThenPrivacyPageShouldOpen()
         {
-            Assert.Equal(PrivacyUrl, WebDriver.Url);
-            Assert.Equal("Privacy notice", WebDriver.FindElement(PrivacyTitle).Text);
+            Assert.AreEqual(PrivacyUrl, WebDriver.Url);
+            Assert.AreEqual("Privacy notice", WebDriver.FindElement(PrivacyTitle).Text);
         }
     }
 }

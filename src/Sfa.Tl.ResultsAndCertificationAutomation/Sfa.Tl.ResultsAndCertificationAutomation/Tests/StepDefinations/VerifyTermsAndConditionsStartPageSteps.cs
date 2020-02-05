@@ -1,7 +1,8 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Xunit;
+using NUnit;
 using System.Threading;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -25,8 +26,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"Terms And Conditions page should open")]
         public void ThenTermsAndConditionsPageShouldOpen()
         {
-            Assert.Equal(TermsUrl, WebDriver.Url);
-            Assert.Equal("Terms and conditions", WebDriver.FindElement(TCTitle).Text);
+            Assert.AreEqual(TermsUrl, WebDriver.Url);
+            Assert.AreEqual("Terms and conditions", WebDriver.FindElement(TCTitle).Text);
         }
     }
 }

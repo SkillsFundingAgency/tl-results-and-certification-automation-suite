@@ -2,7 +2,8 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System.Threading;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Xunit;
+using NUnit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -36,8 +37,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"Cookeis page should open")]
         public void ThenCookeisPageShouldOpen()
         {
-            Assert.Equal(CookieUrl, WebDriver.Url);
-            Assert.Equal("Cookies", WebDriver.FindElement(CookieTitle).Text);
+            Assert.AreEqual(CookieUrl, WebDriver.Url);
+            Assert.AreEqual("Cookies", WebDriver.FindElement(CookieTitle).Text);
         }
     }
 }

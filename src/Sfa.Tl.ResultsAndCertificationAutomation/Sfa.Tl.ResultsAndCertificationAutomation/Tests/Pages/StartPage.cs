@@ -2,7 +2,8 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
-using Xunit;
+using NUnit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -33,7 +34,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public void CheckCookies()
         {
             PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
-            Assert.Equal(Constants.CookieHeader, CheckPageTitle.Text);
+            Assert.AreEqual(Constants.CookieHeader, CheckPageTitle.Text);
         }
     }
 }

@@ -2,7 +2,8 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using System.Threading;
-using Xunit;
+using NUnit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -32,7 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"user logged in to seen Tlevel Dashboard page")]
         public void ThenUserLoggedInToSeenTlevelDashboardPage()
         {
-            Assert.Equal(Constants.TlevelDashboardUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.TlevelDashboardUrl, WebDriver.Url);
         }
     }
 }
