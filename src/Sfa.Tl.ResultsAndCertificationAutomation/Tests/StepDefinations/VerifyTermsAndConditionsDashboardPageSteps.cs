@@ -11,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void WhenClickOnTermsAndConditionsLinkInDahsboardPage()
         {
             WebDriver.FindElement(TCLink).Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
         }
     }
 }
