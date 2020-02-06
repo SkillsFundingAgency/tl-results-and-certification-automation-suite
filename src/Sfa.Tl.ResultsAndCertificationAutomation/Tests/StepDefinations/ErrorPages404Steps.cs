@@ -2,7 +2,7 @@
 using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
-using Xunit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -21,8 +21,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldSeePageNotFoundError()
         {
             PageHelper.WaitForPageElementBy(5, PageHeader);
-            Assert.Equal(Expected404,WebDriver.Url);
-            Assert.Equal(Constants.Error404, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(Expected404,WebDriver.Url);
+            Assert.AreEqual(Constants.Error404, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }

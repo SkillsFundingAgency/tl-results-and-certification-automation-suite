@@ -2,7 +2,7 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System.Threading;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Xunit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -28,7 +28,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should be redirectted to Tlevel Start page")]
         public void ThenIShouldBeRedirecttedToTlevelStartPage()
         {
-            Assert.Equal(StartPageUrl, WebDriver.Url);
+            Assert.AreEqual(StartPageUrl, WebDriver.Url);
         }
     }
 }

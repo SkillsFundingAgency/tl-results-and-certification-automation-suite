@@ -2,7 +2,7 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
-using Xunit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -28,8 +28,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldSeeAccessDeniedError()
         {
             PageHelper.WaitForPageElementBy(5, PageHeader);
-            Assert.Equal(Error401, WebDriver.Url);
-            Assert.Equal(Constants.Error401, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(Error401, WebDriver.Url);
+            Assert.AreEqual(Constants.Error401, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }

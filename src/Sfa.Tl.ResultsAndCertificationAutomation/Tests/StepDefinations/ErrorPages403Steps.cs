@@ -3,7 +3,7 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
-using Xunit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"I have selected Organisation and click on Continue button")]
         public void WhenISelectOrganisationAndClickOnContinuebutton()
         {
-            Assert.Equal(Constants.SelectOrganisation,WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(Constants.SelectOrganisation,WebDriver.FindElement(PageHeader).Text);
             WebDriver.FindElement(SelectOrgNcfe).Click();
             Thread.Sleep(2000);
             WebDriver.FindElement(OrgContinueBtn).Click();
@@ -41,8 +41,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldSeeAccessDeniedError()
         {
             PageHelper.WaitForPageElementBy(5, PageHeader);
-            Assert.Equal(StartPage.Error403, WebDriver.Url);
-            Assert.Equal(Constants.Error401, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(StartPage.Error403, WebDriver.Url);
+            Assert.AreEqual(Constants.Error401, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }

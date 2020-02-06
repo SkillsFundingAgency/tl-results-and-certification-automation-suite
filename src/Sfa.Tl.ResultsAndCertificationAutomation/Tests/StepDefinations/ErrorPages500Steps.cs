@@ -2,7 +2,7 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
-using Xunit;
+using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -24,8 +24,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see an error")]
         public void ThenIShouldSeeAnError()
         {
-            Assert.Equal(Error500, WebDriver.Url);
-            Assert.Equal(Constants.Error500, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(Error500, WebDriver.Url);
+            Assert.AreEqual(Constants.Error500, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }
