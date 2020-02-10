@@ -26,7 +26,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenPrivacyPageShouldOpen()
         {
             Assert.AreEqual(PrivacyUrl, WebDriver.Url);
-            Assert.AreEqual("Privacy notice", WebDriver.FindElement(PrivacyTitle).Text);
+            Assert.AreEqual("Privacy", WebDriver.FindElement(PrivacyTitle).Text);
         }
     }
 }
