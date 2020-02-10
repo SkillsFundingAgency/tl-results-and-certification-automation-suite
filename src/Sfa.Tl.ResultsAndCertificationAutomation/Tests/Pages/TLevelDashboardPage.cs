@@ -53,5 +53,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(SubmitResultsLink).Click();
             //TODO: Add Check Point
         }
+
+        public void SignoutFromMenu()
+        {
+            WebDriver.FindElement(MenuBtn).Click();
+            WebDriver.FindElement(SignOutLink).Click();
+        }
     }
 }

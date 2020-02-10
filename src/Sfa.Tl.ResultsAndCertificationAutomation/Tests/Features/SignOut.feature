@@ -10,3 +10,11 @@ Scenario: Veryfy Signout from Tlevel Dashboard page
 	And i sign in with valid DfE Username and password
 	When I click on Sign Out link
 	Then I should be redirectted to Tlevel Start page
+
+@Sprint7
+Scenario: Verify Signout from Menu
+Given A Tlevel start page
+And I have clicked in Start Now button
+And i sign in with valid DfE Username and password
+When I click on Signout from Menu
+Then I should be redirectted to Tlevel Start page
