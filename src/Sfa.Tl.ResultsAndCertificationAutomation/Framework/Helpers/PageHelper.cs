@@ -141,7 +141,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                                 + "\n Found: " + actual);
         }
 
-        public static Boolean VerifyPageHeading(String actual, String expected)
+        public static bool VerifyPageHeading(String actual, String expected)
         {
             if (actual.Contains(expected))
             {
@@ -153,7 +153,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                                 + "\n Found page: " + actual);
         }
 
-        public static Boolean VerifyText(String actual, String expected)
+        public static bool VerifyText(String actual, String expected)
         {
             if (actual.Contains(expected))
             {
@@ -165,19 +165,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                                 + "\n Found: " + actual);
         }
 
-        public static Boolean VerifyText(By locator, int expected)
+        public static bool VerifyText(By locator, int expected)
         {
             String expectedText = Convert.ToString(expected);
             return VerifyText(locator, expectedText);
         }
 
-        public static Boolean VerifyText(By locator, String expected)
+        public static bool VerifyText(By locator, String expected)
         {
             String actual = WebDriver.FindElement(locator).Text;
             return VerifyText(actual, expected);
         }
 
-        public static void WaitForPageLoad(int waitinseconds)
+        public static void WaitForPageLoad(IWebDriver webDriver, int waitinseconds)
         {
             Thread.Sleep(waitinseconds);
         }
