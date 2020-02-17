@@ -1,8 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
-using System.Threading;
-using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -26,13 +24,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void WhenIHaveClickedOnSignInButton()
         {
             WebDriver.FindElement(SignInButton).Click();
-            Thread.Sleep(5000);
         }
         
         [Then(@"user logged in to seen Tlevel Dashboard page")]
         public void ThenUserLoggedInToSeenTlevelDashboardPage()
         {
-            Assert.AreEqual(Constants.TlevelDashboardUrl, WebDriver.Url);
+            PageHelper.WaitForUrl(TlevelDashboardPage.DashboardUrl);
+            PageHelper.VerifyPageUrl(WebDriver.Url, TlevelDashboardPage.DashboardUrl);
         }
     }
 }

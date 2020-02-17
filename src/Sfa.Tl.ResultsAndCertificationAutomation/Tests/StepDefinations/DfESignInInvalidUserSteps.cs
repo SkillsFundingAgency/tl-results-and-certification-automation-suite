@@ -2,6 +2,7 @@
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -24,6 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"an Error Message should be displayed for Invalid username")]
         public void ThenAnErrorMessageShouldBeDisplayedForInvalidUsername()
         {
+            PageHelper.WaitForElement(DfESignInErrorMessage, 30);
             Assert.AreEqual(SigninError, WebDriver.FindElement(DfESignInErrorMessage).Text);
         }
     }

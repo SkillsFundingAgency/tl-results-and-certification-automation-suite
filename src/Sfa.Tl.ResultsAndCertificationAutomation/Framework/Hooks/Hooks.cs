@@ -24,45 +24,43 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         [After]
         public static void CleanUp()
         {
-            WebDriver.Dispose();
+            try
+            {
+                TakeScreenshotOnFailure();
+            }
+            finally
+            {
+                WebDriver.Dispose();
+            }
         }
 
         public static void TakeScreenshotOnFailure()
         {
-            if (ScenarioContext.Current.TestError != null)
+            DateTime dateTime = DateTime.Now;
+            string featureTitle = FeatureContext.Current.FeatureInfo.Title;
+            string scenarioTitle = ScenarioContext.Current.ScenarioInfo.Title;
+            string failureImageName = dateTime.ToString("HH-mm-ss")
+                                      + "_"
+                                      + featureTitle
+                                      + scenarioTitle
+                                      + ".png";
+            string screenshotsDirectory = AppDomain.CurrentDomain.BaseDirectory
+                                          + "../../"
+                                          + "\\Project\\Screenshots\\"
+                                          + dateTime.ToString("dd-MM-yyyy")
+                                          + "\\";
+            if (!Directory.Exists(screenshotsDirectory))
             {
-                try
-                {
-                    DateTime dateTime = DateTime.Now;
-                    String featureTitle = FeatureContext.Current.FeatureInfo.Title;
-                    String scenarioTitle = ScenarioContext.Current.ScenarioInfo.Title;
-                    String failureImageName = dateTime.ToString("HH-mm-ss")
-                                              + "_"
-                                              + scenarioTitle
-                                              + ".png";
-                    String screenshotsDirectory = AppDomain.CurrentDomain.BaseDirectory
-                                                  + "../../"
-                                                  + "\\Project\\Screenshots\\"
-                                                  + dateTime.ToString("dd-MM-yyyy")
-                                                  + "\\";
-                    if (!Directory.Exists(screenshotsDirectory))
-                    {
-                        Directory.CreateDirectory(screenshotsDirectory);
-                    }
-
-                    ITakesScreenshot screenshotHandler = WebDriver as ITakesScreenshot;
-                    Screenshot screenshot = screenshotHandler.GetScreenshot();
-                    String screenshotPath = Path.Combine(screenshotsDirectory, failureImageName);
-                    screenshot.SaveAsFile(screenshotPath, ScreenshotImageFormat.Png);
-                    Console.WriteLine(scenarioTitle
-                                      + " -- Sceario failed and the screenshot is available at -- "
-                                      + screenshotPath);
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine("Exception occurred while taking screenshot - " + exception);
-                }
+                   Directory.CreateDirectory(screenshotsDirectory);
             }
+
+            _ = WebDriver as ITakesScreenshot;
+            Screenshot screenshot = ((ITakesScreenshot)WebDriver).GetScreenshot();
+            string screenshotPath = Path.Combine(screenshotsDirectory, failureImageName);
+            screenshot.SaveAsFile(screenshotPath, ScreenshotImageFormat.Png);
+            Console.WriteLine(scenarioTitle
+                              + " -- Sceario failed and the screenshot is available at -- "
+                              + screenshotPath);
         }
     }
 }

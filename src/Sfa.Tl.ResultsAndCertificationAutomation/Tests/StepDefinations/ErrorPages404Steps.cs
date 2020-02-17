@@ -20,8 +20,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see Page not found error")]
         public void ThenIShouldSeePageNotFoundError()
         {
-            PageHelper.WaitForPageElementBy(5, PageHeader);
-            Assert.AreEqual(Expected404,WebDriver.Url);
+            PageHelper.WaitForElement(PageHeader, 30);
+            PageHelper.VerifyPageUrl(WebDriver.Url, Expected404);
             Assert.AreEqual(Constants.Error404, WebDriver.FindElement(PageHeader).Text);
         }
     }

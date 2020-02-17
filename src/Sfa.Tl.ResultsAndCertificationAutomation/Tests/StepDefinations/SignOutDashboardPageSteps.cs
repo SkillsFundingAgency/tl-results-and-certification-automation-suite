@@ -1,9 +1,6 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System.Threading;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -22,14 +19,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"I click on Sign Out link")]
         public void WhenIClickOnSignOutLink()
         {
+            PageHelper.WaitForElement(TlevelDashboardPage.SignOutLink, 30);
             WebDriver.FindElement(TlevelDashboardPage.SignOutLink).Click();
-            Thread.Sleep(2000);
         }
         
         [Then(@"I should be redirectted to Tlevel Start page")]
         public void ThenIShouldBeRedirecttedToTlevelStartPage()
         {
-            Assert.AreEqual(StartPageUrl, WebDriver.Url);
+            PageHelper.WaitForUrl(StartPageUrl);
+            PageHelper.VerifyPageUrl(WebDriver.Url, StartPageUrl);
         }
     }
 }

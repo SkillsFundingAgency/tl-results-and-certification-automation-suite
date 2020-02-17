@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System.Threading;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
@@ -19,13 +19,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void WhenIClickOnPrivacyLink()
         {
             WebDriver.FindElement(PrivacyLink).Click();
-            Thread.Sleep(2000);
         }
         
         [Then(@"Privacy page should open")]
         public void ThenPrivacyPageShouldOpen()
         {
-            Assert.AreEqual(PrivacyUrl, WebDriver.Url);
+            PageHelper.WaitForUrl(PrivacyUrl);
+            PageHelper.VerifyPageUrl(WebDriver.Url, PrivacyUrl);
             Assert.AreEqual("Privacy", WebDriver.FindElement(PrivacyTitle).Text);
         }
     }

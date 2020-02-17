@@ -181,5 +181,29 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             Thread.Sleep(waitinseconds);
         }
+
+        public void WaitForElementPresentAndEnabled(By locator, int secondsToWait = 10)
+        {
+            new WebDriverWait(WebDriver, new TimeSpan(0, 0, secondsToWait))
+               .Until(d => d.FindElement(locator).Enabled
+                   && d.FindElement(locator).Displayed
+                   && d.FindElement(locator).GetAttribute("aria-disabled") == null
+               );
+        }
+
+        public static Func<IWebDriver, bool> UrlToBe(string url)
+        {
+            return (driver) => { return driver.Url.ToLowerInvariant().Equals(url.ToLowerInvariant());};
+        }
+        public static Func<IWebDriver, bool> UrlContains(string url)
+        {
+            return (driver) => { return driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant()); };
+        }
+
+        public static void WaitForUrl(string url)
+        {
+            WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.UrlMatches(url));
+        }
     }
 }

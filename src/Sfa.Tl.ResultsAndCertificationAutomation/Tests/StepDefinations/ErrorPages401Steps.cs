@@ -27,8 +27,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see Access Denied error")]
         public void ThenIShouldSeeAccessDeniedError()
         {
-            PageHelper.WaitForPageElementBy(5, PageHeader);
-            Assert.AreEqual(Error401, WebDriver.Url);
+            PageHelper.WaitForUrl(Error401);
+            PageHelper.VerifyPageUrl(WebDriver.Url, Error401);
             Assert.AreEqual(Constants.Error401, WebDriver.FindElement(PageHeader).Text);
         }
     }

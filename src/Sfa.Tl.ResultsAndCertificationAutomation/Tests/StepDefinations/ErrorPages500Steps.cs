@@ -18,13 +18,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"I loocked at page content")]
         public void WhenILoockedAtPageContent()
         {
-            PageHelper.WaitForPageElementBy(5, PageHeader);
+            PageHelper.WaitForElement(PageHeader, 30);
         }
         
         [Then(@"I should see an error")]
         public void ThenIShouldSeeAnError()
         {
-            Assert.AreEqual(Error500, WebDriver.Url);
+            PageHelper.VerifyPageUrl(WebDriver.Url, Error500);
             Assert.AreEqual(Constants.Error500, WebDriver.FindElement(PageHeader).Text);
         }
     }
