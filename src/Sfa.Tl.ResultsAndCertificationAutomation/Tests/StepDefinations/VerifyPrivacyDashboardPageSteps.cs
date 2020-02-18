@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System.Threading;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -10,8 +10,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"click on Privacy link in Dahsboard page")]
         public void WhenClickOnPrivacyLinkInDahsboardPage()
         {
+            PageHelper.WaitForUrl(TlevelDashboardPage.DashboardUrl);
             WebDriver.FindElement(PrivacyLink).Click();
-            Thread.Sleep(2000);
         }
     }
 }

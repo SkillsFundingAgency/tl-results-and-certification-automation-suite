@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
@@ -22,17 +21,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"I have selected Organisation and click on Continue button")]
         public void WhenISelectOrganisationAndClickOnContinuebutton()
         {
+            PageHelper.WaitForElement(SelectOrgNcfe, 30);
             Assert.AreEqual(Constants.SelectOrganisation,WebDriver.FindElement(PageHeader).Text);
             WebDriver.FindElement(SelectOrgNcfe).Click();
-            Thread.Sleep(2000);
             WebDriver.FindElement(OrgContinueBtn).Click();
-            Thread.Sleep(2000);
             
             // TODO: REMOVE ME
             if (WebDriver.FindElement(PageHeader).Text == Constants.SelectOrganisation)
             {
+                PageHelper.WaitForElement(SelectOrgNcfe, 30);
                 WebDriver.FindElement(SelectOrgNcfe).Click();
-                Thread.Sleep(2000);
                 WebDriver.FindElement(OrgContinueBtn).Click();
             }
         }
@@ -40,8 +38,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see access denied error")]
         public void ThenIShouldSeeAccessDeniedError()
         {
-            PageHelper.WaitForPageElementBy(5, PageHeader);
-            Assert.AreEqual(StartPage.Error403, WebDriver.Url);
+            PageHelper.WaitForUrl(StartPage.Error403);
+            PageHelper.VerifyPageUrl(WebDriver.Url, StartPage.Error403);
             Assert.AreEqual(Constants.Error401, WebDriver.FindElement(PageHeader).Text);
         }
     }

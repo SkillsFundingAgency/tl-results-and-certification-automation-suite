@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -118,6 +119,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             var buttonElement = WebDriver.FindElement(By.Name(buttonName));
             buttonElement.Click();
+        }
+
+        public static IWebElement WaitForElement(By by, int timeoutInSeconds)
+        {
+            if (timeoutInSeconds > 0)
+            {
+                var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(timeoutInSeconds));
+                return wait.Until(drv => drv.FindElement(by));
+            }
+            return WebDriver.FindElement(by);
         }
     }
 }

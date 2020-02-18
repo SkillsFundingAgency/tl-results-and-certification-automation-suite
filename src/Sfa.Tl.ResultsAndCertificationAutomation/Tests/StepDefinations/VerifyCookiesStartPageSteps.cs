@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System.Threading;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using NUnit.Framework;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
@@ -19,13 +19,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void WhenIClickOnCookiesLink()
         {
             WebDriver.FindElement(CookieLink).Click();
-            Thread.Sleep(2000);
         }
         
         [Then(@"Cookies page should open")]
         public void ThenCookiesPageShouldOpen()
         {
-            Assert.AreEqual(CookieUrl,WebDriver.Url);
+            PageHelper.WaitForUrl(CookieUrl);
+            PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
             Assert.AreEqual("Cookies", WebDriver.FindElement(CookieTitle).Text);
         }
     }

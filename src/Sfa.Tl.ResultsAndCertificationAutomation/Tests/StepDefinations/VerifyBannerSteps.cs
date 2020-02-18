@@ -1,6 +1,5 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System.Threading;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using NUnit.Framework;
 
@@ -22,7 +21,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void GivenIHaveClickedInStartNowButton()
         {
             WebDriver.FindElement(StartNowButton).Click();
-            Thread.Sleep(2000);
         }
         
         [When(@"i sign in with valid DfE Username and password")]
@@ -34,6 +32,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should page Banner information on top of the page")]
         public void ThenIShouldPageBannerInformationOnTopOfThePage()
         {
+            PageHelper.WaitForElement(by: TlevelDashboardPage.BannerInfo, 30);
             Assert.True(WebDriver.FindElement(TlevelDashboardPage.BannerInfo).Text.Contains(TlevelDashboardPage.BannerText));
         }
     }

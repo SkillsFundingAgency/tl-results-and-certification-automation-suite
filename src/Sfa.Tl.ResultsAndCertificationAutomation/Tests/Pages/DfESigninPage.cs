@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.ObjectRepository;
@@ -35,7 +34,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(By.Id("username")).SendKeys(username);
             WebDriver.FindElement(By.Id("password")).SendKeys(password);
             WebDriver.FindElement(By.XPath("//button[contains(text(),'Sign in')]")).Click();
-            Thread.Sleep(5000);
+            //PageHelper.WaitForUrl(TlevelDashboardPage.StartPageUrl);
         }
     }
 }

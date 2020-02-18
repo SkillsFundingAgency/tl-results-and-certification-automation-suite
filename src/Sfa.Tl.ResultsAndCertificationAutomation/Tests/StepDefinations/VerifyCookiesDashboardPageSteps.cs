@@ -1,6 +1,5 @@
 ﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System.Threading;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using NUnit.Framework;
 
@@ -22,21 +21,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void WhenUserLoggedInWithValidUserNameAndPassword()
         {
             WebDriver.FindElement(StartNowButton).Click();
-            Thread.Sleep(2000);
             DfESignInPage.DfESignIn(DfEUserName, DfEPassword);
         }
         
         [When(@"click on Cooke link in Dahsboard page")]
         public void WhenClickOnCookeLinkInDahsboardPage()
         {
+            PageHelper.WaitForUrl(TlevelDashboardPage.DashboardUrl);
             WebDriver.FindElement(CookieLink).Click();
-            Thread.Sleep(2000);
         }
         
         [Then(@"Cookeis page should open")]
         public void ThenCookeisPageShouldOpen()
         {
-            Assert.AreEqual(CookieUrl, WebDriver.Url);
+            PageHelper.WaitForUrl(CookieUrl);
+            PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
             Assert.AreEqual("Cookies", WebDriver.FindElement(CookieTitle).Text);
         }
     }

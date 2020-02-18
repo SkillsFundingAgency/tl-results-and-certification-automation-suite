@@ -1,6 +1,6 @@
-﻿using System.Threading;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -10,8 +10,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"click on Terms And Conditions link in Dahsboard page")]
         public void WhenClickOnTermsAndConditionsLinkInDahsboardPage()
         {
+            PageHelper.WaitForUrl(TlevelDashboardPage.DashboardUrl);
             WebDriver.FindElement(TCLink).Click();
-            Thread.Sleep(2000);
         }
     }
 }
