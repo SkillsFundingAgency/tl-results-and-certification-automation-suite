@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
     public class Hooks
     {
         public static IWebDriver WebDriver { get; set;}
-
+                
         [Before]
         public static void SetUp()
         {
