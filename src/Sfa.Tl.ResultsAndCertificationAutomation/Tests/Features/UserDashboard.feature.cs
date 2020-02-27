@@ -75,13 +75,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dashboard AO_Approver")]
+        [NUnit.Framework.DescriptionAttribute("Dashboard page for Site Administrator user")]
         [NUnit.Framework.CategoryAttribute("Sprint8")]
-        public virtual void DashboardAO_Approver()
+        public virtual void DashboardPageForSiteAdministratorUser()
         {
             string[] tagsOfScenario = new string[] {
                     "Sprint8"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard AO_Approver", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard page for Site Administrator user", null, new string[] {
                         "Sprint8"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -104,7 +104,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 8
-testRunner.Given("I have logged in as a \"AOApprover\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
 testRunner.Then("i should see Account, TLevels and Centre links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -114,13 +114,13 @@ testRunner.Then("i should see Account, TLevels and Centre links", ((string)(null
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dashboard AO_Provider")]
+        [NUnit.Framework.DescriptionAttribute("Dashboard page for page for All Level Users")]
         [NUnit.Framework.CategoryAttribute("Sprint8")]
-        public virtual void DashboardAO_Provider()
+        public virtual void DashboardPageForPageForAllLevelUsers()
         {
             string[] tagsOfScenario = new string[] {
                     "Sprint8"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard AO_Provider", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard page for page for All Level Users", null, new string[] {
                         "Sprint8"});
 #line 12
 this.ScenarioInitialize(scenarioInfo);
@@ -143,23 +143,23 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 13
-testRunner.Given("I have logged in as a \"AOProvider\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in as a \"AllUser\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
-testRunner.Then("I should see Account, Centre links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("i should see Account, TLevels and Centre links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dashboard Standard user")]
+        [NUnit.Framework.DescriptionAttribute("Dashboard page for Reviewer and Provider user")]
         [NUnit.Framework.CategoryAttribute("Sprint8")]
-        public virtual void DashboardStandardUser()
+        public virtual void DashboardPageForReviewerAndProviderUser()
         {
             string[] tagsOfScenario = new string[] {
                     "Sprint8"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard Standard user", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard page for Reviewer and Provider user", null, new string[] {
                         "Sprint8"});
 #line 17
 this.ScenarioInitialize(scenarioInfo);
@@ -182,10 +182,88 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 18
-testRunner.Given("I have logged in as a \"Standard\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in as a \"ReviewerAndProvider\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 19
-testRunner.Then("I should see Account link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("i should see Account, TLevels and Centre links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Dashboard page for Reviewer")]
+        [NUnit.Framework.CategoryAttribute("Sprint8")]
+        public virtual void DashboardPageForReviewer()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Sprint8"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard page for Reviewer", null, new string[] {
+                        "Sprint8"});
+#line 22
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 23
+testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 24
+testRunner.Then("i should see Account, TLevels links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Dashboard page for Provider")]
+        [NUnit.Framework.CategoryAttribute("Sprint8")]
+        public virtual void DashboardPageForProvider()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Sprint8"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dashboard page for Provider", null, new string[] {
+                        "Sprint8"});
+#line 27
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 28
+testRunner.Given("I have logged in as a \"Provider\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 29
+testRunner.Then("I should see Account, Centre links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

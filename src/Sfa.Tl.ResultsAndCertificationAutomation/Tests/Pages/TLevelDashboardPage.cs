@@ -26,7 +26,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By CentresLink = By.XPath("//a[contains(text(), 'Centres')]");
         public static By TlevelLink = By.XPath("//a[@href='Tlevel/Index']");
         private By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
-        private By PageTitle = By.TagName("h1");
+        private static By PageTitle = By.TagName("h1");
+        private const string DashBoardHeader = "Manage T Levels";
         private static string ManageCentresPageHeader = "Your T Levels";
 
         public void ViewUserAccount()
@@ -60,9 +61,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
         }
 
+        public static void VerifyTLevelHeader()
+        {
+            PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
+            Assert.AreEqual(DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
+        }
+
         public static void CheckDashboardpage()
         {
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
+            Assert.AreEqual(DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.CookieUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.PrivacyUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.TermsUrl));

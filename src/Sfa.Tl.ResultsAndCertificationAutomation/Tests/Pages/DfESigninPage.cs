@@ -20,6 +20,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string AOCentrePassword = WebDriverFactory.Config["AOCentrePW"];
         public static string AOStandardUsername = WebDriverFactory.Config["AOStandardUser"];
         public static string AOStandardPassword = WebDriverFactory.Config["AOStandardUserPW"];
+        private static string SiteAdminUser = WebDriverFactory.Config["SiteAdminUser"];
+        private static string SiteAdminPassword = WebDriverFactory.Config["SiteAminPW"];
+        private static string AllUser = WebDriverFactory.Config["AllUser"];
+        private static string AllUserPassword = WebDriverFactory.Config["AllUserPW"];
+        private static string RevProvUser = WebDriverFactory.Config["RevProUser"];
+        private static string RevProvPassword = WebDriverFactory.Config["RevProPW"];
+        private static string ReviewerUser = WebDriverFactory.Config["ReviewerUser"];
+        private static string ReviewerPassword = WebDriverFactory.Config["ReviewerPW"];
+        private static string ProviderUser = WebDriverFactory.Config["ProviderUser"];
+        private static string ProviderPassword = WebDriverFactory.Config["ProviderPW"];
+        private static string NoRoleNoServiceUser = WebDriverFactory.Config["NoRoleNoSerUser"];
+        private static string NoRoleNoServicePassword = WebDriverFactory.Config["NoRoleNoSerPW"];
         private static By StartNowButton = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "Dashboard");
         public By UserIdTxtBox = By.Id("username");
@@ -76,6 +88,32 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             TLevelSignIn(AOStandardUsername, AOStandardPassword);
         }
 
+        public static void SigninAsSiteAdmin()
+        {
+            TLevelSignIn(SiteAdminUser, SiteAdminPassword);
+        }
+
+        public static void SigninAsAllUser()
+        {
+            TLevelSignIn(AllUser, AllUserPassword);
+        }
+
+        public static void SigninAsRevProvUser()
+        {
+            TLevelSignIn(RevProvUser, RevProvPassword);
+        }
+        public static void SigninAsReviewer()
+        {
+            TLevelSignIn(ReviewerUser, ReviewerPassword);
+        }
+        public static void SigninAsProvider()
+        {
+            TLevelSignIn(ProviderUser, ProviderPassword);
+        }
+        public static void SigninAsNoRoleNoServiceUser()
+        {
+            TLevelSignIn(NoRoleNoServiceUser, NoRoleNoServicePassword);
+        }
         public static void SelectOrganisation()
         {
             PageHelper.WaitForElement(Ncfe, 30);

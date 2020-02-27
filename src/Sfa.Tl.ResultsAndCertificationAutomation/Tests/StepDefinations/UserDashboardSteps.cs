@@ -12,14 +12,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             switch(p0)
             {
-                case "AOApprover":
-                    DfESignInPage.SigninAsAOApprover();
+                case "SiteAdmin":
+                    DfESignInPage.SigninAsSiteAdmin();
                     break;
-                case "AOProvider":
-                    DfESignInPage.SigninAsAOCentre();
+                case "AllUser":
+                    DfESignInPage.SigninAsAllUser();
                     break;
-                case "Standard":
-                    DfESignInPage.SigninAsStandardUser();
+                case "ReviewerAndProvider":
+                    DfESignInPage.SigninAsRevProvUser();
+                    break;
+                case "Reviewer":
+                    DfESignInPage.SigninAsReviewer();
+                    break;
+                case "Provider":
+                    DfESignInPage.SigninAsProvider();
+                    break;
+                case "NoRoleNoService":
+                    DfESignInPage.SigninAsNoRoleNoServiceUser();
                     break;
             }
         }
@@ -27,19 +36,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"i should see Account, TLevels and Centre links")]
         public void ThenIShouldSeeAccountTLevelsAndCentreLinks()
         {
-            UserDashboardPage.AOAppDashboardPage();
+            UserDashboardPage.AdminDashboardPage();
         }
         
         [Then(@"I should see Account, Centre links")]
         public void ThenIShouldSeeAccountCentreLinks()
         {
-            UserDashboardPage.AOCentreDashboardPage();
+            UserDashboardPage.ProviderDashboardPage();
         }
-        
-        [Then(@"I should see Account link")]
-        public void ThenIShouldSeeAccountLink()
+
+        [Then(@"i should see Account, TLevels links")]
+        public void ThenIShouldSeeAccountTLevelslinks()
         {
-            UserDashboardPage.NoUserDashboardPage();
+            UserDashboardPage.ReviewerDashboardPage();
         }
     }
 }

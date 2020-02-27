@@ -45,7 +45,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
                                       + scenarioTitle
                                       + ".png";
             string screenshotsDirectory = AppDomain.CurrentDomain.BaseDirectory
-                                          + "../../"
+                                          // + "../../"
                                           + "\\Project\\Screenshots\\"
                                           + dateTime.ToString("dd-MM-yyyy")
                                           + "\\";
