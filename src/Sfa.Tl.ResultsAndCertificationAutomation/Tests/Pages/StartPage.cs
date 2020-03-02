@@ -14,7 +14,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string PrivacyUrl => string.Concat(HelpUrl, "/Privacy");
         public static string Expected404 => string.Concat(WebDriverFactory.Config["BaseUrl"], "page-not-found");
         public static string Error404 => string.Concat(WebDriverFactory.Config["BaseUrl"], "test");
-        public static string Error401 => string.Concat(WebDriverFactory.Config["BaseUrl"], "Error/AccessDenied");
+        public static string Error401 => string.Concat(WebDriverFactory.Config["BaseUrl"], "access-denied");
         public static string Error500 => string.Concat(WebDriverFactory.Config["BaseUrl"], "Error/500");
         public static string Error403 => string.Concat(WebDriverFactory.Config["BaseUrl"], "no-service-permission");
         public static string TermsUrl => string.Concat(HelpUrl, "/TermsAndConditions");
