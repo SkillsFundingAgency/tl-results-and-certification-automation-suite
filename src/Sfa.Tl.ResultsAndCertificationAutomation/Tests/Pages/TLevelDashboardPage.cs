@@ -19,13 +19,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By SignOutLink = By.LinkText("Sign out");
         protected readonly By PageHeader = By.TagName("h1");
         public static By SelectOrgNcfe = By.Id("848D7FB9-ADBD-47EC-A975-3FF9314323EA");
+        public static By SelectOrgPearson = By.Id("13BE668D-833B-410F-A9E4-D7AB3CF14DCD");
         public static By OrgContinueBtn = By.XPath("//input[@value='Continue']");
         private By DashboardHeadLink = By.XPath("//a[@href='/Dashboard']");
-        private By UserAccountLink = By.XPath("//a[contains(text(), 'Account')]");
-        private By CentresLink = By.XPath("//a[contains(text(), 'Centres')]");
-        private By TlevelLink = By.XPath("//a[@href='Tlevel/Index']");
+        public static By UserAccountLink = By.XPath("//a[contains(text(), 'Account')]");
+        public static By CentresLink = By.XPath("//a[contains(text(), 'Centres')]");
+        public static By TlevelLink = By.XPath("//a[@href='Tlevel/Index']");
         private By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
-        private By PageTitle = By.TagName("h1");
+        private static By PageTitle = By.TagName("h1");
+        private const string DashBoardHeader = "Manage T Levels";
         private static string ManageCentresPageHeader = "Your T Levels";
 
         public void ViewUserAccount()
@@ -59,9 +61,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
         }
 
+        public static void VerifyTLevelHeader()
+        {
+            PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
+            Assert.AreEqual(DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
+        }
+
         public static void CheckDashboardpage()
         {
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
+            Assert.AreEqual(DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.CookieUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.PrivacyUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.TermsUrl));

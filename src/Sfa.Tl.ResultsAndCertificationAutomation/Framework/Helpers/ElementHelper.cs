@@ -8,7 +8,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
     public class ElementHelper : Hooks.Hooks
     {
-       public static void FindElementContainingText(string text)
+        public static bool IsPresent(By by)
+        {
+            try
+            {
+                WebDriver.FindElement(by);
+                return true;
+            }
+            catch (Exception)
+            { return false; }
+        }
+
+        public static void FindElementContainingText(string text)
        {
             WebDriver.FindElement(By.XPath($"//*[contains(text(),'{text}')]"));
        }

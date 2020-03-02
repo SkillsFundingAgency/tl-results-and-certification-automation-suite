@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
     public class Hooks
     {
         public static IWebDriver WebDriver { get; set;}
-
+                
         [Before]
         public static void SetUp()
         {
@@ -45,7 +45,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
                                       + scenarioTitle
                                       + ".png";
             string screenshotsDirectory = AppDomain.CurrentDomain.BaseDirectory
-                                          + "../../"
+                                          // + "../../"
                                           + "\\Project\\Screenshots\\"
                                           + dateTime.ToString("dd-MM-yyyy")
                                           + "\\";
