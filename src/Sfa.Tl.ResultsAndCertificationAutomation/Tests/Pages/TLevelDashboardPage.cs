@@ -24,7 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private By DashboardHeadLink = By.XPath("//a[@href='/Dashboard']");
         public static By UserAccountLink = By.XPath("//a[contains(text(), 'Account')]");
         public static By CentresLink = By.XPath("//a[contains(text(), 'Centres')]");
-        public static By TlevelLink = By.XPath("//a[@href='Tlevel/Index']");
+        public static By TlevelLink = By.XPath("//a[@href='t-levels']");
         private By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
         private static By PageTitle = By.TagName("h1");
         private const string DashBoardHeader = "Manage T Levels";
