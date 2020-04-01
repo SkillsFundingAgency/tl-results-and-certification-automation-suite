@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DfEInvalidUserName = "testuser@digital.education.gov.uk";
         public const string DfEInvalidPassword = "testing@@2020";
         private static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
-        public static string TlevelDashboardUrl => string.Concat(StartPageUrl, "Dashboard");
+        public static string TlevelDashboardUrl => string.Concat(StartPageUrl, "dashboard");
         public const string Error404 = "Page not found";
         public const string Error401 = "Access denied";
         public const string Error500 = "Sorry, there is a problem with the service";
