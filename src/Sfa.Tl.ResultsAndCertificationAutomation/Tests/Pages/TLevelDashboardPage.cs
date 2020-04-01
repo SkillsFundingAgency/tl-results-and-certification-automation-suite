@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class TlevelDashboardPage : Hooks
     {
         public static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
-        public static string DashboardUrl => string.Concat(StartPageUrl, "Dashboard");
+        public static string DashboardUrl => string.Concat(StartPageUrl, "dashboard");
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
         public static string HelpUrl => string.Concat(StartPageUrl, "/Help");
