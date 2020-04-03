@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string QueryTlevel => string.Concat(StartPage.StartPageUrl, "report-tlevel-issue");
         // Common Objects
         private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
-        private By ServiceBanner = By.XPath("//a[@href='/Dashboard']");
+        private By ServiceBanner = By.XPath("//a[@href='/dashboard']");
         private By TlevelsLink = By.XPath("//a[@href='/tlevels']");
         // Are these details correct page
         private By EverythingCorrectRadioBtn = By.XPath("//input[@id='tl-verify-yes']");
