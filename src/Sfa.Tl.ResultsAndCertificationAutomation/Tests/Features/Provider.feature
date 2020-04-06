@@ -34,4 +34,14 @@ And click on continue button
 Then TLevels should be added to the Provide
 And Added Tlevels should be displayed when i click Manage Tlevels link
 
+@Sprint11
+Scenario: Remove Tlevel
+Given I have logged in as a "Provider" user
+And I serch the Provider from Find Provider Page
+And Click on View Provider already been setup link
+And Click on View
+And Click on Remove
+When I select Yes, Remove Tlevel and click on Submit
+Then I should see Tlevel Removed Successfully message
+
 

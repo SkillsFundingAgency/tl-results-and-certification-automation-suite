@@ -16,6 +16,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private string FindProviderPageHead = "Find a provider";
         private string TlevelSuccessMsg = "T Level added successfully";
         public string TlevelsSuccessMsg = "T Levels added successfully";
+        public string TlevelRemoved = "T Level removed successfully";
         private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
         private By SearchProvider = By.Id("search");
         public static string SearchProviderTxt = "Derby College";
@@ -30,6 +31,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private By ManageProviderLink = By.XPath("//a[contains(text(),'Manage provider')]");
         private static string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
         private const string SQLDeleteProviderTlevel = "Delete from TqProvider where TlProviderId In (select Id from TlProvider where Name='Derby College')";
+        private By RemoveTlevelLink = By.XPath("//a[contains(text(),'Remove')]");
+        public By RemoveTlevelYes = By.Id("canremovetlevel");
+        public By RemoveTlevelNo = By.Id("tl-remove-no");
 
         public void DeleteTlevelFromDB()
         {
@@ -62,11 +66,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(TlevelSubmit);
         }
+
+        public void ClickRemoveTlevel()
+        {
+            ClickElement(RemoveTlevelLink);
+        }
         
         public void SubmitTlevelInProvider()
         {
             Assert.AreEqual(TlevelSuccessMsg, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(SubmitTlevel, WebDriver.Url);
+        }
+
+        public void AddTlevel()
+        {
+            SelectTlevel(Agriculture);
+            Submit();
+            SubmitTlevelInProvider();
         }
     }
 }
