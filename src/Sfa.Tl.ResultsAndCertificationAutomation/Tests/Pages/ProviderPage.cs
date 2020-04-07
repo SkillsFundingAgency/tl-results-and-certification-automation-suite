@@ -14,6 +14,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string ProviderUrl => string.Concat(StartPage.StartPageUrl, "find-provider");
         public static string SubmitTlevel => string.Concat(StartPage.StartPageUrl, "submit-successful");
         private string FindProviderPageHead = "Find a provider";
+        public static string ProviderTLevelPageHeader = "Provider's T Levels";
         private string TlevelSuccessMsg = "T Level added successfully";
         public string TlevelsSuccessMsg = "T Levels added successfully";
         public string TlevelRemoved = "T Level removed successfully";
@@ -37,7 +38,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public void DeleteTlevelFromDB()
         {
-            //SqlDatabaseConncetionHelper.UpdateSqlCommand(SQLDeleteProviderTlevel, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(SQLDeleteProviderTlevel, ConnectionString);
         }
 

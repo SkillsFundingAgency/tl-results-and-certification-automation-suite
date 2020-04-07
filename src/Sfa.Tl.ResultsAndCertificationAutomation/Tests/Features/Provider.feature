@@ -44,4 +44,12 @@ And Click on Remove
 When I select Yes, Remove Tlevel and click on Submit
 Then I should see Tlevel Removed Successfully message
 
-
+@Sprint11
+Scenario: Cancel Remove Tlevel
+Given I have logged in as a "Provider" user
+And I serch the Provider from Find Provider Page
+And Click on View Provider already been setup link
+And Click on View
+And Click on Remove
+When I select No, do not remoce radio option and click on submit
+Then I should navigate back to Provider's details page and Tlevel should be seen on the list
