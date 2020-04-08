@@ -11,10 +11,11 @@ workspace:
 
 variables:
   buildConfiguration: 'release'
+  MSBUILDSINGLELOADCONTEXT: 1
 
 pool:
   name: 'Azure Pipelines'
-  vmImage: 'windows-2019'
+  vmImage: 'vs2017-win2016'
 
 steps:
 - task: gittools.gitversion.gitversion-task.GitVersion@5
