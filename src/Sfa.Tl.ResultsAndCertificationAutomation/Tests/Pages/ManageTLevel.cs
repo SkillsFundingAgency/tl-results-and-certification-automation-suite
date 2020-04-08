@@ -7,68 +7,86 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class ManageTLevel : ElementHelper
     {
         //Urls
-        private static string ViewTlevel => string.Concat(StartPage.StartPageUrl, "view-all-tlevels");
-        private static string ReviewTlevel => string.Concat(StartPage.StartPageUrl, "tlevel-select");
+        public static string ViewTlevel => string.Concat(StartPage.StartPageUrl, "view-all-tlevels");
+        public static string ReviewTlevel => string.Concat(StartPage.StartPageUrl, "tlevel-select");
         private static string QueryTlevel => string.Concat(StartPage.StartPageUrl, "report-tlevel-issue");
         // Common Objects
         private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
-        private By ServiceBanner = By.XPath("//a[@href='/Dashboard']");
+        private By ServiceBanner = By.XPath("//a[@href='/dashboard']");
         private By TlevelsLink = By.XPath("//a[@href='/tlevels']");
         // Are these details correct page
-        private By EverythingCorrectRadioBtn = By.XPath("//input[@id='tl-verify-yes']");
+        private By EverythingCorrectRadioBtn = By.XPath("//input[@id='iseverythingcorrect']");
         private By SomethingWrongRadoiBtn = By.XPath("//input[@id='tl-verify-no']");
         //Tlevel confirmation page
         private By ViewYourTlevelBtn = By.XPath("//button[contains (text(), 'View your T Levels')]");
-        private By PageTitle = By.TagName("h1");
-        private const string TlevelConfirmantionMsg = "T Level details confirmed";
+        public By PageTitle = By.TagName("h1");
+        public const string TlevelConfirmantionMsg = "T Level details confirmed";
         //View Tlevel details
         private By HomeBtn = By.XPath("//a[contains (text(), 'Home')]");
         private By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Something is not right')]");
+        private By ReviewAnotherLink = By.XPath("//a[contains(text(),'Review another T Level')]");
+        private By ViewReviedLink = By.XPath("//a[contains(text(),'View reviewed T levels')]");
+        private By ViewConfirmedTlevelLink = By.XPath("//a[contains(text(),'View')]");
         //Query Tlevel details
-        private By QueryDetails = By.Id("more-detail");
+        private By QueryDetails = By.Id("query");
         private By QuerySubmit = By.XPath("//button[contains (text(), 'Submit')]");
+        private static string QueryText = "Queried by Automation Tests";
+        public const string TlevelQueryMsg = "T Level details queried";
         //Database Query
         private static string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
-        private const string SQLUpdatetHealth = "Update TqAwardingOrganisation set ReviewStatus=1 where TlRouteId=9";
-        private const string SQLUpdatetLegal = "Update TqAwardingOrganisation set ReviewStatus=1 where TlRouteId=10";
-        private const string SQLUpdatetEngineering = "Update TqAwardingOrganisation set ReviewStatus=1 where TlRouteId=11";
-        private const string SQLUpdatetAgriculture = "Update TqAwardingOrganisation set ReviewStatus=1 where TlRouteId=12";
-        private readonly By Health = By.XPath("//*[contains(text(),'Health and Science')]");
-        private readonly By Legal = By.XPath("//*[contains(text(),'Legal')]");
-        private readonly By Engineering = By.XPath("//*[contains(text(),'Engineering')]");
-        private readonly By Agriculture = By.XPath("//*[contains(text(),'Agriculture')]");
+        private const string UpdateDBReview = "Update TqAwardingOrganisation set ReviewStatus=1 where TlAwardingOrganisatonId=1";
+        public readonly By Health = By.XPath("//*[contains(text(),'Health and Science')]");
+        public readonly By Legal = By.XPath("//*[contains(text(),'Legal')]");
+        public readonly By Engineering = By.XPath("//*[contains(text(),'Engineering')]");
+        public readonly By Agriculture = By.XPath("//*[contains(text(),'Agriculture')]");
 
-
-        public void ConfirmTlevelsingle(By by)
+        public void DbUpdate()
+        {
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(UpdateDBReview, ConnectionString);
+        }
+        public void ClickTlevelLink()
         {
             ClickElement(TlevelsLink);
-            Assert.AreEqual(WebDriver.Url, ReviewTlevel);
+        }
+        public void SelectTlevel(By by)
+        {
             ClickElement(by);
+        }
+        public void ClickContinueBtn()
+        {
             ClickElement(ContinueBtn);
+        }
+        public void ReviewAnotherTlevelLink()
+        {
+            ClickElement(ReviewAnotherLink);
+        }
+        public void ViewReviewedTlevelLink()
+        {
+            ClickElement(ViewReviedLink);
+        }
+
+        public void ClickViewConfirmedTlevel()
+        {
+            ClickElement(ViewConfirmedTlevelLink);
         }
 
         public void EverythingCorrect()
         {
             ClickElement(EverythingCorrectRadioBtn);
-            ClickElement(ContinueBtn);
+        }
+        public void ClickSomethingNotRightLink()
+        {
+            ClickElement(SomethingNotRightLink);
         }
 
         public void SomethingWrong()
         {
             ClickElement(SomethingWrongRadoiBtn);
-            ClickElement(ContinueBtn);
         }
-
-        public void UpdatetHealth()
+        public void QueryTlevelText()
         {
-            SqlDatabaseConncetionHelper.UpdateSqlCommand(SQLUpdatetHealth, ConnectionString);
-        }
-
-        public void ReviewTLevel()
-        {
-            ConfirmTlevelsingle(Health);
-            EverythingCorrect();
-            Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelConfirmantionMsg));
+            EnterText(QueryDetails, QueryText);
+            ClickElement(QuerySubmit);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By SelectOrgNcfe = By.Id("848D7FB9-ADBD-47EC-A975-3FF9314323EA");
         public static By SelectOrgPearson = By.Id("13BE668D-833B-410F-A9E4-D7AB3CF14DCD");
         public static By OrgContinueBtn = By.XPath("//input[@value='Continue']");
-        public static By DashboardHeadLink = By.XPath("//a[@href='/Dashboard']");
+        public static By DashboardHeadLink = By.XPath("//a[@href='/dashboard']");
         public static By UserAccountLink = By.XPath("//a[contains(text(), 'Account')]");
         public static By CentresLink = By.XPath("//a[contains(text(), 'Providers')]");
         public static By TlevelLink = By.XPath("//a[@href='/tlevels']");

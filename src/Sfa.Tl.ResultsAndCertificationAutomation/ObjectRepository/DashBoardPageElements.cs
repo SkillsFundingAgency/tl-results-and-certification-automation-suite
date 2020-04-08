@@ -17,7 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.ObjectRepository
         }
 
         public static string StartPageUrl => ConfigurationManager.AppSettings["BaseUrl"];
-        public static string DashboardUrl => string.Concat(StartPageUrl, "/Dashboard");
+        public static string DashboardUrl => string.Concat(StartPageUrl, "/dashboard");
         public static string HelpUrl => string.Concat(StartPageUrl, "/Help");
         public static string CookieUrl => string.Concat(HelpUrl, "/Cookies");
         public static string PrivacyUrl => string.Concat(HelpUrl, "/Privacy");
