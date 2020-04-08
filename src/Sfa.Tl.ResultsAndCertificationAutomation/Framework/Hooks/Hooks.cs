@@ -24,16 +24,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         [After]
         public static void CleanUp()
         {
-            try
-            {
-                TakeScreenshotOnFailure();
-            }
-            finally
-            {
                 WebDriver.Dispose();
-            }
         }
 
+        [Obsolete]
         public static void TakeScreenshotOnFailure()
         {
             DateTime dateTime = DateTime.Now;
