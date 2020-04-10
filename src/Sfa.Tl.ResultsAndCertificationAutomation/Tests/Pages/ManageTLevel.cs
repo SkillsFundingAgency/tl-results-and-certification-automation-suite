@@ -26,7 +26,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Something is not right')]");
         private By ReviewAnotherLink = By.XPath("//a[contains(text(),'Review another T Level')]");
         private By ViewReviedLink = By.XPath("//a[contains(text(),'View reviewed T levels')]");
-        private By ViewConfirmedTlevelLink = By.XPath("//a[contains(text(),'View')]");
+        private By ViewConfirmedTlevelLink = By.XPath("//a[contains(@href,'tlevel-details')]");
         //Query Tlevel details
         private By QueryDetails = By.Id("query");
         private By QuerySubmit = By.XPath("//button[contains (text(), 'Submit')]");

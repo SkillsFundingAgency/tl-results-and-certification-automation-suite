@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations

@@ -7,10 +7,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class VerifyPrivacyDashboardPageSteps : StartPage
     {
-        [When(@"click on Privacy link in Dahsboard page")]
+        [When(@"i click on Privacy link in Dahsboard page")]
         public void WhenClickOnPrivacyLinkInDahsboardPage()
         {
-            PageHelper.WaitForUrl(TlevelDashboardPage.DashboardUrl);
             WebDriver.FindElement(PrivacyLink).Click();
         }
     }

@@ -8,25 +8,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class VerifyBannerSteps : StartPage
     {
-        private static string DfEUserName = WebDriverFactory.Config["DfEUserName"];
-        private static string DfEPassword = WebDriverFactory.Config["DfEPassword"];
-        
-        [Given(@"A Tlevel start page")]
-        public void GivenATlevelStartPage()
+        [When(@"I looked at page banner")]
+        public void WhenILookedAtPageBanner()
         {
-            WebDriver.Navigate().GoToUrl(StartPageUrl);
-        }
-        
-        [Given(@"I have clicked in Start Now button")]
-        public void GivenIHaveClickedInStartNowButton()
-        {
-            WebDriver.FindElement(StartNowButton).Click();
-        }
-        
-        [When(@"i sign in with valid DfE Username and password")]
-        public void WhenISignInWithValidDfEUsernameAndPassword()
-        {
-            DfESignInPage.DfESignIn(DfEUserName, DfEPassword);
+            Assert.AreEqual(string.Concat(StartPageUrl,"dashboard"), WebDriver.Url);
         }
         
         [Then(@"I should page Banner information on top of the page")]

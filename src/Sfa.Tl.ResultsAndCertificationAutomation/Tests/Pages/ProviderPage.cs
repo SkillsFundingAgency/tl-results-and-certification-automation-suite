@@ -5,6 +5,7 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -54,7 +55,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(FindProviderPageHead, WebDriver.FindElement(PageHeader).Text);
             EnterText(SearchProvider, SearchProviderTxt);
+            Thread.Sleep(1000);
             PressEnter();
+            Thread.Sleep(1000);
             ClickElement(ContinueBtn);
         }
 

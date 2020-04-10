@@ -7,15 +7,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class SignOutDashboardPageSteps : StartPage
     {
-        private static string DfEUserName = WebDriverFactory.Config["DfEUserName"];
-        private static string DfEPassword = WebDriverFactory.Config["DfEPassword"];
-
-        [Given(@"i sign in with valid DfE Username and password")]
-        public void GivenISignInWithValidDfEUsernameAndPassword()
-        {
-            DfESignInPage.DfESignIn(DfEUserName, DfEPassword);
-        }
-        
         [When(@"I click on Sign Out link")]
         public void WhenIClickOnSignOutLink()
         {

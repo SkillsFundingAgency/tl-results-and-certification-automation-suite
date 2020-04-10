@@ -13,7 +13,6 @@ Scenario: Veryfy Privacy link in Tlevel start page
 
 @Sprint5
 Scenario: Verify Privacy link in Tlevel Dashboard page
-Given Tlevel Start page
-When user logged in with valid user name and password
-And click on Privacy link in Dahsboard page
+Given I have login as a Admin user
+When i click on Privacy link in Dahsboard page
 Then Privacy page should open

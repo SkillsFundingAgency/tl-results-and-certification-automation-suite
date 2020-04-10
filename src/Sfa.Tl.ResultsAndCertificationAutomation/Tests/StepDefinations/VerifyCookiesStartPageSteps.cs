@@ -26,7 +26,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             PageHelper.WaitForUrl(CookieUrl);
             PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
-            Assert.AreEqual("Cookies", WebDriver.FindElement(CookieTitle).Text);
+            Assert.AreEqual("Cookie policy", WebDriver.FindElement(CookieTitle).Text);
         }
     }
 }

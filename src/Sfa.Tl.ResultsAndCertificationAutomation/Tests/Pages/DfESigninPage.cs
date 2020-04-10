@@ -1,9 +1,11 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using System.Linq;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.ObjectRepository;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -59,7 +61,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(By.Id("username")).SendKeys(username);
             WebDriver.FindElement(By.Id("password")).SendKeys(password);
             WebDriver.FindElement(By.XPath("//button[contains(text(),'Sign in')]")).Click();
-            //PageHelper.WaitForUrl(TlevelDashboardPage.StartPageUrl);
         }
 
         public static void TLevelSignIn(string username, string password)
@@ -116,17 +117,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void SelectOrganisation()
         {
-            PageHelper.WaitForElement(Ncfe, 30);
+            ElementHelper.ElementWaitBy(Ncfe,20);
             Assert.AreEqual(Constants.SelectOrganisation, WebDriver.FindElement(PageHeader).Text);
             WebDriver.FindElement(Ncfe).Click();
             WebDriver.FindElement(OrgContinueButton).Click();
 
             // TODO: REMOVE ME
-            if (WebDriver.FindElement(PageHeader).Text == Constants.SelectOrganisation)
+            if (WebDriver.FindElement(Ncfe).Enabled == true)
             {
-                PageHelper.WaitForElement(Ncfe, 30);
                 WebDriver.FindElement(Ncfe).Click();
                 WebDriver.FindElement(OrgContinueButton).Click();
+
             }
         }
     }

@@ -141,5 +141,31 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             }
             return WebDriver.FindElement(by);
         }
+
+        public static void ElementWaitBy(By by, int maxTimeInSec)
+        {
+            string state = string.Empty;
+            try
+            {
+                var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(maxTimeInSec));
+                wait.Until(d =>
+                {
+                    var results = false;
+                    try
+                    {
+                        results = WebDriver.FindElement(by) != null;
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        //Ignrore
+                    }
+                    return results;
+                });
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
