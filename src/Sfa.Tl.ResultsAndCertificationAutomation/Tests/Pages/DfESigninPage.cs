@@ -1,11 +1,11 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using System.Linq;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.ObjectRepository;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
-using System.Threading;
+using WaitHelpers = SeleniumExtras.WaitHelpers;
+
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -43,6 +43,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string SigninError = "Information missing or incorrect";
         public By DfESignInErrorMessage = By.Id("error-summary");
         public static By Ncfe = By.Id("848D7FB9-ADBD-47EC-A975-3FF9314323EA");
+        private static By NcfeOrg = By.XPath("//*[contains(text(),'NCFE')]");
         public static By Pearson = By.Id("13BE668D-833B-410F-A9E4-D7AB3CF14DCD");
         public static By OrgContinueButton = By.XPath("//input[@value='Continue']");
         protected static readonly By PageHeader = By.TagName("h1");
@@ -117,18 +118,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void SelectOrganisation()
         {
-            ElementHelper.ElementWaitBy(Ncfe,20);
+            ElementHelper.WaitForElementVisible(NcfeOrg, 10);
             Assert.AreEqual(Constants.SelectOrganisation, WebDriver.FindElement(PageHeader).Text);
+            WebDriver.FindElement(NcfeOrg).Click();
+            WebDriver.FindElement(OrgContinueButton).Click();
+            // TODO: REMOVE ME
+            ElementHelper.WaitForElementVisible(NcfeOrg, 10);
             WebDriver.FindElement(Ncfe).Click();
             WebDriver.FindElement(OrgContinueButton).Click();
-
-            // TODO: REMOVE ME
-            if (WebDriver.FindElement(Ncfe).Enabled == true)
-            {
-                WebDriver.FindElement(Ncfe).Click();
-                WebDriver.FindElement(OrgContinueButton).Click();
-
-            }
         }
     }
 }

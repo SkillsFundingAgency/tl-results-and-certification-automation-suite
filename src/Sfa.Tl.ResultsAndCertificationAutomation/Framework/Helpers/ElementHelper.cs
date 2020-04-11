@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using WaitHelpers = SeleniumExtras.WaitHelpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
@@ -142,30 +143,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return WebDriver.FindElement(by);
         }
 
-        public static void ElementWaitBy(By by, int maxTimeInSec)
+        public static void WaitForElementVisible(By by, int timeInSec)
         {
-            string state = string.Empty;
-            try
-            {
-                var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(maxTimeInSec));
-                wait.Until(d =>
-                {
-                    var results = false;
-                    try
-                    {
-                        results = WebDriver.FindElement(by) != null;
-                    }
-                    catch (NoSuchElementException)
-                    {
-                        //Ignrore
-                    }
-                    return results;
-                });
-            }
-            catch
-            {
-                throw;
-            }
+            var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(timeInSec));
+            wait.Until(WaitHelpers.ExpectedConditions.ElementIsVisible(by));
         }
     }
 }
