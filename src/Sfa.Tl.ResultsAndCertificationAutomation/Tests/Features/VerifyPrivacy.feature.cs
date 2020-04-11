@@ -83,12 +83,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Veryfy Privacy link in Tlevel start page")]
         [NUnit.Framework.CategoryAttribute("Sprint5")]
+        [NUnit.Framework.CategoryAttribute("ignore(removed)")]
         public virtual void VeryfyPrivacyLinkInTlevelStartPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint5"};
+                    "Sprint5",
+                    "ignore(removed)"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Veryfy Privacy link in Tlevel start page", null, new string[] {
-                        "Sprint5"});
+                        "Sprint5",
+                        "ignore(removed)"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -128,12 +131,15 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Privacy link in Tlevel Dashboard page")]
         [NUnit.Framework.CategoryAttribute("Sprint5")]
+        [NUnit.Framework.CategoryAttribute("ignore(removed)")]
         public virtual void VerifyPrivacyLinkInTlevelDashboardPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint5"};
+                    "Sprint5",
+                    "ignore(removed)"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Privacy link in Tlevel Dashboard page", null, new string[] {
-                        "Sprint5"});
+                        "Sprint5",
+                        "ignore(removed)"});
 #line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

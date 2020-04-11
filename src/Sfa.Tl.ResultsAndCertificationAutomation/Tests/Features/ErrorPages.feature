@@ -23,17 +23,13 @@ Scenario: Error 500 Internal Server
 
 @Sprint6
 Scenario: Error 403 Forbidden
-	Given Tlevel Start page
-	And I have clicked in Start Now button
-	When I enter Ao_No_Roles username and password and click on signin button
-	And I have selected Organisation and click on Continue button
+	Given I login with No User account
+	When I select Organisation and click on Continue button
 	Then I should see access denied error
 
 @Sprint9
 Scenario: Access Denied Service
-	Given Tlevel Start page
-	And I have clicked in Start Now button
-	When I enter Ao_No_Roles username and password and click on signin button
-	And I have selected Organisation and click on Continue button
+	Given I login with No User account
+	When I select Organisation and click on Continue button
 	Then I should see access denied error
 	And I should be on same page if i click on Service Banner

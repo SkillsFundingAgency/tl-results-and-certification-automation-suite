@@ -34,7 +34,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string ProviderPassword = WebDriverFactory.Config["ProviderPW"];
         private static string NoRoleNoServiceUser = WebDriverFactory.Config["NoRoleNoSerUser"];
         private static string NoRoleNoServicePassword = WebDriverFactory.Config["NoRoleNoSerPW"];
-        private static By StartNowButton = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
+        public static By StartNowButton = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "Dashboard");
         public By UserIdTxtBox = By.Id("username");
         public By PasswordTxtBox = By.Id("password");
