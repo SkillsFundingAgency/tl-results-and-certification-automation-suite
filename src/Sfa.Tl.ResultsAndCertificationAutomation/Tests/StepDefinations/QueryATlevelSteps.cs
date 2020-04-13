@@ -5,22 +5,22 @@ using TechTalk.SpecFlow;
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
     [Binding]
-    public class ReviewTlevelsQueriedSteps : ManageTLevel
+    public class QueryATlevelSteps : ManageTLevel
     {
-        [When(@"select Something wrong and click continue")]
-        public void WhenSelectSomethingWrongAndClickContinue()
+        [When(@"I select Something Wrong anc click continue")]
+        public void WhenISelectSomethingWrongAncClickContinue()
         {
             SomethingWrong();
             ClickContinueBtn();
         }
         
-        [When(@"I enter text and submit")]
-        public void WhenIEnterTextAndSubmit()
+        [When(@"Enter text and click continue")]
+        public void WhenEnterTextAndClickContinue()
         {
             QueryTlevelText();
         }
         
-        [Then(@"I should see Tlevel Queried message")]
+        [Then(@"I should see Tlevel queried message")]
         public void ThenIShouldSeeTlevelQueriedMessage()
         {
             Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelQueryMsg));

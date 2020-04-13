@@ -5,10 +5,10 @@ using TechTalk.SpecFlow;
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
     [Binding]
-    public class ReviewToQueryTlevelsSteps : ManageTLevel
+    public class QueriedFromReviewTlevelSteps : ManageTLevel
     {
-        [When(@"I click on View reviewed Tlevel link")]
-        public void WhenIClickOnViewReviewedTlevelLink()
+        [When(@"I click on View reviewed TLevel link")]
+        public void WhenIClickOnViewReviewedTLevelLink()
         {
             SelectTlevel(Agriculture);
             ClickContinueBtn();
@@ -18,21 +18,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
             ViewReviewedTlevelLink();
             ClickViewConfirmedTlevel();
         }
-        
-        [When(@"i click on View and Something not write link")]
-        public void WhenIClickOnViewAndSomethingNotWriteLink()
+        [When(@"I select Something Wrong and click continue")]
+        public void WhenISelectSomethingWrongAndClickContinue()
         {
             ClickSomethingNotRightLink();
-        }
-        
-        [When(@"i enter text and submit")]
-        public void WhenIEnterTextAndSubmit()
-        {
             QueryTlevelText();
         }
         
-        [Then(@"the Tlevel should moved from Confirmed to Review status")]
-        public void ThenTheTlevelShouldMovedFromConfirmedToReviewStatus()
+        [Then(@"the Tlevel should move from Reviewed to Queried status")]
+        public void ThenTheTlevelShouldMoveFromReviewedToQueriedStatus()
         {
             Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelQueryMsg));
         }

@@ -1,11 +1,10 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
-    public class TlevelDashboardPage : Hooks
+    public class TlevelDashboardPage : ElementHelper
     {
         public static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
         public static string DashboardUrl => string.Concat(StartPageUrl, "dashboard");
@@ -29,6 +28,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By PageTitle = By.TagName("h1");
         private const string DashBoardHeader = "Manage T Level results";
         private static string ManageCentresPageHeader = "Your T Levels";
+        private static By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookies']"); 
 
         public void ViewUserAccount()
         {
@@ -38,26 +38,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public void ManageCentres()
         {
-            WebDriver.FindElement(CentresLink).Click();
+            ClickElement(CentresLink);
             PageHelper.WaitForPageLoad(WebDriver, 2);
             Assert.AreEqual(WebDriver.FindElement(PageTitle).Text, ManageCentresPageHeader);
         }
 
         public void ManageTlevels()
         {
-            WebDriver.FindElement(TlevelLink).Click();
+            //WebDriver.FindElement(TlevelLink).Click();
+            ClickElement(TlevelLink);
             PageHelper.VerifyPageUrl(WebDriver.Url, TlevelPageUrl);
         }
 
         public void SignoutFromMenu()
         {
-            WebDriver.FindElement(MenuBtn).Click();
-            WebDriver.FindElement(SignOutLink).Click();
+            //WebDriver.FindElement(MenuBtn).Click();
+            ClickElement(MenuBtn);
+            //WebDriver.FindElement(SignOutLink).Click();
+            ClickElement(SignOutLink);
         }
 
         public void CheckServiceBannerLink()
         {
-            WebDriver.FindElement(DashboardHeadLink).Click();
+            //WebDriver.FindElement(DashboardHeadLink).Click();
+            ClickElement(DashboardHeadLink);
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
         }
 
@@ -74,6 +78,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.CookieUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.PrivacyUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.TermsUrl));
+        }
+
+        public static void ViewCookieBanner()
+        {
+            ClickElement(ViewCookieBannerBtn);
         }
     }
 }

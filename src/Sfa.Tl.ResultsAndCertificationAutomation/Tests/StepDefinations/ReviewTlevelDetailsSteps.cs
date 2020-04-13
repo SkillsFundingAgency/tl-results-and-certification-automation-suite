@@ -1,16 +1,16 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
     [Binding]
-    public class ReviewConfirmedTlevelsSteps : ManageTLevel
+    public class ReviewTlevelDetailsSteps : ManageTLevel
     {
-        [Then(@"I should see Reviewed Tlevel detsils when i click on View Reviewd Tlevel link")]
-        public void ThenIShouldSeeReviewedTlevelDetsilsWhenIClickOnViewReviewdTlevelLink()
+        [Then(@"I should see Reviewed Tlevel details when i click on view reviewed tlevel link")]
+        public void ThenIShouldSeeReviewedTlevelDetailsWhenIClickOnViewReviewedTlevelLink()
         {
             ReviewAnotherTlevelLink();
             ViewReviewedTlevelLink();
