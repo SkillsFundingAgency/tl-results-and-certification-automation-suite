@@ -39,7 +39,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By UserIdTxtBox = By.Id("username");
         public By PasswordTxtBox = By.Id("password");
         public By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
-        public string ExpectedUrl = DfESignInPageElements.DfEExpectedUrl;
+        //public string ExpectedUrl = DfESignInPageElements.DfEExpectedUrl;
         public const string SigninError = "Information missing or incorrect";
         public By DfESignInErrorMessage = By.Id("error-summary");
         public static By Ncfe = By.Id("848D7FB9-ADBD-47EC-A975-3FF9314323EA");
