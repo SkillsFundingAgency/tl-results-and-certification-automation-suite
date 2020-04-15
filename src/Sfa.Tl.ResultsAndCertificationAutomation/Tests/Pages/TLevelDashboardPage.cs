@@ -10,8 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string DashboardUrl => string.Concat(StartPageUrl, "dashboard");
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
-        public static string HelpUrl => string.Concat(StartPageUrl, "/Help");
-        public static string CookieUrl => string.Concat(StartPageUrl, "cookies");
+        public static string CookieUrl => string.Concat(StartPageUrl, "cookie-policy");
         public static string TlevelPageUrl => string.Concat(StartPageUrl, "Tlevel/Index");
         public static By BannerInfo = By.XPath("//span[@class='govuk-phase-banner__text']");
         public static string BannerText = "This is a new service – your feedback will help us to improve it.";
@@ -28,7 +27,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By PageTitle = By.TagName("h1");
         private const string DashBoardHeader = "Manage T Level results";
         private static string ManageCentresPageHeader = "Your T Levels";
-        private static By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookies']"); 
+        private static By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookie-policy']");
+        public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
 
         public void ViewUserAccount()
         {
