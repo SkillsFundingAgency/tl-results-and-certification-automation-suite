@@ -11,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
         public static string HelpUrl => string.Concat(StartPageUrl, "/Help");
-        public static string CookieUrl => string.Concat(HelpUrl, "/Cookies");
+        public static string CookieUrl => string.Concat(StartPageUrl, "cookies");
         public static string TlevelPageUrl => string.Concat(StartPageUrl, "Tlevel/Index");
         public static By BannerInfo = By.XPath("//span[@class='govuk-phase-banner__text']");
         public static string BannerText = "This is a new service – your feedback will help us to improve it.";

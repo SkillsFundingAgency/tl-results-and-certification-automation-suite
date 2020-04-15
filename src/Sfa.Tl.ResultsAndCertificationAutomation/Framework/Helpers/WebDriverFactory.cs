@@ -46,9 +46,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 case var _ when browser == "IE":
                     return new InternetExplorerDriver();
                 case var _ when browser == "Chrome":
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArguments("--headless");
-                    return new ChromeDriver(chromeOptions);
+                    return new ChromeDriver();
+                    //ChromeOptions chromeOptions = new ChromeOptions();
+                    //chromeOptions.AddArguments("--headless");
+                    //return new ChromeDriver(chromeOptions);
 
                 default:
 
