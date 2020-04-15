@@ -36,7 +36,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public IWebDriver GetWebDriver(string browser)
         {
-
             switch (browser)
             {
                 case var _ when browser == "FireFox":
@@ -52,7 +51,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                     //return new ChromeDriver(chromeOptions);
 
                 default:
-
                     throw new Exception("Driver name - " + browser +
                                              "does not match OR this framework does not support the webDriver specified");
             }
