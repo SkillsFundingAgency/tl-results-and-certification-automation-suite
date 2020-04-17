@@ -22,5 +22,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string TlevelEngineering = "Engineering and Manufacturing: Engineering and Manufacturing";
         public const string TlevelHealth = "Health and Science: Health and Science";
         public const string TlevelLegal = "Legal, Finance and Accounting: Health and Science";
+        public const string AccessibilityUrl = "https://www.gov.uk/help/accessibility-statement";
     }
 }
