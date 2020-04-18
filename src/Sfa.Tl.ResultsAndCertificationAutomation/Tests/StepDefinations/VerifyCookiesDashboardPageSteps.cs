@@ -23,7 +23,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"Cookeis page should open")]
         public void ThenCookeisPageShouldOpen()
         {
-            PageHelper.WaitForUrl(CookieUrl);
             PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
             Assert.AreEqual("Cookie policy", WebDriver.FindElement(CookieTitle).Text);
         }

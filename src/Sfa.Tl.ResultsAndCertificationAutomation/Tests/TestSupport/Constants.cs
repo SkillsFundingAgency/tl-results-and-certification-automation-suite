@@ -17,6 +17,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string Error401 = "Access denied";
         public const string Error500 = "Sorry, there is a problem with the service";
         public const string SelectOrganisation = "Select your organisation";
+        public const string TlevelTitleAgricluture = "T Level in Agriculture, Environmental and Animal Care";
+        public const string TlevelTitleEducation = "T Level in Education and Childcare";
+        public const string TlevelTitleEngineering = "T Level in Engineering and Manufacturing";
+        public const string TlevelTitleHealth = "T Level in Health and Science";
+        public const string TlevelTitleLegal = "T Level in Legal, Finance and Accounting";
         public const string TlevelAgricluture = "Agriculture, Environmental and Animal Care: Agriculture, Environmental and Animal Care";
         public const string TlevelEducation = "Education and Childcare: Education";
         public const string TlevelEngineering = "Engineering and Manufacturing: Engineering and Manufacturing";

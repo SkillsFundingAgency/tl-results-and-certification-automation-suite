@@ -48,17 +48,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 default:
                     throw new Exception($"Driver name - {browser} does not match OR this framework does not support the webDriver specified");
             }
-
-
-            //var webDriver = browser switch
-            //{
-            //    "FireFox" => (IWebDriver) new FirefoxDriver(),
-            //    "Edge" => new EdgeDriver(),
-            //    "IE" => new InternetExplorerDriver(),
-            //    "Chrome" => new ChromeDriver(),
-            //    _ => throw new Exception("Driver name - " + browser +
-            //                             "does not match OR this framework does not support the webDriver specified")
-            //};
         }
 
         public static string GetSetting(string name)

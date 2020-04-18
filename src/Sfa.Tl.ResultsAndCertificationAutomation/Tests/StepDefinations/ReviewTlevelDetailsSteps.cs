@@ -15,7 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
             ReviewAnotherTlevelLink();
             ViewReviewedTlevelLink();
             Assert.AreEqual(ViewTlevel, WebDriver.Url);
-            Assert.IsTrue(WebDriver.FindElement(By.XPath("//*[@id='main-content']")).Text.Contains(Constants.TlevelAgricluture));
+            Assert.IsTrue(WebDriver.FindElement(By.XPath("//*[@id='main-content']")).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }
 }
