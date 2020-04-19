@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
@@ -28,7 +29,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"the Tlevel should move from Reviewed to Queried status")]
         public void ThenTheTlevelShouldMoveFromReviewedToQueriedStatus()
         {
+            Assert.IsTrue(WebDriver.Title.Equals(TlevelConfirmantionPageTitle));
             Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelQueryMsg));
+            Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
+            ReviewAnotherTlevelLink();
+            ViewReviewedTlevelLink();
+            Assert.IsTrue(WebDriver.Title.Equals(TLevelViewPageTitle));
+            Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }
 }

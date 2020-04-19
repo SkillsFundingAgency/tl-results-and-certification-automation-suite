@@ -18,6 +18,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldSeeSelectTlevelReviewPage()
         {
             Assert.AreEqual(ReviewTlevel, WebDriver.Url);
+            Assert.IsTrue(WebDriver.Title.Equals(SelectTLevelPageTitle));
+            Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains("Select a T Level to review"));
         }
     }
 }

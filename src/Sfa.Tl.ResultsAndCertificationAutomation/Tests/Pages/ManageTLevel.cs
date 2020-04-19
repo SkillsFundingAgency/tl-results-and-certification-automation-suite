@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         //Urls
         public static string ViewTlevel => string.Concat(StartPage.StartPageUrl, "view-all-tlevels");
         public static string ReviewTlevel => string.Concat(StartPage.StartPageUrl, "tlevel-select");
-        private static string QueryTlevel => string.Concat(StartPage.StartPageUrl, "report-tlevel-issue");
+        public static string QueryTlevel => string.Concat(StartPage.StartPageUrl, "report-tlevel-issue");
         // Common Objects
         private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
         private By ServiceBanner = By.XPath("//a[@href='/dashboard']");
@@ -20,12 +20,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private By ViewYourTlevelBtn = By.XPath("//button[contains (text(), 'View your T Levels')]");
         public By PageTitle = By.TagName("h1");
         public const string TlevelConfirmantionMsg = "T Level details confirmed";
+        public const string TlevelConfirmantionPageTitle = "T Level Confirmation page";
+        public const string TLevelViewPageTitle = "View all T Levels page";
+        public const string QueryTLevelPageTitle = "Report T Level issue page";
         //View Tlevel details
-        private By HomeBtn = By.XPath("//a[contains (text(), 'Home')]");
         private By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Something is not right')]");
         private By ReviewAnotherLink = By.XPath("//a[contains(text(),'Review another T Level')]");
         private By ViewReviedLink = By.XPath("//a[contains(text(),'View reviewed T levels')]");
         private By ViewConfirmedTlevelLink = By.XPath("//a[contains(@href,'tlevel-details')]");
+        public const string SelectTLevelPageTitle = "Select T Levels page";
+        public const string VerifyTLevelPageTitle = "Verify T Levels page";
+        public By PageContent = By.XPath("//*[@id='main-content']");
         //Query Tlevel details
         private By QueryDetails = By.Id("query");
         private By QuerySubmit = By.XPath("//button[contains (text(), 'Submit')]");
@@ -34,10 +39,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         //Database Query
         private static string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
         private const string UpdateDBReview = "Update TqAwardingOrganisation set ReviewStatus=1 where TlAwardingOrganisatonId=1";
-        public readonly By Health = By.XPath("//*[contains(text(),'Health and Science')]");
-        public readonly By Legal = By.XPath("//*[contains(text(),'Legal')]");
-        public readonly By Engineering = By.XPath("//*[contains(text(),'Engineering')]");
-        public readonly By Agriculture = By.XPath("//*[contains(text(),'Agriculture')]");
+        public readonly By Health = By.XPath("//*[contains(text(),'T Level in Health and Science')]");
+        public readonly By Legal = By.XPath("//*[contains(text(),'T Level in Legal')]");
+        public readonly By Engineering = By.XPath("//*[contains(text(),'T Level in Engineering')]");
+        public readonly By Agriculture = By.XPath("//*[contains(text(),'T Level in Agriculture')]");
 
         public void DbUpdate()
         {

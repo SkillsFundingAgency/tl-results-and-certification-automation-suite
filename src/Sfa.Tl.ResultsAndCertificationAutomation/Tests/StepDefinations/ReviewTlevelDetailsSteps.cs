@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
@@ -14,8 +13,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             ReviewAnotherTlevelLink();
             ViewReviewedTlevelLink();
+            Assert.IsTrue(WebDriver.Title.Equals(TLevelViewPageTitle));
             Assert.AreEqual(ViewTlevel, WebDriver.Url);
-            Assert.IsTrue(WebDriver.FindElement(By.XPath("//*[@id='main-content']")).Text.Contains(Constants.TlevelTitleAgricluture));
+            Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }
 }
