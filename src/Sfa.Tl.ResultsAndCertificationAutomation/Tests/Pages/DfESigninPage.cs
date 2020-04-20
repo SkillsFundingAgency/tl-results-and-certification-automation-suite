@@ -2,10 +2,7 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
-using Sfa.Tl.ResultsAndCertificationAutomation.ObjectRepository;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
-using WaitHelpers = SeleniumExtras.WaitHelpers;
-
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -39,7 +36,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By UserIdTxtBox = By.Id("username");
         public By PasswordTxtBox = By.Id("password");
         public By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
-        //public string ExpectedUrl = DfESignInPageElements.DfEExpectedUrl;
         public const string SigninError = "Information missing or incorrect";
         public By DfESignInErrorMessage = By.Id("error-summary");
         public static By Ncfe = By.Id("848D7FB9-ADBD-47EC-A975-3FF9314323EA");
@@ -121,10 +117,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ElementHelper.WaitForElementVisible(NcfeOrg, 10);
             Assert.AreEqual(Constants.SelectOrganisation, WebDriver.FindElement(PageHeader).Text);
             WebDriver.FindElement(NcfeOrg).Click();
-            WebDriver.FindElement(OrgContinueButton).Click();
-            // TODO: REMOVE ME
-            ElementHelper.WaitForElementVisible(NcfeOrg, 10);
-            WebDriver.FindElement(Ncfe).Click();
             WebDriver.FindElement(OrgContinueButton).Click();
         }
     }
