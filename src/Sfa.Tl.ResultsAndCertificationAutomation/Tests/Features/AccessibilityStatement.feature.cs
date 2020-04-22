@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("VerifyPrivacy")]
-    public partial class VerifyPrivacyFeature
+    [NUnit.Framework.DescriptionAttribute("AccessibilityStatement")]
+    public partial class AccessibilityStatementFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "VerifyPrivacy.feature"
+#line 1 "AccessibilityStatement.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "VerifyPrivacy", "\tIn order to comply with process\r\n\tAs a Tlevel user\r\n\tI want to see Privacy infor" +
-                    "mation in all Tlevel pages", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AccessibilityStatement", "\tIn order to see Accessibility statement\r\n\tAs a Tlevel\r\n\tI want to access Accessi" +
+                    "bility satement in all Tlevel pages ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,22 +74,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Veryfy Privacy link in Tlevel start page")]
-        [NUnit.Framework.CategoryAttribute("Sprint5")]
-        public virtual void VeryfyPrivacyLinkInTlevelStartPage()
+        [NUnit.Framework.DescriptionAttribute("Accessibility statement from start page")]
+        [NUnit.Framework.CategoryAttribute("Sprint11")]
+        public virtual void AccessibilityStatementFromStartPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint5"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Veryfy Privacy link in Tlevel start page", null, new string[] {
-                        "Sprint5"});
-#line 9
+                    "Sprint11"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessibility statement from start page", null, new string[] {
+                        "Sprint11"});
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -109,32 +103,29 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+#line 8
+ testRunner.Given("Tlevel start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 9
+ testRunner.When("I click on Accessibility statement link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.Given("Privacy link in start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 11
- testRunner.When("I click on Privacy link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 12
- testRunner.Then("Privacy page should open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see Accessibility stement details in new tab in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Privacy link in Tlevel Dashboard page")]
-        [NUnit.Framework.CategoryAttribute("Sprint5")]
-        public virtual void VerifyPrivacyLinkInTlevelDashboardPage()
+        [NUnit.Framework.DescriptionAttribute("Accesiiblity Statement from Dashboard Page")]
+        [NUnit.Framework.CategoryAttribute("Sprint11")]
+        public virtual void AccesiiblityStatementFromDashboardPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint5"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Privacy link in Tlevel Dashboard page", null, new string[] {
-                        "Sprint5"});
-#line 15
+                    "Sprint11"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accesiiblity Statement from Dashboard Page", null, new string[] {
+                        "Sprint11"});
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -154,20 +145,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+#line 14
+testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 15
+testRunner.When("I click on Accessibility statement link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.Given("Tlevel Start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 17
-testRunner.When("user logged in with valid user name and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 18
-testRunner.And("click on Privacy link in Dahsboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 19
-testRunner.Then("Privacy page should open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should see Accessibility stement details in new tab in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

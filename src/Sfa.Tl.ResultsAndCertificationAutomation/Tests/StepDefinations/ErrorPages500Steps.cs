@@ -24,7 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see an error")]
         public void ThenIShouldSeeAnError()
         {
-            PageHelper.VerifyPageUrl(WebDriver.Url, Error500);
+            PageHelper.VerifyPageUrl(WebDriver.Url, ExpectedError500);
             Assert.AreEqual(Constants.Error500, WebDriver.FindElement(PageHeader).Text);
         }
     }

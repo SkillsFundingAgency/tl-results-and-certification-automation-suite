@@ -24,9 +24,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"Cookies page should open")]
         public void ThenCookiesPageShouldOpen()
         {
-            PageHelper.WaitForUrl(CookieUrl);
             PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
-            Assert.AreEqual("Cookies", WebDriver.FindElement(CookieTitle).Text);
+            Assert.AreEqual("Cookie policy", WebDriver.FindElement(CookieTitle).Text);
         }
     }
 }

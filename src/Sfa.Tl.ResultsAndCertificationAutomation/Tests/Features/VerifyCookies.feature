@@ -13,7 +13,18 @@ Scenario: Veryfy Cookie link in Tlevel start page
 
 @Sprint5
 Scenario: Verify Cookie link in Tlevel Dashboard page
-Given Tlevel Start page
-When user logged in with valid user name and password
-And click on Cooke link in Dahsboard page
+Given I have login as a Admin user
+When i click on Cooke link in Dahsboard page
 Then Cookeis page should open
+
+@Sprint11
+Scenario: Verify Cookie banner in Tlevel start page
+Given Tlevel Start page
+When i click on View Cookie Policy button in the banner
+Then Cookie policy page should open
+
+@Sprint11
+Scenario: Verify Cookie banner in TLevel Dashboard page
+Given I have logged in as a "AllUser" user
+When i click on View Cookie Policy button in the banner
+Then Cookie policy page should open

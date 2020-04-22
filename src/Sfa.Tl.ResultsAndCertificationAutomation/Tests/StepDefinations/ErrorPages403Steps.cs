@@ -12,27 +12,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         private static string DfEUserName = WebDriverFactory.Config["AoNoRolesUser"];
         private static string DfEPassword = WebDriverFactory.Config["AoNoRolePw"];
 
-        [When(@"I enter Ao_No_Roles username and password and click on signin button")]
-        public void WhenIEnterAo_No_RolesUsernameAndPasswordAndClickOnSigninButton()
+        [Given(@"I login with No User account")]
+        public void GivenILoginWithNoUserAccount()
         {
+            WebDriver.Navigate().GoToUrl(StartPageUrl);
+            WebDriver.FindElement(DfESignInPage.StartNowButton).Click();
             DfESignInPage.DfESignIn(DfEUserName, DfEPassword);
         }
 
-        [When(@"I have selected Organisation and click on Continue button")]
+        [When(@"I select Organisation and click on Continue button")]
         public void WhenISelectOrganisationAndClickOnContinuebutton()
         {
-            PageHelper.WaitForElement(SelectOrgNcfe, 30);
-            Assert.AreEqual(Constants.SelectOrganisation,WebDriver.FindElement(PageHeader).Text);
-            WebDriver.FindElement(SelectOrgNcfe).Click();
-            WebDriver.FindElement(OrgContinueBtn).Click();
-            
-            // TODO: REMOVE ME
-            if (WebDriver.FindElement(PageHeader).Text == Constants.SelectOrganisation)
-            {
-                PageHelper.WaitForElement(SelectOrgNcfe, 30);
-                WebDriver.FindElement(SelectOrgNcfe).Click();
-                WebDriver.FindElement(OrgContinueBtn).Click();
-            }
+            DfESignInPage.SelectOrganisation();
         }
 
         [Then(@"I should see access denied error")]

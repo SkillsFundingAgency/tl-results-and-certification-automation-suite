@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System;
-using System.Threading;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
@@ -9,32 +8,31 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class ReviewSingleTlevelSteps : ManageTLevel
     {
-        [Given(@"I click on Tlevels link")]
-        public void GivenIClickOnTlevelsLink()
+        [When(@"I select a single Tlevel and click continue")]
+        public void WhenISelectASingleTlevelAndClickContinue()
         {
             DbUpdate();
             ClickTlevelLink();
-        }
-        
-        [When(@"i select a TLevel and click continue")]
-        public void WhenISelectATLevelAndClickContinue()
-        {
-            Assert.AreEqual(WebDriver.Url, ReviewTlevel);
+            Assert.IsTrue(WebDriver.Title.Equals(SelectTLevelPageTitle));
+            Assert.AreEqual(ReviewTlevel, WebDriver.Url);
             SelectTlevel(Agriculture);
             ClickContinueBtn();
         }
         
-        [When(@"select Everything correct and click continue button")]
-        public void WhenSelectEverythingCorrectAndClickContinueButton()
+        [When(@"select Everything correct and click continue")]
+        public void WhenSelectEverythingCorrectAndClickContinue()
         {
+            Assert.IsTrue(WebDriver.Title.Equals(VerifyTLevelPageTitle));
             EverythingCorrect();
             ClickContinueBtn();
         }
         
-        [Then(@"I should see Tlevel confirmation message")]
-        public void ThenIShouldSeeTlevelConfirmationMessage()
+        [Then(@"I should see TLevel Confirmation message")]
+        public void ThenIShouldSeeTLevelConfirmationMessage()
         {
+            Assert.IsTrue(WebDriver.Title.Equals(TlevelConfirmantionPageTitle));
             Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelConfirmantionMsg));
+            Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }
 }

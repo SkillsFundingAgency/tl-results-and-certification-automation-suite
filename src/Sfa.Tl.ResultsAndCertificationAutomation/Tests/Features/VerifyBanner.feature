@@ -5,7 +5,6 @@
 
 @Sprint5
 Scenario: Veryfy Banner in Tlevel start page
-	Given A Tlevel start page
-	And I have clicked in Start Now button
-	When i sign in with valid DfE Username and password
+	Given I have login as a Admin user
+	When I looked at page banner
 	Then I should page Banner information on top of the page

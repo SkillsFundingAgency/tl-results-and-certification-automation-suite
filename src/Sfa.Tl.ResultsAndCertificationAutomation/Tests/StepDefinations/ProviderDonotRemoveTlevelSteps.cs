@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
@@ -20,7 +19,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldNavigateBackToProviderSDetailsPageAndTlevelShouldBeSeenOnTheList()
         {
             Assert.AreEqual(ProviderTLevelPageHeader, WebDriver.FindElement(PageHeader).Text);
-            Assert.IsTrue(WebDriver.FindElement(By.XPath("//*[@id='main-content']")).Text.Contains(Constants.TlevelAgricluture));
+            Assert.IsTrue(WebDriver.Title.Equals(ProviderTLevelPageTitle));
+            Assert.IsTrue(WebDriver.Url.Contains(ProviderTlevelUrl));
+            Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }
 }

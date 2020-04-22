@@ -1,18 +1,16 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
-    public class TlevelDashboardPage : Hooks
+    public class TlevelDashboardPage : ElementHelper
     {
         public static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
         public static string DashboardUrl => string.Concat(StartPageUrl, "dashboard");
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
-        public static string HelpUrl => string.Concat(StartPageUrl, "/Help");
-        public static string CookieUrl => string.Concat(HelpUrl, "/Cookies");
+        public static string CookieUrl => string.Concat(StartPageUrl, "cookie-policy");
         public static string TlevelPageUrl => string.Concat(StartPageUrl, "Tlevel/Index");
         public static By BannerInfo = By.XPath("//span[@class='govuk-phase-banner__text']");
         public static string BannerText = "This is a new service – your feedback will help us to improve it.";
@@ -29,6 +27,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By PageTitle = By.TagName("h1");
         private const string DashBoardHeader = "Manage T Level results";
         private static string ManageCentresPageHeader = "Your T Levels";
+        private static By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookie-policy']");
+        public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
 
         public void ViewUserAccount()
         {
@@ -38,26 +38,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public void ManageCentres()
         {
-            WebDriver.FindElement(CentresLink).Click();
+            ClickElement(CentresLink);
             PageHelper.WaitForPageLoad(WebDriver, 2);
             Assert.AreEqual(WebDriver.FindElement(PageTitle).Text, ManageCentresPageHeader);
         }
 
         public void ManageTlevels()
         {
-            WebDriver.FindElement(TlevelLink).Click();
+            //WebDriver.FindElement(TlevelLink).Click();
+            ClickElement(TlevelLink);
             PageHelper.VerifyPageUrl(WebDriver.Url, TlevelPageUrl);
         }
 
         public void SignoutFromMenu()
         {
-            WebDriver.FindElement(MenuBtn).Click();
-            WebDriver.FindElement(SignOutLink).Click();
+            //WebDriver.FindElement(MenuBtn).Click();
+            ClickElement(MenuBtn);
+            //WebDriver.FindElement(SignOutLink).Click();
+            ClickElement(SignOutLink);
         }
 
         public void CheckServiceBannerLink()
         {
-            WebDriver.FindElement(DashboardHeadLink).Click();
+            //WebDriver.FindElement(DashboardHeadLink).Click();
+            ClickElement(DashboardHeadLink);
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
         }
 
@@ -74,6 +78,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.CookieUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.PrivacyUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.TermsUrl));
+        }
+
+        public static void ViewCookieBanner()
+        {
+            ClickElement(ViewCookieBannerBtn);
         }
     }
 }

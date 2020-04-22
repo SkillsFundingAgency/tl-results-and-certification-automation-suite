@@ -3,6 +3,7 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -27,9 +28,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see Access Denied error")]
         public void ThenIShouldSeeAccessDeniedError()
         {
-            PageHelper.WaitForUrl(Error401);
+            Thread.Sleep(3000);
             PageHelper.VerifyPageUrl(WebDriver.Url, Error401);
-            Assert.AreEqual(Constants.Error401, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.FindElement(PageHeader).Text.Contains(Constants.Error401));
         }
     }
 }

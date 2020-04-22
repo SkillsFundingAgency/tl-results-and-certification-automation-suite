@@ -25,12 +25,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
                     _config = builder.Build();
-                    return _config;
                 }
-                else
-                {
-                    return _config;
-                }
+                return _config;
             }
         }
 
@@ -45,22 +41,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 case var _ when browser == "IE":
                     return new InternetExplorerDriver();
                 case var _ when browser == "Chrome":
-                    return new ChromeDriver();
+                    var chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArguments("--headless");
+                    return new ChromeDriver(chromeOptions);
+
                 default:
-                    throw new Exception("Driver name - " + browser +
-                                             "does not match OR this framework does not support the webDriver specified");
+                    throw new Exception($"Driver name - {browser} does not match OR this framework does not support the webDriver specified");
             }
-
-
-            //var webDriver = browser switch
-            //{
-            //    "FireFox" => (IWebDriver) new FirefoxDriver(),
-            //    "Edge" => new EdgeDriver(),
-            //    "IE" => new InternetExplorerDriver(),
-            //    "Chrome" => new ChromeDriver(),
-            //    _ => throw new Exception("Driver name - " + browser +
-            //                             "does not match OR this framework does not support the webDriver specified")
-            //};
         }
 
         public static string GetSetting(string name)

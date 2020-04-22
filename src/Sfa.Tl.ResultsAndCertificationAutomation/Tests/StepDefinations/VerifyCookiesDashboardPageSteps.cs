@@ -8,35 +8,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class VerifyCookiesDashboardPageSteps : StartPage
     {
-        private static string DfEUserName = WebDriverFactory.Config["DfEUserName"];
-        private static string DfEPassword = WebDriverFactory.Config["DfEPassword"];
-
-        [Given(@"Tlevel Start page")]
-        public void GivenTlevelStartPage()
+        [Given(@"I have login as a Admin user")]
+        public void GivenIHaveLoginAsAAdminUser()
         {
-            WebDriver.Navigate().GoToUrl(StartPageUrl);
+            DfESignInPage.SigninAsSiteAdmin();
         }
         
-        [When(@"user logged in with valid user name and password")]
-        public void WhenUserLoggedInWithValidUserNameAndPassword()
-        {
-            WebDriver.FindElement(StartNowButton).Click();
-            DfESignInPage.DfESignIn(DfEUserName, DfEPassword);
-        }
-        
-        [When(@"click on Cooke link in Dahsboard page")]
+        [When(@"i click on Cooke link in Dahsboard page")]
         public void WhenClickOnCookeLinkInDahsboardPage()
         {
-            PageHelper.WaitForUrl(TlevelDashboardPage.DashboardUrl);
             WebDriver.FindElement(CookieLink).Click();
         }
         
         [Then(@"Cookeis page should open")]
         public void ThenCookeisPageShouldOpen()
         {
-            PageHelper.WaitForUrl(CookieUrl);
             PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
-            Assert.AreEqual("Cookies", WebDriver.FindElement(CookieTitle).Text);
+            Assert.AreEqual("Cookie policy", WebDriver.FindElement(CookieTitle).Text);
         }
     }
 }

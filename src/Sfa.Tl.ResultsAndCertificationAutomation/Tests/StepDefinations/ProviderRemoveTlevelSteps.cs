@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
@@ -17,12 +18,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void GivenClickOnView()
         {
             ManageTlevels();
+            Assert.IsTrue(WebDriver.Title.Equals(ProviderTLevelPageTitle));
         }
         
         [Given(@"Click on Remove")]
         public void GivenClickOnRemove()
         {
             ClickRemoveTlevel();
+            Assert.IsTrue(WebDriver.Title.Equals(RemoveTLevelPageTitle));
         }
         
         [When(@"I select Yes, Remove Tlevel and click on Submit")]
@@ -36,6 +39,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldSeeTlevelRemovedSuccessfullyMessage()
         {
             Assert.IsTrue(WebDriver.FindElement(PageHeader).Text.Contains(TlevelRemoved));
+            Assert.IsTrue(WebDriver.Title.Equals(TLevelRemovedPageTitle));
+            Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }
 }
