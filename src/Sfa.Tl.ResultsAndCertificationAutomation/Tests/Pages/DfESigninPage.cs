@@ -106,7 +106,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void SigninAsProvider()
         {
-            TLevelSignIn(ProviderUser, ProviderPassword);
+            //TLevelSignIn(ProviderUser, ProviderPassword);
+            WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
+            WebDriver.FindElement(by: StartNowButton).Click();
+            WebDriver.FindElement(By.Id("username")).SendKeys(ProviderUser);
+            WebDriver.FindElement(By.Id("password")).SendKeys(ProviderPassword);
+            WebDriver.FindElement(By.XPath("//button[contains(text(),'Sign in')]")).Click();
+            PageHelper.WaitForUrl(DashboardUrl);
         }
         public static void SigninAsNoRoleNoServiceUser()
         {
