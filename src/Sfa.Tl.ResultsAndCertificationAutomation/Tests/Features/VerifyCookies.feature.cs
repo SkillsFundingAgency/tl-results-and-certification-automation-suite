@@ -82,13 +82,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Veryfy Cookie link in Tlevel start page")]
-        [NUnit.Framework.CategoryAttribute("Sprint5")]
+        [NUnit.Framework.CategoryAttribute("SmokeTest")]
         public virtual void VeryfyCookieLinkInTlevelStartPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint5"};
+                    "SmokeTest"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Veryfy Cookie link in Tlevel start page", null, new string[] {
-                        "Sprint5"});
+                        "SmokeTest"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -127,13 +127,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Cookie link in Tlevel Dashboard page")]
-        [NUnit.Framework.CategoryAttribute("Sprint5")]
+        [NUnit.Framework.CategoryAttribute("SmokeTest")]
         public virtual void VerifyCookieLinkInTlevelDashboardPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint5"};
+                    "SmokeTest"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Cookie link in Tlevel Dashboard page", null, new string[] {
-                        "Sprint5"});
+                        "SmokeTest"});
 #line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -172,13 +172,13 @@ testRunner.Then("Cookeis page should open", ((string)(null)), ((TechTalk.SpecFlo
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Cookie banner in Tlevel start page")]
-        [NUnit.Framework.CategoryAttribute("Sprint11")]
+        [NUnit.Framework.CategoryAttribute("SmokeTest")]
         public virtual void VerifyCookieBannerInTlevelStartPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint11"};
+                    "SmokeTest"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Cookie banner in Tlevel start page", null, new string[] {
-                        "Sprint11"});
+                        "SmokeTest"});
 #line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -217,13 +217,13 @@ testRunner.Then("Cookie policy page should open", ((string)(null)), ((TechTalk.S
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Cookie banner in TLevel Dashboard page")]
-        [NUnit.Framework.CategoryAttribute("Sprint11")]
+        [NUnit.Framework.CategoryAttribute("SmokeTest")]
         public virtual void VerifyCookieBannerInTLevelDashboardPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint11"};
+                    "SmokeTest"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Cookie banner in TLevel Dashboard page", null, new string[] {
-                        "Sprint11"});
+                        "SmokeTest"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
