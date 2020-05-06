@@ -9,6 +9,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ViewTlevel => string.Concat(StartPage.StartPageUrl, "view-all-tlevels");
         public static string ReviewTlevel => string.Concat(StartPage.StartPageUrl, "tlevel-select");
         public static string QueryTlevel => string.Concat(StartPage.StartPageUrl, "report-tlevel-issue");
+        public static string VerifyTlevel => string.Concat(StartPage.StartPageUrl, "verify-tlevel");
+        public static string TlevelDetails => string.Concat(StartPage.StartPageUrl, "tlevel-details");
         // Common Objects
         private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
         private By ServiceBanner = By.XPath("//a[@href='/dashboard']");
@@ -23,6 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string TlevelConfirmantionPageTitle = "T Level Confirmation page";
         public const string TLevelViewPageTitle = "View all T Levels page";
         public const string QueryTLevelPageTitle = "Report T Level issue page";
+        public const string TlevelDetailsPageHeader = "T Level details";
         //View Tlevel details
         private By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Something is not right')]");
         private By ReviewAnotherLink = By.XPath("//a[contains(text(),'Review another T Level')]");
@@ -30,7 +33,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private By ViewConfirmedTlevelLink = By.XPath("//a[contains(@href,'tlevel-details')]");
         public const string SelectTLevelPageTitle = "Select T Levels page";
         public const string VerifyTLevelPageTitle = "Verify T Levels page";
+        public const string ConfirmedTLevelPageTitle = "Confirmed T Level Details page";
         public By PageContent = By.XPath("//*[@id='main-content']");
+        public const string SelectTLevelReviewPageTitle = "Select a T Level to review";
         //Query Tlevel details
         private By QueryDetails = By.Id("query");
         private By QuerySubmit = By.XPath("//button[contains (text(), 'Submit')]");
