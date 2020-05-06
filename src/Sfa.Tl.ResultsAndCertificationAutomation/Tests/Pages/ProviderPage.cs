@@ -40,6 +40,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By RemoveTlevelYes = By.Id("canremovetlevel");
         public By RemoveTlevelNo = By.Id("tl-remove-no");
         public By PageContent = By.XPath("//*[@id='main-content']");
+        public By BackLink = By.XPath("//a[@id='backLink']");
+        public By AddAnotherTlevelBtn = By.XPath("//a[contains(text(),'Add another T Level')]");
 
         public void DeleteTlevelFromDB()
         {
