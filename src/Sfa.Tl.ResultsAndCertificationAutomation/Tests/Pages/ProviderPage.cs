@@ -12,6 +12,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string SubmitTlevel => string.Concat(StartPage.StartPageUrl, "submit-successful");
         public static string SelectProviderUrl => string.Concat(StartPage.StartPageUrl, "select-providers-tlevels");
         public static string ProviderTlevelUrl => string.Concat(StartPage.StartPageUrl, "provider-tlevels");
+        public static string YourProviderUrl => string.Concat(StartPage.StartPageUrl, "your-providers");
+        public const string YourProviderTitle = "Your providers list";
+        public const string YourProviderHeader = "Your providers";
         public const string FindProviderPageHead = "Find a provider";
         public const string FindProviderPageTitle = "Find provider page";
         public const string SelectProvidersTlevelPageTitle = "Select provider’s T Levels";
@@ -42,6 +45,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By PageContent = By.XPath("//*[@id='main-content']");
         public By BackLink = By.XPath("//a[@id='backLink']");
         public By AddAnotherTlevelBtn = By.XPath("//a[contains(text(),'Add another T Level')]");
+        //Breadcrumb
+        public By BcProviderTlevel = By.XPath("//a[@id='breadcrumb2']");
+        public By BcYourProvider = By.XPath("//a[@id='breadcrumb1']");
+        public By BcHome = By.XPath("//a[@id='breadcrumb0']");
 
         public void DeleteTlevelFromDB()
         {
