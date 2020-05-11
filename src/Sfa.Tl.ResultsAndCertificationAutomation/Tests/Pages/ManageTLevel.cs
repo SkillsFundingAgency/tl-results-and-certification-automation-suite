@@ -48,6 +48,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public readonly By Legal = By.XPath("//*[contains(text(),'T Level in Legal')]");
         public readonly By Engineering = By.XPath("//*[contains(text(),'T Level in Engineering')]");
         public readonly By Agriculture = By.XPath("//*[contains(text(),'T Level in Agriculture')]");
+        //Breadcrumb
+        public By BcTlevelDetails = By.XPath("//a[@id='breadcrumb2']");
+        public By BcYourTlevels = By.XPath("//a[@id='breadcrumb1']");
 
         public void DbUpdate()
         {

@@ -41,9 +41,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 case var _ when browser == "IE":
                     return new InternetExplorerDriver();
                 case var _ when browser == "Chrome":
-                    var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArguments("--headless");
-                    return new ChromeDriver(chromeOptions);
+                    return new ChromeDriver();
+                    //var chromeOptions = new ChromeOptions();
+                    //chromeOptions.AddArguments("--headless");
+                    //return new ChromeDriver(chromeOptions);
 
                 default:
                     throw new Exception($"Driver name - {browser} does not match OR this framework does not support the webDriver specified");
