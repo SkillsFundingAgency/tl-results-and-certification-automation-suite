@@ -3,7 +3,7 @@
 	As a Tlevel user
 	I want to validate user in DfE system first
 
-@Sprint5
+@SmokeTest
 Scenario: DfE Sign in with Invalid User
 Given TLevel start page
 And I have entered invalid Username or Password

@@ -3,13 +3,13 @@
 	As a TLevel user
 	I want to be redirect to TLevel start page
 
-@Sprint5
+@SmokeTest
 Scenario: Veryfy Signout from Tlevel Dashboard page
 	Given I have login as a Admin user
 	When I click on Sign Out link
 	Then I should be redirectted to Tlevel Start page
 
-@Sprint7
+@SmokeTest
 Scenario: Verify Signout from Menu
 Given I have login as a Admin user
 When I click on Signout from Menu

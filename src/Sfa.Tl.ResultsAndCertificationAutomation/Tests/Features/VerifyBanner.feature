@@ -3,7 +3,7 @@
 	As a Tlevel user
 	I want to see Banner information in all Tlevel pages
 
-@Sprint5
+@SmokeTest
 Scenario: Veryfy Banner in Tlevel start page
 	Given I have login as a Admin user
 	When I looked at page banner

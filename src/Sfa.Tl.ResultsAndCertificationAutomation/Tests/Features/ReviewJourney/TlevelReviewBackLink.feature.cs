@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewJourney
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Verify Cookies")]
-    public partial class VerifyCookiesFeature
+    [NUnit.Framework.DescriptionAttribute("TlevelReviewBackLink")]
+    public partial class TlevelReviewBackLinkFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "VerifyCookies.feature"
+#line 1 "TlevelReviewBackLink.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Verify Cookies", "\tIn order to comply with process\r\n\tAs a Tlevel user\r\n\tI want to see Cookies infor" +
-                    "mation in all Tlevel pages", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "TlevelReviewBackLink", "\tIn order to navigate to previous pages\r\n\tAs a Tlevel reviewer\r\n\tI want to see Ba" +
+                    "ck link on journey pages", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,22 +74,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Veryfy Cookie link in Tlevel start page")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
-        public virtual void VeryfyCookieLinkInTlevelStartPage()
+        [NUnit.Framework.DescriptionAttribute("BackLink-Are These Details correct Page")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ReviewJourney")]
+        public virtual void BackLink_AreTheseDetailsCorrectPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Veryfy Cookie link in Tlevel start page", null, new string[] {
-                        "SmokeTest"});
-#line 9
+                    "RegressionTest",
+                    "ReviewJourney"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("BackLink-Are These Details correct Page", null, new string[] {
+                        "RegressionTest",
+                        "ReviewJourney"});
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -109,32 +106,35 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+#line 8
+testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 9
+testRunner.And("I selected TLevel and click contiue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.Given("Cookies link in start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.When("I click on Back link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.When("I click on Cookies link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 12
- testRunner.Then("Cookies page should open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should be navigated back to Select T Level to review Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Cookie link in Tlevel Dashboard page")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
-        public virtual void VerifyCookieLinkInTlevelDashboardPage()
+        [NUnit.Framework.DescriptionAttribute("BackLink-Query details Page")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ReviewJourney")]
+        public virtual void BackLink_QueryDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Cookie link in Tlevel Dashboard page", null, new string[] {
-                        "SmokeTest"});
-#line 15
+                    "RegressionTest",
+                    "ReviewJourney"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("BackLink-Query details Page", null, new string[] {
+                        "RegressionTest",
+                        "ReviewJourney"});
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -154,31 +154,34 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+#line 15
+testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 16
-testRunner.Given("I have login as a Admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.And("I select Tlevel to query page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
-testRunner.When("i click on Cooke link in Dahsboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on Back link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
-testRunner.Then("Cookeis page should open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should be navigated back to Are these details correct page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Cookie banner in Tlevel start page")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
-        public virtual void VerifyCookieBannerInTlevelStartPage()
+        [NUnit.Framework.DescriptionAttribute("BackLink-Query Tlevel Details Page")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ReviewJourney")]
+        public virtual void BackLink_QueryTlevelDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Cookie banner in Tlevel start page", null, new string[] {
-                        "SmokeTest"});
+                    "RegressionTest",
+                    "ReviewJourney"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("BackLink-Query Tlevel Details Page", null, new string[] {
+                        "RegressionTest",
+                        "ReviewJourney"});
 #line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -199,62 +202,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
 #line 22
-testRunner.Given("Tlevel Start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 23
-testRunner.When("i click on View Cookie Policy button in the banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I select reviewd Tlevel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
-testRunner.Then("Cookie policy page should open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I select View and select something not write", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Cookie banner in TLevel Dashboard page")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
-        public virtual void VerifyCookieBannerInTLevelDashboardPage()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Cookie banner in TLevel Dashboard page", null, new string[] {
-                        "SmokeTest"});
-#line 27
-this.ScenarioInitialize(scenarioInfo);
+#line 25
+testRunner.When("I click on Back link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-#line 28
-testRunner.Given("I have logged in as a \"AllUser\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 29
-testRunner.When("i click on View Cookie Policy button in the banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 30
-testRunner.Then("Cookie policy page should open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 26
+testRunner.Then("I should navigated back to Tlevel details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

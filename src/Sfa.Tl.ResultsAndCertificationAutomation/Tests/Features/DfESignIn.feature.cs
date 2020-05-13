@@ -76,13 +76,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("DfE Sign in with Invalid User")]
-        [NUnit.Framework.CategoryAttribute("Sprint5")]
+        [NUnit.Framework.CategoryAttribute("SmokeTest")]
         public virtual void DfESignInWithInvalidUser()
         {
             string[] tagsOfScenario = new string[] {
-                    "Sprint5"};
+                    "SmokeTest"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("DfE Sign in with Invalid User", null, new string[] {
-                        "Sprint5"});
+                        "SmokeTest"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

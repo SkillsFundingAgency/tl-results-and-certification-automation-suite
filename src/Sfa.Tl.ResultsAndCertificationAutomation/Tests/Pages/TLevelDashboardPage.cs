@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -25,7 +26,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By TlevelLink = By.XPath("//a[@href='/tlevels']");
         private By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
         private static By PageTitle = By.TagName("h1");
-        private const string DashBoardHeader = "Manage T Level results";
         private static string ManageCentresPageHeader = "Your T Levels";
         private static By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookie-policy']");
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
@@ -68,13 +68,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyTLevelHeader()
         {
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
-            Assert.AreEqual(DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
+            Assert.AreEqual(Constants.DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
         }
 
         public static void CheckDashboardpage()
         {
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
-            Assert.AreEqual(DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
+            Assert.AreEqual(Constants.DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.CookieUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.PrivacyUrl));
             Assert.IsTrue(PageHelper.CheckForLink(StartPage.TermsUrl));
