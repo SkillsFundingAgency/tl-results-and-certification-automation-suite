@@ -6,14 +6,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class ManageTLevel : ElementHelper
     {
         //Urls
-        public static string ViewTlevel => string.Concat(StartPage.StartPageUrl, "view-all-tlevels");
-        public static string ReviewTlevel => string.Concat(StartPage.StartPageUrl, "tlevel-select");
-        public static string QueryTlevel => string.Concat(StartPage.StartPageUrl, "report-tlevel-issue");
+        public static string ViewTlevel => string.Concat(StartPage.StartPageUrl, "your-tlevels");
+        public static string ReviewTlevel => string.Concat(StartPage.StartPageUrl, "select-tlevel");
+        public static string AreDetailsCorrect => string.Concat(StartPage.StartPageUrl, "are-details-correct");
+        public static string TlevelConfirmation => string.Concat(StartPage.StartPageUrl, "tlevel-details-confirmed");
+        public static string QueryTlevel => string.Concat(StartPage.StartPageUrl, "query-tlevel-details");
+        public static string QueryTlevelConfirmation => string.Concat(StartPage.StartPageUrl, "tlevel-details-queried-confirmation");
         public static string VerifyTlevel => string.Concat(StartPage.StartPageUrl, "verify-tlevel");
         public static string TlevelDetails => string.Concat(StartPage.StartPageUrl, "tlevel-details");
         // Common Objects
         private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
-        private By ServiceBanner = By.XPath("//a[@href='/dashboard']");
+        private By ServiceBanner = By.XPath("//a[@href='/home']");
         private By TlevelsLink = By.XPath("//a[@href='/tlevels']");
         // Are these details correct page
         private By EverythingCorrectRadioBtn = By.XPath("//input[@id='iseverythingcorrect']");

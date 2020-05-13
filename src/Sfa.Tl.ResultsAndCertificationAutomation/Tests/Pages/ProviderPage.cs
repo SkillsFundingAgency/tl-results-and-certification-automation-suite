@@ -13,6 +13,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string SelectProviderUrl => string.Concat(StartPage.StartPageUrl, "select-providers-tlevels");
         public static string ProviderTlevelUrl => string.Concat(StartPage.StartPageUrl, "provider-tlevels");
         public static string YourProviderUrl => string.Concat(StartPage.StartPageUrl, "your-providers");
+        public static string TlevelRemoveConfUrl => string.Concat(StartPage.StartPageUrl, "tlevel-removed-confirmation");
+        public static string RemoveTlvelUrl => string.Concat(StartPage.StartPageUrl, "remove-tlevel");
         public const string YourProviderTitle = "Your providers list";
         public const string YourProviderHeader = "Your providers";
         public const string FindProviderPageHead = "Find a provider";

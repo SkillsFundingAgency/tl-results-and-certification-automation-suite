@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
         public void ThenIShouldBeNavigatedBackToAreTheseDetailsCorrectPage()
         {
             Assert.IsTrue(WebDriver.Title.Equals(VerifyTLevelPageTitle));
-            Assert.IsTrue(WebDriver.Url.Contains(VerifyTlevel));
+            Assert.IsTrue(WebDriver.Url.Contains(AreDetailsCorrect));
         }
     }
 }
