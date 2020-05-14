@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldNavigateBackToProviderSDetailsPageAndTlevelShouldBeSeenOnTheList()
         {
             Assert.AreEqual(ProviderTLevelPageHeader, WebDriver.FindElement(PageHeader).Text);
-            Assert.IsTrue(WebDriver.Title.Equals(ProviderTLevelPageTitle));
+            Assert.AreEqual(ProviderTLevelPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(ProviderTlevelUrl));
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }

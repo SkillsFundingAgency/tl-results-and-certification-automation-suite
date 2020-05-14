@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             Assert.AreEqual(TlevelsSuccessMsg, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(SubmitTlevel, WebDriver.Url);
-            Assert.IsTrue(WebDriver.Title.Equals(TlevelsSuccessMsg));
+            Assert.IsTrue(WebDriver.Title.Equals(TlevelsAddedSuccessPageTitle));
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleEducation));
         }

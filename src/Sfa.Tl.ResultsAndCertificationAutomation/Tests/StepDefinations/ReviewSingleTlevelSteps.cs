@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             DbUpdate();
             ClickTlevelLink();
-            Assert.IsTrue(WebDriver.Title.Equals(SelectTLevelPageTitle));
+            Assert.AreEqual(SelectTLevelPageTitle, WebDriver.Title);
             Assert.AreEqual(ReviewTlevel, WebDriver.Url);
             SelectTlevel(Agriculture);
             ClickContinueBtn();
@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"select Everything correct and click continue")]
         public void WhenSelectEverythingCorrectAndClickContinue()
         {
-            Assert.IsTrue(WebDriver.Title.Equals(VerifyTLevelPageTitle));
+            Assert.AreEqual(AreDetailsCorrectPageTitle, WebDriver.Title);
             EverythingCorrect();
             ClickContinueBtn();
         }
@@ -30,7 +30,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see TLevel Confirmation message")]
         public void ThenIShouldSeeTLevelConfirmationMessage()
         {
-            Assert.IsTrue(WebDriver.Title.Equals(TlevelConfirmantionPageTitle));
+            Assert.AreEqual(TlevelConfirmantionPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelConfirmantionMsg));
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }

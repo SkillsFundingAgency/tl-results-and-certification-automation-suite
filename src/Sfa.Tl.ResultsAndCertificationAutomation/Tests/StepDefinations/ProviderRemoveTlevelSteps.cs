@@ -25,7 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void GivenClickOnRemove()
         {
             ClickRemoveTlevel();
-            Assert.IsTrue(WebDriver.Title.Equals(RemoveTLevelPageTitle));
+            Assert.AreEqual(RemoveTLevelPageTitle,WebDriver.Title);
         }
         
         [When(@"I select Yes, Remove Tlevel and click on Submit")]
@@ -39,7 +39,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenIShouldSeeTlevelRemovedSuccessfullyMessage()
         {
             Assert.IsTrue(WebDriver.FindElement(PageHeader).Text.Contains(TlevelRemoved));
-            Assert.IsTrue(WebDriver.Title.Equals(TLevelRemovedPageTitle));
+            Assert.AreEqual(TLevelRemovedPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }

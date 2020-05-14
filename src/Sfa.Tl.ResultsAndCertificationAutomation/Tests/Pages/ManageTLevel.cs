@@ -25,20 +25,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private By ViewYourTlevelBtn = By.XPath("//button[contains (text(), 'View your T Levels')]");
         public By PageTitle = By.TagName("h1");
         public const string TlevelConfirmantionMsg = "T Level details confirmed";
-        public const string TlevelConfirmantionPageTitle = "T Level Confirmation page";
+        public const string TlevelConfirmantionPageTitle = "T Level details confirmed page – Manage T Level results – GOV.UK";
         public const string TLevelViewPageTitle = "View all T Levels page";
-        public const string QueryTLevelPageTitle = "Report T Level issue page";
+        public const string QueryTLevelPageTitle = "Query T Level details page – Manage T Level results – GOV.UK";
+        public const string QueryConfirmPageTitle = "T Level details queried confirmation page – Manage T Level results – GOV.UK";
         public const string TlevelDetailsPageHeader = "T Level details";
+        public const string QueriedDetailsPageTitle = "Queried T Level Details page – Manage T Level results – GOV.UK";
         //View Tlevel details
-        private By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Something is not right')]");
+        private By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Query T Level details')]");
         private By ReviewAnotherLink = By.XPath("//a[contains(text(),'Review another T Level')]");
         private By ViewReviedLink = By.XPath("//a[contains(text(),'View reviewed T levels')]");
         private By ViewConfirmedTlevelLink = By.XPath("//a[contains(@href,'tlevel-details')]");
-        public const string SelectTLevelPageTitle = "Select T Levels page";
-        public const string VerifyTLevelPageTitle = "Verify T Levels page";
-        public const string ConfirmedTLevelPageTitle = "Confirmed T Level Details page";
+        public const string SelectTLevelPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
+        public const string AreDetailsCorrectPageTitle = "Are these details correct page – Manage T Level results – GOV.UK";
+        public const string VerifyTLevelPageTitle = "Your reviewed T Levels page – Manage T Level results – GOV.UK";
+        public const string ConfirmedTLevelPageTitle = "Confirmed T Level Details page – Manage T Level results – GOV.UK";
         public By PageContent = By.XPath("//*[@id='main-content']");
-        public const string SelectTLevelReviewPageTitle = "Select a T Level to review";
+        public const string SelectTLevelReviewPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
+        public const string SelectTLevelReviewPageHeader = "Select a T Level to review";
         //Query Tlevel details
         private By QueryDetails = By.Id("query");
         private By QuerySubmit = By.XPath("//button[contains (text(), 'Submit')]");

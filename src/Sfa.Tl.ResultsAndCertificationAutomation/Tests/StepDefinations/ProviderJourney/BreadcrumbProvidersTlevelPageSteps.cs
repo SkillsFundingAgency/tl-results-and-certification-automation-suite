@@ -28,9 +28,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I should be navigated back to Your providers page")]
         public void ThenIShouldBeNavigatedBackToYourProvidersPage()
         {
-            Assert.IsTrue(WebDriver.Title.Equals(YourProviderTitle));
+            Assert.AreEqual(YourProviderTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(YourProviderUrl));
-            Assert.IsTrue(WebDriver.FindElement(PageHeader).Text.Contains(YourProviderHeader));
+            Assert.AreEqual(YourProviderHeader, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }

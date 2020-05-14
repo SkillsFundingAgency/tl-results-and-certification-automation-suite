@@ -31,8 +31,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
         public void ThenIShouldNavigatedBackToTlevelDetailsPage()
         {
             Assert.IsTrue(WebDriver.Url.Contains(TlevelDetails));
-            Assert.IsTrue(WebDriver.Title.Equals(ConfirmedTLevelPageTitle));
-            Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelDetailsPageHeader));
+            Assert.AreEqual(ConfirmedTLevelPageTitle, WebDriver.Title);
+            Assert.AreEqual(TlevelDetailsPageHeader, WebDriver.FindElement(PageTitle).Text);
         }
     }
 }

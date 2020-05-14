@@ -12,8 +12,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void WhenIAmFindAProviderPage()
         {
             Assert.AreEqual(ProviderUrl, WebDriver.Url);
-            Assert.IsTrue(WebDriver.Title.Equals(FindProviderPageTitle));
-            Assert.IsTrue(WebDriver.FindElement(PageHeader).Text.Contains(FindProviderPageHead));
+            Assert.AreEqual(FindProviderPageTitle, WebDriver.Title);
+            Assert.AreEqual(FindProviderPageHead, WebDriver.FindElement(PageHeader).Text);
         }
         
         [When(@"I click on Home link")]
@@ -26,8 +26,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenIShouldBeNavatedBackToDashboard()
         {
             Assert.AreEqual(TlevelDashboardPage.DashboardUrl, WebDriver.Url);
-            Assert.IsTrue(WebDriver.Title.Equals(Constants.DashBoardTitle));
-            Assert.IsTrue(WebDriver.FindElement(PageHeader).Text.Contains(Constants.DashBoardHeader));
+            Assert.AreEqual(Constants.DashBoardTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.DashBoardHeader, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }
