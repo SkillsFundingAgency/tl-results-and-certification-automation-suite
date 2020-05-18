@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using System;
 using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
@@ -14,6 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ProviderTlevelUrl => string.Concat(StartPage.StartPageUrl, "provider-tlevels");
         public static string YourProviderUrl => string.Concat(StartPage.StartPageUrl, "your-providers");
         public static string TlevelRemoveConfUrl => string.Concat(StartPage.StartPageUrl, "tlevel-removed-confirmation");
+        public static string AddAdditionalTlevelUrl => String.Concat(StartPage.StartPageUrl, "add-additional-tlevels");
         public static string RemoveTlvelUrl => string.Concat(StartPage.StartPageUrl, "remove-tlevel");
         public static string AddTlevelPageTitle = "Add T Levels page – Manage T Level results – GOV.UK";
         public const string YourProviderTitle = "Your providers list page – Manage T Level results – GOV.UK";
