@@ -53,6 +53,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By PageContent = By.XPath("//*[@id='main-content']");
         public By BackLink = By.XPath("//a[@id='backLink']");
         public By AddAnotherTlevelBtn = By.XPath("//a[contains(text(),'Add another T Level')]");
+        public readonly By FindAnotherProvider = By.XPath("//a[contains(text(),'Find another provider')]");
         //Breadcrumb
         public By BcProviderTlevel = By.XPath("//a[@id='breadcrumb2']");
         public By BcYourProvider = By.XPath("//a[@id='breadcrumb1']");

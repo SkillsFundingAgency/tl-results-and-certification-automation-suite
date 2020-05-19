@@ -53,3 +53,10 @@ And Click on View
 And Click on Remove
 When I select No, do not remoce radio option and click on submit
 Then I should navigate back to Provider's details page and Tlevel should be seen on the list
+
+@RegressionTest @ProviderJourney
+Scenario: Provider landing page
+Given I have logged in as a "Provider" user
+And Tlevel is already added to the provider
+When I search the Provider
+Then I should be landed on Provider Tlevel Page
