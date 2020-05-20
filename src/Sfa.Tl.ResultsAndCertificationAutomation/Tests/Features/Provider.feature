@@ -3,7 +3,7 @@
 	As a Provider User
 	I want to see all functionality is working
 
-@SmokeTest
+@RegressionTest @ProviderJourney
 Scenario: Find Provider
 	Given I have logged in as a "Provider" user
 	When I click on Provider link in the dashboard

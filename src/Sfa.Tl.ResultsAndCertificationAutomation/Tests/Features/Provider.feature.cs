@@ -76,13 +76,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Find Provider")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ProviderJourney")]
         public virtual void FindProvider()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
+                    "RegressionTest",
+                    "ProviderJourney"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find Provider", null, new string[] {
-                        "SmokeTest"});
+                        "RegressionTest",
+                        "ProviderJourney"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
