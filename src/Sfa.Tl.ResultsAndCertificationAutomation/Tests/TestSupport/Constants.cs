@@ -36,7 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         //Provider Error Page Titles
         public const string ErrorFindProvider = "Error: Find a provider page – Manage T Level results – GOV.UK";
         public const string ErrorSelectProviderTlevel = "Error: Select provider’s T Levels page – Manage T Level results – GOV.UK";
-        public const string ErrorAreYouSureRemove = "Error: Are You Sure You want to Remove This T Level page – Manage T Level results – GOV.UK";
+        public const string ErrorAreYouSureRemove = "Error: Are you sure you want to remove this T Level page – Manage T Level results – GOV.UK";
         public const string ErrorAddTlevel = "Error: Add T Levels page – Manage T Level results – GOV.UK";
     }
 }

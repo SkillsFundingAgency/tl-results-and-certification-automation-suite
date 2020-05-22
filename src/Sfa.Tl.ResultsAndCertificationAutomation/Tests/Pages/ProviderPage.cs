@@ -25,7 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string SelectProvidersTlevelPageTitle = "Select provider’s T Levels page – Manage T Level results – GOV.UK";
         public static string ProviderTLevelPageHeader = "Provider's T Levels";
         public static string ProviderTLevelPageTitle = "Provider’s T Levels list page – Manage T Level results – GOV.UK";
-        public static string RemoveTLevelPageTitle = "Are You Sure You want to Remove This T Level page – Manage T Level results – GOV.UK";
+        public static string RemoveTLevelPageTitle = "Are you sure you want to remove this T Level page – Manage T Level results – GOV.UK";
         //public static string RemoveTLevelPageTitle = "Remove T Level";
         public static string TLevelRemovedPageTitle = "T Level removed successfully confirmation page – Manage T Level results – GOV.UK";
         public static string TlevelsAddedSuccessPageTitle = "T Levels added successfully page – Manage T Level results – GOV.UK";
