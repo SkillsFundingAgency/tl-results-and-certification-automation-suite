@@ -114,6 +114,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(By.XPath("//button[contains(text(),'Sign in')]")).Click();
             PageHelper.WaitForUrl(DashboardUrl);
         }
+        public static void SigninAsRegistrationEditor()
+        {
+            TLevelSignIn(SiteAdminUser, SiteAdminPassword);
+        }
         public static void SigninAsNoRoleNoServiceUser()
         {
             TLevelSignIn(NoRoleNoServiceUser, NoRoleNoServicePassword);

@@ -20,14 +20,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             TlevelDashboardPage.VerifyTLevelHeader();
             Assert.IsTrue(IsPresent(TlevelDashboardPage.UserAccountLink));
             Assert.IsTrue(IsPresent(TlevelDashboardPage.CentresLink));
-            Assert.IsFalse(IsPresent(TlevelDashboardPage.TlevelLink));
+            Assert.IsTrue(IsPresent(TlevelDashboardPage.TlevelLink));
         }
 
         public static void ReviewerDashboardPage()
         {
             TlevelDashboardPage.VerifyTLevelHeader();
             Assert.IsTrue(IsPresent(TlevelDashboardPage.UserAccountLink));
-            Assert.IsFalse(IsPresent(TlevelDashboardPage.CentresLink));
+            Assert.IsTrue(IsPresent(TlevelDashboardPage.CentresLink));
             Assert.IsTrue(IsPresent(TlevelDashboardPage.TlevelLink));
         }
 
