@@ -32,7 +32,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenTLevelShouldBeAddedToTheProvide()
         {
             SubmitTlevelInProvider();
-            Assert.IsTrue(WebDriver.Title.Equals(TlevelSuccessMsg));
+            Assert.IsTrue(WebDriver.Title.Equals(TlevelAddedSuccessPageTitle));
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
     }

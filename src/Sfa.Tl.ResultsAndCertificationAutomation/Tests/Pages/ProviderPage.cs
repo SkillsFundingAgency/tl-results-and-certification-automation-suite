@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using System;
 using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
@@ -13,15 +14,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string SelectProviderUrl => string.Concat(StartPage.StartPageUrl, "select-providers-tlevels");
         public static string ProviderTlevelUrl => string.Concat(StartPage.StartPageUrl, "provider-tlevels");
         public static string YourProviderUrl => string.Concat(StartPage.StartPageUrl, "your-providers");
-        public const string YourProviderTitle = "Your providers list";
+        public static string TlevelRemoveConfUrl => string.Concat(StartPage.StartPageUrl, "tlevel-removed-confirmation");
+        public static string AddAdditionalTlevelUrl => String.Concat(StartPage.StartPageUrl, "add-additional-tlevels");
+        public static string RemoveTlvelUrl => string.Concat(StartPage.StartPageUrl, "remove-tlevel");
+        public static string AddTlevelPageTitle = "Add T Levels page – Manage T Level results – GOV.UK";
+        public const string YourProviderTitle = "Your providers list page – Manage T Level results – GOV.UK";
         public const string YourProviderHeader = "Your providers";
         public const string FindProviderPageHead = "Find a provider";
-        public const string FindProviderPageTitle = "Find provider page";
-        public const string SelectProvidersTlevelPageTitle = "Select provider’s T Levels";
+        public const string FindProviderPageTitle = "Find a provider page – Manage T Level results – GOV.UK";
+        public const string SelectProvidersTlevelPageTitle = "Select provider’s T Levels page – Manage T Level results – GOV.UK";
         public static string ProviderTLevelPageHeader = "Provider's T Levels";
-        public static string ProviderTLevelPageTitle = "Provider’s T Levels list";
-        public static string RemoveTLevelPageTitle = "Remove T Level";
-        public static string TLevelRemovedPageTitle = "T Level removed confirmation";
+        public static string ProviderTLevelPageTitle = "Provider’s T Levels list page – Manage T Level results – GOV.UK";
+        public static string RemoveTLevelPageTitle = "Are you sure you want to remove this T Level page – Manage T Level results – GOV.UK";
+        //public static string RemoveTLevelPageTitle = "Remove T Level";
+        public static string TLevelRemovedPageTitle = "T Level removed successfully confirmation page – Manage T Level results – GOV.UK";
+        public static string TlevelsAddedSuccessPageTitle = "T Levels added successfully page – Manage T Level results – GOV.UK";
+        public static string TlevelAddedSuccessPageTitle = "T Level added successfully page – Manage T Level results – GOV.UK";
         public static string TlevelSuccessMsg = "T Level added successfully";
         public string TlevelsSuccessMsg = "T Levels added successfully";
         public string TlevelRemoved = "T Level removed successfully";
@@ -45,6 +53,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By PageContent = By.XPath("//*[@id='main-content']");
         public By BackLink = By.XPath("//a[@id='backLink']");
         public By AddAnotherTlevelBtn = By.XPath("//a[contains(text(),'Add another T Level')]");
+        public readonly By FindAnotherProvider = By.XPath("//a[contains(text(),'Find another provider')]");
         //Breadcrumb
         public By BcProviderTlevel = By.XPath("//a[@id='breadcrumb2']");
         public By BcYourProvider = By.XPath("//a[@id='breadcrumb1']");

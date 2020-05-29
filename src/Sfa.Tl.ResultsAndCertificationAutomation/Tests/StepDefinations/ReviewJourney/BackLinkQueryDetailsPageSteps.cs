@@ -21,8 +21,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
         [Then(@"I should be navigated back to Are these details correct page")]
         public void ThenIShouldBeNavigatedBackToAreTheseDetailsCorrectPage()
         {
-            Assert.IsTrue(WebDriver.Title.Equals(VerifyTLevelPageTitle));
-            Assert.IsTrue(WebDriver.Url.Contains(VerifyTlevel));
+            Assert.AreEqual(AreDetailsCorrectPageTitle, WebDriver.Title);
+            Assert.IsTrue(WebDriver.Url.Contains(AreDetailsCorrect));
         }
     }
 }

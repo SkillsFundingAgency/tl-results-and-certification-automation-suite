@@ -21,7 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
         {
             Assert.IsTrue(WebDriver.Url.Contains(ReviewTlevel));
             Assert.IsTrue(WebDriver.Title.Equals(SelectTLevelPageTitle));
-            Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(SelectTLevelReviewPageTitle));
+            Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(SelectTLevelReviewPageHeader));
         }
     }
 }

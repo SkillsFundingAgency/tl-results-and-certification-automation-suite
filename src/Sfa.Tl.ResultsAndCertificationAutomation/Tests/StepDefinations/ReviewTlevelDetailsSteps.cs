@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             ReviewAnotherTlevelLink();
             ViewReviewedTlevelLink();
-            Assert.IsTrue(WebDriver.Title.Equals(TLevelViewPageTitle));
+            Assert.AreEqual(VerifyTLevelPageTitle, WebDriver.Title);
             Assert.AreEqual(ViewTlevel, WebDriver.Url);
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }

@@ -14,10 +14,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string PrivacyUrl => string.Concat(HelpUrl, "/Privacy");
         public static string Expected404 => string.Concat(WebDriverFactory.Config["BaseUrl"], "page-not-found");
         public static string Error404 => string.Concat(StartPageUrl, "test");
-        public static string Error401 => string.Concat(StartPageUrl, "access-denied");
+        public static string Error401 => string.Concat(StartPageUrl, "access-denied-wrong-role");
         public static string Error500 => string.Concat(StartPageUrl, "Error/500");
         public static string ExpectedError500 => string.Concat(StartPageUrl, "problem-with-service");
-        public static string Error403 => string.Concat(StartPageUrl, "no-service-permission");
+        public static string Error403 => string.Concat(StartPageUrl, "service-access-denied");
         public static string TermsUrl => string.Concat(StartPageUrl, "terms-and-conditions");
         public static string PageTitle = "Sign in to submit T Levels registration and results details";
         public IWebElement CheckPageTitle => WebDriver.FindElement(By.TagName("h1"));

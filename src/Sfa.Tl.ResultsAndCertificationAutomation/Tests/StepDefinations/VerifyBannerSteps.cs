@@ -11,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"I looked at page banner")]
         public void WhenILookedAtPageBanner()
         {
-            Assert.AreEqual(string.Concat(StartPageUrl,"dashboard"), WebDriver.Url);
+            Assert.AreEqual(DfESignInPage.DashboardUrl, WebDriver.Url);
         }
         
         [Then(@"I should page Banner information on top of the page")]

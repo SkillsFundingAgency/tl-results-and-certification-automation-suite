@@ -33,7 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
         public void ThenIShouldBeNavigatedBackToYourReviewedTlevelPage()
         {
             Assert.AreEqual(ViewTlevel, WebDriver.Url);
-            Assert.IsTrue(WebDriver.Title.Equals(TLevelViewPageTitle));
+            Assert.AreEqual(VerifyTLevelPageTitle, WebDriver.Title);
         }
     }
 }

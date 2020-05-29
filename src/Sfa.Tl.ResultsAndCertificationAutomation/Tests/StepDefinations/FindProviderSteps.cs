@@ -10,6 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"I click on Provider link in the dashboard")]
         public void WhenIClickOnProviderLinkInTheDashboard()
         {
+            DeleteTlevelFromDB();
             ClickProviderLink();
             Assert.IsTrue(WebDriver.Title.Equals(FindProviderPageTitle));
             Assert.AreEqual(ProviderUrl, WebDriver.Url);

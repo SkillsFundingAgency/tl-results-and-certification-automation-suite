@@ -11,6 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void GivenClickOnProviderLinkInDashboardPage()
         {
             ClickProviderLink();
+            DeleteTlevelFromDB();
         }
         
         [Given(@"I serch the Provider")]

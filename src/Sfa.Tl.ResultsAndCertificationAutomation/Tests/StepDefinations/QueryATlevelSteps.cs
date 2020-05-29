@@ -18,7 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [When(@"Enter text and click continue")]
         public void WhenEnterTextAndClickContinue()
         {
-            Assert.IsTrue(WebDriver.Title.Equals(QueryTLevelPageTitle));
+            Assert.AreEqual(QueryTLevelPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(QueryTlevel));
             Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains("Query T Level details"));
             QueryTlevelText();
@@ -27,7 +27,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"I should see Tlevel queried message")]
         public void ThenIShouldSeeTlevelQueriedMessage()
         {
-            Assert.IsTrue(WebDriver.Title.Equals(TlevelConfirmantionPageTitle));
+            Assert.AreEqual(QueryConfirmPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.FindElement(PageTitle).Text.Contains(TlevelQueryMsg));
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
         }
