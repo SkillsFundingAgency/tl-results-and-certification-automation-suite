@@ -1,7 +1,4 @@
-﻿using NUnit.Framework;
-using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
@@ -18,19 +15,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [When(@"I upload a file and click on Submit button")]
         public void WhenIUploadAFileAndClickOnSubmitButton()
         {
-            Assert.AreEqual(UploadRegistrationUrl, WebDriver.Url);
-            Assert.AreEqual(Constants.UploadRegPageTitle, WebDriver.Title);
-            Assert.AreEqual(Constants.UploadRegPageHeader, WebDriver.FindElement(PageHeader).Text);
-            ElementHelper.UploadFile(ChooseFile, UploadValidFile);
+            VerifyRegistrationUploadPage();
+            UploadFile(ChooseFile, UploadValidFile);
             ClickElement(SubmitFileBtn);
         }
         
         [Then(@"I should see upload successful message")]
         public void ThenIShouldSeeUploadSuccessfulMessage()
         {
-            Assert.AreEqual(RegistrationUploadSuccessUrl, WebDriver.Url);
-            Assert.AreEqual(Constants.RegistrationUploadSuccessTitle, WebDriver.Title);
-            Assert.AreEqual(Constants.RegistrationSuccessHeader, WebDriver.FindElement(PageHeader).Text);
+            VerifyRegistrationSuccessPage();
             ClickElement(BacktoRegistrationLink);
         }
         
