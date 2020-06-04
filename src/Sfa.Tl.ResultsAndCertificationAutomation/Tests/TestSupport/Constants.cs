@@ -43,5 +43,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RegistationPageHeader = "Registrations";
         public const string UploadRegPageTitle = "Upload registrations file page – Manage T Level results – GOV.UK";
         public const string UploadRegPageHeader = "Upload registrations file";
+        public const string RegistrationUploadSuccessTitle = "Registrations upload successful page – Manage T Level results – GOV.UK";
+        public const string RegistrationSuccessHeader = "Registrations upload successful";
     }
 }

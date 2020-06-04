@@ -10,3 +10,12 @@ Given I have logged in as a "RegistrationEditor" user
 Scenario: Registration Dashboard Page
 When I click on Registrations link on Home page
 Then Registration page should open
+
+@RegressionTest @Registrations
+Scenario: Upload Registration file
+When I click on Registrations link on Home page
+And I click on Upload Registration file link
+And I upload a file and click on Submit button
+Then I should see upload successful message
+And I should be navigated back to Registrations Page when i click on Back to registration button
+
