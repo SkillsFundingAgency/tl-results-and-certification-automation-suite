@@ -148,5 +148,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(timeInSec));
             wait.Until(WaitHelpers.ExpectedConditions.ElementIsVisible(by));
         }
+
+        public static void UploadFile(By by, string filename)
+        {
+            string filepath = AppDomain.CurrentDomain.BaseDirectory + "Data\\" + filename;
+            WebDriver.FindElement(by).SendKeys(filepath);
+        }
     }
 }

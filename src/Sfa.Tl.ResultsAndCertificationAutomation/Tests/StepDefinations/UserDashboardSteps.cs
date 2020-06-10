@@ -27,6 +27,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                 case "Provider":
                     DfESignInPage.SigninAsProvider();
                     break;
+                case "RegistrationEditor":
+                    DfESignInPage.SigninAsRegistrationEditor();
+                    break;
                 case "NoRoleNoService":
                     DfESignInPage.SigninAsNoRoleNoServiceUser();
                     break;
