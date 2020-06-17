@@ -177,7 +177,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return VerifyText(actual, expected);
         }
 
-        public static void WaitForPageLoad(IWebDriver webDriver, int waitinseconds)
+        public static void WaitForPageLoad(int waitinseconds)
         {
             Thread.Sleep(waitinseconds);
         }
@@ -200,6 +200,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return (driver) => { return driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant()); };
         }
 
+        [Obsolete]
         public static void WaitForUrl(string url)
         {
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(30));
