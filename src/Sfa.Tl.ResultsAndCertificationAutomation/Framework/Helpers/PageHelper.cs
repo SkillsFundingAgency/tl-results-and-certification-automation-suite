@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using OpenQA.Selenium;
@@ -205,6 +206,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.UrlMatches(url));
+        }
+
+        public static string GetLatestFile(string folder, string pattern)
+        {
+            var filename = Directory.GetFiles(folder, pattern).Select(fn=>new FileInfo(fn)).OrderByDescending(f=>f.CreationTimeUtc).FirstOrDefault().Name;
+            return filename;
         }
     }
 }
