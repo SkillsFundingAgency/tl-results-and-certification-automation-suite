@@ -19,3 +19,12 @@ And I upload a file and click on Submit button
 Then I should see upload successful message
 And I should be navigated back to Registrations Page when i click on Back to registration button
 
+@RegressionTest @Registrations
+Scenario: Stage2 Validations
+When I click on Registrations link on Home page
+And I click on Upload Registration file link
+And I upload Stage2 invalid datafile and click on submit
+And i click on Download Error flie
+Then I should see all validation errors in the file
+
+

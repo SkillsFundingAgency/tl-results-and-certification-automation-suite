@@ -24,10 +24,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By UserAccountLink = By.XPath("//a[contains(text(), 'Account')]");
         public static By CentresLink = By.XPath("//a[contains(text(), 'Providers')]");
         public static By TlevelLink = By.XPath("//a[@href='/tlevels']");
-        private By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
-        private static By PageTitle = By.TagName("h1");
-        private static string ManageCentresPageHeader = "Your T Levels";
-        private static By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookie-policy']");
+        private readonly By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
+        private static readonly By PageTitle = By.TagName("h1");
+        private static readonly string ManageCentresPageHeader = "Your T Levels";
+        private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookie-policy']");
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
 
         public void ViewUserAccount()
@@ -39,7 +39,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public void ManageCentres()
         {
             ClickElement(CentresLink);
-            PageHelper.WaitForPageLoad(WebDriver, 2);
+            PageHelper.WaitForPageLoad(2);
             Assert.AreEqual(WebDriver.FindElement(PageTitle).Text, ManageCentresPageHeader);
         }
 

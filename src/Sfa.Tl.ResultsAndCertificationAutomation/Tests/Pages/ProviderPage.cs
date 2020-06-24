@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class ProviderPage : ElementHelper
     {
-        private static By ProviderLink = By.XPath("//a[contains(text(),'Providers')]");
+        private static readonly By ProviderLink = By.XPath("//a[contains(text(),'Providers')]");
         public static string ProviderUrl => string.Concat(StartPage.StartPageUrl, "find-provider");
         public static string SubmitTlevel => string.Concat(StartPage.StartPageUrl, "submit-successful");
         public static string SelectProviderUrl => string.Concat(StartPage.StartPageUrl, "select-providers-tlevels");
@@ -33,21 +33,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string TlevelSuccessMsg = "T Level added successfully";
         public string TlevelsSuccessMsg = "T Levels added successfully";
         public string TlevelRemoved = "T Level removed successfully";
-        private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
-        private By SearchProvider = By.Id("search");
+        private readonly By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
+        private readonly By SearchProvider = By.Id("search");
         public static string SearchProviderTxt = "Derby College";
         public By PageHeader = By.TagName("h1");
         public By SelectProviderPageHeader = By.TagName("h2");
-        private readonly By Health = By.XPath("//*[contains(text(),'T Level in Health')]");
+        //private readonly By Health = By.XPath("//*[contains(text(),'T Level in Health')]");
         public readonly By Legal = By.XPath("//*[contains(text(),'T Level in Legal')]");
-        private readonly By Engineering = By.XPath("//*[contains(text(),'T Level in Engineering')]");
+        //private readonly By Engineering = By.XPath("//*[contains(text(),'T Level in Engineering')]");
         public readonly By Agriculture = By.XPath("//*[contains(text(),'T Level in Agriculture')]");
         public readonly By Education = By.XPath("//*[contains(text(),'T Level in Education')]");
-        private By TlevelSubmit = By.XPath("//button[contains (text(), 'Submit')]");
-        private By ManageProviderLink = By.XPath("//a[contains(text(),'Manage provider')]");
-        private static string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
+        private readonly By TlevelSubmit = By.XPath("//button[contains (text(), 'Submit')]");
+        private readonly By ManageProviderLink = By.XPath("//a[contains(text(),'Manage provider')]");
+        private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
         private const string SQLDeleteProviderTlevel = "Delete from TqProvider where TlProviderId In (select Id from TlProvider where Name='Derby College')";
-        private By RemoveTlevelLink = By.XPath("//a[contains(text(),'Remove')]");
+        private readonly By RemoveTlevelLink = By.XPath("//a[contains(text(),'Remove')]");
         public By RemoveTlevelYes = By.Id("canremovetlevel");
         public By RemoveTlevelNo = By.Id("tl-remove-no");
         public By PageContent = By.XPath("//*[@id='main-content']");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using OpenQA.Selenium;
@@ -177,7 +178,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return VerifyText(actual, expected);
         }
 
-        public static void WaitForPageLoad(IWebDriver webDriver, int waitinseconds)
+        public static void WaitForPageLoad(int waitinseconds)
         {
             Thread.Sleep(waitinseconds);
         }
@@ -200,10 +201,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return (driver) => { return driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant()); };
         }
 
+        [Obsolete]
         public static void WaitForUrl(string url)
         {
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.UrlMatches(url));
+        }
+
+        public static string GetLatestFile(string folder, string pattern)
+        {
+            var filename = Directory.GetFiles(folder, pattern).Select(fn=>new FileInfo(fn)).OrderByDescending(f=>f.CreationTimeUtc).FirstOrDefault().Name;
+            return filename;
         }
     }
 }
