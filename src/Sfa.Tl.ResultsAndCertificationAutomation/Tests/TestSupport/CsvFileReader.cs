@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public static void CsvDataFileCompare(string file)
         {
             CSVHelper read = new CSVHelper();
-            var actualErrors = read.Main(PageHelper.GetLatestFile(Folder, "*.csv"));
+            var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
             string Stage2Results = AppDomain.CurrentDomain.BaseDirectory + file;
             var expectedErrors = read.ExpectedData(Stage2Results);
 

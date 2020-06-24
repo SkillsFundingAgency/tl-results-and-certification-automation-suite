@@ -11,7 +11,7 @@ Scenario: Registration Dashboard Page
 When I click on Registrations link on Home page
 Then Registration page should open
 
-@RegressionTest @Registrations
+@Ignore @RegressionTest @Registrations
 Scenario: Upload Registration file
 When I click on Registrations link on Home page
 And I click on Upload Registration file link

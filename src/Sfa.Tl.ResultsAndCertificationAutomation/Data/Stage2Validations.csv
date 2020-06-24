@@ -26,7 +26,6 @@ Line,ULN,Error
 22,1111111131,Date of birth must be a valid date in DDMMYYYY format
 23,1111111231,Date of birth must be a valid date in DDMMYYYY format
 24,1111111331,Date of birth must be a valid date in DDMMYYYY format
-25,1111111132,Date of birth must be in the past
 26,1111111133,Start date must be a valid date in DDMMYYYY format
 27,1111111134,Start date must be a valid date in DDMMYYYY format
 28,1111111135,Duplicate ULN found
@@ -50,3 +49,4 @@ Line,ULN,Error
 35,1111111140,Start date must be a valid date in DDMMYYYY format
 9,1111111118,Provider not registered with awarding organisation
 13,1111111122,Provider not registered with awarding organisation
+25,1111111132,Provider not registered with awarding organisation
