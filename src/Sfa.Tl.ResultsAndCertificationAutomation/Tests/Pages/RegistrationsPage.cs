@@ -24,6 +24,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string UploadStage2File = "RegistrationsInvalidDataStage2.csv";
         public static string Stage2Errors = string.Concat("Data\\", "Stage2Validations.csv");
         public static By DownloadErrorLink = By.XPath("//a[contains(text(),'Download error report')]");
+        public static string UploadStage3File = "RegistrationsInvalidDataStage3.csv";
+        public static string Stage3Errors = string.Concat("Data\\", "Stage3ValidationErrors.csv");
 
         public static void ClickRegLink()
         {

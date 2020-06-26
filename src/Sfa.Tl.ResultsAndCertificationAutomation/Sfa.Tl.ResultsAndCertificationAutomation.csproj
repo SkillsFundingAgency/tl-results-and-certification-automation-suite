@@ -8,18 +8,26 @@
 
   <ItemGroup>
     <None Remove="Data\RegistrationsInvalidDataStage2.csv" />
+    <None Remove="Data\RegistrationsInvalidDataStage3.csv" />
     <None Remove="Data\RegistrationsValidData.csv" />
     <None Remove="Data\Stage2Validations.csv" />
+    <None Remove="Data\Stage3ValidationErrors.csv" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\RegistrationsInvalidDataStage2.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\RegistrationsInvalidDataStage3.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Data\RegistrationsValidData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Stage2Validations.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Stage3ValidationErrors.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

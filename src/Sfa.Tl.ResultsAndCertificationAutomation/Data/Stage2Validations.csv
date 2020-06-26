@@ -1,52 +1,37 @@
 Line,ULN,Error
 2,,ULN required
-3,1111111112,First name required
-4,1111111113,Last name required
-5,1111111114,Date of birth required
-6,1111111115,UKPRN required
-7,1111111116,Start date required
-8,1111111117,Core code required
-10,,ULN required
-11,,ULN required
-11,,First name required
-11,,Last name required
-11,,Date of birth required
-11,,UKPRN required
-11,,Start date required
-11,,Core code required
-12,1111111121,First name cannot have more than 100 characters
-14,1111111123,Last name cannot have more than 100 characters
-15,1111111124,Last name cannot have more than 100 characters
-16,123456789,ULN must be a 10 digit number
-17,,ULN must be a 10 digit number
-18,1111111127,Specialism code must have 8 characters only
-19,1111111128,Specialism code must have 8 characters only
-20,1111111129,Date of birth must be a valid date in DDMMYYYY format
-21,1111111130,Date of birth must be a valid date in DDMMYYYY format
-22,1111111131,Date of birth must be a valid date in DDMMYYYY format
-23,1111111231,Date of birth must be a valid date in DDMMYYYY format
-24,1111111331,Date of birth must be a valid date in DDMMYYYY format
-26,1111111133,Start date must be a valid date in DDMMYYYY format
-27,1111111134,Start date must be a valid date in DDMMYYYY format
-28,1111111135,Duplicate ULN found
-29,1111111135,Duplicate ULN found
-30,1111111135,Date of birth must be in the past
-30,1111111135,Start date must be a valid date in DDMMYYYY format
-30,1111111135,Duplicate ULN found
-31,1111111136,Core code must have 8 characters only
-32,1111111137,Core code must have 8 characters only
-33,1111111138,First name cannot have more than 100 characters
-33,1111111138,Last name cannot have more than 100 characters
-33,1111111138,UKPRN must be a 8 digit number
-33,1111111138,Start date must be a valid date in DDMMYYYY format
-34,1111111139,First name cannot have more than 100 characters
-34,1111111139,Last name cannot have more than 100 characters
-34,1111111139,UKPRN must be a 8 digit number
-34,1111111139,Start date must be a valid date in DDMMYYYY format
-35,1111111140,First name cannot have more than 100 characters
-35,1111111140,Last name cannot have more than 100 characters
-35,1111111140,UKPRN must be a 8 digit number
-35,1111111140,Start date must be a valid date in DDMMYYYY format
-9,1111111118,Provider not registered with awarding organisation
-13,1111111122,Provider not registered with awarding organisation
-25,1111111132,Provider not registered with awarding organisation
+2,,First name required
+2,,Last name required
+2,,Date of birth required
+2,,UKPRN required
+2,,Start date required
+2,,Core code required
+3,,ULN must be a 10 digit number
+3,,Date of birth must be a valid date in DDMMYYYY format
+3,,UKPRN must be a 8 digit number
+3,,Start date must be a valid date in DDMMYYYY format
+4,,ULN must be a 10 digit number
+4,,First name cannot have more than 100 characters
+4,,Last name cannot have more than 100 characters
+4,,Date of birth must be in the past
+4,,UKPRN must be a 8 digit number
+4,,Core code must have 8 characters only
+4,,Specialism code must have 8 characters only
+5,,ULN required
+5,,First name required
+5,,Last name required
+5,,Date of birth required
+5,,UKPRN required
+6,123,ULN must be a 10 digit number
+6,123,Date of birth must be a valid date in DDMMYYYY format
+6,123,UKPRN must be a 8 digit number
+6,123,Start date must be a valid date in DDMMYYYY format
+6,123,Core code must have 8 characters only
+6,123,Specialism code must have 8 characters only
+7,,ULN must be a 10 digit number
+7,,Date of birth must be a valid date in DDMMYYYY format
+7,,UKPRN must be a 8 digit number
+7,,Start date must be a valid date in DDMMYYYY format
+7,,Core code must have 8 characters only
+7,,Specialism code must have 8 characters only
+
