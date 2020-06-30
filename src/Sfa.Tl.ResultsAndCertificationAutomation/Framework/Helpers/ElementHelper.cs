@@ -151,7 +151,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void UploadFile(By by, string filename)
         {
-            string filepath = AppDomain.CurrentDomain.BaseDirectory + "Data\\" + filename;
+            string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{filename}";
             WebDriver.FindElement(by).SendKeys(filepath);
         }
     }

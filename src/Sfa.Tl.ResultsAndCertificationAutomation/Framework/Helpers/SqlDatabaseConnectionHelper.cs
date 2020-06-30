@@ -50,8 +50,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             }
             catch (Exception exception)
             {
-                throw new Exception("Exception occurred while executing SQL query"
-                    + "\n Exception: " + exception);
+                throw new Exception($"Exception occurred while executing SQL query\n Exception: {exception}");
             }
         }
 

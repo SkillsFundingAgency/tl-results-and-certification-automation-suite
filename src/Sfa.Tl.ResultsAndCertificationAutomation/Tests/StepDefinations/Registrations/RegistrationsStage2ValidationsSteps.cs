@@ -21,7 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             VerifyRegistrationUnSuccessPage();
             ClickElement(DownloadErrorLink);
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
         }
         
         [Then(@"I should see all validation errors in the file")]
