@@ -201,11 +201,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return (driver) => { return driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant()); };
         }
 
-        [Obsolete]
         public static void WaitForUrl(string url)
         {
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(30));
-            wait.Until(ExpectedConditions.UrlMatches(url));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlMatches(url));
         }
 
         public static string GetLatestFile(string folder, string pattern)

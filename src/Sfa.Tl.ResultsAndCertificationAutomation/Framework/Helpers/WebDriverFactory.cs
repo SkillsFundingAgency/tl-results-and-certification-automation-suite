@@ -41,8 +41,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 case var _ when browser == "IE":
                     return new InternetExplorerDriver();
                 case var _ when browser == "Chrome":
-                    var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArguments("--headless");
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArgument("--headless");
+                    chromeOptions.AddUserProfilePreference("download.default_directory", Config["DownloadFolder"]);
                     return new ChromeDriver(chromeOptions);
 
                 default:

@@ -10,13 +10,13 @@ Line,ULN,Error
 3,,Date of birth must be a valid date in DDMMYYYY format
 3,,UKPRN must be a 8 digit number
 3,,Start date must be a valid date in DDMMYYYY format
-4,,ULN must be a 10 digit number
-4,,First name cannot have more than 100 characters
-4,,Last name cannot have more than 100 characters
-4,,Date of birth must be in the past
-4,,UKPRN must be a 8 digit number
-4,,Core code must have 8 characters only
-4,,Specialism code must have 8 characters only
+4,12345678901,ULN must be a 10 digit number
+4,12345678901,First name cannot have more than 100 characters
+4,12345678901,Last name cannot have more than 100 characters
+4,12345678901,Date of birth must be in the past
+4,12345678901,UKPRN must be a 8 digit number
+4,12345678901,Core code must have 8 characters only
+4,12345678901,Specialism code must have 8 characters only
 5,,ULN required
 5,,First name required
 5,,Last name required
