@@ -186,11 +186,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static Func<IWebDriver, bool> UrlToBe(string url)
         {
-            return (driver) => { return driver.Url.ToLowerInvariant().Equals(url.ToLowerInvariant());};
+            return driver => driver.Url.ToLowerInvariant().Equals(url.ToLowerInvariant());
         }
         public static Func<IWebDriver, bool> UrlContains(string url)
         {
-            return (driver) => { return driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant()); };
+            return driver => driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant());
         }
 
         [Obsolete]
@@ -202,7 +202,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static string GetLatestFile(string folder, string pattern)
         {
-            var filename = Directory.GetFiles(folder, pattern).Select(fn=>new FileInfo(fn)).OrderByDescending(f=>f.CreationTimeUtc).FirstOrDefault().Name;
+            try
+            {
+                Console.WriteLine($"Download path:{folder}");
+                var fullPath = Path.GetFullPath(folder);
+                Console.WriteLine(fullPath);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            var filename = Directory.GetFiles(folder, pattern)
+                .Select(fn=>new FileInfo(fn))
+                .OrderByDescending(f=>f.CreationTimeUtc)
+                .FirstOrDefault()?
+                .Name;
             return filename;
         }
     }
