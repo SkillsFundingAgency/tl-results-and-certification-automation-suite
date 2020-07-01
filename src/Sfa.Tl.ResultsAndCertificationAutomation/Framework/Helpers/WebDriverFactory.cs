@@ -43,7 +43,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 case var _ when browser == "Chrome":
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.AddArgument("--headless");
-                    chromeOptions.AddUserProfilePreference("download.default_directory", Config["DownloadFolder"]);
+                    chromeOptions.AddUserProfilePreference("download.default_directory", FileHelper.GetDownloadFolder());
                     return new ChromeDriver(chromeOptions);
 
                 default:

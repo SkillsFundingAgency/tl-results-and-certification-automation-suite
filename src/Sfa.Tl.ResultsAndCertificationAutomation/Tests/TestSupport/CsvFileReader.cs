@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
 {
     class CsvFileReader
     {
-        private static string Folder => WebDriverFactory.Config["DownloadFolder"];
+        private static string Folder => FileHelper.GetDownloadFolder();
         public static void CsvDataFileCompare(string file)
         {
             CSVHelper read = new CSVHelper();
@@ -20,7 +20,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
             foreach (var expectedError in expectedErrors)
             {
                 var actualError = actualErrors.Skip(index).First();
-
                 Assert.AreEqual(actualError.LineNo, expectedError.LineNo);
                 Assert.AreEqual(actualError.UlnNo, expectedError.UlnNo);
                 Assert.AreEqual(actualError.ErrorMsg, expectedError.ErrorMsg);
