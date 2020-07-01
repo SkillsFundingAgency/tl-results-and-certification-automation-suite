@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 /src/Sfa.Tl.ResultsAndCertificationAutomation/appsettings.Debug.json
 /src/Sfa.Tl.ResultsAndCertificationAutomation/appsettings.Release.json
+*.ncrunchsolution
+*.ncrunchproject
