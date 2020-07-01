@@ -7,8 +7,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
     [Binding]
     public class RegistrationsStage3ValidaionsSteps : RegistrationsPage
     {
-        [When(@"I upload Stage(.*) invald datafile and click on submit")]
-        public void WhenIUploadStageInvaldDatafileAndClickOnSubmit(int p0)
+        [When(@"I upload Stage three invald datafile and click on submit")]
+        public void WhenIUploadStageInvaldDatafileAndClickOnSubmit()
         {
             VerifyRegistrationUploadPage();
             UploadFile(ChooseFile, UploadStage3File);

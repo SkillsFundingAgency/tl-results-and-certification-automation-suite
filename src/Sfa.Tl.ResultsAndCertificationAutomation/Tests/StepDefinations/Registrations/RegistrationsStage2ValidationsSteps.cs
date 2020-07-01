@@ -8,8 +8,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
     [Binding]
     public class RegistrationsStage2ValidationsSteps : RegistrationsPage
     {
-        [When(@"I upload Stage(.*) invalid datafile and click on submit")]
-        public void WhenIUploadStageInvalidDatafileAndClickOnSubmit(int p0)
+        [When(@"I upload stage two invalid file and click on submit")]
+        public void WhenIUploadStageTwoInvalidDatafileAndClickOnSubmit()
         {
             VerifyRegistrationUploadPage();
             UploadFile(ChooseFile, UploadStage2File);

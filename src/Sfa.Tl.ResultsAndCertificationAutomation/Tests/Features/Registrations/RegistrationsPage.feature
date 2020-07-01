@@ -23,7 +23,7 @@ And I should be navigated back to Registrations Page when i click on Back to reg
 Scenario: Stage2 Validations
 When I click on Registrations link on Home page
 And I click on Upload Registration file link
-And I upload Stage2 invalid datafile and click on submit
+And I upload stage two invalid file and click on submit
 And i click on Download Error flie
 Then I should see all validation errors in the file
 
@@ -31,6 +31,16 @@ Then I should see all validation errors in the file
 Scenario: Stage3 Validations
 When I click on Registrations link on Home page
 And I click on Upload Registration file link
-And I upload Stage3 invald datafile and click on submit
+And I upload Stage three invald datafile and click on submit
 And i click on Download Error flie
 Then I should see validation errors in the file
+
+@RegressionTest @Registrations
+Scenario: Stage4 Validations
+When I click on Registrations link on Home page
+And I click on Upload Registration file link
+And I upload Stage four invalid datafile and click on submit
+And i click on Download Error flie
+Then I should see all stage four validation errors in the file
+
+

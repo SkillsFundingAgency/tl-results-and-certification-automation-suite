@@ -12,7 +12,7 @@ namespace CSVReaderHelper
         public IEnumerable<CsvErrors> Main(string folder, string filename)
         {
             using var reader = new StreamReader($"{folder}{filename}");
-            using var csv = new CsvReader(reader,CultureInfo.InvariantCulture);
+            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
             csv.Configuration.HasHeaderRecord = true;
             var records = csv.GetRecords<CsvErrors>();
             return records.ToList();
