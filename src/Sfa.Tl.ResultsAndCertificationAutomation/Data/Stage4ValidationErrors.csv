@@ -1,3 +1,14 @@
 Line,ULN,Error
-3,1111111111,Date of birth must be a valid date in DDMMYYYY format
-2,1234567890,Provider not registered with awarding organisation
+13,1111111154,Duplicate ULN found
+14,1111111164,Date of birth must be in the past
+15,1111111154,Duplicate ULN found
+2,1111111112,Core not registered with provider
+4,1111111314,Core not registered with provider
+5,1111111315,Provider not registered with awarding organisation
+6,1111111316,Provider not registered with awarding organisation
+7,1111111115,Core not registered with provider
+8,1111111116,Provider not registered with awarding organisation
+9,1111111117,Provider not registered with awarding organisation
+10,1111111118,Provider not registered with awarding organisation
+11,1111111119,Provider not registered with awarding organisation
+12,1111111120,Provider not registered with awarding organisation

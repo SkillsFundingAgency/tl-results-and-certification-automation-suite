@@ -32,21 +32,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             try
             {
-                using (SqlConnection databaseConnection = new SqlConnection(connectionString))
-                {
-                    databaseConnection.Open();
-                    SqlCommand command = new SqlCommand(queryToExecute, databaseConnection);
-                    SqlDataReader dataReader = command.ExecuteReader();
+                using SqlConnection databaseConnection = new SqlConnection(connectionString);
+                databaseConnection.Open();
+                SqlCommand command = new SqlCommand(queryToExecute, databaseConnection);
+                SqlDataReader dataReader = command.ExecuteReader();
 
-                    List<object[]> result = new List<object[]>();
-                    while (dataReader.Read())
-                    {
-                        object[] items = new object[100];
-                        dataReader.GetValues(items);
-                        result.Add(items);
-                    }
-                    return result;
+                List<object[]> result = new List<object[]>();
+                while (dataReader.Read())
+                {
+                    object[] items = new object[100];
+                    dataReader.GetValues(items);
+                    result.Add(items);
                 }
+                return result;
             }
             catch (Exception exception)
             {

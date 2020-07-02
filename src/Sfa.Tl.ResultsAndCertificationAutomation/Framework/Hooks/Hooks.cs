@@ -26,26 +26,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         {
             WebDriver.Dispose();
         }
-
-        [Obsolete]
-        public static void TakeScreenshotOnFailure()
-        {
-            DateTime dateTime = DateTime.Now;
-            string featureTitle = FeatureContext.Current.FeatureInfo.Title;
-            string scenarioTitle = ScenarioContext.Current.ScenarioInfo.Title;
-            string failureImageName = $"{dateTime:HH-mm-ss}_{featureTitle}{scenarioTitle}.png";
-            string screenshotsDirectory =
-                $"{AppDomain.CurrentDomain.BaseDirectory}\\Project\\Screenshots\\{dateTime:dd-MM-yyyy}\\";
-            if (!Directory.Exists(screenshotsDirectory))
-            {
-                Directory.CreateDirectory(screenshotsDirectory);
-            }
-
-            _ = WebDriver as ITakesScreenshot;
-            Screenshot screenShot = ((ITakesScreenshot)WebDriver).GetScreenshot();
-            string screenShotPath = Path.Combine(screenshotsDirectory, failureImageName);
-            screenShot.SaveAsFile(screenShotPath, ScreenshotImageFormat.Png);
-            Console.WriteLine($"{scenarioTitle} -- Sceario failed and the screenshot is available at -- {screenShotPath}");
-        }
     }
 }
