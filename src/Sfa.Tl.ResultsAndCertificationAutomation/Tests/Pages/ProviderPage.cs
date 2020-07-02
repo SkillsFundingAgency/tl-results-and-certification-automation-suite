@@ -35,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public string TlevelRemoved = "T Level removed successfully";
         private readonly By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
         private readonly By SearchProvider = By.Id("search");
-        public static string SearchProviderTxt = "Derby College";
+        public static string SearchProviderTxt = "Automation Test1";
         public By PageHeader = By.TagName("h1");
         public By SelectProviderPageHeader = By.TagName("h2");
         //private readonly By Health = By.XPath("//*[contains(text(),'T Level in Health')]");
@@ -46,7 +46,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private readonly By TlevelSubmit = By.XPath("//button[contains (text(), 'Submit')]");
         private readonly By ManageProviderLink = By.XPath("//a[contains(text(),'Manage provider')]");
         private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
-        private const string SQLDeleteProviderTlevel = "Delete from TqProvider where TlProviderId In (select Id from TlProvider where Name='Derby College')";
+        private const string SQLDeleteProviderTlevel = "Delete from TqProvider where TlProviderId In (select Id from TlProvider where Name='Automation Test1')";
         private readonly By RemoveTlevelLink = By.XPath("//a[contains(text(),'Remove')]");
         public By RemoveTlevelYes = By.Id("canremovetlevel");
         public By RemoveTlevelNo = By.Id("tl-remove-no");
