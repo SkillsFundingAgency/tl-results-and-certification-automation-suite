@@ -20,7 +20,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             WebDriver.FindElement(StartNowButton).Click();
             WebDriver.FindElement(UserIdTxtBox).SendKeys(DfeInvalidUserName);
-            WebDriver.FindElement(PasswordTxtBox).SendKeys(DfeInvalidPassword);
+            WebDriver.FindElement(PasswordTxtBox).SendKeys(AOAppPassword);
         }
 
         [When(@"I clicked on sign in button")]

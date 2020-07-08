@@ -11,8 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string DfeSignInUrl;
         public static string DfeUserName;
         public static string DfePassword;
-        public static string DfeInvalidUserName;
-        public static string DfeInvalidPassword;
+        public static string DfeInvalidUserName = "test@tleveltest.com";
         public static string AOAdminUser = WebDriverFactory.Config["AOAdminUser"];
         public static string AOAllUser = WebDriverFactory.Config["AOAllUser"];
         public static string AORevProvUser = WebDriverFactory.Config["APRevProUser"];
