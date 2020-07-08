@@ -16,11 +16,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string TlevelDetails => string.Concat(StartPage.StartPageUrl, "tlevel-details");
         public static string ConfirmTlevel => string.Concat(StartPage.StartPageUrl, "confirm-tlevel");
         // Common Objects
-        private By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
-        private By TlevelsLink = By.XPath("//a[@href='/tlevels']");
+        private readonly By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
+        private readonly By TlevelsLink = By.XPath("//a[@href='/tlevels']");
         // Are these details correct page
-        private By EverythingCorrectRadioBtn = By.XPath("//input[@id='iseverythingcorrect']");
-        private By SomethingWrongRadoiBtn = By.XPath("//input[@id='tl-verify-no']");
+        private readonly By EverythingCorrectRadioBtn = By.XPath("//input[@id='iseverythingcorrect']");
+        private readonly By SomethingWrongRadoiBtn = By.XPath("//input[@id='tl-verify-no']");
         //Tlevel confirmation page
         public By PageTitle = By.TagName("h1");
         public const string TlevelConfirmantionMsg = "T Level details confirmed";
@@ -31,10 +31,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string TlevelDetailsPageHeader = "T Level details";
         public const string QueriedDetailsPageTitle = "Queried T Level Details page – Manage T Level results – GOV.UK";
         //View Tlevel details
-        private By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Query T Level details')]");
-        private By ReviewAnotherLink = By.XPath("//a[contains(text(),'Review another T Level')]");
-        private By ViewReviedLink = By.XPath("//a[contains(text(),'View reviewed T levels')]");
-        private By ViewConfirmedTlevelLink = By.XPath("//a[contains(@href,'tlevel-details')]");
+        private readonly By SomethingNotRightLink = By.XPath("//a[contains (text(), 'Query T Level details')]");
+        private readonly By ReviewAnotherLink = By.XPath("//a[contains(text(),'Review another T Level')]");
+        private readonly By ViewReviedLink = By.XPath("//a[contains(text(),'View reviewed T levels')]");
+        private readonly By ViewConfirmedTlevelLink = By.XPath("//a[contains(@href,'tlevel-details')]");
         public const string SelectTLevelPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
         public const string AreDetailsCorrectPageTitle = "Are these details correct page – Manage T Level results – GOV.UK";
         public const string VerifyTLevelPageTitle = "Your reviewed T Levels page – Manage T Level results – GOV.UK";
@@ -43,12 +43,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string SelectTLevelReviewPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
         public const string SelectTLevelReviewPageHeader = "Select a T Level to review";
         //Query Tlevel details
-        private By QueryDetails = By.Id("query");
+        private readonly By QueryDetails = By.Id("query");
         public By QuerySubmit = By.XPath("//button[contains (text(), 'Submit')]");
-        private static string QueryText = "Queried by Automation Tests";
+        private static readonly string QueryText = "Queried by Automation Tests";
         public const string TlevelQueryMsg = "T Level details queried";
         //Database Query
-        private static string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
+        private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
         private const string UpdateDBReview = "Update TqAwardingOrganisation set ReviewStatus=1 where TlAwardingOrganisatonId=1";
         public readonly By Health = By.XPath("//*[contains(text(),'T Level in Health and Science')]");
         public readonly By Legal = By.XPath("//*[contains(text(),'T Level in Legal')]");

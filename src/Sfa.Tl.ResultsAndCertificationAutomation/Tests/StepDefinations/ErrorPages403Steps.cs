@@ -9,21 +9,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class ErrorPages403Steps : TlevelDashboardPage
     {
-        private static string DfEUserName = WebDriverFactory.Config["AoNoRolesUser"];
-        private static string DfEPassword = WebDriverFactory.Config["AoNoRolePw"];
+        private static readonly string DfEUserName = WebDriverFactory.Config["AONoService"];
+        private static readonly string DfEPassword = WebDriverFactory.Config["AOPassword"];
 
         [Given(@"I login with No User account")]
         public void GivenILoginWithNoUserAccount()
         {
             WebDriver.Navigate().GoToUrl(StartPageUrl);
-            WebDriver.FindElement(DfESignInPage.StartNowButton).Click();
-            DfESignInPage.DfESignIn(DfEUserName, DfEPassword);
         }
 
         [When(@"I select Organisation and click on Continue button")]
         public void WhenISelectOrganisationAndClickOnContinuebutton()
         {
-            DfESignInPage.SelectOrganisation();
+            WebDriver.FindElement(DfESignInPage.StartNowButton).Click();
+            DfESignInPage.DfESignIn(DfEUserName, DfEPassword);
         }
 
         [Then(@"I should see access denied error")]
