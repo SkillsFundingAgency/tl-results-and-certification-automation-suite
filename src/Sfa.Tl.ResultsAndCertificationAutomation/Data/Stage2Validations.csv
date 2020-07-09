@@ -34,4 +34,4 @@ Line,ULN,Error
 7,,Registration date must be a valid date in DDMMYYYY format
 7,,Core code must have 8 characters only
 7,,Specialism code must have 8 characters only
-
+8,1111111112,Cannot have duplicate specialism codes for one registration
