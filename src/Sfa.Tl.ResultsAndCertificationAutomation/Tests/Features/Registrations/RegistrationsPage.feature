@@ -11,7 +11,7 @@ Scenario: Registration Dashboard Page
 When I click on Registrations link on Home page
 Then Registration page should open
 
-@RegressionTest @Registrations
+@Ignore @RegressionTest @Registrations
 Scenario: Upload Registration file
 When I click on Registrations link on Home page
 And I click on Upload Registration file link
@@ -23,8 +23,24 @@ And I should be navigated back to Registrations Page when i click on Back to reg
 Scenario: Stage2 Validations
 When I click on Registrations link on Home page
 And I click on Upload Registration file link
-And I upload Stage2 invalid datafile and click on submit
+And I upload stage two invalid file and click on submit
 And i click on Download Error flie
 Then I should see all validation errors in the file
+
+@RegressionTest @Registrations
+Scenario: Stage3 Validations
+When I click on Registrations link on Home page
+And I click on Upload Registration file link
+And I upload Stage three invald datafile and click on submit
+And i click on Download Error flie
+Then I should see validation errors in the file
+
+@RegressionTest @Registrations
+Scenario: Stage4 Validations
+When I click on Registrations link on Home page
+And I click on Upload Registration file link
+And I upload Stage four invalid datafile and click on submit
+And i click on Download Error flie
+Then I should see all stage four validation errors in the file
 
 

@@ -124,9 +124,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 return true;
             }
 
-            throw new Exception("Page URL verification failed:"
-                                + "\n Expected URL: " + expected
-                                + "\n Found URL: " + actual);
+            throw new Exception($"Page URL verification failed:\n Expected URL: {expected}\n Found URL: {actual}");
         }
 
         public static Boolean VerifyLinkIsPresent(By locator, String expected)
@@ -137,9 +135,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 return true;
             }
 
-            throw new Exception("The following link was not found: "
-                                + "\n Expected: " + expected
-                                + "\n Found: " + actual);
+            throw new Exception($"The following link was not found: \n Expected: {expected}\n Found: {actual}");
         }
 
         public static bool VerifyPageHeading(String actual, String expected)
@@ -149,9 +145,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 return true;
             }
 
-            throw new Exception("Page verification failed:"
-                                + "\n Expected page: " + expected
-                                + "\n Found page: " + actual);
+            throw new Exception($"Page verification failed:\n Expected page: {expected}\n Found page: {actual}");
         }
 
         public static bool VerifyText(String actual, String expected)
@@ -161,9 +155,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 return true;
             }
 
-            throw new Exception("Text verification failed: "
-                                + "\n Expected: " + expected
-                                + "\n Found: " + actual);
+            throw new Exception($"Text verification failed: \n Expected: {expected}\n Found: {actual}");
         }
 
         public static bool VerifyText(By locator, int expected)
@@ -178,9 +170,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return VerifyText(actual, expected);
         }
 
-        public static void WaitForPageLoad(int waitinseconds)
+        public static void WaitForPageLoad(int waitInSeconds)
         {
-            Thread.Sleep(waitinseconds);
+            Thread.Sleep(waitInSeconds);
         }
 
         public void WaitForElementPresentAndEnabled(By locator, int secondsToWait = 10)
@@ -194,23 +186,38 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static Func<IWebDriver, bool> UrlToBe(string url)
         {
-            return (driver) => { return driver.Url.ToLowerInvariant().Equals(url.ToLowerInvariant());};
+            return driver => driver.Url.ToLowerInvariant().Equals(url.ToLowerInvariant());
         }
         public static Func<IWebDriver, bool> UrlContains(string url)
         {
-            return (driver) => { return driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant()); };
+            return driver => driver.Url.ToLowerInvariant().Contains(url.ToLowerInvariant());
         }
 
-        [Obsolete]
         public static void WaitForUrl(string url)
         {
             WebDriverWait wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(30));
-            wait.Until(ExpectedConditions.UrlMatches(url));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlMatches(url));
         }
 
         public static string GetLatestFile(string folder, string pattern)
         {
-            var filename = Directory.GetFiles(folder, pattern).Select(fn=>new FileInfo(fn)).OrderByDescending(f=>f.CreationTimeUtc).FirstOrDefault().Name;
+            try
+            {
+                Console.WriteLine($"Download path:{folder}");
+                var fullPath = Path.GetFullPath(folder);
+                Console.WriteLine(fullPath);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            var filename = Directory.GetFiles(folder, pattern)
+                .Select(fn=>new FileInfo(fn))
+                .OrderByDescending(f=>f.CreationTimeUtc)
+                .FirstOrDefault()?
+                .Name;
             return filename;
         }
     }

@@ -13,7 +13,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.ObjectRepository
         }
 
         public static string DfESigninUrl => ConfigurationManager.AppSettings["DfESignInUrl"];
-        //public static string DfEExpectedUrl => ConfigurationManager.AppSettings["TLevelHomePageUrl"];
 
         public static string DfEUserName => ConfigurationManager.AppSettings["DfEUserName"];
         public static string DfEPassword => ConfigurationManager.AppSettings["DfEPassword"];

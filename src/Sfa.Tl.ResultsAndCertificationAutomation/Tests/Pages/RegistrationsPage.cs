@@ -7,13 +7,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class RegistrationsPage : ElementHelper
     {
-        private static By RegistrationLink = By.XPath("//a[contains(text(),'Registrations')]");
+        private static readonly By RegistrationLink = By.XPath("//a[contains(text(),'Registrations')]");
         private static string RestrationUrl => string.Concat(StartPage.StartPageUrl, "registrations");
         public static By UploadRegistationLink = By.XPath("//a[contains(text(),'Upload registrations')]");
         private static string UploadRegistrationUrl => string.Concat(StartPage.StartPageUrl, "upload-registrations-file");
         public static By SearchRegistrationLink = By.XPath("//a[contains(text(),'Search for a registration')]");
         public static By AddRegistrationLink = By.XPath("//a[contains(text(),'Add a new registration')]");
-        private static By PageHeader = By.TagName("h1");
+        private static readonly By PageHeader = By.TagName("h1");
         //upload Registrations
         public static By ChooseFile = By.Id("file");
         public static By SubmitFileBtn = By.XPath("//button[contains(text(),'Submit')]");
@@ -24,6 +24,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string UploadStage2File = "RegistrationsInvalidDataStage2.csv";
         public static string Stage2Errors = string.Concat("Data\\", "Stage2Validations.csv");
         public static By DownloadErrorLink = By.XPath("//a[contains(text(),'Download error report')]");
+        public static string UploadStage3File = "RegistrationsInvalidDataStage3.csv";
+        public static string Stage3Errors = string.Concat("Data\\", "Stage3ValidationErrors.csv");
+        public static string UploadStage4File = "RegistrationsInvalidDataStage4.csv";
+        public static string Stage4Errors = string.Concat("Data\\", "Stage4ValidationErrors.csv");
 
         public static void ClickRegLink()
         {
