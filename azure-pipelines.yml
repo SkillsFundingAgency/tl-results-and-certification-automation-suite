@@ -3,7 +3,10 @@ resources:
     - repository: self
       persistCredentials: true
       clean: true
-
+    - repository: RESAC
+      type: github
+      endpoint: SkillsFundingAgency
+      name: SkillsFundingAgency/tl-results-and-certification
 trigger:
   batch: true
   branches:
