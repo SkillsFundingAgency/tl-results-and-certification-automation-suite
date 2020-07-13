@@ -5,7 +5,7 @@ resources:
       clean: true
     - repository: RESAC
       type: github
-      endpoint: SkillsFundingAgency
+      endpoint: S126-Tlevelservice
       name: SkillsFundingAgency/tl-results-and-certification
 trigger:
   batch: true
