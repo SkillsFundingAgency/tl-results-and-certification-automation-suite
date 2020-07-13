@@ -24,7 +24,7 @@ stages:
         displayName: Build
         pool:
           name: 'Azure Pipelines'
-          vmImage: 'vs2019'
+          vmImage: 'windows-2019'
         workspace:
           clean: all
         steps:
