@@ -83,7 +83,7 @@ stages:
               pathtoPublish: '$(build.artifactstagingdirectory)'
 
       - job: buildSqlJob
-        displayName: Build App Job
+        displayName: Build SQL Job
         pool:
           name: 'Azure Pipelines'
           vmImage: 'windows-2019'
@@ -93,7 +93,7 @@ stages:
           - task: VSBuild@1
             displayName: 'Build DACPAC'
             inputs:
-              solution: '.tl-results-and-certification/src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
+              solution: './tl-results-and-certification/src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
               platform: '$(buildPlatform)'
               configuration: '$(buildConfiguration)'
               msbuildArgs: '/p:PackageLocation="$(build.artifactstagingdirectory)/publish"'
