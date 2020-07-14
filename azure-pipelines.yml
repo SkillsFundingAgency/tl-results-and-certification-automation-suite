@@ -31,6 +31,7 @@ stages:
         workspace:
           clean: all
         steps:
+          - checkout: self        
           - task: gittools.gitversion.gitversion-task.GitVersion@5
             displayName: GitVersion
           
@@ -90,6 +91,7 @@ stages:
         workspace:
           clean: all
         steps:
+          - checkout: RESAC
           - task: PowerShell@2
             inputs:
               targetType: 'inline'
@@ -98,7 +100,7 @@ stages:
           - task: VSBuild@1
             displayName: 'Build DACPAC'
             inputs:
-              solution: './src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
+              solution: './tl-results-and-certification/src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
               platform: '$(buildPlatform)'
               configuration: '$(buildConfiguration)'
               msbuildArgs: '/p:PackageLocation="$(build.artifactstagingdirectory)/publish"'
