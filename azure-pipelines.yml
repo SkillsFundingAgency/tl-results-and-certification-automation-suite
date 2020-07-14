@@ -90,6 +90,9 @@ stages:
         workspace:
           clean: all
         steps:
+          - task: CmdLine@2
+            inputs:
+              script: 'dir'
           - task: VSBuild@1
             displayName: 'Build DACPAC'
             inputs:
