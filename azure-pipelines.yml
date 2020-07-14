@@ -96,7 +96,7 @@ stages:
           - task: VSBuild@1
             displayName: 'Build DACPAC'
             inputs:
-              solution: './tl-results-and-certification/src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
+              solution: './src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
               platform: '$(buildPlatform)'
               configuration: '$(buildConfiguration)'
               msbuildArgs: '/p:PackageLocation="$(build.artifactstagingdirectory)/publish"'
