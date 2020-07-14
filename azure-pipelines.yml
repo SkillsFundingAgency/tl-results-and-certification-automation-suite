@@ -31,16 +31,17 @@ stages:
         workspace:
           clean: all
         steps:
-          - checkout: self        
+          - checkout: self
+          
           - task: gittools.gitversion.gitversion-task.GitVersion@5
             displayName: GitVersion
           
-          - task: UseDotNet@2
-            displayName: 'Use .NET Core SDK 3.1.100'
-            inputs:
-              packageType: sdk
-              version: 3.1.100
-              installationPath: $(Agent.ToolsDirectory)/dotnet
+          # - task: UseDotNet@2
+          #   displayName: 'Use .NET Core SDK 3.1.100'
+          #   inputs:
+          #     packageType: sdk
+          #     version: 3.1.100
+          #     installationPath: $(Agent.ToolsDirectory)/dotnet
           - task: DotNetCoreCLI@2
             displayName: dotnet restore
             inputs:
@@ -91,11 +92,7 @@ stages:
         workspace:
           clean: all
         steps:
-          - checkout: RESAC
-          - task: PowerShell@2
-            inputs:
-              targetType: 'inline'
-              script: 'Get-ChildItem -Recurse'
+          - checkout: RESAC          
             
           - task: VSBuild@1
             displayName: 'Build DACPAC'
@@ -115,3 +112,36 @@ stages:
             displayName: 'Publish Artifact'
             inputs:
               pathtoPublish: '$(build.artifactstagingdirectory)'
+  - stage: Dev
+    displayName: Test Dev
+    dependsOn:
+      buildstage
+    jobs:
+      - job: testDev
+        steps:
+          - task: PowerShell@2
+            inputs:
+              targetType: 'inline'
+              script: 'Get-ChildItem -Recurse'
+
+          # - task: Tokenization@2
+          #   displayName: 'Tokenization: Transform file *.json'
+          #   inputs:
+          #     SourcePath: '$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/tests'
+          #     TargetFileNames: '*.json'
+
+          # - task: VSTest@2
+          #   displayName: 'VsTest - Test Execution'
+          #   inputs:
+          #     testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+          #     searchFolder: '$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+          #     runInParallel: false
+          #     rerunFailedTests: true
+          #   continueOnError: true
+          
+          # - task: PowerShell@2
+          #   displayName: 'Check .trx File Exists'
+          #   inputs:
+          #     targetType: filePath
+          #     filePath: './$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+          #     arguments: '-SourcePath "$(Agent.TempDirectory)/TestResults"'
