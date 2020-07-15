@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Data\RegistrationsInvalidDataStage2.csv" />
     <None Remove="Data\RegistrationsInvalidDataStage3.csv" />
@@ -15,7 +13,6 @@
     <None Remove="Data\Stage3ValidationErrors.csv" />
     <None Remove="Data\Stage4ValidationErrors.csv" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Data\RegistrationsInvalidDataStage2.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -39,7 +36,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
@@ -61,11 +57,9 @@
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.3.30" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\CSVReaderHelper\CSVReaderHelper.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="appsettings.Debug.json">
       <IsTransformFile>true</IsTransformFile>
@@ -83,5 +77,10 @@
       <TransformOnBuild>true</TransformOnBuild>
     </None>
   </ItemGroup>
-
-</Project>
+  <ItemGroup>
+    <Folder Include="Framework\StoredProcedure\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+ </Project>
