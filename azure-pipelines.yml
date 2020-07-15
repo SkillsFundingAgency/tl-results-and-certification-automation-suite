@@ -116,8 +116,8 @@ stages:
               ArtifactName: 'drop'
               publishLocation: 'Container'
           
-  - stage: Dev
-    displayName: Test Dev
+  - stage: Test
+    displayName: Test Test
     dependsOn:
       buildstage
     jobs:
@@ -130,7 +130,7 @@ stages:
               artifactName: 'drop'
               downloadPath: '$(System.ArtifactsDirectory)'
               
-      - job: testDev
+      - job: testTest
         steps:
           - task: PowerShell@2
             inputs:
