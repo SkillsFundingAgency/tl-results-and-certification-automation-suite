@@ -108,15 +108,28 @@ stages:
                 src\**\*.dacpac
               TargetFolder: '$(build.artifactstagingdirectory)'
               OverWrite: true
+          
           - task: PublishBuildArtifacts@1
             displayName: 'Publish Artifact'
             inputs:
-              pathtoPublish: '$(build.artifactstagingdirectory)'
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
+          
   - stage: Dev
     displayName: Test Dev
     dependsOn:
       buildstage
     jobs:
+      - job: downloadArtifacts
+        steps:
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'drop'
+              downloadPath: '$(System.ArtifactsDirectory)'
+              
       - job: testDev
         steps:
           - task: PowerShell@2
