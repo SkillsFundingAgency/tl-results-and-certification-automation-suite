@@ -79,10 +79,13 @@ stages:
                 src/**/*.ps1
               TargetFolder: '$(build.artifactstagingdirectory)'
               OverWrite: true
+
           - task: PublishBuildArtifacts@1
             displayName: 'Publish Artifact'
             inputs:
-              pathtoPublish: '$(build.artifactstagingdirectory)'
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'appdrop'
+              publishLocation: 'Container'
 
       - job: buildSqlJob
         displayName: Build SQL Job
@@ -113,7 +116,7 @@ stages:
             displayName: 'Publish Artifact'
             inputs:
               PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'drop'
+              ArtifactName: 'sqldrop'
               publishLocation: 'Container'
           
   - stage: Test
@@ -127,18 +130,20 @@ stages:
             inputs:
               buildType: 'current'
               downloadType: 'single'
-              artifactName: 'drop'
+              artifactName: 'appdrop'
               downloadPath: '$(System.ArtifactsDirectory)'
-          - task: PowerShell@2
+          - task: DownloadBuildArtifacts@0
             inputs:
-              targetType: 'inline'
-              script: 'Get-ChildItem -Recurse'
-
-          # - task: Tokenization@2
-          #   displayName: 'Tokenization: Transform file *.json'
-          #   inputs:
-          #     SourcePath: '$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/tests'
-          #     TargetFileNames: '*.json'
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'sqldrop'
+              downloadPath: '$(System.ArtifactsDirectory)'
+          
+          - task: Tokenization@2
+            displayName: 'Tokenization: Transform file *.json'
+            inputs:
+              SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
+              TargetFileNames: '*.json'
 
           # - task: VSTest@2
           #   displayName: 'VsTest - Test Execution'
