@@ -6,14 +6,21 @@
 Background:
 Given I have logged in as a "RegistrationEditor" user
 
-@SmokeTest
+@RegressionTest @ManaulRegistration
 Scenario: Verify Registration Learners Page
 When I click on Add a new registration link
-And I entered valid Uln and Click on Continue button
-Then I should see Learners page
+And I enter <Uln> and click Continue button
+Then I should see Learners Page
+Examples: 
+| Uln        |
+| 9700000001 |
 
-@SmokeTest
+@RegressionTest @ManaulRegistration
 Scenario: Verify Registration Learners Error Page
 When I click on Add a new registration link
-And click on continue button on Learner page
+And I enter <Uln> and click Continue button
+And I click on Coninue button in Learners Page
 Then should see error in Learners page
+Examples: 
+| Uln        |
+| 9700000001 |

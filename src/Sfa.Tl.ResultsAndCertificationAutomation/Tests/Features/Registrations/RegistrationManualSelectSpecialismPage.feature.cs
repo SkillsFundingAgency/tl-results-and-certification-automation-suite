@@ -20,22 +20,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.3.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("RegistrationManualLearnersPage")]
-    public partial class RegistrationManualLearnersPageFeature
+    [NUnit.Framework.DescriptionAttribute("RegistrationManualSelectSpecialismPage")]
+    public partial class RegistrationManualSelectSpecialismPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "RegistrationManualLearnersPage.feature"
+#line 1 "RegistrationManualSelectSpecialismPage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RegistrationManualLearnersPage", "\tAs a Registrations Editor\r\n\tI need to be able to add single registration data fo" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RegistrationManualSelectSpecialismPage", "\tAs a Registrations Editor\r\n\tI need to be able to add single registration data fo" +
                     "r a student\r\n\tSo that I can have the option to upload in bulk or not", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -84,11 +84,11 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Registration Learners Page")]
+        [NUnit.Framework.DescriptionAttribute("Verify Registration Select Specialism Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", null)]
-        public virtual void VerifyRegistrationLearnersPage(string uln, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        public virtual void VerifyRegistrationSelectSpecialismPage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
@@ -100,7 +100,9 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Uln", uln);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Registration Learners Page", null, tagsOfScenario, argumentsOfScenario);
+            argumentsOfScenario.Add("First Name", firstName);
+            argumentsOfScenario.Add("Last Name", lastName);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Registration Select Specialism Page", null, tagsOfScenario, argumentsOfScenario);
 #line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -131,18 +133,33 @@ testRunner.When("I click on Add a new registration link", ((string)(null)), ((Te
 testRunner.And(string.Format("I enter {0} and click Continue button", uln), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
-testRunner.Then("I should see Learners Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And(string.Format("I enter {0} {1} in learners page and click Contiune", firstName, lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+testRunner.And("I enter Date of Birth in DOB page and click continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+testRunner.And("I select Provider and click Contiune button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+testRunner.And("I select Core and click Continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+testRunner.And("I select Decided Yes option and click Continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+testRunner.Then("I should see Select Specialism Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Registration Learners Error Page")]
+        [NUnit.Framework.DescriptionAttribute("Verify Registration Select Specialism Error Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", null)]
-        public virtual void VerifyRegistrationLearnersErrorPage(string uln, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        public virtual void VerifyRegistrationSelectSpecialismErrorPage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
@@ -154,8 +171,10 @@ testRunner.Then("I should see Learners Page", ((string)(null)), ((TechTalk.SpecF
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Uln", uln);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Registration Learners Error Page", null, tagsOfScenario, argumentsOfScenario);
-#line 19
+            argumentsOfScenario.Add("First Name", firstName);
+            argumentsOfScenario.Add("Last Name", lastName);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Registration Select Specialism Error Page", null, tagsOfScenario, argumentsOfScenario);
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -178,17 +197,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 20
+#line 25
 testRunner.When("I click on Add a new registration link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 21
+#line 26
 testRunner.And(string.Format("I enter {0} and click Continue button", uln), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 22
-testRunner.And("I click on Coninue button in Learners Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+testRunner.And(string.Format("I enter {0} {1} in learners page and click Contiune", firstName, lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
-testRunner.Then("should see error in Learners page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+testRunner.And("I enter Date of Birth in DOB page and click continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
+testRunner.And("I select Provider and click Contiune button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+testRunner.And("I select Core and click Continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+testRunner.And("I select Decided Yes option and click Continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+testRunner.And("I click Continue without selecting Specialism", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 33
+testRunner.Then("I should see Error in the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -16,39 +16,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
         private static By UlnInput { get; } = By.Id("uln");
         private static readonly string UlnPageHeader = "Enter the Unique Learner Number (ULN)";
-        public const string UlnNo = "9700000001";
         //Learner Name Page
         private static string LearnerNameUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learners-name");
         private static readonly string LearnerPageHeader = "Enter the learner's name";
         private static By FirstName { get; } = By.Id("firstname");
         private static By LastName { get; } = By.Id("lastname");
-        private const string InputFirstName = "FirstName1";
-        private const string InputLastName = "LastName1";
         //DOB Page
         private static string DobPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-date-of-birth");
         private static readonly string DobPageHeader = "Enter the learner's date of birth";
-        private static By Day { get; } = By.Id("day");
-        private static By Month { get; } = By.Id("month");
-        private static By Year { get; } = By.Id("year");
-        private const string InputDay = "1";
-        private const string InputMonth = "1";
-        private const string InputYear = "2010";
-
+        private static By Day { get; } = By.Name("Day");
+        private static By Month { get; } = By.Name("Month");
+        private static By Year { get; } = By.Name("Year");
         //Select Provider Page
         private static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
         private static readonly string ProviderHeader = "Select the provider";
         private static By SelectProvider { get; } = By.Id("selectedproviderid");
-        private const string InputPovider = "Automation Test2(90000002)";
+        public const string InputPovider = "Automation Test2 (90000002)";
         //Select Core Page
         private static string CorePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-core");
         private static readonly string CoreHeader = "Select the core";
         private static By SelectCore { get; } = By.Id("selectedcoreid");
-        private const string InputCore = "Legal, Finance and Accounting(55555555)";
+        public const string InputCore = "Legal, Finance and Accounting (55555555)";
         //Specialism Page
         private static string SpecialismDecidePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learner-decided-specialism-question");
         private static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
-        private static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
-        private static By DecideNo { get; } = By.Id("specialismdecided-no");
+        public static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
+        public static By DecideNo { get; } = By.Id("specialismdecided-no");
+        private static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialism");
+        public static By SelectSpecialism = By.XPath("//label[contains(text(),'Legal')]");
 
         public static void AddNewRegistrations()
         {
@@ -98,32 +93,33 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(Constants.SpecialismDecideTitle, WebDriver.Title);
             Assert.AreEqual(SpecialismDecideHeader, WebDriver.FindElement(PageHeader).Text);
         }
+        public static void VerifySpecialismPage()
+        {
+            Assert.AreEqual(SpecialismSelectPageUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.SelectSpecialismTitle, WebDriver.Title);
+        }
         public static void SelectProviderFromList(string provider)
         {
-            IWebElement providerSelect = WebDriver.FindElement(By.Id("selectedproviderid"));
-            SelectElement selectElement = new SelectElement(providerSelect);
-            selectElement.SelectByText(provider);
+            SelectFromDropDownByText(SelectProvider, provider);
         }
-        public static void EnterUln()
+        public static void EnterUln(string uln)
         {
-            WebDriver.FindElement(UlnInput).SendKeys(UlnNo);
+            WebDriver.FindElement(UlnInput).SendKeys(uln);
         }
-        public static void EnterLearnerName()
+        public static void EnterLearnerName(string First, string Last)
         {
-            WebDriver.FindElement(FirstName).SendKeys(InputFirstName);
-            WebDriver.FindElement(LastName).SendKeys(InputLastName);
+            WebDriver.FindElement(FirstName).SendKeys(First);
+            WebDriver.FindElement(LastName).SendKeys(Last);
         }
-        public static void EnterDob()
+        public static void EnterDob(string day, string month,string year)
         {
-            WebDriver.FindElement(Day).SendKeys(InputDay);
-            WebDriver.FindElement(Month).SendKeys(InputMonth);
-            WebDriver.FindElement(Year).SendKeys(InputYear);
+            WebDriver.FindElement(Day).SendKeys(day);
+            WebDriver.FindElement(Month).SendKeys(month);
+            WebDriver.FindElement(Year).SendKeys(year);
         }
         public static void SelectCoreFromList(string coreName)
         {
-            IWebElement coreSelect = WebDriver.FindElement(SelectProvider);
-            SelectElement selectElement = new SelectElement(coreSelect);
-            selectElement.SelectByText(coreName);
+            SelectFromDropDownByText(SelectCore, coreName);
         }
     }
 }

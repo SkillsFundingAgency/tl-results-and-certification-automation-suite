@@ -59,6 +59,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string SelectCoreErrorTitle = "Error: Add a new registration - Select the core page – Manage T Level results – GOV.UK";
         public const string SpecialismDecideTitle = "Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
         public const string SpecialismDecideErrorTitle = "Error: Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismTitle = "Add a new registration - Select the specialism page – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismErrorTitle = "Error: Add a new registration - Select the specialism page – Manage T Level results – GOV.UK";
         //Csv Errors
         public const string LineNo = "Line";
         public const string UlnNo = "ULN";

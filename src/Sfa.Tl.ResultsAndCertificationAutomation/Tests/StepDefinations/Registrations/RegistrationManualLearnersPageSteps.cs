@@ -6,14 +6,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
     [Binding]
     public class RegistrationManualLearnersPageSteps : RegistrationsManualPage
     {
-        [When(@"I entered valid Uln and Click on Continue button")]
-        public void WhenIEnteredValidUlnAndClickOnContinueButton()
+        [When(@"I enter (.*) and click Continue button")]
+        public void WhenIEnterAndClickContinueButton(string p0)
         {
-            EnterUln();
+            EnterUln(p0);
             ClickContiune();
         }
         
-        [Then(@"I should see Learners page")]
+        [Then(@"I should see Learners Page")]
         public void ThenIShouldSeeLearnersPage()
         {
             VerifyLearnersPage();

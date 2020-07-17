@@ -8,11 +8,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
     [Binding]
     public class RegistrationManualLearnersErrorPageSteps : RegistrationsManualPage
     {
-        [When(@"click on continue button on Learner page")]
-        public void WhenClickOnContinueButtonOnLearnerPage()
+        [When(@"I click on Coninue button in Learners Page")]
+        public void WhenIClickOnConinueButtonInLearnersPage()
         {
-            EnterUln();
-            ClickContiune();
             ClickContiune();
         }
         
