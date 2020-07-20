@@ -45,22 +45,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public void ManageTlevels()
         {
-            //WebDriver.FindElement(TlevelLink).Click();
             ClickElement(TlevelLink);
             PageHelper.VerifyPageUrl(WebDriver.Url, TlevelPageUrl);
         }
 
         public void SignoutFromMenu()
         {
-            //WebDriver.FindElement(MenuBtn).Click();
             ClickElement(MenuBtn);
-            //WebDriver.FindElement(SignOutLink).Click();
             ClickElement(SignOutLink);
         }
 
         public void CheckServiceBannerLink()
         {
-            //WebDriver.FindElement(DashboardHeadLink).Click();
             ClickElement(DashboardHeadLink);
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
         }

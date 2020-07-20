@@ -1,26 +1,21 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class DfESignInPage : Hooks
     {
-        public static string DfeSignInUrl;
-        public static string DfeUserName;
-        public static string DfePassword;
-        public static string DfeInvalidUserName = "test@tleveltest.com";
-        public static string AOAdminUser = WebDriverFactory.Config["AOAdminUser"];
-        public static string AOAllUser = WebDriverFactory.Config["AOAllUser"];
-        public static string AORevProvUser = WebDriverFactory.Config["APRevProUser"];
-        public static string AOReviewerUser = WebDriverFactory.Config["AOReviewer"];
-        public static string AOProviderUser = WebDriverFactory.Config["AOProviderEditor"];
-        public static string AORegistrationUser = WebDriverFactory.Config["AORegistrationEditor"];
-        public static string AONoRoleUser = WebDriverFactory.Config["AONoRole"];
-        public static string AONoServiceUser = WebDriverFactory.Config["AONoService"];
-        public static string AOAppPassword = WebDriverFactory.Config["AOPassword"];
+        public static readonly string DfeInvalidUserName = "test@tleveltest.com";
+        private static readonly string AOAdminUser = WebDriverFactory.Config["AOAdminUser"];
+        private static readonly string AOAllUser = WebDriverFactory.Config["AOAllUser"];
+        private static readonly string AORevProvUser = WebDriverFactory.Config["APRevProUser"];
+        private static readonly string AOReviewerUser = WebDriverFactory.Config["AOReviewer"];
+        private static readonly string AOProviderUser = WebDriverFactory.Config["AOProviderEditor"];
+        private static readonly string AORegistrationUser = WebDriverFactory.Config["AORegistrationEditor"];
+        private static readonly string AONoRoleUser = WebDriverFactory.Config["AONoRole"];
+        private static readonly string AONoServiceUser = WebDriverFactory.Config["AONoService"];
+        public static readonly string AOAppPassword = WebDriverFactory.Config["AOPassword"];
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "home");
         public static readonly By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
         public const string SigninError = "Information missing or incorrect";
@@ -78,12 +73,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void SigninAsProvider()
         {
-            WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
-            WebDriver.FindElement(by: StartNowButton).Click();
-            WebDriver.FindElement(UserIdTxtBox).SendKeys(AOProviderUser);
-            WebDriver.FindElement(PasswordTxtBox).SendKeys(AOAppPassword);
-            WebDriver.FindElement(SignInButton).Click();
-            PageHelper.WaitForUrl(DashboardUrl);
+            TLevelSignIn(AOProviderUser, AOAppPassword);
         }
         public static void SigninAsRegistrationEditor()
         {
@@ -92,6 +82,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void SigninAsNoRoleNoServiceUser()
         {
             TLevelSignIn(AONoRoleUser, AOAppPassword);
+        }
+        public static void SigninAsNoServiceUser()
+        {
+            TLevelSignIn(AONoServiceUser, AOAppPassword);
         }
     }
 }

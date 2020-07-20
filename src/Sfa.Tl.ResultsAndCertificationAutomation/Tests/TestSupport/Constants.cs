@@ -29,6 +29,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string TlevelHealth = "Health and Science: Health and Science";
         public const string TlevelLegal = "Legal, Finance and Accounting: Health and Science";
         public const string AccessibilityUrl = "https://www.gov.uk/help/accessibility-statement";
+        public const string TLevelsPageHeader = "Select a T Level to review";
+        public const string TLevelsPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
+        public const string ProviderPageHeader = "Find a provider";
+        public const string ProviderPageTitle = "Find a provider page – Manage T Level results – GOV.UK";
         //Reviewer Error Page Titles
         public const string ErrorSelectTlevelReview = "Error: Select a T Level to review page – Manage T Level results – GOV.UK";
         public const string ErrorAreTheseDetailsCorrect = "Error: Are these details correct page – Manage T Level results – GOV.UK";
