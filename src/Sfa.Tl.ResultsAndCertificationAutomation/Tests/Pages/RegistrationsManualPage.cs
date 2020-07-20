@@ -30,12 +30,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         //Select Provider Page
         private static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
         private static readonly string ProviderHeader = "Select the provider";
-        private static By SelectProvider { get; } = By.Id("selectedproviderid");
+        private static By SelectProvider { get; } = By.Id("selectedproviderukprn");
         public const string InputPovider = "Automation Test2 (90000002)";
         //Select Core Page
         private static string CorePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-core");
         private static readonly string CoreHeader = "Select the core";
-        private static By SelectCore { get; } = By.Id("selectedcoreid");
+        private static By SelectCore { get; } = By.Id("selectedcorecode");
         public const string InputCore = "Legal, Finance and Accounting (55555555)";
         //Specialism Page
         private static string SpecialismDecidePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learner-decided-specialism-question");
