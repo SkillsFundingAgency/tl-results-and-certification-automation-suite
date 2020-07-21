@@ -129,7 +129,7 @@ stages:
       buildstage
     jobs:
       - job: runTests
-        displayName: Run the integration tests
+        displayName: Run the automation tests
         pool:
             name: 'Azure Pipelines'
             vmImage: 'windows-2019'
@@ -181,7 +181,7 @@ stages:
       buildstage
     jobs:
     - job: runTests
-      displayName: Run the integration tests
+      displayName: Run the automation tests
       pool:
           name: 'Azure Pipelines'
           vmImage: 'windows-2019'
