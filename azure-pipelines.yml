@@ -129,6 +129,10 @@ stages:
       buildstage
     jobs:
       - job: testTest
+        displayName: Run the integration tests
+        pool:
+            name: 'Azure Pipelines'
+            vmImage: 'windows-2019'
         steps:
           - checkout: devopsTools
           - task: DownloadBuildArtifacts@0
