@@ -130,6 +130,7 @@ stages:
     jobs:
       - job: testTest
         steps:
+          - checkout: devopsTools
           - task: DownloadBuildArtifacts@0
             inputs:
               buildType: 'current'
