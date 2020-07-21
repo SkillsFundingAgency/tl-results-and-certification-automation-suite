@@ -148,14 +148,27 @@ stages:
             inputs:
               targetType: 'inline'
               script: 'Get-ChildItem -r'
-          - task: AzurePowerShell@5
+          - task: replacetokens@3
             inputs:
-              azureSubscription: $(serviceConnection)
-              ScriptType: 'FilePath'
-              ScriptPath: './Powershell/tokenization/tokenization.ps1'
-              ScriptArguments: '-SourcePath ''$(System.ArtifactsDirectory)/appdrop/tests'' -TargetFileNames ''*.json'' -TokenStart ''__'' -TokenEnd ''__'''
-              azurePowerShellVersion: 'LatestVersion'
-              pwsh: true
+              rootDirectory: '$(System.ArtifactsDirectory)/appdrop/tests'
+              targetFiles: '**/*.json'
+              encoding: 'auto'
+              writeBOM: true
+              actionOnMissing: 'warn'
+              keepToken: false
+              tokenPrefix: '__'
+              tokenSuffix: '__'
+              useLegacyPattern: false
+              enableTelemetry: true
+
+          # - task: AzurePowerShell@5
+          #   inputs:
+          #     azureSubscription: $(serviceConnection)
+          #     ScriptType: 'FilePath'
+          #     ScriptPath: './Powershell/tokenization/tokenization.ps1'
+          #     ScriptArguments: '-SourcePath ''$(System.ArtifactsDirectory)/appdrop/tests'' -TargetFileNames ''*.json'' -TokenStart ''__'' -TokenEnd ''__'''
+          #     azurePowerShellVersion: 'LatestVersion'
+          #     pwsh: true
 
           # - task: Tokenization@2
           #   displayName: 'Tokenization: Transform file *.json'
