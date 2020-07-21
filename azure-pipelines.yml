@@ -7,6 +7,10 @@ resources:
       type: github
       endpoint: S126-Tlevelservice
       name: SkillsFundingAgency/tl-results-and-certification
+    - repository: devopsTools
+      type: github
+      endpoint: DFE-Digital
+      name: DFE-Digital/operations-devops-tools
 trigger:
   batch: true
   branches:
@@ -139,12 +143,20 @@ stages:
               artifactName: 'sqldrop'
               downloadPath: '$(System.ArtifactsDirectory)'
           
-          - task: Tokenization@2
+          # - task: Tokenization@2
+          #   displayName: 'Tokenization: Transform file *.json'
+          #   inputs:
+          #     SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
+          #     TargetFileNames: '*.json'
+          - task: AzurePowerShell@5
             displayName: 'Tokenization: Transform file *.json'
             inputs:
-              SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
-              TargetFileNames: '*.json'
-
+              azureSubscription: $(serviceConnection)
+              ScriptType: 'FilePath'
+              ScriptPath: ./operations-devops-tools/Powershell/tokenization/tokenization.ps1
+              ScriptArguments: -SourcePath '$(System.ArtifactsDirectory)/appdrop/tests' -TargetFileNames '*.json' -TokenStart '__' -TokenEnd '__'
+              azurePowerShellVersion: 'LatestVersion'
+              pwsh: true
           # - task: VSTest@2
           #   displayName: 'VsTest - Test Execution'
           #   inputs:
