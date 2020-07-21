@@ -123,12 +123,12 @@ stages:
               ArtifactName: 'sqldrop'
               publishLocation: 'Container'
           
-  - stage: Test
-    displayName: Test Test
+  - stage: AutomationTest
+    displayName: Automation Test Stage
     dependsOn:
       buildstage
     jobs:
-      - job: testTest
+      - job: runTests
         displayName: Run the integration tests
         pool:
             name: 'Azure Pipelines'
@@ -152,19 +152,6 @@ stages:
             inputs:
               targetType: 'inline'
               script: 'Get-ChildItem -r'
-          
-          # - task: replacetokens@3
-          #   inputs:
-          #     rootDirectory: '$(System.ArtifactsDirectory)/appdrop/tests'
-          #     targetFiles: '**/*.json'
-          #     encoding: 'auto'
-          #     writeBOM: true
-          #     actionOnMissing: 'warn'
-          #     keepToken: false
-          #     tokenPrefix: '__'
-          #     tokenSuffix: '__'
-          #     useLegacyPattern: false
-          #     enableTelemetry: true
 
           - task: Tokenization@2
             displayName: 'Tokenization: Transform file *.json'
@@ -172,18 +159,18 @@ stages:
               SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
               TargetFileNames: '*.json'
           
-          # - task: VSTest@2
-          #   displayName: 'VsTest - Test Execution'
-          #   inputs:
-          #     testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-          #     searchFolder: '$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
-          #     runInParallel: false
-          #     rerunFailedTests: true
-          #   continueOnError: true
+          - task: VSTest@2
+            displayName: 'VsTest - Test Execution'
+            inputs:
+              testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+              searchFolder: '$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+              runInParallel: false
+              rerunFailedTests: true
+            continueOnError: true
           
-          # - task: PowerShell@2
-          #   displayName: 'Check .trx File Exists'
-          #   inputs:
-          #     targetType: filePath
-          #     filePath: './$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-          #     arguments: '-SourcePath "$(Agent.TempDirectory)/TestResults"'
+          - task: PowerShell@2
+            displayName: 'Check .trx File Exists'
+            inputs:
+              targetType: filePath
+              filePath: './$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+              arguments: '-SourcePath "$(Agent.TempDirectory)/TestResults"'
