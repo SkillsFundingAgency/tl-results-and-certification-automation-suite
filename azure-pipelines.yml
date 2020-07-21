@@ -163,7 +163,7 @@ stages:
             displayName: 'VsTest - Test Execution'
             inputs:
               testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-              searchFolder: '$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+              searchFolder: '$(System.DefaultWorkingDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
               runInParallel: false
               rerunFailedTests: true
             continueOnError: true
@@ -172,5 +172,5 @@ stages:
             displayName: 'Check .trx File Exists'
             inputs:
               targetType: filePath
-              filePath: './$(System.DefaultWorkingDirectory)/tl-results-and-certification-automation-suite/drop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+              filePath: './$(System.DefaultWorkingDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
               arguments: '-SourcePath "$(Agent.TempDirectory)/TestResults"'
