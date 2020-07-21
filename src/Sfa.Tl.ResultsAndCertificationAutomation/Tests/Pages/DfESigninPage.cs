@@ -85,7 +85,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void SigninAsNoServiceUser()
         {
-            TLevelSignIn(AONoServiceUser, AOAppPassword);
+            WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
+            WebDriver.FindElement(by: StartNowButton).Click();
+            WebDriver.FindElement(UserIdTxtBox).SendKeys(AONoServiceUser);
+            WebDriver.FindElement(PasswordTxtBox).SendKeys(AOAppPassword);
+            WebDriver.FindElement(SignInButton).Click();
+            PageHelper.WaitForUrl(StartPage.Error403);
         }
     }
 }
