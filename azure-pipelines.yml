@@ -152,7 +152,7 @@ stages:
             inputs:
               azureSubscription: $(serviceConnection)
               ScriptType: 'FilePath'
-              ScriptPath: './operations-devops-tools/Powershell/tokenization/tokenization.ps1'
+              ScriptPath: './Powershell/tokenization/tokenization.ps1'
               ScriptArguments: '-SourcePath ''$(System.ArtifactsDirectory)/appdrop/tests'' -TargetFileNames ''*.json'' -TokenStart ''__'' -TokenEnd ''__'''
               azurePowerShellVersion: 'LatestVersion'
               pwsh: true
