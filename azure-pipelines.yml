@@ -123,15 +123,13 @@ stages:
               ArtifactName: 'sqldrop'
               publishLocation: 'Container'
       
-
-  - stage: Test
-    displayName:  Test
+  - stage: CreateAutomationDatabaseTest
+    displayName: Deploy Automation database 
     dependsOn:
       buildstage
     variables:
       - group: Test Shared Resources
-    jobs:
-      
+    jobs:      
       - job: deploysqldb
         displayName: Deploy SQL DB
         pool:
@@ -151,6 +149,14 @@ stages:
               DacpacFile: '$(System.ArtifactsDirectory)/sqldrop/src/Sfa.Tl.ResultsAndCertification.Database/bin/Release/Sfa.Tl.ResultsAndCertification.Database.dacpac'
               AdditionalArguments: '/v:environment=test'
               IpDetectionMethod: 'AutoDetect'
+  - stage: Test
+    displayName:  Test
+    dependsOn:
+      buildstage
+      CreateAutomationDatabaseTest
+    variables:
+      - group: Test Shared Resources
+    jobs:
       - job: runTests
         displayName: Run the automation tests
         pool:
@@ -205,9 +211,6 @@ stages:
     variables:
       - group: PreProd Shared Resources
     jobs:
-    - job: Test
-      steps:
-        - script: echo $(ConfigurationStorageAccountName)
     - job: runTests
       displayName: Run the automation tests
       pool:
