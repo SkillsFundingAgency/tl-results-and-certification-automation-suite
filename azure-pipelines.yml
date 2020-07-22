@@ -22,6 +22,7 @@ variables:
   buildConfiguration: 'release'
   MSBUILDSINGLELOADCONTEXT: 1
   buildPlatform: 'anycpu'
+  
       
 stages:
   - stage: buildstage
@@ -40,12 +41,6 @@ stages:
           - task: gittools.gitversion.gitversion-task.GitVersion@5
             displayName: GitVersion
           
-          # - task: UseDotNet@2
-          #   displayName: 'Use .NET Core SDK 3.1.100'
-          #   inputs:
-          #     packageType: sdk
-          #     version: 3.1.100
-          #     installationPath: $(Agent.ToolsDirectory)/dotnet
           - task: DotNetCoreCLI@2
             displayName: dotnet restore
             inputs:
@@ -129,6 +124,7 @@ stages:
       buildstage
     variables:
       - group: Test Shared Resources
+      - group: Common Shared Resources
     jobs:      
       - job: deploysqldb
         displayName: Deploy SQL DB
@@ -161,6 +157,7 @@ stages:
       CreateAutomationDatabaseTest
     variables:
       - group: Test Shared Resources
+      - group: Common Shared Resources
     jobs:
       - job: runTests
         displayName: Run the automation tests
@@ -209,6 +206,7 @@ stages:
       buildstage
     variables:
       - group: PreProd Shared Resources
+      - group: Common Shared Resources
     jobs:
     - job: runTests
       displayName: Run the automation tests
