@@ -152,7 +152,6 @@ stages:
   - stage: Test
     displayName:  Test
     dependsOn:
-      buildstage
       CreateAutomationDatabaseTest
     variables:
       - group: Test Shared Resources
