@@ -62,12 +62,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             databaseConnection.Close();
             return result;
         }
-        public static int ExecuteStoreProc(string storedProcName, List<string>parameters, string connectionString)
+        public static int ExecuteStoreProc(string storedProcName, string connectionString)
         {
             SqlConnection databaseConnection = new SqlConnection(connectionString);
             databaseConnection.Open();
-            SqlCommand command = new SqlCommand(storedProcName, databaseConnection);
-            command.CommandType = CommandType.StoredProcedure;
+            SqlCommand command = new SqlCommand(storedProcName, databaseConnection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             command.Parameters.AddWithValue("@InputFile", "C:\\Temp\\RegistrationsValidData.csv");
             int result = command.ExecuteNonQuery();
             databaseConnection.Close();

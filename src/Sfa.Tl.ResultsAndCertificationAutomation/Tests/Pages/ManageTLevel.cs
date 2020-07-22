@@ -60,7 +60,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public void DbUpdate()
         {
-            SqlDatabaseConncetionHelper.ExecuteSqlCommand(UpdateDBReview, ConnectionString);
+            _ = SqlDatabaseConncetionHelper.ExecuteSqlCommand(UpdateDBReview, ConnectionString);
         }
         public void ClickTlevelLink()
         {
