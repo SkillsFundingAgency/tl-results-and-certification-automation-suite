@@ -136,6 +136,12 @@ stages:
           name: 'Azure Pipelines'
           vmImage: 'windows-2019'
         steps:
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'sqldrop'
+              downloadPath: '$(System.ArtifactsDirectory)'
           - task: SqlAzureDacpacDeployment@1
             inputs:
               azureSubscription: $(ServiceConnection)
@@ -168,13 +174,7 @@ stages:
               buildType: 'current'
               downloadType: 'single'
               artifactName: 'appdrop'
-              downloadPath: '$(System.ArtifactsDirectory)'
-          - task: DownloadBuildArtifacts@0
-            inputs:
-              buildType: 'current'
-              downloadType: 'single'
-              artifactName: 'sqldrop'
-              downloadPath: '$(System.ArtifactsDirectory)'
+              downloadPath: '$(System.ArtifactsDirectory)'          
           
           - task: PowerShell@2
             inputs:
