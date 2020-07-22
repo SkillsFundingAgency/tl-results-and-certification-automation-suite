@@ -197,7 +197,7 @@ stages:
             displayName: 'Check .trx File Exists'
             inputs:
               targetType: filePath
-              filePath: './$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+              filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
               arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
 
   - stage: PP
@@ -253,7 +253,7 @@ stages:
           displayName: 'Check .trx File Exists'
           inputs:
             targetType: filePath
-            filePath: './$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+            filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
             arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
 
       
