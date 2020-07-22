@@ -24,228 +24,238 @@ variables:
   buildPlatform: 'anycpu'
       
 stages:
-  - stage: buildstage
-    displayName: Build Stage
-    jobs:
-      - job: buildAppJob
-        displayName: Build App Job
-        pool:
-          name: 'Azure Pipelines'
-          vmImage: 'windows-2019'
-        workspace:
-          clean: all
-        steps:
-          - checkout: self
+  # - stage: buildstage
+  #   displayName: Build Stage
+  #   jobs:
+  #     - job: buildAppJob
+  #       displayName: Build App Job
+  #       pool:
+  #         name: 'Azure Pipelines'
+  #         vmImage: 'windows-2019'
+  #       workspace:
+  #         clean: all
+  #       steps:
+  #         - checkout: self
           
-          - task: gittools.gitversion.gitversion-task.GitVersion@5
-            displayName: GitVersion
+  #         - task: gittools.gitversion.gitversion-task.GitVersion@5
+  #           displayName: GitVersion
           
-          # - task: UseDotNet@2
-          #   displayName: 'Use .NET Core SDK 3.1.100'
-          #   inputs:
-          #     packageType: sdk
-          #     version: 3.1.100
-          #     installationPath: $(Agent.ToolsDirectory)/dotnet
-          - task: DotNetCoreCLI@2
-            displayName: dotnet restore
-            inputs:
-              command: restore
-              projects: 'src/**/*.csproj'
-              noCache: true
+  #         # - task: UseDotNet@2
+  #         #   displayName: 'Use .NET Core SDK 3.1.100'
+  #         #   inputs:
+  #         #     packageType: sdk
+  #         #     version: 3.1.100
+  #         #     installationPath: $(Agent.ToolsDirectory)/dotnet
+  #         - task: DotNetCoreCLI@2
+  #           displayName: dotnet restore
+  #           inputs:
+  #             command: restore
+  #             projects: 'src/**/*.csproj'
+  #             noCache: true
           
-          - task: DotNetCoreCLI@2
-            displayName: dotnet build
-            inputs:
-              projects: 'src/**/*.csproj'
-              arguments: '--configuration $(buildConfiguration) --no-restore'
+  #         - task: DotNetCoreCLI@2
+  #           displayName: dotnet build
+  #           inputs:
+  #             projects: 'src/**/*.csproj'
+  #             arguments: '--configuration $(buildConfiguration) --no-restore'
               
-          - task: DotNetCoreCLI@2
-            displayName: 'dotnet pack'
-            inputs:
-              command: 'pack'
-              projects: 'src/**/*.csproj'
-              packDirectory: '$(build.artifactstagingdirectory)/publish'
-              arguments: '--configuration $(buildConfiguration) --no-restore'
+  #         - task: DotNetCoreCLI@2
+  #           displayName: 'dotnet pack'
+  #           inputs:
+  #             command: 'pack'
+  #             projects: 'src/**/*.csproj'
+  #             packDirectory: '$(build.artifactstagingdirectory)/publish'
+  #             arguments: '--configuration $(buildConfiguration) --no-restore'
           
-          - task: DotNetCoreCLI@2
-            displayName: 'dotnet publish'
-            inputs:
-              command: publish
-              publishWebProjects: false
-              zipAfterPublish: false
-              projects: 'src/**/*Automation.csproj'
-              arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/tests --no-restore --no-build'
+  #         - task: DotNetCoreCLI@2
+  #           displayName: 'dotnet publish'
+  #           inputs:
+  #             command: publish
+  #             publishWebProjects: false
+  #             zipAfterPublish: false
+  #             projects: 'src/**/*Automation.csproj'
+  #             arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/tests --no-restore --no-build'
           
-          - task: CopyFiles@2
-            displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-            inputs:
-              Contents: |     
-                src/**/*.ps1
-              TargetFolder: '$(build.artifactstagingdirectory)'
-              OverWrite: true
+  #         - task: CopyFiles@2
+  #           displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  #           inputs:
+  #             Contents: |     
+  #               src/**/*.ps1
+  #             TargetFolder: '$(build.artifactstagingdirectory)'
+  #             OverWrite: true
 
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish Artifact'
-            inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'appdrop'
-              publishLocation: 'Container'
+  #         - task: PublishBuildArtifacts@1
+  #           displayName: 'Publish Artifact'
+  #           inputs:
+  #             PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+  #             ArtifactName: 'appdrop'
+  #             publishLocation: 'Container'
 
-      - job: buildSqlJob
-        displayName: Build SQL Job
-        pool:
-          name: 'Azure Pipelines'
-          vmImage: 'windows-2019'
-        workspace:
-          clean: all
-        steps:
-          - checkout: RESAC          
+  #     - job: buildSqlJob
+  #       displayName: Build SQL Job
+  #       pool:
+  #         name: 'Azure Pipelines'
+  #         vmImage: 'windows-2019'
+  #       workspace:
+  #         clean: all
+  #       steps:
+  #         - checkout: RESAC          
             
-          - task: VSBuild@1
-            displayName: 'Build DACPAC'
-            inputs: 
-              solution: './src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
-              platform: '$(buildPlatform)'
-              configuration: '$(buildConfiguration)'
-              msbuildArgs: '/p:PackageLocation="$(build.artifactstagingdirectory)/publish"'
-          - task: CopyFiles@2
-            displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-            inputs:
-              Contents: |     
-                src\**\*.dacpac
-              TargetFolder: '$(build.artifactstagingdirectory)'
-              OverWrite: true
+  #         - task: VSBuild@1
+  #           displayName: 'Build DACPAC'
+  #           inputs: 
+  #             solution: './src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
+  #             platform: '$(buildPlatform)'
+  #             configuration: '$(buildConfiguration)'
+  #             msbuildArgs: '/p:PackageLocation="$(build.artifactstagingdirectory)/publish"'
+  #         - task: CopyFiles@2
+  #           displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  #           inputs:
+  #             Contents: |     
+  #               src\**\*.dacpac
+  #             TargetFolder: '$(build.artifactstagingdirectory)'
+  #             OverWrite: true
           
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish Artifact'
-            inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'sqldrop'
-              publishLocation: 'Container'
+  #         - task: PublishBuildArtifacts@1
+  #           displayName: 'Publish Artifact'
+  #           inputs:
+  #             PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+  #             ArtifactName: 'sqldrop'
+  #             publishLocation: 'Container'
       
 
   - stage: Test
-    displayName: Automation Test Stage
+    displayName:  Test
     dependsOn:
       buildstage
+    variables:
+      - group: Test Shared Resources
     jobs:
-      - job: deploysqldb
-        displayName: Deploy SQL DB
-        pool:
-          name: 'Azure Pipelines'
-          vmImage: 'windows-2019'
+      - job: Test
         steps:
-          - task: SqlAzureDacpacDeployment@1
-            inputs:
-              azureSubscription: 'S126-TL-Test-Service-Connection'
-              AuthenticationType: 'server'
-              ServerName: '$(testSharedSqlServerFQDN)'
-              DatabaseName: '$(testAutomationDatabaseName)'
-              SqlUsername: '$(testSharedSqlServerUsername)'
-              SqlPassword: '$(testSharedSqlServerPassword)'
-              deployType: 'DacpacTask'
-              DeploymentAction: 'Publish'
-              DacpacFile: '$(System.DefaultWorkingDirectory)/tl-results-and-certification/drop/src/Sfa.Tl.ResultsAndCertification.Database/bin/Release/Sfa.Tl.ResultsAndCertification.Database.dacpac'
-              AdditionalArguments: '/v:environment=test'
-              IpDetectionMethod: 'AutoDetect'
-      - job: runTests
-        displayName: Run the automation tests
-        pool:
-            name: 'Azure Pipelines'
-            vmImage: 'windows-2019'
-        steps:
-          - checkout: devopsTools
-          - task: DownloadBuildArtifacts@0
-            inputs:
-              buildType: 'current'
-              downloadType: 'single'
-              artifactName: 'appdrop'
-              downloadPath: '$(System.ArtifactsDirectory)'
-          - task: DownloadBuildArtifacts@0
-            inputs:
-              buildType: 'current'
-              downloadType: 'single'
-              artifactName: 'sqldrop'
-              downloadPath: '$(System.ArtifactsDirectory)'
+          - script: echo $(ConfigurationStorageAccountName)
+      # - job: deploysqldb
+      #   displayName: Deploy SQL DB
+      #   pool:
+      #     name: 'Azure Pipelines'
+      #     vmImage: 'windows-2019'
+      #   steps:
+      #     - task: SqlAzureDacpacDeployment@1
+      #       inputs:
+      #         azureSubscription: 'S126-TL-Test-Service-Connection'
+      #         AuthenticationType: 'server'
+      #         ServerName: '$(testSharedSqlServerFQDN)'
+      #         DatabaseName: '$(testAutomationDatabaseName)'
+      #         SqlUsername: '$(testSharedSqlServerUsername)'
+      #         SqlPassword: '$(testSharedSqlServerPassword)'
+      #         deployType: 'DacpacTask'
+      #         DeploymentAction: 'Publish'
+      #         DacpacFile: '$(System.DefaultWorkingDirectory)/tl-results-and-certification/drop/src/Sfa.Tl.ResultsAndCertification.Database/bin/Release/Sfa.Tl.ResultsAndCertification.Database.dacpac'
+      #         AdditionalArguments: '/v:environment=test'
+      #         IpDetectionMethod: 'AutoDetect'
+      # - job: runTests
+      #   displayName: Run the automation tests
+      #   pool:
+      #       name: 'Azure Pipelines'
+      #       vmImage: 'windows-2019'
+      #   steps:
+      #     - checkout: devopsTools
+      #     - task: DownloadBuildArtifacts@0
+      #       inputs:
+      #         buildType: 'current'
+      #         downloadType: 'single'
+      #         artifactName: 'appdrop'
+      #         downloadPath: '$(System.ArtifactsDirectory)'
+      #     - task: DownloadBuildArtifacts@0
+      #       inputs:
+      #         buildType: 'current'
+      #         downloadType: 'single'
+      #         artifactName: 'sqldrop'
+      #         downloadPath: '$(System.ArtifactsDirectory)'
           
-          - task: PowerShell@2
-            inputs:
-              targetType: 'inline'
-              script: 'Get-ChildItem -r'
+      #     - task: PowerShell@2
+      #       inputs:
+      #         targetType: 'inline'
+      #         script: 'Get-ChildItem -r'
 
-          - task: Tokenization@2
-            displayName: 'Tokenization: Transform file *.json'
-            inputs:
-              SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
-              TargetFileNames: '*.json'
+      #     - task: Tokenization@2
+      #       displayName: 'Tokenization: Transform file *.json'
+      #       inputs:
+      #         SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
+      #         TargetFileNames: '*.json'
           
-          - task: VSTest@2
-            displayName: 'VsTest - Test Execution'
-            inputs:
-              testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-              searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
-              runInParallel: false
-              rerunFailedTests: true
-            continueOnError: true
+      #     - task: VSTest@2
+      #       displayName: 'VsTest - Test Execution'
+      #       inputs:
+      #         testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+      #         searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+      #         runInParallel: false
+      #         rerunFailedTests: true
+      #       continueOnError: true
           
-          - task: PowerShell@2
-            displayName: 'Check .trx File Exists'
-            inputs:
-              targetType: filePath
-              filePath: './$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-              arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
+      #     - task: PowerShell@2
+      #       displayName: 'Check .trx File Exists'
+      #       inputs:
+      #         targetType: filePath
+      #         filePath: './$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+      #         arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
 
   - stage: PP
-    displayName: Automation Test Stage
+    displayName: Pre-Production
     dependsOn:
       buildstage
+    variables:
+      - group: PreProd Shared Resources
     jobs:
-    - job: runTests
-      displayName: Run the automation tests
-      pool:
-          name: 'Azure Pipelines'
-          vmImage: 'windows-2019'
+    - job: Test
       steps:
-        - checkout: devopsTools
-        - task: DownloadBuildArtifacts@0
-          inputs:
-            buildType: 'current'
-            downloadType: 'single'
-            artifactName: 'appdrop'
-            downloadPath: '$(System.ArtifactsDirectory)'
-        - task: DownloadBuildArtifacts@0
-          inputs:
-            buildType: 'current'
-            downloadType: 'single'
-            artifactName: 'sqldrop'
-            downloadPath: '$(System.ArtifactsDirectory)'
+        - script: echo $(ConfigurationStorageAccountName)
+    # - job: runTests
+    #   displayName: Run the automation tests
+    #   pool:
+    #       name: 'Azure Pipelines'
+    #       vmImage: 'windows-2019'
+    #   steps:
+    #     - checkout: devopsTools
+    #     - task: DownloadBuildArtifacts@0
+    #       inputs:
+    #         buildType: 'current'
+    #         downloadType: 'single'
+    #         artifactName: 'appdrop'
+    #         downloadPath: '$(System.ArtifactsDirectory)'
+    #     - task: DownloadBuildArtifacts@0
+    #       inputs:
+    #         buildType: 'current'
+    #         downloadType: 'single'
+    #         artifactName: 'sqldrop'
+    #         downloadPath: '$(System.ArtifactsDirectory)'
         
-        - task: PowerShell@2
-          inputs:
-            targetType: 'inline'
-            script: 'Get-ChildItem -r'
+    #     - task: PowerShell@2
+    #       inputs:
+    #         targetType: 'inline'
+    #         script: 'Get-ChildItem -r'
 
-        - task: Tokenization@2
-          displayName: 'Tokenization: Transform file *.json'
-          inputs:
-            SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
-            TargetFileNames: '*.json'
+    #     - task: Tokenization@2
+    #       displayName: 'Tokenization: Transform file *.json'
+    #       inputs:
+    #         SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
+    #         TargetFileNames: '*.json'
 
-        - task: VSTest@2
-          displayName: 'VsTest - Test Execution'
-          inputs:
-            testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-            searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
-            testFiltercriteria: 'TestCategory=SmokeTest'
-            runInParallel: false
-            rerunFailedTests: true
-          continueOnError: true
+    #     - task: VSTest@2
+    #       displayName: 'VsTest - Test Execution'
+    #       inputs:
+    #         testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+    #         searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+    #         testFiltercriteria: 'TestCategory=SmokeTest'
+    #         runInParallel: false
+    #         rerunFailedTests: true
+    #       continueOnError: true
 
-        - task: PowerShell@2
-          displayName: 'Check .trx File Exists'
-          inputs:
-            targetType: filePath
-            filePath: './$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-            arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
+    #     - task: PowerShell@2
+    #       displayName: 'Check .trx File Exists'
+    #       inputs:
+    #         targetType: filePath
+    #         filePath: './$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+    #         arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
 
       
