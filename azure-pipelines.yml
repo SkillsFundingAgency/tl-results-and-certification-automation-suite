@@ -126,8 +126,8 @@ stages:
 
   - stage: Test
     displayName:  Test
-    dependsOn:
-      buildstage
+    # dependsOn:
+    #   buildstage
     variables:
       - group: Test Shared Resources
     jobs:
@@ -202,8 +202,8 @@ stages:
 
   - stage: PP
     displayName: Pre-Production
-    dependsOn:
-      buildstage
+    # dependsOn:
+    #   buildstage
     variables:
       - group: PreProd Shared Resources
     jobs:
