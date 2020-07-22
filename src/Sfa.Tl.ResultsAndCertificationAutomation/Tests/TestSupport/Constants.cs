@@ -29,6 +29,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string TlevelHealth = "Health and Science: Health and Science";
         public const string TlevelLegal = "Legal, Finance and Accounting: Health and Science";
         public const string AccessibilityUrl = "https://www.gov.uk/help/accessibility-statement";
+        public const string TLevelsPageHeader = "Select a T Level to review";
+        public const string TLevelsPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
+        public const string ProviderPageHeader = "Find a provider";
+        public const string ProviderPageTitle = "Find a provider page – Manage T Level results – GOV.UK";
         //Reviewer Error Page Titles
         public const string ErrorSelectTlevelReview = "Error: Select a T Level to review page – Manage T Level results – GOV.UK";
         public const string ErrorAreTheseDetailsCorrect = "Error: Are these details correct page – Manage T Level results – GOV.UK";
@@ -47,6 +51,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RegistrationSuccessHeader = "Registrations upload successful";
         public const string RegistrationUploadUnSuccessTitle = "Registrations upload unsuccessful page – Manage T Level results – GOV.UK";
         public const string RegistrationUnSuccessHeader = "Registrations upload unsuccessful";
+        public const string UlnPageTitle = "Add a new registration - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
+        public const string UlnPageErrorTitle = "Error: Add a new registration - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
+        public const string LearnerPageTitle = "Add a new registration - Enter the learner’s name page – Manage T Level results – GOV.UK";
+        public const string LearnerPageErrorTitle = "Error: Add a new registration - Enter the learner’s name page – Manage T Level results – GOV.UK";
+        public const string DobPageTitle = "Add a new registration - Enter the learner’s date of birth page – Manage T Level results – GOV.UK";
+        public const string DobPageErrorTitle = "Error: Add a new registration - Enter the learner’s date of birth page – Manage T Level results – GOV.UK";
+        public const string SelectProviderTitle = "Add a new registration - Select the provider page – Manage T Level results – GOV.UK";
+        public const string SelectProviderErrorTitle = "Error: Add a new registration - Select the provider page – Manage T Level results – GOV.UK";
+        public const string SelectCoreTitle = "Add a new registration - Select the core page – Manage T Level results – GOV.UK";
+        public const string SelectCoreErrorTitle = "Error: Add a new registration - Select the core page – Manage T Level results – GOV.UK";
+        public const string SpecialismDecideTitle = "Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
+        public const string SpecialismDecideErrorTitle = "Error: Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismTitle = "Add a new registration - Select the specialism page – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismErrorTitle = "Error: Add a new registration - Select the specialism page – Manage T Level results – GOV.UK";
         //Csv Errors
         public const string LineNo = "Line";
         public const string UlnNo = "ULN";

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
@@ -58,6 +59,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             databaseConnection.Open();
             SqlCommand sqlCommand = new SqlCommand(queryToExecute, databaseConnection);
             Int32 result = (Int32)sqlCommand.ExecuteScalar();
+            databaseConnection.Close();
+            return result;
+        }
+        public static int ExecuteStoreProc(string storedProcName, List<string>parameters, string connectionString)
+        {
+            SqlConnection databaseConnection = new SqlConnection(connectionString);
+            databaseConnection.Open();
+            SqlCommand command = new SqlCommand(storedProcName, databaseConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@InputFile", "C:\\Temp\\RegistrationsValidData.csv");
+            int result = command.ExecuteNonQuery();
             databaseConnection.Close();
             return result;
         }

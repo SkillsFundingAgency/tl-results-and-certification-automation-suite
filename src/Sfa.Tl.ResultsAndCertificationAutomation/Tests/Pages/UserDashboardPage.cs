@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {

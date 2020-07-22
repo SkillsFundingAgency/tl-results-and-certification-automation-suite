@@ -33,6 +33,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                 case "NoRoleNoService":
                     DfESignInPage.SigninAsNoRoleNoServiceUser();
                     break;
+                case "NoServiceTole":
+                    DfESignInPage.SigninAsNoServiceUser();
+                    break;
             }
         }
         
