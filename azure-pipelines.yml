@@ -122,12 +122,32 @@ stages:
               PathtoPublish: '$(Build.ArtifactStagingDirectory)'
               ArtifactName: 'sqldrop'
               publishLocation: 'Container'
+      
 
   - stage: Test
     displayName: Automation Test Stage
     dependsOn:
       buildstage
     jobs:
+      - job: deploysqldb
+        displayName: Deploy SQL DB
+        pool:
+          name: 'Azure Pipelines'
+          vmImage: 'windows-2019'
+        steps:
+          - task: SqlAzureDacpacDeployment@1
+            inputs:
+              azureSubscription: 'S126-TL-Test-Service-Connection'
+              AuthenticationType: 'server'
+              ServerName: '$(testSharedSqlServerFQDN)'
+              DatabaseName: '$(testAutomationDatabaseName)'
+              SqlUsername: '$(testSharedSqlServerUsername)'
+              SqlPassword: '$(testSharedSqlServerPassword)'
+              deployType: 'DacpacTask'
+              DeploymentAction: 'Publish'
+              DacpacFile: '$(System.DefaultWorkingDirectory)/tl-results-and-certification/drop/src/Sfa.Tl.ResultsAndCertification.Database/bin/Release/Sfa.Tl.ResultsAndCertification.Database.dacpac'
+              AdditionalArguments: '/v:environment=test'
+              IpDetectionMethod: 'AutoDetect'
       - job: runTests
         displayName: Run the automation tests
         pool:
