@@ -198,7 +198,7 @@ stages:
             inputs:
               targetType: filePath
               filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-              arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
+              arguments: '-SourcePath "$(Agent.TempDirectory)/testresults"'
 
   - stage: PP
     displayName: Pre-Production
@@ -254,6 +254,6 @@ stages:
           inputs:
             targetType: filePath
             filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-            arguments: '-SourcePath "$(Pipeline.Workspace)/testresults"'
+            arguments: '-SourcePath "$(Agent.TempDirectory)/testresults"'
 
       
