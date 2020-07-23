@@ -11,6 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By PageHeader { get; } = By.TagName("h1");
         private static readonly By BackLink = By.Id("backLink");
         private static By ContinueBtn { get; } = By.XPath("//button[contains(text(),'Continue')]");
+        private static By SubmitBtn { get; } = By.XPath("//button[contains(text(),'Submit')]");
         private static By AddRegistrationLink { get; } = By.XPath("//a[contains(text(),'Add a new registration')]");
         // ULN Page
         private static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
@@ -43,7 +44,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideNo { get; } = By.Id("specialismdecided-no");
         private static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialism");
-        public static By SelectSpecialism = By.XPath("//label[contains(text(),'Legal')]");
+        public static By SelectSpecialismLegal = By.XPath("//label[contains(text(),'Legal')]");
+        public static By SelectSpecialismAgg = By.XPath("//label[contains(text(),'Agriculture, Land')]");
+        private static string AcademicYearPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-academic-year");
+        private static string RegistrationSummaryPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-check-and-submit");
+        private static readonly string SummaryPageHeader = "Check and submit";
+        private static readonly string RegistrationSuccessHeader = "Registration successful";
+        private static string RegistrationSuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-confirmation");
 
         public static void AddNewRegistrations()
         {
@@ -52,6 +59,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickContiune()
         {
             ClickElement(ContinueBtn);
+        }
+        public static void ClickSubmit()
+        {
+            ClickElement(SubmitBtn);
         }
         public static void ClickBackLink()
         {
@@ -97,6 +108,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(SpecialismSelectPageUrl, WebDriver.Url);
             Assert.AreEqual(Constants.SelectSpecialismTitle, WebDriver.Title);
+        }
+        public static void VerifyAcademicYearPage()
+        {
+            Assert.AreEqual(AcademicYearPageUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.SelectAcademicYearTitle, WebDriver.Title);
+        }
+        public static void VerifyRegistrationSummaryPage()
+        {
+            Assert.AreEqual(RegistrationSummaryPageUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.ManualRegSummaryTitle, WebDriver.Title);
+            Assert.AreEqual(SummaryPageHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyRegistrationSuccessPage()
+        {
+            Assert.AreEqual(RegistrationSuccessPageUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.ReggistrationSuccessTitle, WebDriver.Title);
+            Assert.AreEqual(RegistrationSuccessHeader, WebDriver.FindElement(PageHeader).Text);
         }
         public static void SelectProviderFromList(string provider)
         {

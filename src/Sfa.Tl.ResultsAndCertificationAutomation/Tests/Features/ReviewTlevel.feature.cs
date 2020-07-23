@@ -85,11 +85,13 @@ testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Manage TLevel Page")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void ManageTLevelPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
+                    "RegressionTest",
+                    "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manage TLevel Page", null, tagsOfScenario, argumentsOfScenario);
 #line 10
