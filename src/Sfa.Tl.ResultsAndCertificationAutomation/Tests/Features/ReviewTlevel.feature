@@ -6,7 +6,7 @@
 Background: Log in as Reviewer
 Given I have logged in as a "Reviewer" user
 
-@SmokeTest
+@RegressionTest @ReviewJourney
 Scenario: Manage TLevel Page
 	When I click on TLevel link
 	Then I should see Select Tlevel Review Page
