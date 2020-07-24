@@ -8,6 +8,7 @@
     <None Remove="Data\RegistrationsInvalidDataStage2.csv" />
     <None Remove="Data\RegistrationsInvalidDataStage3.csv" />
     <None Remove="Data\RegistrationsInvalidDataStage4.csv" />
+    <None Remove="Data\RegistrationsUpdateValidData.csv" />
     <None Remove="Data\RegistrationsValidData.csv" />
     <None Remove="Data\Stage2Validations.csv" />
     <None Remove="Data\Stage3ValidationErrors.csv" />
@@ -21,6 +22,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\RegistrationsInvalidDataStage4.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\RegistrationsUpdateValidData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\RegistrationsValidData.csv">
