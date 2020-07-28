@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
@@ -51,6 +50,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string SummaryPageHeader = "Check and submit";
         private static readonly string RegistrationSuccessHeader = "Registration successful";
         private static string RegistrationSuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-confirmation");
+        private static readonly By ViewULNDetails = By.XPath("//a[contains(text(),'View this ULN')]");
+        private static string UlnRegSameAOUrl { get; } = string.Concat(StartPage.StartPageUrl, "ULN-cannot-be-registered"); 
 
         public static void AddNewRegistrations()
         {
@@ -67,6 +68,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickBackLink()
         {
             WebDriver.FindElement(BackLink).Click();
+        }
+        public static void ViewUlnDetails()
+        {
+            ClickElement(ViewULNDetails);
         }
         public static void VerifyUlnPage()
         {
@@ -125,6 +130,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(RegistrationSuccessPageUrl, WebDriver.Url);
             Assert.AreEqual(Constants.ReggistrationSuccessTitle, WebDriver.Title);
             Assert.AreEqual(RegistrationSuccessHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyULNRegWithSameAo()
+        {
+            Assert.AreEqual(UlnRegSameAOUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.UlnRegisteredWithSameAOTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.UlnRegisteredWithSameAOHeader, WebDriver.FindElement(PageHeader).Text);
         }
         public static void SelectProviderFromList(string provider)
         {

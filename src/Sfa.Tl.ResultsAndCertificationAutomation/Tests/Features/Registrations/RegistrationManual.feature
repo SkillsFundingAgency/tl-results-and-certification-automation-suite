@@ -38,3 +38,21 @@ Then I should see ULN Added successfully message
 Examples: 
 | Uln        | First Name | Last Name  | Day | Month | Year |
 | 9900000051 | FirstName1 | LaastName1 | 01  | 01    | 2010 |
+
+@RegressionTest @ManaulRegistration
+Scenario: ULN already registered with AO
+When I click on Add a new registration link
+And I enter <Uln> and click Continue button
+And I enter <First Name> <Last Name> in learners page and click Contiune
+And I enter <Day> <Month> <Year> in DOB page and click Continue
+And I select Provider from the list and click Continue
+And I select Core from the list and click Continue
+And I select No from has decided specialism and click Continue
+And I click Continue in Academic Year page
+And I click Submit button
+And I click on back to registration link
+And I enter <Uln> and click Continue button
+Then I should see ULN already registered page
+Examples:
+| Uln        | First Name | Last Name  | Day | Month | Year |
+| 9900000052 | FirstName1 | LaastName1 | 01  | 01    | 2010 |

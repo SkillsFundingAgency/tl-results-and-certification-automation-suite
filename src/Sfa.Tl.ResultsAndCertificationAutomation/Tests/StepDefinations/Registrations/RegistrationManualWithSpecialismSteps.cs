@@ -1,7 +1,5 @@
-﻿using NUnit.Framework;
-using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
@@ -12,7 +10,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [When(@"I enter (.*) (.*) (.*) in DOB page and click Continue")]
         public void WhenIEnterInDOBPageAndClickContinue(string p0, string p1, string p2)
         {
-            SqlQueries.DeleteFromRegistrationTables();
             VerifyDobPage();
             EnterDob(p0, p1, p2);
             ClickContiune();
