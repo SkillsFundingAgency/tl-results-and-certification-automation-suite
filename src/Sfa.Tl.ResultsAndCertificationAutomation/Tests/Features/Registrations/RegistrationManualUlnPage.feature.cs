@@ -85,11 +85,13 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Registration ULN Page")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
         public virtual void VerifyRegistrationULNPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
+                    "RegressionTest",
+                    "ManaulRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Registration ULN Page", null, tagsOfScenario, argumentsOfScenario);
 #line 10
@@ -127,11 +129,13 @@ testRunner.Then("I should see ULn Page", ((string)(null)), ((TechTalk.SpecFlow.T
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Erros in Registration ULN Page")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
         public virtual void VerifyErrosInRegistrationULNPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
+                    "RegressionTest",
+                    "ManaulRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Erros in Registration ULN Page", null, tagsOfScenario, argumentsOfScenario);
 #line 15

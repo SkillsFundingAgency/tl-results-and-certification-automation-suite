@@ -6,12 +6,12 @@
 Background:
 Given I have logged in as a "RegistrationEditor" user
 
-@SmokeTest
+@RegressionTest @ManaulRegistration
 Scenario: Verify Registration ULN Page
 When I click on Add a new registration link
 Then I should see ULn Page
 
-@SmokeTest
+@RegressionTest @ManaulRegistration
 Scenario: Verify Erros in Registration ULN Page
 When I click on Add a new registration link
 And I click in continue button
