@@ -14,7 +14,8 @@ resources:
     - repository: RESAC
       type: github
       endpoint: S126-Tlevelservice
-      name: SkillsFundingAgency/tl-results-and-certification@feature/sprint-18
+      name: SkillsFundingAgency/tl-results-and-certification
+      ref: features/sprint-18
 
     - repository: devopsTools
       type: github
