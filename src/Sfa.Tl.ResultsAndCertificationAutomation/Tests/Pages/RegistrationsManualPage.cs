@@ -32,11 +32,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string ProviderHeader = "Select the provider";
         private static By SelectProvider { get; } = By.Id("selectedproviderukprn");
         public const string InputPovider = "Automation Test2 (90000002)";
+        public const string InputPearsonPovider = "Automation Test3 (90000003)";
         //Select Core Page
         private static string CorePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-core");
         private static readonly string CoreHeader = "Select the core";
         private static By SelectCore { get; } = By.Id("selectedcorecode");
         public const string InputCore = "Legal, Finance and Accounting (55555555)";
+        public const string InputPearsonCore = "Creative and Design (10101010)";
         //Specialism Page
         private static string SpecialismDecidePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learner-decided-specialism-question");
         private static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
@@ -136,6 +138,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(UlnRegSameAOUrl, WebDriver.Url);
             Assert.AreEqual(Constants.UlnRegisteredWithSameAOTitle, WebDriver.Title);
             Assert.AreEqual(Constants.UlnRegisteredWithSameAOHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyULNRegWithAnotherAo()
+        {
+            Assert.AreEqual(UlnRegSameAOUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.UlnRegisteredWithAnotherAOTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.UlnRegisteredWithAnotherAOHeader, WebDriver.FindElement(PageHeader).Text);
         }
         public static void SelectProviderFromList(string provider)
         {

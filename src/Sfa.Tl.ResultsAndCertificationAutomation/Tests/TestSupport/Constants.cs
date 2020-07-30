@@ -70,5 +70,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string ReggistrationSuccessTitle = "Add registration - Registration added confirmation page – Manage T Level results – GOV.UK";
         public const string UlnRegisteredWithSameAOTitle = "Add a new registration - ULN already registered page – Manage T Level results – GOV.UK";
         public const string UlnRegisteredWithSameAOHeader = "ULN is already registered";
+        public const string UlnRegisteredWithAnotherAOTitle = "Add a new registration - ULN cannot be registered page – Manage T Level results – GOV.UK";
+        public const string UlnRegisteredWithAnotherAOHeader = "ULN cannot be registered";
     }
 }
