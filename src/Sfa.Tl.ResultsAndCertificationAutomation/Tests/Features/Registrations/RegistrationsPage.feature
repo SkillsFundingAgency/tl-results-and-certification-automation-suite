@@ -43,4 +43,12 @@ And I upload Stage four invalid datafile and click on submit
 And i click on Download Error flie
 Then I should see all stage four validation errors in the file
 
-
+@RegressionTest @Registrations
+Scenario: Upload Registration update file
+When I click on Registrations link on Home page
+And I click on Upload Registration file link
+And I upload a file and click on Submit button
+And click on back to registration link
+And upload file with updated data and submit
+Then I should see upload successful message
+And I should be navigated back to Registrations Page when i click on Back to registration button
