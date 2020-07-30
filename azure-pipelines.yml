@@ -10,10 +10,12 @@ resources:
     - repository: self
       persistCredentials: true
       clean: true
+
     - repository: RESAC
       type: github
       endpoint: S126-Tlevelservice
-      name: SkillsFundingAgency/tl-results-and-certification
+      name: SkillsFundingAgency/tl-results-and-certification@feature/sprint-18
+
     - repository: devopsTools
       type: github
       endpoint: DFE-Digital
@@ -101,7 +103,7 @@ stages:
         workspace:
           clean: all
         steps:
-          - checkout: RESAC          
+          - checkout: RESAC
             
           - task: VSBuild@1
             displayName: 'Build DACPAC'
