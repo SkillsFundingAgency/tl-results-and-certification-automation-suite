@@ -72,5 +72,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string UlnRegisteredWithSameAOHeader = "ULN is already registered";
         public const string UlnRegisteredWithAnotherAOTitle = "Add a new registration - ULN cannot be registered page – Manage T Level results – GOV.UK";
         public const string UlnRegisteredWithAnotherAOHeader = "ULN cannot be registered";
+        //Reg Search Page
+        public const string SearchRegTitle = "Search for a registration page – Manage T Level results – GOV.UK";
+        public const string SearchRegHeader = "Search for a registration";
+        public const string SearchNotFoundTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
+        public const string SearchDetailsTitle = "Search for a registration - Registration details page – Manage T Level results – GOV.UK";
+        public const string SearchDetailsHeader = "Registration details";
+        public const string CancelRegTitle = "Cancel registration page – Manage T Level results – GOV.UK";
+        public const string CancelRegHeader = "Are you sure you want to cancel this registration?";
+        public const string CancelRegSuccessTitle = "Registration cancelled confirmation page – Manage T Level results – GOV.UK";
+        public const string CancelRegSuccessHeader = "Registration cancelled successfully";
     }
 }
