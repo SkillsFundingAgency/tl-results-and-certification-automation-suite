@@ -43,11 +43,18 @@ stages:
   - stage: buildstage
     displayName: Build Stage
     jobs:
-    - checkout: self
-    
-    - task: gittools.gitversion.gitversion-task.GitVersion@5
-      displayName: GitVersion
-      
+      - job: buildAppJob
+        displayName: Build App Job
+        pool:
+          name: 'Azure Pipelines'
+          vmImage: 'windows-2019'
+        workspace:
+          clean: all
+        steps:
+          - checkout: self
+          
+          - task: gittools.gitversion.gitversion-task.GitVersion@5
+            displayName: GitVersion
     - template: /Application/dotnet/jobs/build-application.yml@devopsTemplates
       parameters:
         applicationName: $(applicationName)
