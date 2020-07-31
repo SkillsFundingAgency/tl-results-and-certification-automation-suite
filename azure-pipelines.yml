@@ -43,7 +43,7 @@ stages:
   - stage: buildstage
     displayName: Build Stage
     jobs:
-      - template: /Application/dotnet/jobs/build-application.yml@devopsTemplates
+    - template: /Application/dotnet/jobs/build-application.yml@devopsTemplates
       parameters:
         applicationName: $(applicationName)
         webPublish: true
