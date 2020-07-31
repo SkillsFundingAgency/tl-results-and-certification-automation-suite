@@ -43,6 +43,11 @@ stages:
   - stage: buildstage
     displayName: Build Stage
     jobs:
+    - checkout: self
+    
+    - task: gittools.gitversion.gitversion-task.GitVersion@5
+      displayName: GitVersion
+      
     - template: /Application/dotnet/jobs/build-application.yml@devopsTemplates
       parameters:
         applicationName: $(applicationName)
