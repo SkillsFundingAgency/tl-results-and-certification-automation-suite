@@ -46,7 +46,9 @@ stages:
     - template: /Application/dotnet/jobs/build-application.yml@devopsTemplates
       parameters:
         applicationName: $(applicationName)
-        webPublish: true
+        webPublish: false
+        zipPublish: false
+        agentImage: 'windows-2019'
        
   #     - job: buildAppJob
   #       displayName: Build App Job
