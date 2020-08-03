@@ -24,3 +24,11 @@ stages:
     - group: Common Shared Resources
   jobs:      
     - template: ../jobs/resac-deploy-database.yml
+      parameters: 
+        ServiceConnection: ${{parameters.ServiceConnection}}
+        SharedSqlServerFQDN: ${{parameters.SharedSqlServerFQDN}}
+        DatabaseName: ${{parameters.DatabaseName}}
+        SharedSqlServerUsername: ${{parameters.SharedSqlServerUsername}}
+        SharedSqlServerPassword: ${{parameters.SharedSqlServerPassword}}
+        artifactname: '${{parameters.artifactname}}' 
+        dacpacklocation: '${{parameters.dacpacklocation}}'
