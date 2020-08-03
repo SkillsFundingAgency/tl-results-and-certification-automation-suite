@@ -47,7 +47,9 @@ stages:
         parameters: 
           buildConfiguration: $(buildConfiguration)
       - template: ./yaml/jobs/resac-build-sql.yml
-
+        parameters: 
+          buildConfiguration: $(buildConfiguration)
+          buildPlatform: $(buildPlatform)
       
       
   - stage: CreateAutomationDatabaseTest
