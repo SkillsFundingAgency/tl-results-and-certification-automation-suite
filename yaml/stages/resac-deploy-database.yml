@@ -23,28 +23,4 @@ stages:
     - group: Test Shared Resources
     - group: Common Shared Resources
   jobs:      
-    - job: deploysqldb
-      displayName: Deploy SQL DB
-      pool:
-        name: 'Azure Pipelines'
-        vmImage: 'windows-2019'
-      steps:
-        - task: DownloadBuildArtifacts@0
-          inputs:
-            buildType: 'current'
-            downloadType: 'single'
-            ArtifactName: '${{parameters.artifactname}}'
-            downloadPath: '$(System.ArtifactsDirectory)'
-        - task: SqlAzureDacpacDeployment@1
-          inputs:
-            azureSubscription: ${{parameters.ServiceConnection}}
-            AuthenticationType: 'server'
-            ServerName: '${{parameters.SharedSqlServerFQDN}}'
-            DatabaseName: '${{parameters.DatabaseName}}'
-            SqlUsername: '${{parameters.SharedSqlServerUsername}}'
-            SqlPassword: '${{parameters.SharedSqlServerPassword}}'
-            deployType: 'DacpacTask'
-            DeploymentAction: 'Publish'
-            DacpacFile: ${{parameters.dacpacklocation}}
-            AdditionalArguments: '/v:environment=test'
-            IpDetectionMethod: 'AutoDetect'
+    - template: ../jobs/resac-deploy-database.yml
