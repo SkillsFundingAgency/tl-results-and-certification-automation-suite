@@ -2,6 +2,8 @@ parameters:
 - name: buildConfiguration
   type: string
   default: 'Release'
+- name: artifactname
+  type: string
 
 jobs:       
   - job: buildAppJob
@@ -59,5 +61,5 @@ jobs:
         displayName: 'Publish Artifact'
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: 'appdrop'
+          ArtifactName: '${{parameters.artifactname}}'
           publishLocation: 'Container'

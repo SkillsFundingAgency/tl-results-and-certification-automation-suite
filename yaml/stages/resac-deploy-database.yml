@@ -1,0 +1,50 @@
+parameters:
+- name: ServiceConnection
+  type: string
+- name: SharedSqlServerFQDN
+  type: string
+- name: DatabaseName
+  type: string
+- name: SharedSqlServerUsername
+  type: string
+- name: SharedSqlServerPassword
+  type: securestring
+- name: artifactname
+  type: string
+- name: dacpacklocation
+  type: string
+
+stages:
+- stage: CreateAutomationDatabaseTest
+    displayName: Deploy Automation database 
+    dependsOn:
+      buildstage
+    variables:
+      - group: Test Shared Resources
+      - group: Common Shared Resources
+    jobs:      
+      - job: deploysqldb
+        displayName: Deploy SQL DB
+        pool:
+          name: 'Azure Pipelines'
+          vmImage: 'windows-2019'
+        steps:
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              ArtifactName: '${{parameters.artifactname}}'
+              downloadPath: '$(System.ArtifactsDirectory)'
+          - task: SqlAzureDacpacDeployment@1
+            inputs:
+              azureSubscription: ${{parameters.ServiceConnection}}
+              AuthenticationType: 'server'
+              ServerName: '${{parameters.SharedSqlServerFQDN}}'
+              DatabaseName: '${{parameters.DatabaseName}}'
+              SqlUsername: '${{parameters.SharedSqlServerUsername}}'
+              SqlPassword: '${{parameters.SharedSqlServerPassword}}'
+              deployType: 'DacpacTask'
+              DeploymentAction: 'Publish'
+              DacpacFile: ${{parameters.dacpacklocation}}
+              AdditionalArguments: '/v:environment=test'
+              IpDetectionMethod: 'AutoDetect'
