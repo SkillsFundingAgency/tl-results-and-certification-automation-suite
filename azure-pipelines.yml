@@ -44,7 +44,7 @@ stages:
     parameters: 
       buildConfiguration: $(buildConfiguration)
       buildPlatform: $(buildPlatform)
-      ArtifactName: 'appdrop'
+      artifactname: 'appdrop'
 
   - template: ./yaml/stages/resac-deploy-database.yml
     parameters:
