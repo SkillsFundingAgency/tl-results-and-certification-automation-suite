@@ -17,7 +17,7 @@ stages:
     dependsOn: '${{parameters.deploymentDependencyName}}'      
     variables:
     - '${{ each variableGroup in parameters.variableGroups }}':
-    - group: ${{variableGroup}}
+      - group: ${{variableGroup}}
     jobs:
       - template: ../jobs/resac-test.yml
         parameters:
