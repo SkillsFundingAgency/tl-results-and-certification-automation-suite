@@ -48,6 +48,7 @@ stages:
 
   - template: ./yaml/stages/resac-deploy-database.yml
     parameters:
+      deploymentDependencyName: 'Build'
       ServiceConnection: $(ServiceConnection)
       SharedSqlServerFQDN: $(SharedSqlServerFQDN)
       DatabaseName: $(AutomationDatabaseName)
@@ -58,59 +59,69 @@ stages:
  
   - template: ./yaml/stages/resac-test.yml
     parameters:
+      stageName: 'Test'
+      deploymentDependencyName: 'DeployDatabase'
+      testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+      searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+      filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+  
+  - template: ./yaml/stages/resac-test.yml
+    parameters:
+      stageName: 'PreProd'
+      deploymentDependencyName: 'Build'
       testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
       searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
       filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
 
-  - stage: PP
-    displayName: Pre-Production
-    dependsOn:
-      buildstage
-    variables:
-      - group: PreProd Shared Resources
-      - group: Common Shared Resources
-    jobs:
-    - job: runTests
-      displayName: Run the automation tests
-      pool:
-          name: 'Azure Pipelines'
-          vmImage: 'windows-2019'
-      steps:
-        - checkout: devopsTools
-        - task: DownloadBuildArtifacts@0
-          inputs:
-            buildType: 'current'
-            downloadType: 'single'
-            artifactName: 'appdrop'
-            downloadPath: '$(System.ArtifactsDirectory)'
-        - task: DownloadBuildArtifacts@0
-          inputs:
-            buildType: 'current'
-            downloadType: 'single'
-            artifactName: 'sqldrop'
-            downloadPath: '$(System.ArtifactsDirectory)'
+  # - stage: PP
+  #   displayName: Pre-Production
+  #   dependsOn:
+  #     buildstage
+  #   variables:
+  #     - group: PreProd Shared Resources
+  #     - group: Common Shared Resources
+  #   jobs:
+  #   - job: runTests
+  #     displayName: Run the automation tests
+  #     pool:
+  #         name: 'Azure Pipelines'
+  #         vmImage: 'windows-2019'
+  #     steps:
+  #       - checkout: devopsTools
+  #       - task: DownloadBuildArtifacts@0
+  #         inputs:
+  #           buildType: 'current'
+  #           downloadType: 'single'
+  #           artifactName: 'appdrop'
+  #           downloadPath: '$(System.ArtifactsDirectory)'
+  #       - task: DownloadBuildArtifacts@0
+  #         inputs:
+  #           buildType: 'current'
+  #           downloadType: 'single'
+  #           artifactName: 'sqldrop'
+  #           downloadPath: '$(System.ArtifactsDirectory)'
 
-        - task: Tokenization@2
-          displayName: 'Tokenization: Transform file *.json'
-          inputs:
-            SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
-            TargetFileNames: '*.json'
+  #       - task: Tokenization@2
+  #         displayName: 'Tokenization: Transform file *.json'
+  #         inputs:
+  #           SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
+  #           TargetFileNames: '*.json'
 
-        - task: VSTest@2
-          displayName: 'VsTest - Test Execution'
-          inputs:
-            testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-            searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
-            testFiltercriteria: 'TestCategory=SmokeTest'
-            runInParallel: false
-            rerunFailedTests: true
-          continueOnError: true
+  #       - task: VSTest@2
+  #         displayName: 'VsTest - Test Execution'
+  #         inputs:
+  #           testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+  #           searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+  #           testFiltercriteria: 'TestCategory=SmokeTest'
+  #           runInParallel: false
+  #           rerunFailedTests: true
+  #         continueOnError: true
 
-        - task: PowerShell@2
-          displayName: 'Check .trx File Exists'
-          inputs:
-            targetType: filePath
-            filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-            arguments: '-SourcePath "$(Agent.TempDirectory)/testresults"'
+  #       - task: PowerShell@2
+  #         displayName: 'Check .trx File Exists'
+  #         inputs:
+  #           targetType: filePath
+  #           filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+  #           arguments: '-SourcePath "$(Agent.TempDirectory)/testresults"'
 
       

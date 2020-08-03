@@ -5,12 +5,15 @@ parameters:
   type: string
 - name: filePath
   type: string
+- name: stageName
+  type: string
+- name: deploymentDependencyName
+  type: string
 
 stages:
-  - stage: Test
-    displayName:  Test
-    dependsOn:
-      CreateAutomationDatabaseTest
+  - stage: ${{parameters.stageName}}
+    displayName:  'Environment - ${{parameters.stageName}}'
+    dependsOn: '${{parameters.deploymentDependencyName}}'      
     variables:
       - group: Test Shared Resources
       - group: Common Shared Resources

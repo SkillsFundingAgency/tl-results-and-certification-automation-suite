@@ -7,7 +7,7 @@ parameters:
   type: string
 
 stages:
-  - stage: buildstage
+  - stage: build
     displayName: Build Stage
     jobs:
       - template: ../jobs/resac-build.yml

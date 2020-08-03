@@ -13,12 +13,13 @@ parameters:
   type: string
 - name: dacpacklocation
   type: string
+- name: deploymentDependencyName
+  type: string
 
 stages:
-- stage: CreateAutomationDatabaseTest
-  displayName: Deploy Automation database
-  dependsOn:
-    buildstage
+- stage: DeployDatabase
+  displayName: Deploy database
+  dependsOn: '${{parameters.deploymentDependencyName}}'
   variables:
     - group: Test Shared Resources
     - group: Common Shared Resources
