@@ -1,9 +1,9 @@
 parameters:
-  name: testAssemblyVer2
+- name: testAssemblyVer2
   type: string
-  name: searchFolder
+- name: searchFolder
   type: string
-  name: filePath
+- name: filePath
   type: string
 
 stages:
