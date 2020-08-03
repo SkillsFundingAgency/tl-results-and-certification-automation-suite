@@ -28,7 +28,7 @@ jobs:
         displayName: dotnet build
         inputs:
           projects: 'src/**/*.csproj'
-          arguments: '--configuration $(parameters.buildConfiguration) --no-restore'
+          arguments: '--configuration ${{parameters.buildConfiguration}} --no-restore'
           
       - task: DotNetCoreCLI@2
         displayName: 'dotnet pack'
@@ -36,7 +36,7 @@ jobs:
           command: 'pack'
           projects: 'src/**/*.csproj'
           packDirectory: '$(build.artifactstagingdirectory)/publish'
-          arguments: '--configuration $(parameters.buildConfiguration) --no-restore'
+          arguments: '--configuration ${{parameters.buildConfiguration}} --no-restore'
       
       - task: DotNetCoreCLI@2
         displayName: 'dotnet publish'
@@ -45,7 +45,7 @@ jobs:
           publishWebProjects: false
           zipAfterPublish: false
           projects: 'src/**/*Automation.csproj'
-          arguments: '--configuration $(parameters.buildConfiguration) --output $(build.artifactstagingdirectory)/tests --no-restore --no-build'
+          arguments: '--configuration ${{parameters.buildConfiguration}} --output $(build.artifactstagingdirectory)/tests --no-restore --no-build'
       
       - task: CopyFiles@2
         displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
