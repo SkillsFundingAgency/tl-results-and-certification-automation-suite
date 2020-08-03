@@ -10,8 +10,8 @@ stages:
     jobs:
       - template: ../jobs/resac-build.yml
         parameters: 
-          buildConfiguration: ${{buildConfiguration}}
+          buildConfiguration: ${{parameters.buildConfiguration}}
       - template: ../jobs/resac-build-sql.yml
         parameters: 
-          buildConfiguration: ${{buildConfiguration}}
-          buildPlatform: ${{buildPlatform}}
+          buildConfiguration: ${{parameters.buildConfiguration}}
+          buildPlatform: ${{parameters.buildPlatform}}
