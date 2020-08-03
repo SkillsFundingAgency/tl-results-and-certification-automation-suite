@@ -1,0 +1,17 @@
+parameters:
+- name: buildPlatform
+  type: string
+- name: buildConfiguration
+  type: string
+
+stages:
+  - stage: buildstage
+    displayName: Build Stage
+    jobs:
+      - template: ../jobs/resac-build.yml
+        parameters: 
+          buildConfiguration: ${{buildConfiguration}}
+      - template: ../jobs/resac-build-sql.yml
+        parameters: 
+          buildConfiguration: ${{buildConfiguration}}
+          buildPlatform: ${{buildPlatform}}

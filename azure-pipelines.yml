@@ -39,19 +39,12 @@ variables:
   buildPlatform: 'anycpu'
   applicationName: 'resac automation'
 
-stages:
-  - stage: buildstage
-    displayName: Build Stage
-    jobs:
-      - template: ./yaml/jobs/resac-build.yml
-        parameters: 
-          buildConfiguration: $(buildConfiguration)
-      - template: ./yaml/jobs/resac-build-sql.yml
-        parameters: 
-          buildConfiguration: $(buildConfiguration)
-          buildPlatform: $(buildPlatform)
-      
-      
+stages:  
+  - template: ./yaml/stages/resac-build.yml
+    parameters: 
+      buildConfiguration: $(buildConfiguration)
+      buildPlatform: $(buildPlatform)
+        
   - stage: CreateAutomationDatabaseTest
     displayName: Deploy Automation database 
     dependsOn:
