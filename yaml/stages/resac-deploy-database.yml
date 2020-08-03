@@ -8,7 +8,7 @@ parameters:
 - name: SharedSqlServerUsername
   type: string
 - name: SharedSqlServerPassword
-  type: securestring
+  type: string
 - name: artifactname
   type: string
 - name: dacpacklocation
