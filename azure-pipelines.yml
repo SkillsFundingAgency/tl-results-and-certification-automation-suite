@@ -56,6 +56,10 @@ stages:
       SharedSqlServerPassword: $(SharedSqlServerPassword)
       artifactname: 'sqldrop' 
       dacpacklocation: '$(System.ArtifactsDirectory)/sqldrop/src/Sfa.Tl.ResultsAndCertification.Database/bin/Release/Sfa.Tl.ResultsAndCertification.Database.dacpac'
+      variableGroups:
+        - 'Test Shared Resources'
+        - 'Common Shared Resources'
+    
  
   - template: ./yaml/stages/resac-test.yml
     parameters:
@@ -64,6 +68,9 @@ stages:
       testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
       searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
       filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+      variableGroups:
+        - 'Test Shared Resources'
+        - 'Common Shared Resources'
   
   - template: ./yaml/stages/resac-test.yml
     parameters:
@@ -72,6 +79,9 @@ stages:
       testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
       searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
       filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+      variableGroups:
+        - 'PreProd Shared Resources'
+        - 'Common Shared Resources'
 
   # - stage: PP
   #   displayName: Pre-Production

@@ -9,14 +9,15 @@ parameters:
   type: string
 - name: deploymentDependencyName
   type: string
-
+- name: variableGroups
+  type: object
 stages:
   - stage: ${{parameters.stageName}}
     displayName:  'Environment - ${{parameters.stageName}}'
     dependsOn: '${{parameters.deploymentDependencyName}}'      
     variables:
-      - group: Test Shared Resources
-      - group: Common Shared Resources
+    - '${{ each variableGroup in parameters.variableGroups }}':
+    - group: ${{variableGroup}}
     jobs:
       - template: ../jobs/resac-test.yml
         parameters:

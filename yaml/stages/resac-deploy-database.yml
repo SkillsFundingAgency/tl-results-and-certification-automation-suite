@@ -15,14 +15,16 @@ parameters:
   type: string
 - name: deploymentDependencyName
   type: string
+- name: variableGroups
+  type: object
 
 stages:
 - stage: DeployDatabase
   displayName: Deploy database
   dependsOn: '${{parameters.deploymentDependencyName}}'
   variables:
-    - group: Test Shared Resources
-    - group: Common Shared Resources
+    - '${{ each variableGroup in parameters.variableGroups }}':
+    - group: ${{variableGroup}}
   jobs:      
     - template: ../jobs/resac-deploy-database.yml
       parameters: 
