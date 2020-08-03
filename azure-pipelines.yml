@@ -44,6 +44,8 @@ stages:
     displayName: Build Stage
     jobs:
     - template: ./yaml/jobs/resac-build.yml
+      parameters: 
+        buildConfiguration: $(buildConfiguration)
     # jobs:       
     #   - job: buildAppJob
     #     displayName: Build App Job
