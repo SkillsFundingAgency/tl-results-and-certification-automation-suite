@@ -38,7 +38,7 @@ stages:
           - task: VSTest@2
             displayName: 'VsTest - Test Execution'
             inputs:
-              testAssemblyVer2: '${{parameters.testAssemblyVer2'
+              testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
               searchFolder: '${{parameters.searchFolder}}'
               runInParallel: false
               rerunFailedTests: true
