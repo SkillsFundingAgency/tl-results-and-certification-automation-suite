@@ -46,7 +46,7 @@ stages:
       - template: ./yaml/jobs/resac-build.yml
         parameters: 
           buildConfiguration: $(buildConfiguration)
-      - template: ./yaml/jobs/resac=-build-sql.yml
+      - template: ./yaml/jobs/resac-build-sql.yml
 
       
       
