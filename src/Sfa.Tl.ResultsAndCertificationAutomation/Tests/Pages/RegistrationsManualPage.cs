@@ -7,15 +7,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class RegistrationsManualPage : ElementHelper
     {
-        private static By PageHeader { get; } = By.TagName("h1");
+        public static By PageHeader { get; } = By.TagName("h1");
         private static readonly By BackLink = By.Id("backLink");
         private static By ContinueBtn { get; } = By.XPath("//button[contains(text(),'Continue')]");
         private static By SubmitBtn { get; } = By.XPath("//button[contains(text(),'Submit')]");
         private static By AddRegistrationLink { get; } = By.XPath("//a[contains(text(),'Add a new registration')]");
         // ULN Page
-        private static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
-        private static By UlnInput { get; } = By.Id("uln");
-        private static readonly string UlnPageHeader = "Enter the Unique Learner Number (ULN)";
+        public static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
+        public static By UlnInput { get; } = By.Id("uln");
+        public static readonly string UlnPageHeader = "Enter the Unique Learner Number (ULN)";
         //Learner Name Page
         private static string LearnerNameUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learners-name");
         private static readonly string LearnerPageHeader = "Enter the learner's name";
@@ -53,7 +53,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string RegistrationSuccessHeader = "Registration successful";
         private static string RegistrationSuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-confirmation");
         private static readonly By ViewULNDetails = By.XPath("//a[contains(text(),'View this ULN')]");
-        private static string UlnRegSameAOUrl { get; } = string.Concat(StartPage.StartPageUrl, "ULN-cannot-be-registered"); 
+        private static string UlnRegSameAOUrl { get; } = string.Concat(StartPage.StartPageUrl, "ULN-cannot-be-registered");
+        //Change Registration
+        private static By ChangeBtn { get; } = By.XPath("//button[contains(text(),'Change')]");
+        private static By ChangeUln { get; } = By.Id("uln");
+        private static By ChangeLearner { get; } = By.Id("learnername");
+        private static By ChangeDob { get; } = By.Id("dateofbirth");
+        private static By ChangeProvider { get; } = By.Id("provider");
+        private static By ChangeCore { get; } = By.Id("core");
+        private static By ChangeSpecialism { get; } = By.Id("specialisms");
+        private static By ChangeAcademicYear { get; } = By.Id("academicyear");
 
         public static void AddNewRegistrations()
         {
@@ -62,6 +71,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickContiune()
         {
             ClickElement(ContinueBtn);
+        }
+        public static void ClickChangeBtn()
+        {
+            ClickElement(ChangeBtn);
         }
         public static void ClickSubmit()
         {
@@ -167,6 +180,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void SelectCoreFromList(string coreName)
         {
             SelectFromDropDownByText(SelectCore, coreName);
+        }
+        public static void ClickChangeUlnLink()
+        {
+            WebDriver.FindElement(ChangeUln).Click();
+        }
+        public static void ClickChangeLearnerLink()
+        {
+            WebDriver.FindElement(ChangeLearner).Click();
+        }
+        public static void ClickChangeDobLink()
+        {
+            WebDriver.FindElement(ChangeDob).Click();
+        }
+        public static void ClickChangePoviderLink()
+        {
+            WebDriver.FindElement(ChangeProvider).Click();
+        }
+        public static void ClickChangeCoreLink()
+        {
+            WebDriver.FindElement(ChangeCore).Click();
+        }
+        public static void ClickChangeSpecialismLink()
+        {
+            WebDriver.FindElement(ChangeSpecialism).Click();
+        }
+        public static void ClickChangeAcademicYearLink()
+        {
+            WebDriver.FindElement(ChangeAcademicYear).Click();
         }
     }
 }
