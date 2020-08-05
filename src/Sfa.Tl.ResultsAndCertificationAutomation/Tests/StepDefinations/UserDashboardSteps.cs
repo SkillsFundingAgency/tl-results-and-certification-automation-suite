@@ -1,4 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
@@ -29,6 +30,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                     break;
                 case "RegistrationEditor":
                     DfESignInPage.SigninAsRegistrationEditor();
+                    break;
+                case "PearsonSiteAdmin":
+                    DfESignInPage.SigninAsPearsonSiteAdmin();
                     break;
                 case "NoRoleNoService":
                     DfESignInPage.SigninAsNoRoleNoServiceUser();

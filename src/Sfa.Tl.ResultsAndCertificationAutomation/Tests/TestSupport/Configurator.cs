@@ -5,11 +5,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
     public class Configurator
     {
         private static Configurator configuratorInstance = null;
-        private string _browser;
-        private string _baseUrl;
-        private string _dfESignInUrl;
-        private string _dfeUserName;
-        private string _dfePassword;
+        private readonly string _browser;
+        private readonly string _baseUrl;
+        private readonly string _dfESignInUrl;
+        private readonly string _dfeUserName;
+        private readonly string _dfePassword;
 
         private Configurator()
         {
@@ -55,7 +55,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
             return _dfePassword;
         }
 
-        public string dfeSigninUrl()
+        public string DfeSigninUrl()
         {
             var dfeSignInUrl = ConfigurationManager.AppSettings["DfESignInUrl"];
             return dfeSignInUrl;

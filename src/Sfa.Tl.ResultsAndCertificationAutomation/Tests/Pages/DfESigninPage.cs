@@ -8,6 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     {
         public static readonly string DfeInvalidUserName = "test@tleveltest.com";
         private static readonly string AOAdminUser = WebDriverFactory.Config["AOAdminUser"];
+        private static readonly string PearsonAdminUser = WebDriverFactory.Config["PearsonAdminUser"];
         private static readonly string AOAllUser = WebDriverFactory.Config["AOAllUser"];
         private static readonly string AORevProvUser = WebDriverFactory.Config["APRevProUser"];
         private static readonly string AOReviewerUser = WebDriverFactory.Config["AOReviewer"];
@@ -56,6 +57,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void SigninAsSiteAdmin()
         {
             TLevelSignIn(AOAdminUser, AOAppPassword);
+        }
+        public static void SigninAsPearsonSiteAdmin()
+        {
+            TLevelSignIn(PearsonAdminUser, AOAppPassword);
         }
 
         public static void SigninAsAllUser()

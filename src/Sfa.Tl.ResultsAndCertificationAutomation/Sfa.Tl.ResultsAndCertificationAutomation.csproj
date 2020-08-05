@@ -5,10 +5,14 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Data\NewFile1.txt" />
     <None Remove="Data\RegistrationsInvalidDataStage2.csv" />
     <None Remove="Data\RegistrationsInvalidDataStage3.csv" />
     <None Remove="Data\RegistrationsInvalidDataStage4.csv" />
+    <None Remove="Data\RegistrationsUpdateValidData.csv" />
     <None Remove="Data\RegistrationsValidData.csv" />
+    <None Remove="Data\SeedProviders" />
+    <None Remove="Data\SeedProviders.sql" />
     <None Remove="Data\Stage2Validations.csv" />
     <None Remove="Data\Stage3ValidationErrors.csv" />
     <None Remove="Data\Stage4ValidationErrors.csv" />
@@ -23,7 +27,13 @@
     <EmbeddedResource Include="Data\RegistrationsInvalidDataStage4.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\RegistrationsUpdateValidData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Data\RegistrationsValidData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\SeedProviders.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Stage2Validations.csv">

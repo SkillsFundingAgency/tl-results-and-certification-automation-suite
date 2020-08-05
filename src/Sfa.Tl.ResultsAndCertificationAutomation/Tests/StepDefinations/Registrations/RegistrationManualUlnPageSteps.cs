@@ -1,4 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
@@ -9,6 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [When(@"I click on Add a new registration link")]
         public void WhenIClickOnAddANewRegistrationLink()
         {
+            SqlQueries.DeleteFromRegistrationTables();
             RegistrationsPage.ClickRegLink();
             AddNewRegistrations();
         }
