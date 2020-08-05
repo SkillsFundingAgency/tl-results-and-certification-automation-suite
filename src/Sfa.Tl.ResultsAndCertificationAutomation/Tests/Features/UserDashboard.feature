@@ -27,3 +27,8 @@ Then i should see Account, TLevels links
 Scenario: Dashboard page for Provider
 Given I have logged in as a "Provider" user
 Then I should see Account, Centre links
+
+@RegressionTest
+Scenario: Check Tech spec download page
+Given I have naviageted to tech spec page
+Then I should see Tech spec page with download file link

@@ -19,9 +19,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ExpectedError500 => string.Concat(StartPageUrl, "problem-with-service");
         public static string Error403 => string.Concat(StartPageUrl, "service-access-denied");
         public static string TermsUrl => string.Concat(StartPageUrl, "terms-and-conditions");
+        public static string TechSpecPageUrl => string.Concat(StartPageUrl, "download-registration-data-format-and-rules-guide");
         public static string PageTitle = "Sign in to submit T Levels registration and results details";
         public IWebElement CheckPageTitle => WebDriver.FindElement(By.TagName("h1"));
-        public By CookieTitle = By.TagName("h1");
+        public static By CookieTitle = By.TagName("h1");
         public By StartNowButton = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
         public By CookieLink = By.XPath("//a[contains(text(),'Cookies')]");
@@ -30,11 +31,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By TCLink = By.XPath("//a[contains(text(),'Terms and conditions')]");
         public By TCTitle = By.TagName("h1");
         protected readonly By PageHeader = By.TagName("h1");
-        
+        private const string TechSpecPageTitle = "Download registration data: format and rules guide page – Manage T Level results – GOV.UK";
+        private const string TechSpecPageHeader = "T Levels registration data: format and rules guide";
+
+
         public void CheckCookies()
         {
             PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
             Assert.AreEqual(Constants.CookieHeader, CheckPageTitle.Text);
+        }
+        public static void VerifyTechSpecPage()
+        {
+            Assert.AreEqual(TechSpecPageTitle, WebDriver.Title);
+            Assert.AreEqual(TechSpecPageHeader, WebDriver.FindElement(CookieTitle).Text);
         }
     }
 }
