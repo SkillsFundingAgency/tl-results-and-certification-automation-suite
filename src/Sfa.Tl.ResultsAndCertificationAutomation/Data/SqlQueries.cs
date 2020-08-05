@@ -1,4 +1,6 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using System;
+using System.IO;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
 {
@@ -15,6 +17,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegistrationSpecialism, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegistrationPathway, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegistrationProfile, ConnectionString);
+        }
+        public static void InsertSingleTlRoute()
+        {
+        }
+
+        public static void SeedScenarioData(string sqlFile)
+        {
+            string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{sqlFile}.sql";
+            var sqlfileContent = File.ReadAllText(filepath);
+            SqlDatabaseConncetionHelper.ExecuteSqlFile(sqlfileContent, ConnectionString);
         }
     }
 }

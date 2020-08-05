@@ -23,4 +23,4 @@ When I enter <Uln> and click on Search
 Then I should see results in the page
 Examples: 
 | Uln        | FirstName | LastName  | Day | Month | Year | Provider                    | Core                                     |
-| 9900000055 | FirstName1 | LaastName1 | 01  | 01    | 2010 | Automation Test2 (90000002) | Legal, Finance and Accounting (55555555) |
+| 9900000055 | FirstName1 | LaastName1 | 01  | 01    | 2010 | Automation Test2 (99999902) | Legal, Finance and Accounting (55555555) |

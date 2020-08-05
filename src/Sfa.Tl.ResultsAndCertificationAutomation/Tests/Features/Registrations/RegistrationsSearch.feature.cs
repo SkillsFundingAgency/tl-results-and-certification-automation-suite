@@ -90,7 +90,7 @@ testRunner.And("I click on Add a new registration link", ((string)(null)), ((Tec
         [NUnit.Framework.DescriptionAttribute("Search Registrations With Valid Uln")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
-        [NUnit.Framework.TestCaseAttribute("9900000055", "FirstName1", "LaastName1", "01", "01", "2010", "Automation Test2 (90000002)", "Legal, Finance and Accounting (55555555)", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000055", "FirstName1", "LaastName1", "01", "01", "2010", "Automation Test2 (99999902)", "Legal, Finance and Accounting (55555555)", null)]
         public virtual void SearchRegistrationsWithValidUln(string uln, string firstName, string lastName, string day, string month, string year, string provider, string core, string[] exampleTags)
         {
             string[] @__tags = new string[] {

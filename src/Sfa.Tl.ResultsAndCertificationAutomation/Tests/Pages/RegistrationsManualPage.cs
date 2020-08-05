@@ -31,8 +31,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
         private static readonly string ProviderHeader = "Select the provider";
         private static By SelectProvider { get; } = By.Id("selectedproviderukprn");
-        public const string InputPovider = "Automation Test2 (90000002)";
-        public const string InputPearsonPovider = "Automation Test3 (90000003)";
+        public const string InputPovider = "Automation Test2 (99999902)";
+        public const string InputPearsonPovider = "Automation Test3 (99999903)";
         //Select Core Page
         private static string CorePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-core");
         private static readonly string CoreHeader = "Select the core";

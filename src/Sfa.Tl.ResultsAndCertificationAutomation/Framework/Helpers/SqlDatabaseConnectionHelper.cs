@@ -75,5 +75,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             databaseConnection.Close();
             return result;
         }
+        public static void ExecuteSqlFile(string queryToExecute, string connectionString)
+        {
+            SqlConnection databaseConnection = new SqlConnection(connectionString);
+            databaseConnection.Open();
+            SqlCommand command = new SqlCommand(queryToExecute, databaseConnection);
+            command.ExecuteNonQuery();
+            databaseConnection.Close();
+        }
     }
 }
