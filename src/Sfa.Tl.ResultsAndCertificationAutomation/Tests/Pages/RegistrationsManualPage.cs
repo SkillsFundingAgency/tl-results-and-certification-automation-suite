@@ -22,11 +22,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By FirstName { get; } = By.Id("firstname");
         public static By LastName { get; } = By.Id("lastname");
         //DOB Page
-        private static string DobPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-date-of-birth");
-        private static readonly string DobPageHeader = "Enter the learner's date of birth";
-        private static By Day { get; } = By.Name("Day");
-        private static By Month { get; } = By.Name("Month");
-        private static By Year { get; } = By.Name("Year");
+        public static string DobPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-date-of-birth");
+        public static readonly string DobPageHeader = "Enter the learner's date of birth";
+        public static By Day { get; } = By.Name("Day");
+        public static By Month { get; } = By.Name("Month");
+        public static By Year { get; } = By.Name("Year");
         //Select Provider Page
         private static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
         private static readonly string ProviderHeader = "Select the provider";
