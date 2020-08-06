@@ -1,4 +1,6 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+﻿using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
@@ -15,17 +17,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [When(@"I changed the Provider and click continue")]
         public void WhenIChangedTheProviderAndClickContinue()
         {
-            VerifyProviderPage();
-            SelectProviderFromList("Automation Test2 (99999902)");
+            Assert.AreEqual(Constants.SelectProviderTitle, WebDriver.Title);
+            Assert.AreEqual(ProviderHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(ProviderPageUrl));
+            SelectProviderFromList("Automation Test1 (99999901)");
             ClickContiune();
         }
         
         [When(@"I change Core and Specialisms and click continue")]
         public void WhenIChangeCoreAndSpecialismsAndClickContinue()
         {
-            VerifyCorePage();
+            Assert.AreEqual(Constants.SelectCoreTitle, WebDriver.Title);
+            Assert.AreEqual(CoreHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(CorePageUrl));
+            SelectCoreFromList("Agriculture, Environmental and Animal Care (77777777)");
             ClickContiune();
-            VerifySpecialismDecidePage();
+            Assert.AreEqual(Constants.SpecialismDecideTitle, WebDriver.Title);
+            Assert.AreEqual(SpecialismDecideHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(SpecialismDecidePageUrl));
             ClickElement(DecideNo);
             ClickContiune();
             VerifyAcademicYearPage();

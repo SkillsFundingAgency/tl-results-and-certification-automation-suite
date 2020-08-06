@@ -34,14 +34,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string InputPovider = "Automation Test2 (99999902)";
         public const string InputPearsonPovider = "Automation Test3 (99999903)";
         //Select Core Page
-        private static string CorePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-core");
-        private static readonly string CoreHeader = "Select the core";
+        public static string CorePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-core");
+        public static readonly string CoreHeader = "Select the core";
         private static By SelectCore { get; } = By.Id("selectedcorecode");
         public const string InputCore = "Legal, Finance and Accounting (55555555)";
         public const string InputPearsonCore = "Creative and Design (10101010)";
         //Specialism Page
-        private static string SpecialismDecidePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learner-decided-specialism-question");
-        private static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
+        public static string SpecialismDecidePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learner-decided-specialism-question");
+        public static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
         public static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideNo { get; } = By.Id("specialismdecided-no");
         private static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialism");
