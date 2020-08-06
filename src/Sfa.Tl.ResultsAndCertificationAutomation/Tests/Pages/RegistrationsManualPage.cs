@@ -28,8 +28,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By Month { get; } = By.Name("Month");
         public static By Year { get; } = By.Name("Year");
         //Select Provider Page
-        private static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
-        private static readonly string ProviderHeader = "Select the provider";
+        public static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
+        public static readonly string ProviderHeader = "Select the provider";
         private static By SelectProvider { get; } = By.Id("selectedproviderukprn");
         public const string InputPovider = "Automation Test2 (99999902)";
         public const string InputPearsonPovider = "Automation Test3 (99999903)";
