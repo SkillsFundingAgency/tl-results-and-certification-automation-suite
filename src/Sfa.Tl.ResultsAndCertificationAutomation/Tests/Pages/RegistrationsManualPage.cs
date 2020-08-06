@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -63,6 +64,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By ChangeCore { get; } = By.Id("core");
         private static By ChangeSpecialism { get; } = By.Id("specialisms");
         private static By ChangeAcademicYear { get; } = By.Id("academicyear");
+
+        //Registration Search Page
+        private static By BackToRegistrationsBtn { get; } = By.XPath("//*[@id='main-content']/div/div/p[2]/a");
+        private static By SearchForRegistrationLink { get; } = By.XPath("//a[contains(text(),'Search for a registration')]");
+        private static string RegistrationSearchPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration");
+        private static readonly string RegistrationSearchHeader = "Search for a registration";
+        private static By SearchPageUlnInput { get; } = By.Id("searchuln");
+        private static string URLNotFoundPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration-ULN-not-found");
+        private static readonly string URLNotFoundPageHeader = "ULN (9900000052) cannot be found";
+        private static readonly string ExpectedInvalidULNError = "Enter a valid ULN";
+        public static By ActualInvalidULNError = By.XPath("//*[@id='main-content']//span[2]");
+        private static By SearchBtn { get; } = By.XPath("//*[@id='main-content']//button");
+        public static By ActualNullULNError = By.XPath("//*[@id='main-content']//span[2]");
+        private static readonly string ExpectedNullULNError = "Enter a ULN";
+        public static By ULNNotFoundPageBackLink = By.Id("backLink");
+        private static readonly string RegistrationDetailsHeader = "Registration details";
+        private static readonly String ExpectedSearchRegistrationSearchBtnText = "Search";
+        public static By BCRegistrations = By.XPath("//*[@id='breadcrumb1']");
+        public static By BCHome = By.XPath("//*[@id='breadcrumb0']");
+
+        //Search Registration Details Page
+        private static readonly String ExpectedCancelBtnText = "Cancel this registration";
+        private static readonly String ExpectedSearchAgainBtnText = "Search again";
+
 
         public static void AddNewRegistrations()
         {
@@ -208,6 +233,85 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickChangeAcademicYearLink()
         {
             WebDriver.FindElement(ChangeAcademicYear).Click();
+        }
+
+        //Registration Search Page Methods
+        public static void ClickBackToRegistrations()
+        {
+            ClickElement(BackToRegistrationsBtn);
+        }
+
+        public static void ClickSearchForRegistrationLink()
+        {
+            ClickElement(SearchForRegistrationLink);
+        }
+
+        public static void ClickSearchButton()
+        {
+            ClickElement(SearchBtn);
+        }
+
+        public static void VerifyRegistrationSearchPage()
+        {
+            Assert.AreEqual(RegistrationSearchPageUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.SearchRegistrationsPageTitle, WebDriver.Title);
+            Assert.AreEqual(RegistrationSearchHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(ExpectedSearchRegistrationSearchBtnText, WebDriver.FindElement(By.XPath("//button[contains(text(),'Search')]")).Text);
+        }
+
+        public static void EnterSearchUln(string uln)
+        {
+            WebDriver.FindElement(SearchPageUlnInput).SendKeys(uln);
+        }
+
+        public static void VerifyURLNotFoundPage(String ULN)
+        {
+            //Construct dynamic page header
+            String ExpectedURLNotFoundPageHeader = "ULN (" + ULN + ") cannot be found";
+
+            Assert.AreEqual(URLNotFoundPageUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.SearchRegistrationURLNotFoundPagePageTitle, WebDriver.Title);
+            Assert.AreEqual(ExpectedURLNotFoundPageHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+
+
+        public static void VerifyInvalidULNError()
+        {
+            PageHelper.VerifyText(ActualInvalidULNError, ExpectedInvalidULNError);
+        }
+
+        public static void VerifyNullULNError()
+        {
+            PageHelper.VerifyText(ActualNullULNError, ExpectedNullULNError);
+        }
+
+        public static void ClickBackLink_ULNNotFoundPage()
+        {
+            ClickElement(ULNNotFoundPageBackLink);
+        }
+
+        public static void VerifyULNFieldIsPopulated(String ULN)
+        {
+            String ULNInputValue = WebDriver.FindElement(SearchPageUlnInput).GetAttribute("value");
+            Console.WriteLine(ULNInputValue);
+            PageHelper.VerifyText("9900000052", ULNInputValue);
+        }
+
+        public static void VerifyRegistrationDetailsPage()
+        {
+            Assert.AreEqual(RegistrationDetailsHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(ExpectedCancelBtnText, WebDriver.FindElement(By.XPath("//*[contains(text(),'Cancel')]")).Text);
+            Assert.AreEqual(ExpectedSearchAgainBtnText, WebDriver.FindElement(By.XPath("//*[contains(text(),'Search again')]")).Text);
+        }
+
+        public static void SearchReg_ClickRegistrationsBCLink()
+        {
+            ClickElement(BCRegistrations);
+        }
+
+        public static void SearchReg_ClickHomeBCLink()
+        {
+            ClickElement(BCHome);
         }
     }
 }
