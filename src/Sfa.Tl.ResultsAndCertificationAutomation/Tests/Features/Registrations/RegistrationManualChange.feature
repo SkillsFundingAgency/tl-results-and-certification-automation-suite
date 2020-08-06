@@ -71,3 +71,20 @@ Then I should changed Provider details in Check and Submit page
 Examples: 
 | Uln        | FirstName | LastName  | Day | Month | Year | Provider                    | Core                                     |
 | 9900000060 | FirstName1 | LastName1 | 01  | 01    | 2010 | Automation Test2 (99999902) | Legal, Finance and Accounting (55555555) |
+
+@RegressionTest @ManaulRegistration
+Scenario: Change Core
+And I enter <Uln> and click Continue button
+And I enter <FirstName> <LastName> in learners page and click Contiune
+And I enter <Day> <Month> <Year> in DOB page and click Continue
+And I select <Provider> from the Provider list and click Continue
+And I select <Core> from the Core list and click Continue
+And I select No from has decided specialism and click Continue
+And I click Continue in Academic Year page
+When I click on Core change link
+And I changed the Core and click continue
+And I select the specialism and click continue
+Then I should see changed Core details in Check and Submit page
+Examples: 
+| Uln        | FirstName | LastName  | Day | Month | Year | Provider                    | Core                                     |
+| 9900000060 | FirstName1 | LastName1 | 01  | 01    | 2010 | Automation Test2 (99999902) | Legal, Finance and Accounting (55555555) |
