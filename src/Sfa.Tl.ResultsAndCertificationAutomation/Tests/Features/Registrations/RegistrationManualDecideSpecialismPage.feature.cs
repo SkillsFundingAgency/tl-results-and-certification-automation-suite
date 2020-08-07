@@ -87,7 +87,7 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
         [NUnit.Framework.DescriptionAttribute("Verify Registration Decide Specialism Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", "FirstName1", "LastName1", null)]
         public virtual void VerifyRegistrationDecideSpecialismPage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -155,7 +155,7 @@ testRunner.Then("I should see Devide Specialism Page", ((string)(null)), ((TechT
         [NUnit.Framework.DescriptionAttribute("Verify Registration Decide Specialism Error Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", "FirstName1", "LastName1", null)]
         public virtual void VerifyRegistrationDecideSpecialismErrorPage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {

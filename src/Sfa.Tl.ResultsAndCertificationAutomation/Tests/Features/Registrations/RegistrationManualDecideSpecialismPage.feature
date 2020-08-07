@@ -17,7 +17,7 @@ And I select Core and click Continue button
 Then I should see Devide Specialism Page
 Examples: 
 | Uln        | First Name | Last Name |
-| 9700000001 | FirstName1 | LastName1 |
+| 9900000001 | FirstName1 | LastName1 |
 
 @RegressionTest @ManaulRegistration
 Scenario: Verify Registration Decide Specialism Error Page
@@ -31,4 +31,4 @@ And click Continue without selecting any option
 Then I should see error in the Decide Specialism page
 Examples: 
 | Uln        | First Name | Last Name |
-| 9700000001 | FirstName1 | LastName1 |
+| 9900000001 | FirstName1 | LastName1 |

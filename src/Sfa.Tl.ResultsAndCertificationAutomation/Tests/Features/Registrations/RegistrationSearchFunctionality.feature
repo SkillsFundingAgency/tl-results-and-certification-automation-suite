@@ -6,7 +6,7 @@ So that I can soo which students have already been registered
 Background:
 Given I have logged in as a "RegistrationEditor" user
 
-@RegressionTest @RegistrationSearch 
+@ignore @RegressionTest @RegistrationSearch 
 Scenario: Search for a valid ULN which is registered
 When I click on Add a new registration link
 And I enter <Uln> and click Continue button
@@ -28,7 +28,7 @@ Examples:
 | 9900000051 | FirstName1 | LastName10 | 01  | 01    | 2010 |
 
 
-@RegressionTest @RegistrationSearch 
+@ignore @RegressionTest @RegistrationSearch 
 Scenario: Search for a valid ULN which is not registered
 When I click on Search For A registration link
 Then the Search for a registration page is displayed
@@ -40,7 +40,7 @@ Examples:
 | ULN        | First Name | Last Name  | Day | Month | Year |
 | 9900000052 | FirstName1 | LastName10 | 01  | 01    | 2010 |
 
-@RegressionTest @RegistrationSearch 
+@ignore @RegressionTest @RegistrationSearch 
 Scenario: Verify Search Page Invalid ULN error
 When I click on Search For A registration link
 Then the Search for a registration page is displayed
@@ -52,7 +52,7 @@ Examples:
 | ABCDEFGHIJ | 
 
 
-@RegressionTest @ManaulRegistration
+@ignore @RegressionTest @ManaulRegistration
 Scenario: Verify Search Page Blank ULN error
 When I click on Search For A registration link
 Then the Search for a registration page is displayed
@@ -67,7 +67,7 @@ When I click the Registrations link in the breadcrumbs
 Then I will be shown the Registrations dashboard page
 
 
-@RegressionTest @RegistrationSearch 
+@ignore @RegressionTest @RegistrationSearch 
 Scenario: Click Home link in breadcrumbs on the Search Registration page
 When I click on Search For A registration link
 When I click the Home link in the breadcrumbs

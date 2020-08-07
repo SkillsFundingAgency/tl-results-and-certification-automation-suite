@@ -87,7 +87,7 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
         [NUnit.Framework.DescriptionAttribute("Verify Registration Select Core Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", "FirstName1", "LastName1", null)]
         public virtual void VerifyRegistrationSelectCorePage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -152,7 +152,7 @@ testRunner.Then("I should see Select Core Page", ((string)(null)), ((TechTalk.Sp
         [NUnit.Framework.DescriptionAttribute("Verify Registration Select Core Error Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", "FirstName1", "LastName1", null)]
         public virtual void VerifyRegistrationSelectCoreErrorPage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {

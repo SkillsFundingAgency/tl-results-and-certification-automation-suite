@@ -37,8 +37,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             Assert.IsTrue(WebDriver.Url.Contains(SpecialismDecidePageUrl));
             ClickElement(DecideNo);
             ClickContiune();
-            VerifyAcademicYearPage();
-            ClickContiune();
         }
         
         [Then(@"I should changed Provider details in Check and Submit page")]

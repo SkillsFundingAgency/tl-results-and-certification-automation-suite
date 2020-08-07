@@ -85,12 +85,14 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search for a valid ULN which is registered")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
         [NUnit.Framework.TestCaseAttribute("9900000051", "FirstName1", "LastName10", "01", "01", "2010", null)]
         public virtual void SearchForAValidULNWhichIsRegistered(string uLN, string firstName, string lastName, string day, string month, string year, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "ignore",
                     "RegressionTest",
                     "RegistrationSearch"};
             if ((exampleTags != null))
@@ -180,12 +182,14 @@ testRunner.Then("the Registration Details page is displayed", ((string)(null)), 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search for a valid ULN which is not registered")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
         [NUnit.Framework.TestCaseAttribute("9900000052", "FirstName1", "LastName10", "01", "01", "2010", null)]
         public virtual void SearchForAValidULNWhichIsNotRegistered(string uLN, string firstName, string lastName, string day, string month, string year, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "ignore",
                     "RegressionTest",
                     "RegistrationSearch"};
             if ((exampleTags != null))
@@ -249,6 +253,7 @@ testRunner.Then(string.Format("the Registration Search page is displayed with th
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Search Page Invalid ULN error")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
         [NUnit.Framework.TestCaseAttribute("990000", null)]
@@ -256,6 +261,7 @@ testRunner.Then(string.Format("the Registration Search page is displayed with th
         public virtual void VerifySearchPageInvalidULNError(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "ignore",
                     "RegressionTest",
                     "RegistrationSearch"};
             if ((exampleTags != null))
@@ -307,11 +313,13 @@ testRunner.Then("I will be presented with an error stating ULN is invalid", ((st
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Search Page Blank ULN error")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
         public virtual void VerifySearchPageBlankULNError()
         {
             string[] tagsOfScenario = new string[] {
+                    "ignore",
                     "RegressionTest",
                     "ManaulRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -404,11 +412,13 @@ testRunner.Then("I will be shown the Registrations dashboard page", ((string)(nu
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Click Home link in breadcrumbs on the Search Registration page")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
         public virtual void ClickHomeLinkInBreadcrumbsOnTheSearchRegistrationPage()
         {
             string[] tagsOfScenario = new string[] {
+                    "ignore",
                     "RegressionTest",
                     "RegistrationSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

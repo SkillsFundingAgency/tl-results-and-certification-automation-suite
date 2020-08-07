@@ -16,7 +16,7 @@ And I select Provider and click Contiune button
 Then I should see Select Core Page
 Examples: 
 | Uln        | First Name | Last Name |
-| 9700000001 | FirstName1 | LastName1 |
+| 9900000001 | FirstName1 | LastName1 |
 
 @RegressionTest @ManaulRegistration
 Scenario: Verify Registration Select Core Error Page
@@ -29,4 +29,4 @@ And I click on Continue witout selecting Core
 Then I should see error in Select Core page
 Examples: 
 | Uln        | First Name | Last Name |
-| 9700000001 | FirstName1 | LastName1 |
+| 9900000001 | FirstName1 | LastName1 |
