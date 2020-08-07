@@ -48,7 +48,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialism");
         public static By SelectSpecialismLegal = By.XPath("//label[contains(text(),'Legal')]");
         public static By SelectSpecialismAgg = By.XPath("//label[contains(text(),'Agriculture, Land')]");
-        private static string AcademicYearPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-academic-year");
+        public static By SelectSpecialismFinancial = By.XPath("//label[contains(text(),'Financial')]");
+        public static string AcademicYearPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-academic-year");
         private static string RegistrationSummaryPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-check-and-submit");
         private static readonly string SummaryPageHeader = "Check and submit";
         private static readonly string RegistrationSuccessHeader = "Registration successful";
