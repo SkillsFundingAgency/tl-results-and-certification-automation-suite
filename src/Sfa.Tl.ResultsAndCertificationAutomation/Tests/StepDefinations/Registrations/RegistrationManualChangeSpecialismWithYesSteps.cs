@@ -31,9 +31,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Given(@"I select another speciallism and click continue")]
         public void GivenISelectAnotherSpeciallismAndClickContinue()
         {
-            Assert.AreEqual(Constants.SpecialismDecideTitle, WebDriver.Title);
-            Assert.AreEqual(SpecialismDecideHeader, WebDriver.FindElement(PageHeader).Text);
-            Assert.IsTrue(WebDriver.Url.Contains(SpecialismDecidePageUrl));
             ClickElement(SelectSpecialismFinancial);
             ClickChangeBtn();
         }
