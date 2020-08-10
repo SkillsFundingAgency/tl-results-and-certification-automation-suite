@@ -45,7 +45,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
         public static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideNo { get; } = By.Id("specialismdecided-no");
-        public static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialism");
+        public static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialisms");
         public static By SelectSpecialismLegal = By.XPath("//label[contains(text(),'Legal')]");
         public static By SelectSpecialismAgg = By.XPath("//label[contains(text(),'Agriculture, Land')]");
         public static By SelectSpecialismFinancial = By.XPath("//label[contains(text(),'Financial')]");
