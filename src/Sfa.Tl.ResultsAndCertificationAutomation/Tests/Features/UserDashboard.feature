@@ -32,3 +32,9 @@ Then I should see Account, Centre links
 Scenario: Check Tech spec download page
 Given I have naviageted to tech spec page
 Then I should see Tech spec page with download file link
+
+@RegressionTest
+Scenario: Check User Guide page
+Given I have navigated to Tlevel Start page
+When I click on User Guide link
+Then I should see user guide page

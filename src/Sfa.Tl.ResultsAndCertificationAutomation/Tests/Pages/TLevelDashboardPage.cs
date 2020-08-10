@@ -13,7 +13,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
         public static string CookieUrl => string.Concat(StartPageUrl, "cookie-policy");
         public IWebElement PrivacyLink => WebDriver.FindElement(By.LinkText("Privacy"));
-        public static string PrivacyUrl => string.Concat(StartPageUrl, "privacy-policy");
+        public IWebElement UserGuideLink => WebDriver.FindElement(By.XPath("//a[@href='/user-guide']"));
+        private static string UserGuideUrl => string.Concat(StartPageUrl, "user-guide");
+        public static readonly string UserGuideHeader = "Manage T Level results user guide";
+        private static string PrivacyUrl => string.Concat(StartPageUrl, "privacy-policy");
         public static string PrivacyHeader = "Privacy policy – awarding organisations and providers";
         public static string TlevelPageUrl => string.Concat(StartPageUrl, "Tlevel/Index");
         public static By BannerInfo = By.XPath("//span[@class='govuk-phase-banner__text']");
@@ -89,6 +92,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(Constants.PrivacyPageTitle, WebDriver.Title);
             Assert.AreEqual(PrivacyHeader, WebDriver.FindElement(By.TagName("h1")).Text);
             Assert.AreEqual(PrivacyUrl, WebDriver.Url);
+        }
+        public static void VerifyUserGuide()
+        {
+            Assert.AreEqual(Constants.UserGuideTitle, WebDriver.Title);
+            Assert.AreEqual(UserGuideUrl, WebDriver.Url);
+            Assert.IsTrue(WebDriver.FindElement(By.TagName("h1")).Text.Contains(UserGuideHeader));
         }
     }
 }
