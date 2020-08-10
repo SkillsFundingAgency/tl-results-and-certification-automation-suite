@@ -35,5 +35,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(Constants.SearchDetailsTitle, WebDriver.Title);
             Assert.AreEqual(Constants.SearchDetailsHeader, WebDriver.FindElement(PageHeader).Text);
         }
+        public static void verifyName(string name) 
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(name));
+        }
+        public static void verifyDob(string Dob)
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(Dob));
+        }
+        public static void verifyProvider(string Provider)
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(Provider));
+        }
+        public static void verifyCore(string Core)
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(Core));
+        }
+        public static void verifySpecialism(string Specialism)
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(Specialism));
+        }
     }
 }
