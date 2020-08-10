@@ -33,6 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string TLevelsPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
         public const string ProviderPageHeader = "Find a provider";
         public const string ProviderPageTitle = "Find a provider page – Manage T Level results – GOV.UK";
+        public const string PrivacyPageTitle = "Privacy policy page – Manage T Level results – GOV.UK";
         //Reviewer Error Page Titles
         public const string ErrorSelectTlevelReview = "Error: Select a T Level to review page – Manage T Level results – GOV.UK";
         public const string ErrorAreTheseDetailsCorrect = "Error: Are these details correct page – Manage T Level results – GOV.UK";

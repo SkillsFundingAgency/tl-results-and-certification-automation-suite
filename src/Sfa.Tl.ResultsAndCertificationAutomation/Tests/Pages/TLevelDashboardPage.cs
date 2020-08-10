@@ -12,6 +12,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
         public static string CookieUrl => string.Concat(StartPageUrl, "cookie-policy");
+        public IWebElement PrivacyLink => WebDriver.FindElement(By.LinkText("Privacy"));
+        public static string PrivacyUrl => string.Concat(StartPageUrl, "privacy-policy");
+        public static string PrivacyHeader = "Privacy policy – awarding organisations and providers";
         public static string TlevelPageUrl => string.Concat(StartPageUrl, "Tlevel/Index");
         public static By BannerInfo = By.XPath("//span[@class='govuk-phase-banner__text']");
         public static string BannerText = "This is a new service – your feedback will help us to improve it.";
@@ -79,6 +82,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ViewCookieBanner()
         {
             ClickElement(ViewCookieBannerBtn);
+        }
+
+        public static void VerifyPrivacy()
+        {
+            Assert.AreEqual(Constants.PrivacyPageTitle, WebDriver.Title);
+            Assert.AreEqual(PrivacyHeader, WebDriver.FindElement(By.TagName("h1")).Text);
+            Assert.AreEqual(PrivacyUrl, WebDriver.Url);
         }
     }
 }
