@@ -1,4 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
@@ -10,8 +11,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void WhenIAmOnSelectSpecialismPage()
         {
             RegistrationsPage.ClickRegLink();
+            SqlQueries.DeleteFromRegistrationTables();
             AddNewRegistrations();
-            EnterUln("9700000001");
+            EnterUln("9900000001");
             ClickContiune();
             EnterLearnerName("FirstName1", "LastName1");
             ClickContiune();

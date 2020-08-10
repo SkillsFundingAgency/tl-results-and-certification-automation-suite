@@ -87,7 +87,7 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
         [NUnit.Framework.DescriptionAttribute("Verify Registration Learners Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void VerifyRegistrationLearnersPage(string uln, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -141,7 +141,7 @@ testRunner.Then("I should see Learners Page", ((string)(null)), ((TechTalk.SpecF
         [NUnit.Framework.DescriptionAttribute("Verify Registration Learners Error Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void VerifyRegistrationLearnersErrorPage(string uln, string[] exampleTags)
         {
             string[] @__tags = new string[] {

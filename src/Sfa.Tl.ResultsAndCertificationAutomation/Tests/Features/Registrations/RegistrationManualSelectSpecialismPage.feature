@@ -18,7 +18,7 @@ And I select Decided Yes option and click Continue button
 Then I should see Select Specialism Page
 Examples: 
 | Uln        | First Name | Last Name |
-| 9700000001 | FirstName1 | LastName1 |
+| 9900000001 | FirstName1 | LastName1 |
 
 @RegressionTest @ManaulRegistration
 Scenario: Verify Registration Select Specialism Error Page
@@ -33,4 +33,4 @@ And I click Continue without selecting Specialism
 Then I should see Error in the page
 Examples: 
 | Uln        | First Name | Last Name |
-| 9700000001 | FirstName1 | LastName1 |
+| 9900000001 | FirstName1 | LastName1 |

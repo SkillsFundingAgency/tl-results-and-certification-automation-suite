@@ -87,7 +87,7 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
         [NUnit.Framework.DescriptionAttribute("Verify Registration DOB Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", "FirstName1", "LastName1", null)]
         public virtual void VerifyRegistrationDOBPage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -146,7 +146,7 @@ testRunner.Then("I should see Date of Birth Page", ((string)(null)), ((TechTalk.
         [NUnit.Framework.DescriptionAttribute("Verify Registration DOB Error Page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ManaulRegistration")]
-        [NUnit.Framework.TestCaseAttribute("9700000001", "FirstName1", "LastName1", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000001", "FirstName1", "LastName1", null)]
         public virtual void VerifyRegistrationDOBErrorPage(string uln, string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {

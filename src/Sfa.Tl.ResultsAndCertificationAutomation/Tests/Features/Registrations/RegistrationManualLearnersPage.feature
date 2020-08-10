@@ -13,7 +13,7 @@ And I enter <Uln> and click Continue button
 Then I should see Learners Page
 Examples: 
 | Uln        |
-| 9700000001 |
+| 9900000001 |
 
 @RegressionTest @ManaulRegistration
 Scenario: Verify Registration Learners Error Page
@@ -23,4 +23,4 @@ And I click on Coninue button in Learners Page
 Then should see error in Learners page
 Examples: 
 | Uln        |
-| 9700000001 |
+| 9900000001 |

@@ -82,5 +82,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string CancelRegHeader = "Are you sure you want to cancel this registration?";
         public const string CancelRegSuccessTitle = "Registration cancelled confirmation page – Manage T Level results – GOV.UK";
         public const string CancelRegSuccessHeader = "Registration cancelled successfully";
+        //Registration Search Page
+        public const string SearchRegistrationsPageTitle = "Search for a registration page – Manage T Level results – GOV.UK";
+        public const string SearchRegistrationURLNotFoundPagePageTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
     }
 }
