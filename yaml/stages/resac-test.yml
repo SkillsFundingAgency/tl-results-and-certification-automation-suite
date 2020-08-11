@@ -1,0 +1,26 @@
+parameters:
+- name: testAssemblyVer2
+  type: string
+- name: searchFolder
+  type: string
+- name: filePath
+  type: string
+- name: stageName
+  type: string
+- name: deploymentDependencyName
+  type: string
+- name: variableGroups
+  type: object
+stages:
+  - stage: ${{parameters.stageName}}
+    displayName:  'Environment - ${{parameters.stageName}}'
+    dependsOn: '${{parameters.deploymentDependencyName}}'      
+    variables:
+    - '${{ each variableGroup in parameters.variableGroups }}':
+      - group: ${{variableGroup}}
+    jobs:
+      - template: ../jobs/resac-test.yml
+        parameters:
+          testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
+          searchFolder: '${{parameters.searchFolder}}'
+          filePath: '${{parameters.filePath}}'
