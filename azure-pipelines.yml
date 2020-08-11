@@ -1,10 +1,4 @@
-schedules:
-  - cron: "0 0 * * *"
-    displayName: Daily midnight build
-    branches:
-      include:
-      - master
-      - feature/*
+
 resources:
   repositories:
     - repository: self
@@ -21,11 +15,6 @@ resources:
       type: github
       endpoint: DFE-Digital
       name: DFE-Digital/operations-devops-tools
-trigger:
-  batch: true
-  branches:
-    include:
-      - "*"
 pr: none
 
 variables:
