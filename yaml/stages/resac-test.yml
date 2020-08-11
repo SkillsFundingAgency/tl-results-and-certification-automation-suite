@@ -27,4 +27,4 @@ stages:
           testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
           searchFolder: '${{parameters.searchFolder}}'
           filePath: '${{parameters.filePath}}'
-          testFiltercriteria: '${{testFiltercriteria}}'
+          testFiltercriteria: '${{parameters.testFiltercriteria}}'
