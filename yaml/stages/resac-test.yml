@@ -11,6 +11,9 @@ parameters:
   type: string
 - name: variableGroups
   type: object
+- name: testFiltercriteria
+  type: string
+  default: ''
 stages:
   - stage: ${{parameters.stageName}}
     displayName:  'Environment - ${{parameters.stageName}}'
@@ -24,3 +27,4 @@ stages:
           testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
           searchFolder: '${{parameters.searchFolder}}'
           filePath: '${{parameters.filePath}}'
+          testFiltercriteria: '${{testFiltercriteria}}'

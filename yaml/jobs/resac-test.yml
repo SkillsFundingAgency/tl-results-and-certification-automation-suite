@@ -1,3 +1,12 @@
+parameters:
+- name: testAssemblyVer2
+  type: string
+- name: searchFolder
+  type: string
+- name: filePath
+  type: string
+- name: testFiltercriteria
+  type: string
 jobs:
   - job: runTests
     displayName: Run the automation tests
@@ -24,6 +33,7 @@ jobs:
         inputs:
           testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
           searchFolder: '${{parameters.searchFolder}}'
+          testFiltercriteria: '${{parameters.testFiltercriteria}}'
           runInParallel: false
           rerunFailedTests: true
         continueOnError: true
