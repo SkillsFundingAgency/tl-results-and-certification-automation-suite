@@ -21,6 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string RegistrationUploadSuccessUrl => string.Concat(StartPage.StartPageUrl, "registrations-upload-successful");
         private static string RegistrationUploadUnSuccessUrl => string.Concat(StartPage.StartPageUrl, "registrations-upload-unsuccessful");
         public static string UploadValidFile = "RegistrationsValidData.csv";
+        public static string UploadValidFileSingle = "RegistrationsValidDataSingle.csv";
         public static string UploadValidUpdatedFile = "RegistrationsUpdateValidData.csv";
         public static string UploadStage2File = "RegistrationsInvalidDataStage2.csv";
         public static string Stage2Errors = string.Concat("Data\\", "Stage2Validations.csv");

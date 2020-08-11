@@ -64,3 +64,16 @@ Then I should see <Uln> can not be found page
 Examples: 
 | Uln        | FirstName | LastName  | Day | Month | Year | Provider                    | Core                                     |
 | 9900000055 | FirstName1 | LaastName1 | 01  | 01    | 2010 | Automation Test2 (99999902) | Legal, Finance and Accounting (55555555) |
+
+@RegressionTest @RegistrationSearch
+Scenario: Search Registration from Bulk upload
+And I click on Back link
+And I click on Upload registration file link
+And I select registration file and click submit
+And I click on back to registration link
+And I click on Search for registrations link
+And I entered the <Uln> and click on Search
+Then I should see Registartion data matched with uploaded data
+Examples: 
+| Uln        |
+| 9900000001 |

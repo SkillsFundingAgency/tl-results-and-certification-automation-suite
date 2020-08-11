@@ -97,5 +97,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(UlnNotFoundUrl, WebDriver.Url);
             Assert.AreEqual("ULN (" + uln + ") cannot be found", WebDriver.FindElement(By.TagName("h1")).Text);
         }
+        public static void VerifySearchFromBulkUpload()
+        {
+            verifyName("First Name 1 Last Name 1");
+            verifyDob("10/01/2006");
+            verifyProvider("Automation Test1 (99999901)");
+            verifyCore("Agriculture, Environmental and Animal Care (77777777)");
+            verifySpecialism("Animal Care and Management (70000001)");
+        }
     }
 }
