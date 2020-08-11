@@ -77,6 +77,7 @@ stages:
       deploymentDependencyName: 'Build'
       testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
       searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+      testFiltercriteria: 'TestCategory=SmokeTest'
       filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
       variableGroups:
         - 'PreProd Shared Resources'
