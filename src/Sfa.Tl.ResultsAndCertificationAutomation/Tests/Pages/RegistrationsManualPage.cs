@@ -73,7 +73,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string RegistrationSearchHeader = "Search for a registration";
         private static By SearchPageUlnInput { get; } = By.Id("searchuln");
         private static string URLNotFoundPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration-ULN-not-found");
-        private static readonly string URLNotFoundPageHeader = "ULN (9900000052) cannot be found";
         private static readonly string ExpectedInvalidULNError = "Enter a valid ULN";
         public static By ActualInvalidULNError = By.XPath("//*[@id='main-content']//span[2]");
         private static By SearchBtn { get; } = By.XPath("//*[@id='main-content']//button");
@@ -86,8 +85,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BCHome = By.XPath("//*[@id='breadcrumb0']");
 
         //Search Registration Details Page
-        private static readonly String ExpectedCancelBtnText = "Cancel this registration";
-        private static readonly String ExpectedSearchAgainBtnText = "Search again";
+        private static readonly string ExpectedCancelBtnText = "Cancel this registration";
+        private static readonly string ExpectedSearchAgainBtnText = "Search again";
 
 
         public static void AddNewRegistrations()
@@ -265,10 +264,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(SearchPageUlnInput).SendKeys(uln);
         }
 
-        public static void VerifyURLNotFoundPage(String ULN)
+        public static void VerifyURLNotFoundPage(string ULN)
         {
             //Construct dynamic page header
-            String ExpectedURLNotFoundPageHeader = "ULN (" + ULN + ") cannot be found";
+            string ExpectedURLNotFoundPageHeader = "ULN (" + ULN + ") cannot be found";
 
             Assert.AreEqual(URLNotFoundPageUrl, WebDriver.Url);
             Assert.AreEqual(Constants.SearchRegistrationURLNotFoundPagePageTitle, WebDriver.Title);
@@ -291,11 +290,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(ULNNotFoundPageBackLink);
         }
 
-        public static void VerifyULNFieldIsPopulated(String ULN)
+        public static void VerifyULNFieldIsPopulated(string ULN)
         {
-            String ULNInputValue = WebDriver.FindElement(SearchPageUlnInput).GetAttribute("value");
+            string ULNInputValue = WebDriver.FindElement(SearchPageUlnInput).GetAttribute("value");
             Console.WriteLine(ULNInputValue);
-            PageHelper.VerifyText("9900000052", ULNInputValue);
+            PageHelper.VerifyText(ULN, ULNInputValue);
         }
 
         public static void VerifyRegistrationDetailsPage()
@@ -313,6 +312,33 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void SearchReg_ClickHomeBCLink()
         {
             ClickElement(BCHome);
+        }
+        public static void CreateRegistrationWithSpecialism(string uln, string firstName, string lastname, string day, string month, string year)
+        {
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName(firstName, lastname);
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob(day, month, year);
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideYes);
+            ClickContiune();
+            VerifySpecialismPage();
+            ClickElement(SelectSpecialismLegal);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
         }
     }
 }
