@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using TechTalk.SpecFlow;
@@ -18,7 +17,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
             var browser = WebDriverFactory.Config["Browser"];
             WebDriver = webDriverFactory.GetWebDriver(browser);
             WebDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(10);
-            WebDriver.Manage().Window.Maximize();
         }
 
         [After]
