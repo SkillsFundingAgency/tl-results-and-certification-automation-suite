@@ -17,11 +17,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
         public static By UlnInput { get; } = By.Id("uln");
         public static readonly string UlnPageHeader = "Enter the Unique Learner Number (ULN)";
+        public static By UlnError { get; } = By.XPath("//a[@href='#uln']");
         //Learner Name Page
         public static string LearnerNameUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learners-name");
         public static readonly string LearnerPageHeader = "Enter the learner's name";
         public static By FirstName { get; } = By.Id("firstname");
         public static By LastName { get; } = By.Id("lastname");
+        public static By FirstNameError { get; } = By.XPath("//a[@href='#firstname']");
+        public static By LastNameError { get; } = By.XPath("//a[@href='#lastname']");
+        public static string FirstNameErrorMsg { get; } = "First name must be 100 characters or fewer";
+        public static string LastNameErrorMsg { get; } = "Last name must be 100 characters or fewer";
         //DOB Page
         public static string DobPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-date-of-birth");
         public static readonly string DobPageHeader = "Enter the learner's date of birth";
