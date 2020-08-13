@@ -371,5 +371,29 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickContiune();
             VerifyRegistrationSummaryPage();
         }
+        public static void CreateRegistrationForPearson(string uln, string firstName, string lastname, string day, string month, string year)
+        {
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName(firstName, lastname);
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob(day, month, year);
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPearsonPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputPearsonCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideNo);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
+        }
     }
 }
