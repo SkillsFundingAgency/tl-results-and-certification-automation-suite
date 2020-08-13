@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
@@ -18,6 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             Assert.AreEqual(FirstNameErrorMsg, WebDriver.FindElement(FirstNameError).Text);
             Assert.AreEqual(LastNameErrorMsg, WebDriver.FindElement(LastNameError).Text);
+            Assert.AreEqual(Constants.LearnerPageErrorTitle, WebDriver.Title);
         }
     }
 }

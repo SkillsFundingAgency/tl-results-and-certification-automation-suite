@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
@@ -17,6 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void ThenIShouldSeeValidMessageInHeader(string Error)
         {
             Assert.AreEqual(Error, WebDriver.FindElement(UlnError).Text);
+            Assert.AreEqual(Constants.UlnPageErrorTitle, WebDriver.Title);
         }
     }
 }

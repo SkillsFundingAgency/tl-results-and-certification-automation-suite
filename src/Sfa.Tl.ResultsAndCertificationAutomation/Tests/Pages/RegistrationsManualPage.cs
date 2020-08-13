@@ -33,6 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By Day { get; } = By.Name("Day");
         public static By Month { get; } = By.Name("Month");
         public static By Year { get; } = By.Name("Year");
+        public static By DayError { get; } = By.XPath("//a[@href='#day']");
         //Select Provider Page
         public static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
         public static readonly string ProviderHeader = "Select the provider";
