@@ -112,7 +112,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I will be shown the Tlevel dashboard page")]
         public void ThenIWillBeShownTheTlevelDashboardPage()
         {
-            TlevelDashboardPage.CheckDashboardpage();
+            TlevelDashboardPage.VerifyDashboardpage();
         }
 
 

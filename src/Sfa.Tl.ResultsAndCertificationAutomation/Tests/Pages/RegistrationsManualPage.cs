@@ -345,5 +345,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickContiune();
             VerifyRegistrationSummaryPage();
         }
+
+        public static void CreateRegistrationWithoutSpecialism(string uln, string firstName, string lastname, string day, string month, string year)
+        {
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName(firstName, lastname);
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob(day, month, year);
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideNo);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
+        }
     }
 }
