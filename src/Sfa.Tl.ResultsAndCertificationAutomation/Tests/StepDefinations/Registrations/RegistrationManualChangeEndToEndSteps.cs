@@ -21,9 +21,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         }
 
         [Given(@"I enter the (.*) and click search")]
-        public void GivenIEnterTheAndClickSearch(string p0)
+        public void GivenIEnterTheAndClickSearch(string Uln)
         {
-            EnterText(RegistrationsSearchPage.SearchBox, p0);
+            EnterText(RegistrationsSearchPage.SearchBox, Uln);
             ClickElement(RegistrationsSearchPage.SearchBtn);
         }
 

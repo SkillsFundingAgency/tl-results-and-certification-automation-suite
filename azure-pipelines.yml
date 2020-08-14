@@ -43,27 +43,12 @@ stages:
     parameters: 
       buildConfiguration: $(buildConfiguration)
       buildPlatform: $(buildPlatform)
-      artifactname: 'appdrop'
-
-  - template: ./yaml/stages/resac-deploy-database.yml
-    parameters:
-      deploymentDependencyName: 'Build'
-      ServiceConnection: $(ServiceConnection)
-      SharedSqlServerFQDN: $(SharedSqlServerFQDN)
-      DatabaseName: $(AutomationDatabaseName)
-      SharedSqlServerUsername: $(SharedSqlServerUsername)
-      SharedSqlServerPassword: $(SharedSqlServerPassword)
-      artifactname: 'sqldrop' 
-      dacpacklocation: '$(System.ArtifactsDirectory)/sqldrop/src/Sfa.Tl.ResultsAndCertification.Database/bin/Release/Sfa.Tl.ResultsAndCertification.Database.dacpac'
-      variableGroups:
-        - 'Test Shared Resources'
-        - 'Common Shared Resources'
-    
+      artifactname: 'appdrop'    
  
   - template: ./yaml/stages/resac-test.yml
     parameters:
       stageName: 'Test'
-      deploymentDependencyName: 'DeployDatabase'
+      deploymentDependencyName: 'Build'
       testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
       searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
       filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'

@@ -24,3 +24,14 @@ Then should see error in Learners page
 Examples: 
 | Uln        |
 | 9900000001 |
+
+@RegressionTest @ManaulRegistration
+Scenario: Learner Data validations
+When I click on Add a new registration link
+And I enter <Uln> and click Continue button
+And I enter invalid <FirstName> <LastName> for Learner
+When I click on Coninue button in Learners Page
+Then I should see errors
+Examples: 
+| Uln        | FirstName                                                                                             | LastName                                                                                              |
+| 9900000001 | abcdfghijklmnopqrstuvwxyzabcdfghijklmnopqrstuvwxyzabcdfghijklmnopqrstuvwxyzabcdfghijklmnopqrstuvwxyza | abcdfghijklmnopqrstuvwxyzabcdfghijklmnopqrstuvwxyzabcdfghijklmnopqrstuvwxyzabcdfghijklmnopqrstuvwxyza |

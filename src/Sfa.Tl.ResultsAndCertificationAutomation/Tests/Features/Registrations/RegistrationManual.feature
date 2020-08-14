@@ -76,3 +76,18 @@ Examples:
 | Uln        | First Name | Last Name  | Day | Month | Year |
 | 9900000053 | FirstName1 | LaastName1 | 01  | 01    | 2010 |
 
+@RegressionTest @RegistrationSearch
+Scenario: Search another AO registration
+Given I have logged in as a "PearsonSiteAdmin" user
+And I click on Add a new registration link
+And I created registration for the AO
+And I click submit the registration
+And I click Sigh Out link
+And I have logged in as a "RegistrationEditor" user
+And I navigated to serach registration page
+And I entered the <Uln> and click serach
+Then I should see an error with <Uln>
+Examples: 
+| Uln        |
+| 9900000054 |
+

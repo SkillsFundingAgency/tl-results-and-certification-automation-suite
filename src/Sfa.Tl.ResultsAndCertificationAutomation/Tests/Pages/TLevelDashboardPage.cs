@@ -99,5 +99,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(UserGuideUrl, WebDriver.Url);
             Assert.IsTrue(WebDriver.FindElement(By.TagName("h1")).Text.Contains(UserGuideHeader));
         }
+
+        public static void VerifyDashboardpage()
+        {
+            PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
+            Assert.AreEqual(Constants.DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
+
+        }
     }
 }

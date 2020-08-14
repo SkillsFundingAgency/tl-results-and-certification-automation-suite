@@ -42,7 +42,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                     return new InternetExplorerDriver();
                 case var _ when browser == "Chrome":
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArgument("--headless");
+                    chromeOptions.AddArgument("--incognito");
                     chromeOptions.AddUserProfilePreference("download.default_directory", FileHelper.GetDownloadFolder());
                     return new ChromeDriver(chromeOptions);
 

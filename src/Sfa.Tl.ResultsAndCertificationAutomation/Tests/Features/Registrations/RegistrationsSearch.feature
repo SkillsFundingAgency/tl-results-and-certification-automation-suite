@@ -77,3 +77,25 @@ Then I should see Registartion data matched with uploaded data
 Examples: 
 | Uln        |
 | 9900000001 |
+
+@RegressionTest @RegistrationSearch
+Scenario: Cancel Registration page validations
+And I am on Search registration page
+And I entered registered <Uln> and click search
+And I click on Cancel Registration button
+When I click on Cancel button wihtout selecting options
+Then I should see validation <Errors> in cancel registration page
+Examples: 
+| Uln        | Errors                                             |
+| 9900000060 | Select yes if you want to cancel this registration |
+
+@RegressionTest @RegistrationSearch
+Scenario: Cancel the Cancel Registration
+And I am on Search registration page
+And I entered registered <Uln> and click search
+And I click on Cancel Registration button
+When I select No in the options and click submit button
+Then I should see results in the page
+Examples: 
+| Uln        |
+| 9900000060 |
