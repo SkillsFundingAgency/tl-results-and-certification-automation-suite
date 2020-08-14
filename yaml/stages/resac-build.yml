@@ -14,7 +14,3 @@ stages:
         parameters: 
           buildConfiguration: ${{parameters.buildConfiguration}}
           artifactname: '${{parameters.artifactname}}'
-      - template: ../jobs/resac-build-sql.yml
-        parameters: 
-          buildConfiguration: ${{parameters.buildConfiguration}}
-          buildPlatform: ${{parameters.buildPlatform}}
