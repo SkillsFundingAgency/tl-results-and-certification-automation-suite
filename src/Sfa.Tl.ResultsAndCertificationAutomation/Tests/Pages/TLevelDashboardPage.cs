@@ -33,7 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private readonly By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
         private static readonly By PageTitle = By.TagName("h1");
         private static readonly string ManageCentresPageHeader = "Your T Levels";
-        private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookie-policy']");
+        private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookies']");
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
 
         public void ViewUserAccount()

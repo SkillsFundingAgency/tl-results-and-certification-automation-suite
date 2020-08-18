@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     {
         public static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
         public static string HelpUrl => string.Concat(StartPageUrl, "Help");
-        public static string CookieUrl => string.Concat(StartPageUrl, "cookie-policy");
+        public static string CookieUrl => string.Concat(StartPageUrl, "cookies");
         public static string PrivacyUrl => string.Concat(HelpUrl, "/Privacy");
         public static string Expected404 => string.Concat(WebDriverFactory.Config["BaseUrl"], "page-not-found");
         public static string Error404 => string.Concat(StartPageUrl, "test");
@@ -23,6 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string PageTitle = "Sign in to submit T Levels registration and results details";
         public IWebElement CheckPageTitle => WebDriver.FindElement(By.TagName("h1"));
         public static By CookieTitle = By.TagName("h1");
+        public static By TlevelCookies { get; } = By.XPath("//*[@id='main-content']/div/div/h1");
         public By StartNowButton = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
         public By CookieLink = By.XPath("//a[contains(text(),'Cookies')]");
