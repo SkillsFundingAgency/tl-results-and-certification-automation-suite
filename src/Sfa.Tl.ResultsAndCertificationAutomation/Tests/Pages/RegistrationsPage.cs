@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string UploadRegistrationUrl => string.Concat(StartPage.StartPageUrl, "upload-registrations-file");
         public static By SearchRegistrationLink = By.XPath("//a[contains(text(),'Search for a registration')]");
         public static By AddRegistrationLink = By.XPath("//a[contains(text(),'Add a new registration')]");
-        private static readonly By PageHeader = By.TagName("h1");
+        private static readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         //upload Registrations
         public static By ChooseFile = By.Id("file");
         public static By SubmitFileBtn = By.XPath("//button[contains(text(),'Submit')]");

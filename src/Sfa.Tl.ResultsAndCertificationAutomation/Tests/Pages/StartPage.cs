@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string TechSpecPageUrl => string.Concat(StartPageUrl, "download-registration-data-format-and-rules-guide");
         public static string PageTitle = "Sign in to submit T Levels registration and results details";
         public IWebElement CheckPageTitle => WebDriver.FindElement(By.TagName("h1"));
-        public static By CookieTitle = By.TagName("h1");
+        public static By CookieTitle { get; } = By.XPath("//*[@id='main-content']//h1");
         public static By TlevelCookies { get; } = By.XPath("//*[@id='main-content']/div/div/h1");
         public By StartNowButton = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
@@ -31,7 +31,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By PrivacyTitle = By.TagName("h1");
         public By TCLink = By.XPath("//a[contains(text(),'Terms and conditions')]");
         public By TCTitle = By.TagName("h1");
-        protected readonly By PageHeader = By.TagName("h1");
+        protected readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         private const string TechSpecPageTitle = "Download registration data: format and rules guide page – Manage T Level results – GOV.UK";
         private const string TechSpecPageHeader = "T Levels registration data: format and rules guide";
 

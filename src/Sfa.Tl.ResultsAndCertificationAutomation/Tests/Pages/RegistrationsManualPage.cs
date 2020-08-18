@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class RegistrationsManualPage : ElementHelper
     {
-        public static By PageHeader { get; } = By.TagName("h1");
+        public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static readonly By BackLink = By.Id("backLink");
         private static By ContinueBtn { get; } = By.XPath("//button[contains(text(),'Continue')]");
         private static By SubmitBtn { get; } = By.XPath("//button[contains(text(),'Submit')]");

@@ -34,7 +34,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By CancelRegError { get; } = By.XPath("//a[@href='#cancelregistration']");
         public static string CancelRegErrorDeails { get; } = "Select yes if you want to cancel this registration";
 
-        private static By PageHeader { get; } = By.TagName("h1");
+        private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
@@ -73,7 +73,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.IsTrue(WebDriver.Url.Contains(CancelRegUrl));
             Assert.AreEqual(ConfirmRegCancelTitle, WebDriver.Title);
-            Assert.AreEqual(ConfirmRegCancelHeader, WebDriver.FindElement(By.TagName("h1")).Text);
+            Assert.AreEqual(ConfirmRegCancelHeader, WebDriver.FindElement(By.XPath("//*[@id='main-content']//h1")).Text);
         }
         public static void VerifyCancelRegistrationPage()
         {
@@ -88,7 +88,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(CancelRegSuccessUrl,WebDriver.Url);
             Assert.AreEqual(CancelRegSuccessTitle, WebDriver.Title);
-            Assert.AreEqual(CancelRegSuccessHeader, WebDriver.FindElement(By.TagName("h1")).Text);
+            Assert.AreEqual(CancelRegSuccessHeader, WebDriver.FindElement(By.XPath("//*[@id='main-content']//h1")).Text);
         }
         public static void SearchAnotherReg()
         {
@@ -98,7 +98,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(UlnNotFoundTitle, WebDriver.Title);
             Assert.AreEqual(UlnNotFoundUrl, WebDriver.Url);
-            Assert.AreEqual("ULN (" + uln + ") cannot be found", WebDriver.FindElement(By.TagName("h1")).Text);
+            Assert.AreEqual("ULN (" + uln + ") cannot be found", WebDriver.FindElement(By.XPath("//*[@id='main-content']//h1")).Text);
         }
         public static void VerifySearchFromBulkUpload()
         {
