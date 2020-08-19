@@ -11,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string DashboardUrl => string.Concat(StartPageUrl, "home");
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
-        public static string CookieUrl => string.Concat(StartPageUrl, "cookie-policy");
+        public static string CookieUrl => string.Concat(StartPageUrl, "cookie-details");
         public IWebElement PrivacyLink => WebDriver.FindElement(By.LinkText("Privacy"));
         public IWebElement UserGuideLink => WebDriver.FindElement(By.XPath("//a[@href='/user-guide']"));
         private static string UserGuideUrl => string.Concat(StartPageUrl, "user-guide");
@@ -31,9 +31,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By CentresLink = By.XPath("//a[contains(text(), 'Providers')]");
         public static By TlevelLink = By.XPath("//a[@href='/tlevels']");
         private readonly By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
-        private static readonly By PageTitle = By.XPath("//*[@id='main-content']//h1");
+        public static By PageTitle { get; } = By.XPath("//*[@id='main-content']//h1");
         private static readonly string ManageCentresPageHeader = "Your T Levels";
         private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookies']");
+        public static By CookieDetailsLink { get; } = By.XPath("//a[@href='cookie-details']");
+        public const string CookeDetailsPageTitle = "Our cookie policy page – Manage T Level results – GOV.UK";
+        public const string CookieDetailsPageHeader = "Cookie policy";
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
 
         public void ViewUserAccount()

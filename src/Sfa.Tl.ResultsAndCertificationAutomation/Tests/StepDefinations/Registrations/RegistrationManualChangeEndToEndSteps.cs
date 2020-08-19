@@ -31,11 +31,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see Registration with newly added data")]
         public void ThenIShouldSeeRegistrationWithNewlyAddedData()
         {
-            RegistrationsSearchPage.verifyName("FirstName1 LastName1");
-            RegistrationsSearchPage.verifyDob("01/01/2010");
-            RegistrationsSearchPage.verifyProvider("Automation Test2 (99999902)");
-            RegistrationsSearchPage.verifyCore("Legal, Finance and Accounting (55555555)");
-            RegistrationsSearchPage.verifySpecialism("Financial (50000002)");
+            RegistrationsSearchPage.VerifyName("FirstName1 LastName1");
+            RegistrationsSearchPage.VerifyDob("01/01/2010");
+            RegistrationsSearchPage.VerifyProvider("Automation Test2 (99999902)");
+            RegistrationsSearchPage.VerifyCore("Legal, Finance and Accounting (55555555)");
+            RegistrationsSearchPage.VerifySpecialism("Financial (50000002)");
         }
     }
 }
