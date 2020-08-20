@@ -36,7 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookies']");
         public static By CookieDetailsLink { get; } = By.XPath("//a[@href='cookie-details']");
         public const string CookeDetailsPageTitle = "Details about cookies on Manage T Level results – Manage T Level results – GOV.UK";
-        public const string CookieDetailsPageHeader = "Cookie policy";
+        public const string CookieDetailsPageHeader = "Details about cookies on Manage T Level results";
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
 
         public void ViewUserAccount()

@@ -35,6 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         protected readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         private const string TechSpecPageTitle = "Download registration data: format and rules guide page – Manage T Level results – GOV.UK";
         private const string TechSpecPageHeader = "T Levels registration data: format and rules guide";
+        public const string CookiePageTitle = "Cookies on Manage T Level results page – Manage T Level results – GOV.UK";
 
 
         public void CheckCookies()
