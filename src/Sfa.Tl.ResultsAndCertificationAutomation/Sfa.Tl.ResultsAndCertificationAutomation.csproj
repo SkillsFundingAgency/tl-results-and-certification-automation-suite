@@ -86,6 +86,9 @@
     <None Update="LoadRunnerTests\AddProvider.ltsln">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="LoadRunnerTests\ResultsAndCertification.ltsln">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Sfa.Tl.ResultsAndCertificationAutomation.runtimeconfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
