@@ -1,0 +1,518 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED qcserver CDATA #IMPLIED qcproject CDATA #IMPLIED SolManSolutionId CDATA #IMPLIED SolManProjectId CDATA #IMPLIED SolManTestPlanId CDATA #IMPLIED SolManTestPackageId CDATA #IMPLIED SolManUserInfoData CDATA #IMPLIED  >
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,AdditionalInfo*,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName,ConfName?,Res,DVer?,TSet?,TInst?,RunType?,DT?,AdditionalInfo*,Step*,DIter*,Step*,Action*,Doc*,Summary?,TestMaintenanceSummary*,NodeArgs?) >
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC|BPTWrapperTest|Flow|Group|Action) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT ConfName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT AdditionalInfo (AdditionalDataName,AdditionalDataValue ) >
+
+<!ELEMENT AdditionalDataName ( #PCDATA ) >
+
+<!ELEMENT AdditionalDataValue ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step*,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*, Summary,ActionMaintenanceSummary*, NodeArgs ) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,DataMapping?, Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED isCountable (False|True) "False" >
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT TestMaintenanceSummary (ActionMaintenanceSummary*) >
+<!ATTLIST TestMaintenanceSummary ObjectsAdded CDATA #REQUIRED ObjectsUpdated CDATA #REQUIRED StepsUpdated CDATA #REQUIRED StepsComments CDATA #REQUIRED><!ELEMENT ActionMaintenanceSummary (ObjectChange* ) >
+<!ATTLIST ActionMaintenanceSummary Action CDATA #REQUIRED Objects CDATA #REQUIRED Updated CDATA #REQUIRED LinesTotal CDATA #REQUIRED Added CDATA #REQUIRED LinesUpdated CDATA #REQUIRED>
+
+<!ELEMENT ObjectChange  (Hierarchy, PropertyChangeList* ) >
+<!ATTLIST ObjectChange Operation CDATA #IMPLIED OriginalRepository CDATA #IMPLIED>
+
+<!ELEMENT PropertyChangeList (PropertyDef*) >
+
+<!ELEMENT PropertyDef (OriginalValue, NewValue) >
+<!ATTLIST PropertyDef PropName CDATA #REQUIRED OriginRegularExpression (True|False) "False" NewRegularExpression (True|False) "False" AddedProperty (True|False) "False" >
+
+<!ELEMENT OriginalValue ( #PCDATA )>
+
+<!ELEMENT NewValue ( #PCDATA )>
+
+<!ELEMENT Hierarchy  (ObjectName, Hierarchy*) >
+<!ATTLIST Hierarchy MicClass CDATA #REQUIRED>
+
+<!ELEMENT ObjectName  ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,TimeTick* ,(Step|HtmlStep|Doc)*, DataMapping?, NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,TimeTick*,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT TimeTick ( #PCDATA ) >
+
+<!ELEMENT DataMapping ( DataMappedItem* )>
+<!ELEMENT DataMappedItem EMPTY >
+<!ATTLIST DataMappedItem dsName CDATA #REQUIRED >
+<!ATTLIST DataMappedItem rowId CDATA #REQUIRED >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?,ExtendedInfo? )>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED UserNote CDATA #IMPLIED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED MovieMarker CDATA "">
+<!ATTLIST NodeArgs Source CDATA #IMPLIED SourceLine CDATA #IMPLIED StepFlowItemKey CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT ExtendedInfo ( StepData ) >
+
+<!ATTLIST ExtendedInfo StepType CDATA #REQUIRED>
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+>
+<Report ver="2.0" tmZone="GMT Standard Time">
+<General productName="Vugen" productVer="2020" os="" host="DESKTOP-D80A036"><DocLocation><![CDATA[C:\LoadTests\TruClient3]]></DocLocation></General>
+<Doc rID="T1"   productName= "Vugen"  >
+<DName><![CDATA[TruClient3]]></DName>
+<Res><![CDATA[result1]]></Res>
+<Action rID="T2">
+<AName><![CDATA[Init]]></AName>
+<Summary sTime="21/08/2020 - 10:58:35" eTime="21/08/2020 - 10:58:35" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="5" >
+<Disp><![CDATA[Init Summary]]></Disp>
+</NodeArgs>
+</Action>
+<DIter rID="T3" iterID="1" >
+<Action rID="T4">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T5">
+<Obj plainTxt="False" ><![CDATA[Navigate]]></Obj>
+<Details plainTxt="False" ><![CDATA[1: Navigate to https://test.manage-tlev....tlevels.gov.uk/ was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:39]]></Time>
+<TimeTick>1598003919</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="9" status="Passed" >
+<Disp><![CDATA[Navigate]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T6">
+<Obj plainTxt="False" ><![CDATA[Reload]]></Obj>
+<Details plainTxt="False" ><![CDATA[2: Reload current page was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:40]]></Time>
+<TimeTick>1598003920</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="10" status="Passed" >
+<Disp><![CDATA[Reload]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T7">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[3: Click on Start now button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:42]]></Time>
+<TimeTick>1598003922</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="11" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T8">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[4.1: Click on Email address textbox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:43]]></Time>
+<TimeTick>1598003923</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="12" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T9">
+<Obj plainTxt="False" ><![CDATA[Type]]></Obj>
+<Details plainTxt="False" ><![CDATA[4.2: Type ao_user_app@tleveltest.com in Email address textbox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:45]]></Time>
+<TimeTick>1598003925</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="13" status="Passed" >
+<Disp><![CDATA[Type]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T10">
+<Obj plainTxt="False" ><![CDATA[Type]]></Obj>
+<Details plainTxt="False" ><![CDATA[4.3: Type ************* in Password passwordbox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:46]]></Time>
+<TimeTick>1598003926</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="14" status="Passed" >
+<Disp><![CDATA[Type]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T11">
+<Obj plainTxt="False" ><![CDATA[Press Key]]></Obj>
+<Details plainTxt="False" ><![CDATA[4.4: Press key Enter on Password passwordbox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:48]]></Time>
+<TimeTick>1598003928</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="15" status="Passed" >
+<Disp><![CDATA[Press Key]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[5: Click on PEARSON EDUCATION LIMITED... label was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:50]]></Time>
+<TimeTick>1598003930</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="16" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T13">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until Manage T Level results heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:52]]></Time>
+<TimeTick>1598003932</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="17" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T14">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[6: Click on Continue button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:53]]></Time>
+<TimeTick>1598003933</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="18" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T15">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until Find a provider heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:54]]></Time>
+<TimeTick>1598003934</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="19" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T16">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[7: Click on Providers link was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:54]]></Time>
+<TimeTick>1598003934</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="20" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T17">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[8: Click on Enter the provider's name combobox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:55]]></Time>
+<TimeTick>1598003935</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="21" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T18">
+<Obj plainTxt="False" ><![CDATA[Type]]></Obj>
+<Details plainTxt="False" ><![CDATA[9: Type West Suffolk College in Enter the provider's name combobox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:57]]></Time>
+<TimeTick>1598003937</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="22" status="Passed" >
+<Disp><![CDATA[Type]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T19">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[10: Click on Continue button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:57]]></Time>
+<TimeTick>1598003937</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="23" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T20">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[11: Click on Continue button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:58]]></Time>
+<TimeTick>1598003938</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="24" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T21">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[12: Click on T Level in Creative and...  was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:58:59]]></Time>
+<TimeTick>1598003939</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="25" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T22">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[13: Click on T Level in Creative Catering...  was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:00]]></Time>
+<TimeTick>1598003940</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="26" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T23">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until T Levels added successful... heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:02]]></Time>
+<TimeTick>1598003942</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="27" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T24">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[14: Click on Submit button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:02]]></Time>
+<TimeTick>1598003942</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="28" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T25">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until Find a provider heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:04]]></Time>
+<TimeTick>1598003944</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="29" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T26">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[15: Click on Find another provider button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:04]]></Time>
+<TimeTick>1598003944</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="30" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T27">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[16: Click on Enter the provider's name combobox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:05]]></Time>
+<TimeTick>1598003945</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="31" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T28">
+<Obj plainTxt="False" ><![CDATA[Type]]></Obj>
+<Details plainTxt="False" ><![CDATA[17: Type West Suffolk College in Enter the provider's name combobox was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:07]]></Time>
+<TimeTick>1598003947</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="32" status="Passed" >
+<Disp><![CDATA[Type]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T29">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[18: Click on Continue button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:07]]></Time>
+<TimeTick>1598003947</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="33" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T30">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[19: Click on Continue button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:08]]></Time>
+<TimeTick>1598003948</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="34" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T31">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until Are you sure you want... heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:10]]></Time>
+<TimeTick>1598003950</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="35" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T32">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[20: Click on Remove T Level in Creative... link was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:10]]></Time>
+<TimeTick>1598003950</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="36" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T33">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[21: Click on Yes, remove T Level  was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:11]]></Time>
+<TimeTick>1598003951</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="37" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T34">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until T Level removed successfu... heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:13]]></Time>
+<TimeTick>1598003953</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="38" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T35">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[22: Click on Submit button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:13]]></Time>
+<TimeTick>1598003953</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="39" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T36">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until Provider's T Levels heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:15]]></Time>
+<TimeTick>1598003955</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="40" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T37">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[23: Click on Manage provider's T Level... link was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:15]]></Time>
+<TimeTick>1598003955</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="41" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T38">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until Are you sure you want... heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:17]]></Time>
+<TimeTick>1598003957</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="42" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T39">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[24: Click on Remove T Level in Creative... link was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:17]]></Time>
+<TimeTick>1598003957</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="43" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T40">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[25: Click on Yes, remove T Level  was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:18]]></Time>
+<TimeTick>1598003958</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="44" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T41">
+<Obj plainTxt="False" ><![CDATA[Wait]]></Obj>
+<Details plainTxt="False" ><![CDATA[: Wait until T Level removed successfu... heading exists was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:20]]></Time>
+<TimeTick>1598003960</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="45" status="Passed" >
+<Disp><![CDATA[Wait]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T42">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[26: Click on Submit button was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:20]]></Time>
+<TimeTick>1598003960</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="46" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T43">
+<Obj plainTxt="False" ><![CDATA[Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[27: Click on Sign out link was finished]]></Details>
+<Time><![CDATA[21/08/2020 - 10:59:21]]></Time>
+<TimeTick>1598003961</TimeTick>
+<NodeArgs eType="General" icon="0" nRep="47" status="Passed" >
+<Disp><![CDATA[Click]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="21/08/2020 - 10:58:37" eTime="21/08/2020 - 10:59:21" passed="39" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="8" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="7" status="Passed" >
+<Disp><![CDATA[TruClient3 Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<Action rID="T44">
+<AName><![CDATA[End]]></AName>
+<Summary sTime="21/08/2020 - 10:59:21" eTime="21/08/2020 - 10:59:21" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="50" >
+<Disp><![CDATA[End Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Summary sTime="21/08/2020 - 10:58:33" eTime="21/08/2020 - 10:59:28" passed="39" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="4" status="Passed" >
+<Disp><![CDATA[Test TruClient3 Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>
