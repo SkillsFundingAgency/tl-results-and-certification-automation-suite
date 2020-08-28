@@ -97,6 +97,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void AddNewRegistrations()
         {
+            RegistrationsPage.ClickRegLink();
             ClickElement(AddRegistrationLink);
         }
         public static void ClickContiune()

@@ -11,7 +11,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void GivenIClickOnAddANewRegistrationLink()
         {
             SqlQueries.DeleteFromRegistrationTables();
-            RegistrationsPage.ClickRegLink();
             AddNewRegistrations();
         }
         
