@@ -24,8 +24,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"Cookies page should open")]
         public void ThenCookiesPageShouldOpen()
         {
-            PageHelper.VerifyPageUrl(WebDriver.Url, CookieUrl);
-            Assert.AreEqual("Cookie policy", WebDriver.FindElement(CookieTitle).Text);
+            PageHelper.VerifyPageUrl(CookieUrl, WebDriver.Url);
+            Assert.AreEqual("Cookies on Manage T Level results", WebDriver.FindElement(TlevelCookies).Text);
         }
     }
 }

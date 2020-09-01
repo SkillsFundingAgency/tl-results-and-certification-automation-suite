@@ -11,6 +11,7 @@
     <None Remove="Data\RegistrationsInvalidDataStage4.csv" />
     <None Remove="Data\RegistrationsUpdateValidData.csv" />
     <None Remove="Data\RegistrationsValidData.csv" />
+    <None Remove="Data\RegistrationsValidDataSingle.csv" />
     <None Remove="Data\SeedProviders" />
     <None Remove="Data\SeedProviders.sql" />
     <None Remove="Data\Stage2Validations.csv" />
@@ -31,6 +32,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\RegistrationsValidData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\RegistrationsValidDataSingle.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\SeedProviders.sql">
@@ -79,6 +83,12 @@
       <IsTransformFile>true</IsTransformFile>
       <DependentUpon>appsettings.json</DependentUpon>
     </None>
+    <None Update="LoadRunnerTests\AddProvider.ltsln">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="LoadRunnerTests\ResultsAndCertification.ltsln">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Sfa.Tl.ResultsAndCertificationAutomation.runtimeconfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -89,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Framework\StoredProcedure\" />
+    <Folder Include="LoadRunnerTests\" />
   </ItemGroup>
   <PropertyGroup>
     <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>

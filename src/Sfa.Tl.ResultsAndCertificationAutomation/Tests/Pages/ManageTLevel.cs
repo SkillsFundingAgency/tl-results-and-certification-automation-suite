@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private readonly By EverythingCorrectRadioBtn = By.XPath("//input[@id='iseverythingcorrect']");
         private readonly By SomethingWrongRadoiBtn = By.XPath("//input[@id='tl-verify-no']");
         //Tlevel confirmation page
-        public By PageTitle = By.TagName("h1");
+        public By PageTitle = By.XPath("//*[@id='main-content']//h1");
         public const string TlevelConfirmantionMsg = "T Level details confirmed";
         public const string TlevelConfirmantionPageTitle = "T Level details confirmed page – Manage T Level results – GOV.UK";
         public const string TLevelViewPageTitle = "View all T Levels page";

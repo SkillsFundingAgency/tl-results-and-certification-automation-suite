@@ -67,5 +67,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             VerifyRegistrationSuccessPage();
             
         }
+
+
+        [When(@"I create a registration using (.*) (.*) (.*) (.*) (.*) (.*) without specialisms")]
+        public void WhenICreateARegistrationUsingWithoutSpecialisms(string ULN, string FirstName, string LastName, string Day, string Month, string Year)
+        {
+            CreateRegistrationWithoutSpecialism(ULN, FirstName, LastName, Day, Month, Year);
+        }
+
     }
 }

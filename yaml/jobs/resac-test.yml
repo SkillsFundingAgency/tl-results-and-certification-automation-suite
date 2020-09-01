@@ -1,0 +1,46 @@
+parameters:
+- name: testAssemblyVer2
+  type: string
+- name: searchFolder
+  type: string
+- name: filePath
+  type: string
+- name: testFiltercriteria
+  type: string
+jobs:
+  - job: runTests
+    displayName: Run the automation tests
+    pool:
+        name: 'Azure Pipelines'
+        vmImage: 'windows-2019'
+    steps:
+      - checkout: devopsTools
+      - task: DownloadBuildArtifacts@0
+        inputs:
+          buildType: 'current'
+          downloadType: 'single'
+          artifactName: 'appdrop'
+          downloadPath: '$(System.ArtifactsDirectory)'          
+      
+      - task: Tokenization@2
+        displayName: 'Tokenization: Transform file *.json'
+        inputs:
+          SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
+          TargetFileNames: '*.json'
+      
+      - task: VSTest@2
+        displayName: 'VsTest - Test Execution'
+        inputs:
+          testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
+          searchFolder: '${{parameters.searchFolder}}'
+          testFiltercriteria: '${{parameters.testFiltercriteria}}'
+          runInParallel: false
+          rerunFailedTests: true
+        continueOnError: true
+      
+      - task: PowerShell@2
+        displayName: 'Check .trx File Exists'
+        inputs:
+          targetType: filePath
+          filePath: '${{parameters.filePath}}'
+          arguments: '-SourcePath "$(Agent.TempDirectory)/testresults"'

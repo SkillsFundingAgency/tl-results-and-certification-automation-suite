@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             RegistrationsPage.ClickRegLink();
             SqlQueries.DeleteFromRegistrationTables();
-            AddNewRegistrations();
+            AddRegistrations();
             EnterUln("9900000001");
             ClickContiune();
             EnterLearnerName("FirstName1", "LastName1");

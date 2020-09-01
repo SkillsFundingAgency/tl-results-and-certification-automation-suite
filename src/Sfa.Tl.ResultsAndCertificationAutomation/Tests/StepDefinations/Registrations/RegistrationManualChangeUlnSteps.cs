@@ -21,7 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             Assert.AreEqual(UlnPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(UlnUrl));
             WebDriver.FindElement(UlnInput).Clear();
-            WebDriver.FindElement(UlnInput).SendKeys("1234567890");
+            WebDriver.FindElement(UlnInput).SendKeys("9900000061");
             ClickChangeBtn();
         }
         

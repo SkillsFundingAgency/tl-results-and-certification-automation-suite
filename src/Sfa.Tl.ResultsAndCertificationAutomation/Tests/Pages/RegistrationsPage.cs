@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string UploadRegistrationUrl => string.Concat(StartPage.StartPageUrl, "upload-registrations-file");
         public static By SearchRegistrationLink = By.XPath("//a[contains(text(),'Search for a registration')]");
         public static By AddRegistrationLink = By.XPath("//a[contains(text(),'Add a new registration')]");
-        private static readonly By PageHeader = By.TagName("h1");
+        private static readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         //upload Registrations
         public static By ChooseFile = By.Id("file");
         public static By SubmitFileBtn = By.XPath("//button[contains(text(),'Submit')]");
@@ -21,6 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string RegistrationUploadSuccessUrl => string.Concat(StartPage.StartPageUrl, "registrations-upload-successful");
         private static string RegistrationUploadUnSuccessUrl => string.Concat(StartPage.StartPageUrl, "registrations-upload-unsuccessful");
         public static string UploadValidFile = "RegistrationsValidData.csv";
+        public static string UploadValidFileSingle = "RegistrationsValidDataSingle.csv";
         public static string UploadValidUpdatedFile = "RegistrationsUpdateValidData.csv";
         public static string UploadStage2File = "RegistrationsInvalidDataStage2.csv";
         public static string Stage2Errors = string.Concat("Data\\", "Stage2Validations.csv");

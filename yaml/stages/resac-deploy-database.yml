@@ -1,0 +1,37 @@
+parameters:
+- name: ServiceConnection
+  type: string
+- name: SharedSqlServerFQDN
+  type: string
+- name: DatabaseName
+  type: string
+- name: SharedSqlServerUsername
+  type: string
+- name: SharedSqlServerPassword
+  type: string
+- name: artifactname
+  type: string
+- name: dacpacklocation
+  type: string
+- name: deploymentDependencyName
+  type: string
+- name: variableGroups
+  type: object
+
+stages:
+- stage: DeployDatabase
+  displayName: Deploy database
+  dependsOn: '${{parameters.deploymentDependencyName}}'
+  variables:
+    - '${{ each variableGroup in parameters.variableGroups }}':
+      - group: ${{variableGroup}}
+  jobs:      
+    - template: ../jobs/resac-deploy-database.yml
+      parameters: 
+        ServiceConnection: ${{parameters.ServiceConnection}}
+        SharedSqlServerFQDN: ${{parameters.SharedSqlServerFQDN}}
+        DatabaseName: ${{parameters.DatabaseName}}
+        SharedSqlServerUsername: ${{parameters.SharedSqlServerUsername}}
+        SharedSqlServerPassword: ${{parameters.SharedSqlServerPassword}}
+        artifactname: '${{parameters.artifactname}}' 
+        dacpacklocation: '${{parameters.dacpacklocation}}'

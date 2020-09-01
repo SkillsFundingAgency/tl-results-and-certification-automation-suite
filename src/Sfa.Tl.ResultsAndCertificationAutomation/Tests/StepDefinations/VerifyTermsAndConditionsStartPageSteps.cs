@@ -26,7 +26,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         {
             PageHelper.WaitForUrl(TermsUrl);
             PageHelper.VerifyPageUrl(WebDriver.Url, TermsUrl);
-            Assert.AreEqual("Terms and conditions", WebDriver.FindElement(TCTitle).Text);
+            Assert.AreEqual("Terms and conditions", WebDriver.FindElement(PageHeader).Text);
         }
     }
 }

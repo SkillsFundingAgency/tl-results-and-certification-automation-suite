@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Temp\Loadrunner\Tests\BulkUpload_1
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ec:\temp\loadrunner\tests\bulkupload_1\\logfile.log
+c:\temp\loadrunner\tests\bulkupload_1\\combined_BulkUpload_1.c
+c:\temp\loadrunner\tests\bulkupload_1\\pre_cci.c
