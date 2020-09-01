@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class UserAccessLevels : ElementHelper
     {
         private static readonly By ManageTlevelBanner = By.XPath("//a[contains(text(),'Manage T Level results')]");
-        private static readonly By PageHeader = By.TagName("h1");
+        private static readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         private const string AccessDenied = "Access denied";
         private const string AccessDeniedTitle = "Access denied due to wrong role page – Manage T Level results – GOV.UK";
         private const string AccessNoServiceTitle = "Service access denied page – Manage T Level results – GOV.UK";
@@ -50,7 +50,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickOnLink(AccountLink);
             Assert.AreEqual(ExpectedUrl, WebDriver.Url);
-            Assert.AreEqual(ProfilePageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(ProfilePageHeader, WebDriver.FindElement(By.TagName("h1")).Text);
         }
         public void AccessLevelAdmin()
         {

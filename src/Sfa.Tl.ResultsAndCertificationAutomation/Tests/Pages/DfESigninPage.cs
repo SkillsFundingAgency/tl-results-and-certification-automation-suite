@@ -20,8 +20,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "home");
         public static readonly By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
         public const string SigninError = "Information missing or incorrect";
-        protected static readonly By PageHeader = By.TagName("h1");
-
+        protected static readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         public static By UserIdTxtBox { get; } = By.Id("username");
         public static By PasswordTxtBox { get; } = By.Id("password");
         public static By StartNowButton { get; set; } = By.XPath("//a[@role='button' and contains(text(),'Start now')]");

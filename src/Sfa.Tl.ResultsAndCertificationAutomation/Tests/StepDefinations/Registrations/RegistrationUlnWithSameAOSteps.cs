@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
         public void WhenIClickOnBackToRegistrationLink()
         {
             ClickElement(RegistrationsPage.BacktoRegistrationLink);
-            AddNewRegistrations();
+            AddRegistrations();
         }
         
         [Then(@"I should see ULN already registered page")]

@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class RegistrationsManualPage : ElementHelper
     {
-        public static By PageHeader { get; } = By.TagName("h1");
+        public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static readonly By BackLink = By.Id("backLink");
         private static By ContinueBtn { get; } = By.XPath("//button[contains(text(),'Continue')]");
         private static By SubmitBtn { get; } = By.XPath("//button[contains(text(),'Submit')]");
@@ -17,17 +17,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
         public static By UlnInput { get; } = By.Id("uln");
         public static readonly string UlnPageHeader = "Enter the Unique Learner Number (ULN)";
+        public static By UlnError { get; } = By.XPath("//a[@href='#uln']");
         //Learner Name Page
         public static string LearnerNameUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learners-name");
         public static readonly string LearnerPageHeader = "Enter the learner's name";
         public static By FirstName { get; } = By.Id("firstname");
         public static By LastName { get; } = By.Id("lastname");
+        public static By FirstNameError { get; } = By.XPath("//a[@href='#firstname']");
+        public static By LastNameError { get; } = By.XPath("//a[@href='#lastname']");
+        public static string FirstNameErrorMsg { get; } = "First name must be 100 characters or fewer";
+        public static string LastNameErrorMsg { get; } = "Last name must be 100 characters or fewer";
         //DOB Page
         public static string DobPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-date-of-birth");
         public static readonly string DobPageHeader = "Enter the learner's date of birth";
         public static By Day { get; } = By.Name("Day");
         public static By Month { get; } = By.Name("Month");
         public static By Year { get; } = By.Name("Year");
+        public static By DayError { get; } = By.XPath("//a[@href='#day']");
         //Select Provider Page
         public static string ProviderPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-provider");
         public static readonly string ProviderHeader = "Select the provider";
@@ -45,7 +51,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
         public static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideNo { get; } = By.Id("specialismdecided-no");
-        public static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialism");
+        public static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialisms");
         public static By SelectSpecialismLegal = By.XPath("//label[contains(text(),'Legal')]");
         public static By SelectSpecialismAgg = By.XPath("//label[contains(text(),'Agriculture, Land')]");
         public static By SelectSpecialismFinancial = By.XPath("//label[contains(text(),'Financial')]");
@@ -73,7 +79,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string RegistrationSearchHeader = "Search for a registration";
         private static By SearchPageUlnInput { get; } = By.Id("searchuln");
         private static string URLNotFoundPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration-ULN-not-found");
-        private static readonly string URLNotFoundPageHeader = "ULN (9900000052) cannot be found";
         private static readonly string ExpectedInvalidULNError = "Enter a valid ULN";
         public static By ActualInvalidULNError = By.XPath("//*[@id='main-content']//span[2]");
         private static By SearchBtn { get; } = By.XPath("//*[@id='main-content']//button");
@@ -86,12 +91,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BCHome = By.XPath("//*[@id='breadcrumb0']");
 
         //Search Registration Details Page
-        private static readonly String ExpectedCancelBtnText = "Cancel this registration";
-        private static readonly String ExpectedSearchAgainBtnText = "Search again";
+        private static readonly string ExpectedCancelBtnText = "Cancel this registration";
+        private static readonly string ExpectedSearchAgainBtnText = "Search again";
 
+        public static void AddRegistrations()
+        {
+            ClickElement(AddRegistrationLink);
+        }
 
         public static void AddNewRegistrations()
         {
+            RegistrationsPage.ClickRegLink();
             ClickElement(AddRegistrationLink);
         }
         public static void ClickContiune()
@@ -265,10 +275,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(SearchPageUlnInput).SendKeys(uln);
         }
 
-        public static void VerifyURLNotFoundPage(String ULN)
+        public static void VerifyURLNotFoundPage(string ULN)
         {
             //Construct dynamic page header
-            String ExpectedURLNotFoundPageHeader = "ULN (" + ULN + ") cannot be found";
+            string ExpectedURLNotFoundPageHeader = "ULN (" + ULN + ") cannot be found";
 
             Assert.AreEqual(URLNotFoundPageUrl, WebDriver.Url);
             Assert.AreEqual(Constants.SearchRegistrationURLNotFoundPagePageTitle, WebDriver.Title);
@@ -291,11 +301,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(ULNNotFoundPageBackLink);
         }
 
-        public static void VerifyULNFieldIsPopulated(String ULN)
+        public static void VerifyULNFieldIsPopulated(string ULN)
         {
-            String ULNInputValue = WebDriver.FindElement(SearchPageUlnInput).GetAttribute("value");
+            string ULNInputValue = WebDriver.FindElement(SearchPageUlnInput).GetAttribute("value");
             Console.WriteLine(ULNInputValue);
-            PageHelper.VerifyText("9900000052", ULNInputValue);
+            PageHelper.VerifyText(ULN, ULNInputValue);
         }
 
         public static void VerifyRegistrationDetailsPage()
@@ -313,6 +323,82 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void SearchReg_ClickHomeBCLink()
         {
             ClickElement(BCHome);
+        }
+        public static void CreateRegistrationWithSpecialism(string uln, string firstName, string lastname, string day, string month, string year)
+        {
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName(firstName, lastname);
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob(day, month, year);
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideYes);
+            ClickContiune();
+            VerifySpecialismPage();
+            ClickElement(SelectSpecialismLegal);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
+        }
+
+        public static void CreateRegistrationWithoutSpecialism(string uln, string firstName, string lastname, string day, string month, string year)
+        {
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName(firstName, lastname);
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob(day, month, year);
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideNo);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
+        }
+        public static void CreateRegistrationForPearson(string uln, string firstName, string lastname, string day, string month, string year)
+        {
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName(firstName, lastname);
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob(day, month, year);
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPearsonPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputPearsonCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideNo);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using WaitHelpers = SeleniumExtras.WaitHelpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
@@ -20,6 +21,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             { return false; }
         }
 
+        public static bool IsDisplayed(By by)
+        {
+            try
+            {
+                var result = WebDriver.FindElement(by);
+                return result.Displayed;
+            }
+            catch (Exception)
+            { return false; }
+        }
+
         public static void FindElementContainingText(string text)
        {
             WebDriver.FindElement(By.XPath($"//*[contains(text(),'{text}')]"));
@@ -31,9 +43,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
        }
 
         public static void ClickElement(IWebElement element)
-       {
-           element.Click();
-       }
+        {
+            element.Click();
+        }
 
         public static void ClickElement(By locator)
         {
@@ -153,6 +165,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{filename}";
             WebDriver.FindElement(by).SendKeys(filepath);
+        }
+
+        public static void NavigateTo(string pageUrl)
+        {
+            var url = string.Concat(StartPage.StartPageUrl, pageUrl);  // Todo: rename StartpageUrl to BasepageUrl
+            WebDriver.Navigate().GoToUrl(url);
+        }
+
+        public static IList<IWebElement> GetElementsByClassName(string classname)
+        {
+            var elements = WebDriver.FindElements(By.ClassName(classname)) ;
+            return elements;
         }
     }
 }

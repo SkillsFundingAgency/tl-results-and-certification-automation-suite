@@ -20,9 +20,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
             foreach (var expectedError in expectedErrors)
             {
                 var actualError = actualErrors.Skip(index).First();
-                Assert.AreEqual(actualError.LineNo, expectedError.LineNo);
-                Assert.AreEqual(actualError.UlnNo, expectedError.UlnNo);
-                Assert.AreEqual(actualError.ErrorMsg, expectedError.ErrorMsg);
+                Assert.AreEqual(expectedError.LineNo, actualError.LineNo);
+                Assert.AreEqual(expectedError.UlnNo, actualError.UlnNo);
+                Assert.AreEqual(expectedError.ErrorMsg, actualError.ErrorMsg);
 
                 index++;
             }

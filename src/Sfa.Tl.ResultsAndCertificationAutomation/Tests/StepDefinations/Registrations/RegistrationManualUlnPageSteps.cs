@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             SqlQueries.DeleteFromRegistrationTables();
             RegistrationsPage.ClickRegLink();
-            AddNewRegistrations();
+            AddRegistrations();
         }
         
         [Then(@"I should see ULn Page")]
@@ -20,5 +20,32 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             VerifyUlnPage();
         }
+
+        [Then(@"I will be presented with an error stating ULN is invalid")]
+        public void ThenIWillBePresentedWithAnErrorStatingULNIsInvalid()
+        {
+            VerifyInvalidULNError();
+        }
+
+        [Then(@"I will be presented with an error stating Enter a ULN")]
+        public void ThenIWillBePresentedWithAnErrorStatingEnterAULN()
+        {
+            VerifyNullULNError();
+        }
+
+        [Then(@"I enter (.*) into the ULN field and press Submit")]
+        public void ThenIEnterIntoTheULNFieldAndPressSubmit(string ULN)
+        {
+            EnterSearchUln(ULN);
+            ClickSearchButton();
+        }
+
+        [Then(@"the Registration Details page is displayed")]
+        public void ThenTheRegistrationDetailsPageIsDisplayed()
+        {
+            VerifyRegistrationDetailsPage();
+        }
+
+
     }
 }

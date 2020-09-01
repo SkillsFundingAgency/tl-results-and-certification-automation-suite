@@ -11,12 +11,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string DashboardUrl => string.Concat(StartPageUrl, "home");
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
-        public static string CookieUrl => string.Concat(StartPageUrl, "cookie-policy");
+        public static string CookieUrl => string.Concat(StartPageUrl, "cookie-details");
+        public IWebElement PrivacyLink => WebDriver.FindElement(By.LinkText("Privacy"));
+        public IWebElement UserGuideLink => WebDriver.FindElement(By.XPath("//a[@href='/user-guide']"));
+        private static string UserGuideUrl => string.Concat(StartPageUrl, "user-guide");
+        public static readonly string UserGuideHeader = "Manage T Level results user guide";
+        private static string PrivacyUrl => string.Concat(StartPageUrl, "privacy-policy");
+        public static string PrivacyHeader = "Privacy policy – awarding organisations and providers";
         public static string TlevelPageUrl => string.Concat(StartPageUrl, "Tlevel/Index");
         public static By BannerInfo = By.XPath("//span[@class='govuk-phase-banner__text']");
         public static string BannerText = "This is a new service – your feedback will help us to improve it.";
         public static By SignOutLink = By.LinkText("Sign out");
-        protected readonly By PageHeader = By.TagName("h1");
+        protected readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         public static By SelectOrgNcfe = By.Id("848D7FB9-ADBD-47EC-A975-3FF9314323EA");
         public static By SelectOrgPearson = By.Id("13BE668D-833B-410F-A9E4-D7AB3CF14DCD");
         public static By OrgContinueBtn = By.XPath("//input[@value='Continue']");
@@ -25,9 +31,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By CentresLink = By.XPath("//a[contains(text(), 'Providers')]");
         public static By TlevelLink = By.XPath("//a[@href='/tlevels']");
         private readonly By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
-        private static readonly By PageTitle = By.TagName("h1");
+        public static By PageTitle { get; } = By.XPath("//*[@id='main-content']//h1");
         private static readonly string ManageCentresPageHeader = "Your T Levels";
-        private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookie-policy']");
+        private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookies']");
+        public static By CookieDetailsLink { get; } = By.XPath("//a[@href='/cookie-details']");
+        public const string CookeDetailsPageTitle = "Details about cookies on Manage T Level results – Manage T Level results – GOV.UK";
+        public const string CookieDetailsPageHeader = "Details about cookies on Manage T Level results";
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
 
         public void ViewUserAccount()
@@ -79,6 +88,26 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ViewCookieBanner()
         {
             ClickElement(ViewCookieBannerBtn);
+        }
+
+        public static void VerifyPrivacy()
+        {
+            Assert.AreEqual(Constants.PrivacyPageTitle, WebDriver.Title);
+            Assert.AreEqual(PrivacyHeader, WebDriver.FindElement(By.XPath("//*[@id='main-content']//h1")).Text);
+            Assert.AreEqual(PrivacyUrl, WebDriver.Url);
+        }
+        public static void VerifyUserGuide()
+        {
+            Assert.AreEqual(Constants.UserGuideTitle, WebDriver.Title);
+            Assert.AreEqual(UserGuideUrl, WebDriver.Url);
+            Assert.IsTrue(WebDriver.FindElement(By.XPath("//*[@id='main-content']//h1")).Text.Contains(UserGuideHeader));
+        }
+
+        public static void VerifyDashboardpage()
+        {
+            PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
+            Assert.AreEqual(Constants.DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
+
         }
     }
 }

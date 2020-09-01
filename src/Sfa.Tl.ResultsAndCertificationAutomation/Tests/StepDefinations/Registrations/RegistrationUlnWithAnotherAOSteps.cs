@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
         {
             DfESignInPage.SigninAsRegistrationEditor();
             RegistrationsPage.ClickRegLink();
-            AddNewRegistrations();
+            AddRegistrations();
         }
         
         [Then(@"I should see ULN already registered with another AO error")]

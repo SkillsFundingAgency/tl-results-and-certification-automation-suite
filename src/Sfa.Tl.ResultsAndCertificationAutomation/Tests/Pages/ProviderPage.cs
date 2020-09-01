@@ -36,8 +36,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private readonly By ContinueBtn = By.XPath("//button[contains (text(), 'Continue')]");
         private readonly By SearchProvider = By.Id("search");
         public static string SearchProviderTxt = "Automation Test1";
-        public By PageHeader = By.TagName("h1");
-        public By SelectProviderPageHeader = By.TagName("h2");
+        public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
+        public static By SelectProviderPageHeader { get; } = By.TagName("h2");
         //private readonly By Health = By.XPath("//*[contains(text(),'T Level in Health')]");
         public readonly By Legal = By.XPath("//*[contains(text(),'T Level in Legal')]");
         //private readonly By Engineering = By.XPath("//*[contains(text(),'T Level in Engineering')]");

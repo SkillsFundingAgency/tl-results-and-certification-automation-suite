@@ -1,0 +1,37 @@
+parameters:
+- name: buildPlatform
+  type: string
+- name: buildConfiguration
+  type: string
+
+jobs:
+  - job: buildSqlJob
+    displayName: Build SQL Job
+    pool:
+      name: 'Azure Pipelines'
+      vmImage: 'windows-2019'
+    workspace:
+      clean: all
+    steps:
+      - checkout: RESAC        
+      - task: VSBuild@1
+        displayName: 'Build DACPAC'
+        inputs: 
+          solution: './src/Sfa.Tl.ResultsAndCertification.Database/Sfa.Tl.ResultsAndCertification.Database.sqlproj'
+          platform: '${{parameters.buildPlatform}}'
+          configuration: '${{parameters.buildConfiguration}}'
+          msbuildArgs: '/p:PackageLocation="$(build.artifactstagingdirectory)/publish"'
+      - task: CopyFiles@2
+        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+        inputs:
+          Contents: |     
+            src\**\*.dacpac
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          OverWrite: true
+      
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publish Artifact'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'sqldrop'
+          publishLocation: 'Container'

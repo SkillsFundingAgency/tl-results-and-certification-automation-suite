@@ -16,3 +16,14 @@ Scenario: Verify Erros in Registration ULN Page
 When I click on Add a new registration link
 And I click in continue button
 Then I should see Error in ULn Page
+
+@RegressionTest @ManaulRegistration
+Scenario: Uln data validations
+And I click on Add a new registration link
+And I enter <Uln> with invalid data
+When I click in continue button
+Then I should see valid <Error> message in header
+Examples: 
+| Uln         | Error                      |
+| 99000000001 | Enter a ULN with 10 digits |
+| ABCDEFGHIJk | Enter a ULN with 10 digits |
