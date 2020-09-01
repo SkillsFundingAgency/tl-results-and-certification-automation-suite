@@ -94,6 +94,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string ExpectedCancelBtnText = "Cancel this registration";
         private static readonly string ExpectedSearchAgainBtnText = "Search again";
 
+        public static void AddRegistrations()
+        {
+            ClickElement(AddRegistrationLink);
+        }
 
         public static void AddNewRegistrations()
         {

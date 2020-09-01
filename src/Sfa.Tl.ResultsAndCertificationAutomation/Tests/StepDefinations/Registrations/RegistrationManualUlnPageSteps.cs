@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             SqlQueries.DeleteFromRegistrationTables();
             RegistrationsPage.ClickRegLink();
-            AddNewRegistrations();
+            AddRegistrations();
         }
         
         [Then(@"I should see ULn Page")]
