@@ -3,7 +3,7 @@ schedules:
     displayName: Daily midnight build
     branches:
       include:
-        - feature/sprint-19.1
+        - feature/sprint-20
 resources:
   repositories:
     - repository: self
