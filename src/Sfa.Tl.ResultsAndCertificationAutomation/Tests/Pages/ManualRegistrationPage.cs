@@ -1,16 +1,13 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using System;
-using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class ManualRegistrationPage : ElementHelper
     {
-        private readonly string validUln = "1234567890";
+        private readonly string validUln = "9912345678";
         
         private By UlnField { get { return By.Id("uln");  } }
         private By FirstnameField { get { return By.Id("lastname"); } }
