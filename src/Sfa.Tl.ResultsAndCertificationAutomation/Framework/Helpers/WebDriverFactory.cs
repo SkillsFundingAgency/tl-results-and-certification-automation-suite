@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using Microsoft.Extensions.Configuration;
@@ -41,8 +42,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 case var _ when browser == "IE":
                     return new InternetExplorerDriver();
                 case var _ when browser == "Chrome":
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArgument("--incognito");
+                    var chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArguments(new List<string>() { "--incognito", "headless"});
                     chromeOptions.AddUserProfilePreference("download.default_directory", FileHelper.GetDownloadFolder());
                     return new ChromeDriver(chromeOptions);
 
