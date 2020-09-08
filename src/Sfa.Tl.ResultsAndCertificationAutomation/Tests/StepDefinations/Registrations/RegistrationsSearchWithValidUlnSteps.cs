@@ -92,5 +92,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             RegistrationsSearchPage.VerifySearchResultPage();
         }
+
+
+        [Then(@"the ULN status will be Active")]
+        public void ThenTheULNStatusWillBeActive()
+        {
+            RegistrationsSearchPage.UlnStatus();
+        }
+
+        [Then(@"the Change links will be present")]
+        public void ThenTheChangeLinksWillBePresent()
+        {
+            RegistrationsSearchPage.ValidateChangeLinks();
+        }
     }
 }

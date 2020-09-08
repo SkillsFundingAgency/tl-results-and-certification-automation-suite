@@ -29,6 +29,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string CancelRegErrorDeails { get; } = "Select yes if you want to cancel this registration";
 
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
+        private static By ULNStatus { get; } = By.XPath("//*[@id='main-content']//strong");
+        private static By NameChangeLink { get; } = By.Id("learnername");
+        private static By DOBChangeLink { get; } = By.Id("dateofbirth");
+        private static By ProviderChangeLink { get; } = By.Id("provider");
+        private static By CoreChangeLink { get; } = By.Id("core");
+        private static By SpecialismChangeLink { get; } = By.Id("specialisms");
+        private static By AcademicYearChangeLink { get; } = By.Id("academicyear");
+
         public static void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
@@ -101,6 +109,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             VerifyProvider("Automation Test1 (99999901)");
             VerifyCore("Agriculture, Environmental and Animal Care (77777777)");
             VerifySpecialism("Animal Care and Management (70000001)");
+        }
+
+
+        public static void UlnStatus()
+        {
+            Assert.AreEqual("ACTIVE", WebDriver.FindElement(ULNStatus).Text);
+        }
+
+        public static void ValidateChangeLinks()
+        {
+
+            Assert.IsTrue(WebDriver.FindElement(NameChangeLink).Text.Contains("Change"));
+            Assert.IsTrue(WebDriver.FindElement(DOBChangeLink).Text.Contains("Change"));
+            Assert.IsTrue(WebDriver.FindElement(ProviderChangeLink).Text.Contains("Change"));
+            Assert.IsTrue(WebDriver.FindElement(CoreChangeLink).Text.Contains("Change"));
+            Assert.IsTrue(WebDriver.FindElement(SpecialismChangeLink).Text.Contains("Change"));
+            Assert.IsTrue(WebDriver.FindElement(AcademicYearChangeLink).Text.Contains("Change"));
+
         }
     }
 }
