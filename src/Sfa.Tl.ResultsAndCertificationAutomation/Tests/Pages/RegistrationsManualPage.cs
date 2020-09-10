@@ -39,6 +39,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string ProviderHeader = "Select the provider";
         private static By SelectProvider { get; } = By.Id("selectedproviderukprn");
         public const string InputPovider = "Automation Test2 (99999902)";
+        public const string InputProvider1 = "Automation Test1 (99999901)";
         public const string InputPearsonPovider = "Automation Test3 (99999903)";
         //Select Core Page
         public static string CorePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-core");
@@ -73,7 +74,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By ChangeAcademicYear { get; } = By.Id("academicyear");
 
         //Registration Search Page
-        private static By BackToRegistrationsBtn { get; } = By.XPath("//*[@id='main-content']/div/div/p[2]/a");
+        private static By BackToRegistrationsBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
         private static By SearchForRegistrationLink { get; } = By.XPath("//a[contains(text(),'Search for a registration')]");
         private static string RegistrationSearchPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration");
         private static readonly string RegistrationSearchHeader = "Search for a registration";
@@ -399,6 +400,37 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             VerifyAcademicYearPage();
             ClickContiune();
             VerifyRegistrationSummaryPage();
+        }
+        public static void CreateManualRegistrationWithSpecialism(string uln)
+        {
+            RegistrationsPage.ClickRegLink();
+            AddRegistrations();
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName("FirstName1", "LastName1");
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob("01", "01", "2010");
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideYes);
+            ClickContiune();
+            VerifySpecialismPage();
+            ClickElement(SelectSpecialismLegal);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
+            ClickSubmit();
+            ClickBackToRegistrations();
         }
     }
 }
