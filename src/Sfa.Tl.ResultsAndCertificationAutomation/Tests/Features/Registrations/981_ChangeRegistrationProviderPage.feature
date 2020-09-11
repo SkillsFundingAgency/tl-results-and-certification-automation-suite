@@ -34,3 +34,9 @@ When I click on change Provider link on Regisration details page
 And I change another provider has different core from the list
 And I click on Change button
 Then I should see generic error page
+
+@RegressionTest @ChangeRegistration
+Scenario: 981-Change Provider back link
+When I click on change Provider link on Regisration details page
+And I click on Back link on page
+Then I should be nativigated back to registration details page

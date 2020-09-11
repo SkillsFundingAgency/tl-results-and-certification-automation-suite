@@ -34,6 +34,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string ChangeRegistrationSuccessHeader = "Change successful";
         public const string CannotChangeProviderPageTitle = "Cannot change provider page – Manage T Level results – GOV.UK";
         public static readonly string CannotChangeProviderPageUrl = string.Concat(StartPage.StartPageUrl, "cannot-change-provider");
+        public const string ChangeCorePageTitle = "Change core page – Manage T Level results – GOV.UK";
+        public static readonly string ChangeCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-core");
+        public static readonly string ChangeCorePageHeader = "Change core";
+
         public static By CancelRegError { get; } = By.XPath("//a[@href='#cancelregistration']");
         public static string CancelRegErrorDeails { get; } = "Select yes if you want to cancel this registration";
         public static By ChangeBtn { get; } = By.XPath("//button[contains(text(),'Change')]");
@@ -42,7 +46,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By NameChangeLink { get; } = By.Id("learnername");
         private static By DOBChangeLink { get; } = By.Id("dateofbirth");
         public static By ProviderChangeLink { get; } = By.Id("provider");
-        private static By CoreChangeLink { get; } = By.Id("core");
+        public static By CoreChangeLink { get; } = By.Id("core");
         private static By SpecialismChangeLink { get; } = By.Id("specialisms");
         private static By AcademicYearChangeLink { get; } = By.Id("academicyear");
 
