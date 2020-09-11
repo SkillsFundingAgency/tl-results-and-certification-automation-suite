@@ -37,7 +37,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string ChangeCorePageTitle = "Change core page – Manage T Level results – GOV.UK";
         public static readonly string ChangeCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-core");
         public static readonly string ChangeCorePageHeader = "Change core";
-
+        private const string ChangeSpecialismDecidePageTitle = "Change registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
+        private static readonly string ChangeSpecialismDecidePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-learner-decided-specialism-question");
+        private static readonly string ChangeSpecialismDecidePageHeader = "Has the learner decided on the specialism?";
+        public const string SelectSpecialismPageTitle = "Select specialisms page – Manage T Level results – GOV.UK";
+        public static readonly string SelectSpecialismPageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-select-specialisms");
+        public static By DecideSpecialismYes { get; } = By.Id("haslearnerdecidedspecialism");
+        public static By DecideSpecialismNo { get; } = By.Id("specialismdecided-no");
+        public static By ContinueBtn { get; } = By.Id("continueButton");
         public static By CancelRegError { get; } = By.XPath("//a[@href='#cancelregistration']");
         public static string CancelRegErrorDeails { get; } = "Select yes if you want to cancel this registration";
         public static By ChangeBtn { get; } = By.XPath("//button[contains(text(),'Change')]");
@@ -47,7 +54,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By DOBChangeLink { get; } = By.Id("dateofbirth");
         public static By ProviderChangeLink { get; } = By.Id("provider");
         public static By CoreChangeLink { get; } = By.Id("core");
-        private static By SpecialismChangeLink { get; } = By.Id("specialisms");
+        public static By SpecialismChangeLink { get; } = By.Id("specialisms");
         private static By AcademicYearChangeLink { get; } = By.Id("academicyear");
 
         public static void ClickButton(By locator)
@@ -144,6 +151,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ChangeRegistrationSuccessPageTitle, WebDriver.Title);
             Assert.AreEqual(ChangeRegistrationSuccessPageUrl, WebDriver.Url);
             Assert.AreEqual(ChangeRegistrationSuccessHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyDecideSpecialismPage()
+        {
+            Assert.AreEqual(ChangeSpecialismDecidePageTitle, WebDriver.Title);
+            Assert.AreEqual(ChangeSpecialismDecidePageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(ChangeSpecialismDecidePageUrl));
         }
     }
 }

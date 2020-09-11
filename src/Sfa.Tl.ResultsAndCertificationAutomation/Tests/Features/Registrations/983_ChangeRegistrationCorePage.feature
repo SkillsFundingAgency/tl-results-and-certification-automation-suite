@@ -17,4 +17,4 @@ Then I should see change Core page
 Scenario: 983-Change Core Back link
 When I click on Change core link
 And I click on Back link
-Then I should be nativigated back to registration details page
+Then I should be navigated back to registration details page

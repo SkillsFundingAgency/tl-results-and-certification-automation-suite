@@ -13,8 +13,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             ClickButton(ChangeBtn);
         }
         
-        [Then(@"I should be nativigated back to registration details page")]
-        public void ThenIShouldBeNativigatedBackToRegistrationDetailsPage()
+        [Then(@"I should be navigated back to registration details page")]
+        public void ThenIShouldBeNavigatedBackToRegistrationDetailsPage()
         {
             VerifySearchResultPage();
         }

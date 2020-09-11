@@ -17,7 +17,7 @@ Then I should see Change provider page
 Scenario: 981-Change Provider without change
 When I click on change Provider link on Regisration details page
 And I click on Change button without changing provider
-Then I should be nativigated back to registration details page
+Then I should be navigated back to registration details page
 And I should see same provider in the details
 
 @RegressionTest @ChangeRegistration
@@ -39,4 +39,4 @@ Then I should see generic error page
 Scenario: 981-Change Provider back link
 When I click on change Provider link on Regisration details page
 And I click on Back link on page
-Then I should be nativigated back to registration details page
+Then I should be navigated back to registration details page
