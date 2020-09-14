@@ -34,6 +34,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
             SubmitTlevelInProvider();
             Assert.IsTrue(WebDriver.Title.Equals(TlevelAddedSuccessPageTitle));
             Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(Constants.TlevelTitleAgricluture));
+            DeleteTlevelFromDB();
         }
     }
 }

@@ -87,5 +87,27 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         //Registration Search Page
         public const string SearchRegistrationsPageTitle = "Search for a registration page – Manage T Level results – GOV.UK";
         public const string SearchRegistrationURLNotFoundPagePageTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
+        //Registration ChangeName Page
+        public const string RegistrationChangeNamePageTitle = "Change learner’s name page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeNamePageHeading = "Change registration";
+        public const string RegistrationChangeNamePageSubHeading = "Enter the learner's name";
+        public const string RegistrationChangeNameErrorTitle = "Error: Change learner’s name page – Manage T Level results – GOV.UK";
+        //Page Not Found Page
+        public const string PageNotFoundPageTitle = "Page not found – Manage T Level results – GOV.UK";
+        //Registration Change Success Page
+        public const string RegistrationChangeSuccessPageTitle = "Registration details change confirmation page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeSuccessPageHeader = "Change successful";
+        //Manual Registration Details
+        public const string ManualRegULN = "9900000055";
+        public const string ManualRegFirstName = "Test1";
+        public const string ManualRegLastName = "Test2";
+        public const string ManualRegDOBDay = "01";
+        public const string ManualRegDOBMonth = "02";
+        public const string ManualRegDOBYear = "2000";
+        //Registration Change DOB Page
+        public const string RegistrationChangeDOBPageTitle = "Change learner’s date of birth page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeDOBPageHeading = "Change registration";
+        public const string RegistrationChangeDOBPageSubHeading = "Enter the learner's date of birth";
+        public const string RegistrationChangeDOBErrorTitle = "Error: Change learner’s date of birth page – Manage T Level results – GOV.UK";
     }
 }
