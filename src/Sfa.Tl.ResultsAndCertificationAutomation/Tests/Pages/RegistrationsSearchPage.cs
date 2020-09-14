@@ -56,6 +56,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By CoreChangeLink { get; } = By.Id("core");
         public static By SpecialismChangeLink { get; } = By.Id("specialisms");
         private static By AcademicYearChangeLink { get; } = By.Id("academicyear");
+        private static By DOB { get; } = By.XPath("//*[@id='main-content']//div[3]/dd[1]/p");
+        private static By Name { get; } = By.XPath("//*[@id='main-content']//dl/div[2]/dd[1]/p");
 
         public static void ClickButton(By locator)
         {
@@ -157,6 +159,35 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ChangeSpecialismDecidePageTitle, WebDriver.Title);
             Assert.AreEqual(ChangeSpecialismDecidePageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(ChangeSpecialismDecidePageUrl));
+        }
+
+        public static void ClickNameChangeLink()
+        {
+            ClickButton(NameChangeLink);
+        }
+
+        public static void ClickDOBChangeLink()
+        {
+            ClickButton(DOBChangeLink);
+        }
+
+        public static void SearchForULN()
+        {
+            EnterText(RegistrationsSearchPage.SearchBox, Constants.ManualRegULN);
+            ClickElement(RegistrationsSearchPage.SearchBtn);
+        }
+
+
+        public static void VerifyDOBChangesAreDisplayed(string DD, string MM, string YYYY)
+        {
+            string ExpectedDOB = DD + "/" + MM + "/" + YYYY;
+            Assert.AreEqual(ExpectedDOB, WebDriver.FindElement(DOB).Text);
+        }
+
+        public static void VerifyNameChangesAreDisplayed(string FirstName, string LastName)
+        {
+            string ExpectedName = FirstName + " " + LastName;
+            Assert.AreEqual(ExpectedName, WebDriver.FindElement(Name).Text);
         }
     }
 }
