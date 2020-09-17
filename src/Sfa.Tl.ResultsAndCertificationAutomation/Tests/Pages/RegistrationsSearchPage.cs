@@ -41,6 +41,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string ChangeSpecialismDecidePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-learner-decided-specialism-question");
         private static readonly string ChangeSpecialismDecidePageHeader = "Has the learner decided on the specialism?";
         public const string SelectSpecialismPageTitle = "Select specialisms page – Manage T Level results – GOV.UK";
+        public const string ChangeSpecialismPageTitle = "Change specialisms page – Manage T Level results – GOV.UK";
         public static readonly string SelectSpecialismPageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-select-specialisms");
         private const string AcademicYearCantChangePageTitle = "Academic year cannot be changed page – Manage T Level results – GOV.UK";
         private static readonly string AcademicYearCantChangePageHeader = "Academic Year cannot be changed";
