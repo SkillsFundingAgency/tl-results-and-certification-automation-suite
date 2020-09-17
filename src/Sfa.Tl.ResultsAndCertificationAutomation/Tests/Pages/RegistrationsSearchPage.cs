@@ -42,6 +42,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string ChangeSpecialismDecidePageHeader = "Has the learner decided on the specialism?";
         public const string SelectSpecialismPageTitle = "Select specialisms page – Manage T Level results – GOV.UK";
         public static readonly string SelectSpecialismPageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-select-specialisms");
+        private const string AcademicYearCantChangePageTitle = "Academic year cannot be changed page – Manage T Level results – GOV.UK";
+        private static readonly string AcademicYearCantChangePageHeader = "Academic Year cannot be changed";
+        private static readonly string AcademicYearCantChangePageUrl = string.Concat(StartPage.StartPageUrl, "academic-year-cannot-change");
         public static By DecideSpecialismYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideSpecialismNo { get; } = By.Id("specialismdecided-no");
         public static By ContinueBtn { get; } = By.Id("continueButton");
@@ -55,7 +58,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By ProviderChangeLink { get; } = By.Id("provider");
         public static By CoreChangeLink { get; } = By.Id("core");
         public static By SpecialismChangeLink { get; } = By.Id("specialisms");
-        private static By AcademicYearChangeLink { get; } = By.Id("academicyear");
+        public static By AcademicYearChangeLink { get; } = By.Id("academicyear");
         private static By DOB { get; } = By.XPath("//*[@id='main-content']//div[3]/dd[1]/p");
         private static By Name { get; } = By.XPath("//*[@id='main-content']//dl/div[2]/dd[1]/p");
 
@@ -159,6 +162,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ChangeSpecialismDecidePageTitle, WebDriver.Title);
             Assert.AreEqual(ChangeSpecialismDecidePageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(ChangeSpecialismDecidePageUrl));
+        }
+        public static void VerifyAcademicYearChangePage()
+        {
+            Assert.AreEqual(AcademicYearCantChangePageTitle, WebDriver.Title);
+            Assert.AreEqual(AcademicYearCantChangePageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(AcademicYearCantChangePageUrl));
         }
 
         public static void ClickNameChangeLink()
