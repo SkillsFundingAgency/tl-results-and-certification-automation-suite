@@ -46,6 +46,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private const string AcademicYearCantChangePageTitle = "Academic year cannot be changed page – Manage T Level results – GOV.UK";
         private static readonly string AcademicYearCantChangePageHeader = "Academic Year cannot be changed";
         private static readonly string AcademicYearCantChangePageUrl = string.Concat(StartPage.StartPageUrl, "academic-year-cannot-change");
+        public static readonly string ChangeProvider4 = "Automation Test4 (99999904)";
+        private static string DoYouWantToChangeCorePageTitle = "Change registration - Do you also want to change the core page – Manage T Level results – GOV.UK";
+        private static readonly string DoYouWantToChangeCorePageHeader = "Do you also want to change the core?";
+        private static readonly string DoYouWantToChangeCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-core-and-provider");
+        public static string DoYouWantToChangeCorePageErrorTitle = "Error: Change registration - Do you also want to change the core page – Manage T Level results – GOV.UK";
+        public static readonly string CanChangeCodeErrorMsg = "Select yes if you want to change the core";
+        public static By ChangeCoreError { get; } = By.XPath("//a[@href='#canchangecore']");
         public static By DecideSpecialismYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideSpecialismNo { get; } = By.Id("specialismdecided-no");
         public static By ContinueBtn { get; } = By.Id("continueButton");
@@ -169,6 +176,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(AcademicYearCantChangePageTitle, WebDriver.Title);
             Assert.AreEqual(AcademicYearCantChangePageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(AcademicYearCantChangePageUrl));
+        }
+        public static void VerifyDoYouWantChangeCorePage()
+        {
+            Assert.AreEqual(DoYouWantToChangeCorePageTitle, WebDriver.Title);
+            Assert.AreEqual(DoYouWantToChangeCorePageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(DoYouWantToChangeCorePageUrl));
         }
 
         public static void ClickNameChangeLink()
