@@ -52,6 +52,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string DoYouWantToChangeCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-core-and-provider");
         public static string DoYouWantToChangeCorePageErrorTitle = "Error: Change registration - Do you also want to change the core page – Manage T Level results – GOV.UK";
         public static readonly string CanChangeCodeErrorMsg = "Select yes if you want to change the core";
+        private const string ProviderNotOfferSameCorePageTitle = "Change registration - Provider does not offer the same core page – Manage T Level results – GOV.UK";
+        private static readonly string ProviderNotOfferSameCoreHeader = "Provider has not been set up to offer the same core";
+        private static readonly string ProviderNotOfferSameCoreUrl = string.Concat(StartPage.StartPageUrl, "provider-not-offering-same-core");
+        private const string ChangeProviderCorePageTitle = "Change registration - Change provider and core need to withdraw message page – Manage T Level results – GOV.UK";
+        private static readonly string ChangeProviderCorePageHeader = "Change provider and core";
+        private static readonly string ChangeProviderCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-provider-and-core-need-to-withdraw");
         public static By ChangeCoreError { get; } = By.XPath("//a[@href='#canchangecore']");
         public static By DecideSpecialismYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideSpecialismNo { get; } = By.Id("specialismdecided-no");
@@ -67,6 +73,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By CoreChangeLink { get; } = By.Id("core");
         public static By SpecialismChangeLink { get; } = By.Id("specialisms");
         public static By AcademicYearChangeLink { get; } = By.Id("academicyear");
+        public static By CanChangeCoreYes { get; } = By.Id("canchangecore");
+        public static By CanChangeCoreNo { get; } = By.Id("tl-change-core-no");
+        public static By WithDrawRegistrationBtn { get; } = By.Id("withdrawRegistrationButton");
         private static By DOB { get; } = By.XPath("//*[@id='main-content']//div[3]/dd[1]/p");
         private static By Name { get; } = By.XPath("//*[@id='main-content']//dl/div[2]/dd[1]/p");
 
@@ -182,6 +191,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(DoYouWantToChangeCorePageTitle, WebDriver.Title);
             Assert.AreEqual(DoYouWantToChangeCorePageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(DoYouWantToChangeCorePageUrl));
+        }
+        public static void VerifyProviderNotOfferSameCorePage()
+        {
+            Assert.AreEqual(ProviderNotOfferSameCorePageTitle, WebDriver.Title);
+            Assert.AreEqual(ProviderNotOfferSameCoreUrl, WebDriver.Url);
+            Assert.AreEqual(ProviderNotOfferSameCoreHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyChangeProviderCore()
+        {
+            Assert.AreEqual(ChangeProviderCorePageTitle, WebDriver.Title);
+            Assert.AreEqual(ChangeProviderCorePageUrl, WebDriver.Url);
+            Assert.AreEqual(ChangeProviderCorePageHeader, WebDriver.FindElement(PageHeader).Text);
         }
 
         public static void ClickNameChangeLink()
