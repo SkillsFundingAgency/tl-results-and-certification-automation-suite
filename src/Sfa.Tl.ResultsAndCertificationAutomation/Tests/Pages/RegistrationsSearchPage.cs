@@ -8,24 +8,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class RegistrationsSearchPage : ElementHelper
     {
         private static readonly string SearchResultUrl = string.Concat(StartPage.StartPageUrl, "search-for-registration-registration-details");
-        private static readonly string CancelRegUrl = string.Concat(StartPage.StartPageUrl, "cancel-registration");
+        private static readonly string CancelRegUrl = string.Concat(StartPage.StartPageUrl, "delete-registration");
         private static readonly string CancelRegSuccessUrl = string.Concat(StartPage.StartPageUrl, "registration-cancelled-confirmation");
         private static readonly string UlnNotFoundUrl = string.Concat(StartPage.StartPageUrl, "search-for-registration-ULN-not-found");
         public static readonly By SearchRegistrationLink = By.XPath("//a[contains(text(),'Search for a registration')]");
         public static readonly By SearchBox = By.Id("searchuln");
         public static readonly By SearchBtn = By.XPath("//button[contains(text(),'Search')]");
         private static readonly By CancelRegBtn = By.XPath("//a[contains(text(),'Cancel this registration')]");
-        private static readonly By CancelRegYes = By.Id("cancelregistration");
+        private static readonly By CancelRegYes = By.Id("deleteregistration");
         public static By BackToRegistrationDetailsBtn { get; } = By.XPath("//a[contains(text(),'Back to registration details')]");
         public static By CancelRegNo { get; } = By.Id("cancel-registration-no");
         private static readonly By SubmitBtn = By.XPath("//button[contains(text(),'Submit')]");
         private static readonly By SearchAnotherRegBtn = By.XPath("//a[contains(text(),'Search for another registration')]");
-        private static readonly string ConfirmRegCancelTitle = "Cancel registration page – Manage T Level results – GOV.UK";
-        private static readonly string ConfirmRegCancelHeader = "Are you sure you want to cancel this registration?";
+        private static readonly string ConfirmRegCancelTitle = "Delete registration page – Manage T Level results – GOV.UK";
+        private static readonly string ConfirmRegCancelHeader = "Are you sure you want to delete this registration permanently?";
         private static readonly string CancelRegSuccessTitle = "Registration cancelled confirmation page – Manage T Level results – GOV.UK";
         private static readonly string CancelRegSuccessHeader = "Registration cancelled successfully";
         private static readonly string UlnNotFoundTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
-        public static string ConfirmRegCancelErrorTitle = "Error: Cancel registration page – Manage T Level results – GOV.UK";
+        public static string ConfirmRegCancelErrorTitle = "Error: Delete registration page – Manage T Level results – GOV.UK";
         public const string ChangeProviderPageTitle = "Change provider page – Manage T Level results – GOV.UK";
         public static readonly string ChangeProviderUrl = string.Concat(StartPage.StartPageUrl, "change-provider");
         public static readonly string ChangeProviderPageHeader = "Select the provider";
@@ -65,7 +65,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By ChangeSpecialismError { get; } = By.XPath("//a[@href='#hasspecialismselected']");
         private static readonly string ChangeSpecialismErrorMsg = "Select a specialism";
         public static By ContinueBtn { get; } = By.Id("continueButton");
-        public static By CancelRegError { get; } = By.XPath("//a[@href='#cancelregistration']");
+        public static By CancelRegError { get; } = By.XPath("//a[@href='#deleteregistration']");
         public static string CancelRegErrorDeails { get; } = "Select yes if you want to cancel this registration";
         public static By ChangeBtn { get; } = By.XPath("//button[contains(text(),'Change')]");
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");

@@ -87,7 +87,7 @@ When I click on Cancel button wihtout selecting options
 Then I should see validation <Errors> in cancel registration page
 Examples: 
 | Uln        | Errors                                             |
-| 9900000060 | Select yes if you want to cancel this registration |
+| 9900000060 | Select yes if you want to delete this registration |
 
 @RegressionTest @RegistrationSearch
 Scenario: Cancel the Cancel Registration
