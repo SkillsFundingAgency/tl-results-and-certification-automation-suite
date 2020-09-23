@@ -41,10 +41,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string ChangeSpecialismDecidePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-learner-decided-specialism-question");
         private static readonly string ChangeSpecialismDecidePageHeader = "Has the learner decided on the specialism?";
         public const string SelectSpecialismPageTitle = "Select specialisms page – Manage T Level results – GOV.UK";
-        public const string ChangeSpecialismPageTitle = "Change specialisms page – Manage T Level results – GOV.UK";
-        public static readonly string SelectSpecialismPageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-select-specialisms");
+        public const string ChangeSpecialismPageTitle = "Change specialism page – Manage T Level results – GOV.UK";
+        public static readonly string SelectSpecialismPageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-select-specialism");
         private const string AcademicYearCantChangePageTitle = "Academic year cannot be changed page – Manage T Level results – GOV.UK";
-        private static readonly string AcademicYearCantChangePageHeader = "Academic Year cannot be changed";
+        private static readonly string AcademicYearCantChangePageHeader = "Academic year cannot be changed";
         private static readonly string AcademicYearCantChangePageUrl = string.Concat(StartPage.StartPageUrl, "academic-year-cannot-change");
         public static readonly string ChangeProvider4 = "Automation Test4 (99999904)";
         private static string DoYouWantToChangeCorePageTitle = "Change registration - Do you also want to change the core page – Manage T Level results – GOV.UK";
@@ -58,9 +58,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private const string ChangeProviderCorePageTitle = "Change registration - Change provider and core need to withdraw message page – Manage T Level results – GOV.UK";
         private static readonly string ChangeProviderCorePageHeader = "Change provider and core";
         private static readonly string ChangeProviderCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-provider-and-core-need-to-withdraw");
+        private const string ChangeSpecialismErrorPageTitle = "Error: Change specialism page – Manage T Level results – GOV.UK";
         public static By ChangeCoreError { get; } = By.XPath("//a[@href='#canchangecore']");
         public static By DecideSpecialismYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideSpecialismNo { get; } = By.Id("specialismdecided-no");
+        private static By ChangeSpecialismError { get; } = By.XPath("//a[@href='#hasspecialismselected']");
+        private static readonly string ChangeSpecialismErrorMsg = "Select a specialism";
         public static By ContinueBtn { get; } = By.Id("continueButton");
         public static By CancelRegError { get; } = By.XPath("//a[@href='#cancelregistration']");
         public static string CancelRegErrorDeails { get; } = "Select yes if you want to cancel this registration";
@@ -203,6 +206,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ChangeProviderCorePageTitle, WebDriver.Title);
             Assert.AreEqual(ChangeProviderCorePageUrl, WebDriver.Url);
             Assert.AreEqual(ChangeProviderCorePageHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyChangeSpecialismErrorPage()
+        {
+            Assert.AreEqual(ChangeSpecialismErrorPageTitle, WebDriver.Title);
+            Assert.AreEqual(ChangeSpecialismErrorMsg, WebDriver.FindElement(ChangeSpecialismError).Text);
         }
 
         public static void ClickNameChangeLink()

@@ -29,13 +29,6 @@ Then I should see Change successfull message
 And I should see new provider details in registration details page
 
 @RegressionTest @ChangeRegistration
-Scenario: 981-Change Provider change provider with different core
-When I click on change Provider link on Regisration details page
-And I change another provider has different core from the list
-And I click on Change button
-Then I should see generic error page
-
-@RegressionTest @ChangeRegistration
 Scenario: 981-Change Provider back link
 When I click on change Provider link on Regisration details page
 And I click on Back link on page
