@@ -75,6 +75,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         //Registration Search Page
         private static By BackToRegistrationsBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
+        public static By BackToRegDetailsBtn { get; } = By.Id("registrationDetailsButton");
         private static By SearchForRegistrationLink { get; } = By.XPath("//a[contains(text(),'Search for a registration')]");
         private static string RegistrationSearchPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration");
         private static readonly string RegistrationSearchHeader = "Search for a registration";

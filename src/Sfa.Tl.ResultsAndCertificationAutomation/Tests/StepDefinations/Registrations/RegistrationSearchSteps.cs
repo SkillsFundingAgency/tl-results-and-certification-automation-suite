@@ -20,7 +20,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [When(@"I click on BackToRegistration button")]
         public void WhenIClickOnBackToRegistrationButton()
         {
-            ClickBackToRegistrations();
+            ClickElement(BackToRegDetailsBtn);
         }
 
         [When(@"I click on Search For A registration link")]
