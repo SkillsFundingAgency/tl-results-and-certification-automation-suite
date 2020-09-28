@@ -81,6 +81,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By WithDrawRegistrationBtn { get; } = By.Id("withdrawRegistrationButton");
         private static By DOB { get; } = By.XPath("//*[@id='main-content']//div[3]/dd[1]/p");
         private static By Name { get; } = By.XPath("//*[@id='main-content']//dl/div[2]/dd[1]/p");
+        private static By ChangeStatusLink { get; } = By.Id("learnerstatus");
+        private static By RegistrationDetailsPageSubheading = By.XPath("//*[@id='main-content']//h2");
+        private static By RegistrationDetailsheading = By.XPath("//*[@id='main-content']//h1");
+        private static string ExpectedRegistrationDetailsheading = "Registration details";
 
         public static void ClickButton(By locator)
         {
@@ -157,9 +161,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
 
 
-        public static void UlnStatus()
+        public static void ValidateUlnStatus(string ExpectedStatus)
         {
-            Assert.AreEqual("ACTIVE", WebDriver.FindElement(ULNStatus).Text);
+            Assert.AreEqual(ExpectedStatus, WebDriver.FindElement(ULNStatus).Text);
+        }
+
+        public static void ValidateChangeStatusLink()
+        {
+            Assert.IsTrue(WebDriver.FindElement(ChangeStatusLink).Text.Contains("Change status"));
         }
 
         public static void ValidateChangeLinks()
@@ -240,6 +249,39 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             string ExpectedName = FirstName + " " + LastName;
             Assert.AreEqual(ExpectedName, WebDriver.FindElement(Name).Text);
+        }
+
+        public static void ClickChangeStatusLink()
+        {
+            ClickButton(ChangeStatusLink);
+        }
+
+        public static void ClickChangeCoreLink()
+        {
+            ClickElement(CoreChangeLink);
+        }
+
+        public static void ClickChangeProviderLink()
+        {
+            ClickElement(ProviderChangeLink);
+        }
+
+
+        public static void VerifyRegistrationDetailsPageSubHeading()
+        {
+            string ExpectedSubHeading = "ULN: " + Constants.ManualRegULN;
+            Assert.AreEqual(ExpectedSubHeading, WebDriver.FindElement(RegistrationDetailsPageSubheading).Text);
+        }
+
+        public static void ValidateChangeLinksAreNotDisplayed()
+        {
+            bool expectedResponse = false;
+            Assert.AreEqual(expectedResponse, IsPresent(NameChangeLink));
+            Assert.AreEqual(expectedResponse, IsPresent(DOBChangeLink));
+            Assert.AreEqual(expectedResponse, IsPresent(ProviderChangeLink));
+            Assert.AreEqual(expectedResponse, IsPresent(CoreChangeLink));
+            Assert.AreEqual(expectedResponse, IsPresent(SpecialismChangeLink));
+            Assert.AreEqual(expectedResponse, IsPresent(AcademicYearChangeLink));
         }
     }
 }
