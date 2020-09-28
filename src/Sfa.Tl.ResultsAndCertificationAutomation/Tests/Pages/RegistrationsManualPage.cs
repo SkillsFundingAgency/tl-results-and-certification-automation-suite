@@ -74,7 +74,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By ChangeAcademicYear { get; } = By.Id("academicyear");
 
         //Registration Search Page
-        private static By BackToRegistrationsBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
+        public static By BackToRegistrationsBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
         public static By BackToRegDetailsBtn { get; } = By.Id("registrationDetailsButton");
         private static By SearchForRegistrationLink { get; } = By.XPath("//a[contains(text(),'Search for a registration')]");
         private static string RegistrationSearchPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration");
