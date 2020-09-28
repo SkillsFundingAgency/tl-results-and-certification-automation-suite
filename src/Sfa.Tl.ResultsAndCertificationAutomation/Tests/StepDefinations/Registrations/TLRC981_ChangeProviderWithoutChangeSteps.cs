@@ -13,7 +13,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             ClickButton(ChangeBtn);
         }
-        
+
+        [When(@"I click on Back To Registration button")]
+        public void WhenIClickOnBackToRegistrationButton()
+        {
+            ClickElement(BackToRegistrationDetailsBtn);
+        }
+
         [Then(@"I should be navigated back to registration details page")]
         public void ThenIShouldBeNavigatedBackToRegistrationDetailsPage()
         {

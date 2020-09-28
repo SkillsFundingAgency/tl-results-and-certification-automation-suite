@@ -28,5 +28,5 @@ Scenario: 1541_Provider not offering same core Back To registration details
 When I click on Provider change link
 And I changed Provider with different Core and click Change button
 And I select No, I want to keep same core option and click continue button
-And I click on BackToRegistration button
+And I click on Back To Registration button
 Then I should be navigated back to registration details page
