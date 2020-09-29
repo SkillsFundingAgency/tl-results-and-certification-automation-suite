@@ -432,7 +432,7 @@ testRunner.Then("I should see Registartion data matched with uploaded data", ((s
         [NUnit.Framework.DescriptionAttribute("Cancel Registration page validations")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
-        [NUnit.Framework.TestCaseAttribute("9900000060", "Select yes if you want to cancel this registration", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000060", "Select yes if you want to delete this registration", null)]
         public virtual void CancelRegistrationPageValidations(string uln, string errors, string[] exampleTags)
         {
             string[] @__tags = new string[] {

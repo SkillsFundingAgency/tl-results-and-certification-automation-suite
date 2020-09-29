@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see placeholder page")]
         public void ThenIShouldSeePlaceholderPage()
         {
-            Assert.AreEqual(SelectSpecialismPageTitle, WebDriver.Title);
+            Assert.AreEqual(ChangeSpecialismPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(SelectSpecialismPageUrl));
         }
     }

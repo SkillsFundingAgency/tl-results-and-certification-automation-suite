@@ -1,4 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+﻿using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
@@ -12,7 +13,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             ClickButton(ChangeBtn);
         }
-        
+
+        [When(@"I click on Back To Registration button")]
+        public void WhenIClickOnBackToRegistrationButton()
+        {
+            ClickElement(BackToRegistrationDetailsBtn);
+        }
+
         [Then(@"I should be navigated back to registration details page")]
         public void ThenIShouldBeNavigatedBackToRegistrationDetailsPage()
         {

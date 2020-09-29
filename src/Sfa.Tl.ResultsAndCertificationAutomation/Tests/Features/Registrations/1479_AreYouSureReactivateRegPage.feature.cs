@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TLRC: 981-ChangeRegistrationProviderPage")]
-    public partial class TLRC981_ChangeRegistrationProviderPageFeature
+    [NUnit.Framework.DescriptionAttribute("1479_AreYouSureReactivateRegPage")]
+    public partial class _1479_AreYouSureReactivateRegPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "981_ChangeRegistrationProviderPage.feature"
+#line 1 "1479_AreYouSureReactivateRegPage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Registrations", "TLRC: 981-ChangeRegistrationProviderPage", "\tAs a Registrations Editor\r\n\tI need to be able to change the provider of a learne" +
-                    "r after having searched for them\r\n\tSo that it can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Registrations", "1479_AreYouSureReactivateRegPage", "\tAs a Registrations Editor\r\n\tI need to confirm a rejoin\r\n\tSo that I know the stud" +
+                    "ent will rejoin the course", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,24 +82,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
 testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I have created a manul registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have a registration in Withdrawn state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.And("I am on registration deails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on Change status link in registraion details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("981-Change Provider page")]
+        [NUnit.Framework.DescriptionAttribute("1479_Are You Sure Reactivate with Same course page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
-        public virtual void _981_ChangeProviderPage()
+        [NUnit.Framework.CategoryAttribute("ReactivateRegistration")]
+        public virtual void _1479_AreYouSureReactivateWithSameCoursePage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ChangeRegistration"};
+                    "ReactivateRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("981-Change Provider page", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1479_Are You Sure Reactivate with Same course page", null, tagsOfScenario, argumentsOfScenario);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -124,26 +124,26 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 13
-testRunner.When("I click on change Provider link on Regisration details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I select Reactivate with same course radio button and click continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
-testRunner.Then("I should see Change provider page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should see Are you sure you want to reactivate page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("981-Change Provider without change")]
+        [NUnit.Framework.DescriptionAttribute("1479_Are You Sure Reactivate with Same course page validations")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
-        public virtual void _981_ChangeProviderWithoutChange()
+        [NUnit.Framework.CategoryAttribute("ReactivateRegistration")]
+        public virtual void _1479_AreYouSureReactivateWithSameCoursePageValidations()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ChangeRegistration"};
+                    "ReactivateRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("981-Change Provider without change", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1479_Are You Sure Reactivate with Same course page validations", null, tagsOfScenario, argumentsOfScenario);
 #line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -168,33 +168,30 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 18
-testRunner.When("I click on change Provider link on Regisration details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I select Reactivate with same course radio button and click continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
-testRunner.And("I click on Change button without changing provider", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click Submit button without selecting options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
-testRunner.Then("I should be navigated back to registration details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 21
-testRunner.And("I should see same provider in the details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("I should see validation error in Are you sure reactivate page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("981-Change Provider change another provider")]
+        [NUnit.Framework.DescriptionAttribute("1479_Are You Sure Reactivate with Same course page Back link")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
-        public virtual void _981_ChangeProviderChangeAnotherProvider()
+        [NUnit.Framework.CategoryAttribute("ReactivateRegistration")]
+        public virtual void _1479_AreYouSureReactivateWithSameCoursePageBackLink()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ChangeRegistration"};
+                    "ReactivateRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("981-Change Provider change another provider", null, tagsOfScenario, argumentsOfScenario);
-#line 24
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1479_Are You Sure Reactivate with Same course page Back link", null, tagsOfScenario, argumentsOfScenario);
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -216,38 +213,35 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
+#line hidden
+#line 24
+testRunner.When("I select Reactivate with same course radio button and click continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
-testRunner.When("I click on change Provider link on Regisration details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I click on Back link on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
-testRunner.And("I change another provider has same core from the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("I should be navigated back to Reactivte options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 27
-testRunner.And("I click on Change button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 28
-testRunner.Then("I should see Change successfull message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 29
-testRunner.And("I should see new provider details in registration details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the Reactivate with same course radoi button should be selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("981-Change Provider back link")]
+        [NUnit.Framework.DescriptionAttribute("1479_Are You Sure Reactivate No Option")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
-        public virtual void _981_ChangeProviderBackLink()
+        [NUnit.Framework.CategoryAttribute("ReactivateRegistration")]
+        public virtual void _1479_AreYouSureReactivateNoOption()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ChangeRegistration"};
+                    "ReactivateRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("981-Change Provider back link", null, tagsOfScenario, argumentsOfScenario);
-#line 32
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1479_Are You Sure Reactivate No Option", null, tagsOfScenario, argumentsOfScenario);
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -270,14 +264,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
+#line 31
+testRunner.When("I select Reactivate with same course radio button and click continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 32
+testRunner.And("I select No do not reactivate radio button and click submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 33
-testRunner.When("I click on change Provider link on Regisration details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 34
-testRunner.And("I click on Back link on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 35
-testRunner.Then("I should be navigated back to registration details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should be navigated back to Reactivte options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

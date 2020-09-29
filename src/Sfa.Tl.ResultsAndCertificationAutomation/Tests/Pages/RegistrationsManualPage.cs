@@ -74,7 +74,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By ChangeAcademicYear { get; } = By.Id("academicyear");
 
         //Registration Search Page
-        private static By BackToRegistrationsBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
+        public static By BackToRegistrationsBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
+        public static By BackToRegDetailsBtn { get; } = By.Id("registrationDetailsButton");
         private static By SearchForRegistrationLink { get; } = By.XPath("//a[contains(text(),'Search for a registration')]");
         private static string RegistrationSearchPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration");
         private static readonly string RegistrationSearchHeader = "Search for a registration";
@@ -425,6 +426,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickContiune();
             VerifySpecialismPage();
             ClickElement(SelectSpecialismLegal);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
+            ClickSubmit();
+            ClickBackToRegistrations();
+        }
+        public static void CreateRegistrationWithoutSpecialism(string uln)
+        {
+            RegistrationsPage.ClickRegLink();
+            AddRegistrations();
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName("FirstName1", "LastName1");
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob("01", "01", "2010");
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideNo);
             ClickContiune();
             VerifyAcademicYearPage();
             ClickContiune();

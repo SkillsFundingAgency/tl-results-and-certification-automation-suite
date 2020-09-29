@@ -109,5 +109,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RegistrationChangeDOBPageHeading = "Change registration";
         public const string RegistrationChangeDOBPageSubHeading = "Enter the learner's date of birth";
         public const string RegistrationChangeDOBErrorTitle = "Error: Change learner’s date of birth page – Manage T Level results – GOV.UK";
+        //Registration Amend Active Registration Page
+        public const string AmendActiveRegistrationPageTitle = "What would you like to do with this active registration page – Manage T Level results – GOV.UK";
+        public const string AmendActiveRegistrationPageHeading = "What would you like to do with this active registration?";
+        public const string RegistrationsActiveOptionsPageErrorTitle = "Error: What would you like to do with this active registration page – Manage T Level results – GOV.UK";
+        //Registration Withdraw Registration Page
+        public const string WithdrawRegistrationPageTitle = "Withdraw registration page – Manage T Level results – GOV.UK";
+        public const string WithdrawRegistrationPageHeading = "Are you sure you want to withdraw this registration?";
+        public const string WithdrawRegistrationPageErrorTitle = "Error: Withdraw registration page – Manage T Level results – GOV.UK";
+        //Registration Withdrawn Registration Options Page
+        public const string WithdrawnRegOptionsPageTitle = "What would you like to do with this withdrawn registration page – Manage T Level results – GOV.UK";
+        public const string WithdrawnRegOptionsPageHeading = "What would you like to do with this withdrawn registration?";
+        public const string WithdrawnRegOptionsPageErrorTitle = "Error: What would you like to do with this withdrawn registration page – Manage T Level results – GOV.UK";
     }
 }
