@@ -4,6 +4,9 @@ schedules:
     branches:
       include:
         - feature/sprint-21
+      exclude:
+        - feature/*
+          
 resources:
   repositories:
     - repository: self
