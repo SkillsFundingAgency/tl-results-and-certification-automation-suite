@@ -5,7 +5,8 @@ schedules:
       include:
         - feature/sprint-21
       exclude:
-        - feature/*
+        - feature/sprint-20
+        - feature/sprint-19.1
           
 resources:
   repositories:
