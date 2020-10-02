@@ -4,10 +4,7 @@ schedules:
     branches:
       include:
         - feature/sprint-21
-      exclude:
-        - feature/sprint-20
-        - feature/sprint-19.1
-          
+    
 resources:
   repositories:
     - repository: self
