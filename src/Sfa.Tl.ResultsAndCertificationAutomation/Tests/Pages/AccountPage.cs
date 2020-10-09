@@ -1,6 +1,7 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using OpenQA.Selenium;
 using NUnit.Framework;
+using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -18,6 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public void VarifyProfilePage()
         {
+            Thread.Sleep(2000);
             Assert.AreEqual(ExpectedUrl, WebDriver.Url);
             Assert.AreEqual(PageHeader, WebDriver.FindElement(PageTitle).Text);
         }

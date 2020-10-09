@@ -36,17 +36,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void TLevelSignIn(string username, string password)
         {
             WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
-            if (WebDriver.Url != DashboardUrl)
-            {
-                WebDriver.FindElement(by: StartNowButton).Click();
-                WebDriver.FindElement(UserIdTxtBox).SendKeys(username);
-                WebDriver.FindElement(PasswordTxtBox).SendKeys(password);
-                WebDriver.FindElement(SignInButton).Click();
-            }
-            else
-            {
-                PageHelper.WaitForUrl(DashboardUrl);
-            }
+            WebDriver.FindElement(by: StartNowButton).Click();
+            WebDriver.FindElement(UserIdTxtBox).SendKeys(username);
+            WebDriver.FindElement(PasswordTxtBox).SendKeys(password);
+            WebDriver.FindElement(SignInButton).Click();
         }
 
         public static void SigninAsAOApprover()
