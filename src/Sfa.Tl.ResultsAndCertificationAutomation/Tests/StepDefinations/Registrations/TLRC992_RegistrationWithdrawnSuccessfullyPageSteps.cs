@@ -87,15 +87,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             RegistrationsSearchPage.ClickChangeStatusLink();
         }
-
-
-        [Then(@"I am navigated to the Withdrawn options page")]
-        public void ThenIAmNavigatedToTheWithdrawnOptionsPage()
-        {
-            RegistrationsWithdrawOptionsPage.VerifyRegistrationsWithdrawOptionsPage();
-            RegistrationsWithdrawOptionsPage.VerifyRadioButtonsNotSelected();
-        }
-
-
     }
 }

@@ -48,12 +48,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void WhenIClickTheChangeStatusLinkOnTheWithdrawnOptionsPage()
         {
             RegistrationsSearchPage.ClickChangeStatusLink();
+            RegistrationsWithdrawOptionsPage.VerifyRegistrationsWithdrawOptionsPage();
+            RegistrationsWithdrawOptionsPage.VerifyRadioButtonsNotSelected();
         }
 
         [When(@"I click on the back link on the Withdrawn Registration Options Page")]
         public void WhenIClickOnTheBackLinkOnTheWithdrawnRegistrationOptionsPage()
         {
             RegistrationsWithdrawOptionsPage.ClickBackLink();
+        }
+
+        [Then(@"I am navigated to the Withdrawn options page")]
+        public void ThenIAmNavigatedToTheWithdrawnOptionsPage()
+        {
+            RegistrationsWithdrawOptionsPage.VerifyRegistrationsWithdrawOptionsPage();
         }
 
 
