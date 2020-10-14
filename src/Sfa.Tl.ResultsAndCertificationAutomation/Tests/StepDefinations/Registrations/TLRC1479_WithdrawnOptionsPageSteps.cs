@@ -32,5 +32,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             //ScenarioContext.Current.Pending();
         }
+
+
+        [Then(@"I will be navigated to the Are you sure you want to reactivate page")]
+        public void ThenIWillBeNavigatedToTheAreYouSureYouWantToReactivatePage()
+        {
+            RegistrationReactivate.VerifyAreYouSureReactivatePage();
+
+        }
+
     }
 }

@@ -62,5 +62,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(WebDriver.Url.Contains(ExpectedCorePageUrl));
             Assert.AreEqual("Select the core", WebDriver.FindElement(PageHeader).Text);
         }
+
+        public static void SelectYesAddSpecialismNow()
+        {
+            ClickElement(AddSpecialismNow);
+            ClickButton(ContinueBtn);
+        }
+
+
     }
 }

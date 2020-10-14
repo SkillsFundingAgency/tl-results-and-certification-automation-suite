@@ -104,6 +104,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string ManualRegDOBDay = "01";
         public const string ManualRegDOBMonth = "02";
         public const string ManualRegDOBYear = "2000";
+        //Updated Registration Details
+        public const string ManualRegUpdatedFirstName = "UpdatedFirstName";
+        public const string ManualRegUpdatedLastName = "UpdatedLastName";
+        public const string ManualRegUpdatedDOBDay = "12";
+        public const string ManualRegUpdatedDOBMonth = "11";
+        public const string ManualRegUpdatedDOBYear = "2010";
+        public const string ManualRegUpdatedProvider = "Automation Test3 (99999903)";
+        public const string ManualRegUpdatedCore = "Engineering and Manufacturing (66666666)";
+        public const string ManualRegUpdatedSpecialism = "Design, Development and Control (60000002)";
         //Registration Change DOB Page
         public const string RegistrationChangeDOBPageTitle = "Change learner’s date of birth page – Manage T Level results – GOV.UK";
         public const string RegistrationChangeDOBPageHeading = "Change registration";

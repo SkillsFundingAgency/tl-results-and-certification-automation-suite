@@ -48,9 +48,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void ClickRegisterLearnerNewCourseRadioButton()
         {
-            WebDriver.Manage().Window.Maximize();
-            Thread.Sleep(1000);
-            ClickElement(RegisterLearnerRadioButton);
+
+            ClickElement(RegisterLearnerRadioButtonLabel);
         }
 
         public static void VerifyRegistrationsWithdrawOptionsPage()
