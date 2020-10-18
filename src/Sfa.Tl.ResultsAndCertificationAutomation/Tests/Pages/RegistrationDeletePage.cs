@@ -21,9 +21,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private const string DeleteRegCheckErrorPageTitle = "Error: Delete registration page – Manage T Level results – GOV.UK";
         private static By DeleteErrorPageId { get; } = By.XPath("//a[@href='#deleteregistration']");
         private const string DeleteErrorPageMsg = "Select yes if you want to delete this registration";
-        private const string DeleteRegSuccessMsg = "Registration cancelled successfully";
-        private static string DeleteRegSuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "registration-cancelled-confirmation");
-        private static string DeleteRegSuccessPageTitle = "Registration cancelled confirmation page – Manage T Level results – GOV.UK";
+        private const string DeleteRegSuccessMsg = "Registration deleted successfully";
+        private static string DeleteRegSuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "registration-deleted-confirmation");
+        private static string DeleteRegSuccessPageTitle = "Registration deleted confirmation page – Manage T Level results – GOV.UK";
         public static By SearchAnotherRegBtn { get; } = By.XPath("//a[contains(text(),'Search for another registration')]");
         public static By BackToRegBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");

@@ -21,7 +21,7 @@ When I click on change Specialism link
 And I click on Back link on page
 Then I should be navigated back to registration details page
 
-@RegressionTest @ChangeRegistration
+@Ignore @RegressionTest @ChangeRegistration
 Scenario: 984-Change Specialism Continue
 When I click on change Specialism link
 And I click on Continue button

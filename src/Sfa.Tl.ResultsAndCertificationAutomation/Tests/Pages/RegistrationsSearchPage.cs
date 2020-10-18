@@ -26,8 +26,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string CancelRegSuccessHeader = "Registration cancelled successfully";
         private static readonly string UlnNotFoundTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
         public static string ConfirmRegCancelErrorTitle = "Error: Delete registration page – Manage T Level results – GOV.UK";
-        public const string ChangeProviderPageTitle = "Change provider page – Manage T Level results – GOV.UK";
-        public static readonly string ChangeProviderUrl = string.Concat(StartPage.StartPageUrl, "change-provider");
+        public const string ChangeProviderPageTitle = "Change registration - Select the provider page – Manage T Level results – GOV.UK";
+        public static readonly string ChangeProviderUrl = string.Concat(StartPage.StartPageUrl, "change-registration-provider");
         public static readonly string ChangeProviderPageHeader = "Select the provider";
         public const string ChangeRegistrationSuccessPageTitle = "Registration details change confirmation page – Manage T Level results – GOV.UK";
         public static readonly string ChangeRegistrationSuccessPageUrl = string.Concat(StartPage.StartPageUrl, "registration-details-change-confirmation");
@@ -41,7 +41,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string ChangeSpecialismDecidePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-learner-decided-specialism-question");
         private static readonly string ChangeSpecialismDecidePageHeader = "Has the learner decided on the specialism?";
         public const string SelectSpecialismPageTitle = "Select specialisms page – Manage T Level results – GOV.UK";
-        public const string ChangeSpecialismPageTitle = "Change specialism page – Manage T Level results – GOV.UK";
+        public const string ChangeSpecialismPageTitle = "Change registration - Select specialism page – Manage T Level results – GOV.UK";
         public static readonly string SelectSpecialismPageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-select-specialism");
         private const string AcademicYearCantChangePageTitle = "Academic year cannot be changed page – Manage T Level results – GOV.UK";
         private static readonly string AcademicYearCantChangePageHeader = "Academic year cannot be changed";

@@ -6,7 +6,7 @@
 
 
 Background: 
-##Given I have logged in as a "RegistrationEditor" user
+Given I have logged in as a "RegistrationEditor" user
 Given I navigate to the dashboard
 And I create a new registration which I subsequently withdraw
 

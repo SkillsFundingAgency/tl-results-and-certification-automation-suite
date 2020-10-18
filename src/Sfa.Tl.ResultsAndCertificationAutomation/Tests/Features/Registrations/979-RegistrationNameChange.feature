@@ -40,7 +40,7 @@ Then I am shown an error stating "First name must be 100 characters or fewer" an
 ##Test covers all error messages and page title which includes "error"
 
 
-@RegressionTest @RegistrationSearch
+@Ignore @RegressionTest @RegistrationSearch
 Scenario: 979-Accessing the Registration Change Name page through bookmarks for inactive ULN will direct to an error page
 And I search for my registration
 Then I should see results in the page

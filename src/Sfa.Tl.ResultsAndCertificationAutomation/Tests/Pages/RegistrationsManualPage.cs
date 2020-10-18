@@ -314,7 +314,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyRegistrationDetailsPage()
         {
             Assert.AreEqual(RegistrationDetailsHeader, WebDriver.FindElement(PageHeader).Text);
-            Assert.AreEqual(ExpectedCancelBtnText, WebDriver.FindElement(By.XPath("//*[contains(text(),'Cancel')]")).Text);
             Assert.AreEqual(ExpectedSearchAgainBtnText, WebDriver.FindElement(By.XPath("//*[contains(text(),'Search again')]")).Text);
         }
 
