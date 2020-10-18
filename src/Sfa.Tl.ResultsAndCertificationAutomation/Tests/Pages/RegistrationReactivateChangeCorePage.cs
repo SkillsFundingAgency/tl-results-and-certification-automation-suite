@@ -95,13 +95,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedErrorPageTitle, WebDriver.Title);
         }
 
-
-
-
-
-
-
-
+        public static void SelectUpdatedCore(string Core)
+        {
+            SelectFromDropDownByText(DropdownList, Core);
+            ClickElement(ContinueBtn);
+        }
 
     }
 }

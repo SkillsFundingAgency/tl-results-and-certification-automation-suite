@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -23,6 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string ExpectedProviderValue = "99999903";
         private static readonly string ExpectedCoreValue = "77777777";
         public static readonly string ChangeAnotherProvider = "Automation Test4 (99999904)";
+        public static By SubmitButton { get; } = By.XPath("//*[@id='main-content']//p[2]/button");
 
         private static By SelectProvider { get; } = By.Id("selectedproviderukprn");
         private static By SelectCore { get; } = By.Id("selectedcorecode");
@@ -66,5 +68,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             string selectedValue = selectElement.SelectedOption.GetAttribute("value");
             Assert.AreEqual("", selectedValue);
         }
+
+        public static void VerifyUpdatedReregisterData()
+        {
+
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(Constants.ManualRegULN));
+            RegistrationsSearchPage.VerifyProvider(Constants.ManualRegUpdatedProvider);
+            RegistrationsSearchPage.VerifyCore(Constants.ManualRegUpdatedCore);
+            RegistrationsSearchPage.VerifySpecialism(Constants.ManualRegUpdatedSpecialism);
+            //RegistrationsSearchPage.VerifyAcademicYearChangePage();
+        }
+
+        public static void ClickSubmitButton()
+        {
+            ClickElement(SubmitButton);
+        }
+
+
     }
 }

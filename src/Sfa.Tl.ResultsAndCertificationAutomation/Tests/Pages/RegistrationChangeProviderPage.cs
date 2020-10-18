@@ -38,5 +38,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             SelectFromDropDownByText(ProviderDropdown, ChangeProvider);
         }
 
+        public static void SelectProviderFromList(string UpdatedProvider)
+        {
+            SelectFromDropDownByText(ProviderDropdown, UpdatedProvider);
+        }
+
+
     }
 }
