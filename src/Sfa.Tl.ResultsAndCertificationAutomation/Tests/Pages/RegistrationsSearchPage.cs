@@ -52,13 +52,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string DoYouWantToChangeCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-core-and-provider");
         public static string DoYouWantToChangeCorePageErrorTitle = "Error: Change registration - Do you also want to change the core page – Manage T Level results – GOV.UK";
         public static readonly string CanChangeCodeErrorMsg = "Select yes if you want to change the core";
-        private const string ProviderNotOfferSameCorePageTitle = "Change registration - Provider does not offer the same core page – Manage T Level results – GOV.UK";
+        private const string ProviderNotOfferSameCorePageTitle = "Change registration - Provider has not been set up to offer core page – Manage T Level results – GOV.UK";
         private static readonly string ProviderNotOfferSameCoreHeader = "Provider has not been set up to offer the same core";
-        private static readonly string ProviderNotOfferSameCoreUrl = string.Concat(StartPage.StartPageUrl, "provider-not-offering-same-core");
+        private static readonly string ProviderNotOfferSameCoreUrl = string.Concat(StartPage.StartPageUrl, "change-registration-provider-not-offering-core");
         private const string ChangeProviderCorePageTitle = "Change registration - Change provider and core need to withdraw message page – Manage T Level results – GOV.UK";
         private static readonly string ChangeProviderCorePageHeader = "Change provider and core";
         private static readonly string ChangeProviderCorePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-provider-and-core-need-to-withdraw");
-        private const string ChangeSpecialismErrorPageTitle = "Error: Change specialism page – Manage T Level results – GOV.UK";
+        private const string ChangeSpecialismErrorPageTitle = "Error: Change registration - Select specialism page – Manage T Level results – GOV.UK";
         public static By ChangeCoreError { get; } = By.XPath("//a[@href='#canchangecore']");
         public static By DecideSpecialismYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideSpecialismNo { get; } = By.Id("specialismdecided-no");
