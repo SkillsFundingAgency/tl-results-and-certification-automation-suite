@@ -29,7 +29,7 @@ trigger:
   batch: true
   branches:
     include:
-      - feature/sprint-21
+      - feature/sprint-22
 pr: none
 
 variables:
