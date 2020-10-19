@@ -3,7 +3,8 @@ schedules:
     displayName: Daily midnight build
     branches:
       include:
-        - feature/sprint-22
+feature/sprint-22
+    - feature/sprint-22
 resources:
   repositories:
     - repository: self
