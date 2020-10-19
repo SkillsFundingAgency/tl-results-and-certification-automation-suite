@@ -46,6 +46,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string CoreHeader = "Select the core";
         private static By SelectCore { get; } = By.Id("selectedcorecode");
         public const string InputCore = "Legal, Finance and Accounting (55555555)";
+        public const string InputCore1 = "Digital Support Services (10623456)";
         public const string InputPearsonCore = "Creative and Design (10101010)";
         //Specialism Page
         public static string SpecialismDecidePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learner-decided-specialism-question");
@@ -313,7 +314,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyRegistrationDetailsPage()
         {
             Assert.AreEqual(RegistrationDetailsHeader, WebDriver.FindElement(PageHeader).Text);
-            Assert.AreEqual(ExpectedCancelBtnText, WebDriver.FindElement(By.XPath("//*[contains(text(),'Cancel')]")).Text);
             Assert.AreEqual(ExpectedSearchAgainBtnText, WebDriver.FindElement(By.XPath("//*[contains(text(),'Search again')]")).Text);
         }
 

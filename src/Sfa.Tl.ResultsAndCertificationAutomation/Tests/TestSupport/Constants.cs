@@ -88,10 +88,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string SearchRegistrationsPageTitle = "Search for a registration page – Manage T Level results – GOV.UK";
         public const string SearchRegistrationURLNotFoundPagePageTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
         //Registration ChangeName Page
-        public const string RegistrationChangeNamePageTitle = "Change learner’s name page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeNamePageTitle = "Change registration - Enter the learner's name page – Manage T Level results – GOV.UK";
         public const string RegistrationChangeNamePageHeading = "Change registration";
         public const string RegistrationChangeNamePageSubHeading = "Enter the learner's name";
-        public const string RegistrationChangeNameErrorTitle = "Error: Change learner’s name page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeNameErrorTitle = "Error: Change registration - Enter the learner's name page – Manage T Level results – GOV.UK";
         //Page Not Found Page
         public const string PageNotFoundPageTitle = "Page not found – Manage T Level results – GOV.UK";
         //Registration Change Success Page
@@ -104,11 +104,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string ManualRegDOBDay = "01";
         public const string ManualRegDOBMonth = "02";
         public const string ManualRegDOBYear = "2000";
+        //Updated Registration Details
+        public const string ManualRegUpdatedFirstName = "UpdatedFirstName";
+        public const string ManualRegUpdatedLastName = "UpdatedLastName";
+        public const string ManualRegUpdatedDOBDay = "12";
+        public const string ManualRegUpdatedDOBMonth = "11";
+        public const string ManualRegUpdatedDOBYear = "2010";
+        public const string ManualRegUpdatedProvider = "Automation Test3 (99999903)";
+        public const string ManualRegUpdatedCore = "Engineering and Manufacturing (66666666)";
+        public const string ManualRegUpdatedSpecialism = "Design, Development and Control (60000002)";
         //Registration Change DOB Page
-        public const string RegistrationChangeDOBPageTitle = "Change learner’s date of birth page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeDOBPageTitle = "Change registration - Enter the learner's date of birth page – Manage T Level results – GOV.UK";
         public const string RegistrationChangeDOBPageHeading = "Change registration";
         public const string RegistrationChangeDOBPageSubHeading = "Enter the learner's date of birth";
-        public const string RegistrationChangeDOBErrorTitle = "Error: Change learner’s date of birth page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeDOBErrorTitle = "Error: Change registration - Enter the learner's date of birth page – Manage T Level results – GOV.UK";
         //Registration Amend Active Registration Page
         public const string AmendActiveRegistrationPageTitle = "What would you like to do with this active registration page – Manage T Level results – GOV.UK";
         public const string AmendActiveRegistrationPageHeading = "What would you like to do with this active registration?";

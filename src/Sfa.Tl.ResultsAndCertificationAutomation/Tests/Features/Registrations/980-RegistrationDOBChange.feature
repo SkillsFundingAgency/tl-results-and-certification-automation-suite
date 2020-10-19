@@ -49,7 +49,7 @@ When I enter a DOB in the future and press Change
 Then I am shown an error message stating "Date of birth must be in the past"
 ##checks all error messages on the page and checks page title includes "Error"
 
-@RegressionTest @RegistrationSearch
+@Ignore @RegressionTest @RegistrationSearch
 Scenario: 980-Accessing the Registration Change DOB page through bookmarks for inactive ULN will direct to an error page
 And I search for my registration
 Then I should see results in the page

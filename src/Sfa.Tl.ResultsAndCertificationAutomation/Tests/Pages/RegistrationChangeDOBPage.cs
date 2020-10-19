@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using System;
-using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -12,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
 
         private const string ExpectedButtonText = "Change";
-        private static string ExpectedChangeNamePageUrl => string.Concat(StartPage.StartPageUrl, "change-learners-date-of-birth");
+        private static string ExpectedChangeNamePageUrl => string.Concat(StartPage.StartPageUrl, "change-registration-learners-date-of-birth");
         private static By PageHeading = By.XPath("//*[text()='Change registration']");
         private static By PageSubHeading = By.XPath("//*[@id='main-content']//h1");
         private static By ChangeButton = By.Id("ChangeButton");

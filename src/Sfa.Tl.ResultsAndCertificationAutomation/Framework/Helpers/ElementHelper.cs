@@ -144,6 +144,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var buttonElement = WebDriver.FindElement(By.Name(buttonName));
             buttonElement.Click();
         }
+        public static void ClickButton(By id)
+        {
+            IWebElement button = WebDriver.FindElement(id);
+            button.Click();
+        }
 
         public static IWebElement WaitForElement(By by, int timeoutInSeconds)
         {

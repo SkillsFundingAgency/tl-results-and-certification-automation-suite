@@ -16,7 +16,7 @@ Then I will be directed to the are you sure you want to withdraw this page
 When I click the back link 
 Then I will be navigated to the Change Core page
     
-@RegressionTest @WithdrawRegistration
+@Ignore @RegressionTest @WithdrawRegistration
 Scenario: 991_Click on Withdraw Registration on Change Provider and Core Page
 When I click Withdraw Registration on the Change Provider and Core page
 Then I will be directed to the are you sure you want to withdraw this page
@@ -44,7 +44,7 @@ Then I will be directed to the are you sure you want to withdraw this page
 When I select No, do not withdraw registration
 Then I am navigated to the Active options page
 
-@RegressionTest @WithdrawRegistration
+@Ignore @RegressionTest @WithdrawRegistration
 Scenario: 991_Select No on Withdraw Registration - Entry Point is Change Provider and Core Page
 When I click Withdraw Registration on the Change Provider and Core page
 Then I will be directed to the are you sure you want to withdraw this page
@@ -60,7 +60,7 @@ Then I will be navigated to the Registration withdrawn successfully page
 And the registration is successfully withdrawn
 
 
-@RegressionTest @WithdrawRegistration
+@Ignore @RegressionTest @WithdrawRegistration
 Scenario: 991_Error message validation on Withdraw Registration page
 When I click Withdraw Registration on the Change Provider and Core page
 Then I will be directed to the are you sure you want to withdraw this page

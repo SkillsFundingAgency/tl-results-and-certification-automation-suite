@@ -43,6 +43,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By SpecialismLegal { get; } = By.XPath("//label[contains(text(),'Legal (50000001)')]");
         private static By SpecialismAccountancy { get; } = By.XPath("//label[contains(text(),'Accountancy (50000003)')]");
         private static By SpecialismFinanacial { get; } = By.XPath("//label[contains(text(),'Financial (50000002)')]");
+        private static By ProviderBackLink { get; } = By.Id("backLink");
 
         public static void CreateWithdrawnReg()
         {
@@ -123,6 +124,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(AmendWithdrawnPageErrorTitle, WebDriver.Title);
             Assert.AreEqual(AmendWithdrawnErrorMsg, WebDriver.FindElement(AmendWithdrawnError).Text);
+        }
+        public static void ClickProviderBackLink()
+        {
+            ClickElement(ProviderBackLink);
+        }
+
+        public static void ReactivateApplication()
+        {
+            ClickElement(ReactivateConfirmYes);
+            ClickElement(SubmitBtn);
         }
     }
 }

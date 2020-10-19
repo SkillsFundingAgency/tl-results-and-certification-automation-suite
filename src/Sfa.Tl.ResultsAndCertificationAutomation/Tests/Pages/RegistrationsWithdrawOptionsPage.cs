@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -34,18 +35,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ExpectedError_NoRadioButtonSelected = "Select if you would like to reactivate this registration with the same course or register a different course";
         public static string ExpectedError_Heading = "There is a problem";
 
-        //Withdrawn Options Page Elements 
-        //private static string ExpectedWithdrawnOptionsPageUrl => string.Concat(StartPage.StartPageUrl, "reactivate-registration-same-course");
-        //private static By WithdrawnOptionsPageHeading = By.XPath("//*[@id='main-content']//h1");
-
-        //private static By SubmitButton = By.Id("submitButton");
-        //private const string ExpectedSubmitButtonText = "Submit";
-        //private static By WithdrawOptionsBackLink = By.Id("backLink");
-        //private const string WithdrawOptionsExpectedBackLinkText = "Back";
-
-        //////radio buttons
-        //private static By YesRadioButton = By.Id("canrejoin");
-        //private static By NoRadioButton = By.Id("tl-can-rejoin-no");
 
         public static void ClickContinueButton()
         {
@@ -55,6 +44,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickReactiveRegistrationRadioButton()
         {
             ClickElement(ReactivateRadioButton);
+        }
+
+        public static void ClickRegisterLearnerNewCourseRadioButton()
+        {
+
+            ClickElement(RegisterLearnerRadioButtonLabel);
         }
 
         public static void VerifyRegistrationsWithdrawOptionsPage()

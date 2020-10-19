@@ -188,11 +188,13 @@ testRunner.Then("I should be navigated back to registration details page", ((str
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("984-Change Specialism Continue")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _984_ChangeSpecialismContinue()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
