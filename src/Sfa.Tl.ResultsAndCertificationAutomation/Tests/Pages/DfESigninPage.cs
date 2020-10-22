@@ -40,6 +40,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             PageHelper.WaitForPageElementBy(10, UserIdTxtBox);
             WebDriver.FindElement(UserIdTxtBox).SendKeys(username);
             WebDriver.FindElement(PasswordTxtBox).SendKeys(password);
+            PageHelper.WaitForPageElementBy(10, SignInButton);
             WebDriver.FindElement(SignInButton).Click();
             PageHelper.WaitForUrl(DashboardUrl);
         }
