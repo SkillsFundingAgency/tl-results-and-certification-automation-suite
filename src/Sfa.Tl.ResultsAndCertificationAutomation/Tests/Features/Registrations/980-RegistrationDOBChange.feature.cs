@@ -264,13 +264,13 @@ testRunner.Then("I am shown an error message stating \"Date of birth must be in 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("980-Accessing the Registration Change DOB page through bookmarks for inactive ULN" +
             " will direct to an error page")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
+        [NUnit.Framework.CategoryAttribute("changeup")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
         public virtual void _980_AccessingTheRegistrationChangeDOBPageThroughBookmarksForInactiveULNWillDirectToAnErrorPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
+                    "changeup",
                     "RegressionTest",
                     "RegistrationSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -314,13 +314,14 @@ testRunner.Then("I am shown the Change Details DOB page", ((string)(null)), ((Te
 #line 58
 testRunner.When("I capture the Change DOB URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 59
-testRunner.And("I cancel the registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 60
-testRunner.And("I attempt to access the Change DOB page using the captured URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I cancel the registration after navigating to the registration details page from " +
+                        "the Change DOB page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 61
+testRunner.And("I attempt to access the Change DOB page using the captured URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 62
 testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -349,7 +350,7 @@ testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTa
             argumentsOfScenario.Add("Year", year);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("985-Registration Change DOB Page - successfully changing the DOB will display the" +
                     " confirmation page", null, tagsOfScenario, argumentsOfScenario);
-#line 65
+#line 66
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -372,29 +373,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 66
+#line 67
 testRunner.And("I search for my registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 67
+#line 68
 testRunner.Then("I should see results in the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 68
+#line 69
 testRunner.When("I click the Change link next to DOB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 69
+#line 70
 testRunner.Then("I am shown the Change Details DOB page prepopulated with the DOB registered to th" +
                         "e ULN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 70
+#line 71
 testRunner.When(string.Format("I change the date of birth to {0} {1} {2} and press Change", day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 71
+#line 72
 testRunner.Then("I am shown the Registration Change Success Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 72
+#line 73
 testRunner.When("I click the Back to Registration button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 73
+#line 74
 testRunner.Then(string.Format("I can see the amended date of birth {0} {1} {2} on the Registration Details page", day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

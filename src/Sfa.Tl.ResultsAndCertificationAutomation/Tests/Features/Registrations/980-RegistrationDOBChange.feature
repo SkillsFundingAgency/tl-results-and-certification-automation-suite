@@ -49,14 +49,15 @@ When I enter a DOB in the future and press Change
 Then I am shown an error message stating "Date of birth must be in the past"
 ##checks all error messages on the page and checks page title includes "Error"
 
-@Ignore @RegressionTest @RegistrationSearch
+@changeup @RegressionTest @RegistrationSearch
 Scenario: 980-Accessing the Registration Change DOB page through bookmarks for inactive ULN will direct to an error page
 And I search for my registration
 Then I should see results in the page
 When I click the Change link next to DOB
 Then I am shown the Change Details DOB page
 When I capture the Change DOB URL
-And I cancel the registration
+##And I cancel the registration
+And I cancel the registration after navigating to the registration details page from the Change DOB page
 And I attempt to access the Change DOB page using the captured URL
 Then I am shown the Page Not Found page
 ##checks the Page Not Found page is displayed if accessing this page when the ULN is withdrawn

@@ -1,6 +1,7 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System;
 using TechTalk.SpecFlow;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
 {
@@ -31,7 +32,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
             RegistrationsSearchPage.SearchForULN();
             RegistrationsSearchPage.VerifySearchResultPage();
             RegistrationsSearchPage.ClickChangeProviderLink();
-            RegistrationChangeProviderPage.SelectProviderFromList();
+            RegistrationChangeProviderPage.SelectProviderFromList(Constants.ManualRegUpdatedProvider1);
             RegistrationChangeProviderPage.ClickChangeButton();
             RegistrationChangeCorePage.ClickYesRadioButton_AreYouSureChangeCorePage();
             RegistrationChangeCorePage.ClickContinueButton_AreYouSureChangeCorePage();
