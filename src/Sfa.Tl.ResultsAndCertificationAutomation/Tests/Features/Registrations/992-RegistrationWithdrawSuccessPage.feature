@@ -17,7 +17,7 @@ When I select Yes, withdraw registration
 Then I will be navigated to the Registration withdrawn successfully page (from Change Core page)
 
     
-@changeup  @RegressionTest @WithdrawRegistration
+@RegressionTest @WithdrawRegistration
 Scenario: 992_Navigate to the Registration Withdrawn Successfully page from the Change Provider and Core Page
 When I click Withdraw Registration on the Change Provider and Core page
 Then I will be directed to the are you sure you want to withdraw this page
