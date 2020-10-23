@@ -78,6 +78,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(Constants.RegistrationsActiveOptionsPageErrorTitle, WebDriver.Title);
         }
 
-
+        public static void ClickDeleteRegistrationRadioButton()
+        {
+            ClickElement(DeleteRadioButton);
+        }
     }
 }

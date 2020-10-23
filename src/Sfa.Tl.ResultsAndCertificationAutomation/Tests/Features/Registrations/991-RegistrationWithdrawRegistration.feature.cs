@@ -141,13 +141,11 @@ testRunner.Then("I will be navigated to the Change Core page", ((string)(null)),
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("991_Click on Withdraw Registration on Change Provider and Core Page")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("WithdrawRegistration")]
         public virtual void _991_ClickOnWithdrawRegistrationOnChangeProviderAndCorePage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -344,13 +342,11 @@ testRunner.Then("I am navigated to the Active options page", ((string)(null)), (
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("991_Select No on Withdraw Registration - Entry Point is Change Provider and Core " +
             "Page")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("WithdrawRegistration")]
         public virtual void _991_SelectNoOnWithdrawRegistration_EntryPointIsChangeProviderAndCorePage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -450,13 +446,11 @@ testRunner.And("the registration is successfully withdrawn", ((string)(null)), (
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("991_Error message validation on Withdraw Registration page")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("WithdrawRegistration")]
         public virtual void _991_ErrorMessageValidationOnWithdrawRegistrationPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

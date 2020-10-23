@@ -111,6 +111,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string ManualRegUpdatedDOBMonth = "11";
         public const string ManualRegUpdatedDOBYear = "2010";
         public const string ManualRegUpdatedProvider = "Automation Test3 (99999903)";
+        public const string ManualRegUpdatedProvider1 = "Automation Test4 (99999904)";
         public const string ManualRegUpdatedCore = "Engineering and Manufacturing (66666666)";
         public const string ManualRegUpdatedSpecialism = "Design, Development and Control (60000002)";
         //Registration Change DOB Page
