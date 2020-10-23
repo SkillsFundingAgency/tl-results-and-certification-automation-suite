@@ -264,13 +264,11 @@ testRunner.Then("I am shown an error message stating \"Date of birth must be in 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("980-Accessing the Registration Change DOB page through bookmarks for inactive ULN" +
             " will direct to an error page")]
-        [NUnit.Framework.CategoryAttribute("changeup")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
         public virtual void _980_AccessingTheRegistrationChangeDOBPageThroughBookmarksForInactiveULNWillDirectToAnErrorPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "changeup",
                     "RegressionTest",
                     "RegistrationSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

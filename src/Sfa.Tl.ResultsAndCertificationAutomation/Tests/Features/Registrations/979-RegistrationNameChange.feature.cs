@@ -239,13 +239,11 @@ testRunner.Then("I am shown an error stating \"First name must be 100 characters
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("979-Accessing the Registration Change Name page through bookmarks for inactive UL" +
             "N will direct to an error page")]
-        [NUnit.Framework.CategoryAttribute("changeup")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
         public virtual void _979_AccessingTheRegistrationChangeNamePageThroughBookmarksForInactiveULNWillDirectToAnErrorPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "changeup",
                     "RegressionTest",
                     "RegistrationSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
