@@ -115,9 +115,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void WhenICancelTheRegistration()
         {
             RegistrationChangeDOBPage.ClickBackLink();
-            RegistrationsSearchPage.ClickCancelRegistration();
+            RegistrationsSearchPage.ClickChangeStatusLink();
+            RegistrationsActiveOptionPage.ClickDeleteRegistrationRadioButton();
+            RegistrationsActiveOptionPage.ClickContinueButton();
             RegistrationsSearchPage.YesToCancelReg();
+        }
 
+        [When(@"I cancel the registration after navigating to the registration details page from the Change DOB page")]
+        public void WhenICancelTheRegistrationAfterNavigatingToTheRegistrationDetailsPageFromTheChangeDOBPage()
+        {
+            RegistrationChangeDOBPage.ClickBackLink();
+            RegistrationsSearchPage.ClickChangeStatusLink();
+            RegistrationsActiveOptionPage.ClickDeleteRegistrationRadioButton();
+            RegistrationsActiveOptionPage.ClickContinueButton();
+            RegistrationsSearchPage.YesToCancelReg();
+        }
+
+        [When(@"I cancel the registration after navigating to the registration details from the Change Name page")]
+        public void WhenICancelTheRegistrationAfterNavigatingToTheRegistrationDetailsFromTheChangeNamePage()
+        {
+            RegistrationChangeNamePage.ClickBackLink();
+            RegistrationsSearchPage.ClickChangeStatusLink();
+            RegistrationsActiveOptionPage.ClickDeleteRegistrationRadioButton();
+            RegistrationsActiveOptionPage.ClickContinueButton();
+            RegistrationsSearchPage.YesToCancelReg();
         }
 
         [When(@"I attempt to access the Change Name page using the captured URL")]

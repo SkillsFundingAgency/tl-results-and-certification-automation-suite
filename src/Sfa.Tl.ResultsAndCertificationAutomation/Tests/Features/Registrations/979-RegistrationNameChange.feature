@@ -40,14 +40,15 @@ Then I am shown an error stating "First name must be 100 characters or fewer" an
 ##Test covers all error messages and page title which includes "error"
 
 
-@Ignore @RegressionTest @RegistrationSearch
+@RegressionTest @RegistrationSearch
 Scenario: 979-Accessing the Registration Change Name page through bookmarks for inactive ULN will direct to an error page
 And I search for my registration
 Then I should see results in the page
 When I click the Change link next to Name
 Then I am shown the Change Details Name page defaulted with the name registered to the ULN 
 When I capture the Change Name URL
-And I cancel the registration
+##And I cancel the registration
+And I cancel the registration after navigating to the registration details from the Change Name page  
 And I attempt to access the Change Name page using the captured URL
 Then I am shown the Page Not Found page
 
