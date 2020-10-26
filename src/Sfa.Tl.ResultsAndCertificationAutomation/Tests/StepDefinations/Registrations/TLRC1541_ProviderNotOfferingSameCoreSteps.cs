@@ -17,7 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see Provider not offering same core page")]
         public void ThenIShouldSeeProviderNotOfferingSameCorePage()
         {
-            VerifyProviderNotOfferSameCorePage();
+            RegistrationChangeProviderPage.VerifyProviderNotOfferSameCorePage();
             SqlQueries.DeleteFromRegistrationTables();
         }
     }

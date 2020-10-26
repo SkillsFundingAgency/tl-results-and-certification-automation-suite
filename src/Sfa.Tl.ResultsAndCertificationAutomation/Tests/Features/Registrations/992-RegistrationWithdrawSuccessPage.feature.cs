@@ -145,13 +145,11 @@ testRunner.Then("I will be navigated to the Registration withdrawn successfully 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("992_Navigate to the Registration Withdrawn Successfully page from the Change Prov" +
             "ider and Core Page")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("WithdrawRegistration")]
         public virtual void _992_NavigateToTheRegistrationWithdrawnSuccessfullyPageFromTheChangeProviderAndCorePage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

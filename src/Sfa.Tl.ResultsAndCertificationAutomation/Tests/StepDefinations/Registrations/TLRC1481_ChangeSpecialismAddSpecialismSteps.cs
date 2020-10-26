@@ -12,7 +12,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             ClickElement(RegistrationsManualPage.SelectSpecialismLegal);
             ClickButton(ChangeBtn);
-            VerifyChangeSuccessPage();
+            //VerifyChangeSuccessPage();
+            RegistrationChangeSuccessPage.VerifyRegistrationChangeSuccessPage();
             ClickButton(BackToRegistrationDetailsBtn);
         }
         

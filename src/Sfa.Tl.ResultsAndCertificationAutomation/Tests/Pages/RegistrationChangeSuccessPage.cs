@@ -11,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         private static readonly By PageSubHeader = By.XPath("//*[@id='main-content']/div/div/div/div");
         public static By BackToRegistrationsButton = By.Id("BackToRegButton");
-        private static string PageSubHeading = "ULN: " + "9900000055";
+        private static string PageSubHeading = "ULN: " + Constants.ManualRegULN;
 
 
 
@@ -26,7 +26,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(Constants.RegistrationChangeSuccessPageTitle, WebDriver.Title);
             Assert.AreEqual(Constants.RegistrationChangeSuccessPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.FindElement(PageSubHeader).Text.Contains(PageSubHeading));
-
         }
     }
 }

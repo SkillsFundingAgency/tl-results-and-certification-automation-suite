@@ -17,7 +17,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string ExpectedPageHeading = "Change provider and core";
         private static By WithdrawThisRegistrationButton = By.Id("withdrawRegistrationButton");
         private const string ExpectedButtonText = "Withdraw this registration";
-           
+        private const string ChangeProviderCorePageTitle = "Change registration - Change provider and core need to withdraw message page – Manage T Level results – GOV.UK";
+
 
         public static void VerifyChangeProviderAndCorePage()
         {
@@ -25,7 +26,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedButtonText, WebDriver.FindElement(WithdrawThisRegistrationButton).Text);
             Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeading).Text);
         }
-       
+
+        public static void VerifyChangeProviderCore()
+        {
+            Assert.AreEqual(ChangeProviderCorePageTitle, WebDriver.Title);
+            Assert.AreEqual(ExpectedChangeProviderAndCorePageUrl, WebDriver.Url);
+            Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeading).Text);
+            Assert.AreEqual(ExpectedButtonText, WebDriver.FindElement(WithdrawThisRegistrationButton).Text);
+        }
+
         public static void ClickWithdrawButton()
         {
             ClickElement(WithdrawThisRegistrationButton);

@@ -17,7 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see Do you want to change Core page")]
         public void ThenIShouldSeeDoYouWantToChangeCorePage()
         {
-            VerifyDoYouWantChangeCorePage();
+            RegistrationChangeCorePage.VerifyDoYouWantChangeCorePage();
             SqlQueries.DeleteFromRegistrationTables();
         }
     }

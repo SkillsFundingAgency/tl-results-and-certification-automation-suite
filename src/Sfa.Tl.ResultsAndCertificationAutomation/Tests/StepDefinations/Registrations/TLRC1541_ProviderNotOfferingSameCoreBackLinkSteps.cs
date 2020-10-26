@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should be navigated back to Do you also want to change Core page")]
         public void ThenIShouldBeNavigatedBackToDoYouAlsoWantToChangeCorePage()
         {
-            VerifyDoYouWantChangeCorePage();
+            RegistrationChangeCorePage.VerifyDoYouWantChangeCorePage();
             SqlQueries.DeleteFromRegistrationTables();
         }
     }

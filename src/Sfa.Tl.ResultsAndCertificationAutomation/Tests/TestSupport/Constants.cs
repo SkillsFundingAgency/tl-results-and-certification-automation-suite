@@ -98,7 +98,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RegistrationChangeSuccessPageTitle = "Registration details change confirmation page – Manage T Level results – GOV.UK";
         public const string RegistrationChangeSuccessPageHeader = "Change successful";
         //Manual Registration Details
-        public const string ManualRegULN = "9900000055";
+        public const string ManualRegULN = "9900000001";
         public const string ManualRegFirstName = "Test1";
         public const string ManualRegLastName = "Test2";
         public const string ManualRegDOBDay = "01";

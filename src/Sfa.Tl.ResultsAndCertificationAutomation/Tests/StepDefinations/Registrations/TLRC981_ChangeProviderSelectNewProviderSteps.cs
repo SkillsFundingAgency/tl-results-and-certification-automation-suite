@@ -23,7 +23,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see Change successfull message")]
         public void ThenIShouldSeeChangeSuccessfullMessage()
         {
-            VerifyChangeSuccessPage();
+            RegistrationChangeSuccessPage.VerifyRegistrationChangeSuccessPage();
+            //VerifyChangeSuccessPage();
         }
         
         [Then(@"I should see new provider details in registration details page")]

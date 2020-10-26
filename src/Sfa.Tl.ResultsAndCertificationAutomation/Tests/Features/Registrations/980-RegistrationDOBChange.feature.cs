@@ -93,12 +93,12 @@ testRunner.And("I create a manual registration", ((string)(null)), ((TechTalk.Sp
         [NUnit.Framework.DescriptionAttribute("980-Pressing the Change link next to DOB on the Registration Details page takes t" +
             "he user to the Change Registration DOB page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _980_PressingTheChangeLinkNextToDOBOnTheRegistrationDetailsPageTakesTheUserToTheChangeRegistrationDOBPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("980-Pressing the Change link next to DOB on the Registration Details page takes t" +
                     "he user to the Change Registration DOB page", null, tagsOfScenario, argumentsOfScenario);
@@ -159,12 +159,12 @@ testRunner.Then("I will be directed to the Registration Details page", ((string)
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("980-Error messages are displayed if DOB fields are NULL or invalid")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _980_ErrorMessagesAreDisplayedIfDOBFieldsAreNULLOrInvalid()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("980-Error messages are displayed if DOB fields are NULL or invalid", null, tagsOfScenario, argumentsOfScenario);
 #line 27
@@ -265,12 +265,12 @@ testRunner.Then("I am shown an error message stating \"Date of birth must be in 
         [NUnit.Framework.DescriptionAttribute("980-Accessing the Registration Change DOB page through bookmarks for inactive ULN" +
             " will direct to an error page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _980_AccessingTheRegistrationChangeDOBPageThroughBookmarksForInactiveULNWillDirectToAnErrorPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("980-Accessing the Registration Change DOB page through bookmarks for inactive ULN" +
                     " will direct to an error page", null, tagsOfScenario, argumentsOfScenario);
@@ -312,14 +312,14 @@ testRunner.Then("I am shown the Change Details DOB page", ((string)(null)), ((Te
 #line 58
 testRunner.When("I capture the Change DOB URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 60
+#line 59
 testRunner.And("I cancel the registration after navigating to the registration details page from " +
                         "the Change DOB page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 61
+#line 60
 testRunner.And("I attempt to access the Change DOB page using the captured URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 62
+#line 61
 testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -330,13 +330,13 @@ testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTa
         [NUnit.Framework.DescriptionAttribute("985-Registration Change DOB Page - successfully changing the DOB will display the" +
             " confirmation page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         [NUnit.Framework.TestCaseAttribute("02", "12", "2000", null)]
         public virtual void _985_RegistrationChangeDOBPage_SuccessfullyChangingTheDOBWillDisplayTheConfirmationPage(string day, string month, string year, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -348,7 +348,7 @@ testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTa
             argumentsOfScenario.Add("Year", year);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("985-Registration Change DOB Page - successfully changing the DOB will display the" +
                     " confirmation page", null, tagsOfScenario, argumentsOfScenario);
-#line 66
+#line 65
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -371,29 +371,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 67
+#line 66
 testRunner.And("I search for my registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 68
+#line 67
 testRunner.Then("I should see results in the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 69
+#line 68
 testRunner.When("I click the Change link next to DOB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 70
+#line 69
 testRunner.Then("I am shown the Change Details DOB page prepopulated with the DOB registered to th" +
                         "e ULN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 71
+#line 70
 testRunner.When(string.Format("I change the date of birth to {0} {1} {2} and press Change", day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 72
+#line 71
 testRunner.Then("I am shown the Registration Change Success Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 73
+#line 72
 testRunner.When("I click the Back to Registration button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 74
+#line 73
 testRunner.Then(string.Format("I can see the amended date of birth {0} {1} {2} on the Registration Details page", day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
