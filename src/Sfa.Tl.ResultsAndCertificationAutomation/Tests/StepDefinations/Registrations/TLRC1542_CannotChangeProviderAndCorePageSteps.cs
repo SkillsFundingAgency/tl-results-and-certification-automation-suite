@@ -17,7 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see can not change provider and core page")]
         public void ThenIShouldSeeCanNotChangeProviderAndCorePage()
         {
-            VerifyChangeProviderCore();
+            RegistrationChangeProviderAndCorePage.VerifyChangeProviderCore();
             _ = IsDisplayed(WithDrawRegistrationBtn);
             SqlQueries.DeleteFromRegistrationTables();
         }

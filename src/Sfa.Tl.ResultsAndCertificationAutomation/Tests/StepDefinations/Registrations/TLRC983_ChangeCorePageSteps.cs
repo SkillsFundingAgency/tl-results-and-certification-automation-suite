@@ -16,9 +16,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see change Core page")]
         public void ThenIShouldSeeChangeCorePage()
         {
-            Assert.AreEqual(ChangeCorePageTitle, WebDriver.Title);
-            Assert.AreEqual(ChangeCorePageHeader, WebDriver.FindElement(PageHeader).Text);
-            Assert.IsTrue(WebDriver.Url.Contains(ChangeCorePageUrl));
+            //Assert.AreEqual(ChangeCorePageTitle, WebDriver.Title);
+            //Assert.AreEqual(ChangeCorePageHeader, WebDriver.FindElement(PageHeader).Text);
+            //Assert.IsTrue(WebDriver.Url.Contains(ChangeCorePageUrl));
+            RegistrationChangeCorePage.VerifyChangeCorePageDetails();
         }
     }
 }

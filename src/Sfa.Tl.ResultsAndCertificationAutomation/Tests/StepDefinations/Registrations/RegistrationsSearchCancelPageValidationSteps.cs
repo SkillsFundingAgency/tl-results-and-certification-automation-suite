@@ -23,6 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             ClickElement(SearchBtn);
         }
 
+        //is this used anywhere?
         [Given(@"I click on Cancel Registration button")]
         public void GivenIClickOnCancelRegistrationButton()
         {

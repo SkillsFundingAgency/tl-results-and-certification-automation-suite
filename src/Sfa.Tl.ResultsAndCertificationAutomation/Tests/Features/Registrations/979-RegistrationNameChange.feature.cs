@@ -93,12 +93,12 @@ testRunner.And("I create a manual registration", ((string)(null)), ((TechTalk.Sp
         [NUnit.Framework.DescriptionAttribute("979-Pressing the Change link on the Registration Details page takes the user to t" +
             "he Change Registration Name page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _979_PressingTheChangeLinkOnTheRegistrationDetailsPageTakesTheUserToTheChangeRegistrationNamePage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("979-Pressing the Change link on the Registration Details page takes the user to t" +
                     "he Change Registration Name page", null, tagsOfScenario, argumentsOfScenario);
@@ -161,12 +161,12 @@ testRunner.Then("I will be directed to the Registration Details page", ((string)
         [NUnit.Framework.DescriptionAttribute("979-Error messages are displayed if First and Last name are not present or greate" +
             "r than 100 characters")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _979_ErrorMessagesAreDisplayedIfFirstAndLastNameAreNotPresentOrGreaterThan100Characters()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("979-Error messages are displayed if First and Last name are not present or greate" +
                     "r than 100 characters", null, tagsOfScenario, argumentsOfScenario);
@@ -240,12 +240,12 @@ testRunner.Then("I am shown an error stating \"First name must be 100 characters
         [NUnit.Framework.DescriptionAttribute("979-Accessing the Registration Change Name page through bookmarks for inactive UL" +
             "N will direct to an error page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _979_AccessingTheRegistrationChangeNamePageThroughBookmarksForInactiveULNWillDirectToAnErrorPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("979-Accessing the Registration Change Name page through bookmarks for inactive UL" +
                     "N will direct to an error page", null, tagsOfScenario, argumentsOfScenario);
@@ -288,14 +288,14 @@ testRunner.Then("I am shown the Change Details Name page defaulted with the name
 #line 49
 testRunner.When("I capture the Change Name URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 51
+#line 50
 testRunner.And("I cancel the registration after navigating to the registration details from the C" +
                         "hange Name page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 52
+#line 51
 testRunner.And("I attempt to access the Change Name page using the captured URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 53
+#line 52
 testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -306,13 +306,13 @@ testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTa
         [NUnit.Framework.DescriptionAttribute("985-Registration Change Name Page - successfully changing the name will display t" +
             "he confirmation page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
+        [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         [NUnit.Framework.TestCaseAttribute("TestChange1", "TestChange2", null)]
         public virtual void _985_RegistrationChangeNamePage_SuccessfullyChangingTheNameWillDisplayTheConfirmationPage(string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
-                    "RegistrationSearch"};
+                    "ChangeRegistration"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -323,7 +323,7 @@ testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTa
             argumentsOfScenario.Add("LastName", lastName);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("985-Registration Change Name Page - successfully changing the name will display t" +
                     "he confirmation page", null, tagsOfScenario, argumentsOfScenario);
-#line 57
+#line 56
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -346,29 +346,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 58
+#line 57
 testRunner.And("I search for my registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 59
+#line 58
 testRunner.Then("I should see results in the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 60
+#line 59
 testRunner.When("I click the Change link next to Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 61
+#line 60
 testRunner.Then("I am shown the Change Details Name page defaulted with the name registered to the" +
                         " ULN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 62
+#line 61
 testRunner.When(string.Format("I change the first and last name to {0} {1} and press Change", firstName, lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 63
+#line 62
 testRunner.Then("I am shown the Registration Change Success Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 64
+#line 63
 testRunner.When("I click the Back to Registration button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 65
+#line 64
 testRunner.Then(string.Format("I can see the amended name {0} {1} on the Registration Details page", firstName, lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

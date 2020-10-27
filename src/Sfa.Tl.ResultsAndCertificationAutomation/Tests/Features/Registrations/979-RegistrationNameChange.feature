@@ -8,7 +8,7 @@ Given I have logged in as a "RegistrationEditor" user
 And I click on Add a new registration link
 And I create a manual registration
 
-@RegressionTest @RegistrationSearch
+@RegressionTest @ChangeRegistration
 Scenario: 979-Pressing the Change link on the Registration Details page takes the user to the Change Registration Name page
 And I search for my registration
 Then I should see results in the page
@@ -22,7 +22,7 @@ Then I will be directed to the Registration Details page
 ##Test covers Back Link, page heading, page title, URL and button text and confirms pressing change without changing name goes back to Reg Details page
 
 
-@RegressionTest @RegistrationSearch
+@RegressionTest @ChangeRegistration
 Scenario: 979-Error messages are displayed if First and Last name are not present or greater than 100 characters
 And I search for my registration
 Then I should see results in the page
@@ -40,20 +40,19 @@ Then I am shown an error stating "First name must be 100 characters or fewer" an
 ##Test covers all error messages and page title which includes "error"
 
 
-@RegressionTest @RegistrationSearch
+@RegressionTest @ChangeRegistration
 Scenario: 979-Accessing the Registration Change Name page through bookmarks for inactive ULN will direct to an error page
 And I search for my registration
 Then I should see results in the page
 When I click the Change link next to Name
 Then I am shown the Change Details Name page defaulted with the name registered to the ULN 
 When I capture the Change Name URL
-##And I cancel the registration
 And I cancel the registration after navigating to the registration details from the Change Name page  
 And I attempt to access the Change Name page using the captured URL
 Then I am shown the Page Not Found page
 
 
-@RegressionTest @RegistrationSearch
+@RegressionTest @ChangeRegistration
 Scenario: 985-Registration Change Name Page - successfully changing the name will display the confirmation page
 And I search for my registration
 Then I should see results in the page

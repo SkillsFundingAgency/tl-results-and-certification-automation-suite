@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Then(@"I should see ULN not found page")]
         public void ThenIShouldSeeULNNotFoundPage()
         {
-            RegistrationsSearchPage.VerifyUlnNotFoundPage("9900000055");
+            RegistrationsSearchPage.VerifyUlnNotFoundPage("9900000001");
         }
 
     }

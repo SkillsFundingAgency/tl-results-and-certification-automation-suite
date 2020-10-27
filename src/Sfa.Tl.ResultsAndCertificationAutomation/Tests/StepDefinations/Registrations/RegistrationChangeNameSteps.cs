@@ -111,15 +111,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             
         }
 
-        [When(@"I cancel the registration")]
-        public void WhenICancelTheRegistration()
-        {
-            RegistrationChangeDOBPage.ClickBackLink();
-            RegistrationsSearchPage.ClickChangeStatusLink();
-            RegistrationsActiveOptionPage.ClickDeleteRegistrationRadioButton();
-            RegistrationsActiveOptionPage.ClickContinueButton();
-            RegistrationsSearchPage.YesToCancelReg();
-        }
+        //[When(@"I cancel the registration")]
+        //public void WhenICancelTheRegistration()
+        //{
+        //    RegistrationChangeDOBPage.ClickBackLink();
+        //    RegistrationsSearchPage.ClickChangeStatusLink();
+        //    RegistrationsActiveOptionPage.ClickDeleteRegistrationRadioButton();
+        //    RegistrationsActiveOptionPage.ClickContinueButton();
+        //    RegistrationsActiveOptionPage.YesToCancelReg();
+        //}
 
         [When(@"I cancel the registration after navigating to the registration details page from the Change DOB page")]
         public void WhenICancelTheRegistrationAfterNavigatingToTheRegistrationDetailsPageFromTheChangeDOBPage()
@@ -128,7 +128,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             RegistrationsSearchPage.ClickChangeStatusLink();
             RegistrationsActiveOptionPage.ClickDeleteRegistrationRadioButton();
             RegistrationsActiveOptionPage.ClickContinueButton();
-            RegistrationsSearchPage.YesToCancelReg();
+            RegistrationsActiveOptionPage.YesToCancelReg();
         }
 
         [When(@"I cancel the registration after navigating to the registration details from the Change Name page")]
@@ -138,7 +138,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             RegistrationsSearchPage.ClickChangeStatusLink();
             RegistrationsActiveOptionPage.ClickDeleteRegistrationRadioButton();
             RegistrationsActiveOptionPage.ClickContinueButton();
-            RegistrationsSearchPage.YesToCancelReg();
+            RegistrationsActiveOptionPage.YesToCancelReg();
         }
 
         [When(@"I attempt to access the Change Name page using the captured URL")]
