@@ -83,12 +83,6 @@
       <IsTransformFile>true</IsTransformFile>
       <DependentUpon>appsettings.json</DependentUpon>
     </None>
-    <None Update="LoadRunnerTests\AddProvider.ltsln">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="LoadRunnerTests\ResultsAndCertification.ltsln">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Sfa.Tl.ResultsAndCertificationAutomation.runtimeconfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -99,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Framework\StoredProcedure\" />
-    <Folder Include="LoadRunnerTests\" />
   </ItemGroup>
   <PropertyGroup>
     <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
