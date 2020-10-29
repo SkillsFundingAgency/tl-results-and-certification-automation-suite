@@ -6,8 +6,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.SmokeTe
     [Binding]
     public class UserAccessLevelsRegistrationEditorSteps : UserAccessLevels
     {
-        [Then(@"I should get access to Registrations and Account pages only")]
-        public void ThenIShouldGetAccessToRegistrationsAndAccountPagesOnly()
+        [Then(@"I should get access to Registrations, Assessment entries and Account pages only")]
+        public void ThenIShouldGetAccessToRegistrationsAssessmentEntriesAndAccountPagesOnly()
         {
             AccessLevelRegistrationEditor();
         }
