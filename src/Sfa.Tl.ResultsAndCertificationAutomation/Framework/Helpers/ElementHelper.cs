@@ -183,5 +183,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var elements = WebDriver.FindElements(By.ClassName(classname)) ;
             return elements;
         }
+
+        public static void ClickLinkByLabel(string label)
+        {
+            var linkWithLabel = By.LinkText(label);
+            ClickElement(linkWithLabel);
+        }
     }
 }
