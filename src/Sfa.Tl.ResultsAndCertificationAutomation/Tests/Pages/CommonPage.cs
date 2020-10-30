@@ -75,5 +75,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
                 Assert.IsTrue(errors.FirstOrDefault().Text.Contains(row[0]));
             }
         }
+
+        public static void VerifyValidationMessage(Table table)
+        {
+            var errors = GetElementsByClassName(errorClassName);
+            foreach (var row in table.Rows)
+            {
+                var expectedError = $"Error:\r\n" + row[0];
+                Assert.IsTrue(errors.Select(x => x.Text).Contains(expectedError));
+            }
+        }
     }
 }
