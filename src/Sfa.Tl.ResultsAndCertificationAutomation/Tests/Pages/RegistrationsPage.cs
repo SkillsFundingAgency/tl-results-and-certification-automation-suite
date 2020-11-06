@@ -48,6 +48,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(Constants.UploadRegPageTitle, WebDriver.Title);
             Assert.AreEqual(Constants.UploadRegPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
+        public static void VerifyRegistrationUploadErrorPage()
+        {
+            Assert.AreEqual(UploadRegistrationUrl, WebDriver.Url);
+            Assert.AreEqual(Constants.UploadRegPageErrorTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.UploadRegPageHeader, WebDriver.FindElement(PageHeader).Text);
+        }
         public static void VerifyRegistrationSuccessPage()
         {
             Assert.AreEqual(RegistrationUploadSuccessUrl, WebDriver.Url);

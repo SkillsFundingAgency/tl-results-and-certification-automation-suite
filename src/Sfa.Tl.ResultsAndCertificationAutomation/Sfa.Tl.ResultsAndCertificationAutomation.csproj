@@ -7,6 +7,8 @@
   <ItemGroup>
     <None Remove="Data\AssessmentEntryStage1InvalidFileType.xlsx" />
     <None Remove="Data\AssessmentEntryStage1MaxNoOfRows.csv" />
+    <None Remove="Data\AssessmentStage2InvalidHeaderError.csv" />
+    <None Remove="Data\AssessmentStage2NoDataError.csv" />
     <None Remove="Data\NewFile1.txt" />
     <None Remove="Data\RegistrationsInvalidDataStage2.csv" />
     <None Remove="Data\RegistrationsInvalidDataStage3.csv" />
@@ -25,6 +27,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\AssessmentEntryStage1MaxNoOfRows.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\AssessmentStage2InvalidHeaderError.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\AssessmentStage2NoDataError.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\RegistrationsInvalidDataStage2.csv">
@@ -90,6 +98,33 @@
     <None Update="appsettings.Release.json">
       <IsTransformFile>true</IsTransformFile>
       <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+    <None Update="Data\AssessmentEntryStage2InvalidHeader.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentEntryStage2NoData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentEntryStage2Validations.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentEntryStage3Validations.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentEntryStage3ValidationsWithdrawnReg.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentStage2ErrorReport.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentStage3Errors.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentStage3WithdrawnRegError.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\RegistrationsDataForAssessments.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Sfa.Tl.ResultsAndCertificationAutomation.runtimeconfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

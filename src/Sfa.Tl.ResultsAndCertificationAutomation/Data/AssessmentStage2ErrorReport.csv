@@ -1,0 +1,23 @@
+Line,ULN,Error
+2,,Data in more than the required 5 columns
+3,,ULN required
+4,990000001,ULN must be a 10 digit number
+5,99000000100,ULN must be a 10 digit number
+6,9900000002,Duplicate ULN found
+7,9900000002,Duplicate ULN found
+8,9900000003,No data after ULN - need at least one core code or one specialism code
+9,,ULN must be a 10 digit number
+10,9900000020,Core code must have 8 digits only
+11,9900000021,Core code must have 8 digits only
+12,9900000022,Core code must have 8 digits only
+13,9900000023,Core code must have 8 digits only
+14,9900000024,Core code must have 8 digits only
+15,9900000026,Core code required when core assessment entry is included
+16,9900000027,Core assessment entry format must be text followed by a space and a 4-digit year
+17,9900000030,Specialism code must have 8 characters only
+18,9900000031,Specialism code must have 8 characters only
+19,9900000032,Specialism code required when core assessment entry is included
+20,9900000033,Core assessment entry format must be text followed by a space and a 4-digit year
+20,9900000033,Specialism assessment entry format must be text followed by a space and a 4-digit year
+21,9900000034,Core assessment entry format must be text followed by a space and a 4-digit year
+21,9900000034,Specialism assessment entry format must be text followed by a space and a 4-digit year
