@@ -114,6 +114,9 @@
     <None Update="Data\AssessmentEntryStage3ValidationsWithdrawnReg.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\AssessmentEntrySuccessfulData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\AssessmentStage2ErrorReport.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

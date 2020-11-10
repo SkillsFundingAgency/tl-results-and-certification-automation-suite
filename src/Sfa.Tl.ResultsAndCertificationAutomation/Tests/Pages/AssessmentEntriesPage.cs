@@ -10,15 +10,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string AssessmentEntriesPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessment-entries");
         private static string AssessmentEntriesUploadPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "upload-assessment-entries-file");
         private static string AssessmentUploadUnsuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessment-entries-upload-unsuccessful");
+        private static string AssessmentUploadSuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessment-entries-upload-confirmation");
         //Page Titles
         private static string AssessmentEntriesPageTitle { get; } = "Assessment entries page – Manage T Level results – GOV.UK";
         private static string AssessmentEntriesUploadPageTitle { get; } = "Upload assessment entries file page – Manage T Level results – GOV.UK";
         private static string AssessmentUploadUnsucccessTitle { get; } = "Assessment entries upload unsuccessful page – Manage T Level results – GOV.UK";
+        private static string AssessmentUploadSucccessTitle { get; } = "Assessment entries upload successful page – Manage T Level results – GOV.UK";
         private static string AssessmentEntriesUploadPageErrorTitle { get; } = "Error: Upload assessment entries file page – Manage T Level results – GOV.UK";
         //Page Headers
         private static string AssessmentEntriesPageHeader { get; } = "Assessment entries";
         private static string AssessmentEntriesUploadPageHeader { get; } = "Upload assessment entries file";
         private static string AssessmentUploadUnsuccessPageHeader { get; } = "Assessment entries upload unsuccessful";
+        private static string AssessmentUploadSuccessPageHeader { get; } = "Assessment entries upload successful";
 
         // Objects
         public static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
@@ -66,6 +69,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(AssessmentUploadUnsuccessPageUrl, WebDriver.Url);
             Assert.AreEqual(AssessmentUploadUnsucccessTitle, WebDriver.Title);
             Assert.AreEqual(AssessmentUploadUnsuccessPageHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyAssessmentUploadSuccessPage()
+        {
+            Assert.AreEqual(AssessmentUploadSuccessPageUrl, WebDriver.Url);
+            Assert.AreEqual(AssessmentUploadSucccessTitle, WebDriver.Title);
+            Assert.AreEqual(AssessmentUploadSuccessPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }
