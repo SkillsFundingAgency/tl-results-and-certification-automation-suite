@@ -9,4 +9,4 @@ Line,ULN,Error
 3,9900000002,Specialism assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
 4,9900000003,Core assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
 4,9900000003,Specialism assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
-6,9900000005,ULN not registered with awarding organisation
+7,9900000006,ULN not registered with awarding organisation
