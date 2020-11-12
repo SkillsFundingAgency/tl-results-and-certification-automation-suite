@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IC:\LoadTests\ReviewTLevelPages
--IC:\Program Files (x86)\Micro Focus\LoadRunner\include
--ec:\loadtests\reviewtlevelpages\\logfile.log
-c:\loadtests\reviewtlevelpages\\combined_ReviewTLevelPages.c
-c:\loadtests\reviewtlevelpages\\pre_cci.c

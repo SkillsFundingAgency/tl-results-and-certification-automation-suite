@@ -1,0 +1,12 @@
+Line,ULN,Error
+5,9900000004,Core assessment entry format must be text followed by a space and a 4-digit year
+5,9900000004,Specialism assessment entry format must be text followed by a space and a 4-digit year
+2,9900000001,Core code either not recognised or not registered for this ULN
+2,9900000001,Specialism code either not recognised or not registered for this ULN
+2,9900000001,Core assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
+2,9900000001,Specialism assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
+3,9900000002,Core assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
+3,9900000002,Specialism assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
+4,9900000003,Core assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
+4,9900000003,Specialism assessment entry must be one of the permitted ones as detailed in the technical specification validation rules and be in the format detailed in the 'format rules' and 'example' columns in the technical specification
+7,9900000006,ULN not registered with awarding organisation

@@ -26,7 +26,7 @@ Then I should get access to Provider and Account pages only
 @SmokeTest
 Scenario: Access level for Registration Editor
 Given I have logged in as a "RegistrationEditor" user
-Then I should get access to Registrations and Account pages only
+Then I should get access to Registrations, Assessment entries and Account pages only
 
 @SmokeTest
 Scenario: Access level for No Role Service User
