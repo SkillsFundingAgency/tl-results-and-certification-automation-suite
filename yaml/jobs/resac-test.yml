@@ -34,7 +34,7 @@ jobs:
           testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
           searchFolder: '${{parameters.searchFolder}}'
           testFiltercriteria: '${{parameters.testFiltercriteria}}'
-          runInParallel: false
+          runInParallel: true
           rerunFailedTests: true
         continueOnError: true
       
