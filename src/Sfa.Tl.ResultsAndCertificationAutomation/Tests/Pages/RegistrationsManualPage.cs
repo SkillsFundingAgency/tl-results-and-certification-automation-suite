@@ -53,10 +53,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
         public static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
         public static By DecideNo { get; } = By.Id("specialismdecided-no");
-        public static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialisms");
+        public static string SpecialismSelectPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-specialism");
         public static By SelectSpecialismLegal = By.XPath("//label[contains(text(),'Legal')]");
         public static By SelectSpecialismAgg = By.XPath("//label[contains(text(),'Agriculture, Land')]");
         public static By SelectSpecialismFinancial = By.XPath("//label[contains(text(),'Financial')]");
+        public static By SelectSpecialismCraft = By.XPath("//label[contains(text(),'Craft and Design')]");
         public static string AcademicYearPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-academic-year");
         private static string RegistrationSummaryPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-check-and-submit");
         private static readonly string SummaryPageHeader = "Check and submit";
@@ -460,6 +461,40 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             VerifyRegistrationSummaryPage();
             ClickSubmit();
             ClickBackToRegistrations();
+        }
+
+
+        public static void CreateRegistrationWithSpecialismForPearson(string uln, string firstName, string lastname, string day, string month, string year)
+        {
+            VerifyUlnPage();
+            EnterUln(uln);
+            ClickContiune();
+            VerifyLearnersPage();
+            EnterLearnerName(firstName, lastname);
+            ClickContiune();
+            VerifyDobPage();
+            EnterDob(day, month, year);
+            ClickContiune();
+            VerifyProviderPage();
+            SelectProviderFromList(InputPearsonPovider);
+            ClickContiune();
+            VerifyCorePage();
+            SelectCoreFromList(InputPearsonCore);
+            ClickContiune();
+            VerifySpecialismDecidePage();
+            ClickElement(DecideYes);
+            ClickContiune();
+            VerifySpecialismPage();
+            ClickElement(SelectSpecialismCraft);
+            ClickContiune();
+            VerifyAcademicYearPage();
+            ClickContiune();
+            VerifyRegistrationSummaryPage();
+        }
+
+        public static void ClickHomeBreadcrumb()
+        {
+            ClickElement(BCHome);
         }
     }
 }

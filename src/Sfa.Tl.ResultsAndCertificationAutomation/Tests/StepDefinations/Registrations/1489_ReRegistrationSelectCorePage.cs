@@ -122,6 +122,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
             RegistrationChangeNamePage.NavigateToBookmarkedPage(scenarionContext["ReactivateRegChangeCoreURL"].ToString());
         }
 
+        [Given(@"I press the Home breadcrumb on the registration details page")]
+        public void GivenIPressTheHomeBreadcrumbOnTheRegistrationDetailsPage()
+        {
+            RegistrationsSearchPage.PressHomeBreadcrumb();
+        }
+
 
 
     }

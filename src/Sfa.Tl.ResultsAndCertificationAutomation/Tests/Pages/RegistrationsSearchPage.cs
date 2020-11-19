@@ -67,7 +67,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string ExpectedRegistrationDetailsheading = "Registration details";
         private static By ActiveYear { get; } = By.XPath("//*[@id='main-content']//div[7]/dd[1]/p");
         private static string ExpectedActiveYear = "2020/21";
-
+        public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         public static void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
@@ -224,6 +224,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedActiveYear, WebDriver.FindElement(ActiveYear).Text);
         }
 
+        public static void PressHomeBreadcrumb()
+        {
+            ClickElement(HomeBreadcrumb);
+        }
+
         //Verify Decide Specialism Page Methods
 
         public static void VerifyDecideSpecialismPage()
@@ -240,6 +245,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(AcademicYearCantChangePageTitle, WebDriver.Title);
             Assert.AreEqual(AcademicYearCantChangePageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(AcademicYearCantChangePageUrl));
+        }
+
+        public static void VerifyRegistrationDetailsPageULNSubHeading(string ULN)
+        {
+            string ExpectedSubHeading = "ULN: " + ULN;
+            Assert.AreEqual(ExpectedSubHeading, WebDriver.FindElement(RegistrationDetailsPageSubheading).Text);
         }
 
     }

@@ -32,5 +32,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             CommonPage.VerifyValidationSummaryMessages(table);
         }
+
+
+        [Given(@"I navigate to the Search for a learner page")]
+        public void GivenINavigateToTheSearchForALearnerPage()
+        {
+            ClickElement(AssessmentEntriesLink);
+            ClickElement(SearchForLearnerLink);
+        }
+
+        [Given(@"I navigate back to the Search for a learner page")]
+        public void GivenINavigateBackToTheSearchForALearnerPage()
+        {
+            ClickElement(SearchForLearnerLink);
+        }
     }
 }
