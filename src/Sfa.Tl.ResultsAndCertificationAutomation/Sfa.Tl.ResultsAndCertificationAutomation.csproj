@@ -23,6 +23,10 @@
     <None Remove="Data\Stage4ValidationErrors.csv" />
   </ItemGroup>
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2000_AssessmentEntryULNCannotBeFoundPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2001_AssessmentEntryWithdrawnLearnersPage - Copy.feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Data\AssessmentEntryStage1InvalidFileType.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -145,6 +149,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Framework\StoredProcedure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\1932_AssessmentEntryRegistrationDetailsPage.feature.cs">
+      <DependentUpon>1932_AssessmentEntryRegistrationDetailsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\2035_AssessmentEntryProblemWithUploadPage.feature.cs">
+      <DependentUpon>2035_AssessmentEntryProblemWithUploadPage.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\1932_AssessmentEntryRegistrationDetailsPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2035_AssessmentEntryProblemWithUploadPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
   <PropertyGroup>
     <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>

@@ -68,6 +68,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By ActiveYear { get; } = By.XPath("//*[@id='main-content']//div[7]/dd[1]/p");
         private static string ExpectedActiveYear = "2020/21";
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
+        private static By ViewAndAmendLearnersEntriesLink { get; } = By.Id("AssessmentEntriesLink");
+
         public static void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
@@ -104,14 +106,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickButton(CancelRegBtn);
         }
-
-        //is this needed? Not called anywhere?
-        //public static void VerifyConfirmRegCancelPage()
-        //{
-        //    Assert.IsTrue(WebDriver.Url.Contains(CancelRegUrl));
-        //    Assert.AreEqual(ConfirmRegCancelTitle, WebDriver.Title);
-        //    Assert.AreEqual(ConfirmRegCancelHeader, WebDriver.FindElement(By.XPath("//*[@id='main-content']//h1")).Text);
-        //}
 
         public static void SearchAnotherReg()
         {
@@ -253,5 +247,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedSubHeading, WebDriver.FindElement(RegistrationDetailsPageSubheading).Text);
         }
 
+        public static void VerifyViewLearnersAssessmentEntriesLinkNotPresent()
+        {
+            bool expectedResponse = false;
+            Assert.AreEqual(expectedResponse, IsPresent(ViewAndAmendLearnersEntriesLink));
+           
+        }
+
+        public static void ClickViewAndAmendLearnersAssessmentEntriesLink()
+        {
+            ClickElement(ViewAndAmendLearnersEntriesLink);
+        }
     }
 }
