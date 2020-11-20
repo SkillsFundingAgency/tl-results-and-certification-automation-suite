@@ -49,6 +49,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string InputCore1 = "Digital Support Services (10623456)";
         public const string InputPearsonCore = "Creative and Design (10101010)";
         //Specialism Page
+        public static By SelectSpecialismPageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static string SpecialismDecidePageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-learner-decided-specialism-question");
         public static readonly string SpecialismDecideHeader = "Has the learner decided on the specialism?";
         public static By DecideYes { get; } = By.Id("haslearnerdecidedspecialism");
@@ -348,6 +349,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(DecideYes);
             ClickContiune();
             VerifySpecialismPage();
+            VerifySpecialismPageDynamicHeader();
             ClickElement(SelectSpecialismLegal);
             ClickContiune();
             VerifyAcademicYearPage();
@@ -426,6 +428,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(DecideYes);
             ClickContiune();
             VerifySpecialismPage();
+            VerifySpecialismPageDynamicHeader();
             ClickElement(SelectSpecialismLegal);
             ClickContiune();
             VerifyAcademicYearPage();
@@ -496,5 +499,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(BCHome);
         }
+
+        public static void VerifySpecialismPageDynamicHeader()
+        {
+            //Construct dynamic page header
+            string SelecSpecialismPageHeader = "Select the specialism for " + InputCore;
+            string ExpectedSelecSpecialismPageHeader = SelecSpecialismPageHeader.Substring(0, SelecSpecialismPageHeader.Length - 11);
+            Assert.AreEqual(ExpectedSelecSpecialismPageHeader, WebDriver.FindElement(SelectSpecialismPageHeader).Text);
+        }
+
     }
 }
