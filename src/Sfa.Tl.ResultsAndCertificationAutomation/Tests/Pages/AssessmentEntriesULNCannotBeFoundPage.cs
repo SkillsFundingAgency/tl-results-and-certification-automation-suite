@@ -10,8 +10,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private const string URLNotFoundPageTitle = "Assessment entries - ULN cannot be found page – Manage T Level results – GOV.UK";
        
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-       
-       
         public static By BackToSearchBtn { get; } = By.Id("backButton");
         public static By SearchField { get; } = By.Id("searchuln");
         public static By MainErrorMessageInvalidULN = By.XPath("//*[@id='main-content']//ul/li/a");

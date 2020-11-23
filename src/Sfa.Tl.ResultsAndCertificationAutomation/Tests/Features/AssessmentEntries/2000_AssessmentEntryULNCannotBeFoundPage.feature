@@ -5,14 +5,11 @@
 
 
 @RegressionTest @AssessmentEntries
-Scenario: 2000_Verify search for a learner page headings, URL, page title and back link navigation
+Scenario: 2000_Verify ULN cannot be found page headings, URL, page title
 Given I have logged in as a "RegistrationEditor" user
 And I navigate to the Search for a learner page
 And I enter the following <ULN>
 Then I am navigated to the ULN connot be found page which shows a header with the <ULN>
-And I press the Back Link on ULN not found page
-Then I am navigated back to the Search for a learner page 
-And the search field on the ULN not found page still shows the <ULN> entered
 Examples: 
 | ULN         |
 | 9900000005  |
