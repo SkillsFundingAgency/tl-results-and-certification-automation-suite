@@ -19,11 +19,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         public static By AssessMentEntriesBreadcrumb { get; } = By.Id("breadcrumb1");
         private static By BackLink = By.Id("backLink");
+        private static By SubHeader = By.XPath("//*[@id='main-content']/div/div/div/p");
+        private static By Bullet1 = By.XPath("//*[@id='main-content']//ul/li[1]");
+        private static By Bullet2 = By.XPath("//*[@id='main-content']//ul/li[2]");
+        private static string ExpectedSubHeaderText = "If you think that the ULN should exist it may be that it:";
+        private static string ExpectedBullet1Text = "is registered with another awarding organisation";
+        private static string ExpectedBullet2Text = "has never been registered with us";
 
         public static void VerifyAssessmentEntriesULNNotFoundPage()
         {
             Assert.AreEqual(URLNotFoundPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(ExpectedSubHeaderText, WebDriver.FindElement(SubHeader).Text);
+            Assert.AreEqual(ExpectedBullet1Text, WebDriver.FindElement(Bullet1).Text);
+            Assert.AreEqual(ExpectedBullet2Text, WebDriver.FindElement(Bullet2).Text);
         }
 
         public static void PressBackToSearch()
