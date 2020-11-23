@@ -30,6 +30,7 @@ trigger:
   branches:
     include:
       - feature/sprint-24
+      - feature/sprint-24.1
 pr: none
 
 variables:
