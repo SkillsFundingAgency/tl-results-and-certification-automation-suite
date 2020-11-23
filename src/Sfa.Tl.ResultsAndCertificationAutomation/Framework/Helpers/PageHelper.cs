@@ -170,11 +170,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return VerifyText(actual, expected);
         }
 
-        public static void WaitForPageLoad(int waitInSeconds)
-        {
-            Thread.Sleep(waitInSeconds);
-        }
-
+        
         public void WaitForElementPresentAndEnabled(By locator, int secondsToWait = 10)
         {
             new WebDriverWait(WebDriver, new TimeSpan(0, 0, secondsToWait))

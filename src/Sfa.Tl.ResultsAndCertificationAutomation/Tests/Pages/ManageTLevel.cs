@@ -48,7 +48,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string QueryText = "Queried by Automation Tests";
         public const string TlevelQueryMsg = "T Level details queried";
         //Database Query
-        private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
+        private static readonly string ConnectionString = ConfigHelper.GetDBConnectionString();
         private const string UpdateDBReview = "Update TqAwardingOrganisation set ReviewStatus=1 where TlAwardingOrganisatonId=1";
         public readonly By Health = By.XPath("//*[contains(text(),'T Level in Health and Science')]");
         public readonly By Legal = By.XPath("//*[contains(text(),'T Level in Legal')]");

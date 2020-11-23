@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static string GetDownloadFolder()
         {
-            var downloadFolder = WebDriverFactory.Config["DownloadFolder"];
+            var downloadFolder = ConfigHelper.GetDownloadFolder();
             return ValidateFolder(downloadFolder);
         }
     }

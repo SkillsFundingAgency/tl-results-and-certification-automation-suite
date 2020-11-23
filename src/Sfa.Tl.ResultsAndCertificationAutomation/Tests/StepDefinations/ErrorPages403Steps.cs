@@ -9,8 +9,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class ErrorPages403Steps : TlevelDashboardPage
     {
-        private static readonly string DfEUserName = WebDriverFactory.Config["AONoService"];
-        private static readonly string DfEPassword = WebDriverFactory.Config["AOPassword"];
+        private static readonly string DfEUserName = ConfigHelper.GetAONoService();
+        private static readonly string DfEPassword = ConfigHelper.GetAOPassword();
 
         [Given(@"I login with No User account")]
         public void GivenILoginWithNoUserAccount()

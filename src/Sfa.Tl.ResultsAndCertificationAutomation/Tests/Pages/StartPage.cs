@@ -8,12 +8,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class StartPage : Hooks
     {
-        public static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
+        public static string StartPageUrl => ConfigHelper.GetBaseUrl();
         public static string HelpUrl => string.Concat(StartPageUrl, "Help");
         public static string CookieUrl => string.Concat(StartPageUrl, "cookies");
         public static string CookieDetailsUrl => string.Concat(StartPageUrl, "cookie-details");
         public static string PrivacyUrl => string.Concat(HelpUrl, "/Privacy");
-        public static string Expected404 => string.Concat(WebDriverFactory.Config["BaseUrl"], "page-not-found");
+        public static string Expected404 => string.Concat(ConfigHelper.GetBaseUrl(), "page-not-found");
         public static string Error404 => string.Concat(StartPageUrl, "test");
         public static string Error401 => string.Concat(StartPageUrl, "access-denied-wrong-role");
         public static string Error500 => string.Concat(StartPageUrl, "Error/500");

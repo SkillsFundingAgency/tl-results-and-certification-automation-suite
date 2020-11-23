@@ -10,8 +10,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
     [Binding]
     public class ErrorPages401Steps : StartPage
     {
-        private static readonly string DfEUserName = WebDriverFactory.Config["AOAllUser"];
-        private static readonly string DfEPassword = WebDriverFactory.Config["AOPassword"];
+        private static readonly string DfEUserName = ConfigHelper.GetAOAllUser();
+        private static readonly string DfEPassword = ConfigHelper.GetAOPassword();
 
         [Given(@"I have entered Access Denied Url in the browser")]
         public void GivenIHaveEnteredAccessDeniedUrlInTheBrowser()

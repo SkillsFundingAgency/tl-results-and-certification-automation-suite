@@ -17,9 +17,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(AccountLink);
         }
 
-        public void VarifyProfilePage()
+        public void VerifyProfilePage()
         {
-            Thread.Sleep(2000);
             Assert.AreEqual(ExpectedUrl, WebDriver.Url);
             Assert.AreEqual(PageHeader, WebDriver.FindElement(PageTitle).Text);
         }

@@ -15,7 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         [Then(@"DfE Profile page should open")]
         public void ThenDfEProfilePageShouldOpen()
         {
-            VarifyProfilePage();
+            VerifyProfilePage();
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public readonly By Education = By.XPath("//*[contains(text(),'T Level in Education')]");
         private readonly By TlevelSubmit = By.XPath("//button[contains (text(), 'Submit')]");
         private readonly By ManageProviderLink = By.XPath("//a[contains(text(),'Manage provider')]");
-        private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
+        private static readonly string ConnectionString = ConfigHelper.GetDBConnectionString();
         private const string SQLDeleteProviderTlevel = "Delete from TqProvider where TlProviderId In (select Id from TlProvider where Name='Automation Test1')";
         private readonly By RemoveTlevelLink = By.XPath("//a[contains(text(),'Remove')]");
         public By RemoveTlevelYes = By.Id("canremovetlevel");
@@ -77,9 +77,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(FindProviderPageHead, WebDriver.FindElement(PageHeader).Text);
             EnterText(SearchProvider, SearchProviderTxt);
-            Thread.Sleep(1000);
             PressEnter();
-            Thread.Sleep(1000);
             ClickElement(ContinueBtn);
         }
 

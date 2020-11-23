@@ -7,7 +7,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class TlevelDashboardPage : ElementHelper
     {
-        public static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
+        public static string StartPageUrl => ConfigHelper.GetBaseUrl();
         public static string DashboardUrl => string.Concat(StartPageUrl, "home");
         public IWebElement StartNowButton => WebDriver.FindElement(By.XPath("//a[@role='button' and contains(text(),'Start now')]"));
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
@@ -48,7 +48,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public void ManageCentres()
         {
             ClickElement(CentresLink);
-            PageHelper.WaitForPageLoad(2);
             Assert.AreEqual(WebDriver.FindElement(PageTitle).Text, ManageCentresPageHeader);
         }
 

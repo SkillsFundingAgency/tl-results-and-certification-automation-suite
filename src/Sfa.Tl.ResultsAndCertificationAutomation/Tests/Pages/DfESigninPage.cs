@@ -7,16 +7,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class DfESignInPage : Hooks
     {
         public static readonly string DfeInvalidUserName = "test@tleveltest.com";
-        private static readonly string AOAdminUser = WebDriverFactory.Config["AOAdminUser"];
-        private static readonly string PearsonAdminUser = WebDriverFactory.Config["PearsonAdminUser"];
-        private static readonly string AOAllUser = WebDriverFactory.Config["AOAllUser"];
-        private static readonly string AORevProvUser = WebDriverFactory.Config["APRevProUser"];
-        private static readonly string AOReviewerUser = WebDriverFactory.Config["AOReviewer"];
-        private static readonly string AOProviderUser = WebDriverFactory.Config["AOProviderEditor"];
-        private static readonly string AORegistrationUser = WebDriverFactory.Config["AORegistrationEditor"];
-        private static readonly string AONoRoleUser = WebDriverFactory.Config["AONoRole"];
-        private static readonly string AONoServiceUser = WebDriverFactory.Config["AONoService"];
-        public static readonly string AOAppPassword = WebDriverFactory.Config["AOPassword"];
+        private static readonly string AOAdminUser = ConfigHelper.GetAOAdminUser();
+        private static readonly string PearsonAdminUser = ConfigHelper.GetPearsonAdminUser();
+        private static readonly string AOAllUser = ConfigHelper.GetAOAllUser();
+        private static readonly string AORevProvUser = ConfigHelper.GetAPRevProUser();
+        private static readonly string AOReviewerUser = ConfigHelper.GetAOReviewer();
+        private static readonly string AOProviderUser = ConfigHelper.GetAOProviderEditor();
+        private static readonly string AORegistrationUser = ConfigHelper.GetAORegistrationEditor();
+        private static readonly string AONoRoleUser = ConfigHelper.GetAONoRole();
+        private static readonly string AONoServiceUser = ConfigHelper.GetAONoService();
+        public static readonly string AOAppPassword = ConfigHelper.GetAOPassword();
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "home");
         public static readonly By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
         public const string SigninError = "Information missing or incorrect";

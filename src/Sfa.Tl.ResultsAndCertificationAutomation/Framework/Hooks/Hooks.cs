@@ -14,9 +14,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         public static void SetUp()
         {
             var webDriverFactory = new WebDriverFactory();
-            var browser = WebDriverFactory.Config["Browser"];
+            var browser = ConfigHelper.GetBrowser();
             WebDriver = webDriverFactory.GetWebDriver(browser);
-            WebDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(10);
+            WebDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(400);
         }
 
         [After]
