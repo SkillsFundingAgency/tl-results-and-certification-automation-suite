@@ -40,6 +40,7 @@ jobs:
           rerunFailedTests: true
         continueOnError: true
   - job: CheckTrx
+    dependsOn: runTests
     steps:    
       - task: PowerShell@2
         displayName: 'Check .trx File Exists'
