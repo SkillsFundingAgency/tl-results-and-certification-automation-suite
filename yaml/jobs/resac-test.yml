@@ -39,7 +39,8 @@ jobs:
           runInParallel: true
           rerunFailedTests: true
         continueOnError: true
-      
+  - job: CheckTrx
+    steps:    
       - task: PowerShell@2
         displayName: 'Check .trx File Exists'
         inputs:
