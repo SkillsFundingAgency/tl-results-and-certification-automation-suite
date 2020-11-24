@@ -1,4 +1,4 @@
-ULN,First Name,Last Name,Date of Birth,UKPRN,Academic year,Core code,Specialism codes
+ULN,First Name,Last Name,Date of Birth,UKPRN,Academic year,Core code,Specialism code
 ,,,,,,,
 abcdefghij,1234567890,1234567890,abcdefgh,abcdefghij,abcdefgh,abcdefgh,abcdefgh
 12345678901,abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghija,abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghija,25062050,12345678901,25062010,12345678901,12345678901
@@ -6,3 +6,4 @@ abcdefghij,1234567890,1234567890,abcdefgh,abcdefghij,abcdefgh,abcdefgh,abcdefgh
 123,First1,Last1,122600,123,11111,123,123
 £$%^&*()!,£$%^&*()!,£$%^&*()!,£$%^&*()!,£$%^&*()!,£$%^&*()!,£$%^&*()!,£$%^&*()!
 1111111112,Test1,Surname1,11121980,10000536,22092020,10101010,"10100002,10100002"
+1111111113,Test1,Surname1,11121980,10000536,22092020,10101010,"10100002,10100002",10101010
