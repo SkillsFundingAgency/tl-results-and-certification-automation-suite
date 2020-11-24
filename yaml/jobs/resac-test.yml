@@ -9,6 +9,8 @@ parameters:
   type: string
 jobs:
   - job: runTests
+    strategy:
+      parallel: 5
     displayName: Run the automation tests
     pool:
         name: 'Azure Pipelines'
@@ -27,24 +29,16 @@ jobs:
         inputs:
           SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
           TargetFileNames: '*.json'
-      
-      - task: DotNetCoreCLI@2
+            
+      - task: VSTest@2
+        displayName: 'VsTest - Test Execution'
         inputs:
-          command: 'test'
-          projects: '${{parameters.testAssemblyVer2}}' #'**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-          testRunTitle: 'DotNet Test Run'
-          workingDirectory: '${{parameters.searchFolder}}' # '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
-
-          
-      # - task: VSTest@2
-      #   displayName: 'VsTest - Test Execution'
-      #   inputs:
-      #     testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
-      #     searchFolder: '${{parameters.searchFolder}}'
-      #     testFiltercriteria: '${{parameters.testFiltercriteria}}'
-      #     runInParallel: true
-      #     rerunFailedTests: true
-      #   continueOnError: true
+          testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
+          searchFolder: '${{parameters.searchFolder}}'
+          testFiltercriteria: '${{parameters.testFiltercriteria}}'
+          runInParallel: true
+          rerunFailedTests: true
+        continueOnError: true
       
       - task: PowerShell@2
         displayName: 'Check .trx File Exists'
