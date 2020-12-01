@@ -17,8 +17,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BackToRegistrationDetailsBtn { get; } = By.XPath("//a[contains(text(),'Back to registration details')]");
         public static By CancelRegNo { get; } = By.Id("cancel-registration-no");
         private static readonly By SearchAnotherRegBtn = By.XPath("//a[contains(text(),'Search for another registration')]");
-        private static readonly string ConfirmRegCancelTitle = "Delete registration page – Manage T Level results – GOV.UK";
-        private static readonly string ConfirmRegCancelHeader = "Are you sure you want to delete this registration permanently?";
         private static readonly string UlnNotFoundTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
         public static string ConfirmRegCancelErrorTitle = "Error: Delete registration page – Manage T Level results – GOV.UK";
         public const string ChangeProviderPageTitle = "Change registration - Select the provider page – Manage T Level results – GOV.UK";
@@ -64,13 +62,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By ChangeStatusLink { get; } = By.Id("learnerstatus");
         private static By RegistrationDetailsPageSubheading = By.XPath("//*[@id='main-content']//h2");
         private static By RegistrationDetailsheading = By.XPath("//*[@id='main-content']//h1");
-        private static string ExpectedRegistrationDetailsheading = "Registration details";
         private static By ActiveYear { get; } = By.XPath("//*[@id='main-content']//div[7]/dd[1]/p");
         private static string ExpectedActiveYear = "2020/21";
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By ViewAndAmendLearnersEntriesLink { get; } = By.Id("AssessmentEntriesLink");
 
-        public static void ClickButton(By locator)
+        public static new void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
         }

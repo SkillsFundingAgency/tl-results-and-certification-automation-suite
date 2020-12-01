@@ -19,8 +19,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By Day = By.Id("day");
         private static By Month = By.Id("month");
         private static By Year = By.Id("year");
-        private static string ValidName = "year";
-        
 
         //Error Message elements
         private static By ErrorMessage = By.XPath("//*[@class='govuk-list govuk-error-summary__list']");

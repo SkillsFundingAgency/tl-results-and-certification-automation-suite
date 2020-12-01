@@ -96,7 +96,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BCHome = By.XPath("//*[@id='breadcrumb0']");
 
         //Search Registration Details Page
-        private static readonly string ExpectedCancelBtnText = "Cancel this registration";
         private static readonly string ExpectedSearchAgainBtnText = "Search again";
 
         public static void AddRegistrations()
