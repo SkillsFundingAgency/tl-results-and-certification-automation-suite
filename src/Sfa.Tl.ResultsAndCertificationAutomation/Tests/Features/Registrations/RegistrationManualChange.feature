@@ -101,6 +101,7 @@ And I select the specialism
 And I click Continue in Academic Year page
 And I click on Specialism change link
 And I select Yes from has decided specialism and click Continue
+And I will see the specialism page with the expected heading
 And I select another speciallism and click continue
 Then I should see changed specialism in the Check and submit page
 Examples: 
@@ -117,6 +118,7 @@ And I select <Core> from the Core list and click Continue
 And I select No from has decided specialism and click Continue
 And I click Continue in Academic Year page
 And I click on Specialism change link
+And I will see the specialism page with the expected heading
 And I select the specialism and click Change button
 Then I should see changed specialism in the Check and submit page
 Examples: 

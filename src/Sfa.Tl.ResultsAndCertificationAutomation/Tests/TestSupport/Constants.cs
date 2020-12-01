@@ -66,9 +66,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string SelectCoreErrorTitle = "Error: Add a new registration - Select the core page – Manage T Level results – GOV.UK";
         public const string SpecialismDecideTitle = "Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
         public const string SpecialismDecideErrorTitle = "Error: Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
-        public const string SelectSpecialismTitle = "Add a new registration - Select the specialisms page – Manage T Level results – GOV.UK";
-        public const string SelectSpecialismErrorTitle = "Error: Add a new registration - Select the specialisms page – Manage T Level results – GOV.UK";
-        public const string SelectAcademicYearTitle = "Add a new registration - Select the academic year page – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismTitle = "Add a new registration - Select the specialism page – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismErrorTitle = "Error: Add a new registration - Select the specialism page – Manage T Level results – GOV.UK"; public const string SelectAcademicYearTitle = "Add a new registration - Select the academic year page – Manage T Level results – GOV.UK";
         public const string ManualRegSummaryTitle = "Add a new registration - Check and submit page – Manage T Level results – GOV.UK";
         public const string ReggistrationSuccessTitle = "Add registration - Registration added confirmation page – Manage T Level results – GOV.UK";
         public const string UlnRegisteredWithSameAOTitle = "Add a new registration - ULN already registered page – Manage T Level results – GOV.UK";

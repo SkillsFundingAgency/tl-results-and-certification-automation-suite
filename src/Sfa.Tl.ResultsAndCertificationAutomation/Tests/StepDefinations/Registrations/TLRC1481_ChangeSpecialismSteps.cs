@@ -21,6 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             Assert.AreEqual(ChangeSpecialismPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(SelectSpecialismPageUrl));
             SqlQueries.DeleteFromRegistrationTables();
+            RegistrationsManualPage.VerifySpecialismPageDynamicHeader();
         }
     }
 }

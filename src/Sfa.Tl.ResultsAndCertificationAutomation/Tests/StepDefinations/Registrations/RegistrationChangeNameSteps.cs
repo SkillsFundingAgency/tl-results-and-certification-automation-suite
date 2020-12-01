@@ -186,6 +186,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
 
         }
 
+        [Given(@"I create a manual registration for Pearson")]
+        public void GivenICreateAManualRegistrationForPearson()
+        {
+            RegistrationsManualPage.CreateRegistrationWithSpecialismForPearson(Constants.ManualRegULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
+            RegistrationsManualPage.ClickSubmit();
+            RegistrationsManualPage.ClickElement(RegistrationsPage.BacktoRegistrationLink);
+            RegistrationsManualPage.ClickHomeBreadcrumb();
+        }
+
+
 
 
     }

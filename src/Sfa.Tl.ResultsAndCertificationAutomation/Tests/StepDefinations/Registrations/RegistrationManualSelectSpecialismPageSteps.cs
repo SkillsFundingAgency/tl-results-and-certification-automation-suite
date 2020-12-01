@@ -18,6 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void ThenIShouldSeeSelectSpecialismPage()
         {
             VerifySpecialismPage();
+            VerifySpecialismPageDynamicHeader();
         }
     }
 }

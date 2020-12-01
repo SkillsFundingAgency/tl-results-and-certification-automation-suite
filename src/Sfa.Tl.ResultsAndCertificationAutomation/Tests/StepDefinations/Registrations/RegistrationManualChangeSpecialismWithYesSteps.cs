@@ -40,5 +40,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             VerifyRegistrationSummaryPage();
         }
+
+        [Given(@"I will see the specialism page with the expected heading")]
+        public void GivenIWillSeeTheSpecialismPageWithTheExpectedHeading()
+        {
+            RegistrationsManualPage.VerifySpecialismPageDynamicHeader();
+        }
+
+
     }
 }

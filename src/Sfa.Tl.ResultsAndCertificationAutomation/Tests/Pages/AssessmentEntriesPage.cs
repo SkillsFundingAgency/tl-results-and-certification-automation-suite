@@ -27,7 +27,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static By UploadAssessmentEntryLink { get; } = By.LinkText("Upload assessment entries file");
-        private static By SearchForLearnerLink { get; } = By.LinkText("Search for a learner");
+        public static By SearchForLearnerLink { get; } = By.LinkText("Search for a learner");
         public static By AssessmentFileUploadError { get; } = By.XPath("//a[@href='#file']");
         //Upload files
         public static string AssessmentStage1InvalidFile = "AssessmentEntryStage1InvalidFileType.xslx";
@@ -37,7 +37,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string AssessmentUploadStage2NoDataErrors = string.Concat("Data\\", "AssessmentStage2NoDataError.csv");
         public static string AssessmentUploadStage3Errors = string.Concat("Data\\", "AssessmentStage3Errors.csv");
         public static string AssessmentUploadStage3WithdrawnRegError = string.Concat("Data\\", "AssessmentStage3WithdrawnRegError.csv");
-
+        //Buttons
+        public static By BackToAssessmentEntriesButton = By.XPath("//*[contains(text(),'Back to assessment')]");
         public static void VerifyAssessmentEntriesPage()
         {
             Assert.AreEqual(AssessmentEntriesPageTitle, WebDriver.Title);
@@ -75,6 +76,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(AssessmentUploadSuccessPageUrl, WebDriver.Url);
             Assert.AreEqual(AssessmentUploadSucccessTitle, WebDriver.Title);
             Assert.AreEqual(AssessmentUploadSuccessPageHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+
+        public static void ClickBacktoAssessmentEntriesButton()
+        {
+            ClickElement(BackToAssessmentEntriesButton);
         }
     }
 }
