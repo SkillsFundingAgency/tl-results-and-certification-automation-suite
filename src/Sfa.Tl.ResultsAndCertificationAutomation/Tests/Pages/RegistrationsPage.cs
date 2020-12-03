@@ -50,7 +50,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void VerifyRegistrationUploadErrorPage()
         {
-            Assert.AreEqual(UploadRegistrationUrl, WebDriver.Url);
+            //Assert.AreEqual(UploadRegistrationUrl, WebDriver.Url);
+            Assert.IsTrue(WebDriver.Url.Contains(UploadRegistrationUrl));
             Assert.AreEqual(Constants.UploadRegPageErrorTitle, WebDriver.Title);
             Assert.AreEqual(Constants.UploadRegPageHeader, WebDriver.FindElement(PageHeader).Text);
         }

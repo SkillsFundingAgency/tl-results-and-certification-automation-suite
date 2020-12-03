@@ -174,8 +174,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         public static void NavigateTo(string pageUrl)
         {
-            //var url = string.Concat(StartPage.StartPageUrl, pageUrl);  // Todo: rename StartpageUrl to BasepageUrl
-            WebDriver.Navigate().GoToUrl(pageUrl);
+            string url = string.Concat(StartPage.StartPageUrl, pageUrl);  // Todo: rename StartpageUrl to BasepageUrl
+            WebDriver.Navigate().GoToUrl(url);
         }
 
         public static IList<IWebElement> GetElementsByClassName(string classname)
