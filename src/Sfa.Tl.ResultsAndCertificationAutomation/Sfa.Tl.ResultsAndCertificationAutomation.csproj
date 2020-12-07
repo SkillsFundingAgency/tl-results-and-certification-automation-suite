@@ -23,8 +23,12 @@
     <None Remove="Data\Stage4ValidationErrors.csv" />
   </ItemGroup>
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\1879_AssessmentLearnersEntriesPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2000_AssessmentEntryULNCannotBeFoundPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2001_AssessmentEntryWithdrawnLearnersPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully - Copy.feature.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Data\AssessmentEntryStage1InvalidFileType.xlsx">
@@ -85,7 +89,7 @@
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="87.0.4280.2000" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="86.0.4240.2200" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.150.1.2" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.5.5" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.5.5" />
@@ -151,6 +155,18 @@
     <Folder Include="Framework\StoredProcedure\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature.cs">
+      <DependentUpon>2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\2142_AssessmentEntryRemovedSuccessfully.feature.cs">
+      <DependentUpon>2142_AssessmentEntryRemovedSuccessfully.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully.feature.cs">
+      <DependentUpon>2140_AssessmentEntryAddedSuccessfully.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\2141_AssessmentEntryRemoveCoreAssessmentPage.feature.cs">
+      <DependentUpon>2141_AssessmentEntryRemoveCoreAssessmentPage.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\1932_AssessmentEntryRegistrationDetailsPage.feature.cs">
       <DependentUpon>1932_AssessmentEntryRegistrationDetailsPage.feature</DependentUpon>
     </Compile>
@@ -159,6 +175,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2142_AssessmentEntryRemovedSuccessfully.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2141_AssessmentEntryRemoveCoreAssessmentPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\1932_AssessmentEntryRegistrationDetailsPage.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>

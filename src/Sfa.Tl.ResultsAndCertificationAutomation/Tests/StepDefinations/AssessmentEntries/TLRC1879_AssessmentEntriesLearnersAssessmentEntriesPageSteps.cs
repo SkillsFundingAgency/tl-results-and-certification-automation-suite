@@ -51,6 +51,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyCoreAssessmentEntryDisplayed();
         }
 
+        [Then(@"the Core Assessment entry '(.*)' is displayed underneath")]
+        public void ThenTheCoreAssessmentEntryIsDisplayedUnderneath(string AssessmentEntry)
+        {
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifySummer2021CoreAssessmentEntryDisplayed(AssessmentEntry);
+        }
+
+
         [Then(@"the Core Assessment entry displays ""(.*)""")]
         public void ThenTheCoreAssessmentEntryDisplays(string p0)
         {
@@ -115,6 +122,26 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.PressSearchAgain();
         }
+
+        [Then(@"the core and specialism heading displays '(.*)'")]
+        public void ThenTheCoreAndSpecialismHeadingDisplays(string p0)
+        {
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyCoreSpecialismTableHeaders();
+        }
+
+        [Then(@"the text '(.*)' is displayed for the Specialism")]
+        public void ThenTheTextIsDisplayedForTheSpecialism(string p0)
+        {
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifySpecialismAssessmentEntryText();
+        }
+
+        [Then(@"the Add Remove link displays '(.*)'")]
+        public void ThenTheAddRemoveLinkDisplays(string LinkText)
+        {
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyAddRemoveLinkText(LinkText);
+        }
+
+
 
 
 
