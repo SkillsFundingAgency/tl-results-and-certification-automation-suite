@@ -73,17 +73,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [When(@"I attempt to access the Active options page for Active Record using the captured URL")]
         public void WhenIAttemptToAccessTheActiveOptionsPageForActiveRecordUsingTheCapturedURL()
         {
-            RegistrationsActiveOptionPage.NavigateTo(scenarionContext["ActiveOptionsPageURL"].ToString());
+            RegistrationsActiveOptionPage.NavigateToUrl(scenarionContext["ActiveOptionsPageURL"].ToString());
         }
 
         [When(@"I attempt to access the Active options page for Active Record using an invalid URL")]
         public void WhenIAttemptToAccessTheActiveOptionsPageForActiveRecordUsingAnInvalidURL()
         {
-            RegistrationsActiveOptionPage.NavigateTo("https://test.manage-tlevel-results.tlevels.gov.uk/amend-active-registration/ABCDEF");
+            RegistrationsActiveOptionPage.NavigateToUrl("https://test.manage-tlevel-results.tlevels.gov.uk/amend-active-registration/ABCDEF");
         }
-
-
-
-
     }
 }

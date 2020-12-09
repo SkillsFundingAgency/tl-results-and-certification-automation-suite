@@ -177,6 +177,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             string url = string.Concat(StartPage.StartPageUrl, pageUrl);  // Todo: rename StartpageUrl to BasepageUrl
             WebDriver.Navigate().GoToUrl(url);
         }
+        public static void NavigateToUrl(string pageUrl)
+        {
+            WebDriver.Navigate().GoToUrl(pageUrl);
+        }
 
         public static IList<IWebElement> GetElementsByClassName(string classname)
         {

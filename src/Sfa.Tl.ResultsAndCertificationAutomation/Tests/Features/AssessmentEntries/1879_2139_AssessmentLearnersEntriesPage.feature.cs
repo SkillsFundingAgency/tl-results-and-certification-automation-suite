@@ -87,12 +87,12 @@ testRunner.And("I upload registrations and associated assessments", ((string)(nu
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("1879_2139_The Learners assessment entries page will display \"Not specified\" when " +
+        [NUnit.Framework.DescriptionAttribute("1879_2138_The Learners assessment entries page will display \"Not specified\" when " +
             "a core assessment entry hasn\'t been submitted")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000003", null)]
-        public virtual void _1879_2139_TheLearnersAssessmentEntriesPageWillDisplayNotSpecifiedWhenACoreAssessmentEntryHasntBeenSubmitted(string uLN, string[] exampleTags)
+        public virtual void _1879_2138_TheLearnersAssessmentEntriesPageWillDisplayNotSpecifiedWhenACoreAssessmentEntryHasntBeenSubmitted(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
@@ -104,7 +104,7 @@ testRunner.And("I upload registrations and associated assessments", ((string)(nu
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_2139_The Learners assessment entries page will display \"Not specified\" when " +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_2138_The Learners assessment entries page will display \"Not specified\" when " +
                     "a core assessment entry hasn\'t been submitted", null, tagsOfScenario, argumentsOfScenario);
 #line 25
 this.ScenarioInitialize(scenarioInfo);
@@ -153,12 +153,12 @@ testRunner.And("the Add Remove link displays \'Add entry\'", ((string)(null)), (
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("1879_2139_The Learners assessment entries page will display the core assessment e" +
+        [NUnit.Framework.DescriptionAttribute("1879_2138_The Learners assessment entries page will display the core assessment e" +
             "ntry when one has been submitted")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000002", null)]
-        public virtual void _1879_2139_TheLearnersAssessmentEntriesPageWillDisplayTheCoreAssessmentEntryWhenOneHasBeenSubmitted(string uLN, string[] exampleTags)
+        public virtual void _1879_2138_TheLearnersAssessmentEntriesPageWillDisplayTheCoreAssessmentEntryWhenOneHasBeenSubmitted(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
@@ -170,7 +170,7 @@ testRunner.And("the Add Remove link displays \'Add entry\'", ((string)(null)), (
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_2139_The Learners assessment entries page will display the core assessment e" +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_2138_The Learners assessment entries page will display the core assessment e" +
                     "ntry when one has been submitted", null, tagsOfScenario, argumentsOfScenario);
 #line 38
 this.ScenarioInitialize(scenarioInfo);
