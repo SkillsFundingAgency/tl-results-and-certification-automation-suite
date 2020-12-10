@@ -42,7 +42,7 @@ Then I am navigated back to the Search for a learner page
 And the search field on the ULN not found page still shows the <ULN> entered
 Examples: 
 | ULN         |
-| 9900000001  |
+| 9900000099  |
 
 
 

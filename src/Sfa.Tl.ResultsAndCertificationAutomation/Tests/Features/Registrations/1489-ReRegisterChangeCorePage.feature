@@ -28,7 +28,7 @@ When I click continue without selecting a dropdown value
 Then I am shown an error message on the  Select the Core Page for reactivate registration page stating "Select a core"
 ##checks all error messages on the page and checks page title includes "Error"
 
-@RegressionTest @WithdrawRegistration
+@Ignore @RegressionTest @WithdrawRegistration
 Scenario: 1489-Verify the page cannot be accessed using bookmarks if the registration is no longer withdrawn
 When I click the Change Status link on the Withdrawn options page
 And I Register the learner on a new course using the same provider

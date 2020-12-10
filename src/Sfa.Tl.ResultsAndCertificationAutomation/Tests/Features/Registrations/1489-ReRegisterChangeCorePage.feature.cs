@@ -201,11 +201,13 @@ testRunner.Then("I am shown an error message on the  Select the Core Page for re
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1489-Verify the page cannot be accessed using bookmarks if the registration is no" +
             " longer withdrawn")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("WithdrawRegistration")]
         public virtual void _1489_VerifyThePageCannotBeAccessedUsingBookmarksIfTheRegistrationIsNoLongerWithdrawn()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

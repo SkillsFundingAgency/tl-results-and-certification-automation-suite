@@ -25,16 +25,42 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ExpectedSpecialismText = "Specialism: Agriculture, Land Management and Production (70000002)";
         public static string ExpectedCoreAssessmentEntry = "Summer 2021";
         public static string ExpectedNoCoreAssessmentEntry = "Not specified";
-        public static string ExpectedNoSpecialismAssessmentEntry = "Not specified";
-        public static string ExpectedSpecialismAssessmentEntry = "Autumn 2022";
+        public static string ExpectedNoSpecialismAssessmentEntry = "Available to add after Autumn 2021 series has passed";
+        //public static string ExpectedSpecialismAssessmentEntry = "Autumn 2022";
+        public static string ExpectedSpecialismAssessmentEntry = "Available to add after Autumn 2021 series has passed";
+        public static string ExpectedCoreAndSpecialismHeader = "First assessment entry";
+        public static string ExpectedSpecialismAsessmentEntryText = "Available to add after Autumn 2021 series has passed";
+        public static By CoreAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[1]/div/dt");
+        public static By SpecialismAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[2]/div/dt");
         private static By CoreAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[1]//p");
         private static By SpecialismAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[2]//p");
+        private static By AddRemoveEntryLink = By.Id("coreassessmententry");
+
+
+
         public static void VerifyLearnersAssessmentEntriesPage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
             
+        }
+
+        public static void VerifyCoreSpecialismTableHeaders()
+        {
+            Assert.AreEqual(ExpectedCoreAndSpecialismHeader, WebDriver.FindElement(SpecialismAssessmentEntryHeading).Text);
+            Assert.AreEqual(ExpectedCoreAndSpecialismHeader, WebDriver.FindElement(CoreAssessmentEntryHeading).Text);
+        }
+
+        public static void VerifyAddRemoveLinkText(string LinkText)
+        {
+            //Assert.AreEqual(LinkText, WebDriver.FindElement(AddRemoveEntryLink).Text);
+            Assert.IsTrue(WebDriver.FindElement(AddRemoveEntryLink).Text.Contains(LinkText));
+        }
+
+        public static void VerifySpecialismAssessmentEntryText()
+        {
+            Assert.AreEqual(ExpectedSpecialismAsessmentEntryText, WebDriver.FindElement(SpecialismAssessmentDetails).Text);
         }
 
         public static void VerifyDynamicHeaders(string ULN)
@@ -59,6 +85,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedCoreAssessmentEntry, WebDriver.FindElement(CoreAssessmentDetails).Text);
         }
 
+        public static void VerifySummer2021CoreAssessmentEntryDisplayed(string AssessmentEntry)
+        {
+            Assert.AreEqual(AssessmentEntry, WebDriver.FindElement(CoreAssessmentDetails).Text);
+        }
+
         public static void VerifyNoCoreAssessmentEntryDisplayed()
         {
             Assert.AreEqual(ExpectedNoCoreAssessmentEntry, WebDriver.FindElement(CoreAssessmentDetails).Text);
@@ -67,6 +98,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifySpecialismAssessmentEntryDisplayed()
         {
             Assert.AreEqual(ExpectedSpecialismAssessmentEntry, WebDriver.FindElement(SpecialismAssessmentDetails).Text);
+           
+            
         }
 
         public static void VerifyNoSpecialismAssessmentEntryDisplayed()
@@ -99,6 +132,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(SearchForALearnerBreadcrumb);
         }
 
+        public static void ClickAddEntryLink()
+        {
+            ClickElement(AddRemoveEntryLink);
+        }
 
     }
 }
