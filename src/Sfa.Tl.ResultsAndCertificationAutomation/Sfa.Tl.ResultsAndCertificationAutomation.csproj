@@ -29,6 +29,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\VerifyTermsAndConditions - Copy.feature.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Data\AssessmentEntryStage1InvalidFileType.xlsx">
@@ -194,6 +195,9 @@
     <Compile Update="Tests\Features\AssessmentEntries\2035_AssessmentEntryProblemWithUploadPage.feature.cs">
       <DependentUpon>2035_AssessmentEntryProblemWithUploadPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\1881_UserGuidePage.feature.cs">
+      <DependentUpon>1881_UserGuidePage.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature">
@@ -217,6 +221,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2035_AssessmentEntryProblemWithUploadPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\1881_UserGuidePage.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
