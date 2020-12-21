@@ -173,9 +173,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Framework\StoredProcedure\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="Tests\Features\AssessmentEntries\2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature.cs">
       <DependentUpon>2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature</DependentUpon>
     </Compile>
