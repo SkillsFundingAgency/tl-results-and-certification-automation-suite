@@ -120,7 +120,7 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
 testRunner.And("I navigate to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
-testRunner.And(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I enter the unregistered {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
 testRunner.Then(string.Format("I am navigated to the ULN connot be found page which shows a header with the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

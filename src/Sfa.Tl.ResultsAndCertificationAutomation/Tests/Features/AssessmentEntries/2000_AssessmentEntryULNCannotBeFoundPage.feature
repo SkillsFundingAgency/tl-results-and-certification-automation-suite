@@ -8,7 +8,7 @@
 Scenario: 2000_Verify ULN cannot be found page headings, URL, page title
 Given I have logged in as a "RegistrationEditor" user
 And I navigate to the Search for a learner page
-And I enter the following <ULN>
+And I enter the unregistered <ULN>
 Then I am navigated to the ULN connot be found page which shows a header with the <ULN>
 Examples: 
 | ULN         |
