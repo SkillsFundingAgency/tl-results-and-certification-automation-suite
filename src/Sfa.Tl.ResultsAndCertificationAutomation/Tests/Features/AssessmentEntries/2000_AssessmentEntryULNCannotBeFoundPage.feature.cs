@@ -134,7 +134,7 @@ testRunner.Then(string.Format("I am navigated to the ULN connot be found page wh
             "ULN not found page being displayed")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
-        [NUnit.Framework.TestCaseAttribute("9900000001", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000005", null)]
         public virtual void _2000_VerifySearchingForAULNWhichIsRegisteredToAnotherAOResultsInTheULNNotFoundPageBeingDisplayed(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {

@@ -28,7 +28,7 @@ And I enter the following <ULN>
 Then I am navigated to the ULN connot be found page which shows a header with the <ULN>
 Examples: 
 | ULN         |
-| 9900000001  |
+| 9900000005  |
 
 
 @RegressionTest @AssessmentEntries
