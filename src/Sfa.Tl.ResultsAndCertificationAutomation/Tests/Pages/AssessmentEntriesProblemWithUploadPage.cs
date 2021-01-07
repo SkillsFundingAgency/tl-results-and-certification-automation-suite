@@ -46,7 +46,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void NavigateToAssessmentEntriesUploadProblemPage()
         {
-            NavigateTo(PageUrl);
+            NavigateToUrl(PageUrl);
         }
     }
 }

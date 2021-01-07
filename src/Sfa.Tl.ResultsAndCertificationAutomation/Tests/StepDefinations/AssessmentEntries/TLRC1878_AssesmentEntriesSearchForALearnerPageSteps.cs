@@ -1,6 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
@@ -19,12 +20,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesSearchForLearnerPage.VerifyAssessmentEntriesSearchForLearnerPageText();
         }
 
+        [Given(@"I enter the unregistered (.*)")]
+        public void GivenIEnterTheUnregistered(string ULN)
+        {
+            SqlQueries.DeleteFromRegistrationTables();
+            AssessmentEntriesSearchForLearnerPage.EnterULN(ULN);
+        }
+
         [Given(@"I enter the following (.*)")]
         public void GivenIEnterTheFollowing(string ULN)
         {
             AssessmentEntriesSearchForLearnerPage.EnterULN(ULN);
-          
         }
+
+
 
         [Then(@"I am shown an error on the Assessment Entry Search for a learner page for invalid URL")]
         public void ThenIAmShownAnErrorOnTheAssessmentEntrySearchForALearnerPageForInvalidURL()

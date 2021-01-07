@@ -30,6 +30,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string Stage3Errors = string.Concat("Data\\", "Stage3ValidationErrors.csv");
         public static string UploadStage4File = "RegistrationsInvalidDataStage4.csv";
         public static string Stage4Errors = string.Concat("Data\\", "Stage4ValidationErrors.csv");
+        public static string Stage4WithdrawnErrorFile = string.Concat("Data\\", "RegistrationStage4ErrorForWithdrawn.csv");
 
         public static void ClickRegLink()
         {
