@@ -52,3 +52,11 @@ And click on back to registration link
 And upload file with updated data and submit
 Then I should see upload successful message
 And I should be navigated back to Registrations Page when i click on Back to registration button
+
+@RegressionTest @Registrations
+Scenario: 2037_Stage4 Validations for Withdrawn registration
+And I have a registration in Withdrawn state
+And I am on upload registration page
+When I upload "RegistrationsWithdrawnValidationSingle.csv" file
+And I click on "Submit" button
+Then I should see validation errror for witdrawn record
