@@ -9,6 +9,7 @@ parameters:
   type: string
 jobs:
   - job: runTests
+    timeoutInMinutes: 120
     displayName: Run the automation tests
     pool:
         name: 'Azure Pipelines'
