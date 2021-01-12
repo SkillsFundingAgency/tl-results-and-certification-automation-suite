@@ -29,6 +29,11 @@ Given I have logged in as a "RegistrationEditor" user
 Then I should get access to Registrations, Assessment entries and Account pages only
 
 @SmokeTest
+Scenario: Access level for Results Editor
+Given I have logged in as a "ResultsEditor" user
+Then I should get access to Resuts and Account pages only
+
+@SmokeTest
 Scenario: Access level for No Role Service User
 Given I have logged in as a "NoRoleNoService" user
 Then I should see Access Denied error for all pages

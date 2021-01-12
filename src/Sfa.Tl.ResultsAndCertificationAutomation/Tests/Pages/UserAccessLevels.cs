@@ -15,6 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By TLevelLink = By.XPath("//a[contains(text(),'T Levels')]");
         private static readonly By ProviderLink = By.XPath("//a[contains(text(),'Providers')]");
         private static readonly By RegistrationsLink = By.XPath("//a[contains(text(),'Registrations')]");
+        private static By ResultsLink { get; } = By.LinkText("Results");
         private static readonly By AccountLink = By.XPath("//a[contains(text(),'Account')]");
         private static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
         private const string ExpectedUrl = "https://pp-profile.signin.education.gov.uk/";
@@ -108,6 +109,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ManageTlevelBanner);
             ClickElement(AssessmentEntriesPage.AssessmentEntriesLink);
             AssessmentEntriesPage.VerifyAssessmentEntriesPage();
+            ClickOnLink(ManageTlevelBanner);
+            VerifyProfilePage();
+        }
+        public void AccessLevelResultsEditor()
+        {
+            ClickOnLink(TLevelLink);
+            VerifyAccessDeniedPage();
+            ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ProviderLink);
+            VerifyAccessDeniedPage();
+            ClickOnLink(ManageTlevelBanner);
+            VerifyRegistrationsPage();
+            ClickOnLink(ManageTlevelBanner);
+            ClickElement(AssessmentEntriesPage.AssessmentEntriesLink);
+            AssessmentEntriesPage.VerifyAssessmentEntriesPage();
+            ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ResultsLink);
+            ResultsDashboardPage.VerifyResultsDashboardPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
