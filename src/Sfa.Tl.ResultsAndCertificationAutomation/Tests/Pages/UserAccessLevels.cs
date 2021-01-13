@@ -68,6 +68,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ResultsLink);
             ResultsDashboardPage.VerifyResultsDashboardPage();
             ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ResultsLink);
+            ResultsDashboardPage.VerifyResultsDashboardPage();
+            ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
         public void AccessLevelTLevelReviewer()
@@ -119,6 +122,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(AssessmentEntriesPage.AssessmentEntriesLink);
             AssessmentEntriesPage.VerifyAssessmentEntriesPage();
             ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ResultsLink);
+            VerifyAccessDeniedPage();
+            ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
         public void AccessLevelResultsEditor()
@@ -129,10 +135,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ProviderLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
-            VerifyRegistrationsPage();
+            ClickOnLink(RegistrationsLink);
+            VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             ClickElement(AssessmentEntriesPage.AssessmentEntriesLink);
-            AssessmentEntriesPage.VerifyAssessmentEntriesPage();
+            VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(ResultsLink);
             ResultsDashboardPage.VerifyResultsDashboardPage();

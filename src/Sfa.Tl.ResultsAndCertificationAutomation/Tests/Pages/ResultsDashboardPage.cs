@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -19,6 +18,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string UploadResultsUrl { get; } = string.Concat(StartPage.StartPageUrl, "upload-results-file");
         private static string UploadResultsPageTitle { get; } = "Upload results file page – Manage T Level results – GOV.UK";
         private static string UploadResultsErrorPageTitle { get; } = "Error: Upload results file page – Manage T Level results – GOV.UK";
+        private static string ResultsUploadUnsuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-upload-unsuccessful");
+        private static string ResultsUploadUnsuccessTitle { get; } = "Results upload unsuccessful page – Manage T Level results – GOV.UK";
+        public static string ResultsUploadStage2InvalidHeaderErrors = string.Concat("Data\\", "ResultsErrorInvalidHeader.csv");
+        public static string ResultsUploadStage2NoDataErrors = string.Concat("Data\\", "ResultsErrorNoData.csv");
+        public static string ResultsUploadStage2Errors = string.Concat("Data\\", "ResultsErrorStage2Validations.csv");
 
         public static void VerifyResultsDashboardPage()
         {
@@ -49,6 +53,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.IsTrue(WebDriver.Url.Contains(UploadResultsUrl));
             Assert.AreEqual(UploadResultsErrorPageTitle, WebDriver.Title);
+        }
+        public static void VerifyUploadResultsUnsuccessPage()
+        {
+            Assert.AreEqual(ResultsUploadUnsuccessUrl, WebDriver.Url);
+            Assert.AreEqual(ResultsUploadUnsuccessTitle, WebDriver.Title);
+            Assert.AreEqual("Results upload unsuccessful", WebDriver.FindElement(PageHeader).Text);
         }
     }
 }
