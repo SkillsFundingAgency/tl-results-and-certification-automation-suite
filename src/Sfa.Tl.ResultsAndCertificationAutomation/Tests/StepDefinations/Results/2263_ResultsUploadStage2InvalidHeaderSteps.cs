@@ -21,5 +21,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             CsvFileReader.CsvDataFileCompare(ResultsUploadStage2InvalidHeaderErrors);
         }
+
+        [Then(@"I should be navigated back to Results dashboard page on clicking Back to Results button")]
+        public void ThenIShouldBeNavigatedBackToResultsDashboardPageOnClickingBackToResultsButton()
+        {
+            WebDriver.FindElement(BackBtn).Click();
+            VerifyResultsDashboardPage();
+        }
+
     }
 }

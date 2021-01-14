@@ -8,7 +8,7 @@ Line,ULN,Error
 8,1234567893,Core component code must have 8 digits only
 9,2233445566,Duplicate ULN found
 10,2233445566,Duplicate ULN found
-11,,Data in more than the required 4 columns
+11,2233555566,No data after ULN - need a core component code
 12,1234123412,Core component code required when result is included
 13,1234123413,Core component code required when result is included
 14,1234123419,Core component code required when result is included

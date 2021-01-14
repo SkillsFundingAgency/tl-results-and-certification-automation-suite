@@ -13,6 +13,7 @@ When I upload "ResultsUploadStage2InvalidHeader.csv" file
 And I click on "Submit" button
 And I download the Results error file and verify
 Then I should see invalid header error in the results downloaded file
+And I should be navigated back to Results dashboard page on clicking Back to Results button
 
 @RegressionTest @ResultsUpload
 Scenario: 2263_Results upload stage2 no data
