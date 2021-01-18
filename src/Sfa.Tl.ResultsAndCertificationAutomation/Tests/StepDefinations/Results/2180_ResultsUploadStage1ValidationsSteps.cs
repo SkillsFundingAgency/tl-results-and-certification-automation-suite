@@ -7,6 +7,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
     public class ResultsUploadStage1ValidationsSteps : ResultsDashboardPage
     {
         [Given(@"I am on results upload page")]
+        [When(@"I am on results upload page")]
         public void GivenIAmOnResultsUploadPage()
         {
             ClickResultsLink();
