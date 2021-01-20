@@ -3,7 +3,7 @@ schedules:
     displayName: Daily midnight build
     branches:
       include:
-        - feature/sprint-26
+        - feature/sprint-27
 resources:
   repositories:
     - repository: self
@@ -14,7 +14,7 @@ resources:
       type: github
       endpoint: S126-Tlevelservice
       name: SkillsFundingAgency/tl-results-and-certification
-      ref: feature/sprint-26
+      ref: feature/sprint-27
 
     - repository: devopsTools
       type: github
@@ -29,7 +29,7 @@ trigger:
   batch: true
   branches:
     include:
-      - feature/sprint-26
+      - feature/sprint-27
 pr: none
 
 variables:

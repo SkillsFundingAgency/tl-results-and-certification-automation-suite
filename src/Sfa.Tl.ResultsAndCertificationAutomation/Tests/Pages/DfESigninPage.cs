@@ -14,6 +14,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string AOReviewerUser = WebDriverFactory.Config["AOReviewer"];
         private static readonly string AOProviderUser = WebDriverFactory.Config["AOProviderEditor"];
         private static readonly string AORegistrationUser = WebDriverFactory.Config["AORegistrationEditor"];
+        private static readonly string AOResultsUser = WebDriverFactory.Config["AOResultsEditor"];
         private static readonly string AONoRoleUser = WebDriverFactory.Config["AONoRole"];
         private static readonly string AONoServiceUser = WebDriverFactory.Config["AONoService"];
         public static readonly string AOAppPassword = WebDriverFactory.Config["AOPassword"];
@@ -85,6 +86,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             TLevelSignIn(AORegistrationUser, AOAppPassword);
         }
+        public static void SigninAsResultsEditor()
+        {
+            TLevelSignIn(AOResultsUser, AOAppPassword);
+        }
+
         public static void SigninAsNoRoleNoServiceUser()
         {
             TLevelSignIn(AONoRoleUser, AOAppPassword);

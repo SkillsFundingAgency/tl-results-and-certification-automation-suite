@@ -95,6 +95,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BCRegistrations = By.XPath("//*[@id='breadcrumb1']");
         public static By BCHome = By.XPath("//*[@id='breadcrumb0']");
 
+        //Registrations Search - ULN Not Found page
+        public static By PageTextLine1 { get; } = By.XPath("//*[@id='main-content']/div/div/div/p");
+        public static readonly string ExpectedPageText = "If you think that the ULN should exist it may be that it:";
+        public static By Bullet1 { get; } = By.XPath("//*[@id='main-content']//ul/li[1]");
+        public static readonly string ExpectedBullet1Text = "is registered with another awarding organisation";
+        public static By Bullet2 { get; } = By.XPath("//*[@id='main-content']//ul/li[2]");
+        public static readonly string ExpectedBullet2Text = "is not registered with us";
+
         //Search Registration Details Page
         private static readonly string ExpectedSearchAgainBtnText = "Search again";
 
@@ -287,6 +295,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(URLNotFoundPageUrl, WebDriver.Url);
             Assert.AreEqual(Constants.SearchRegistrationURLNotFoundPagePageTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedURLNotFoundPageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(ExpectedPageText, WebDriver.FindElement(PageTextLine1).Text);
+            Assert.AreEqual(ExpectedBullet1Text, WebDriver.FindElement(Bullet1).Text);
+            Assert.AreEqual(ExpectedBullet2Text, WebDriver.FindElement(Bullet2).Text);
         }
 
 

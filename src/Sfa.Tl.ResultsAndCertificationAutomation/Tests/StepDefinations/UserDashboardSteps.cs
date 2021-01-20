@@ -32,7 +32,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                     case "RegistrationEditor":
                         DfESignInPage.SigninAsRegistrationEditor();
                         break;
-                    case "PearsonSiteAdmin":
+                    case "ResultsEditor":
+                        DfESignInPage.SigninAsResultsEditor();
+                        break;
+                case "PearsonSiteAdmin":
                         DfESignInPage.SigninAsPearsonSiteAdmin();
                         break;
                     case "NoRoleNoService":

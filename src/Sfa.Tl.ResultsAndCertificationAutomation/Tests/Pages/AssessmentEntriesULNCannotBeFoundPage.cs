@@ -24,7 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By Bullet2 = By.XPath("//*[@id='main-content']//ul/li[2]");
         private static string ExpectedSubHeaderText = "If you think that the ULN should exist it may be that it:";
         private static string ExpectedBullet1Text = "is registered with another awarding organisation";
-        private static string ExpectedBullet2Text = "has never been registered with us";
+        private static string ExpectedBullet2Text = "is not registered with us";
 
         public static void VerifyAssessmentEntriesULNNotFoundPage()
         {

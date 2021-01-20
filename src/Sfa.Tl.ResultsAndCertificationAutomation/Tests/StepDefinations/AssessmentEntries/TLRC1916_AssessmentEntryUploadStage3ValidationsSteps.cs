@@ -25,6 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         }
         
         [Given(@"I navigated Home page")]
+        [When(@"I navigated Home page")]
         public void GivenINavigatedHomePage()
         {
             ClickElement(TlevelDashboardPage.DashboardHeadLink);
