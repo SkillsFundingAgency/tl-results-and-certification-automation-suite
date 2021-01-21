@@ -11,6 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By BreadCrumb0 { get; } = By.Id("breadcrumb0");
         private static By BreadCrumb1 { get; } = By.Id("breadcrumb1");
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
+        private static By SuccessMsg { get; } = By.XPath("//*[@id='main-content']");
         private static string ResultsDashboardPageTitle { get; } = "Results page – Manage T Level results – GOV.UK";
         public static By UploadResultLink { get; } = By.LinkText("Upload results file");
         public static By SearchLearnerLink { get; } = By.LinkText("Search for a learner");
@@ -25,6 +26,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ResultsUploadStage2Errors = string.Concat("Data\\", "ResultsErrorStage2Validations.csv");
         public static string ResultsUploadStage3Errors = string.Concat("Data\\", "ResultsErrorStage3Validations.csv");
         public static string ResultsUploadStage3WithdrawnErrors = string.Concat("Data\\", "ResultsErrorStage3Withdrawn.csv");
+        // Upload Results success page
+        private static string ResultsUploadSuccessMsg { get; } = "Results upload successful";
+        private static string ResultsUploadSuccessPageTitle { get; } = "Results upload confirmation page – Manage T Level results – GOV.UK";
+        private static string ResultsUploadSuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-upload-confirmation");
+        public static By BackToResultsBtn { get; } = By.Id("backToResultsButton");
+        public static string ResultsSuccessCountMsg { get; } = "You successfully sent results for 3 registrations.";
+        public static string ResultSingleSuccessMsg { get; } = "You successfully sent results data for one registration.";
+
         public static By BackBtn { get; } = By.Id("backButton");
 
         public static void VerifyResultsDashboardPage()
@@ -62,6 +71,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ResultsUploadUnsuccessUrl, WebDriver.Url);
             Assert.AreEqual(ResultsUploadUnsuccessTitle, WebDriver.Title);
             Assert.AreEqual("Results upload unsuccessful", WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyUploadResultsSuccessPage()
+        {
+            Assert.AreEqual(ResultsUploadSuccessUrl, WebDriver.Url);
+            Assert.AreEqual(ResultsUploadSuccessPageTitle, WebDriver.Title);
+            Assert.AreEqual(ResultsUploadSuccessMsg, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyBackToResultsBtn()
+        {
+            WebDriver.FindElement(BackToResultsBtn).Click();
+            VerifyResultsDashboardPage();
+        }
+        public static void VerifyResultsUploadCount(string msgCount)
+        {
+            Assert.IsTrue(WebDriver.FindElement(SuccessMsg).Text.Contains(msgCount));
         }
     }
 }
