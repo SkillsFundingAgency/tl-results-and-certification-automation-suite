@@ -164,7 +164,7 @@ testRunner.Then("the Registration Details page is displayed", ((string)(null)), 
         [NUnit.Framework.DescriptionAttribute("Search for a valid ULN which is not registered")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationSearch")]
-        [NUnit.Framework.TestCaseAttribute("9900000052", "FirstName1", "LastName10", "01", "01", "2010", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000054", "FirstName1", "LastName10", "01", "01", "2010", null)]
         public virtual void SearchForAValidULNWhichIsNotRegistered(string uLN, string firstName, string lastName, string day, string month, string year, string[] exampleTags)
         {
             string[] @__tags = new string[] {
