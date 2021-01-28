@@ -1,6 +1,5 @@
 ﻿using System;
 using OpenQA.Selenium;
-using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using TechTalk.SpecFlow;
 
@@ -23,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         [After]
         public static void CleanUp()
         {
-            SqlQueries.DeleteFromRegistrationTables();
+            //SqlQueries.DeleteFromRegistrationTables();
             WebDriver.Dispose();
         }
     }
