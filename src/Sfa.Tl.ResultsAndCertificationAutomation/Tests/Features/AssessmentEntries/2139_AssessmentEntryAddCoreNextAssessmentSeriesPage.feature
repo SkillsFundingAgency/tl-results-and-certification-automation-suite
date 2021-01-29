@@ -22,7 +22,7 @@ Examples:
 | 9900000001  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2139_Press Submit button without selecting a radio button
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
