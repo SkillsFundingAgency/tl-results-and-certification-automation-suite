@@ -156,12 +156,14 @@ testRunner.Then(string.Format("I am navigated back to the Learner\'s Assessment 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2139_Press Submit button without selecting a radio button")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void _2139_PressSubmitButtonWithoutSelectingARadioButton(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -220,12 +222,14 @@ testRunner.Then("I am shown an error message stating \'Select yes to add to Summ
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2139_Selecting No radio button will return user to the the Learner’s assessment e" +
             "ntries page")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void _2139_SelectingNoRadioButtonWillReturnUserToTheTheLearnerSAssessmentEntriesPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))

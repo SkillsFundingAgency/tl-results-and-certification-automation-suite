@@ -95,12 +95,14 @@ testRunner.And("I navigate to the Search for a learner page", ((string)(null)), 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2001_Search for a withdrawn learner and validate the title, URL and page headings" +
             "")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void _2001_SearchForAWithdrawnLearnerAndValidateTheTitleURLAndPageHeadings(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -147,12 +149,14 @@ testRunner.Then("I am shown the Assessment Entries Withdrawn Learner page", ((st
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2001_Click the View this learner’s registration details’ link")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void _2001_ClickTheViewThisLearnerSRegistrationDetailsLink(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -204,12 +208,14 @@ testRunner.Then("I am taken to the Registrations Details page of the given withd
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2001_Click the Search again link")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void _2001_ClickTheSearchAgainLink(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -264,12 +270,14 @@ testRunner.And("the Search for a learner page search entry will not be retained"
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2001_Validate breadcrumb links on the Search for a learner page")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void _2001_ValidateBreadcrumbLinksOnTheSearchForALearnerPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
