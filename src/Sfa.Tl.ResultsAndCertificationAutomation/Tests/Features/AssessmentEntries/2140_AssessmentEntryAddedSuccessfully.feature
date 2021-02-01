@@ -8,7 +8,7 @@ Background:
 Given I have logged in as a "RegistrationEditor" user
 And I upload a single registration and navigate to the Search for a learner page
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2140_Add an assessment entry for the learner and validate the success page
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
