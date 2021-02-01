@@ -92,12 +92,14 @@ testRunner.And("I upload a single registration and navigate to the Search for a 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2139_Validate the headings on the Do you want to add core assessment entry page a" +
             "nd press the back link")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000001", null)]
         public virtual void _2139_ValidateTheHeadingsOnTheDoYouWantToAddCoreAssessmentEntryPageAndPressTheBackLink(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
