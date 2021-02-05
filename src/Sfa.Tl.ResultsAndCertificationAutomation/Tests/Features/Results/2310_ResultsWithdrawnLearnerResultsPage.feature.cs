@@ -137,7 +137,8 @@ testRunner.When("I withdraw my application and navigate to the Results Search fo
 testRunner.And(string.Format("I search for the {0} which is withdrawn", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
-testRunner.Then(string.Format("the Learners Results for Withdrawn Learner page will be displayed for the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("the Learners Results (for a Withdrawn Learner) page will be displayed for the {0}" +
+                            "", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -192,16 +193,17 @@ testRunner.When("I withdraw my application and navigate to the Results Search fo
 #line 26
 testRunner.And(string.Format("I search for the {0} which is withdrawn", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
-testRunner.Then(string.Format("the Learners Results for Withdrawn Learner page will be displayed for the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 28
-testRunner.When("I click the Search again link on the Learners Results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then(string.Format("the Learners Results (for a Withdrawn Learner) page will be displayed for the {0}" +
+                            "", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 29
-testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I click the Search again link on the Learners Results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
+testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 31
 testRunner.And("the ULN Search field will be empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -226,7 +228,7 @@ testRunner.And("the ULN Search field will be empty", ((string)(null)), ((TechTal
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2310_Verify breadcrumbs on the Learners Results Page (Withdrawn) page", null, tagsOfScenario, argumentsOfScenario);
-#line 39
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -249,39 +251,40 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 40
+#line 41
 testRunner.When("I withdraw my application and navigate to the Results Search for a Learner Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
+#line 42
 testRunner.And(string.Format("I search for the {0} which is withdrawn", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
-testRunner.Then(string.Format("the Learners Results for Withdrawn Learner page will be displayed for the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 43
-testRunner.When("I click the Search for a learner breadcrumb link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 44
-testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("the Learners Results (for a Withdrawn Learner) page will be displayed for the {0}" +
+                            "", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 45
+testRunner.When("I click the Search for a learner breadcrumb link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 46
+testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 47
 testRunner.When(string.Format("I navigate back to the Learners Results Page (Withdrawn) page using {0} from the " +
                             "Results Search for a Learner page", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 46
+#line 48
 testRunner.And("I press the Results breadcrumb link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 47
+#line 49
 testRunner.Then("I should be navigated to Results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 48
+#line 50
 testRunner.When(string.Format("I navigate back to the Learners Results Page (Withdrawn) page for {0} from the Re" +
                             "sults dashboard page", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 49
+#line 51
 testRunner.And("I click the Home breadcrumb link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 50
+#line 52
 testRunner.Then("I am taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
