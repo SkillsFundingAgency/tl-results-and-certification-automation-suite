@@ -38,12 +38,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         }
 
 
-        [Then(@"the Learners Results for Withdrawn Learner page will be displayed for the (.*)")]
-        public void ThenTheLearnersResultsForWithdrawnLearnerPageWillBeDisplayedForThe(string ULN)
+        //[Then(@"the Learners Results for Withdrawn Learner page will be displayed for the (.*)")]
+        //public void ThenTheLearnersResultsForWithdrawnLearnerPageWillBeDisplayedForThe(string ULN)
+        //{
+        //    ResultsLearnersResultsWithdrawnLearnerPage.VerifyWithdrawnLearnersResultsPage(ULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, RegistrationsManualPage.InputPovider);
+
+        //}
+
+        [Then(@"the Learners Results \(for a Withdrawn Learner\) page will be displayed for the (.*)")]
+        public void ThenTheLearnersResultsForAWithdrawnLearnerPageWillBeDisplayedForThe(string ULN)
         {
             ResultsLearnersResultsWithdrawnLearnerPage.VerifyWithdrawnLearnersResultsPage(ULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, RegistrationsManualPage.InputPovider);
 
         }
+
+
 
         [When(@"I click the Search again link on the Learners Results page")]
         public void WhenIClickTheSearchAgainLinkOnTheLearnersResultsPage()
