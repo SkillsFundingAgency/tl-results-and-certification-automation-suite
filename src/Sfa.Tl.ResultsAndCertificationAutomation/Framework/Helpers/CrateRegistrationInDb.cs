@@ -31,6 +31,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
             SqlQueries.CreatePathwayResult(pathwayAssessmentId);
         }
+        public void CreateDbRegInWithdrawn(string uln)
+        {
+            SqlQueries.UpdateRegWithdrawn(uln);
+        }
         public void DeleteRegistrationFromTables(string uln)
         {
             string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId = rp.Id where UniqueLearnerNumber = '" + uln + "'";

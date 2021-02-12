@@ -111,5 +111,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string CreatePathwayResult = "Insert into TqPathwayResult values ('" + pathwayAssessmentId + "',2,GETDATE(),NULL,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreatePathwayResult, ConnectionString);
         }
+        public static void UpdateRegWithdrawn(string uln)
+        {
+            string ModifyRegPathway = "Update TqRegistrationPathway set status=4, EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqRegistrationPathway join TqRegistrationProfile on TqRegistrationPathway.TqRegistrationProfileId = TqRegistrationProfile.Id where UniqueLearnerNumber = '" + uln + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyRegPathway, ConnectionString);
+            string ModifyRegSpecialism = "Update TqRegistrationSpecialism set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqRegistrationSpecialism join TqRegistrationPathway on TqRegistrationSpecialism.TqRegistrationPathwayId = TqRegistrationPathway.Id join TqRegistrationProfile on TqRegistrationPathway.TqRegistrationProfileId = TqRegistrationProfile.Id where UniqueLearnerNumber = '" + uln + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyRegSpecialism, ConnectionString);
+            string ModifyPathwayAssessment = "Update TqPathwayAssessment set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayAssessment join TqRegistrationSpecialism on TqPathwayAssessment.TqRegistrationPathwayId = TqPathwayAssessment.TqRegistrationPathwayId join TqRegistrationPathway on TqRegistrationSpecialism.TqRegistrationPathwayId = TqRegistrationPathway.Id join TqRegistrationProfile on TqRegistrationPathway.TqRegistrationProfileId = TqRegistrationProfile.Id where UniqueLearnerNumber = '" + uln + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyPathwayAssessment, ConnectionString);
+            string ModifyPathwayResult = "update TqPathwayResult set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayResult join TqPathwayAssessment on TqPathwayResult.TqPathwayAssessmentId = TqPathwayAssessment.Id join TqRegistrationSpecialism on TqPathwayAssessment.TqRegistrationPathwayId = TqPathwayAssessment.TqRegistrationPathwayId join TqRegistrationPathway on TqRegistrationSpecialism.TqRegistrationPathwayId = TqRegistrationPathway.Id join TqRegistrationProfile on TqRegistrationPathway.TqRegistrationProfileId = TqRegistrationProfile.Id where UniqueLearnerNumber = '" + uln + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyPathwayResult, ConnectionString);
+
+        }
     }
 }

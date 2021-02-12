@@ -37,6 +37,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string LearnerResultUrl { get; } = "learners-results";
         private static By addResult { get; } = By.XPath("//a[@id='coreresult' and contains(text(),'Add result')]");
         public static By changeResult { get; } = By.XPath("//a[@id='coreresult' and contains(text(),'Change')]");
+        //Learner Withdrawn
+        private static string LearnerResultWithdrawnPageTitle { get; } = "Learner’s results - Withdrawn learner page – Manage T Level results – GOV.UK";
+        private static string LearnerResultWithdrawnUrl { get; } = "learners-results-withdrawn-learner";
         //Core result page
         private static string coreResultPageTitle { get; } = "Change core result page – Manage T Level results – GOV.UK";
         private static string coreResultPageUrl { get; } = "change-core-result";
@@ -120,6 +123,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(LearnerResultPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(LearnerResultUrl));
+        }
+        public static void VerifyLearnerResultWithdrawnPage()
+        {
+            Assert.AreEqual(LearnerResultWithdrawnPageTitle, WebDriver.Title);
+            Assert.IsTrue(WebDriver.Url.Contains(LearnerResultWithdrawnUrl));
         }
     }
 }

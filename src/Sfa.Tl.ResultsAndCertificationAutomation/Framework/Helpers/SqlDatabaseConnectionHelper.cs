@@ -53,14 +53,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             }
         }
 
-        public static int UpdateSqlCommand(string queryToExecute, string connectionString)
+        public static void UpdateSqlCommand(string queryToExecute, string connectionString)
         {
             SqlConnection databaseConnection = new SqlConnection(connectionString);
             databaseConnection.Open();
             SqlCommand sqlCommand = new SqlCommand(queryToExecute, databaseConnection);
-            Int32 result = (Int32)sqlCommand.ExecuteScalar();
+            sqlCommand.ExecuteNonQuery();
             databaseConnection.Close();
-            return result;
         }
         public static int ExecuteStoreProc(string storedProcName, string connectionString)
         {
