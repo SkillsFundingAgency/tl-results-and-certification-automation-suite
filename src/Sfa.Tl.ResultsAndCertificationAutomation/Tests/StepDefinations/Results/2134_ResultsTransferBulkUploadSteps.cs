@@ -13,6 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Given(@"I uploaded following files")]
         public void GivenIUploadedFollowingFiles(Table table)
         {
+            SqlQueries.DeleteFromRegistrationTables();
             var (Registration, Assessment, Result) = table.CreateInstance<(string Registration, string Assessment, string Result)>();
             RegistrationsPage.ClickRegLink();
             ClickElement(RegistrationsPage.UploadRegistationLink);

@@ -43,7 +43,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         //Core result page
         private static string coreResultPageTitle { get; } = "Change core result page – Manage T Level results – GOV.UK";
         private static string coreResultPageUrl { get; } = "change-core-result";
-        private static By changeBtn { get; } = By.Id("changeButton");
+        public static By changeBtn { get; } = By.Id("changeButton");
         public static By selectResultB { get; } = By.Id("hasgradeselected-3");
         public static By notreceivedGrade { get; } = By.Id("hasgradeselected");
         //Change confirmation page

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntries
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2180_ResultsUploadStage1Validations")]
-    public partial class _2180_ResultsUploadStage1ValidationsFeature
+    [NUnit.Framework.DescriptionAttribute("2137_UpdatingResultsDataAssessment")]
+    public partial class _2137_UpdatingResultsDataAssessmentFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2180_ResultsUploadStage1Validations.feature"
+#line 1 "2137_UpdatingResultsDataAssessment.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Results", "2180_ResultsUploadStage1Validations", "\tAs a Results Editor\r\n\tI need to upload results data in bulk\r\n\tSo that results da" +
-                    "ta can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "2137_UpdatingResultsDataAssessment", "\tAs a R&C Portal user\r\n\tI need to be able to understand that I cannot remove an e" +
+                    "ntry that has a result\r\n\tSo that student data can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,25 +79,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
 #line 6
 #line hidden
 #line 7
-testRunner.Given("I have logged in as a \"ResultsEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
-testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify mandatory field validation")]
+        [NUnit.Framework.DescriptionAttribute("2137_ No Remove entry link in assessment if result added from bulk upload")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ResultsUpload")]
-        public virtual void VerifyMandatoryFieldValidation()
+        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
+        public virtual void _2137_NoRemoveEntryLinkInAssessmentIfResultAddedFromBulkUpload()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ResultsUpload"};
+                    "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify mandatory field validation", null, tagsOfScenario, argumentsOfScenario);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2137_ No Remove entry link in assessment if result added from bulk upload", null, tagsOfScenario, argumentsOfScenario);
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -120,39 +117,43 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 12
-testRunner.When("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Registration",
+                            "Assessment",
+                            "Result"});
+                table7.AddRow(new string[] {
+                            "RegistrationsValidDataSingle.csv",
+                            "AssessmentUploadSingleData.csv",
+                            "ResultsUploadSingleData.csv"});
+#line 11
+testRunner.And("I uploaded following files", ((string)(null)), table7, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table32.AddRow(new string[] {
-                            "Please select results file"});
-#line 13
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table32, "Then ");
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table8.AddRow(new string[] {
+                            "9900000001"});
+#line 14
+testRunner.When("I search search Assessment entry for the Uln", ((string)(null)), table8, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table33.AddRow(new string[] {
-                            "Please select results file"});
-#line 16
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table33, "And ");
+#line 17
+testRunner.Then("I should not see Remove Entry link in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload non csv file")]
+        [NUnit.Framework.DescriptionAttribute("2137_ No Remove entry link in assessment if result added manually")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ResultsUpload")]
-        public virtual void UploadNonCsvFile()
+        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
+        public virtual void _2137_NoRemoveEntryLinkInAssessmentIfResultAddedManually()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ResultsUpload"};
+                    "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload non csv file", null, tagsOfScenario, argumentsOfScenario);
-#line 21
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2137_ No Remove entry link in assessment if result added manually", null, tagsOfScenario, argumentsOfScenario);
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -174,101 +175,98 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
+#line hidden
+#line 21
+testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
-testRunner.When("I upload \"AssessmentEntryStage1InvalidFileType.xlsx\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I search the assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("I should not see Remove Entry link in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table34.AddRow(new string[] {
-                            "File extension not valid - must be a CSV file"});
-#line 24
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table34, "Then ");
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("2137_ Remove entry link in assessment if result removed from bulk upload")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
+        public virtual void _2137_RemoveEntryLinkInAssessmentIfResultRemovedFromBulkUpload()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "AssessmentEntries"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2137_ Remove entry link in assessment if result removed from bulk upload", null, tagsOfScenario, argumentsOfScenario);
+#line 26
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
-                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table35.AddRow(new string[] {
-                            "File extension not valid - must be a CSV file"});
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Registration",
+                            "Assessment",
+                            "Result"});
+                table9.AddRow(new string[] {
+                            "RegistrationsValidDataSingle.csv",
+                            "AssessmentUploadSingleData.csv",
+                            "ResultsUploadSingleData.csv"});
 #line 27
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table35, "And ");
+testRunner.And("I uploaded following files", ((string)(null)), table9, "And ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload file with max number of rows")]
-        [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ResultsUpload")]
-        public virtual void UploadFileWithMaxNumberOfRows()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RegressionTest",
-                    "ResultsUpload"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload file with max number of rows", null, tagsOfScenario, argumentsOfScenario);
-#line 32
-this.ScenarioInitialize(scenarioInfo);
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table10.AddRow(new string[] {
+                            "9900000001"});
+#line 30
+testRunner.And("I updated the result with Not received for the Uln", ((string)(null)), table10, "And ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table11.AddRow(new string[] {
+                            "9900000001"});
 #line 33
-testRunner.When("I upload \"AssessmentEntryStage1MaxNoOfRows.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I search search Assessment entry for the Uln", ((string)(null)), table11, "When ");
 #line hidden
-#line 34
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table36.AddRow(new string[] {
-                            "File must contain results for between one and 10,000 registrations"});
-#line 35
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table36, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table37.AddRow(new string[] {
-                            "File must contain results for between one and 10,000 registrations"});
-#line 38
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table37, "And ");
+#line 36
+testRunner.Then("I should see Remove Entry link for the learner in assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload file more than 5MB")]
+        [NUnit.Framework.DescriptionAttribute("2137_ Display Remove entry link in assessment if result removed manually")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ResultsUpload")]
-        public virtual void UploadFileMoreThan5MB()
+        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
+        public virtual void _2137_DisplayRemoveEntryLinkInAssessmentIfResultRemovedManually()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ResultsUpload"};
+                    "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload file more than 5MB", null, tagsOfScenario, argumentsOfScenario);
-#line 43
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2137_ Display Remove entry link in assessment if result removed manually", null, tagsOfScenario, argumentsOfScenario);
+#line 39
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -291,25 +289,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 44
-testRunner.When("I upload \"RegistrationsStage1MaxFileSize.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 45
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+testRunner.And("I changed the result to Not received for that learner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table38.AddRow(new string[] {
-                            "File size too large – must be no more than 5MB"});
-#line 46
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table38, "Then ");
+#line 42
+testRunner.When("I search the assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table39.AddRow(new string[] {
-                            "File size too large – must be no more than 5MB"});
-#line 49
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table39, "And ");
+#line 43
+testRunner.Then("I should see Remove Entry link for the learner in assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

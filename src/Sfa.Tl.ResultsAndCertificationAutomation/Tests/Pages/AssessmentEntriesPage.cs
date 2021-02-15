@@ -29,6 +29,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By UploadAssessmentEntryLink { get; } = By.LinkText("Upload assessment entries file");
         public static By SearchForLearnerLink { get; } = By.LinkText("Search for a learner");
         public static By AssessmentFileUploadError { get; } = By.XPath("//a[@href='#file']");
+        public static By AddOrRemoveAssessmentEntry { get; } = By.Id("coreassessmententry");
         //Upload files
         public static string AssessmentStage1InvalidFile = "AssessmentEntryStage1InvalidFileType.xslx";
         public static string AssessmentStage1MaxRows = "AssessmentEntryStage1MaxNoOfRows.csv";
@@ -81,6 +82,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickBacktoAssessmentEntriesButton()
         {
             ClickElement(BackToAssessmentEntriesButton);
+        }
+        public static void SearchAssessmentEntry(string uln)
+        {
+            ClickElement(TlevelDashboardPage.DashboardHeadLink);
+            ClickElement(AssessmentEntriesLink);
+            VerifyAssessmentEntriesPage();
+            ClickElement(SearchForLearnerLink);
+            AssessmentEntriesSearchForLearnerPage.VerifyAssessmentEntriesSearchForLearnerPage();
+            AssessmentEntriesSearchForLearnerPage.EnterULN(uln);
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
         }
     }
 }
