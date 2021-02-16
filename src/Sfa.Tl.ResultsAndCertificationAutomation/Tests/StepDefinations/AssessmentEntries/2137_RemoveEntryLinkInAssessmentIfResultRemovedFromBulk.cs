@@ -6,26 +6,26 @@ using TechTalk.SpecFlow;
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
     [Binding]
-    public class RemoveEntryLinkInAssessmentIfResultRemovedFromBulk : AssessmentEntriesPage
+    public class RemoveEntryLinkInAssessmentIfResultRemovedFromBulk : ResultsDashboardPage
     {
         [Given(@"I updated the result with Not received for the Uln")]
         public void GivenIUpdatedTheResultWithNotReceivedForTheUln(Table table)
         {
             var row = table.Rows;
             var uln = row[0]["Uln"];
-            ResultsDashboardPage.ClickResultsLink();
-            ResultsDashboardPage.searchResult(uln);
-            ClickElement(ResultsDashboardPage.changeResult);
-            ClickElement(ResultsDashboardPage.notreceivedGrade);
-            ClickButton(ResultsDashboardPage.changeBtn);
-            ResultsDashboardPage.VerifyResultChangeSuccessPage();
+            ClickResultsLink();
+            searchResult(uln);
+            ClickElement(changeResult);
+            ClickElement(notreceivedGrade);
+            ClickButton(changeBtn);
+            VerifyResultChangeSuccessPage();
         }
 
 
         [Then(@"I should see Remove Entry link for the learner in assessment details page")]
         public void ThenIShouldSeeRemoveEntryLinkForTheLearnerInAssessmentDetailsPage()
         {
-            Assert.IsTrue(IsPresent(AddOrRemoveAssessmentEntry));
+            Assert.IsTrue(IsPresent(AssessmentEntriesPage.AddOrRemoveAssessmentEntry));
             SqlQueries.DeleteFromRegistrationTables();
         }
 

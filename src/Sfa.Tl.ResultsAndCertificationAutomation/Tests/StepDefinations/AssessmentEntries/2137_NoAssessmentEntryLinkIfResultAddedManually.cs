@@ -1,11 +1,10 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
     [Binding]
-    public class NoAssessmentEntryLinkIfResultAddedManually : AssessmentEntriesPage
+    public class NoAssessmentEntryLinkIfResultAddedManually : ResultsDashboardPage
     {
         private readonly ScenarioContext _scenarioContext;
         public NoAssessmentEntryLinkIfResultAddedManually(ScenarioContext scenarioContext)
@@ -16,7 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void WhenISearchTheAssessmentEntry()
         {
             var uln = _scenarioContext["uln"] as string;
-            SearchAssessmentEntry(uln);
+            AssessmentEntriesPage.SearchAssessmentEntry(uln);
         }
     }
 }
