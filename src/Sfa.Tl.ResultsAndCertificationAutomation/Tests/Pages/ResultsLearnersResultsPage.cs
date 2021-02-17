@@ -33,7 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By ResultsBreadcrumb { get; } = By.Id("breadcrumb1");
         public static By SearchForLearnerBreadcrumb { get; } = By.Id("breadcrumb2");
 
-
+        public static By ChangeLink = By.Id("coreresult");
         public static new void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
@@ -122,5 +122,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(AddResultLink);
         }
 
+        public static void ClickChangeResultLink()
+        {
+            ClickElement(ChangeLink);
+        }
     }
 }
