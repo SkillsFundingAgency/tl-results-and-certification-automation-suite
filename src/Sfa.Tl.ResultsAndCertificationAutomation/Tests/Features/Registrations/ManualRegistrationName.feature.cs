@@ -118,14 +118,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name"});
-                table7.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "First name"});
-                table7.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Last name"});
 #line 12
- testRunner.And("I see following fields are available", ((string)(null)), table7, "And ");
+ testRunner.And("I see following fields are available", ((string)(null)), table15, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -166,26 +166,26 @@ this.FeatureBackground();
 #line 19
  testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Error messages"});
-                table8.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "First name",
                             "Enter first name"});
-                table8.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Last name",
                             "Enter last name"});
 #line 20
- testRunner.Then("I should see the following error messages", ((string)(null)), table8, "Then ");
+ testRunner.Then("I should see the following error messages", ((string)(null)), table16, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table9.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Enter first name"});
-                table9.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Enter last name"});
 #line 24
- testRunner.And("I should see the following error summary messages", ((string)(null)), table9, "And ");
+ testRunner.And("I should see the following error summary messages", ((string)(null)), table17, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -232,26 +232,26 @@ this.FeatureBackground();
 #line 33
  testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Error messages"});
-                table10.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "First name",
                             "First name must be 100 characters or fewer"});
-                table10.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "Last name",
                             "Last name must be 100 characters or fewer"});
 #line 34
- testRunner.Then("I should see the following error messages", ((string)(null)), table10, "Then ");
+ testRunner.Then("I should see the following error messages", ((string)(null)), table18, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table11.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "First name must be 100 characters or fewer"});
-                table11.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Last name must be 100 characters or fewer"});
 #line 38
- testRunner.And("I should see the following error summary messages", ((string)(null)), table11, "And ");
+ testRunner.And("I should see the following error summary messages", ((string)(null)), table19, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -289,17 +289,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Value"});
-                table12.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "First name",
                             "John"});
-                table12.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "Last name",
                             "Smith"});
 #line 45
- testRunner.And("I filled form with following information", ((string)(null)), table12, "And ");
+ testRunner.And("I filled form with following information", ((string)(null)), table20, "And ");
 #line hidden
 #line 49
  testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

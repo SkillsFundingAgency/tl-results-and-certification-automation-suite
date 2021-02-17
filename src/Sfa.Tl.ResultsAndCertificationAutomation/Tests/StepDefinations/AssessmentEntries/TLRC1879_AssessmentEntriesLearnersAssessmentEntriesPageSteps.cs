@@ -79,6 +79,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesSearchForLearnerPage.EnterULN(ULN);
 
         }
+        [Given(@"I navigate to the Search for a learner page and enter uln")]
+        public void GivenINavigateToTheSearchForALearnerPageAndEnterUln(Table table)
+        {
+            var row = table.Rows;
+            var uln = row[0]["Uln"];
+            ClickElement(SearchForLearnerLink);
+            AssessmentEntriesSearchForLearnerPage.EnterULN(uln);
+        }
+
+        [Then(@"I am shown the Learner's Assessment Entries page with Uln details")]
+        public void ThenIAmShownTheLearnerSAssessmentEntriesPageWithUlnDetails(Table table)
+        {
+            var row = table.Rows;
+            var uln = row[0]["Uln"];
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyDynamicHeaders(uln);
+        }
+
 
         [When(@"I click the '(.*)' link")]
         public void WhenIClickTheLink(string p0)

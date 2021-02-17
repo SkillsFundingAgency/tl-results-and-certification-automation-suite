@@ -5,6 +5,7 @@
 
 Background: 
 Given I have logged in as a "SiteAdmin" user
+And I cleared the data in DB
 And I uploaded following files
 | Registration                     | Assessment                     | Result                      |
 | RegistrationsValidDataSingle.csv | AssessmentUploadSingleData.csv | ResultsUploadSingleData.csv |
