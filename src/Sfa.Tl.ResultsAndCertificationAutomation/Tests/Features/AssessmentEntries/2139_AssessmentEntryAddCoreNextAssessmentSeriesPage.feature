@@ -8,7 +8,7 @@ Background:
 Given I have logged in as a "RegistrationEditor" user
 And I upload a single registration and navigate to the Search for a learner page
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2139_Validate the headings on the Do you want to add core assessment entry page and press the back link
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
@@ -22,7 +22,7 @@ Examples:
 | 9900000001  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2139_Press Submit button without selecting a radio button
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
@@ -35,7 +35,7 @@ Examples:
 | ULN         |
 | 9900000001  |
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2139_Selecting No radio button will return user to the the Learner’s assessment entries page
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>

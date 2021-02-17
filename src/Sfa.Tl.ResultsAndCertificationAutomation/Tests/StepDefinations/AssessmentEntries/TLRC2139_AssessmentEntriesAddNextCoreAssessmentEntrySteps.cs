@@ -1,16 +1,12 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
     [Binding]
     public class TLRC2139_AssessmentEntriesAddNextCoreAssessmentEntrySteps : AssessmentEntriesPage
     {
-
-
         [Given(@"I upload a single registration and navigate to the Search for a learner page")]
         public void GivenIUploadASingleRegistrationAndNavigateToTheSearchForALearnerPage()
         {
@@ -18,12 +14,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             SqlQueries.DeleteFromRegistrationTables();
             SqlQueries.DeleteFromRegistrationTables();
             RegistrationsPage.ClickRegLink();
-            AssessmentEntriesPage.ClickElement(RegistrationsPage.UploadRegistationLink);
-            AssessmentEntriesPage.UploadFile(RegistrationsPage.ChooseFile, "1879RegistrationsDataForAssessments.csv");
-            AssessmentEntriesPage.ClickElement(RegistrationsPage.SubmitFileBtn);
+            ClickElement(RegistrationsPage.UploadRegistationLink);
+            UploadFile(RegistrationsPage.ChooseFile, "1879RegistrationsDataForAssessments.csv");
+            ClickElement(RegistrationsPage.SubmitFileBtn);
             RegistrationsPage.VerifyRegistrationSuccessPage();
-            AssessmentEntriesPage.ClickElement(TlevelDashboardPage.DashboardHeadLink);
-            AssessmentEntriesPage.ClickElement(AssessmentEntriesLink);
+            ClickElement(TlevelDashboardPage.DashboardHeadLink);
+            ClickElement(AssessmentEntriesLink);
         }
 
         [When(@"I click the Remove entry link")]
@@ -91,7 +87,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesAssessmentAddedSuccessfullyPage.ClickBackToAssessmentEntriesButton();
         }
-
-
     }
 }

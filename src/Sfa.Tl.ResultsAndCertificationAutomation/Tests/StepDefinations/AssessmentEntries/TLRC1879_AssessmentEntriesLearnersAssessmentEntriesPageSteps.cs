@@ -1,8 +1,6 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
@@ -12,22 +10,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         [Given(@"I upload registrations and associated assessments")]
         public void GivenIUploadRegistrationsAndAssociatedAssessments()
         {
-            SqlQueries.DeleteFromAssessmentTables();
-            SqlQueries.DeleteFromRegistrationTables();
             SqlQueries.DeleteFromRegistrationTables();
             RegistrationsPage.ClickRegLink();
-            AssessmentEntriesPage.ClickElement(RegistrationsPage.UploadRegistationLink);
-            AssessmentEntriesPage.UploadFile(RegistrationsPage.ChooseFile, "1879RegistrationsDataForAssessments.csv");
-            AssessmentEntriesPage.ClickElement(RegistrationsPage.SubmitFileBtn);
+            ClickElement(RegistrationsPage.UploadRegistationLink);
+            UploadFile(RegistrationsPage.ChooseFile, "1879RegistrationsDataForAssessments.csv");
+            ClickElement(RegistrationsPage.SubmitFileBtn);
             RegistrationsPage.VerifyRegistrationSuccessPage();
-            AssessmentEntriesPage.ClickElement(TlevelDashboardPage.DashboardHeadLink);
-            AssessmentEntriesPage.ClickElement(AssessmentEntriesLink);
-            AssessmentEntriesPage.ClickElement(UploadAssessmentEntryLink);
-            AssessmentEntriesPage.VerifyAssessmentEntriesUploadPage();
-            AssessmentEntriesPage.UploadFile(RegistrationsPage.ChooseFile, "1879AssessmentEntrySuccessfulData.csv");
+            ClickElement(TlevelDashboardPage.DashboardHeadLink);
+            ClickElement(AssessmentEntriesLink);
+            ClickElement(UploadAssessmentEntryLink);
+            VerifyAssessmentEntriesUploadPage();
+            UploadFile(RegistrationsPage.ChooseFile, "1879AssessmentEntrySuccessfulData.csv");
             CommonPage.ClickButtonByLabel("Submit");
             VerifyAssessmentUploadSuccessPage();
-            AssessmentEntriesPage.ClickBacktoAssessmentEntriesButton();
+            ClickBacktoAssessmentEntriesButton();
         }
 
 
@@ -79,10 +75,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         [Given(@"I navigate to the Search for a learner page and enter the (.*)")]
         public void GivenINavigateToTheSearchForALearnerPageAndEnterThe(string ULN)
         {
-            AssessmentEntriesPage.ClickElement(SearchForLearnerLink);
+            ClickElement(SearchForLearnerLink);
             AssessmentEntriesSearchForLearnerPage.EnterULN(ULN);
 
         }
+        [Given(@"I navigate to the Search for a learner page and enter uln")]
+        public void GivenINavigateToTheSearchForALearnerPageAndEnterUln(Table table)
+        {
+            var row = table.Rows;
+            var uln = row[0]["Uln"];
+            ClickElement(SearchForLearnerLink);
+            AssessmentEntriesSearchForLearnerPage.EnterULN(uln);
+        }
+
+        [Then(@"I am shown the Learner's Assessment Entries page with Uln details")]
+        public void ThenIAmShownTheLearnerSAssessmentEntriesPageWithUlnDetails(Table table)
+        {
+            var row = table.Rows;
+            var uln = row[0]["Uln"];
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
+            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyDynamicHeaders(uln);
+        }
+
 
         [When(@"I click the '(.*)' link")]
         public void WhenIClickTheLink(string p0)
@@ -140,13 +154,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyAddRemoveLinkText(LinkText);
         }
-
-
-
-
-
-
-
-
     }
 }

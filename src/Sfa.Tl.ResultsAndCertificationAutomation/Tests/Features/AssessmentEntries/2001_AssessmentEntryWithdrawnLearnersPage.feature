@@ -11,7 +11,7 @@ And I press the Home breadcrumb on the registration details page
 And I navigate to the Search for a learner page
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2001_Search for a withdrawn learner and validate the title, URL and page headings
 And I enter the following <ULN>
 Then I am shown the Assessment Entries Withdrawn Learner page
@@ -20,7 +20,7 @@ Examples:
 | 9900000001  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2001_Click the View this learner’s registration details’ link
 And I enter the following <ULN>
 Then I am shown the Assessment Entries Withdrawn Learner page
@@ -31,7 +31,7 @@ Examples:
 | 9900000001  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2001_Click the Search again link 
 And I enter the following <ULN>
 Then I am shown the Assessment Entries Withdrawn Learner page
@@ -43,7 +43,7 @@ Examples:
 | 9900000001  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 2001_Validate breadcrumb links on the Search for a learner page
 And I enter the following <ULN>
 Then I am shown the Assessment Entries Withdrawn Learner page

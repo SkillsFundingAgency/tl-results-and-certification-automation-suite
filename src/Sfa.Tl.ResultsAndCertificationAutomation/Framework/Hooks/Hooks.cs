@@ -22,6 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         [After]
         public static void CleanUp()
         {
+            //SqlQueries.DeleteFromRegistrationTables();
             WebDriver.Dispose();
         }
     }

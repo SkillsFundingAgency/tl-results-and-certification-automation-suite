@@ -43,8 +43,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                     return new InternetExplorerDriver();
                 case var _ when browser == "Chrome":
                     var chromeOptions = new ChromeOptions();
-                    //chromeOptions.AddArguments(new List<string>() { "--incognito", "headless" });
-                    chromeOptions.AddArguments("--incognito");
+                    chromeOptions.AddArguments(new List<string>() { "--incognito", "headless" });
+                    //chromeOptions.AddArguments("--incognito");
                     chromeOptions.AddUserProfilePreference("download.default_directory", FileHelper.GetDownloadFolder());
                     return new ChromeDriver(chromeOptions);
 

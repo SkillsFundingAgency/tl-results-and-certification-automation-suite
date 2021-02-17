@@ -13,7 +13,7 @@ And I create a manual registration
 Scenario: 2310-Searching for a withdrawn ULN displays Learners Results Page (Withdrawn)
 When I withdraw my application and navigate to the Results Search for a Learner Page
 And I search for the <ULN> which is withdrawn
-Then the Learners Results for Withdrawn Learner page will be displayed for the <ULN>
+Then the Learners Results (for a Withdrawn Learner) page will be displayed for the <ULN>
 
 Examples: 
 | ULN         |
@@ -24,7 +24,7 @@ Examples:
 Scenario: 2310_Clicking Search again on the Learners Results Page (Withdrawn) displays the Results ULN Search page
 When I withdraw my application and navigate to the Results Search for a Learner Page
 And I search for the <ULN> which is withdrawn
-Then the Learners Results for Withdrawn Learner page will be displayed for the <ULN>
+Then the Learners Results (for a Withdrawn Learner) page will be displayed for the <ULN>
 When I click the Search again link on the Learners Results page
 Then I will be navigated to the Results Search for a Learner page
 And the ULN Search field will be empty
@@ -39,7 +39,7 @@ Examples:
 Scenario: 2310_Verify breadcrumbs on the Learners Results Page (Withdrawn) page
 When I withdraw my application and navigate to the Results Search for a Learner Page
 And I search for the <ULN> which is withdrawn
-Then the Learners Results for Withdrawn Learner page will be displayed for the <ULN>
+Then the Learners Results (for a Withdrawn Learner) page will be displayed for the <ULN>
 When I click the Search for a learner breadcrumb link
 Then I will be navigated to the Results Search for a Learner page
 When I navigate back to the Learners Results Page (Withdrawn) page using <ULN> from the Results Search for a Learner page

@@ -32,7 +32,7 @@ And when I click the back link
 Then the Registration Search page is displayed with the ULN field still populated with <ULN>
 Examples: 
 | ULN        | First Name | Last Name  | Day | Month | Year |
-| 9900000052 | FirstName1 | LastName10 | 01  | 01    | 2010 |
+| 9900000054 | FirstName1 | LastName10 | 01  | 01    | 2010 |
 
 @RegressionTest @RegistrationSearch 
 Scenario: Verify Search Page Invalid ULN error
