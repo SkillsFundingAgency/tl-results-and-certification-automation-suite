@@ -10,10 +10,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
     [Binding]
     public class ResultsTransferBulkUploadSteps : ResultsDashboardPage
     {
+        [Given(@"I cleared the data in DB")]
+        public void GivenIClearedTheDataInDB()
+        {
+            SqlQueries.DeleteFromRegistrationTables();
+        }
+
         [Given(@"I uploaded following files")]
         public void GivenIUploadedFollowingFiles(Table table)
         {
-            SqlQueries.DeleteFromRegistrationTables();
             var (Registration, Assessment, Result) = table.CreateInstance<(string Registration, string Assessment, string Result)>();
             RegistrationsPage.ClickRegLink();
             ClickElement(RegistrationsPage.UploadRegistationLink);
@@ -60,7 +65,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             VerifyLearnerResultPage();
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(provider));
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(grade));
-            SqlQueries.DeleteFromRegistrationTables();
         }
     }
 }
