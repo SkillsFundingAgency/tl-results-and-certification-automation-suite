@@ -1,8 +1,5 @@
-﻿using System;
-using TechTalk.SpecFlow;
-using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
