@@ -87,6 +87,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesULNCannotBeFoundPage.VerifyPageText(ULN);
             AssessmentEntriesULNCannotBeFoundPage.VerifyAssessmentEntriesULNNotFoundPage();
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
 
@@ -101,12 +102,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenIAmNavigatedBackToTheSearchForALearnerPage()
         {
             AssessmentEntriesSearchForLearnerPage.VerifyAssessmentEntriesSearchForLearnerPageText();
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [Then(@"the search field on the ULN not found page still shows the (.*) entered")]
         public void ThenTheSearchFieldOnTheULNNotFoundPageStillShowsTheEntered(string ULN)
         {
             AssessmentEntriesSearchForLearnerPage.VerifyULNSearchFieldValue(ULN);
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [Then(@"I press the Back to search button on the ULN not found page")]

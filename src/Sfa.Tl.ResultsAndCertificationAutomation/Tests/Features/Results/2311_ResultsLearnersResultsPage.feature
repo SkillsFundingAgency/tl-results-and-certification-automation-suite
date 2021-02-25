@@ -31,7 +31,7 @@ And the text below the Core will display "Core result cannot be entered until an
 And the text below the Specialism will display "Specialism result cannot be entered until an assessment entry is added."
 When I click the Search again link on the Results Learners Results page
 Then I will be navigated to the Results Search for a Learner page
-
+And I cleared the data in DB
 
 Examples: 
 | ULN         |
@@ -45,7 +45,7 @@ And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (
 And Specialism is displayed as "Specialism: Not specified"
 And the text below the Core will display "Core result cannot be entered until an assessment entry is added."
 And there will no text below the Specialism
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000007  |
@@ -59,7 +59,7 @@ And Specialism is displayed as "Specialism: Agriculture, Land Management and Pro
 And the text below the Core will display the assessment series as "Summer 2021" and "Grade: Not received"
 And "Add result" link is displayed
 And the text below the Specialism will display "Specialism result cannot be entered until an assessment entry is added."
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000008  |
@@ -72,7 +72,7 @@ And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (
 And Specialism is displayed as "Specialism: Not specified"
 And the text below the Core will display the assessment series as "Summer 2021" and "Grade: Not received"
 And there will no text below the Specialism
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000009  |
@@ -89,7 +89,7 @@ Then I should be navigated to Results dashboard page
 Given I navigate back to the Results Learners Results page from the Results dashboard using <ULN> and click the Home breadcrumb
 And I click the Home breadcrumb link
 Then I am taken to the home page
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000010  |

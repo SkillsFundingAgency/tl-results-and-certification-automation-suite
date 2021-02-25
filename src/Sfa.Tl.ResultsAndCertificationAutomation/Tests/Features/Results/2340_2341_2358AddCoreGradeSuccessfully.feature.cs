@@ -207,6 +207,9 @@ testRunner.And("Specialism is displayed as \"Specialism: Agriculture, Land Manag
 testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
                         "Grade: Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 47
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -283,6 +286,9 @@ testRunner.And("Specialism is displayed as \"Specialism: Agriculture, Land Manag
 #line 63
 testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
                         "Grade: Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 64
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -371,6 +377,9 @@ testRunner.And("the text below the Core will display the assessment series as \"
 #line hidden
 #line 82
 testRunner.And("\"Change\" link is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 83
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

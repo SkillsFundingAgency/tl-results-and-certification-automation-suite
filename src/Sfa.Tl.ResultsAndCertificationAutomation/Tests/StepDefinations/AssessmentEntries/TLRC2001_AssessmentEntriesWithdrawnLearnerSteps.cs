@@ -38,6 +38,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenTheSearchForALearnerPageSearchEntryWillNotBeRetained()
         {
             AssessmentEntriesSearchForLearnerPage.VerifyULNSearchFieldIsEmpty();
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [Then(@"I press the Assessment Entries breadcrumb link on the Assessment Entries Withdrawn Learner page")]

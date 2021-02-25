@@ -140,6 +140,9 @@ testRunner.And(string.Format("I search for the {0} which is withdrawn", uLN), ((
 testRunner.Then(string.Format("the Learners Results (for a Withdrawn Learner) page will be displayed for the {0}" +
                             "", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 17
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -205,6 +208,9 @@ testRunner.Then("I will be navigated to the Results Search for a Learner page", 
 #line hidden
 #line 30
 testRunner.And("the ULN Search field will be empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -286,6 +292,9 @@ testRunner.And("I click the Home breadcrumb link", ((string)(null)), ((TechTalk.
 #line hidden
 #line 50
 testRunner.Then("I am taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 51
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

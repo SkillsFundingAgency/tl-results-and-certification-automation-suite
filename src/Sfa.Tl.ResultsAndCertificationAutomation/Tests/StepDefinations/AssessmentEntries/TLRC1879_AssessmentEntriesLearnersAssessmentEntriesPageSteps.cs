@@ -32,6 +32,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyDynamicHeaders(ULN);
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
 
@@ -51,6 +52,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenTheCoreAssessmentEntryIsDisplayedUnderneath(string AssessmentEntry)
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifySummer2021CoreAssessmentEntryDisplayed(AssessmentEntry);
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
 
@@ -58,6 +60,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenTheCoreAssessmentEntryDisplays(string p0)
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyNoCoreAssessmentEntryDisplayed();
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [Then(@"the specialism entry is displayed")]
@@ -116,6 +119,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             RegistrationsSearchPage.VerifySearchResultPage();
             RegistrationsSearchPage.VerifyRegistrationDetailsPageULNSubHeading(ULN);
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [When(@"I press the Assessment Entries breadcrumb link on the Assessment Entries Learner page")]
@@ -147,12 +151,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenTheTextIsDisplayedForTheSpecialism(string p0)
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifySpecialismAssessmentEntryText();
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [Then(@"the Add Remove link displays '(.*)'")]
         public void ThenTheAddRemoveLinkDisplays(string LinkText)
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyAddRemoveLinkText(LinkText);
+            SqlQueries.DeleteFromRegistrationTables();
         }
     }
 }

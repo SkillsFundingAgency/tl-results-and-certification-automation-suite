@@ -30,7 +30,7 @@ When I press the back link in the Results Change Results page
 Then the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
 And Specialism is displayed as "Specialism: Agriculture, Land Management and Production (70000002)"
 And the text below the Core will display the assessment series as "Summer 2021" and "Grade: A*"
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000008  |
@@ -45,7 +45,7 @@ When I press the Change button on the Results Change Results page without changi
 Then the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
 And Specialism is displayed as "Specialism: Agriculture, Land Management and Production (70000002)"
 And the text below the Core will display the assessment series as "Summer 2021" and "Grade: A*"
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000008  |
