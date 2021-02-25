@@ -135,5 +135,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(ReactivateConfirmYes);
             ClickElement(SubmitBtn);
         }
+
+        public static void ClickViewThisRegistrationButton()
+        {
+            ClickElement(ViewRegBtn);
+
+        }
     }
 }

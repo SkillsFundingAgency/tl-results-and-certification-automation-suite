@@ -126,5 +126,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(ChangeLink);
         }
+
+        public static void VerifyGradeText(string Grade)
+        {
+            Assert.AreEqual(Grade, WebDriver.FindElement(GradeLabel).Text);
+            Assert.AreEqual(ExpectedResultLabelText, WebDriver.FindElement(ResultLabel).Text);
+        }
     }
 }

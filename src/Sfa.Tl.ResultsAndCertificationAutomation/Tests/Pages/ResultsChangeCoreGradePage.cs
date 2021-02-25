@@ -70,11 +70,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(BackLink);
         }
 
-        //public static void SelectDResult()
-        //{
-        //    ClickElement(GradeDLabel);
-        //    ClickElement(ChangeButton);
-        //}
+        public static void SelectEResult()
+        {
+            ClickElement(GradeELabel);
+            ClickElement(ChangeButton);
+        }
+
+        public static void SelectNoResult()
+        {
+            ClickElement(NotReceivedLabel);
+            ClickElement(ChangeButton);
+        }
 
 
     }

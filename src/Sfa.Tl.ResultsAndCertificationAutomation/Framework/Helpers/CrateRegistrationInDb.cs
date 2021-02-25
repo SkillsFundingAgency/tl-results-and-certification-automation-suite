@@ -14,9 +14,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreateRegSpecialism(pathwayId);
         }
 
-        public void CreateDbRegWithAssessment()
+        public void CreateDbRegWithAssessment(string uln)
         {
-            var uln = UlnHelper.GenerateUln().ToString();
             var profileId = SqlQueries.CreateRegistrationProfile(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
             SqlQueries.CreateRegSpecialism(pathwayId);
