@@ -123,5 +123,37 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyPathwayResult, ConnectionString);
 
         }
+
+
+        public static string ReturnLastActiveGrade(string uln)
+        {
+            string ReturnLastActiveGrade = "select top 1 Tll.Value from TqRegistrationProfile TQPR, TqRegistrationPathway TQPA, TqPathwayAssessment TQPAS, TqPathwayResult TQR, TlLookup Tll where TQPR.ID = TQPA.TqRegistrationProfileId and TQPA.id = TQPAS.TqRegistrationPathwayId and TQPAS.ID = TQR.TqPathwayAssessmentId and TQR.TlLookupId = Tll.id and TQPR.uniquelearnernumber = " + uln + " and TQPA.EndDate is not Null order by TQR.Id desc";
+            var Grade = SqlDatabaseConncetionHelper.ReadDataFromDataBase(ReturnLastActiveGrade, ConnectionString);
+            return (string)Grade.FirstOrDefault().FirstOrDefault();
+        }
+
+        public static int ReturnLastActiveGradeCount(string uln)
+        {
+            string ReturnLastActiveGradeCount = "select count(Tll.Value) from TlLookup TLL, TqPathwayResult TQR where TQR.TlLookupId = Tll.id and TQR.tqpathwayassessmentid in (select id from TqPathwayAssessment where TqRegistrationPathwayId in  (select top 1 TQPA.ID from TqRegistrationProfile TQPR, TqRegistrationPathway TQPA where TQPR.ID = TQPA.TqRegistrationProfileId and TQPR.uniquelearnernumber = " + uln + "and TQPA.EndDate is not Null order by TQPA.EndDate desc)) and IsOptedin > 0   group by Tll.Value";
+            var Records = SqlDatabaseConncetionHelper.ReadDataFromDataBase(ReturnLastActiveGradeCount, ConnectionString);
+            int result = Convert.ToInt32(Records.Count);
+            return result;
+        }
+
+        public static int VerifyRegistrationDeleted(string uln)
+        {
+            string ReturnRegistrationRecords = "select count(TQPR.Id) from TqRegistrationProfile TQPR, TqRegistrationPathway TQPA where TQPR.ID = TQPA.TqRegistrationProfileId and TQPR.uniquelearnernumber = " + uln;
+            var Records = SqlDatabaseConncetionHelper.ReadDataFromDataBase(ReturnRegistrationRecords, ConnectionString);
+            int result = Convert.ToInt32(Records[0][0]);
+            return result;
+        }
+
+        public static int RetrievePathwayAssessmentID(string uln)
+        {
+            string PathwayAssessmentID = " select pa.Id from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId = rp.Id where UniqueLearnerNumber = " + uln;
+            var PAID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(PathwayAssessmentID, ConnectionString);
+            int result = Convert.ToInt32(PAID[0][0]);
+            return result;
+        }
     }
 }
