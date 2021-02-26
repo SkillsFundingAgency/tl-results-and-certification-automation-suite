@@ -25,6 +25,7 @@ Then I am shown the Learner's Assessment Entries page with Uln details
 | Uln        |
 | 9900000001 |
 And the Core Assessment entry is displayed underneath
+And I cleared the data in DB
 
 @RegressionTest @AssessmentEntries
 Scenario: 2141_Press Submit button without selecting a radio button
@@ -39,6 +40,7 @@ When I click the Remove entry link
 Then I am shown the Are you sure you want to remove the Core Assessment entry page
 When I click Submit on the Remove Core Assessment page without selecting a radio button
 Then I am shown an error message for no radio button selected stating 'Select yes to remove the core entry'
+And I cleared the data in DB
 
 @RegressionTest @AssessmentEntries
 Scenario: 2141_Selecting No radio button will return user to the the Learner’s assessment entries page
@@ -56,5 +58,7 @@ Then I am shown the Learner's Assessment Entries page with Uln details
 | Uln        |
 | 9900000001 |
 And the Core Assessment entry is displayed underneath
+And I cleared the data in DB
+
 
 

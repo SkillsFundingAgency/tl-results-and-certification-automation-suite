@@ -102,7 +102,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenIAmNavigatedBackToTheSearchForALearnerPage()
         {
             AssessmentEntriesSearchForLearnerPage.VerifyAssessmentEntriesSearchForLearnerPageText();
-            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [Then(@"the search field on the ULN not found page still shows the (.*) entered")]

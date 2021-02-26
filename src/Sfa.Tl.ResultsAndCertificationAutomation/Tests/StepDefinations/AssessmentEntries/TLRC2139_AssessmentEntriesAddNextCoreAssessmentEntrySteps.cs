@@ -46,7 +46,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenIAmShownAnErrorMessageStating(string p0)
         {
             AssessmentEntriesLearnersAddNextCoreAssessmentEntryPage.VerifyNoRadioButtonSelectedError();
-            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [When(@"I select the No radio button and press Submit")]
@@ -68,7 +67,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyDynamicHeaders(ULN);
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyNoCoreAssessmentEntryDisplayed();
-            SqlQueries.DeleteFromRegistrationTables();
         }
 
 

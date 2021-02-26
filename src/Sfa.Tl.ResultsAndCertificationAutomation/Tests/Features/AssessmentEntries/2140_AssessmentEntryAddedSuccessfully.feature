@@ -20,6 +20,7 @@ Then I am shown the Assessment Entry Added Successfully page for <ULN>
 When I click the Back to Learner's Assessment Entries button
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
 And the Core Assessment entry 'Summer 2021' is displayed underneath
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |
