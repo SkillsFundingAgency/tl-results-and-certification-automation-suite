@@ -14,7 +14,8 @@ And I click on "Change" link in result page
 And I successfully remove the grade
 And I attempt to delete an active registration without an active result however someone else has just added a result
 When I refresh the browser
-Then I am shown the Page Not Found page 
+Then I am shown the Page Not Found page
+And the registration for this test is deleted
 
 
 @RegressionTest @Results
@@ -26,6 +27,7 @@ And I successfully remove the grade
 And I attempt to delete an active registration without an active result however someone else has just added a result
 When I select continue on the Are you sure page
 Then I will be shown the Problem with service page
+And the registration for this test is deleted
 
 
 

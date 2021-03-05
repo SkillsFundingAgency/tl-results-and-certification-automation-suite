@@ -89,12 +89,14 @@ testRunner.And("I upload registrations and associated assessments", ((string)(nu
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1879_2138_The Learners assessment entries page will display \"Not specified\" when " +
             "a core assessment entry hasn\'t been submitted")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000003", null)]
         public virtual void _1879_2138_TheLearnersAssessmentEntriesPageWillDisplayNotSpecifiedWhenACoreAssessmentEntryHasntBeenSubmitted(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -158,12 +160,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1879_2138_The Learners assessment entries page will display the core assessment e" +
             "ntry when one has been submitted")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000002", null)]
         public virtual void _1879_2138_TheLearnersAssessmentEntriesPageWillDisplayTheCoreAssessmentEntryWhenOneHasBeenSubmitted(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))

@@ -21,7 +21,7 @@ And I upload registrations and associated assessments
 ##| 9900000001  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 1879_2138_The Learners assessment entries page will display "Not specified" when a core assessment entry hasn't been submitted
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
@@ -35,7 +35,7 @@ Examples:
 | 9900000003  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 1879_2138_The Learners assessment entries page will display the core assessment entry when one has been submitted
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>

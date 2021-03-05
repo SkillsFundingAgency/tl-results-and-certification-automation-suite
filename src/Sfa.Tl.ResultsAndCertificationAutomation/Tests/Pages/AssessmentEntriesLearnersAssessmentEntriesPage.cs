@@ -32,9 +32,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ExpectedSpecialismAsessmentEntryText = "Available to add after Autumn 2021 series has passed";
         public static By CoreAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[1]/div/dt");
         public static By SpecialismAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[2]/div/dt");
-        private static By CoreAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[1]//p");
+        public static By CoreAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[1]//p");
         private static By SpecialismAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[2]//p");
-        private static By AddRemoveEntryLink = By.Id("coreassessmententry");
+        public static By AddRemoveEntryLink = By.Id("coreassessmententry");
 
 
 
@@ -71,6 +71,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             string ExpectedNameString = "Name: " + Constants.ManualRegFirstName + " " + Constants.ManualRegLastName;
             Assert.AreEqual(ExpectedNameString, WebDriver.FindElement(SubHeaderName).Text);
             string ExpectedProvider = "Provider: " + RegistrationsManualPage.InputPovider;
+            Assert.AreEqual(ExpectedProvider, WebDriver.FindElement(SubHeaderProvider).Text);
+        }
+
+        public static void VerifyDataCreatedFromDb(string uln)
+        {
+            string ExpectedULNString = "ULN: " + uln;
+            Assert.AreEqual(ExpectedULNString, WebDriver.FindElement(SubHeaderULN).Text);
+            string ExpectedNameString = "Name: " + Constants.DbFirstName + " " + Constants.DbLastName;
+            Assert.AreEqual(ExpectedNameString, WebDriver.FindElement(SubHeaderName).Text);
+            string ExpectedProvider = "Provider: " + Constants.DbProviderName;
             Assert.AreEqual(ExpectedProvider, WebDriver.FindElement(SubHeaderProvider).Text);
         }
 
