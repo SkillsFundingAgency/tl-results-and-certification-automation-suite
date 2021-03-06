@@ -5,7 +5,7 @@
 
 
 
-@RegressionTest @UserGuide
+@Ignore @RegressionTest @UserGuide
 Scenario: Veryify the User Guide page
 	Given I have navigated to the Start Page
 	When I click the User Guide link
