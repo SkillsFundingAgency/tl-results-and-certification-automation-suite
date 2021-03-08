@@ -3,7 +3,7 @@ schedules:
     displayName: Daily midnight build
     branches:
       include:
-        - feature/sprint-31
+        - feature/sprint-31.1
 resources:
   repositories:
     - repository: self
@@ -29,7 +29,7 @@ trigger:
   batch: true
   branches:
     include:
-      - feature/sprint-31
+      - feature/sprint-31.1
 pr: none
 
 variables:
