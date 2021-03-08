@@ -2,6 +2,7 @@
 using System;
 using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registrations
 {
@@ -173,6 +174,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Given(@"I create a manual registration")]
         public void GivenICreateAManualRegistration()
         {
+            SqlQueries.DeleteFromRegistrationTables();
             RegistrationsManualPage.CreateRegistrationWithSpecialism(Constants.ManualRegULN,Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
             RegistrationsManualPage.ClickSubmit();
             RegistrationsManualPage.ClickElement(RegistrationsPage.BacktoRegistrationLink);
@@ -189,6 +191,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Given(@"I create a manual registration for Pearson")]
         public void GivenICreateAManualRegistrationForPearson()
         {
+            SqlQueries.DeleteFromRegistrationTables();
             RegistrationsManualPage.CreateRegistrationWithSpecialismForPearson(Constants.ManualRegULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
             RegistrationsManualPage.ClickSubmit();
             RegistrationsManualPage.ClickElement(RegistrationsPage.BacktoRegistrationLink);

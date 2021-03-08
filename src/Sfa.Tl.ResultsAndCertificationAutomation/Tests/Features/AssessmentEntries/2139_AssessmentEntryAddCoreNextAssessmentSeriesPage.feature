@@ -16,7 +16,7 @@ When I click the Add Entry link
 Then I am shown the Do you want to add core assessment entry page
 When I click the back link on the Do you want to add core assessment entry page
 Then I am navigated back to the Learner's Assessment Entries page for <ULN>
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |
@@ -30,6 +30,7 @@ And the Core Assessment entry displays "not Specified"
 When I click the Add Entry link
 And I click Submit on Add Core Assessment page without selecting a radio button
 Then I am shown an error message stating 'Select yes to add to Summer 2021'
+And I cleared the data in DB
 
 Examples: 
 | ULN         |
@@ -43,6 +44,7 @@ When I click the Add Entry link
 And I select the No radio button and press Submit
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
 And the Core Assessment entry displays "not Specified"
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |

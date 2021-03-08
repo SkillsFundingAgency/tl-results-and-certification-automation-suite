@@ -16,12 +16,14 @@ When I search Assessment entry for the Uln
 | Uln        |
 | 9900000001 |
 Then Remove Entry link should not exists in the assessment details page
+And I cleared the data in DB
 
 @RegressionTest @Results
 Scenario: 2137_ No Remove entry link in assessment if result added manually
 And I have a registration with result
 When I search learner in Assessment entry
 Then Remove Entry link should not exists in the assessment details page
+And I cleared the data in DB
 
 @RegressionTest @Results
 Scenario: 2137_ Display Remove entry link in assessment if result removed from bulk upload 
@@ -35,6 +37,7 @@ When I search Assessment entry for the Uln
 | Uln        |
 | 9900000001 |
 Then Remove Entry link should exists in the assessment details page
+And I cleared the data in DB
 
 @RegressionTest @Results
 Scenario: 2137_ Display Remove entry link in assessment if result removed manually
@@ -42,3 +45,4 @@ And I have a registration with result
 And I removed the result for the uln by selecting not received
 When I search learner in Assessment entry
 Then Remove Entry link should exists in the assessment details page
+And I cleared the data in DB

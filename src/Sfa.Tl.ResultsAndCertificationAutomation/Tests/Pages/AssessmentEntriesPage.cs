@@ -90,7 +90,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             VerifyAssessmentEntriesPage();
             ClickElement(SearchForLearnerLink);
             AssessmentEntriesSearchForLearnerPage.VerifyAssessmentEntriesSearchForLearnerPage();
-            AssessmentEntriesSearchForLearnerPage.EnterULN(uln);
+            WebDriver.FindElement(AssessmentEntriesSearchForLearnerPage.SearchField).SendKeys(uln);
+            ClickElement(AssessmentEntriesSearchForLearnerPage.SearchBtn);
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
         }
     }

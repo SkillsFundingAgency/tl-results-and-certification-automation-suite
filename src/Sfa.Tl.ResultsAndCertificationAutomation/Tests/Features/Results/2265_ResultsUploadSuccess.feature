@@ -21,6 +21,7 @@ And I click on "Submit" button
 Then I should see results upload success page
 And I should see number of records been uploaded message
 And I should go back to results dashboad on clicking Back to Results button
+And I cleared the data in DB
 
 @RegressionTest @ResultsUpload
 Scenario: 2265_Single Result upload success
@@ -37,3 +38,4 @@ And I click on "Submit" button
 Then I should see results upload success page
 And I should see single record has been uploaded message
 And I should go back to results dashboad on clicking Back to Results button
+And I cleared the data in DB

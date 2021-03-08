@@ -193,6 +193,9 @@ testRunner.When("I click the Search again link on the Results Learners Results p
 #line 33
 testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 34
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -259,6 +262,9 @@ testRunner.And("the text below the Core will display \"Core result cannot be ent
 #line hidden
 #line 47
 testRunner.And("there will no text below the Specialism", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 48
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -332,6 +338,9 @@ testRunner.And("\"Add result\" link is displayed", ((string)(null)), ((TechTalk.
 testRunner.And("the text below the Specialism will display \"Specialism result cannot be entered u" +
                         "ntil an assessment entry is added.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 62
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -398,6 +407,9 @@ testRunner.And("the text below the Core will display the assessment series as \"
 #line hidden
 #line 74
 testRunner.And("there will no text below the Specialism", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 75
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -475,6 +487,9 @@ testRunner.And("I click the Home breadcrumb link", ((string)(null)), ((TechTalk.
 #line hidden
 #line 91
 testRunner.Then("I am taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 92
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

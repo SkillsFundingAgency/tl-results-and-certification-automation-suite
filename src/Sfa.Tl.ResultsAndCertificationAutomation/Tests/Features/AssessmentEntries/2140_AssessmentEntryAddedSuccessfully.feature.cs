@@ -159,6 +159,9 @@ testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page
 #line 22
 testRunner.And("the Core Assessment entry \'Summer 2021\' is displayed underneath", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 23
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

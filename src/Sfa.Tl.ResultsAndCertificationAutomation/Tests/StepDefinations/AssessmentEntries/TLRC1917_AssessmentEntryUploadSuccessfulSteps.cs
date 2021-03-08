@@ -11,7 +11,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenIShouldSeeUploadSuccessPage()
         {
             VerifyAssessmentUploadSuccessPage();
-            SqlQueries.DeleteFromAssessmentTables();
             SqlQueries.DeleteFromRegistrationTables();
         }
     }

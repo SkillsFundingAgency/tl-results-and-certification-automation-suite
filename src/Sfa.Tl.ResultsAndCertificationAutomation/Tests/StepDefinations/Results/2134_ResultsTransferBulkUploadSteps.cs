@@ -11,6 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
     public class ResultsTransferBulkUploadSteps : ResultsDashboardPage
     {
         [Given(@"I cleared the data in DB")]
+        [Then(@"I cleared the data in DB")]
         public void GivenIClearedTheDataInDB()
         {
             SqlQueries.DeleteFromRegistrationTables();

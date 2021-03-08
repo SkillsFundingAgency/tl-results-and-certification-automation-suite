@@ -1,4 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
 
@@ -11,6 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenIShouldSeeErrorRelatedToInvalidHeader()
         {
             CsvFileReader.CsvDataFileCompare(AssessmentUploadStage2InvalidHeaderErrors);
+            SqlQueries.DeleteFromRegistrationTables();
         }
     }
 }

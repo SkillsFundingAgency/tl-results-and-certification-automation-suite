@@ -21,3 +21,4 @@ When I search the learner result
 Then I should see newly transferred Provider in learner detail page with original Grade
 | Provider                    | Grade |
 | Automation Test2 (99999902) | A*    |
+And I cleared the data in DB

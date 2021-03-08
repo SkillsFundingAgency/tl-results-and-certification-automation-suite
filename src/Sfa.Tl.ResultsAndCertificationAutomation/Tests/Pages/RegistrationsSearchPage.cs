@@ -166,6 +166,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(RegistrationsSearchPage.SearchBtn);
         }
 
+        public static void SearchForULN(string ULN)
+        {
+            EnterText(RegistrationsSearchPage.SearchBox, ULN);
+            ClickElement(RegistrationsSearchPage.SearchBtn);
+        }
+
         public static void VerifyDOBChangesAreDisplayed(string DD, string MM, string YYYY)
         {
             string ExpectedDOB = DD + "/" + MM + "/" + YYYY;

@@ -156,6 +156,9 @@ testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page
 #line 21
 testRunner.And("the Core Assessment entry displays \"not Specified\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 22
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

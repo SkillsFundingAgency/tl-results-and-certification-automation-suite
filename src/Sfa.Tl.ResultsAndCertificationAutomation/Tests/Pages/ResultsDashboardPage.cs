@@ -129,5 +129,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(LearnerResultWithdrawnPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(LearnerResultWithdrawnUrl));
         }
+
+        public static void ClickSearchForALearnerLink()
+        {
+            ClickElement(SearchLearnerLink);
+        }
     }
 }

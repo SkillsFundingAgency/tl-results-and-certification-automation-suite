@@ -37,7 +37,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Given(@"I change the grade")]
         public void GivenIChangeTheGrade()
         {
-            WebDriver.FindElement(ResultsDashboardPage.selectResultB).Click();
+            ClickElement(ResultsDashboardPage.selectResultB);
         }
         
         [Then(@"I should see result change successfull page")]

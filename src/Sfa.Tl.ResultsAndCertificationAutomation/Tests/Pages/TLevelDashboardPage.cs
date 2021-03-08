@@ -38,6 +38,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string CookeDetailsPageTitle = "Details about cookies on Manage T Level results – Manage T Level results – GOV.UK";
         public const string CookieDetailsPageHeader = "Details about cookies on Manage T Level results";
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");
+        public static By ResultsLink = By.XPath("//a[@href='/results']");
+        public static By AssessmentEntriesLink = By.XPath("//a[@href='/assessment-entries']");
+        public static By RegistrationsLink = By.XPath("//a[@href='/registrations']");
 
         public void ViewUserAccount()
         {
@@ -108,6 +111,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
             Assert.AreEqual(Constants.DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
 
+        }
+
+        public static void ClickResultsLink()
+        {
+            ClickElement(ResultsLink);
+        }
+
+        public static void ClickAssessmentEntriesLink()
+        {
+            ClickElement(AssessmentEntriesLink);
+        }
+
+        public static void ClickRegistrationsLink()
+        {
+            ClickElement(RegistrationsLink);
         }
     }
 }
