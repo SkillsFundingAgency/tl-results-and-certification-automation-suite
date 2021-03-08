@@ -157,6 +157,9 @@ testRunner.When("I search the learner result", ((string)(null)), table32, "When 
 testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
                         "e", ((string)(null)), table33, "Then ");
 #line hidden
+#line 24
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

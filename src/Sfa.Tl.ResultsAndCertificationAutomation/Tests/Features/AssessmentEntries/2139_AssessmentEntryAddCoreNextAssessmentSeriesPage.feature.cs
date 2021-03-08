@@ -152,6 +152,9 @@ testRunner.When("I click the back link on the Do you want to add core assessment
 #line 18
 testRunner.Then(string.Format("I am navigated back to the Learner\'s Assessment Entries page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 19
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -217,6 +220,9 @@ testRunner.And("I click Submit on Add Core Assessment page without selecting a r
 #line 32
 testRunner.Then("I am shown an error message stating \'Select yes to add to Summer 2021\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 33
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -243,7 +249,7 @@ testRunner.Then("I am shown an error message stating \'Select yes to add to Summ
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2139_Selecting No radio button will return user to the the Learner’s assessment e" +
                     "ntries page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 39
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -266,23 +272,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 40
+#line 41
 testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 41
-testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 42
-testRunner.When("I click the Add Entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 43
-testRunner.And("I select the No radio button and press Submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I click the Add Entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 44
-testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I select the No radio button and press Submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 45
+testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 46
 testRunner.And("the Core Assessment entry displays \"not Specified\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 47
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

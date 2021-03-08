@@ -89,12 +89,14 @@ testRunner.And("I upload registrations and associated assessments", ((string)(nu
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1879_2138_The Learners assessment entries page will display \"Not specified\" when " +
             "a core assessment entry hasn\'t been submitted")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000003", null)]
         public virtual void _1879_2138_TheLearnersAssessmentEntriesPageWillDisplayNotSpecifiedWhenACoreAssessmentEntryHasntBeenSubmitted(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -148,6 +150,9 @@ testRunner.And("the text \'Available to add after Autumn 2021 series has passed\
 #line 31
 testRunner.And("the Add Remove link displays \'Add entry\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 32
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -155,12 +160,14 @@ testRunner.And("the Add Remove link displays \'Add entry\'", ((string)(null)), (
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1879_2138_The Learners assessment entries page will display the core assessment e" +
             "ntry when one has been submitted")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000002", null)]
         public virtual void _1879_2138_TheLearnersAssessmentEntriesPageWillDisplayTheCoreAssessmentEntryWhenOneHasBeenSubmitted(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -172,7 +179,7 @@ testRunner.And("the Add Remove link displays \'Add entry\'", ((string)(null)), (
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_2138_The Learners assessment entries page will display the core assessment e" +
                     "ntry when one has been submitted", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 38
+#line 39
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -195,24 +202,27 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 39
+#line 40
 testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 40
+#line 41
 testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 41
+#line 42
 testRunner.And("the Core and Specialism is displayed in grey text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 43
 testRunner.And("the Core Assessment entry is displayed underneath", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 44
 testRunner.And("the text \'Available to add after Autumn 2021 series has passed\' is displayed for " +
                         "the Specialism", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 44
+#line 45
 testRunner.And("the Add Remove link displays \'Remove entry\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 46
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -238,7 +248,7 @@ testRunner.And("the Add Remove link displays \'Remove entry\'", ((string)(null))
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_Click the \'View and amend this learner’s registration details\' link to navig" +
                     "ate to the registration details page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 62
+#line 64
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -261,17 +271,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 63
+#line 65
 testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 64
+#line 66
 testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 65
+#line 67
 testRunner.When("I click the \'View and amend this learner’s registration details\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 66
+#line 68
 testRunner.Then(string.Format("I am navigated to the Registration Details page for the learner\'s {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 69
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -297,7 +310,7 @@ testRunner.Then(string.Format("I am navigated to the Registration Details page f
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_Click the Search again details\' link to navigate to the \'Search for a learne" +
                     "r\' page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 72
+#line 75
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -320,20 +333,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 73
+#line 76
 testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 74
+#line 77
 testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 75
+#line 78
 testRunner.When("I click the Search again link on the learners assessment entries page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 76
+#line 79
 testRunner.Then("I am navigated back to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 77
+#line 80
 testRunner.And("the Search for a learner page search entry will not be retained", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 81
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -357,7 +373,7 @@ testRunner.And("the Search for a learner page search entry will not be retained"
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1879_Validate breadcrumb links on the Learner\'s Assessment Entries page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 84
+#line 88
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -380,40 +396,43 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 85
-testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 86
-testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 87
-testRunner.When("I press the Assessment Entries breadcrumb link on the Assessment Entries Learner " +
-                        "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 88
-testRunner.Then("I am navigated to the Assessment Entries page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 89
 testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 90
-testRunner.And("I press the Home breadcrumb link on the Assessment Entries Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 91
-testRunner.Then("I am taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I press the Assessment Entries breadcrumb link on the Assessment Entries Learner " +
+                        "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 92
-testRunner.Given("I navigate to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Then("I am navigated to the Assessment Entries page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 93
-testRunner.And(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 94
+testRunner.And("I press the Home breadcrumb link on the Assessment Entries Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 95
+testRunner.Then("I am taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 96
+testRunner.Given("I navigate to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 97
+testRunner.And(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 98
 testRunner.And("I press the Search for a learner breadcrumb link on the Assessment Entries Learne" +
                         "r page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 95
+#line 99
 testRunner.Then("I am navigated back to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 100
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -439,7 +458,7 @@ testRunner.Then("I am navigated back to the Search for a learner page", ((string
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2138_Replace \'Assessment entry\' for Core and Specialism with \'First assessment en" +
                     "try\'", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 102
+#line 107
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -462,21 +481,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 103
+#line 108
 testRunner.Given(string.Format("I navigate to the Search for a learner page and enter the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 104
+#line 109
 testRunner.Then(string.Format("I am shown the Learner\'s Assessment Entries page with details for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 105
+#line 110
 testRunner.And("the Core and Specialism is displayed in grey text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 106
+#line 111
 testRunner.And("the core and specialism heading displays \'First assessment entry\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 107
+#line 112
 testRunner.And("the text \'Available to add after Autumn 2021 series has passed\' is displayed for " +
                         "the Specialism", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 113
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

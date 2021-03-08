@@ -1,6 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
@@ -11,6 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenThereWillNotBeAViewAndAmendThisLearnerSAssessmentEntriesLinkOnTheWithdrawnRegistrationDealsPage()
         {
             RegistrationsSearchPage.VerifyViewLearnersAssessmentEntriesLinkNotPresent();
+            SqlQueries.DeleteFromRegistrationTables();
         }
 
         [Given(@"I click the View and amend this learner's assessment entries link")]

@@ -27,6 +27,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By SearchAnotherRegBtn { get; } = By.XPath("//a[contains(text(),'Search for another registration')]");
         public static By BackToRegBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
+        //Delete Registration with Result
+        private static string CannotDeleteRegWithResultPageTitle { get; } = "Registration with result cannot be deleted page – Manage T Level results – GOV.UK";
+        private static string CannotDeleteRegWithResultPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "registration-with-result-cannot-be-deleted");
+        private static By Backlink { get; } = By.Id("backLink");
         public static void VerifyDeleteRegCheckPage()
         {
             Assert.IsTrue(WebDriver.Url.Contains(DeleteRegCheckPageUrl));
@@ -52,6 +56,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(AmendActivePageTitle, WebDriver.Title);
             Assert.AreEqual(AmendActivePageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(AmendActivePageUrl));
+        }
+        public static void VerifyCannotDeleteRegistrationWithResultPage()
+        {
+            Assert.AreEqual(CannotDeleteRegWithResultPageTitle, WebDriver.Title);
+            Assert.AreEqual(CannotDeleteRegWithResultPageUrl, WebDriver.Url);
+            Assert.AreEqual("You cannot delete this registration", WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void ClickBackLink()
+        {
+            ClickElement(Backlink);
         }
     }
 }

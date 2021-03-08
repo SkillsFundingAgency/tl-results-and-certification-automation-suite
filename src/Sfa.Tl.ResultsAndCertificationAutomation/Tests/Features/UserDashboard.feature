@@ -33,7 +33,7 @@ Scenario: Check Tech spec download page
 Given I have naviageted to tech spec page
 Then I should see Tech spec page with download file link
 
-@RegressionTest
+@Ignore @RegressionTest
 Scenario: Check User Guide page
 Given I have navigated to Tlevel Start page
 When I click on User Guide link

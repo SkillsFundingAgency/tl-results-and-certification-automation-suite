@@ -19,6 +19,7 @@ Then I am shown the Assessment Entry Removed Successfully pagefor <ULN>
 When I click the Back to Learner's Assessment Entries button on the Assessment Entry Removed Successfully page
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
 And the Core Assessment entry displays "not Specified"
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |

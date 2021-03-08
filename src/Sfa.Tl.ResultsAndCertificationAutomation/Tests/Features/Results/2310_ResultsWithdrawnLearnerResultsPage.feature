@@ -14,7 +14,7 @@ Scenario: 2310-Searching for a withdrawn ULN displays Learners Results Page (Wit
 When I withdraw my application and navigate to the Results Search for a Learner Page
 And I search for the <ULN> which is withdrawn
 Then the Learners Results (for a Withdrawn Learner) page will be displayed for the <ULN>
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |
@@ -28,7 +28,7 @@ Then the Learners Results (for a Withdrawn Learner) page will be displayed for t
 When I click the Search again link on the Learners Results page
 Then I will be navigated to the Results Search for a Learner page
 And the ULN Search field will be empty
-
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |
@@ -48,7 +48,7 @@ Then I should be navigated to Results dashboard page
 When I navigate back to the Learners Results Page (Withdrawn) page for <ULN> from the Results dashboard page
 And I click the Home breadcrumb link
 Then I am taken to the home page
-
+And I cleared the data in DB
 
 Examples: 
 | ULN         |

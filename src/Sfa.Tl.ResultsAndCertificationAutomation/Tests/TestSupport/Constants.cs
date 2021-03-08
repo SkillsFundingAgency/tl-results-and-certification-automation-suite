@@ -132,6 +132,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string WithdrawnRegOptionsPageHeading = "What would you like to do with this withdrawn registration?";
         public const string WithdrawnRegOptionsPageErrorTitle = "Error: What would you like to do with this withdrawn registration page – Manage T Level results – GOV.UK";
         //Registration data in DB
+        public const string DbFirstName = "Db FirstName";
+        public const string DbLastName = "Db LastName";
+        public const string DbProviderName = "Automation Test1 (99999901)";
+        public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
         public const string TqProviderId = "9479";
         public const string TlSpecialismId = "179";
         public const string TqProviderId2 = "9479";

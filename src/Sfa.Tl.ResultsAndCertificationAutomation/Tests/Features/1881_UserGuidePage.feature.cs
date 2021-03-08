@@ -76,11 +76,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Veryify the User Guide page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("UserGuide")]
         public virtual void VeryifyTheUserGuidePage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "UserGuide"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

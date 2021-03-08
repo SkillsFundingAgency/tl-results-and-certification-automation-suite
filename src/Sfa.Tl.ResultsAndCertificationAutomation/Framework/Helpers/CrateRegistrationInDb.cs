@@ -6,17 +6,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
     {
         //public string uln = UlnHelper.GenerateUln().ToString();
         private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
-        public void CreateDbRegistation()
+        public void CreateDbRegistation(string uln)
         {
-            var uln = UlnHelper.GenerateUln().ToString();
             var profileId = SqlQueries.CreateRegistrationProfile(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
             SqlQueries.CreateRegSpecialism(pathwayId);
         }
 
-        public void CreateDbRegWithAssessment()
+        public void CreateDbRegWithAssessment(string uln)
         {
-            var uln = UlnHelper.GenerateUln().ToString();
             var profileId = SqlQueries.CreateRegistrationProfile(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
             SqlQueries.CreateRegSpecialism(pathwayId);

@@ -21,7 +21,7 @@ And I upload registrations and associated assessments
 ##| 9900000001  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 1879_2138_The Learners assessment entries page will display "Not specified" when a core assessment entry hasn't been submitted
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
@@ -29,12 +29,13 @@ And the Core and Specialism is displayed in grey text
 And the Core Assessment entry displays "not Specified"
 And the text 'Available to add after Autumn 2021 series has passed' is displayed for the Specialism
 And the Add Remove link displays 'Add entry'
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000003  |
 
 
-@RegressionTest @AssessmentEntries
+@Ignore @RegressionTest @AssessmentEntries
 Scenario: 1879_2138_The Learners assessment entries page will display the core assessment entry when one has been submitted
 Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
@@ -42,6 +43,7 @@ And the Core and Specialism is displayed in grey text
 And the Core Assessment entry is displayed underneath
 And the text 'Available to add after Autumn 2021 series has passed' is displayed for the Specialism
 And the Add Remove link displays 'Remove entry'
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000002  |
@@ -64,6 +66,7 @@ Given I navigate to the Search for a learner page and enter the <ULN>
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
 When I click the 'View and amend this learner’s registration details' link
 Then I am navigated to the Registration Details page for the learner's <ULN>
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000004  |
@@ -75,6 +78,7 @@ Then I am shown the Learner's Assessment Entries page with details for <ULN>
 When I click the Search again link on the learners assessment entries page
 Then I am navigated back to the Search for a learner page 
 And the Search for a learner page search entry will not be retained
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000004  |
@@ -93,6 +97,7 @@ Given I navigate to the Search for a learner page
 And I enter the following <ULN>
 And I press the Search for a learner breadcrumb link on the Assessment Entries Learner page
 Then I am navigated back to the Search for a learner page
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000004  |
@@ -105,6 +110,7 @@ Then I am shown the Learner's Assessment Entries page with details for <ULN>
 And the Core and Specialism is displayed in grey text
 And the core and specialism heading displays 'First assessment entry'
 And the text 'Available to add after Autumn 2021 series has passed' is displayed for the Specialism
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000004  |

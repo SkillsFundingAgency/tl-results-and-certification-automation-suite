@@ -141,6 +141,9 @@ testRunner.When("I search Assessment entry for the Uln", ((string)(null)), table
 #line 18
 testRunner.Then("Remove Entry link should not exists in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 19
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -156,7 +159,7 @@ testRunner.Then("Remove Entry link should not exists in the assessment details p
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2137_ No Remove entry link in assessment if result added manually", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -179,14 +182,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 22
+#line 23
 testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 24
 testRunner.When("I search learner in Assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 25
 testRunner.Then("Remove Entry link should not exists in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 26
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -203,7 +209,7 @@ testRunner.Then("Remove Entry link should not exists in the assessment details p
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2137_ Display Remove entry link in assessment if result removed from bulk upload", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 27
+#line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -234,25 +240,28 @@ this.FeatureBackground();
                             "RegistrationsValidDataSingle.csv",
                             "AssessmentUploadSingleData.csv",
                             "ResultsUploadSingleData.csv"});
-#line 28
+#line 30
 testRunner.And("I uploaded following files", ((string)(null)), table37, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
                 table38.AddRow(new string[] {
                             "9900000001"});
-#line 31
+#line 33
 testRunner.And("I removed the result by selecting Not received", ((string)(null)), table38, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
                 table39.AddRow(new string[] {
                             "9900000001"});
-#line 34
+#line 36
 testRunner.When("I search Assessment entry for the Uln", ((string)(null)), table39, "When ");
 #line hidden
-#line 37
+#line 39
 testRunner.Then("Remove Entry link should exists in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 40
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -269,7 +278,7 @@ testRunner.Then("Remove Entry link should exists in the assessment details page"
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2137_ Display Remove entry link in assessment if result removed manually", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 40
+#line 43
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -292,17 +301,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 41
+#line 44
 testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 45
 testRunner.And("I removed the result for the uln by selecting not received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 46
 testRunner.When("I search learner in Assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 44
+#line 47
 testRunner.Then("Remove Entry link should exists in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 48
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

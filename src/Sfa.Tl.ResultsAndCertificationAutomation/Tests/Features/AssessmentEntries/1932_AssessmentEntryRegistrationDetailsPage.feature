@@ -22,6 +22,7 @@ Then I should see results in the page
 And the ULN status will be Active
 Given I click the View and amend this learner's assessment entries link
 Then I am shown the Learner's Assessment Entries page with details for <ULN>
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |

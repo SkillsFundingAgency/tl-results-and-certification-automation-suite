@@ -15,6 +15,7 @@ And I navigate to the Search for a learner page
 Scenario: 2001_Search for a withdrawn learner and validate the title, URL and page headings
 And I enter the following <ULN>
 Then I am shown the Assessment Entries Withdrawn Learner page
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |
@@ -26,6 +27,7 @@ And I enter the following <ULN>
 Then I am shown the Assessment Entries Withdrawn Learner page
 When I click the View this learner’s registration details’ link
 Then I am taken to the Registrations Details page of the given withdrawn learner
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |
@@ -38,6 +40,7 @@ Then I am shown the Assessment Entries Withdrawn Learner page
 When I click the Search again link
 Then I am navigated back to the Search for a learner page
 And the Search for a learner page search entry will not be retained
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |
@@ -57,6 +60,7 @@ Given I navigate to the Search for a learner page
 And I enter the following <ULN>
 And I press the Search for a learner breadcrumb link on the Assessment Entries Withdrawn Learner page
 Then I am navigated back to the Search for a learner page
+And I cleared the data in DB
 Examples: 
 | ULN         |
 | 9900000001  |

@@ -1,4 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using System.Threading;
 using TechTalk.SpecFlow;
@@ -20,6 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenIShouldSeeAllStageValidationErrorsRelatedToAssessments(int p0)
         {
             CsvFileReader.CsvDataFileCompare(AssessmentUploadStage2Errors);
+            SqlQueries.DeleteFromRegistrationTables();
         }
     }
 }

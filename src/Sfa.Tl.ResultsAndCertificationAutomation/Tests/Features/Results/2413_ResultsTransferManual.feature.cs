@@ -146,6 +146,9 @@ testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Ta
 testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
                         "e", ((string)(null)), table49, "Then ");
 #line hidden
+#line 21
+testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
