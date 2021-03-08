@@ -20,9 +20,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2141_Create \'Are you sure you want to remove this core assessment entry from Summ" +
-        "er 2021? page")]
-    public partial class _2141_CreateAreYouSureYouWantToRemoveThisCoreAssessmentEntryFromSummer2021PageFeature
+    [NUnit.Framework.DescriptionAttribute("2141_AssessmentEntryRemoveCoreAssessmentPage")]
+    public partial class _2141_AssessmentEntryRemoveCoreAssessmentPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -36,8 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "2141_Create \'Are you sure you want to remove this core assessment entry from Summ" +
-                    "er 2021? page", "\tAs a Registrations Editor\r\n\tI need to be able to remove an assessment entry\r\n\tSo" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "2141_AssessmentEntryRemoveCoreAssessmentPage", "\tAs a Registrations Editor\r\n\tI need to be able to remove an assessment entry\r\n\tSo" +
                     " that assessment entry data can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -78,30 +76,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         
         public virtual void FeatureBackground()
         {
-#line 7
+#line 6
 #line hidden
-#line 8
+#line 7
 testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
-testRunner.And("I upload registrations and associated assessments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.And("I have a registration with an assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2141_Validate the headings on the Do you want to add core assessment entry page a" +
-            "nd press the back link")]
+        [NUnit.Framework.DescriptionAttribute("2141_Do you want to add core assessment entry page validations")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
-        public virtual void _2141_ValidateTheHeadingsOnTheDoYouWantToAddCoreAssessmentEntryPageAndPressTheBackLink()
+        public virtual void _2141_DoYouWantToAddCoreAssessmentEntryPageValidations()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141_Validate the headings on the Do you want to add core assessment entry page a" +
-                    "nd press the back link", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141_Do you want to add core assessment entry page validations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -121,199 +117,79 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table7.AddRow(new string[] {
-                            "9900000001"});
-#line 14
-testRunner.And("I navigate to the Search for a learner page and enter uln", ((string)(null)), table7, "And ");
+#line 12
+testRunner.And("I search for the learner assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table8.AddRow(new string[] {
-                            "9900000001"});
-#line 17
-testRunner.Then("I am shown the Learner\'s Assessment Entries page with Uln details", ((string)(null)), table8, "Then ");
+#line 13
+testRunner.When("I click on Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 14
+testRunner.Then("I am shown the \'Are you sure you want to remove the Core Assessment entry\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 15
+testRunner.And("clicking on back link should take me back to Assessment deails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("2141_Submit button validations")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
+        public virtual void _2141_SubmitButtonValidations()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "AssessmentEntries"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141_Submit button validations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 19
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
 #line hidden
 #line 20
-testRunner.And("the Core Assessment entry is displayed underneath", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I search for the learner assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
-testRunner.When("I click the Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I click on Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
-testRunner.Then("I am shown the Are you sure you want to remove the Core Assessment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
-testRunner.When("I click the back link on the Are you sure you want to Core Assessment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("I am shown an error message \'Select yes to remove the core entry\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table9.AddRow(new string[] {
-                            "9900000001"});
 #line 24
-testRunner.Then("I am shown the Learner\'s Assessment Entries page with Uln details", ((string)(null)), table9, "Then ");
+testRunner.And("selecting no option takes me back to Assessment deails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
-testRunner.And("the Core Assessment entry is displayed underneath", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 28
-testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2141_Press Submit button without selecting a radio button")]
-        [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
-        public virtual void _2141_PressSubmitButtonWithoutSelectingARadioButton()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RegressionTest",
-                    "AssessmentEntries"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141_Press Submit button without selecting a radio button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 31
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 7
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table10.AddRow(new string[] {
-                            "9900000001"});
-#line 32
-testRunner.And("I navigate to the Search for a learner page and enter uln", ((string)(null)), table10, "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table11.AddRow(new string[] {
-                            "9900000001"});
-#line 35
-testRunner.Then("I am shown the Learner\'s Assessment Entries page with Uln details", ((string)(null)), table11, "Then ");
-#line hidden
-#line 38
-testRunner.And("the Core Assessment entry is displayed underneath", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 39
-testRunner.When("I click the Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 40
-testRunner.Then("I am shown the Are you sure you want to remove the Core Assessment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 41
-testRunner.When("I click Submit on the Remove Core Assessment page without selecting a radio butto" +
-                        "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 42
-testRunner.Then("I am shown an error message for no radio button selected stating \'Select yes to r" +
-                        "emove the core entry\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 43
-testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2141_Selecting No radio button will return user to the the Learner’s assessment e" +
-            "ntries page")]
-        [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
-        public virtual void _2141_SelectingNoRadioButtonWillReturnUserToTheTheLearnerSAssessmentEntriesPage()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RegressionTest",
-                    "AssessmentEntries"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141_Selecting No radio button will return user to the the Learner’s assessment e" +
-                    "ntries page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 46
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 7
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table12.AddRow(new string[] {
-                            "9900000001"});
-#line 47
-testRunner.And("I navigate to the Search for a learner page and enter uln", ((string)(null)), table12, "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table13.AddRow(new string[] {
-                            "9900000001"});
-#line 50
-testRunner.Then("I am shown the Learner\'s Assessment Entries page with Uln details", ((string)(null)), table13, "Then ");
-#line hidden
-#line 53
-testRunner.And("the Core Assessment entry is displayed underneath", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 54
-testRunner.When("I click the Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 55
-testRunner.Then("I am shown the Are you sure you want to remove the Core Assessment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 56
-testRunner.When("I select the No radio button on the remove assessment entry page and press Submit" +
-                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table14.AddRow(new string[] {
-                            "9900000001"});
-#line 57
-testRunner.Then("I am shown the Learner\'s Assessment Entries page with Uln details", ((string)(null)), table14, "Then ");
-#line hidden
-#line 60
-testRunner.And("the Core Assessment entry is displayed underneath", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 61
-testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

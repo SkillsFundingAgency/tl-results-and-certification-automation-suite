@@ -239,9 +239,6 @@
     <Compile Update="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully.feature.cs">
       <DependentUpon>2140_AssessmentEntryAddedSuccessfully.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\Features\AssessmentEntries\2141_AssessmentEntryRemoveCoreAssessmentPage.feature.cs">
-      <DependentUpon>2141_AssessmentEntryRemoveCoreAssessmentPage.feature</DependentUpon>
-    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\1932_AssessmentEntryRegistrationDetailsPage.feature.cs">
       <DependentUpon>1932_AssessmentEntryRegistrationDetailsPage.feature</DependentUpon>
     </Compile>
@@ -262,10 +259,6 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2141_AssessmentEntryRemoveCoreAssessmentPage.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
