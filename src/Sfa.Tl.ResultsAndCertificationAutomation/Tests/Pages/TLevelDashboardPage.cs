@@ -41,6 +41,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By ResultsLink = By.XPath("//a[@href='/results']");
         public static By AssessmentEntriesLink = By.XPath("//a[@href='/assessment-entries']");
         public static By RegistrationsLink = By.XPath("//a[@href='/registrations']");
+        public static By ManageLearnerRecordsLink = By.XPath("//a[@href='/manage-learner-records']");
 
         public void ViewUserAccount()
         {
@@ -126,6 +127,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickRegistrationsLink()
         {
             ClickElement(RegistrationsLink);
+        }
+        public static void ClickManageLearnerRecordsLink()
+        {
+            ClickElement(ManageLearnerRecordsLink);
         }
     }
 }
