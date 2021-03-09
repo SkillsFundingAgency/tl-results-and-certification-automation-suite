@@ -1,22 +1,16 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
     [Binding]
-    public class AssessmentEntryRemoveCoreAssessmentPageSteps : CrateRegistrationInDb
+    public class AssessmentEntryRemoveCoreAssessmentPageSteps : AssessmentEntriesLearnersAssessmentEntriesPage
     {
-        private readonly ScenarioContext _scenarioContext;
-        public AssessmentEntryRemoveCoreAssessmentPageSteps(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
         [Given(@"I click on Remove entry link")]
         [When(@"I click on Remove entry link")]
         public void WhenIClickOnRemoveEntryLink()
         {
-            ClickElement(AssessmentEntriesLearnersAssessmentEntriesPage.AddRemoveEntryLink);
+            ClickElement(AddRemoveEntryLink);
         }
 
         [Then(@"I am shown the '(.*)' page")]
@@ -30,7 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenClickingOnBackLinkShouldTakeMeBackToAssessmentDeailsPage()
         {
             AssessmentEntriesLearnersRemoveCoreAssessmentEntryPage.PressBackLink();
-            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
+            VerifyLearnersAssessmentEntriesPage();
         }
         [Then(@"I am shown an error message '(.*)'")]
         public void ThenIAmShownAnErrorMessage(string p0)
@@ -41,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         public void ThenSelectingNoOptionTakesMeBackToAssessmentDeailsPage()
         {
             AssessmentEntriesLearnersRemoveCoreAssessmentEntryPage.PressNoRadioButton();
-            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
+            VerifyLearnersAssessmentEntriesPage();
         }
 
 
