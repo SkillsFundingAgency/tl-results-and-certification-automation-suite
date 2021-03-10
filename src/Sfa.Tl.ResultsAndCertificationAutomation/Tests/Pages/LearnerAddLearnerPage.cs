@@ -18,7 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static string PageHeaderText = "Enter the Unique Learner Number (ULN)";
         public static By BackLink { get; } = By.Id("backLink");
-        private static By ULNTextField { get; } = By.Id("enteruln");
+        public static By ULNTextField { get; } = By.Id("enteruln");
         private static By UlnHint = By.XPath("uln-number-hint");
         public static string ULNHintText = "ULN must be 10 digits long";
         public static string ExpectedPageText = "You can only add records for learners who have been registered on a T Level programme by an awarding organisation.";
@@ -44,6 +44,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(PageHeaderText, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.FindElement(PageText).Text.Contains(ExpectedPageText));
             Assert.IsTrue(WebDriver.FindElement(ContinueButton).Text.Contains(ExpectedButtonText));
+        }
+        public static void VerifyAddANewLearnerRecordErrorPage()
+        {
+            Assert.AreEqual(PageUrl, WebDriver.Url);
+            Assert.AreEqual(ErrorPageTitle, WebDriver.Title);
         }
 
         public static void VerifyErrorMessage(string ErrorMessage)

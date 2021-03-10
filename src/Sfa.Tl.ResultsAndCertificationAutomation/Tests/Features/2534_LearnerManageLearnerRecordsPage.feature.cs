@@ -74,6 +74,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 6
+#line hidden
+#line 7
+testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2534_Navigate to the Manage Learner Record page and press the Home link")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
@@ -85,7 +94,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
                     "Learner"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2534_Navigate to the Manage Learner Record page and press the Home link", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 8
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -105,24 +114,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
-testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 10
-testRunner.And("I navigate to the Manage Learner Records page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
+this.FeatureBackground();
 #line hidden
 #line 11
+testRunner.And("I navigate to the Manage Learner Records page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
 testRunner.Then("the page headings, page text URL and title will match the expected values for the" +
                         " Manage Learner Records page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 12
+#line 13
 testRunner.And("there will be two box options \'Add a new learner record\' and \'Update a learner re" +
                         "cord\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 14
 testRunner.Given("I press the home breadcrumb on the Manage Learner Record page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
+#line 15
 testRunner.Then("I am taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

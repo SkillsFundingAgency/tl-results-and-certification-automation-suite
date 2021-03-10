@@ -36,7 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyManageLearnerRecordsPage()
         {
-            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(PageUrl, WebDriver.Url);
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.AreEqual(PageHeaderText, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(PageSubHeaderText, WebDriver.FindElement(PageSubHeader).Text);
@@ -49,6 +49,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(ExpectedAddLearnerRecordLinkText, WebDriver.FindElement(AddLearnerRecordsLink).Text);
             Assert.AreEqual(ExpectedUpdateALearnerRecordLinkText, WebDriver.FindElement(UpdateALearnerRecordLink).Text);
+        }
+        public static void VerifyLinksOnManageLearnerRecordsPage(string link1, string link2)
+        {
+            FindElementContainingText(link1);
+            FindElementContainingText(link2);
         }
 
     }
