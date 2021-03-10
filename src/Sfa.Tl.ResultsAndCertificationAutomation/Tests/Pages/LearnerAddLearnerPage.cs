@@ -6,7 +6,7 @@ using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
-    public class LearnerAddLearnerPage : ElementHelper
+    public class CommonUlnDbSteps : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "add-learner-record-unique-learner-number");
         public static string PageTitle = "Add a new learner record - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
@@ -18,6 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static string PageHeaderText = "Enter the Unique Learner Number (ULN)";
         public static By BackLink { get; } = By.Id("backLink");
+        public static By BackToSearchBtn { get; } = By.Id("backButton");
         public static By ULNTextField { get; } = By.Id("enteruln");
         private static By UlnHint = By.XPath("uln-number-hint");
         public static string ULNHintText = "ULN must be 10 digits long";
@@ -25,7 +26,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By PageText = By.XPath("//*[contains(text(),'You can only add records for learners')]");
         public static By MainErrorMessage = By.XPath("//*[@id='main-content']//ul/li/a");
         public static By SubErrorMessage = By.XPath("//*[@id='main-content']//span[2]");
+        // Uln not found page
+        private static string UlnNotRegisteredUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-learner-record-ULN-not-registered");
+        private static string UlnNotRegisteredTitle { get; } = "Add a new learner record - ULN not registered page – Manage T Level results – GOV.UK";
 
+        public static void VerifyUlnNotRegisteredPage(string uln)
+        {
+            string ExpectedPageHeading = "ULN ("+uln+") has not been registered by the awarding organisation";
+            Assert.AreEqual(UlnNotRegisteredUrl, WebDriver.Url);
+            Assert.AreEqual(UlnNotRegisteredTitle, WebDriver.Title);
+            Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeader).Text);
+        }
         public static void ClickContinue()
         {
             WebDriver.FindElement((ContinueButton)).Click();

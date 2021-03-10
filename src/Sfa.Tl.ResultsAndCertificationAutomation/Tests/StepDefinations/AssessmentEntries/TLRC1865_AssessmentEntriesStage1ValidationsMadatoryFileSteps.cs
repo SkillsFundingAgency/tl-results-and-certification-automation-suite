@@ -13,7 +13,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             ClickElement(UploadAssessmentEntryLink);
             VerifyAssessmentEntriesUploadPage();
         }
-        
+
+        [Given(@"I click on ""(.*)"" button")]
         [When(@"I click on ""(.*)"" button")]
         public void WhenIClickOnButton(string label)
         {

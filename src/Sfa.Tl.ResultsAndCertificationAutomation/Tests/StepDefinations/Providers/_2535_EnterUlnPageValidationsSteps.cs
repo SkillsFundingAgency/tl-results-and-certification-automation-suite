@@ -7,7 +7,7 @@ using TechTalk.SpecFlow.Assist;
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
 {
     [Binding]
-    public class _2535_EnterUlnPageValidationsSteps : LearnerAddLearnerPage
+    public class _2535_EnterUlnPageValidationsSteps : Pages.CommonUlnDbSteps
     {
         [Then(@"I should see the following error message for the Uln")]
         public void ThenIShouldSeeTheFollowingErrorMessageForTheUln(Table table)
