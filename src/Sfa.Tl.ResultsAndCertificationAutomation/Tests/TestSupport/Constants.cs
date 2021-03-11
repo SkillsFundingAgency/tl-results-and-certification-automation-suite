@@ -139,5 +139,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string TqProviderId = "9479";
         public const string TlSpecialismId = "179";
         public const string TqProviderId2 = "9479";
+        public const string TqProviderIdForLrs = "10229";
     }
 }

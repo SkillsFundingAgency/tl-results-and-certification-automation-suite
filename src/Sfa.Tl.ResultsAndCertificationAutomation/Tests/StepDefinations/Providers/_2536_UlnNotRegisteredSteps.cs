@@ -21,6 +21,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenIShouldBeBackToAddLearnerPage()
         {
             VerifyAddANewLearnerRecordPage();
+            var uln = _scenarioContext["uln"] as string;
+            VerifySeachUlnField(uln);
         }
 
         [Then(@"I should be back to Add learner page when i click Back to search button")]
@@ -29,6 +31,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
             ClickContinue();
             ClickButton(BackToSearchBtn);
             VerifyAddANewLearnerRecordPage();
+            var uln = _scenarioContext["uln"] as string;
+            VerifySeachUlnField(uln);
         }
 
     }

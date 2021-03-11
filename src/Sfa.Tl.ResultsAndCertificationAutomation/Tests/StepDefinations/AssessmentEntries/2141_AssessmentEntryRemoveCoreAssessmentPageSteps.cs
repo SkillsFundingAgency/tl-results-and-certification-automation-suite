@@ -6,12 +6,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
     [Binding]
     public class AssessmentEntryRemoveCoreAssessmentPageSteps : AssessmentEntriesLearnersAssessmentEntriesPage
     {
+        private readonly ScenarioContext _scenarioContext;
+        public AssessmentEntryRemoveCoreAssessmentPageSteps(ScenarioContext scenarioContext)
+        {
+            _scenarioContext = scenarioContext;
+        }
         [Given(@"I click on Remove entry link")]
         [When(@"I click on Remove entry link")]
         public void WhenIClickOnRemoveEntryLink()
         {
             ClickElement(AddRemoveEntryLink);
         }
+
+        [Given(@"I search for the learner assessment")]
+        public void GivenISearchForTheLearnerAssessment()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            AssessmentEntriesPage.SearchAssessmentEntry(uln);
+        }
+
 
         [Then(@"I am shown the '(.*)' page")]
         public void ThenIAmShownThePage(string p0)

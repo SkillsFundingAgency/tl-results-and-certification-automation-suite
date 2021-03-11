@@ -22,7 +22,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             CreateDbRegistation(uln);
         }
 
-        [Given(@"I search for the learner assessment")]
         [When(@"I search for the learner assessment")]
         public void WhenISearchForTheLearnerAssessment()
         {
