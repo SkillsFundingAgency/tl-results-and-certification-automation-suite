@@ -133,6 +133,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',510,3,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
         }
+        public static void CreateIndustryPlacement (int pathwayId, int status)
+        {
+            string CreateIpData = "Insert into IndustryPlacement values ('" + pathwayId + "','" + status + "',GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateIpData, ConnectionString);
+        }
         public static int CreateRegSpecialismForLrs(int pathwayId)
         {
             var tlSpecialismId = Constants.TlSpecialismId;

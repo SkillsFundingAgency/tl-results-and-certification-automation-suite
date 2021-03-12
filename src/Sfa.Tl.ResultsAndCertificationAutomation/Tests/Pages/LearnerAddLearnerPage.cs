@@ -29,6 +29,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         // Uln not found page
         private static string UlnNotRegisteredUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-learner-record-ULN-not-registered");
         private static string UlnNotRegisteredTitle { get; } = "Add a new learner record - ULN not registered page – Manage T Level results – GOV.UK";
+        private static string UlnAlreadyAddedUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-learner-record-ULN-already-added");
+        private static string UlnAlreadyAddedTitle { get; } = "Add a new learner record - ULN already added page – Manage T Level results – GOV.UK";
 
         public static void VerifyUlnNotRegisteredPage(string uln)
         {
@@ -36,6 +38,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(UlnNotRegisteredUrl, WebDriver.Url);
             Assert.AreEqual(UlnNotRegisteredTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void VerifyUlnAlreadyAddedPage(string uln)
+        {
+            string ExpectedPageHeading = "ULN (" + uln + ") has already been added";
+            Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(UlnAlreadyAddedUrl, WebDriver.Url);
+            Assert.AreEqual(UlnAlreadyAddedTitle, WebDriver.Title);
         }
         public static void ClickContinue()
         {

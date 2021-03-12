@@ -7,6 +7,7 @@ Background:
 Given I have logged in as a "SiteAdmin" user
 And I click on "Manage learner records" link
 And I click on "Add a new learner record" link
+And I clear Uln data
 
 @RegressionTest @Provider
 Scenario: 2535 Verify mandatory field validation

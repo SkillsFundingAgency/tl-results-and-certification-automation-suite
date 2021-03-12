@@ -16,7 +16,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             long result = 0;
             while (sameUln)
             {
-                result = 9900000000 + random.Next(10000000, 99999999);
+                result = 9800000000 + random.Next(10000000, 98999999);
                 sameUln = existingUlns.Contains(result);
             }
             //Console.WriteLine("Random number is: " + result);
