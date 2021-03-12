@@ -1,4 +1,5 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
@@ -60,8 +61,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         }
         public void DeleteRegistrationFromTables(string uln)
         {
-            string getProfileId = "Select top 1 Id from TqRegistrationProfile where UniqueLearnerNumber = '" + uln + "'";
-            var profileId = SqlDatabaseConncetionHelper.ExecuteSqlCommand(getProfileId, ConnectionString);
+            var profileId = GetProfileID(uln);
             string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId = rp.Id where UniqueLearnerNumber = '" + uln + "'";
             string DeleteRegSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber = '" + uln + "'";
             string DeleteRegPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber= '" + uln + "')";
@@ -76,6 +76,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegSpecialism, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegPathway, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegProfile, ConnectionString);
+        }
+
+        public static int GetProfileID(string uln)
+        {
+            string getProfileId = "Select top 1 Id from TqRegistrationProfile where UniqueLearnerNumber = '" + uln + "'";
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getProfileId, ConnectionString);
+            // return (int)profileId.FirstOrDefault().FirstOrDefault();
+            int result = Convert.ToInt32(profileId[0][0]);
+            return result;
         }
 
     }
