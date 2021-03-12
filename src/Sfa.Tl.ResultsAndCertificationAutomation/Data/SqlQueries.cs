@@ -128,6 +128,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
             return (int)pathwayId.FirstOrDefault().FirstOrDefault();
         }
+        public static void CreateQualificationAcheivedForLrs(int profileId)
+        {
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',510,3,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+        }
         public static int CreateRegSpecialismForLrs(int pathwayId)
         {
             var tlSpecialismId = Constants.TlSpecialismId;
