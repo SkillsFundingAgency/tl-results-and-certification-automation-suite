@@ -194,6 +194,9 @@ testRunner.When("I click on \"Back\" link", ((string)(null)), ((TechTalk.SpecFlo
 #line 26
 testRunner.Then("I should be back to Add learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 27
+testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

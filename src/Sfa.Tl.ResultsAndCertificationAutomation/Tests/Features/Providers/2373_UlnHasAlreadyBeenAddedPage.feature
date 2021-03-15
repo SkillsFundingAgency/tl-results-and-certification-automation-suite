@@ -24,3 +24,4 @@ And I enter the Uln
 And I click on "Continue" button
 When I click on "Back" link
 Then I should be back to Add learner page
+And I have deleted LRS records from the database

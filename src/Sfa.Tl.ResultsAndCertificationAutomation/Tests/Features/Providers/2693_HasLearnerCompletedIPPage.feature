@@ -1,4 +1,4 @@
-﻿Feature: SpecFlowFeature1
+﻿Feature: 2693 Learner completed IP Page
 	In order to avoid silly mistakes
 	As a math idiot
 	I want to be told the sum of two numbers
@@ -10,8 +10,8 @@ And I click on "Manage learner records" link
 And I click on "Add a new learner record" link
 
 @RegressionTest @Provider
-Scenario:  TEST Manage Learner Records Page
+Scenario:  2693 Learner completed IP Page
 When I enter the ULN 
 And I click on "Continue" button
 Then I expect to see the learner completed Industry Placement page
-And the registration for this test is deleted
+And I have deleted LRS records from the database
