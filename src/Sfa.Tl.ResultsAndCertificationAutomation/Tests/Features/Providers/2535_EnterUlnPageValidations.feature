@@ -4,7 +4,7 @@
 	So that learner details can be kept up to date
 
 Background: 
-Given I have logged in as a "SiteAdmin" user
+Given I have logged in as a "ProviderBarnsleyAll" user
 And I click on "Manage learner records" link
 And I click on "Add a new learner record" link
 And I clear Uln data

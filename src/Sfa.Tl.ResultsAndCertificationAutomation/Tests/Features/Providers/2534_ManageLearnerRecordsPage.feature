@@ -4,7 +4,7 @@
 	So that learner details can be kept up to date
 
 Background: 
-Given I have logged in as a "SiteAdmin" user
+Given I have logged in as a "ProviderBarnsleyPA" user
 
 @RegressionTest @Provider
 Scenario: 2534 Manage Learner Records Page

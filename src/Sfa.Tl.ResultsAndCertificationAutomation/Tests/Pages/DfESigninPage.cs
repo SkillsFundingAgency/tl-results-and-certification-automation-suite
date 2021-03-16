@@ -18,6 +18,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string AONoRoleUser = WebDriverFactory.Config["AONoRole"];
         private static readonly string AONoServiceUser = WebDriverFactory.Config["AONoService"];
         public static readonly string AOAppPassword = WebDriverFactory.Config["AOPassword"];
+        public static readonly string ProBarnsleyPA = WebDriverFactory.Config["ProBarnsleyPA"];
+        public static readonly string ProBarnsleyLRE = WebDriverFactory.Config["ProBarnsleyLRE"];
+        public static readonly string ProBarnsleyAll = WebDriverFactory.Config["ProBarnsleyAll"];
+        public static readonly string ProCardinalPA = WebDriverFactory.Config["ProCardinalPA"];
+        public static readonly string ProCardinalLRE = WebDriverFactory.Config["ProCardinalLRE"];
+        public static readonly string ProCardinalAll = WebDriverFactory.Config["ProCardinalAll"];
+        public static readonly string ProDudleyPA = WebDriverFactory.Config["ProDudleyPA"];
+        public static readonly string ProDudleyLRE = WebDriverFactory.Config["ProDudleyLRE"];
+        public static readonly string ProDudleyAll = WebDriverFactory.Config["ProDudleyAll"];
+        public static readonly string ProUserPassword = WebDriverFactory.Config["ProUserPassword"];
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "home");
         public static readonly By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
         public const string SigninError = "Information missing or incorrect";
@@ -94,6 +104,42 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void SigninAsNoRoleNoServiceUser()
         {
             TLevelSignIn(AONoRoleUser, AOAppPassword);
+        }
+        public static void SigninAsProviderBarnsleyPAUser()
+        {
+            TLevelSignIn(ProBarnsleyPA, ProUserPassword);
+        }
+        public static void SigninAsProviderBarnsleyLREUser()
+        {
+            TLevelSignIn(ProBarnsleyLRE, ProUserPassword);
+        }
+        public static void SigninAsProviderBarnsleyAllUser()
+        {
+            TLevelSignIn(ProBarnsleyAll, ProUserPassword);
+        }
+        public static void SigninAsProviderCardinalPAUser()
+        {
+            TLevelSignIn(ProCardinalPA, ProUserPassword);
+        }
+        public static void SigninAsProviderCardinalLREUser()
+        {
+            TLevelSignIn(ProCardinalLRE, ProUserPassword);
+        }
+        public static void SigninAsProviderCardinalAllUser()
+        {
+            TLevelSignIn(ProCardinalAll, ProUserPassword);
+        }
+        public static void SigninAsProviderDudleyPAUser()
+        {
+            TLevelSignIn(ProDudleyPA, ProUserPassword);
+        }
+        public static void SigninAsProviderDudleyLREUser()
+        {
+            TLevelSignIn(ProDudleyLRE, ProUserPassword);
+        }
+        public static void SigninAsProviderDudleyAllUser()
+        {
+            TLevelSignIn(ProDudleyAll, ProUserPassword);
         }
         public static void SigninAsNoServiceUser()
         {

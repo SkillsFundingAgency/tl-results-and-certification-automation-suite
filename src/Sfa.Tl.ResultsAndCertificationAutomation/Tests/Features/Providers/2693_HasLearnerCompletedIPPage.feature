@@ -4,7 +4,7 @@
 	I want to be told the sum of two numbers
 
 Background: 
-Given I have logged in as a "SiteAdmin" user
+Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration with LRS qualifications
 And I click on "Manage learner records" link
 And I click on "Add a new learner record" link

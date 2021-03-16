@@ -4,7 +4,7 @@
 	So that I do not duplicate any data
 
 Background: 
-Given I have logged in as a "SiteAdmin" user
+Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a registration in Db with Industry Placement
 And I click on "Manage learner records" link
 And I click on "Add a new learner record" link
