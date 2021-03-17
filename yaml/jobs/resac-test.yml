@@ -32,11 +32,15 @@ jobs:
       - task: VSTest@2
         displayName: 'VsTest - Test Execution'
         inputs:
+          testSelector: 'testAssemblies'
           testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
           searchFolder: '${{parameters.searchFolder}}'
           testFiltercriteria: '${{parameters.testFiltercriteria}}'
           runInParallel: true
           rerunFailedTests: true
+          uiTests: true
+          codeCoverageEnabled: true
+
         continueOnError: true
       
       - task: PowerShell@2
