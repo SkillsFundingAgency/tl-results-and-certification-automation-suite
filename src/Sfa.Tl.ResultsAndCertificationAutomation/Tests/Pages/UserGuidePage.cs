@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using System.Collections.Generic;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
