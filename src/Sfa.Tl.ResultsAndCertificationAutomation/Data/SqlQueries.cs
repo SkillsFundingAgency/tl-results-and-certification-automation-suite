@@ -111,6 +111,42 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string CreatePathwayResult = "Insert into TqPathwayResult values ('" + pathwayAssessmentId + "',2,GETDATE(),NULL,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreatePathwayResult, ConnectionString);
         }
+        public static int CreateRegistrationProfileForLrs(string uln)
+        {
+            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,0,0,GETDATE(),'System', GETDATE(),'System')";
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegistrationProfile, ConnectionString);
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+        public static int CreateRegistrationPathwayForLrs(int profileId)
+        {
+            var tqProviderId = Constants.TqProviderIdForLrs;
+            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegPathway, ConnectionString);
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
+        public static void CreateQualificationAcheivedForLrs(int profileId)
+        {
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',510,3,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+        }
+        public static void CreateIndustryPlacement (int pathwayId, int status)
+        {
+            string CreateIpData = "Insert into IndustryPlacement values ('" + pathwayId + "','" + status + "',GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateIpData, ConnectionString);
+        }
+        public static int CreateRegSpecialismForLrs(int pathwayId)
+        {
+            var tlSpecialismId = Constants.TlSpecialismId;
+            string CreateRegSpecialism = "Insert into TqRegistrationSpecialism values('" + pathwayId + "','" + tlSpecialismId + "',GETDATE(),NULL,1,0,GETDATE(),'System',Null,Null )";
+            string GetSpecialismId = "select top 1 id from TqRegistrationSpecialism where TqRegistrationPathwayId  = '" + pathwayId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegSpecialism, ConnectionString);
+            var specialismId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetSpecialismId, ConnectionString);
+            return (int)specialismId.FirstOrDefault().FirstOrDefault();
+        }
         public static void UpdateRegWithdrawn(string uln)
         {
             string ModifyRegPathway = "Update TqRegistrationPathway set status=4, EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqRegistrationPathway rp join TqRegistrationProfile pr on rp.TqRegistrationProfileId = pr.Id where UniqueLearnerNumber = '" + uln + "'";

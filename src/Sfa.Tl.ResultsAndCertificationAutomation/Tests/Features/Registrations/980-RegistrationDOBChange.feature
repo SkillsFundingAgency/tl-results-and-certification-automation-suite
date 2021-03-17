@@ -20,6 +20,7 @@ Then I will be directed to the Registration Details page
 When I click the Change link next to DOB
 And then press Change after making no amendments to the DOB
 Then I will be directed to the Registration Details page
+And I cleared the data in DB
 ##Checks back link, No changes made to DOB directs to reg details page, Change DOB page validation (heading, URL and page title)
 
 
@@ -47,6 +48,7 @@ When I enter an invalid date and press Change
 Then I am shown an error message stating "Date of birth must be a real date"
 When I enter a DOB in the future and press Change
 Then I am shown an error message stating "Date of birth must be in the past"
+And I cleared the data in DB
 ##checks all error messages on the page and checks page title includes "Error"
 
 @RegressionTest @ChangeRegistration
@@ -59,6 +61,7 @@ When I capture the Change DOB URL
 And I cancel the registration after navigating to the registration details page from the Change DOB page
 And I attempt to access the Change DOB page using the captured URL
 Then I am shown the Page Not Found page
+And I cleared the data in DB
 ##checks the Page Not Found page is displayed if accessing this page when the ULN is withdrawn
 
 @RegressionTest @ChangeRegistration
@@ -71,6 +74,7 @@ When I change the date of birth to <Day> <Month> <Year> and press Change
 Then I am shown the Registration Change Success Page
 When I click the Back to Registration button
 Then I can see the amended date of birth <Day> <Month> <Year> on the Registration Details page 
+And I cleared the data in DB
 
 Examples: 
 | Day  | Month | Year |

@@ -134,10 +134,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         //Registration data in DB
         public const string DbFirstName = "Db FirstName";
         public const string DbLastName = "Db LastName";
+        public const string DbDOB = "01/01/2001";
         public const string DbProviderName = "Automation Test1 (99999901)";
         public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
         public const string TqProviderId = "9479";
         public const string TlSpecialismId = "179";
         public const string TqProviderId2 = "9479";
+        public const string TqProviderIdForLrs = "10229";
+        public const string DbProviderNameForLrs = "Barnsley College (10000536)";
     }
 }

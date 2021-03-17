@@ -1,64 +1,25 @@
-﻿Feature: 2141_Create 'Are you sure you want to remove this core assessment entry from Summer 2021? page
+﻿Feature: 2141_AssessmentEntryRemoveCoreAssessmentPage
 	As a Registrations Editor
 	I need to be able to remove an assessment entry
 	So that assessment entry data can be kept up to date
 
-	
 Background: 
 Given I have logged in as a "RegistrationEditor" user
-And I upload registrations and associated assessments
-
-
-@RegressionTest @AssessmentEntries
-Scenario: 2141_Validate the headings on the Do you want to add core assessment entry page and press the back link
-And I navigate to the Search for a learner page and enter uln
-| Uln        |
-| 9900000001 |
-Then I am shown the Learner's Assessment Entries page with Uln details
-| Uln        |
-| 9900000001 |
-And the Core Assessment entry is displayed underneath
-When I click the Remove entry link
-Then I am shown the Are you sure you want to remove the Core Assessment entry page
-When I click the back link on the Are you sure you want to Core Assessment entry page
-Then I am shown the Learner's Assessment Entries page with Uln details
-| Uln        |
-| 9900000001 |
-And the Core Assessment entry is displayed underneath
-And I cleared the data in DB
+And I have a registration with an assessment entry
 
 @RegressionTest @AssessmentEntries
-Scenario: 2141_Press Submit button without selecting a radio button
-And I navigate to the Search for a learner page and enter uln
-| Uln        |
-| 9900000001 |
-Then I am shown the Learner's Assessment Entries page with Uln details
-| Uln        |
-| 9900000001 |
-And the Core Assessment entry is displayed underneath
-When I click the Remove entry link
-Then I am shown the Are you sure you want to remove the Core Assessment entry page
-When I click Submit on the Remove Core Assessment page without selecting a radio button
-Then I am shown an error message for no radio button selected stating 'Select yes to remove the core entry'
-And I cleared the data in DB
+Scenario: 2141_Do you want to add core assessment entry page validations
+And I search for the learner assessment
+When I click on Remove entry link
+Then I am shown the 'Are you sure you want to remove the Core Assessment entry' page
+And clicking on back link should take me back to Assessment deails page
+And the registration for this test is deleted
 
 @RegressionTest @AssessmentEntries
-Scenario: 2141_Selecting No radio button will return user to the the Learner’s assessment entries page
-And I navigate to the Search for a learner page and enter uln
-| Uln        |
-| 9900000001 |
-Then I am shown the Learner's Assessment Entries page with Uln details
-| Uln        |
-| 9900000001 |
-And the Core Assessment entry is displayed underneath
-When I click the Remove entry link
-Then I am shown the Are you sure you want to remove the Core Assessment entry page
-When I select the No radio button on the remove assessment entry page and press Submit
-Then I am shown the Learner's Assessment Entries page with Uln details
-| Uln        |
-| 9900000001 |
-And the Core Assessment entry is displayed underneath
-And I cleared the data in DB
-
-
-
+Scenario: 2141_Submit button validations
+And I search for the learner assessment
+And I click on Remove entry link
+When I click on "Submit" button
+Then I am shown an error message 'Select yes to remove the core entry'
+And selecting no option takes me back to Assessment deails page
+And the registration for this test is deleted

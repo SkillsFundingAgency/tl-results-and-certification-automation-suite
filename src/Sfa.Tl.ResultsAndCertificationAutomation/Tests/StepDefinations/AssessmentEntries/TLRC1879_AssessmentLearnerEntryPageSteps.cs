@@ -21,7 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             _scenarioContext["uln"] = uln;
             CreateDbRegistation(uln);
         }
-        
+
         [When(@"I search for the learner assessment")]
         public void WhenISearchForTheLearnerAssessment()
         {

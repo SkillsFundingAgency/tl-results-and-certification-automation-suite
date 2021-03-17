@@ -123,19 +123,19 @@ this.FeatureBackground();
 #line 12
 testRunner.When("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table21.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "Select a file to upload"});
 #line 13
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table21, "Then ");
+testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table18, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table22.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Select a file to upload"});
 #line 16
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table22, "And ");
+testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table19, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -181,19 +181,19 @@ testRunner.When("I upload \"RegistrationsUploadInvalidFile.xlsx\" file", ((strin
 #line 23
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table23.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "The selected file must be a CSV"});
 #line 24
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table23, "Then ");
+testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table20, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table24.AddRow(new string[] {
+                table21.AddRow(new string[] {
                             "The selected file must be a CSV"});
 #line 27
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table24, "And ");
+testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table21, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -239,19 +239,19 @@ testRunner.When("I upload \"RegistrationsStage1MaxFileSize.csv\" file", ((string
 #line 34
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table25.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "File size too large – must be no more than 5MB"});
 #line 35
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table25, "Then ");
+testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table22, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table26.AddRow(new string[] {
+                table23.AddRow(new string[] {
                             "File size too large – must be no more than 5MB"});
 #line 38
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table26, "And ");
+testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table23, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -297,19 +297,19 @@ testRunner.When("I upload \"RegistrationsUploadMaxRows.csv\" file", ((string)(nu
 #line 45
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table27.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "File must contain between one and 10,000 registrations"});
 #line 46
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table27, "Then ");
+testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table24, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table28.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "File must contain between one and 10,000 registrations"});
 #line 49
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table28, "And ");
+testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table25, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -355,19 +355,19 @@ testRunner.When("I upload \"Test.png\" file", ((string)(null)), ((TechTalk.SpecF
 #line 56
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table29.AddRow(new string[] {
+                table26.AddRow(new string[] {
                             "The selected file must be a CSV"});
 #line 57
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table29, "Then ");
+testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table26, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table30.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "The selected file must be a CSV"});
 #line 60
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table30, "And ");
+testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table27, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

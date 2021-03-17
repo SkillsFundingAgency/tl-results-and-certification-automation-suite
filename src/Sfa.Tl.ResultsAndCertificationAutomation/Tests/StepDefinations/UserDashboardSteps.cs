@@ -35,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                     case "ResultsEditor":
                         DfESignInPage.SigninAsResultsEditor();
                         break;
-                case "PearsonSiteAdmin":
+                    case "PearsonSiteAdmin":
                         DfESignInPage.SigninAsPearsonSiteAdmin();
                         break;
                     case "NoRoleNoService":
@@ -43,6 +43,33 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                         break;
                     case "NoServiceTole":
                         DfESignInPage.SigninAsNoServiceUser();
+                        break;
+                    case "ProviderBarnsleyPA":
+                        DfESignInPage.SigninAsProviderBarnsleyPAUser();
+                        break;
+                    case "ProviderBarnsleyLRE":
+                        DfESignInPage.SigninAsProviderBarnsleyLREUser();
+                        break;
+                    case "ProviderBarnsleyAll":
+                        DfESignInPage.SigninAsProviderBarnsleyAllUser();
+                        break;
+                    case "ProviderCardinalPA":
+                        DfESignInPage.SigninAsProviderCardinalPAUser();
+                        break;
+                    case "ProviderCardinalLRE":
+                        DfESignInPage.SigninAsProviderCardinalLREUser();
+                        break;
+                    case "ProviderCardinalAll":
+                        DfESignInPage.SigninAsProviderCardinalAllUser();
+                        break;
+                    case "ProviderDudleyPA":
+                        DfESignInPage.SigninAsProviderDudleyPAUser();
+                        break;
+                    case "ProviderDudleyLRE":
+                        DfESignInPage.SigninAsProviderDudleyLREUser();
+                        break;
+                    case "ProviderDudleyAll":
+                        DfESignInPage.SigninAsProviderDudleyAllUser();
                         break;
                 }
         }

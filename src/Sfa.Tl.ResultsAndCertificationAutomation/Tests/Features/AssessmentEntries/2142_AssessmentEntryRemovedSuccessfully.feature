@@ -6,20 +6,13 @@
 	
 Background: 
 Given I have logged in as a "RegistrationEditor" user
-And I upload registrations and associated assessments
+And I have a registration with an assessment entry
 
 @RegressionTest @AssessmentEntries
 Scenario: 2142_Remove an assessment entry for the learner and validate the success page
-Given I navigate to the Search for a learner page and enter the <ULN>
-Then I am shown the Learner's Assessment Entries page with details for <ULN>
-And the Core Assessment entry is displayed underneath
-When I click the Remove entry link
-And I select the Yes radio button on the remove assessment entry page and press Submit
-Then I am shown the Assessment Entry Removed Successfully pagefor <ULN>
-When I click the Back to Learner's Assessment Entries button on the Assessment Entry Removed Successfully page
-Then I am shown the Learner's Assessment Entries page with details for <ULN>
-And the Core Assessment entry displays "not Specified"
-And I cleared the data in DB
-Examples: 
-| ULN         |
-| 9900000001  |
+And I search for the learner assessment
+And I click on Remove entry link
+And I select Yes radio button and press submit
+Then I am shown assessment entry removed successfully page
+And the core assessment entry displays as "Not specified" and link should be "Add entry" when i click on back to learner assessment entries button
+And the registration for this test is deleted
