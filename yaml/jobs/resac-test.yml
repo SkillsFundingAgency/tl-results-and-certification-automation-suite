@@ -29,25 +29,25 @@ jobs:
           SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
           TargetFileNames: '*.json'
       
-      # - task: VSTest@2
-      #   displayName: 'VsTest - Test Execution'
-      #   inputs:
-      #     testSelector: 'testAssemblies'
-      #     testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
-      #     searchFolder: '${{parameters.searchFolder}}'
-      #     testFiltercriteria: '${{parameters.testFiltercriteria}}'
-      #     runInParallel: true
-      #     rerunFailedTests: true
-      #     uiTests: true
-      #     codeCoverageEnabled: true
-      #   continueOnError: true
-      
-      - task: DotNetCoreCLI@2
+      - task: VSTest@2
+        displayName: 'VsTest - Test Execution'
         inputs:
-          command: 'test'
-          projects: '${{parameters.searchFolder}}\${{parameters.testAssemblyVer2}}'
-          testRunTitle: 'Run Tests dotnet core'
-          publishTestResults: true
+          testSelector: 'testAssemblies'
+          testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
+          searchFolder: '${{parameters.searchFolder}}'
+          testFiltercriteria: '${{parameters.testFiltercriteria}}'
+          runInParallel: true
+          rerunFailedTests: true
+          uiTests: true
+          codeCoverageEnabled: true
+        continueOnError: true
+      
+      # - task: DotNetCoreCLI@2
+      #   inputs:
+      #     command: 'test'
+      #     projects: '${{parameters.searchFolder}}\${{parameters.testAssemblyVer2}}'
+      #     testRunTitle: 'Run Tests dotnet core'
+      #     publishTestResults: true
       
       - task: PowerShell@2
         displayName: 'Check .trx File Exists'
