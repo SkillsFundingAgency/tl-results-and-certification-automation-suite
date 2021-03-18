@@ -11,5 +11,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.SmokeTe
         {
             AccessLevelAdmin();
         }
+        [Given(@"I have passed provider dashboard url in the browser")]
+        public void GivenIHavePassedProviderDashboardUrlInTheBrowser()
+        {
+            NavigateProviderDashboard();
+        }
+        [Given(@"I have passed AO dashboard url in the browser")]
+        public void GivenIHavePassedAODashboardUrlInTheBrowser()
+        {
+            NavigateAoDashboard();
+        }
     }
 }

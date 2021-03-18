@@ -1,4 +1,5 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System;
@@ -73,7 +74,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                         break;
                 }
         }
-        
+        [When(@"I enter any AO user account to login")]
+        public void WhenIEnterAnyAOUserAccountToLogin()
+        {
+            string AOAdminUser = WebDriverFactory.Config["AOAdminUser"];
+            string AOAppPassword = WebDriverFactory.Config["AOPassword"];
+            PageHelper.WaitForPageElementBy(10, DfESignInPage.UserIdTxtBox);
+            WebDriver.FindElement(DfESignInPage.UserIdTxtBox).SendKeys(AOAdminUser);
+            WebDriver.FindElement(DfESignInPage.PasswordTxtBox).SendKeys(AOAppPassword);
+            PageHelper.WaitForPageElementBy(10, DfESignInPage.SignInButton);
+            WebDriver.FindElement(DfESignInPage.SignInButton).Click();
+        }
+
+        [When(@"I enter any provider user account to login")]
+        public void WhenIEnterAnyProviderUserAccountToLogin()
+        {
+            string ProUser = WebDriverFactory.Config["ProBarnsleyAll"];
+            string ProPassword = WebDriverFactory.Config["ProUserPassword"];
+            PageHelper.WaitForPageElementBy(10, DfESignInPage.UserIdTxtBox);
+            WebDriver.FindElement(DfESignInPage.UserIdTxtBox).SendKeys(ProUser);
+            WebDriver.FindElement(DfESignInPage.PasswordTxtBox).SendKeys(ProPassword);
+            PageHelper.WaitForPageElementBy(10, DfESignInPage.SignInButton);
+            WebDriver.FindElement(DfESignInPage.SignInButton).Click();
+        }
+
         [Then(@"i should see Account, TLevels and Centre links")]
         public void ThenIShouldSeeAccountTLevelsAndCentreLinks()
         {
