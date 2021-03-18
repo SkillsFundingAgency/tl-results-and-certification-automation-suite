@@ -36,10 +36,9 @@ jobs:
           testAssemblyVer2: '${{parameters.testAssemblyVer2}}'
           searchFolder: '${{parameters.searchFolder}}'
           testFiltercriteria: '${{parameters.testFiltercriteria}}'
-          runInParallel: true
+          runInParallel: false
           rerunFailedTests: true
           uiTests: true
-          codeCoverageEnabled: true
         continueOnError: true
       
       # - task: DotNetCoreCLI@2
