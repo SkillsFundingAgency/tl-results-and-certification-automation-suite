@@ -1,17 +1,18 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using System;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
 {
     [Binding]
-    public class SpecFlowFeature1Steps : CrateRegistrationInDb
+    public class _2693HasLearnerCompletedIPPage : CrateRegistrationInDb
     {
 
         private readonly ScenarioContext _scenarioContext;
-        public SpecFlowFeature1Steps(ScenarioContext scenarioContext)
+        public _2693HasLearnerCompletedIPPage(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
         }
@@ -37,6 +38,37 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenIExpectToSeeTheLearnerCompletedIndustryPlacementPage()
         {
             Assert.IsTrue(WebDriver.Url.Contains("has-learner-completed-industry-placement"));
+            var uln = _scenarioContext["uln"] as string;
+            LearnerHasTheLearnerCompletedIPPage.VerifyLearnerHasTheLearnerCompletedIPPage(uln);
+        }
+        [Then(@"the radio buttons are not populated on entry to the Has Learner Completed Industry Placement page")]
+        public void ThenTheRadioButtonsAreNotPopulatedOnEntryToTheHasLearnerCompletedIndustryPlacementPage()
+        {
+            LearnerHasTheLearnerCompletedIPPage.VerifyRadioButtonsNotSelected();
+        }
+
+        [Then(@"I am shown an error message on the Has Learner Completed Industry Placement page stating ""(.*)""")]
+        public void ThenIAmShownAnErrorMessageOnTheHasLearnerCompletedIndustryPlacementPageStating(string ErrorMessage)
+        {
+            LearnerHasTheLearnerCompletedIPPage.VerifyErrorMessage(ErrorMessage);
+        }
+
+        [Then(@"the Enter ULN Page is displayed")]
+        public void ThenTheEnterULNPageIsDisplayed()
+        {
+            Pages.CommonUlnDbSteps.VerifyAddANewLearnerRecordPage();
+        }
+
+        [When(@"I click on the ""(.*)"" link on the Has Learner Completed Industry Placement page")]
+        public void WhenIClickOnTheLinkOnTheHasLearnerCompletedIndustryPlacementPage(string p0)
+        {
+            LearnerHasTheLearnerCompletedIPPage.ClickBackLink();
+        }
+
+        [Then(@"the radio buttons are no populated on entry to the Has Learner Completed Industry Placement page")]
+        public void ThenTheRadioButtonsAreNoPopulatedOnEntryToTheHasLearnerCompletedIndustryPlacementPage()
+        {
+            LearnerHasTheLearnerCompletedIPPage.VerifyRadioButtonsNotSelected();
         }
     }
 }

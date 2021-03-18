@@ -111,5 +111,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             return result;
         }
 
+        public void CreateDbRegistationForLrsMathsAEnglishNA(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForLrsMathsAndEnglishNotAchieved(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+            SqlQueries.CreateQualificationAcheivedForLrsMathsAEnglishNA(profileId);
+        }
+
+        public void CreateDbRegistationForLrsMathsNAEnglishA(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForLrsMathsAndEnglishNotAchieved(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+            SqlQueries.CreateQualificationAcheivedForLrsMathsNAEnglishA(profileId);
+        }
+
     }
 }
