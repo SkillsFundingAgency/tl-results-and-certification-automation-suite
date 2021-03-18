@@ -134,7 +134,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
 
             string CreateQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',69,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
-            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
         }
         public static void CreateIndustryPlacement (int pathwayId, int status)
         {

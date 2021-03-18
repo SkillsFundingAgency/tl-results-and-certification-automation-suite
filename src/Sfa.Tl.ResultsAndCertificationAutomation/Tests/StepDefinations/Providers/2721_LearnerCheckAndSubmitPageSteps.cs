@@ -70,6 +70,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
         public void ThenIAmShownTheCheckAndSubmitPageForTheAddANewLearnerJourney()
         {
             var uln = _scenarioContext["uln"] as string;
+            LearnerCheckAndSubmitPage.VerifyProviderCheckAndSubmitPage();
             LearnerCheckAndSubmitPage.VerifyProviderCheckAndSubmitContent(uln);
             LearnerCheckAndSubmitPage.VerifyProviderCheckAndSubmitLinks();
 
