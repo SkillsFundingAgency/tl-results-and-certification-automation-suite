@@ -126,6 +126,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreateRegSpecialismForLrs(pathwayId);
             SqlQueries.CreateQualificationAcheivedForLrsMathsNAEnglishA(profileId);
         }
+        public void CreateDbRegistationForNonLRS(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForNonLRS(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+
+        }
 
     }
 }
