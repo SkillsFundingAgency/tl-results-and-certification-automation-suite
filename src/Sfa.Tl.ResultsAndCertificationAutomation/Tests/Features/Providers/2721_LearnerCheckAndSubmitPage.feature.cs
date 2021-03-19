@@ -128,7 +128,7 @@ testRunner.And("the English and maths minimum standard status shows \"Not achiev
                         "ning Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
-testRunner.And("the Industry placement status shows \"Completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the Industry placement status shows \"Placement completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
 testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -192,7 +192,8 @@ testRunner.And("the English and maths minimum standard status shows \"Not achiev
                         "ning Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
-testRunner.And("the Industry placement status shows \"Completed with special consideration\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the Industry placement status shows \"Placement completed with special considerati" +
+                        "on\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
 testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -255,7 +256,7 @@ testRunner.And("the English and maths minimum standard status shows \"Achieved (
                         " Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 36
-testRunner.And("the Industry placement status shows \"Still to be completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the Industry placement status shows \"Placement still to be completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
 testRunner.Given("I click the back link on the Learner Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");

@@ -22,7 +22,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
-
             CreateDbRegistationForLrs(uln);
         }
         
@@ -53,9 +52,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
             LearnerHasTheLearnerCompletedIPPage.VerifyErrorMessage(ErrorMessage);
         }
 
-        [Then(@"the Enter ULN Page is displayed")]
-        public void ThenTheEnterULNPageIsDisplayed()
+        [Then(@"the Enter ULN Page is displayed when i click on Back link")]
+        public void ThenTheEnterULNPageIsDisplayedWhenIClickOnBacklink()
         {
+            Pages.CommonUlnDbSteps.ClickBackLink();
             Pages.CommonUlnDbSteps.VerifyAddANewLearnerRecordPage();
         }
 

@@ -15,8 +15,7 @@ When I enter the ULN
 And I click on "Continue" button
 Then I expect to see the learner completed Industry Placement page
 And the radio buttons are no populated on entry to the Has Learner Completed Industry Placement page
-Given I click on "Back" link 
-Then the Enter ULN Page is displayed
+And the Enter ULN Page is displayed when i click on Back link
 And I have deleted LRS records from the database
 
 @RegressionTest @Provider

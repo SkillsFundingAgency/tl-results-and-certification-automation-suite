@@ -11,7 +11,7 @@ And I navigate to the Has the learner completed the IP page
 And I select "Yes, completed" radio button and press Continue
 Then I am shown the Check and submit page for the Add a new learner journey
 And the English and maths minimum standard status shows "Not achieved (data from Learning Records Service - LRS)"
-And the Industry placement status shows "Completed"
+And the Industry placement status shows "Placement completed"
 And I have deleted LRS records from the database
 
 @RegressionTest @Provider
@@ -22,7 +22,7 @@ And I navigate to the Has the learner completed the IP page
 And I select "Yes, completed with special consideration" radio button and press Continue
 Then I am shown the Check and submit page for the Add a new learner journey
 And the English and maths minimum standard status shows "Not achieved (data from Learning Records Service - LRS)"
-And the Industry placement status shows "Completed with special consideration"
+And the Industry placement status shows "Placement completed with special consideration"
 And I have deleted LRS records from the database
 
 @RegressionTest @Provider
@@ -33,7 +33,7 @@ And I navigate to the Has the learner completed the IP page
 And I select "No, still to be completed" radio button and press Continue
 Then I am shown the Check and submit page for the Add a new learner journey
 And the English and maths minimum standard status shows "Achieved (data from Learning Records Service - LRS)"
-And the Industry placement status shows "Still to be completed"
+And the Industry placement status shows "Placement still to be completed"
 Given I click the back link on the Learner Check and Submit page
 Then I expect to see the learner completed Industry Placement page
 And I have deleted LRS records from the database
