@@ -131,7 +131,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var profileId = SqlQueries.CreateRegistrationProfileForNonLRS(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
             SqlQueries.CreateRegSpecialismForLrs(pathwayId);
-
         }
 
     }
