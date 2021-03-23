@@ -16,7 +16,7 @@ And I select Add specialism option and click continue
 And I select the Specialism in reregister specialism page and click continue
 When I click on continue button in Academic year page
 Then I should see reregister check and submit page
-And the registration for this test is deleted
+And I cleared the data in DB
 
 @RegressionTest @ReactivateRegistration
 Scenario: 1493_Verify reregister Check and submit Back link
@@ -27,4 +27,4 @@ And I select the Specialism in reregister specialism page and click continue
 And I click Continue in Academic Year page
 When I click on Back link on page
 Then I should see Reregister Academic year page
-And the registration for this test is deleted
+And I cleared the data in DB
