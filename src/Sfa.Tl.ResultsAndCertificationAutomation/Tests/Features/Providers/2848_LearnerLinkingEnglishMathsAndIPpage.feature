@@ -9,7 +9,7 @@ And I have a created a registration without LRS data
 And I navigate to the 'Has the learner achieved the required minimum standard for English and maths' page
 
 @RegressionTest @Provider
-Scenario:  2848_Validate retention of radio buttons selection after pressing back link IP page
+Scenario:  2848_Validate retention of radio buttons selection after pressing back link on IP page
 
 Given I select "Achieved the minimum standard" radio button on 'Min standard for English Maths' page and press Continue
 Then I expect to see the learner completed Industry Placement page

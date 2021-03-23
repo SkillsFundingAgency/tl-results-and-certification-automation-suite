@@ -18,14 +18,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private static By ContinueBtn { get; } = By.Id("continueButton");
         private static By BackLink { get; } = By.Id("backLink");
         private static By RadioAchievedMinStandard { get; } = By.Id("englishandmathsstatus");
+        private static By RadioAchievedMinStandardLabel { get; } = By.XPath("//*[@id='addEnglishAndMathsForm']/div[2]/div[1]/fieldset/div/div[1]/label");
         private static string ExpectedTextAchievedMinStandard { get; } = "Achieved the minimum standard";
+        private static By RadioAchievedAchievedMinStandardLabel { get; } = By.XPath("//*[@id='addEnglishAndMathsForm']/div[2]/div[1]/fieldset/div/div[2]/label");
         private static By RadioAchievedMinStandardWithSend { get; } = By.Id("status-achieved-send");
+        private static By RadioAchievedMinStandardWithSendLabel { get; } = By.XPath("//*[@id='addEnglishAndMathsForm']/div[2]/div[1]/fieldset/div/div[3]/label");
         private static string ExpectedTextAchievedMinStandardWithSend { get; } = "Achieved the minimum standard with SEND adjustments";
         private static By RadioNotAchievedMinStandard { get; } = By.Id("status-not-achieved");
         private static string ExpectedTextNotAchievedMinStandard { get; } = "Not achieved the minimum standard";
         public static By MainErrorMessage = By.XPath("//*[@id='main-content']//ul/li/a");
         public static By SubErrorMessage = By.XPath("//*[@id='main-content']//div[2]//div/span");
-
+        public static By RadioBtnDeclarationText = By.XPath("//*[@id='declarationText']");
+        private static string ExpectedDeclarationText { get; } = "By selecting 'Continue' I declare that:";
 
         public static void ClickBackLink()
         {
@@ -39,9 +43,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ExpectedCaption, WebDriver.FindElement(Caption).Text);
             Assert.IsTrue(WebDriver.FindElement(ContinueBtn).Text.Contains("Continue"));
-            //Assert.AreEqual(ExpectedTextAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandard).Text);
-            //Assert.AreEqual(ExpectedTextAchievedMinStandardWithSend, WebDriver.FindElement(RadioAchievedMinStandardWithSend).Text);
-            //Assert.AreEqual(ExpectedTextNotAchievedMinStandard, WebDriver.FindElement(RadioNotAchievedMinStandard).Text);
+            // Assert.AreEqual(ExpectedTextAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandardLabel).Text);
+            // Assert.AreEqual(ExpectedTextAchievedMinStandardWithSend, WebDriver.FindElement(RadioAchievedMinStandardWithSendLabel).Text);
+            // Assert.AreEqual(ExpectedTextNotAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandardWithSendLabel).Text);
 
         }
 
