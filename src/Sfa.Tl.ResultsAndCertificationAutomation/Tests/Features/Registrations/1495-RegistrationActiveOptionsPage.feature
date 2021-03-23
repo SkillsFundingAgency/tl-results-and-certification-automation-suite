@@ -16,6 +16,7 @@ Then I should see results in the page
 And I will see the ChangeStatus link
 When I click the ChangeStatus link
 Then I am shown the Active options page for Active Record
+And I cleared the data in DB
 ##Active options page validation (heading, URL, page title, button text, radio buttons not populated)
 
 
@@ -27,6 +28,7 @@ When I click the ChangeStatus link
 Then I am shown the Active options page for Active Record
 When I click the Back link on the Active options page for Active Record page
 Then I will be directed to the Registration Details page
+And I cleared the data in DB
 ##validate back link
 
 
@@ -39,6 +41,7 @@ When I click the ChangeStatus link
 Then I am shown the Active options page for Active Record
 And I click Continue without selecting a radio button
 Then I am shown an error message on the Active options page stating "Select if you want to withdraw or delete this registration"
+And I cleared the data in DB
 ##checks all error messages on the page and checks page title includes "Error"
 
 
@@ -57,6 +60,7 @@ And I attempt to access the Active options page for Active Record using the capt
 Then I am shown the Page Not Found page
 When I attempt to access the Active options page for Active Record using an invalid URL
 Then I am shown the Page Not Found page 
+And I cleared the data in DB
 ##verifies the Active options page is acessible by URL when the reg is active otherwise Page not found page is shown
 ##check that only a valid URL for Active options will work otherwise Page not found page is shown
 

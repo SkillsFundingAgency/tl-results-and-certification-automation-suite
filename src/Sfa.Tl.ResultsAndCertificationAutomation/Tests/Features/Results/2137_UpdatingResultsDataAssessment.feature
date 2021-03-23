@@ -45,4 +45,4 @@ And I have a registration with result
 And I removed the result for the uln by selecting not received
 When I search learner in Assessment entry
 Then Remove Entry link should exists in the assessment details page
-And I cleared the data in DB
+And the registration for this test is deleted

@@ -24,7 +24,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
             _scenarioContext["uln"] = uln;
             CreateDbRegistationForLrs(uln);
         }
-        
+
+        [Given(@"I enter the ULN")]
         [When(@"I enter the ULN")]
         public void WhenIEnterTheULN()
         {

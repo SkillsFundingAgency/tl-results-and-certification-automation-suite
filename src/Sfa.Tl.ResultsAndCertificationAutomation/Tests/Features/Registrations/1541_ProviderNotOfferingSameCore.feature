@@ -14,6 +14,7 @@ When I click on Provider change link
 And I changed Provider with different Core and click Change button
 And I select No, I want to keep same core option and click continue button
 Then I should see Provider not offering same core page
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 1541_Provider not offering same core Back link
@@ -22,6 +23,7 @@ And I changed Provider with different Core and click Change button
 And I select No, I want to keep same core option and click continue button
 And I click on Back link on page
 Then I should be navigated back to Do you also want to change Core page
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 1541_Provider not offering same core Back To registration details
@@ -30,3 +32,4 @@ And I changed Provider with different Core and click Change button
 And I select No, I want to keep same core option and click continue button
 And I click on Back To Registration button
 Then I should be navigated back to registration details page
+And I cleared the data in DB

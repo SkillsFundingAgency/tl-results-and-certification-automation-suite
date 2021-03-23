@@ -45,9 +45,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual("Yes, completed with special consideration", WebDriver.FindElement(RadioButtonYesSpecialConsiderationLabel).Text);
             Assert.AreEqual("No, still to be completed", WebDriver.FindElement(RadioButtonNoLabel).Text);
             Assert.AreEqual(ExpectedSpecialConsiderationsLinkText, WebDriver.FindElement(WhatAreSpecialConsiderationsLink).Text);
-
-
         }
+        public static void VerifyChangeHasTheLearnerCompletedIPPage()
+        {
+            string ExpectedLearnerHeading = "Learner Db FirstName Db LastName";
+            Assert.AreEqual(ExpectedLearnerHeading, WebDriver.FindElement(LearnerText).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+            Assert.AreEqual(MainHeaderText, WebDriver.FindElement(MainHeader).Text);
+            Assert.AreEqual(PageHeaderText, WebDriver.FindElement(PageHeader).Text);
+        }
+
         public static void ClickContinue()
         {
             WebDriver.FindElement((ContinueButton)).Click();

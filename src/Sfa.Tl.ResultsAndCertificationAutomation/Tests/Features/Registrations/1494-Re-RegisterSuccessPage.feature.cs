@@ -148,6 +148,9 @@ testRunner.When("I click the View Withdrawn Registration button om the Reactivat
 #line 19
 testRunner.Then("I am shown the registration details page with the new registration details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 20
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

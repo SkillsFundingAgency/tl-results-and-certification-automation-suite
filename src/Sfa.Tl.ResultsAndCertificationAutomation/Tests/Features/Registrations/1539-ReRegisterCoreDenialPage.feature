@@ -20,6 +20,7 @@ When I select a core which is identical to the current one
 Then I am shown the Core Denial page
 When I click the back link on the Core Denial page
 Then I am taken back to the Select the Core Page for reactivate registration
+And I cleared the data in DB
 
 
 @RegressionTest @WithdrawRegistration
@@ -33,6 +34,7 @@ When I navigate away from the Core Denial page and attempt to navigate back usin
 Then I am shown the Core Denial page
 When I reactivate my registration and attempt to navigate back to the Core Denial page using the URL
 Then I am shown the Page Not Found page
+And I cleared the data in DB
 
 
 @RegressionTest @WithdrawRegistration
@@ -46,3 +48,4 @@ When I click the Reactivate the registration button
 Then I am shown the Are you sure you want to reactivate page
 When I click the back link on the Are you sure you want to reactivate page
 Then I am shown the Core Denial page
+And I cleared the data in DB

@@ -18,9 +18,11 @@ Scenario: 1781_Verify reregister change provider Page
 When I click on reregister Provider change link
 Then I should see reregister change provider page
 And provider dropdown should be prepopulated with previous value
+And I cleared the data in DB
 
 @RegressionTest @ReactivateRegistration
 Scenario: 1781_Verify reregister change provider Back link
 When I click on reregister Provider change link
 And I click on Back link on page
 Then I should see reregister check and submit page
+And I cleared the data in DB

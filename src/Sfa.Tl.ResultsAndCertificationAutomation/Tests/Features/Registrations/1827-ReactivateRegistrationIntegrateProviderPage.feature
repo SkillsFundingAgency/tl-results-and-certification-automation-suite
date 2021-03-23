@@ -20,8 +20,7 @@ Then I am navigated to the Select the provider page for Register learner on a ne
 When I click the back link on the Select the provider page for Register learner on a new course
 Then I am navigated to the Withdrawn options page
 And the Radio buttons will not be populated on entry
-
-    
+And I cleared the data in DB    
 
 @RegressionTest @ReactivateRegistration
 Scenario: 1827_Click on Withdraw Registration on Change Provider and Core Page
@@ -34,3 +33,4 @@ Then I am navigated to the Select the provider page for Register learner on a ne
 When I click the back link on the Select the provider page for Register learner on a new course
 Then I am navigated to the Withdrawn options page
 And the Radio buttons will not be populated on entry
+And I cleared the data in DB
