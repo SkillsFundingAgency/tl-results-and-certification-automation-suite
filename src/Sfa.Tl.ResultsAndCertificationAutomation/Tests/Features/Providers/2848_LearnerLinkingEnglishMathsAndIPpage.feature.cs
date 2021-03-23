@@ -91,18 +91,18 @@ testRunner.And("I navigate to the \'Has the learner achieved the required minimu
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2848_Validate retention of radio buttons selection after pressing back link IP pa" +
-            "ge")]
+        [NUnit.Framework.DescriptionAttribute("2848_Validate retention of radio buttons selection after pressing back link on IP" +
+            " page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2848_ValidateRetentionOfRadioButtonsSelectionAfterPressingBackLinkIPPage()
+        public virtual void _2848_ValidateRetentionOfRadioButtonsSelectionAfterPressingBackLinkOnIPPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2848_Validate retention of radio buttons selection after pressing back link IP pa" +
-                    "ge", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2848_Validate retention of radio buttons selection after pressing back link on IP" +
+                    " page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

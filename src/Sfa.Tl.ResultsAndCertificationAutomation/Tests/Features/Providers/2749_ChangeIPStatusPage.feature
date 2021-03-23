@@ -29,6 +29,6 @@ And I have deleted LRS records from the database
 @RegressionTest @Provider
 Scenario: 2749 change IP status option
 When I click on IP change link
-And I select "Yes, completed with special consideration" radio button and press change
+And I select "Achieved the minimum standard with SEND adjustments" radio button on 'Min standard for English Maths' page and press Continue
 Then I should see new IP status in check and submit page
 And I have deleted LRS records from the database

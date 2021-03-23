@@ -48,6 +48,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             // Assert.AreEqual(ExpectedTextNotAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandardWithSendLabel).Text);
 
         }
+        public static void VerifyChangeMinStandardAchievedForEnglishMathsPage()
+        {
+            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+            Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(ExpectedCaption, WebDriver.FindElement(Caption).Text);
+            Assert.IsTrue(WebDriver.FindElement(ContinueBtn).Text.Contains("Change"));
+        }
 
 
         public static void VerifyProviderCheckAndSubmitContent(string uln)

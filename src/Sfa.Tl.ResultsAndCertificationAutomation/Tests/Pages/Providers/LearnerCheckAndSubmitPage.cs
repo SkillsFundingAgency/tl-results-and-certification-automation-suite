@@ -18,6 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private static By SubmitBtn { get; } = By.Id("continueButton");
         private static By CancelLink { get; } = By.Id("cancelLink");
         private static By BackLink { get; } = By.Id("backLink");
+        public static By changeEnglishMaths = By.Id("englishmathsstatus");
 
         public static void ClickBackLink()
         {
