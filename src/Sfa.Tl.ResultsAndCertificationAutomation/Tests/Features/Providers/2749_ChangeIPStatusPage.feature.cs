@@ -239,8 +239,8 @@ this.FeatureBackground();
 testRunner.When("I click on IP change link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
-testRunner.And("I select \"Achieved the minimum standard with SEND adjustments\" radio button on \'M" +
-                        "in standard for English Maths\' page and press Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I select \"Yes, completed with special consideration\" radio button and press chang" +
+                        "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
 testRunner.Then("I should see new IP status in check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
