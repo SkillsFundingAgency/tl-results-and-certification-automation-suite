@@ -39,7 +39,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
             var uln = _scenarioContext["uln"] as string;
             WebDriver.FindElement(By.Id("enteruln")).Clear();
             Pages.CommonUlnDbSteps.EnterULN(uln);
-            //Pages.CommonUlnDbSteps.ClickContinue();
         }
         
         [Given(@"I select ""(.*)"" radio button and press Continue")]
@@ -63,7 +62,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
 
-            CreateDbRegistationForLrs(uln);
+            CreateDbRegistationForLrsWithEMAcheived(uln);
         }
         
         [Then(@"I am shown the Check and submit page for the Add a new learner journey")]

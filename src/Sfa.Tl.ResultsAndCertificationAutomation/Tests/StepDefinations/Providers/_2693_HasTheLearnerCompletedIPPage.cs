@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
-            CreateDbRegistationForLrs(uln);
+            CreateDbRegistationForLrsWithEMAcheived(uln);
         }
 
         [Given(@"I enter the ULN")]

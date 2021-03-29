@@ -65,7 +65,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         }
         public void CreateDbRegWithIpForLrs(string uln,int status)
         {
-            var profileId = SqlQueries.CreateRegistrationProfileForLrs(uln);
+            var profileId = SqlQueries.CreateRegistrationProfileForLrsWithEM(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
             SqlQueries.CreateRegSpecialismForLrs(pathwayId);
             var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
