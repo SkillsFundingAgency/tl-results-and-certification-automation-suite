@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Model;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using System;
 
@@ -120,9 +121,49 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickContinue();
         }
 
+        public static IndustryPlacementStatus GetIpStatusByLabel(string text)
+        {
+            switch (text)
+            {
+                case "Yes, completed":
+                    return IndustryPlacementStatus.Completed;
+                case "Yes, completed with special consideration":
+                    return IndustryPlacementStatus.CompletedWithSpecialConsideration;
+                case "No, still to be completed":
+                    return IndustryPlacementStatus.NotCompleted;
+            }
+            return IndustryPlacementStatus.NotSpecified;
+        }
+        public static void ClickEMRadioButton(string RadioButton)
+        {
+            switch (RadioButton)
+            {
+                case "Achieved the minimum standard":
+                    ClickYesCompletedRadio();
+                    break;
+                case "Achieved the minimum standard with SEND adjustments":
+                    ClickYesCompletedSpecialRadio();
+                    break;
+                case "Not achieved the minimum standard":
+                    ClickNoRadio();
+                    break;
 
-
-
+            }
+            ClickContinue();
+        }
+        public static EnglishAndMathsStatus GetEMStatusByLabel(string text)
+        {
+            switch (text)
+            {
+                case "Achieved the minimum standard":
+                    return EnglishAndMathsStatus.Achieved;
+                case "Achieved the minimum standard with SEND adjustments":
+                    return EnglishAndMathsStatus.AchievedWithSend;
+                case "Not achieved the minimum standard":
+                    return EnglishAndMathsStatus.NotAchieved;
+            }
+            return EnglishAndMathsStatus.NotSpecified;
+        }
 
     }
 }

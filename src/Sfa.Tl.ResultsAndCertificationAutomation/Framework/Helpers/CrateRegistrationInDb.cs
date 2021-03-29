@@ -1,4 +1,5 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Model;
 using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
@@ -16,6 +17,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         public void CreateDbRegistationForLrs(string uln)
         {
             var profileId = SqlQueries.CreateRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+            SqlQueries.CreateQualificationAcheivedForLrs(profileId);
+        }
+        public void CreateDbRegistationForLrsWithEMAcheived(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForLrsWithEM(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
             SqlQueries.CreateRegSpecialismForLrs(pathwayId);
             SqlQueries.CreateQualificationAcheivedForLrs(profileId);
@@ -131,6 +139,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var profileId = SqlQueries.CreateRegistrationProfileForNonLRS(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
             SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+        }
+        public IndustryPlacementStatus GetIPStatus(string uln)
+        {
+            string profileIdQuery = "select  rep.Id from TqRegistrationProfile rp join TqRegistrationPathway rep on rp.Id = rep.TqRegistrationProfileId where rp.UniqueLearnerNumber = "+uln;
+            var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(profileIdQuery, ConnectionString);
+            string IpQuery = "select status from IndustryPlacement where TqRegistrationPathwayId="+ Convert.ToInt32(regPathwayId[0][0]); ;
+            var ipStatusId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(IpQuery, ConnectionString);
+            return (IndustryPlacementStatus)Convert.ToInt32(ipStatusId[0][0]);
+        }
+        public EnglishAndMathsStatus GetEMStatus(string uln)
+        {
+            string profileTableQuery = "select IsEnglishAndMathsAchieved from TqRegistrationProfile where UniqueLearnerNumber= " + uln;
+            var englishMathsStatus = SqlDatabaseConncetionHelper.ReadDataFromDataBase(profileTableQuery, ConnectionString);
+            return (EnglishAndMathsStatus)Convert.ToInt32(englishMathsStatus[0][0]);
         }
 
     }
