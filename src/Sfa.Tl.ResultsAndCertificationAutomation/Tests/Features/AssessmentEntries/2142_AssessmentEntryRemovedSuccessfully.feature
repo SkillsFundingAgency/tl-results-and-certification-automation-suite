@@ -10,7 +10,7 @@ And I have a registration with an assessment entry
 
 @RegressionTest @AssessmentEntries
 Scenario: 2142_Remove an assessment entry for the learner and validate the success page
-And I search for the learner assessment
+And I search the learner assessment
 And I click on Remove entry link
 And I select Yes radio button and press submit
 Then I am shown assessment entry removed successfully page
