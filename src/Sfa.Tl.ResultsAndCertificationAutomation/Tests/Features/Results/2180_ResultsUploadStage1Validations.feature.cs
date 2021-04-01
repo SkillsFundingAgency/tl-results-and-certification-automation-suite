@@ -123,19 +123,19 @@ this.FeatureBackground();
 #line 12
 testRunner.When("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table37.AddRow(new string[] {
+                table39.AddRow(new string[] {
                             "Please select results file"});
 #line 13
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table37, "Then ");
+testRunner.Then("I should see following error message in Results page", ((string)(null)), table39, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table38.AddRow(new string[] {
+                table40.AddRow(new string[] {
                             "Please select results file"});
 #line 16
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table38, "And ");
+testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table40, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -181,19 +181,19 @@ testRunner.When("I upload \"AssessmentEntryStage1InvalidFileType.xlsx\" file", (
 #line 23
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table39.AddRow(new string[] {
+                table41.AddRow(new string[] {
                             "File extension not valid - must be a CSV file"});
 #line 24
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table39, "Then ");
+testRunner.Then("I should see following error message in Results page", ((string)(null)), table41, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table40.AddRow(new string[] {
+                table42.AddRow(new string[] {
                             "File extension not valid - must be a CSV file"});
 #line 27
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table40, "And ");
+testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table42, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -239,19 +239,19 @@ testRunner.When("I upload \"AssessmentEntryStage1MaxNoOfRows.csv\" file", ((stri
 #line 34
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table41.AddRow(new string[] {
+                table43.AddRow(new string[] {
                             "File must contain results for between one and 10,000 registrations"});
 #line 35
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table41, "Then ");
+testRunner.Then("I should see following error message in Results page", ((string)(null)), table43, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table42.AddRow(new string[] {
+                table44.AddRow(new string[] {
                             "File must contain results for between one and 10,000 registrations"});
 #line 38
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table42, "And ");
+testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table44, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -297,19 +297,19 @@ testRunner.When("I upload \"RegistrationsStage1MaxFileSize.csv\" file", ((string
 #line 45
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table43.AddRow(new string[] {
+                table45.AddRow(new string[] {
                             "File size too large – must be no more than 5MB"});
 #line 46
-testRunner.Then("I should see following error message in Results page", ((string)(null)), table43, "Then ");
+testRunner.Then("I should see following error message in Results page", ((string)(null)), table45, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table44.AddRow(new string[] {
+                table46.AddRow(new string[] {
                             "File size too large – must be no more than 5MB"});
 #line 49
-testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table44, "And ");
+testRunner.And("I should see the following error summary message in Results page", ((string)(null)), table46, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
