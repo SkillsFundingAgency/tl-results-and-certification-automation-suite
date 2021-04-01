@@ -121,7 +121,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 13
-testRunner.And("I search for the learner assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I search the learner assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
 testRunner.And("I click on Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

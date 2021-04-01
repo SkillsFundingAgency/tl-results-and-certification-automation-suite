@@ -17,10 +17,4 @@ And I select a different provider, core and specialism and submit the changes
 Then I am shown the ReRegistration Success page
 When I click the View Withdrawn Registration button om the Reactivate registration success page
 Then I am shown the registration details page with the new registration details
-
-
-
-
-
-
-
+And I cleared the data in DB

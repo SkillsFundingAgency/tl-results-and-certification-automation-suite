@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -9,8 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "manage-learner-records");
         public static string PageTitle = "Manage learner records page – Manage T Level results – GOV.UK";
-        public static By AddLearnerRecordsLink = By.XPath("//a[@href='/add-learner-record-unique-learner-number']");
-       
+        public static By AddLearnerRecordsLink { get; } = By.LinkText("Add a new learner record");
 
         public static By UpdateALearnerRecordLink = By.XPath("//a[@href='/manage-learner-records']");
         

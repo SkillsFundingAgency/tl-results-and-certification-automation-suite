@@ -1,11 +1,12 @@
 ﻿using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
     [Binding]
-    public class _2142_CreateAssessmentEntryRemovedSuccessfullyPageSteps : AssessmentEntriesLearnersRemoveCoreAssessmentEntryPage
+    public class _2142_CreateAssessmentEntryRemovedSuccessfullyPageSteps : CrateRegistrationInDb
     {
         private readonly ScenarioContext _scenarioContext;
         public _2142_CreateAssessmentEntryRemovedSuccessfullyPageSteps(ScenarioContext scenarioContext)
@@ -15,9 +16,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         [Given(@"I select Yes radio button and press submit")]
         public void GivenISelectYesRadioButtonAndPressSubmit()
         {
-            PressYesRadioButton();
+            AssessmentEntriesLearnersRemoveCoreAssessmentEntryPage.PressYesRadioButton();
         }
-        
+        [Given(@"I search the learner assessment")]
+        public void GivenISearchTheLearnerAssessment()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            AssessmentEntriesPage.SearchAssessmentEntry(uln);
+        }
         [Then(@"I am shown assessment entry removed successfully page")]
         public void ThenIAmShownAssessmentEntryRemovedSuccessfullyPage()
         {

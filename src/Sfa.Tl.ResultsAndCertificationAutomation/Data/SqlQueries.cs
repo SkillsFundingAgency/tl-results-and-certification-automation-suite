@@ -113,7 +113,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static int CreateRegistrationProfileForLrs(string uln)
         {
-            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,0,0,GETDATE(),'System', GETDATE(),'System')";
+            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,0,Null,1,1,GETDATE(),'System', GETDATE(),'System')";
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegistrationProfile, ConnectionString);
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+        public static int CreateRegistrationProfileForLrsWithEM(string uln)
+        {
+            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,GETDATE(),'System', GETDATE(),'System')";
             string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
@@ -130,8 +138,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static void CreateQualificationAcheivedForLrs(int profileId)
         {
-            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',510,3,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',38,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+
+            string CreateQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',69,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
         }
         public static void CreateIndustryPlacement (int pathwayId, int status)
         {
@@ -190,6 +201,42 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var PAID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(PathwayAssessmentID, ConnectionString);
             int result = Convert.ToInt32(PAID[0][0]);
             return result;
+        }
+
+        public static void CreateQualificationAcheivedForLrsMathsAEnglishNA(int profileId)
+        {
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',38,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+
+            string CreateQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',69,9,0,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
+        }
+
+        public static void CreateQualificationAcheivedForLrsMathsNAEnglishA(int profileId)
+        {
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',38,9,0,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+
+            string CreateQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',69,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
+        }
+
+        public static int CreateRegistrationProfileForLrsMathsAndEnglishNotAchieved(string uln)
+        {
+            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,0,0,0,GETDATE(),'System', GETDATE(),'System')";
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegistrationProfile, ConnectionString);
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+
+        public static int CreateRegistrationProfileForNonLRS(string uln)
+        {
+            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,Null,Null,Null,GETDATE(),'System', GETDATE(),'System')";
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegistrationProfile, ConnectionString);
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
         }
     }
 }

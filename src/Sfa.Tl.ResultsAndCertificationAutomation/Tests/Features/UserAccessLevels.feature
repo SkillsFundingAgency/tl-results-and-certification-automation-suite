@@ -42,3 +42,15 @@ Then I should see Access Denied error for all pages
 Scenario: Access level for No Service User
 Given I have logged in as a "NoServiceTole" user
 Then I should not get acces to TLevel Services
+
+@RegressionTest
+Scenario: AO user accessing provider page
+Given I have passed provider dashboard url in the browser
+When I enter any AO user account to login
+Then I should get access denied with wrong role page
+
+@RegressionTest
+Scenario: Provider user accessing AO page
+Given I have passed AO dashboard url in the browser
+When I enter any provider user account to login
+Then I should get access denied with wrong role page

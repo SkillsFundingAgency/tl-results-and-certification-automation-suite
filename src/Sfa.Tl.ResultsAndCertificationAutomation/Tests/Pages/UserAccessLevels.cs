@@ -20,9 +20,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
         private const string ExpectedUrl = "https://pp-profile.signin.education.gov.uk/";
         private const string ProfilePageHeader = "Profile";
-
-        private void VerifyAccessDeniedPage()
+        private static string ProviderDashboardUrl = "manage-learner-records";
+        private static string AoSelectTlevelUrl = "select-tlevel";
+        public static void NavigateProviderDashboard()
         {
+            NavigateTo(ProviderDashboardUrl);
+        }
+        public static void NavigateAoDashboard()
+        {
+            NavigateTo(AoSelectTlevelUrl);
+        }
+        public void VerifyAccessDeniedPage()
+        {
+            Assert.AreEqual(AccessDeniedTitle, WebDriver.Title);
+            Assert.AreEqual(AccessDenied, WebDriver.FindElement(PageHeader).Text);
+        }
+        public void VerifyAccessDeniedWithWrongRolePage()
+        {
+            WaitForElement(DfESignInPage.ManageTlevelHeader, 10);
             Assert.AreEqual(AccessDeniedTitle, WebDriver.Title);
             Assert.AreEqual(AccessDenied, WebDriver.FindElement(PageHeader).Text);
         }

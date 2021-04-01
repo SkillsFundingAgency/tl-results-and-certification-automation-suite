@@ -36,6 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By PasswordTxtBox { get; } = By.Id("password");
         public static By StartNowButton { get; set; } = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
         public By DfESignInErrorMessage { get; set; } = By.Id("error-summary");
+        public static By ManageTlevelHeader = By.XPath("//a[contains(text(),'Manage T Level results')]");
 
         public static void DfESignIn(string username, string password)
         {

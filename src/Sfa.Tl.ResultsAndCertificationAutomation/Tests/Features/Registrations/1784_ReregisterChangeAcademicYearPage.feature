@@ -17,15 +17,18 @@ And I click Continue in Academic Year page
 Scenario: 1784_Verify reregister change Academic year Page
 When I click reregister academicyear change link
 Then I should see Reregister Academic year page
+And I cleared the data in DB
 
 @RegressionTest @ReactivateRegistration
 Scenario: 1784_Verify reregister Back link on Academic year Page
 When I click reregister academicyear change link
 And I click on Back link on page
 Then I should see reregister check and submit page
+And I cleared the data in DB
 
 @RegressionTest @ReactivateRegistration
 Scenario: 1784_Reregister Change Academic year
 When I click reregister academicyear change link
 And I click on change link in Academic Year page
 Then I should see reregister check and submit page
+And I cleared the data in DB

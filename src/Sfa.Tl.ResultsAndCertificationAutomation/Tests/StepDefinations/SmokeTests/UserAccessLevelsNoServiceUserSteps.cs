@@ -11,5 +11,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.SmokeTe
         {
             AccessLevelNoService();
         }
+        [Then(@"I should get access denied with wrong role page")]
+        public void ThenIShouldGetAccessDeniedWithWrongRolePage()
+        {
+            VerifyAccessDeniedWithWrongRolePage();
+        }
+
     }
 }

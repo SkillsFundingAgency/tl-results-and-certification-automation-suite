@@ -13,6 +13,7 @@ Scenario: 1540_Do you want to change core page
 When I click on Provider change link
 And I changed Provider with different Core and click Change button
 Then I should see Do you want to change Core page
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 1540_Do you want to change core Back link
@@ -20,6 +21,7 @@ When I click on Provider change link
 And I changed Provider with different Core and click Change button
 And I click on Back link on page
 Then I should be navigated back to select Provider page
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 1540_Do you want to change page validations
@@ -27,3 +29,4 @@ When I click on Provider change link
 And I changed Provider with different Core and click Change button
 And I click Continue button without selecting options
 Then I should see validation errors
+And I cleared the data in DB

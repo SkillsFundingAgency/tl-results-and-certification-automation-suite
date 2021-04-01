@@ -152,6 +152,9 @@ testRunner.Then("I am navigated to the Withdrawn options page", ((string)(null))
 #line 22
 testRunner.And("the Radio buttons will not be populated on entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 23
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -167,7 +170,7 @@ testRunner.And("the Radio buttons will not be populated on entry", ((string)(nul
                     "ReactivateRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1827_Click on Withdraw Registration on Change Provider and Core Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 27
+#line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -190,34 +193,37 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 28
+#line 27
 testRunner.When("I click Withdraw Registration button on the Change Provider and Core page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 28
 testRunner.Then("I will be directed to the are you sure you want to withdraw this page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 30
+#line 29
 testRunner.When("I select Yes, withdraw registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
+#line 30
 testRunner.Then("I am shown the Registration withdrawn successfully page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 32
+#line 31
 testRunner.When("I click on the Register learner on new course button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 32
 testRunner.Then("I am navigated to the Select the provider page for Register learner on a new cour" +
                         "se", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 34
+#line 33
 testRunner.When("I click the back link on the Select the provider page for Register learner on a n" +
                         "ew course", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 34
 testRunner.Then("I am navigated to the Withdrawn options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 36
+#line 35
 testRunner.And("the Radio buttons will not be populated on entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

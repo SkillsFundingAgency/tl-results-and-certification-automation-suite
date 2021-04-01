@@ -143,6 +143,9 @@ testRunner.When("I click the back link on the Core Denial page", ((string)(null)
 #line 22
 testRunner.Then("I am taken back to the Select the Core Page for reactivate registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 23
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -160,7 +163,7 @@ testRunner.Then("I am taken back to the Select the Core Page for reactivate regi
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1539-Verify the page cannot be accessed using bookmarks if the registration is no" +
                     " longer withdrawn", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 26
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -183,34 +186,37 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 27
+#line 28
 testRunner.When("I click the Change Status link on the Withdrawn options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 29
 testRunner.And("I Register the learner on a new course using the same provider", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 30
 testRunner.Then("I am navigated to the Select the Core Page for reactivate registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 30
+#line 31
 testRunner.When("I select a core which is identical to the current one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
+#line 32
 testRunner.Then("I am shown the Core Denial page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 32
+#line 33
 testRunner.When("I navigate away from the Core Denial page and attempt to navigate back using the " +
                         "URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 34
 testRunner.Then("I am shown the Core Denial page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 34
+#line 35
 testRunner.When("I reactivate my registration and attempt to navigate back to the Core Denial page" +
                         " using the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 36
 testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 37
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -229,7 +235,7 @@ testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTa
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1539-Verify back link on the Are you sure you want to reactivate page navigates t" +
                     "o Core Denial page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 39
+#line 41
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -252,32 +258,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 40
+#line 42
 testRunner.When("I click the Change Status link on the Withdrawn options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
+#line 43
 testRunner.And("I Register the learner on a new course using the same provider", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 44
 testRunner.Then("I am navigated to the Select the Core Page for reactivate registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 43
+#line 45
 testRunner.When("I select a core which is identical to the current one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 44
-testRunner.Then("I am shown the Core Denial page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 45
-testRunner.When("I click the Reactivate the registration button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 46
-testRunner.Then("I am shown the Are you sure you want to reactivate page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I am shown the Core Denial page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 47
-testRunner.When("I click the back link on the Are you sure you want to reactivate page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click the Reactivate the registration button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 48
+testRunner.Then("I am shown the Are you sure you want to reactivate page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 49
+testRunner.When("I click the back link on the Are you sure you want to reactivate page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 50
 testRunner.Then("I am shown the Core Denial page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 51
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
