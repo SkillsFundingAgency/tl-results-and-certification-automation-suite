@@ -3,7 +3,11 @@ schedules:
     displayName: Daily midnight build
     branches:
       include:
+<<<<<<< Updated upstream
         - feature/sprint-32.2
+=======
+        - feature/sprint-33
+>>>>>>> Stashed changes
 resources:
   repositories:
     - repository: self
@@ -14,7 +18,11 @@ resources:
       type: github
       endpoint: S126-Tlevelservice
       name: SkillsFundingAgency/tl-results-and-certification
+<<<<<<< Updated upstream
       ref: feature/sprint-32
+=======
+      ref: feature/sprint-33
+>>>>>>> Stashed changes
 
     - repository: devopsTools
       type: github
