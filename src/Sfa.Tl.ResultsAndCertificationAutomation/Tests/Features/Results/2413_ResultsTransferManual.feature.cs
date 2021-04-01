@@ -123,12 +123,12 @@ this.FeatureBackground();
 #line 12
 testRunner.And("I search the registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                             "Provider"});
-                table47.AddRow(new string[] {
+                table45.AddRow(new string[] {
                             "Automation Test2 (99999902)"});
 #line 13
-testRunner.And("I changed the provider", ((string)(null)), table47, "And ");
+testRunner.And("I changed the provider", ((string)(null)), table45, "And ");
 #line hidden
 #line 16
 testRunner.And("I am on results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -136,15 +136,15 @@ testRunner.And("I am on results dashboard page", ((string)(null)), ((TechTalk.Sp
 #line 17
 testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                             "Provider",
                             "Grade"});
-                table48.AddRow(new string[] {
+                table46.AddRow(new string[] {
                             "Automation Test2 (99999902)",
                             "A"});
 #line 18
 testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
-                        "e", ((string)(null)), table48, "Then ");
+                        "e", ((string)(null)), table46, "Then ");
 #line hidden
 #line 21
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
