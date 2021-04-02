@@ -27,7 +27,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.AreEqual(searchLearnerHeader, WebDriver.FindElement(pageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(searchLearnerUrl));
         }
-        public static void UlnNotAddedPage(string uln)
+        public static void VerifyUlnNotAddedPage(string uln)
         {
             Assert.AreEqual(searchLearnerNotAddedTitle, WebDriver.Title);
             Assert.AreEqual("ULN ("+ uln +") has not been added", WebDriver.FindElement(pageHeader).Text);
@@ -53,5 +53,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         }
         public static void ClickSearchBtn()=> ClickButton(searchBtn);
         public static void ClickBackToSearchBtn() => ClickButton(backBtn);
+        public static void ClickContinueBtn() => ClickButton(continueBtn);
     }
 }

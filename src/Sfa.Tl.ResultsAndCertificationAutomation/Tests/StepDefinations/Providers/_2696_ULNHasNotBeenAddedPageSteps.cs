@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenIShouldSeeUlnHasNotBeenAddedPage()
         {
             string uln = _scenarioContext["uln"] as string;
-            UlnNotAddedPage(uln);
+            VerifyUlnNotAddedPage(uln);
         }
         
         [Then(@"click on Back link should navigate to search for learner page")]
