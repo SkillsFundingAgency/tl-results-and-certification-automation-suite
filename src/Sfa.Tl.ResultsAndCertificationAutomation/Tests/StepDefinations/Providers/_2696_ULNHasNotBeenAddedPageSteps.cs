@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
 {
     [Binding]
-    public class _2696_ULNHasNotBeenAddedPageSteps : UpdateLearner
+    public class _2696_ULNHasNotBeenAddedPageSteps : UpdateLearnerSearchPage
     {
         private readonly ScenarioContext _scenarioContext;
         public _2696_ULNHasNotBeenAddedPageSteps(ScenarioContext scenarioContext)
