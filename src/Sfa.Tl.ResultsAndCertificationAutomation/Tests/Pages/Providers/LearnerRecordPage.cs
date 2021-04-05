@@ -69,5 +69,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.IsTrue(WebDriver.Url.Contains("home"));
             Assert.AreEqual("Home page – Manage T Level results – GOV.UK", WebDriver.Title);
         }
+        public static void NavigateToLearnerRecordPage(string uln)
+        {
+            ClickLinkByLabel("Manage learner records");
+            ClickLinkByLabel("Update a learner record");
+            UpdateLearnerSearchPage.Enteruln(uln);
+        }
+        public static void Clicklink(string name)
+        {
+            switch (name)
+            {
+                case "Query":
+                    ClickElement(emStatusLink);
+                    break;
+                case "Update":
+                    ClickElement(ipStatusLink);
+                    break;
+            }
+        }
     }
 }
