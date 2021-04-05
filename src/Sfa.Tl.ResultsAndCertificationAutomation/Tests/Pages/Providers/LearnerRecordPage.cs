@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private const string statusIP = "Placement completed";
         //links
         private static By emStatusLink = By.Id("englishmathsstatus");
-        private static By ipStatusLink = By.Id("industryplacementstatus");
+        public static By ipStatusLink = By.Id("industryplacementstatus");
         private static By searchAgainLink = By.Id("searchAgainLink");
         private static By breadCrumb1 = By.Id("breadcrumb1");
         private static By breadCrumb2 = By.Id("breadcrumb2");

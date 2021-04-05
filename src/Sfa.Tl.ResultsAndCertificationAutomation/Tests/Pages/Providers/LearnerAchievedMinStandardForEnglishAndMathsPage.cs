@@ -43,10 +43,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ExpectedCaption, WebDriver.FindElement(Caption).Text);
             Assert.IsTrue(WebDriver.FindElement(ContinueBtn).Text.Contains("Continue"));
-            // Assert.AreEqual(ExpectedTextAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandardLabel).Text);
-            // Assert.AreEqual(ExpectedTextAchievedMinStandardWithSend, WebDriver.FindElement(RadioAchievedMinStandardWithSendLabel).Text);
-            // Assert.AreEqual(ExpectedTextNotAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandardWithSendLabel).Text);
-
         }
         public static void VerifyChangeMinStandardAchievedForEnglishMathsPage()
         {
