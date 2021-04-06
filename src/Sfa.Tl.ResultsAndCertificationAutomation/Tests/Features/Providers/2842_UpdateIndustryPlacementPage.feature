@@ -10,7 +10,7 @@ And I am on Learner record page
 
 @RegressionTest @Provider
 Scenario: 2842_Verify Update Industry Placement page
-When I click on "Update" link is Learner record page
+When I click on "Update" link in Learner record page
 Then I should see Update Industry placement page
 And "Yes, completed" radio option is pre selected
 And clicking on back link navigate back to learner record page

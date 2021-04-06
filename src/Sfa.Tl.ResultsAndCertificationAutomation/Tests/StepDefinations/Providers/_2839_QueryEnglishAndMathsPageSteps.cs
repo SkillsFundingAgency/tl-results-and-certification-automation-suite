@@ -18,8 +18,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
             LearnerRecordPage.NavigateToLearnerRecordPage(uln);
         }
 
-        [When(@"I click on ""(.*)"" link is Learner record page")]
-        public void WhenIClickOnLinkIsLearnerRecordPage(string text)
+        [When(@"I click on ""(.*)"" link in Learner record page")]
+        public void WhenIClickOnLinkInLearnerRecordPage(string text)
         {
             LearnerRecordPage.Clicklink(text);
         }

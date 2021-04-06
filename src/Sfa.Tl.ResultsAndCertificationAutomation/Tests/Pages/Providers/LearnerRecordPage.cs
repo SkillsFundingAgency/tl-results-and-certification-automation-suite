@@ -87,5 +87,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                     break;
             }
         }
+        public static void VerifyEMOrIPStatus(string text)
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(text));
+        }
     }
 }
