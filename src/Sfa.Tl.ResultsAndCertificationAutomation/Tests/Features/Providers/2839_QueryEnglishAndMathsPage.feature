@@ -10,7 +10,7 @@ And I am on Learner record page
 
 @RegressionTest @Provider
 Scenario: 2839_ Verify Query English and Maths status page
-When I click on "Query" link is Learner record page
+When I click on "Query" link in Learner record page
 Then I should see Query English and Maths status page
 And clicking on back to learner record button navigates to learner record page
 And clicking on back link navigates to learner record page

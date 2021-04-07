@@ -36,7 +36,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreateQualificationAcheivedForLrs(profileId);
             SqlQueries.CreateIndustryPlacement(pathwayId, 1);
         }
-
+        public void CreateDbRegistationNonLrsWithEMAndIP(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForNonLrsWithEM(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+            SqlQueries.CreateIndustryPlacement(pathwayId, 1);
+        }
         public void CreateDbRegWithAssessment(string uln)
         {
             var profileId = SqlQueries.CreateRegistrationProfile(uln);

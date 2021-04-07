@@ -16,6 +16,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private const string provider = "Provider (UKPRN): Barnsley College (10000536)";
         private const string core = "T Level core: Agriculture, Environmental and Animal Care (77777777)";
         private const string statusEM = "Achieved minimum standard (data from Learning Records Service - LRS)";
+        private const string statusEMNonLRS = "Achieved minimum standard";
         private const string statusIP = "Placement completed";
         //links
         private static By emStatusLink = By.Id("englishmathsstatus");
@@ -43,7 +44,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(statusEM));
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(statusIP));
         }
+        public static void VerifyEMAndIPStatusForNonLRS()
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(statusEMNonLRS));
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(statusIP));
+        }
         public static void VerifyLinksOnLearnerRecordPage()
+        {
+            Assert.AreEqual(true, WebDriver.FindElement(emStatusLink).Displayed);
+            Assert.AreEqual(true, WebDriver.FindElement(ipStatusLink).Displayed);
+            Assert.AreEqual(true, WebDriver.FindElement(searchAgainLink).Displayed);
+        }
+        public static void VerifyLinksOnLearnerRecordNonLRSPage()
         {
             Assert.AreEqual(true, WebDriver.FindElement(emStatusLink).Displayed);
             Assert.AreEqual(true, WebDriver.FindElement(ipStatusLink).Displayed);

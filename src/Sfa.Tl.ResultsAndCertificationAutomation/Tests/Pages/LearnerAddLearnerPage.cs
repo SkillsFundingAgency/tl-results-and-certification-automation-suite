@@ -20,7 +20,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BackLink { get; } = By.Id("backLink");
         public static By BackToSearchBtn { get; } = By.Id("backButton");
         public static By ULNTextField { get; } = By.Id("enteruln");
-        private static By UlnHint = By.XPath("uln-number-hint");
         public static string ULNHintText = "ULN must be 10 digits long";
         public static string ExpectedPageText = "You can only add records for learners who have been registered on a T Level programme by an awarding organisation.";
         private static By PageText = By.XPath("//*[contains(text(),'You can only add records for learners')]");
@@ -43,7 +42,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             string ExpectedPageHeading = "ULN (" + uln + ") has already been added";
             Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeader).Text);
-            Assert.AreEqual(UlnAlreadyAddedUrl, WebDriver.Url);
+            Assert.IsTrue(WebDriver.Url.Contains(UlnAlreadyAddedUrl));
             Assert.AreEqual(UlnAlreadyAddedTitle, WebDriver.Title);
         }
         public static void ClickContinue()

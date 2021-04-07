@@ -127,6 +127,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
             return (int)profileId.FirstOrDefault().FirstOrDefault();
         }
+        public static int CreateRegistrationProfileForNonLrsWithEM(string uln)
+        {
+            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,1,Null,1,GETDATE(),'System', GETDATE(),'System')";
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegistrationProfile, ConnectionString);
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
         public static int CreateRegistrationPathwayForLrs(int profileId)
         {
             var tqProviderId = Constants.TqProviderIdForLrs;
