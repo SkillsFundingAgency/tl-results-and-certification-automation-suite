@@ -6,7 +6,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
 {
     public class QueryEnglishAndMathsStatusPage: ElementHelper
     {
-        private static string pageUrl { get; } = "query-english-and-maths-achievement";
+        private static string pageUrl { get; } = "query-english-and-maths-status";
         private static string pagetitle { get; } = "Query English and maths status page – Manage T Level results – GOV.UK";
         private static string pageHeader { get; } = "Query a learner’s English and maths status";
         private static By pageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
