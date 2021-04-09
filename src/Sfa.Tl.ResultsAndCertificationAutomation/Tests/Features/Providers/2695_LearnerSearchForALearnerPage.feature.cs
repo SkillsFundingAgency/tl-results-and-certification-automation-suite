@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2694_Has learner achieved minimum standard for English & Maths page")]
-    public partial class _2694_HasLearnerAchievedMinimumStandardForEnglishMathsPageFeature
+    [NUnit.Framework.DescriptionAttribute("2695_Search for a learner page")]
+    public partial class _2695_SearchForALearnerPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2694_LearnerHasLearnerAchievedMinEnglishMathsPage.feature"
+#line 1 "2695_LearnerSearchForALearnerPage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "2694_Has learner achieved minimum standard for English & Maths page", "    As a Provider\r\n    I need to confirm learner English & Maths details which ca" +
-                    "nnot be obtained from LRS\r\n    So that learner data can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "2695_Search for a learner page", "    As a Provider\r\n    I need to be able to search for a learner\r\n    So that I c" +
+                    "an view or update their English/Maths & IP data", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -85,22 +85,21 @@ testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(
 testRunner.And("I have a created a registration without LRS data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.And("I navigate to the \'Has the learner achieved the required minimum standard for Eng" +
-                    "lish and maths\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to the Manage Learner Record Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2694_Back link and Page Verification")]
+        [NUnit.Framework.DescriptionAttribute("2695 Verify Breadcrumbs")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2694_BackLinkAndPageVerification()
+        public virtual void _2695VerifyBreadcrumbs()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2694_Back link and Page Verification", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2695 Verify Breadcrumbs", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -125,34 +124,38 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 13
-testRunner.Given("I click the back link on the \'Has the learner achieved the required minimum stand" +
-                        "ard for English and maths\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I click the Home breadcrumb on the  Manage Learner Record Search for a learner pa" +
+                        "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
-testRunner.Then("I am navigated to the Learner Enter ULN page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I am taken to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 15
-testRunner.And("the ULN field is still populated with the previously entered ULN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I navigate to the Manage Learner Record Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 16
-testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I press the Manage learner records breadcrumb on the  Manage Learner Record Searc" +
+                        "h for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+testRunner.Then("I am shown the Manage learner records page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2694_Selecting the 2nd radio button will display text above Continue button")]
+        [NUnit.Framework.DescriptionAttribute("2695 Verify invalid entry error message")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2694_SelectingThe2NdRadioButtonWillDisplayTextAboveContinueButton()
+        public virtual void _2695VerifyInvalidEntryErrorMessage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2694_Selecting the 2nd radio button will display text above Continue button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 19
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2695 Verify invalid entry error message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -174,44 +177,37 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 20
-testRunner.Given("I select the \"Achieved the minimum standard\" radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 21
-testRunner.Then("no text is shown above above the Continue buttton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 22
-testRunner.And("I select the \"Not achieved the minimum standard\" radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I enter \"123456789\" in the Search ULN box and click Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
-testRunner.Then("no text is shown above above the Continue buttton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the error message \"Enter a valid 10-digit ULN\" is shown on the Manage learner Sea" +
+                        "rch for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 24
-testRunner.And("I select the \"Achieved the minimum standard with SEND adjustments\" radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I enter \"ABCDEFGHIJ\" in the Search ULN box and click Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
-testRunner.Then("the radio button caption text is shown above the Continue buttton", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 26
-testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("the error message \"Enter a valid 10-digit ULN\" is shown on the Manage learner Sea" +
+                        "rch for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2694_Error Message displayed if no radio button selected")]
+        [NUnit.Framework.DescriptionAttribute("2695 Verify No ULN entered error messages")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2694_ErrorMessageDisplayedIfNoRadioButtonSelected()
+        public virtual void _2695VerifyNoULNEnteredErrorMessages()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2694_Error Message displayed if no radio button selected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2695 Verify No ULN entered error messages", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -234,15 +230,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
+#line 29
+testRunner.When("I click on \"Search\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 30
-testRunner.When("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 31
-testRunner.Then("the error message \"Select if the learner has achieved the minimum standard\" is sh" +
-                        "own on the MathAndEnglish page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 32
-testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("the error message \"Enter a ULN with 10 digits\" is shown on the Manage learner rec" +
+                        "ords Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
