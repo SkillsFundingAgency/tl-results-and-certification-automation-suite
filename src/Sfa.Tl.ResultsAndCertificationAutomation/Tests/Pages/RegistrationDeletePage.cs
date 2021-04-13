@@ -28,8 +28,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BackToRegBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         //Delete Registration with Result
-        private static string CannotDeleteRegWithResultPageTitle { get; } = "Registration with result cannot be deleted page – Manage T Level results – GOV.UK";
-        private static string CannotDeleteRegWithResultPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "registration-with-result-cannot-be-deleted");
+        private static string CannotDeleteRegWithResultPageTitle { get; } = "Registration cannot be deleted page – Manage T Level results – GOV.UK";
+        private static string CannotDeleteRegWithResultPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "registration-cannot-be-deleted");
         private static By Backlink { get; } = By.Id("backLink");
         public static void VerifyDeleteRegCheckPage()
         {
