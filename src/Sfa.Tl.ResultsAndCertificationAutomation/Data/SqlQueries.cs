@@ -246,5 +246,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
             return (int)profileId.FirstOrDefault().FirstOrDefault();
         }
+
+        public static int ReturnIPStatus(string uln)
+        {
+            string ReturnIPStatus = "select status from IndustryPlacement where TqRegistrationPathwayId in (  Select max (id) from TqRegistrationPathway where TqRegistrationProfileId in (select id from TqRegistrationProfile where uniquelearnernumber =" + uln +"))";
+            var Records = SqlDatabaseConncetionHelper.ReadDataFromDataBase(ReturnIPStatus, ConnectionString);
+            int result = Convert.ToInt32(Records[0][0]);
+            return result;
+        }
     }
 }

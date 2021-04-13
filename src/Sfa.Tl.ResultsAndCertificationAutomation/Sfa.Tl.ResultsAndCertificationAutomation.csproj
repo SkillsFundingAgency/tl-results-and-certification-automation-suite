@@ -30,6 +30,8 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2694_LearnerHasLearnerAchievedMinEnglishMathsPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2843_IPStatusUpdatedConfirmationPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2848_LearnerLinkingEnglishMathsAndIPpage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\VerifyTermsAndConditions - Copy.feature.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +254,9 @@
     <Compile Update="Tests\Features\Providers\2695_LearnerSearchForALearnerPage.feature.cs">
       <DependentUpon>2695_LearnerSearchForALearnerPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\Providers\2950_ReactivateARegistrationRetainsIPSelection.feature.cs">
+      <DependentUpon>2950_ReactivateARegistrationRetainsIPSelection.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature">
@@ -279,6 +284,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\2695_LearnerSearchForALearnerPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\Providers\2950_ReactivateARegistrationRetainsIPSelection.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
