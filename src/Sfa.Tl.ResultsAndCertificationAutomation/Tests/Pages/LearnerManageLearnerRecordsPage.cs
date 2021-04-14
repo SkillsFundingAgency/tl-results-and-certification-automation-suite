@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string PageTitle = "Manage learner records page – Manage T Level results – GOV.UK";
         public static By AddLearnerRecordsLink { get; } = By.LinkText("Add a new learner record");
 
-        public static By UpdateALearnerRecordLink = By.XPath("//a[@href='/manage-learner-records']");
+        public static By UpdateALearnerRecordLink = By.XPath("//*[contains(text(),'Update a learner record')]");
         
         public static By HomeBreadcrumb = By.Id("breadcrumb0");
         public static string ExpectedHomeBreadcrumbText = "Home";
@@ -52,6 +52,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             FindElementContainingText(link1);
             FindElementContainingText(link2);
+        }
+
+        public static void ClickUpdateLearnerRecordLink()
+        {
+            ClickElement(UpdateALearnerRecordLink);
         }
 
     }

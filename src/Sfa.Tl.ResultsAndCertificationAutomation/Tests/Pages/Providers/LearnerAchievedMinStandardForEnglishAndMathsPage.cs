@@ -1,7 +1,9 @@
-﻿using NUnit.Framework;
+﻿
+using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
 {
@@ -63,7 +65,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             string ExpectedULN = uln;
             string ExpectedNameString = Constants.DbFirstName + " " + Constants.DbLastName;
             Assert.IsTrue(WebDriver.FindElement(LearnerDetails).Text.Contains(ExpectedNameString));
-    
+
         }
 
         public static void VerifyErrorMessage(string ErrorMessage)
@@ -133,5 +135,39 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                     break;
             }
         }
+
+        public static void SelectRadioButton(string RadioButton)
+        {
+            switch (RadioButton)
+            {
+                case "Achieved the minimum standard":
+                    ClickAchievedMinStandardRadio();
+                    break;
+                case "Achieved the minimum standard with SEND adjustments":
+                    ClickAchievedMinStandardWithSendRadio();
+                    break;
+                case "Not achieved the minimum standard":
+                    ClickNotAchievedMinStandardRadio();
+                    break;
+
+            }
+
+        }
+
+        public static void VerifyDeclarationTextDisplayed()
+        {
+            bool Visible = WebDriver.FindElement(RadioBtnDeclarationText).Displayed;
+            Console.WriteLine("Displayed = " + Visible);
+            Assert.IsTrue(Visible);
+        }
+
+        public static void VerifyDeclarationTextNotDisplayed()
+        {
+            bool Visible = WebDriver.FindElement(RadioBtnDeclarationText).Displayed;
+            Console.WriteLine("Displayed = " + Visible);
+            Assert.IsFalse(Visible);
+
+        }
+
     }
 }

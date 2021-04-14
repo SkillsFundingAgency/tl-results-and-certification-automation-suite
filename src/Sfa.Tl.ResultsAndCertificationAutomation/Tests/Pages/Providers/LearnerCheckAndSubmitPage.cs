@@ -25,6 +25,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             ClickElement(BackLink);
         }
 
+        public static void ClickSubmitButton()
+        {
+            ClickElement(SubmitBtn);
+        }
+
+
         public static void VerifyProviderCheckAndSubmitPage()
         {
             Assert.AreEqual(CheckAndSubmitPageUrl, WebDriver.Url);

@@ -1,8 +1,7 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using System;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
 {
@@ -48,6 +47,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
             var uln = _scenarioContext["uln"] as string;
             DeleteLrsRecordsFromTables(uln);
         }
+        [When(@"I click on Continue button on Uln already been added page")]
+        public void WhenIClickOnContinueButtonOnUlnAlreadyBeenAddedPage()
+        {
+            string uln = _scenarioContext["uln"] as string;
+            Pages.CommonUlnDbSteps.VerifyUlnAlreadyAddedPage(uln);
+            Pages.CommonUlnDbSteps.ClickContinue();
+        }
 
+        [Then(@"I should see Learner T Level record page")]
+        public void ThenIShouldSeeLearnerTLevelRecordPage()
+        {
+            LearnerRecordPage.VerifyLearnerRecordPage();
+            string uln = _scenarioContext["uln"] as string;
+            LearnerRecordPage.VerifyLearnerRecordData(uln);
+        }
     }
 }
