@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2413_ResultsTransferManual")]
-    public partial class _2413_ResultsTransferManualFeature
+    [NUnit.Framework.DescriptionAttribute("2951_ManagingDataTransferBulkUpload")]
+    public partial class _2951_ManagingDataTransferBulkUploadFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2413_ResultsTransferManual.feature"
+#line 1 "2951_ManagingDataTransferBulkUpload.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Results", "2413_ResultsTransferManual", "\tAs a R&C Portal user\r\n\tI need results data to be updated after a transfer occurs" +
-                    "\r\n\tSo that student data can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "2951_ManagingDataTransferBulkUpload", "\tAs a Provider\r\n\tI need IP data to be maintained when learners change Providers\r\n" +
+                    "\tSo that learner data can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,25 +79,50 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
 #line 6
 #line hidden
 #line 7
-testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Uln"});
+            table12.AddRow(new string[] {
+                        "9900000011"});
+#line 9
+testRunner.And("I have a registration in Db with IP against Dudley provider", ((string)(null)), table12, "And ");
+#line hidden
+#line 12
+testRunner.And("I am on Registration upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+testRunner.And("I upload \"2951RegistrationsValidDataBarnsley.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+testRunner.And("I click on the Sign Out link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+testRunner.And("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+testRunner.And("I click on \"Manage learner records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+testRunner.And("I click on \"Update a learner record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2413_Transfer result manual")]
+        [NUnit.Framework.DescriptionAttribute("2951_Learner record shows active IP with new provider")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public virtual void _2413_TransferResultManual()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        public virtual void _2951_LearnerRecordShowsActiveIPWithNewProvider()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2413_Transfer result manual", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2951_Learner record shows active IP with new provider", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -120,34 +145,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 12
-testRunner.And("I search the registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Provider"});
-                table49.AddRow(new string[] {
-                            "Automation Test2 (99999902)"});
-#line 13
-testRunner.And("I changed the provider", ((string)(null)), table49, "And ");
-#line hidden
-#line 16
-testRunner.And("I am on results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 17
-testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Provider",
-                            "Grade"});
-                table50.AddRow(new string[] {
-                            "Automation Test2 (99999902)",
-                            "A"});
-#line 18
-testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
-                        "e", ((string)(null)), table50, "Then ");
-#line hidden
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table13.AddRow(new string[] {
+                            "9900000011"});
 #line 21
-testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I search the learner record with Uln", ((string)(null)), table13, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table14.AddRow(new string[] {
+                            "9900000011"});
+#line 24
+testRunner.Then("I should see IP record for Uln is active for new provider", ((string)(null)), table14, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table15.AddRow(new string[] {
+                            "9900000011"});
+#line 27
+testRunner.And("I have deleted LRS data from the database for the Uln", ((string)(null)), table15, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
