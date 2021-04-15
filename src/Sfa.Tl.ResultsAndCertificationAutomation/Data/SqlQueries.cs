@@ -144,6 +144,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
             return (int)pathwayId.FirstOrDefault().FirstOrDefault();
         }
+        public static int CreateRegistrationPathwayForDudley(int profileId)
+        {
+            var tqProviderId = Constants.DudleyProviderIdForLrs;
+            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegPathway, ConnectionString);
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
         public static void CreateQualificationAcheivedForLrs(int profileId)
         {
             string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',38,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";

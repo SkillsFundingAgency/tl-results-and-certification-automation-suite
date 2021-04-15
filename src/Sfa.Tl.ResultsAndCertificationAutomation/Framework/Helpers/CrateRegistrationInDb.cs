@@ -1,6 +1,8 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Model;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
@@ -32,6 +34,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             var profileId = SqlQueries.CreateRegistrationProfileForLrsWithEM(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+            SqlQueries.CreateQualificationAcheivedForLrs(profileId);
+            SqlQueries.CreateIndustryPlacement(pathwayId, 1);
+        }
+        public void CreateLrsRegWithEMAndIPForDudley(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForLrsWithEM(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForDudley(profileId);
             SqlQueries.CreateRegSpecialismForLrs(pathwayId);
             SqlQueries.CreateQualificationAcheivedForLrs(profileId);
             SqlQueries.CreateIndustryPlacement(pathwayId, 1);
@@ -116,7 +126,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             string DeleteQualificationAcheived = "Delete from QualificationAchieved where TqRegistrationProfileId = '" + profileId + "'";
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteQualificationAcheived, ConnectionString);
             DeleteRegistrationFromTables(uln);
-
+        }
+        public void DeleteLrsDataFromTables(string uln)
+        {
+            var pathwayIds = getPathwayIds(uln);
+            string DeleteIpRecords = "Delete from IndustryPlacement where TqRegistrationPathwayId in (" + string.Join(",", pathwayIds)+")";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteIpRecords, ConnectionString);
+            var profileId = GetProfileID(uln);
+            string DeleteQualificationAcheived = "Delete from QualificationAchieved where TqRegistrationProfileId = '" + profileId + "'";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteQualificationAcheived, ConnectionString);
+            DeleteRegistrationFromTables(uln);
         }
         public static int GetProfileID(string uln)
         {
@@ -131,6 +150,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getPathwayId, ConnectionString);
             int result = Convert.ToInt32(pathwayId[0][0]);
             return result;
+        }
+        public static List<int> getPathwayIds(string uln)
+        {
+            string getPathwayId = "select rs.TqRegistrationPathwayId from TqRegistrationSpecialism rs join TqRegistrationPathway rp on rp.Id = rs.TqRegistrationPathwayId join TqRegistrationProfile pr on pr.Id = rp.TqRegistrationProfileId where pr.UniqueLearnerNumber = '" + uln + "'";
+            var pathwayIds = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getPathwayId, ConnectionString);
+            return pathwayIds.Select(x => Convert.ToInt32(x[0])).ToList();
         }
 
         public void CreateDbRegistationForLrsMathsAEnglishNA(string uln)
