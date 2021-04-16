@@ -15,7 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private const string dob = "Date of birth: 01/01/2001";
         private const string provider = "Provider (UKPRN): Barnsley College (10000536)";
         private const string core = "T Level core: Agriculture, Environmental and Animal Care (77777777)";
-        private const string statusEM = "Achieved minimum standard (Data from Learning Records Service - LRS)";
+        private const string statusEM = "Achieved minimum standard (Data from the Learning Records Service - LRS)";
         private const string statusEMNonLRS = "Achieved minimum standard";
         private const string statusIP = "Placement completed";
         //links
