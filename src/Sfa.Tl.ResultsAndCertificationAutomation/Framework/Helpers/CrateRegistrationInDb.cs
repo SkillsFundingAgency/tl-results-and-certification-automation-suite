@@ -193,6 +193,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var englishMathsStatus = SqlDatabaseConncetionHelper.ReadDataFromDataBase(profileTableQuery, ConnectionString);
             return (EnglishAndMathsStatus)Convert.ToInt32(englishMathsStatus[0][0]);
         }
+        public void CreateIndustryPlacementRecord(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.ReturnRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateIndustryPlacement(pathwayId, 1);
+        }
+
 
     }
 }

@@ -267,5 +267,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             int result = Convert.ToInt32(Records[0][0]);
             return result;
         }
+
+        public static int ReturnRegistrationProfileForLrs(string uln)
+        {
+            String GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+
+        public static int ReturnRegistrationPathwayForLrs(int profileId)
+        {
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
+
     }
 }
