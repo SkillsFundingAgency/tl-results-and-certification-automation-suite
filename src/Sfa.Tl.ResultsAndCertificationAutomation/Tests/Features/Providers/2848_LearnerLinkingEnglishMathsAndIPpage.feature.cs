@@ -142,8 +142,8 @@ testRunner.Then("the \'Has learner achieved the minimum standard for English and
                         "played with \"Achieved the minimum standard\" still selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 18
-testRunner.When("I select \"Achieved the minimum standard with SEND adjustments\" radio button on \'M" +
-                        "in standard for English Maths\' page and press Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I select \"Achieved the minimum standard for learners with SEND\" radio button on \'" +
+                        "Min standard for English Maths\' page and press Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
 testRunner.Then("I expect to see the learner completed Industry Placement page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -154,8 +154,8 @@ testRunner.And("when I press the back link on the \'Has the learner achieved the
 #line hidden
 #line 21
 testRunner.Then("the \'Has learner achieved the minimum standard for English and maths\' page is dis" +
-                        "played with \"Achieved the minimum standard with SEND adjustments\" still selected" +
-                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "played with \"Achieved the minimum standard for learners with SEND\" still selecte" +
+                        "d", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 22
 testRunner.When("I select \"Not achieved the minimum standard\" radio button on \'Min standard for En" +

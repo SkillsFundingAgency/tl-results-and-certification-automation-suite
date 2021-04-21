@@ -15,10 +15,10 @@ Given I select "Achieved the minimum standard" radio button on 'Min standard for
 Then I expect to see the learner completed Industry Placement page
 And when I press the back link on the 'Has the learner achieved the required minimum standard for English and maths' page
 Then the 'Has learner achieved the minimum standard for English and maths' page is displayed with "Achieved the minimum standard" still selected
-When I select "Achieved the minimum standard with SEND adjustments" radio button on 'Min standard for English Maths' page and press Continue
+When I select "Achieved the minimum standard for learners with SEND" radio button on 'Min standard for English Maths' page and press Continue
 Then I expect to see the learner completed Industry Placement page
 And when I press the back link on the 'Has the learner achieved the required minimum standard for English and maths' page
-Then the 'Has learner achieved the minimum standard for English and maths' page is displayed with "Achieved the minimum standard with SEND adjustments" still selected
+Then the 'Has learner achieved the minimum standard for English and maths' page is displayed with "Achieved the minimum standard for learners with SEND" still selected
 When I select "Not achieved the minimum standard" radio button on 'Min standard for English Maths' page and press Continue
 Then I expect to see the learner completed Industry Placement page
 And when I press the back link on the 'Has the learner achieved the required minimum standard for English and maths' page

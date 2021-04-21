@@ -19,7 +19,7 @@ And I have deleted LRS records from the database
 
 @RegressionTest @Provider
 Scenario:  2799_Check and Submit page - Non LRS - Selected "Achieved the minimum standard with SEND adjustments" 
-Given I select "Achieved the minimum standard with SEND adjustments" radio button on 'Min standard for English Maths' page and press Continue
+Given I select "Achieved the minimum standard for learners with SEND" radio button on 'Min standard for English Maths' page and press Continue
 And I select "Yes, completed with special consideration" radio button and press Continue
 Then I am shown the Check and submit page for the Add a new learner journey
 And the English and maths minimum standard status shows "Achieved minimum standard for learners with SEND"

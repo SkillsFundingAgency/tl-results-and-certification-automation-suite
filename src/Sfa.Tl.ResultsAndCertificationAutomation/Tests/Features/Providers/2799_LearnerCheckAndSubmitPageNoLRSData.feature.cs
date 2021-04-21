@@ -186,8 +186,8 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 22
-testRunner.Given("I select \"Achieved the minimum standard with SEND adjustments\" radio button on \'M" +
-                        "in standard for English Maths\' page and press Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I select \"Achieved the minimum standard for learners with SEND\" radio button on \'" +
+                        "Min standard for English Maths\' page and press Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 23
 testRunner.And("I select \"Yes, completed with special consideration\" radio button and press Conti" +

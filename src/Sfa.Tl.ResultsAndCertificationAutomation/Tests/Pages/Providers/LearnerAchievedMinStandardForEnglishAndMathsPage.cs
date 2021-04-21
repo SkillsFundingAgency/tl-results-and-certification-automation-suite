@@ -123,7 +123,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                 case "Achieved the minimum standard":
                     Assert.AreEqual(true, WebDriver.FindElement(RadioAchievedMinStandard).Selected);
                     break;
-                case "Achieved the minimum standard with SEND adjustments":
+                case "Achieved the minimum standard for learners with SEND":
                     Assert.AreEqual(true, WebDriver.FindElement(RadioAchievedMinStandardWithSend).Selected);
                     break;
                 case "Not achieved the minimum standard":
