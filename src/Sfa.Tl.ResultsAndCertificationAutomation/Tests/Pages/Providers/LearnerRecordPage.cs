@@ -10,6 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private static string pagetitle { get; } = "Learner T Level record page – Manage T Level results – GOV.UK";
         private static string pageHeader { get; } = "Learner T Level record";
         private static By pageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
+        private static By statusElement = By.XPath("//*[@id='main-content']/div/div/dl[1]/div/dd[1]");
         //data
         private const string name = "Name: Db FirstName Db LastName";
         private const string dob = "Date of birth: 01/01/2001";
@@ -102,6 +103,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         public static void VerifyEMOrIPStatus(string text)
         {
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(text));
+        }
+
+        public static void VerifyEMStatus(string Status)
+        {
+            Assert.IsTrue(WebDriver.FindElement(statusElement).Text.Contains(Status));
         }
     }
 }

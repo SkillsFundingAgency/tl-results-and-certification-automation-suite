@@ -282,5 +282,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             return (int)pathwayId.FirstOrDefault().FirstOrDefault();
         }
 
+        public static void UpdateRegistrationProfileRecord(string SQL)
+        {
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SQL, ConnectionString);
+        }
+
+
     }
 }
