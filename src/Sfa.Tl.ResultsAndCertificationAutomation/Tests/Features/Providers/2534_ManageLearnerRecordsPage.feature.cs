@@ -118,13 +118,14 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 11
-testRunner.When("I click on \"Manage learner records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Manage learner T Level records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
 testRunner.Then("I should see Manage learner records page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 13
-testRunner.And("I should see \"Add a new learner record\" and \"Update a learner record\" links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I should see \"Add a new learner T Level record\" and \"Update a learner T Level rec" +
+                        "ord\" links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
 testRunner.And("I should be back to dashboard page when i click on home breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

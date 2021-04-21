@@ -82,10 +82,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
 testRunner.Given("I have logged in as a \"ProviderBarnsleyAll\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I click on \"Manage learner records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Manage learner T Level records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.And("I click on \"Add a new learner record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Add a new learner T Level record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
 testRunner.And("I clear Uln data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -132,14 +132,14 @@ testRunner.When("I click on \"Continue\" button", ((string)(null)), ((TechTalk.S
                 TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
                 table7.AddRow(new string[] {
-                            "Enter a ULN"});
+                            "Enter a ULN with 10 digits"});
 #line 15
 testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table7, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
                 table8.AddRow(new string[] {
-                            "Enter a ULN"});
+                            "Enter a ULN with 10 digits"});
 #line 18
 testRunner.And("I should see the following error summary messages", ((string)(null)), table8, "And ");
 #line hidden
@@ -196,14 +196,14 @@ testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.Sp
                 TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Message"});
                 table10.AddRow(new string[] {
-                            "Enter a valid ULN"});
+                            "Enter a valid 10-digit ULN"});
 #line 28
 testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table10, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
                 table11.AddRow(new string[] {
-                            "Enter a valid ULN"});
+                            "Enter a valid 10-digit ULN"});
 #line 31
 testRunner.And("I should see the following error summary messages", ((string)(null)), table11, "And ");
 #line hidden

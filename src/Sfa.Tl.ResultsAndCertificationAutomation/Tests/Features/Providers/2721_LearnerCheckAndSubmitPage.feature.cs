@@ -124,8 +124,8 @@ testRunner.And("I select \"Yes, completed\" radio button and press Continue", ((
 testRunner.Then("I am shown the Check and submit page for the Add a new learner journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 13
-testRunner.And("the English and maths minimum standard status shows \"Not achieved (data from Lear" +
-                        "ning Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the English and maths minimum standard status shows \"Not achieved minimum standar" +
+                        "d (Data from the Learning Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
 testRunner.And("the Industry placement status shows \"Placement completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -188,8 +188,8 @@ testRunner.And("I select \"Yes, completed with special consideration\" radio but
 testRunner.Then("I am shown the Check and submit page for the Add a new learner journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 24
-testRunner.And("the English and maths minimum standard status shows \"Not achieved (data from Lear" +
-                        "ning Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the English and maths minimum standard status shows \"Not achieved minimum standar" +
+                        "d (Data from the Learning Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
 testRunner.And("the Industry placement status shows \"Placement completed with special considerati" +
@@ -252,8 +252,8 @@ testRunner.And("I select \"No, still to be completed\" radio button and press Co
 testRunner.Then("I am shown the Check and submit page for the Add a new learner journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 35
-testRunner.And("the English and maths minimum standard status shows \"Achieved (data from Learning" +
-                        " Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the English and maths minimum standard status shows \"Achieved minimum standard (D" +
+                        "ata from the Learning Records Service - LRS)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 36
 testRunner.And("the Industry placement status shows \"Placement still to be completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

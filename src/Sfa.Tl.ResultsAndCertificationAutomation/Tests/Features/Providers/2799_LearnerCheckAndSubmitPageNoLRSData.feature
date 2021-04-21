@@ -22,7 +22,7 @@ Scenario:  2799_Check and Submit page - Non LRS - Selected "Achieved the minimum
 Given I select "Achieved the minimum standard with SEND adjustments" radio button on 'Min standard for English Maths' page and press Continue
 And I select "Yes, completed with special consideration" radio button and press Continue
 Then I am shown the Check and submit page for the Add a new learner journey
-And the English and maths minimum standard status shows "Achieved minimum standard with SEND adjustments"
+And the English and maths minimum standard status shows "Achieved minimum standard for learners with SEND"
 And the Industry placement status shows "Placement completed with special consideration"
 And I have deleted LRS records from the database
 

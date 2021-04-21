@@ -1,10 +1,5 @@
-﻿
-using NUnit.Framework;
-using OpenQA.Selenium;
-using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers;
-using System;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
@@ -12,14 +7,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
     [Binding]
     public class _2695_SearchForALearnerPageSteps : CrateRegistrationInDb
     {
-
-        private readonly ScenarioContext _scenarioContext;
-        public _2695_SearchForALearnerPageSteps(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
-
-
         [Given(@"I navigate to the Manage Learner Record Search for a learner page")]
         public void GivenINavigateToTheManageLearnerRecordSearchForALearnerPage()
         {

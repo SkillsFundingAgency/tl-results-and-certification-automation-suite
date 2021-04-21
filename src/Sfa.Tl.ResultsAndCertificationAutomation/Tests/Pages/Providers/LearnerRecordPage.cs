@@ -68,7 +68,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                 case "Search for a learner":
                     ClickElement(breadCrumb2);
                     break;
-                case "Manage learner records":
+                case "Manage learner T Level records":
                     ClickElement(breadCrumb1);
                     break;
                 case "Home":
@@ -83,8 +83,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         }
         public static void NavigateToLearnerRecordPage(string uln)
         {
-            ClickLinkByLabel("Manage learner records");
-            ClickLinkByLabel("Update a learner record");
+            ClickLinkByLabel("Manage learner T Level records");
+            ClickLinkByLabel("Update a learner T Level record");
             UpdateLearnerSearchPage.Enteruln(uln);
         }
         public static void Clicklink(string name)

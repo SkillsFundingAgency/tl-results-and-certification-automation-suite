@@ -11,8 +11,8 @@ And I search the registration and on change provider page
 And I changed the provider to "Barnsley College"
 And I click on the Sign Out link
 And I have logged in as a "ProviderBarnsleyPA" user
-And I click on "Manage learner records" link
-And I click on "Update a learner record" link
+And I click on "Manage learner T Level records" link
+And I click on "Update a learner T Level record" link
 
 @RegressionTest @Provider
 Scenario: 2952_Learner record shows active IP with new provider 

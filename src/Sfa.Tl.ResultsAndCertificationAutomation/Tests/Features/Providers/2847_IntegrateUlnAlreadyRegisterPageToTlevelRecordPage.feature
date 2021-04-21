@@ -6,8 +6,8 @@
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a registration in Db with Industry Placement
-And I click on "Manage learner records" link
-And I click on "Add a new learner record" link
+And I click on "Manage learner T Level records" link
+And I click on "Add a new learner T Level record" link
 And I clear Uln data
 
 @RegressionTest @Provider

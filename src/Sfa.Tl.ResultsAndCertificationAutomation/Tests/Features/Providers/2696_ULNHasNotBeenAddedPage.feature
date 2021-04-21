@@ -6,8 +6,8 @@
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data
-And I click on "Manage learner records" link
-And I click on "Update a learner record" link
+And I click on "Manage learner T Level records" link
+And I click on "Update a learner T Level record" link
 
 @RegressionTest @Provider
 Scenario: 2696 Verify Uln has not been added page

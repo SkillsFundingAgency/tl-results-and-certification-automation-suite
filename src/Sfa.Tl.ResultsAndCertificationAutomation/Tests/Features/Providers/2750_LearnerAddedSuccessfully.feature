@@ -5,8 +5,8 @@
 
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
-And I click on "Manage learner records" link
-And I click on "Add a new learner record" link
+And I click on "Manage learner T Level records" link
+And I click on "Add a new learner T Level record" link
 
 @RegressionTest @Provider
 Scenario: 2750_ verify success page with LRS qualification IP status 1
@@ -60,7 +60,7 @@ Scenario: 2750_ verify success page with Non LRS data EM status 2
 And I have a created a registration without LRS data
 And I enter the Uln
 And I click on "Continue" button
-And I select "Achieved the minimum standard with SEND adjustments" in english and maths page and press continue
+And I select "Achieved the minimum standard for learners with SEND" in english and maths page and press continue
 And I select "Yes, completed with special consideration" radio button and press Continue
 When I click on "Submit" button
 Then I should get Submit successfully page

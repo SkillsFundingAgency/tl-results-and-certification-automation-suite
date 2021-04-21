@@ -197,8 +197,8 @@ testRunner.And("I select \"Yes, completed with special consideration\" radio but
 testRunner.Then("I am shown the Check and submit page for the Add a new learner journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 25
-testRunner.And("the English and maths minimum standard status shows \"Achieved minimum standard wi" +
-                        "th SEND adjustments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the English and maths minimum standard status shows \"Achieved minimum standard fo" +
+                        "r learners with SEND\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
 testRunner.And("the Industry placement status shows \"Placement completed with special considerati" +
