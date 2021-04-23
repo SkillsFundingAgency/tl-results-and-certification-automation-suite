@@ -200,6 +200,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreateIndustryPlacement(pathwayId, 1);
         }
 
+        public void CreateDbRegistationForLrsWithEMOnly(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForLrsWithEM(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+            SqlQueries.CreateQualificationAcheivedForLrsSEND(profileId);
+           
+        }
+
+        public void AddNonSendQualificationsToRegistration(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileID(uln);
+            SqlQueries.CreateQualificationAcheivedForLrs(profileId);
+        }
 
     }
 }

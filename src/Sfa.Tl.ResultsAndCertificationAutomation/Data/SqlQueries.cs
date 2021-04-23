@@ -287,6 +287,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(SQL, ConnectionString);
         }
 
+        public static void CreateQualificationAcheivedForLrsSEND(int profileId)
+        {
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',517,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+
+            string CreateQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',596,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
+        }
+
+        public static int ReturnRegistrationProfileID(string uln)
+        {
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+
 
     }
 }

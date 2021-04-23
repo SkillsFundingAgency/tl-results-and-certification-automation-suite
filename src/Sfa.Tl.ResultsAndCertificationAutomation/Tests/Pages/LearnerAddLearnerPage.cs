@@ -92,5 +92,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(ContinueButton);
         }
 
+        public static void VerifyAddULNPage()
+        {
+            Assert.AreEqual(PageHeaderText, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+        }
+
+        public static void VerifyEnterULNFieldRetainsULN(string ULN)
+        {           
+            Assert.IsTrue(WebDriver.FindElement(ULNTextField).GetAttribute("value").Contains(ULN));
+        }
+
+
     }
 }

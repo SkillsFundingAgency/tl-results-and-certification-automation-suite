@@ -23,7 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
 
 
 
-        public static void VerifyUpdateIPSuccessPage(string ULN)
+        public static void VerifyEMDataSubmittedSuccessPage(string ULN)
         {
             Assert.AreEqual(pagetitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
