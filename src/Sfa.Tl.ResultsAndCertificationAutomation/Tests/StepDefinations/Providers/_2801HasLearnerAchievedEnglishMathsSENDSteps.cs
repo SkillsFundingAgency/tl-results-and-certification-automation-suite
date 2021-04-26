@@ -36,7 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void WhenIEnterTheULNOnTheAddLearnerPage()
         {
             var uln = _scenarioContext["uln"] as string;
-            Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.CommonUlnDbSteps.EnterULN(uln);
+            LearnerAddLearnerPage.EnterULN(uln);
             
         }
 
@@ -75,14 +75,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I am shown the Provider - Enter a ULN page")]
         public void ThenIAmShownTheProvider_EnterAULNPage()
         {
-            Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.CommonUlnDbSteps.VerifyAddULNPage();
+            LearnerAddLearnerPage.VerifyAddULNPage();
         }
 
         [Then(@"the ULN is retained on the Provider - Enter a ULN page")]
         public void ThenTheULNIsRetainedOnTheProvider_EnterAULNPage()
         {
             var uln = _scenarioContext["uln"] as string;
-            Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.CommonUlnDbSteps.VerifyEnterULNFieldRetainsULN(uln);
+            LearnerAddLearnerPage.VerifyEnterULNFieldRetainsULN(uln);
         }
 
         [Given(@"I click submit without selecting a radio button on the Min standard for EM Page")]
@@ -130,7 +130,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I click continue")]
         public void ThenIClickContinue()
         {
-            Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.CommonUlnDbSteps.ClickContinue();
+            LearnerAddLearnerPage.ClickContinue();
         }
 
 

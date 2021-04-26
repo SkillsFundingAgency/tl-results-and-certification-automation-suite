@@ -38,7 +38,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
 
             var uln = _scenarioContext["uln"] as string;
             WebDriver.FindElement(By.Id("enteruln")).Clear();
-            Pages.CommonUlnDbSteps.EnterULN(uln);
+            LearnerAddLearnerPage.EnterULN(uln);
         }
         
         [Given(@"I select ""(.*)"" radio button and press Continue")]

@@ -33,7 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
 
             var uln = _scenarioContext["uln"] as string;
             WebDriver.FindElement(By.Id("enteruln")).Clear();
-            Pages.CommonUlnDbSteps.EnterULN(uln);
+            LearnerAddLearnerPage.EnterULN(uln);
             LearnerAchievedMinStandardForEnglishAndMathsPage.VerifyMinStandardAchievedForEnglishMathsPage();
             
         }

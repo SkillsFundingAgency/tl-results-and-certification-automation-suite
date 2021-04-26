@@ -34,14 +34,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I am navigated to the Learner Enter ULN page")]
         public void ThenIAmNavigatedToTheLearnerEnterULNPage()
         {
-            Pages.CommonUlnDbSteps.VerifyAddANewLearnerRecordPage();
+            LearnerAddLearnerPage.VerifyAddANewLearnerRecordPage();
         }
 
         [Then(@"the ULN field is still populated with the previously entered ULN")]
         public void ThenTheULNFieldIsStillPopulatedWithThePreviouslyEnteredULN()
         {
             var uln = _scenarioContext["uln"] as string;
-            Pages.CommonUlnDbSteps.VerifySeachUlnField(uln);
+            LearnerAddLearnerPage.VerifySeachUlnField(uln);
         }
 
         [Then(@"no text is shown above above the Continue buttton")]

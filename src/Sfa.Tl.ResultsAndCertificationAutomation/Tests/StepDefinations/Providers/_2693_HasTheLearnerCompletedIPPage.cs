@@ -56,8 +56,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"the Enter ULN Page is displayed when i click on Back link")]
         public void ThenTheEnterULNPageIsDisplayedWhenIClickOnBacklink()
         {
-            Pages.CommonUlnDbSteps.ClickBackLink();
-            Pages.CommonUlnDbSteps.VerifyAddANewLearnerRecordPage();
+            LearnerAddLearnerPage.ClickBackLink();
+            LearnerAddLearnerPage.VerifyAddANewLearnerRecordPage();
         }
 
         [When(@"I click on the ""(.*)"" link on the Has Learner Completed Industry Placement page")]

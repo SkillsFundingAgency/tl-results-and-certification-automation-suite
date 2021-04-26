@@ -35,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I am navigated to the Learner Enter the Unique Learner Number page")]
         public void ThenIAmNavigatedToTheLearnerEnterTheUniqueLearnerNumberPage()
         {
-            Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.CommonUlnDbSteps.VerifyAddANewLearnerRecordPage();
+            LearnerAddLearnerPage.VerifyAddANewLearnerRecordPage();
 
         }
 

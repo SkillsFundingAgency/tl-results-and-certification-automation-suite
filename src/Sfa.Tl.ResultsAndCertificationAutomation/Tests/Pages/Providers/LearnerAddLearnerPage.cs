@@ -6,7 +6,7 @@ using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
-    public class CommonUlnDbSteps : ElementHelper
+    public class LearnerAddLearnerPage : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "add-learner-record-unique-learner-number");
         public static string PageTitle = "Add a new learner T Level record - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
