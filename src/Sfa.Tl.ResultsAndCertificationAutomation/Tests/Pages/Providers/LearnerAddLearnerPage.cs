@@ -6,34 +6,34 @@ using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
-    public class CommonUlnDbSteps : ElementHelper
+    public class LearnerAddLearnerPage : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "add-learner-record-unique-learner-number");
-        public static string PageTitle = "Add a new learner record - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
-        public static string ErrorPageTitle = "Error: Add a new learner record - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
+        public static string PageTitle = "Add a new learner T Level record - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
+        public static string ErrorPageTitle = "Error: Add a new learner T Level record - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
         public static By ContinueButton { get; } = By.Id("continueButton");
         public static string ExpectedButtonText = "Continue";
         public static By MainHeader { get; } = By.XPath("//*[@id='main-content']//form/div/span");
-        public static string MainHeaderText = "Add a new learner record";
+        public static string MainHeaderText = "Add a new learner T Level record";
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static string PageHeaderText = "Enter the Unique Learner Number (ULN)";
         public static By BackLink { get; } = By.Id("backLink");
         public static By BackToSearchBtn { get; } = By.Id("backButton");
         public static By ULNTextField { get; } = By.Id("enteruln");
         public static string ULNHintText = "ULN must be 10 digits long";
-        public static string ExpectedPageText = "You can only add records for learners who have been registered on a T Level programme by an awarding organisation.";
-        private static By PageText = By.XPath("//*[contains(text(),'You can only add records for learners')]");
+        public static string ExpectedPageText = "You can only add T Level records for learners registered on a T Level course by an exam board (also known as an awarding organisation).";
+        private static By PageText = By.XPath("//*[contains(text(),'You can only add T Level records for learners')]");
         public static By MainErrorMessage = By.XPath("//*[@id='main-content']//ul/li/a");
         public static By SubErrorMessage = By.XPath("//*[@id='main-content']//span[2]");
         // Uln not found page
         private static string UlnNotRegisteredUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-learner-record-ULN-not-registered");
-        private static string UlnNotRegisteredTitle { get; } = "Add a new learner record - ULN not registered page – Manage T Level results – GOV.UK";
+        private static string UlnNotRegisteredTitle { get; } = "Add a new learner T Level record - ULN not registered page – Manage T Level results – GOV.UK";
         private static string UlnAlreadyAddedUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-learner-record-ULN-already-added");
-        private static string UlnAlreadyAddedTitle { get; } = "Add a new learner record - ULN already added page – Manage T Level results – GOV.UK";
+        private static string UlnAlreadyAddedTitle { get; } = "Add a new learner T Level record - ULN already added page – Manage T Level results – GOV.UK";
 
         public static void VerifyUlnNotRegisteredPage(string uln)
         {
-            string ExpectedPageHeading = "ULN ("+uln+") has not been registered by the awarding organisation";
+            string ExpectedPageHeading = "ULN ("+uln+ ") has not been registered in this service by an exam board";
             Assert.AreEqual(UlnNotRegisteredUrl, WebDriver.Url);
             Assert.AreEqual(UlnNotRegisteredTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeader).Text);
@@ -91,6 +91,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(ContinueButton);
         }
+
+        public static void VerifyAddULNPage()
+        {
+            Assert.AreEqual(PageHeaderText, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+        }
+
+        public static void VerifyEnterULNFieldRetainsULN(string ULN)
+        {           
+            Assert.IsTrue(WebDriver.FindElement(ULNTextField).GetAttribute("value").Contains(ULN));
+        }
+
 
     }
 }

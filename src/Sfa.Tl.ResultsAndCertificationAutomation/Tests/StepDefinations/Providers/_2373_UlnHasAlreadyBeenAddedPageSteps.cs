@@ -1,6 +1,7 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
@@ -25,21 +26,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void GivenIEnterTheUln()
         {
             string uln = _scenarioContext["uln"] as string;
-            WebDriver.FindElement(Pages.CommonUlnDbSteps.ULNTextField).Clear();
-            WebDriver.FindElement(Pages.CommonUlnDbSteps.ULNTextField).SendKeys(uln);
+            WebDriver.FindElement(LearnerAddLearnerPage.ULNTextField).Clear();
+            WebDriver.FindElement(LearnerAddLearnerPage.ULNTextField).SendKeys(uln);
         }
         
         [Then(@"I should see Uln already been added page")]
         public void ThenIShouldSeeUlnAlreadyBeenAddedPage()
         {
             string uln = _scenarioContext["uln"] as string;
-            Pages.CommonUlnDbSteps.VerifyUlnAlreadyAddedPage(uln);
+            LearnerAddLearnerPage.VerifyUlnAlreadyAddedPage(uln);
         }
         
         [Then(@"I should see ""(.*)"" button")]
         public void ThenIShouldSeeButton(string p0)
         {
-            Assert.AreEqual(true, WebDriver.FindElement(Pages.CommonUlnDbSteps.ContinueButton).Enabled);
+            Assert.AreEqual(true, WebDriver.FindElement(LearnerAddLearnerPage.ContinueButton).Enabled);
         }
         [Then(@"I have deleted LRS records from the database")]
         public void ThenIHaveDeletedLRSRecordsFromTheDatabase()
@@ -51,8 +52,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void WhenIClickOnContinueButtonOnUlnAlreadyBeenAddedPage()
         {
             string uln = _scenarioContext["uln"] as string;
-            Pages.CommonUlnDbSteps.VerifyUlnAlreadyAddedPage(uln);
-            Pages.CommonUlnDbSteps.ClickContinue();
+            LearnerAddLearnerPage.VerifyUlnAlreadyAddedPage(uln);
+            LearnerAddLearnerPage.ClickContinue();
         }
 
         [Then(@"I should see Learner T Level record page")]

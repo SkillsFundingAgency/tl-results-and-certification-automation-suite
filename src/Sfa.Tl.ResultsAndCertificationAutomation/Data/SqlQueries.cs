@@ -18,9 +18,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         private static readonly string DeleteAssessmentPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '99%'";
         private static readonly string DeleteAssessmentSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '99%'";
         private static readonly string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '99%'";
+        private static readonly string DeleteIpData = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id=pw.TqRegistrationProfileId where rp.UniqueLearnerNumber like '99%'";
+        private static readonly string DeleteEMData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber like '99%'";
 
         public static void DeleteFromRegistrationTables()
         {
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteIpData, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteEMData, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeletePathwayResults, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAssessmentPathway, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAssessmentSpecialism, ConnectionString);
@@ -144,6 +148,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
             return (int)pathwayId.FirstOrDefault().FirstOrDefault();
         }
+        public static int CreateRegistrationPathwayForDudley(int profileId)
+        {
+            var tqProviderId = Constants.DudleyProviderIdForLrs;
+            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegPathway, ConnectionString);
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
         public static void CreateQualificationAcheivedForLrs(int profileId)
         {
             string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',38,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
@@ -254,5 +267,42 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             int result = Convert.ToInt32(Records[0][0]);
             return result;
         }
+
+        public static int ReturnRegistrationProfileForLrs(string uln)
+        {
+            String GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+
+        public static int ReturnRegistrationPathwayForLrs(int profileId)
+        {
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
+
+        public static void UpdateRegistrationProfileRecord(string SQL)
+        {
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SQL, ConnectionString);
+        }
+
+        public static void CreateQualificationAcheivedForLrsSEND(int profileId)
+        {
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',517,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+
+            string CreateQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',596,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
+        }
+
+        public static int ReturnRegistrationProfileID(string uln)
+        {
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+
+
     }
 }

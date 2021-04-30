@@ -1,11 +1,12 @@
 ﻿using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
 {
     [Binding]
-    public class _2535_EnterUlnPageValidationsSteps : Pages.CommonUlnDbSteps
+    public class _2535_EnterUlnPageValidationsSteps : LearnerAddLearnerPage
     {
         [Given(@"I clear Uln data")]
         public void GivenIClearUlnData()

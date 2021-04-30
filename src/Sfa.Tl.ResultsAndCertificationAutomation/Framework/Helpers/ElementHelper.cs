@@ -193,5 +193,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var linkWithLabel = By.LinkText(label);
             ClickElement(linkWithLabel);
         }
+
+        public static void RefreshPage()
+        {
+            WebDriver.Navigate().Refresh();
+        }
+
     }
 }

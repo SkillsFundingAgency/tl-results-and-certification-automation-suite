@@ -6,8 +6,8 @@
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have an Uln not existed in DB
-And I click on "Manage learner records" link
-And I click on "Add a new learner record" link
+And I click on "Manage learner T Level records" link
+And I click on "Add a new learner T Level record" link
 
 @RegressionTest @Provider
 Scenario: 2536 Search for Uln not existed

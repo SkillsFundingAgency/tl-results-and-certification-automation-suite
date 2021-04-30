@@ -13,7 +13,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [When(@"I click on IP change link")]
         public void WhenIClickOnIPChangeLink()
         {
-            ClickElement(LearnerHasTheLearnerCompletedIPPage.RadioButtonYesCompleted);
+            //ClickElement(LearnerHasTheLearnerCompletedIPPage.RadioButtonYesCompleted);
+            LearnerHasTheLearnerCompletedIPPage.ClickIpStatus();
         }
         [Then(@"I expect to see the learner completed Industry Placement change page")]
         public void ThenIExpectToSeeTheLearnerCompletedIndustryPlacementChangePage()

@@ -127,15 +127,15 @@ this.FeatureBackground();
 testRunner.When("I click on \"Query\" link in Learner record page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
-testRunner.And("I change the radio option to \"Achieved the minimum standard with SEND adjustments" +
-                        "\" in update English and Maths page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I change the radio option to \"Achieved the minimum standard for learners with SEN" +
+                        "D\" in update English and Maths page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
 testRunner.Then("I should see update English and Maths acheivement success page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 16
-testRunner.And("Learner record page should display \"Achieved minimum standard with SEND adjustmen" +
-                        "ts\" when I click on Back to learner record button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("Learner record page should display \"Achieved minimum standard for learners with S" +
+                        "END\" when I click on Back to learner record button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
 testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

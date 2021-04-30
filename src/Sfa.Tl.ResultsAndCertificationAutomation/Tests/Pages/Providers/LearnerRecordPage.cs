@@ -10,12 +10,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private static string pagetitle { get; } = "Learner T Level record page – Manage T Level results – GOV.UK";
         private static string pageHeader { get; } = "Learner T Level record";
         private static By pageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
+        private static By statusElement = By.XPath("//*[@id='main-content']/div/div/dl[1]/div/dd[1]");
         //data
         private const string name = "Name: Db FirstName Db LastName";
         private const string dob = "Date of birth: 01/01/2001";
         private const string provider = "Provider (UKPRN): Barnsley College (10000536)";
         private const string core = "T Level core: Agriculture, Environmental and Animal Care (77777777)";
-        private const string statusEM = "Achieved minimum standard (data from Learning Records Service - LRS)";
+        private const string statusEM = "Achieved minimum standard (Data from the Learning Records Service - LRS)";
         private const string statusEMNonLRS = "Achieved minimum standard";
         private const string statusIP = "Placement completed";
         //links
@@ -68,7 +69,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                 case "Search for a learner":
                     ClickElement(breadCrumb2);
                     break;
-                case "Manage learner records":
+                case "Manage learner T Level records":
                     ClickElement(breadCrumb1);
                     break;
                 case "Home":
@@ -83,8 +84,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         }
         public static void NavigateToLearnerRecordPage(string uln)
         {
-            ClickLinkByLabel("Manage learner records");
-            ClickLinkByLabel("Update a learner record");
+            ClickLinkByLabel("Manage learner T Level records");
+            ClickLinkByLabel("Update a learner T Level record");
             UpdateLearnerSearchPage.Enteruln(uln);
         }
         public static void Clicklink(string name)
@@ -102,6 +103,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         public static void VerifyEMOrIPStatus(string text)
         {
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(text));
+        }
+
+        public static void VerifyEMStatus(string Status)
+        {
+            Assert.IsTrue(WebDriver.FindElement(statusElement).Text.Contains(Status));
         }
     }
 }

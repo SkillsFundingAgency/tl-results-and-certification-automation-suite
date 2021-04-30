@@ -10,12 +10,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class LearnerHasTheLearnerCompletedIPPage : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "has-learner-completed-industry-placement");
-        public static string PageTitle = "Add a new learner record - Has learner completed industry placement page – Manage T Level results – GOV.UK";
-        public static string ErrorPageTitle = "Error: Add a new learner record - Has learner completed industry placement page – Manage T Level results – GOV.UK";
+        public static string PageTitle = "Add a new learner T Level record - Industry placement status page – Manage T Level results – GOV.UK";
+        public static string ErrorPageTitle = "Error: Add a new learner T Level record - Industry placement status page – Manage T Level results – GOV.UK";
         public static By ContinueButton { get; } = By.Id("continueButton");
         public static string ExpectedButtonText = "Continue";
         public static By MainHeader { get; } = By.XPath("//*[@id='main-content']//form/div/span");
-        public static string MainHeaderText = "Add a new learner record";
+        public static string MainHeaderText = "Add a new learner T Level record";
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static string PageHeaderText = "Has the learner completed their industry placement?";
 
@@ -36,7 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyLearnerHasTheLearnerCompletedIPPage(string uln)
         {
-            string ExpectedLearnerHeading = "Learner Db FirstName Db LastName";
+            string ExpectedLearnerHeading = "Learner: Db FirstName Db LastName";
             Assert.AreEqual(ExpectedLearnerHeading, WebDriver.FindElement(LearnerText).Text);
             Assert.AreEqual(PageUrl, WebDriver.Url);
             Assert.AreEqual(PageTitle, WebDriver.Title);
@@ -49,7 +49,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void VerifyChangeHasTheLearnerCompletedIPPage()
         {
-            string ExpectedLearnerHeading = "Learner Db FirstName Db LastName";
+            string ExpectedLearnerHeading = "Learner: Db FirstName Db LastName";
             Assert.AreEqual(ExpectedLearnerHeading, WebDriver.FindElement(LearnerText).Text);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
             Assert.AreEqual(PageTitle, WebDriver.Title);
@@ -90,7 +90,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void ClickYesCompletedRadio()
         {
-            WebDriver.FindElement((RadioButtonYesCompleted)).Click();
+            ClickElement(RadioButtonYesCompleted);
+        }
+        public static void ClickIpStatus()
+        {
+            ClickElement(RadioButtonYesCompleted);
         }
 
         public static void ClickYesCompletedSpecialRadio()

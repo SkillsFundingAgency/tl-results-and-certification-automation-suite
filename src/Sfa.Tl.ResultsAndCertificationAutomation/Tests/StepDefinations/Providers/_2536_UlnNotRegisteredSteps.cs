@@ -1,9 +1,11 @@
 ﻿using TechTalk.SpecFlow;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
 {
     [Binding]
-    public class _2536_UlnNotRegisteredSteps : Pages.CommonUlnDbSteps
+    public class _2536_UlnNotRegisteredSteps : LearnerAddLearnerPage
     {
         private readonly ScenarioContext _scenarioContext;
         public _2536_UlnNotRegisteredSteps(ScenarioContext scenarioContext)

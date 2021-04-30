@@ -30,8 +30,10 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2694_LearnerHasLearnerAchievedMinEnglishMathsPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2801_HasLearnerAchievedEnglishMaths(SEND) - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2843_IPStatusUpdatedConfirmationPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2848_LearnerLinkingEnglishMathsAndIPpage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\VerifyTermsAndConditions - Copy.feature.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,7 +95,7 @@
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="89.0.4389.2300" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="90.0.4430.2400" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.150.1.2" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.7.38" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
@@ -120,6 +122,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\2311RegistrationsData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\2951RegistrationsValidDataBarnsley.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\AssessmentEntryStage2InvalidHeader.csv">
@@ -254,8 +259,14 @@
     <Compile Update="Tests\Features\Providers\2695_LearnerSearchForALearnerPage.feature.cs">
       <DependentUpon>2695_LearnerSearchForALearnerPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\Providers\2802_EnglishAndMathsDataSubmittedSuccessfullyPage.feature.cs">
+      <DependentUpon>2802_EnglishAndMathsDataSubmittedSuccessfullyPage.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\Providers\2950_ReactivateARegistrationRetainsIPSelection.feature.cs">
       <DependentUpon>2950_ReactivateARegistrationRetainsIPSelection.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
+      <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -287,7 +298,15 @@
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\Providers\2802_EnglishAndMathsDataSubmittedSuccessfullyPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\2950_ReactivateARegistrationRetainsIPSelection.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

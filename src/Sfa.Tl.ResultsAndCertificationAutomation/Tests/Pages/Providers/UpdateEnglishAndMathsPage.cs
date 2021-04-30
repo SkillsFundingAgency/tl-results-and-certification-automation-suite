@@ -31,7 +31,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                 case "Achieved the minimum standard":
                     Assert.AreEqual(true, WebDriver.FindElement(acheived).Selected);
                     break;
-                case "Achieved the minimum standard with SEND adjustments":
+                case "Achieved the minimum standard for learners with SEND":
                     Assert.AreEqual(true, WebDriver.FindElement(acheivedWithSend).Selected);
                     break;
                 case "Not achieved the minimum standard":
@@ -46,7 +46,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                 case "Achieved the minimum standard":
                     ClickElement(acheived);
                     break;
-                case "Achieved the minimum standard with SEND adjustments":
+                case "Achieved the minimum standard for learners with SEND":
                     ClickElement(acheivedWithSend);
                     break;
                 case "Not achieved the minimum standard":

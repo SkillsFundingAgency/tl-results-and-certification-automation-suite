@@ -62,7 +62,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenIShouldSeeAddLearnerPageWhenIClickOnAddAnoptherLearnerButton()
         {
             SubmitSuccessPage.ClickAddNotherLearnerBtn();
-            Pages.CommonUlnDbSteps.VerifyAddANewLearnerRecordPage();
+            LearnerAddLearnerPage.VerifyAddANewLearnerRecordPage();
 
         }
 

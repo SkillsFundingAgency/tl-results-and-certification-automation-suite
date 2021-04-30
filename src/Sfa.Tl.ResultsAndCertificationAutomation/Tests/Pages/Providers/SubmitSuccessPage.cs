@@ -7,7 +7,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
     public class SubmitSuccessPage : ElementHelper
     {
         private static string SubmitSuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "learner-record-added-confirmation");
-        private static string SubmitSuccessPageTitle { get; } = "Learner record added confirmation page – Manage T Level results – GOV.UK";
+        private static string SubmitSuccessPageTitle { get; } = "Learner T Level record added confirmation page – Manage T Level results – GOV.UK";
         private static string SubmitSuccessPageHeader { get; } = "Learner T Level record added successfully";
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By HeaderBody { get; } = By.XPath("//*[@class='govuk-panel__body']");

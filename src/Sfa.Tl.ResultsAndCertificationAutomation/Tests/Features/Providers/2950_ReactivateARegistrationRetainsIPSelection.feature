@@ -16,6 +16,7 @@ And I click on the Sign Out link
 And I have logged in as a "RegistrationEditor" user
 And I withdraw the registration and then reactivate it
 Then the IndustryPlacement table will still have a status value of "1"
+And I have deleted LRS data from the database
 
 @RegressionTest @Provider
 Scenario:  2950_Withdraw and Reactivate a registration with IP status of "Yes, completed with special consideration"
@@ -29,6 +30,7 @@ And I click on the Sign Out link
 And I have logged in as a "RegistrationEditor" user
 And I withdraw the registration and then reactivate it
 Then the IndustryPlacement table will still have a status value of "2"
+And I have deleted LRS data from the database
 
 
 @RegressionTest @Provider
@@ -43,3 +45,4 @@ And I click on the Sign Out link
 And I have logged in as a "RegistrationEditor" user
 And I withdraw the registration and then reactivate it
 Then the IndustryPlacement table will still have a status value of "3"
+And I have deleted LRS data from the database

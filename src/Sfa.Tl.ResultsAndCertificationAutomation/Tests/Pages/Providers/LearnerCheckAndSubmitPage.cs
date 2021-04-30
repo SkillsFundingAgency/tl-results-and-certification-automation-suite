@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
     public class LearnerCheckAndSubmitPage : ElementHelper
     {
         private static string CheckAndSubmitPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-learner-record-check-and-submit");
-        private static string CheckAndSubmitPageTitle { get; } = "Add a new learner record - Check and submit page – Manage T Level results – GOV.UK";
+        private static string CheckAndSubmitPageTitle { get; } = "Add a new learner T Level record - Check and submit page – Manage T Level results – GOV.UK";
         private static string CheckAndSubmitPageHeader { get; } = "Check and submit";
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By LearnerDetails { get; } = By.XPath("//*[@id='main-content']/div/div/form/dl[1]");

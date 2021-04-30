@@ -7,19 +7,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class LearnerManageLearnerRecordsPage : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "manage-learner-records");
-        public static string PageTitle = "Manage learner records page – Manage T Level results – GOV.UK";
-        public static By AddLearnerRecordsLink { get; } = By.LinkText("Add a new learner record");
+        public static string PageTitle = "Manage learner T Level records page – Manage T Level results – GOV.UK";
+        public static By AddLearnerRecordsLink { get; } = By.LinkText("Add a new learner T Level record");
 
-        public static By UpdateALearnerRecordLink = By.XPath("//*[contains(text(),'Update a learner record')]");
+        public static By UpdateALearnerRecordLink = By.LinkText("Update a learner T Level record");
         
         public static By HomeBreadcrumb = By.Id("breadcrumb0");
         public static string ExpectedHomeBreadcrumbText = "Home";
         public static By ManageLearnerRecordsBreadcumb = By.Id("breadcrumb1");
-        public static string ExpectedManageLearnerRecordBreadcumbText = "Manage learner records";
+        public static string ExpectedManageLearnerRecordBreadcumbText = "Manage learner T Level records";
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-        public static string PageHeaderText = "Manage learner records";
+        public static string PageHeaderText = "Manage learner T Level records";
         public static By PageSubHeader { get; } = By.XPath("//*[@id='main-content']/div[1]/div/p");
-        public static string PageSubHeaderText = "Add or update records for learners who have been registered on a T Level programme by the awarding organisation.";
+        public static string PageSubHeaderText = "Add or update records for learners registered on a T Level course by an exam board (also known as an awarding organisation).";
 
 
         public static void ClickAddANewLearnerRecordLink()

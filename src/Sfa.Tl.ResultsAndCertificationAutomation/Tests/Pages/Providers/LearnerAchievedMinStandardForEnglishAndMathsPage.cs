@@ -10,8 +10,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
     public class LearnerAchievedMinStandardForEnglishAndMathsPage : ElementHelper
     {
         private static string PageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-learner-record-english-and-maths-achievement");
-        private static string PageTitle { get; } = "Add a new learner record - English and maths achievement page – Manage T Level results – GOV.UK";
-        private static string ErrorPageTitle { get; } = "Error: Add a new learner record - English and maths achievement page – Manage T Level results – GOV.UK";
+        private static string PageTitle { get; } = "Add a new learner T Level record - English and maths achievement page – Manage T Level results – GOV.UK";
+        private static string ErrorPageTitle { get; } = "Error: Add a new learner T Level record - English and maths achievement page – Manage T Level results – GOV.UK";
         private static string ExpectedPageHeader { get; } = "Has the learner achieved the required minimum standard for English and maths?";
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static string ExpectedCaption { get; } = "Add a new learner T Level record";
@@ -45,10 +45,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ExpectedCaption, WebDriver.FindElement(Caption).Text);
             Assert.IsTrue(WebDriver.FindElement(ContinueBtn).Text.Contains("Continue"));
-            // Assert.AreEqual(ExpectedTextAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandardLabel).Text);
-            // Assert.AreEqual(ExpectedTextAchievedMinStandardWithSend, WebDriver.FindElement(RadioAchievedMinStandardWithSendLabel).Text);
-            // Assert.AreEqual(ExpectedTextNotAchievedMinStandard, WebDriver.FindElement(RadioAchievedMinStandardWithSendLabel).Text);
-
         }
         public static void VerifyChangeMinStandardAchievedForEnglishMathsPage()
         {
@@ -109,7 +105,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                 case "Achieved the minimum standard":
                     ClickAchievedMinStandardRadio();
                     break;
-                case "Achieved the minimum standard with SEND adjustments":
+                case "Achieved the minimum standard for learners with SEND":
                     ClickAchievedMinStandardWithSendRadio();
                     break;
                 case "Not achieved the minimum standard":
@@ -127,7 +123,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                 case "Achieved the minimum standard":
                     Assert.AreEqual(true, WebDriver.FindElement(RadioAchievedMinStandard).Selected);
                     break;
-                case "Achieved the minimum standard with SEND adjustments":
+                case "Achieved the minimum standard for learners with SEND":
                     Assert.AreEqual(true, WebDriver.FindElement(RadioAchievedMinStandardWithSend).Selected);
                     break;
                 case "Not achieved the minimum standard":

@@ -142,5 +142,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string TqProviderId2 = "9479";
         public const string TqProviderIdForLrs = "10229";
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";
+        public const string DudleyProviderIdForLrs = "11493";
+        public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
     }
 }

@@ -6,8 +6,8 @@
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a registraion from LRS with EM and IP
-And I click on "Manage learner records" link
-And I click on "Update a learner record" link
+And I click on "Manage learner T Level records" link
+And I click on "Update a learner T Level record" link
 
 @RegressionTest @Provider
 Scenario: 2838_Verify Learner T Level Record page
@@ -25,7 +25,7 @@ And I have deleted LRS records from the database
 @RegressionTest @Provider
 Scenario: 2838_Verify Manage learner breadcrumb in Learner T Level Record page
 When I enter uln and click search
-And I click on "Manage learner records" breadcrumb
+And I click on "Manage learner T Level records" breadcrumb
 Then I should see Manage learner records page
 And I have deleted LRS records from the database
 

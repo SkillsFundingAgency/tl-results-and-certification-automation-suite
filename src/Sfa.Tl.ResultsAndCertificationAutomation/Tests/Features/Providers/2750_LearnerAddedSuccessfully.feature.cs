@@ -82,10 +82,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
 testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I click on \"Manage learner records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Manage learner T Level records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.And("I click on \"Add a new learner record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Add a new learner T Level record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -393,8 +393,8 @@ testRunner.And("I enter the Uln", ((string)(null)), ((TechTalk.SpecFlow.Table)(n
 testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 63
-testRunner.And("I select \"Achieved the minimum standard with SEND adjustments\" in english and mat" +
-                        "hs page and press continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I select \"Achieved the minimum standard for learners with SEND\" in english and ma" +
+                        "ths page and press continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 64
 testRunner.And("I select \"Yes, completed with special consideration\" radio button and press Conti" +

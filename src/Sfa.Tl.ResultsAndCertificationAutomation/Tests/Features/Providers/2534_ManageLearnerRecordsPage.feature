@@ -8,8 +8,8 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 
 @RegressionTest @Provider
 Scenario: 2534 Manage Learner Records Page
-When I click on "Manage learner records" link
+When I click on "Manage learner T Level records" link
 Then I should see Manage learner records page
-And I should see "Add a new learner record" and "Update a learner record" links
+And I should see "Add a new learner T Level record" and "Update a learner T Level record" links
 And I should be back to dashboard page when i click on home breadcrumb
 
