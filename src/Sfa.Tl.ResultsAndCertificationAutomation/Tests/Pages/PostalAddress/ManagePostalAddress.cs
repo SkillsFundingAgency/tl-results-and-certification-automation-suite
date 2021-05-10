@@ -13,11 +13,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         private static By AddAddressBtn { get; } = By.Id("addAddressButton");
         private static By HomeBreadCrumb { get; } = By.Id("breadcrumb0");
         //Search post code page
-        private static string SearchPostalAddressPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "manage-postal-address");
-        private static string SearchPostalAddressPageHeader { get; } = "Manage your organisation’s postal address";
-        private static string SearchPostalAddressPageTitle { get; } = "Manage your organisation's postal address page – Manage T Level results – GOV.UK";
+        private static string SearchPostalAddressPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-postal-address-postcode");
+        private static string SearchPostalAddressPageHeader { get; } = "What is your organisation's postal address?";
+        private static string SearchPostalAddressPageTitle { get; } = "Add your organisation's postal address page – Manage T Level results – GOV.UK";
         private static By FindAddressBtn { get; } = By.Id("findAddressButton");
         private static By EnterPostCode { get; } = By.Id("postcode");
+        public static void ClickBackLink() => WebDriver.FindElement(By.Id("backLink")).Click();
 
         public static void VerifyManageOrgPostalAddressPage()
         {
