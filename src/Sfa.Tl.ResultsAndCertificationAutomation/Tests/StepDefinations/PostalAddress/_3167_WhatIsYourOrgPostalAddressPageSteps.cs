@@ -6,6 +6,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
     [Binding]
     public class _3167_WhatIsYourOrgPostalAddressPageSteps : ManagePostalAddress
     {
+        [Given(@"I click on ""(.*)"" button on Org postal address page")]
         [When(@"I click on ""(.*)"" button on Org postal address page")]
         public void WhenIClickOnButtonOnOrgPostalAddressPage(string buttonName)
         {

@@ -84,16 +84,16 @@ testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), (
 #line 8
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "Registration",
                         "Assessment",
                         "Result"});
-            table32.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "RegistrationsValidDataSingle.csv",
                         "AssessmentUploadSingleData.csv",
                         "ResultsUploadSingleData.csv"});
 #line 9
-testRunner.And("I uploaded following files", ((string)(null)), table32, "And ");
+testRunner.And("I uploaded following files", ((string)(null)), table38, "And ");
 #line hidden
         }
         
@@ -140,22 +140,22 @@ testRunner.And("I upload \"RegistrationForTransfer.csv\" file", ((string)(null))
 #line 17
 testRunner.And("I am on results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
-                table33.AddRow(new string[] {
+                table39.AddRow(new string[] {
                             "9900000001"});
 #line 18
-testRunner.When("I search the learner result", ((string)(null)), table33, "When ");
+testRunner.When("I search the learner result", ((string)(null)), table39, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                             "Provider",
                             "Grade"});
-                table34.AddRow(new string[] {
+                table40.AddRow(new string[] {
                             "Automation Test2 (99999902)",
                             "A*"});
 #line 21
 testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
-                        "e", ((string)(null)), table34, "Then ");
+                        "e", ((string)(null)), table40, "Then ");
 #line hidden
 #line 24
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

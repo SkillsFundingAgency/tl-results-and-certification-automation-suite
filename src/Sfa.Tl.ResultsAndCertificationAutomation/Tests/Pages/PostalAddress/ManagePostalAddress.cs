@@ -36,6 +36,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
             Assert.AreEqual(SearchPostalAddressPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(SearchPostalAddressPageTitle, WebDriver.Title);
         }
+        public static void VerifySearchPostalAddressBackPage()
+        {
+            Assert.IsTrue(WebDriver.Url.Contains(SearchPostalAddressPageUrl));
+            Assert.AreEqual(SearchPostalAddressPageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(SearchPostalAddressPageTitle, WebDriver.Title);
+        }
         public static void ClickBtnByName(string btnName)
         {
             switch(btnName)
