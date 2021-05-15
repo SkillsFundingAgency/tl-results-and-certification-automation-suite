@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
 {
@@ -87,6 +88,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
             SelectElement address1 = new SelectElement(address);
             address1.SelectByIndex(1);
             ClickElement(ContinueBtn);
+        }
+
+        public static void VerifyPostcodeFieldIsEmpty()
+        {
+         Assert.AreEqual("", WebDriver.FindElement(PostCodeTextField).GetAttribute("value"));
         }
     }
 }
