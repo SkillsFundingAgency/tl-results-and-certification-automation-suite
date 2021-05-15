@@ -94,5 +94,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         {
          Assert.AreEqual("", WebDriver.FindElement(PostCodeTextField).GetAttribute("value"));
         }
+
+        public static void EnterDepartmentName(string DepartmentName)
+        {
+           WebDriver.FindElement(Department).Clear();
+           WebDriver.FindElement(Department).SendKeys(DepartmentName);
+        }
     }
 }
