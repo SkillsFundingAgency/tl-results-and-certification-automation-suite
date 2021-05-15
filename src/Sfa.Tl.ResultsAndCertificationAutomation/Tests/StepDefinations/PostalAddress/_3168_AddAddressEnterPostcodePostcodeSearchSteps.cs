@@ -35,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
         [Then(@"when I click the Find Address button after entering postcode as ""(.*)""")]
         public void ThenWhenIClickTheFindAddressButtonAfterEnteringPostcodeAs(string postCode)
         {
-            AddPostcodePage.EnterPostcode(postCode); ;
+            AddPostcodePage.EnterPostcode(postCode); 
         }
     }
 }

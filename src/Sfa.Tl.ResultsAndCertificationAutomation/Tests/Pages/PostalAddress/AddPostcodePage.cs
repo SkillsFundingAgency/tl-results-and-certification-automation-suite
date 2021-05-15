@@ -80,5 +80,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
             var addressCountText = addressCount.SelectedOption.Text;
             Assert.AreEqual("2 addresses found", addressCountText);
         }
+
+        public static void SelectAddressFromDropdown()
+        {
+            var address = WebDriver.FindElement(SelectAddress);
+            SelectElement address1 = new SelectElement(address);
+            address1.SelectByIndex(1);
+            ClickElement(ContinueBtn);
+        }
     }
 }

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddress
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2535_EnterUlnPageValidations")]
-    public partial class _2535_EnterUlnPageValidationsFeature
+    [NUnit.Framework.DescriptionAttribute("3220_Provider Postal Address - Address - Check and Submit - Cancel")]
+    public partial class _3220_ProviderPostalAddress_Address_CheckAndSubmit_CancelFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2535_EnterUlnPageValidations.feature"
+#line 1 "3220_CheckAndSubmitCancel.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "2535_EnterUlnPageValidations", "\tAs a Provider\r\n\tI need to be able to add English/Maths and Industry Placement da" +
-                    "ta for learners\r\n\tSo that learner details can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/OrgPostalAddress", "3220_Provider Postal Address - Address - Check and Submit - Cancel", "\tAs a provider\r\n\twhen I reach the check and submit page \r\n\tthere is an option to " +
+                    "‘cancel’ - selecting this will take me to the cancel page \r\n\twhere I can select " +
+                    "either ‘Yes, cancel’ or ‘No, do not cancel\'", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,34 +77,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
         
         public virtual void FeatureBackground()
         {
-#line 6
-#line hidden
 #line 7
-testRunner.Given("I have logged in as a \"ProviderBarnsleyAll\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I click on \"Manage learner T Level records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-testRunner.And("I click on \"Add a new learner T Level record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
-testRunner.And("I clear Uln data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to the cancel page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2535 Verify mandatory field validation")]
+        [NUnit.Framework.DescriptionAttribute("3220 Select Yes Radio button on Cancel page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2535VerifyMandatoryFieldValidation()
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3220SelectYesRadioButtonOnCancelPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Provider"};
+                    "Provider",
+                    "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2535 Verify mandatory field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3220 Select Yes Radio button on Cancel page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -123,42 +120,33 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
 this.FeatureBackground();
 #line hidden
+#line 13
+testRunner.Given("I click the \"Yes, cancel\" radio button and press Continue on the Cancel page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 14
-testRunner.When("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table22.AddRow(new string[] {
-                            "Enter a ULN with 10 digits"});
-#line 15
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table22, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table23.AddRow(new string[] {
-                            "Enter a ULN with 10 digits"});
-#line 18
-testRunner.And("I should see the following error summary messages", ((string)(null)), table23, "And ");
+testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2535 Verify Uln field validation")]
+        [NUnit.Framework.DescriptionAttribute("3220 Select No Radio button on Cancel page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2535VerifyUlnFieldValidation()
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3220SelectNoRadioButtonOnCancelPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Provider"};
+                    "Provider",
+                    "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2535 Verify Uln field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3220 Select No Radio button on Cancel page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -178,34 +166,61 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field name",
-                            "Value"});
-                table24.AddRow(new string[] {
-                            "EnterUln",
-                            "Abc123!"});
+#line 18
+testRunner.Given("I click the \"No, do not cancel\" radio button and press Continue on the Cancel pag" +
+                        "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 19
+testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3220 Select Back link on Cancel page")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3220SelectBackLinkOnCancelPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "Provider",
+                    "PostalAddress"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3220 Select Back link on Cancel page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 22
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+#line 23
+testRunner.Given("I click the Back link on the Cancel page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 24
-testRunner.When("I enter following data", ((string)(null)), table24, "When ");
-#line hidden
-#line 27
-testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Message"});
-                table25.AddRow(new string[] {
-                            "Enter a valid 10-digit ULN"});
-#line 28
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table25, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table26.AddRow(new string[] {
-                            "Enter a valid 10-digit ULN"});
-#line 31
-testRunner.And("I should see the following error summary messages", ((string)(null)), table26, "And ");
+testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
