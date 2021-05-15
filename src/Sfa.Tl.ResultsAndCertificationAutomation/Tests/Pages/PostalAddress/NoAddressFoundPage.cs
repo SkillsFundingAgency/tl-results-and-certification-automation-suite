@@ -11,10 +11,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         private static string PageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-postal-address-no-addresses-found");
         private static string PageTitle { get; } = "Add your organisation's postal address - No addresses found page – Manage T Level results – GOV.UK";
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-        private static By TryANotherPostcodeBtn { get; } = By.Id("tryAnotherButton");
+        private static By TryAnotherPostcodeBtn { get; } = By.Id("tryAnotherButton");
         private static By BackLink { get; } = By.Id("backLink");
         private static By AddAddressManuallyLink { get; } = By.XPath("//a[@href='/add-address-manually/true']");
-       
+        private static string ExpectedButtonText = "Try another postcode";
 
 
         public static void VerifyNoAddressessFoundPage(string postcode)
@@ -23,6 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
             Assert.AreEqual(PageUrl, WebDriver.Url);
             Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(PageTitle, WebDriver.Title);
+            Assert.AreEqual(ExpectedButtonText, WebDriver.FindElement(TryAnotherPostcodeBtn).Text);
         }
 
         public static void ClickBackLink()
@@ -36,7 +37,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         }
         public static void ClickTryAnotherPostcodeBtn()
         {
-            ClickElement(TryANotherPostcodeBtn);
+            ClickElement(TryAnotherPostcodeBtn);
         }
 
     }
