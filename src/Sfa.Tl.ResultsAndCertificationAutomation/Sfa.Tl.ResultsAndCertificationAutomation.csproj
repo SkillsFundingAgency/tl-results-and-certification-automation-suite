@@ -262,9 +262,6 @@
     <Compile Update="Tests\Features\OrgPostalAddress\3171_AddressAddedSuccessfully.feature.cs">
       <DependentUpon>3171_AddressAddedSuccessfully.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\Features\OrgPostalAddress\3215_NoAddressesFound.feature.cs">
-      <DependentUpon>3215_NoAddressesFound.feature</DependentUpon>
-    </Compile>
     <Compile Update="Tests\Features\OrgPostalAddress\3220_CheckAndSubmitCancel.feature.cs">
       <DependentUpon>3220_CheckAndSubmitCancel.feature</DependentUpon>
     </Compile>
@@ -310,10 +307,6 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\OrgPostalAddress\3171_AddressAddedSuccessfully.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\Features\OrgPostalAddress\3215_NoAddressesFound.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
