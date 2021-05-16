@@ -6,6 +6,7 @@
 
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
+And I deleted the address in database
 
 @RegressionTest @Provider @PostalAddress
 Scenario: 3170 Press Back Link on Check And Submit Page - Journey from Add Address Select
@@ -54,8 +55,3 @@ And I select the first option from the dropdown and select Continue
 Then I should see the Add Address Check and Submit page
 When I click the Cancel link on the Add Address Check and Submit page
 Then I should see the Cancel Address page
-
-
-
-
-

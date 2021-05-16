@@ -82,6 +82,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddre
 #line 8
 testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 9
+testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
@@ -97,7 +100,7 @@ testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3170 Press Back Link on Check And Submit Page - Journey from Add Address Select", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -120,28 +123,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 12
+#line 13
 testRunner.When("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 14
 testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 15
 testRunner.Then("I should see the \'What is your organisation\'s postal address?\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 15
+#line 16
 testRunner.And("when I click the Find Address button after entering postcode as \"B43 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 17
 testRunner.And("I select the first option from the dropdown and select Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 18
 testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 18
+#line 19
 testRunner.When("I click the Back link on the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 20
 testRunner.Then("I should see the Add Postal Address Select page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -163,7 +166,7 @@ testRunner.Then("I should see the Add Postal Address Select page", ((string)(nul
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3170 Press Back Link on Check And Submit Page - Journey from Add Address Manually" +
                     "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 22
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -186,13 +189,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 23
+#line 24
 testRunner.When("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 25
 testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 26
 testRunner.And("I click on \"Add your organisation’s address manually\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -207,19 +210,19 @@ testRunner.And("I click on \"Add your organisation’s address manually\" link",
                 table13.AddRow(new string[] {
                             "Postcode",
                             "B43 6JN"});
-#line 26
+#line 27
 testRunner.And("I filled form with following information", ((string)(null)), table13, "And ");
 #line hidden
-#line 31
+#line 32
 testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 33
 testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 33
+#line 34
 testRunner.When("I click the Back link on the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 35
 testRunner.Then("I should see the Add your address manually page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -239,7 +242,7 @@ testRunner.Then("I should see the Add your address manually page", ((string)(nul
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3170 Press Change Address Link on Check And Submit Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 37
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -262,28 +265,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 38
+#line 39
 testRunner.When("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 39
+#line 40
 testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 41
 testRunner.Then("I should see the \'What is your organisation\'s postal address?\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 41
+#line 42
 testRunner.And("when I click the Find Address button after entering postcode as \"B43 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 43
 testRunner.And("I select the first option from the dropdown and select Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 44
 testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 44
+#line 45
 testRunner.When("I click the Change address link on the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 45
+#line 46
 testRunner.Then("I should see the Add Postal Address Select page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -303,7 +306,7 @@ testRunner.Then("I should see the Add Postal Address Select page", ((string)(nul
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3170 Press Cancel Link on Check And Submit Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 48
+#line 49
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -326,28 +329,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 49
+#line 50
 testRunner.When("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 50
+#line 51
 testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 51
+#line 52
 testRunner.Then("I should see the \'What is your organisation\'s postal address?\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 52
+#line 53
 testRunner.And("when I click the Find Address button after entering postcode as \"B43 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 53
+#line 54
 testRunner.And("I select the first option from the dropdown and select Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 54
+#line 55
 testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 55
+#line 56
 testRunner.When("I click the Cancel link on the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 56
+#line 57
 testRunner.Then("I should see the Cancel Address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

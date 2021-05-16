@@ -1,4 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress;
 using TechTalk.SpecFlow;
 
@@ -7,6 +8,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
     [Binding]
     public class _3169_AddAddressManuallyPageSteps : AddAddressManually
     {
+        [Given(@"I deleted the address in database")]
+        public void GivenIDeletedTheAddressInDatabase()
+        {
+            SqlQueries.DeleteAddress();
+        }
+
         [Given(@"I see Add address manually page")]
         public void GivenISeeAddAddressManuallyPage()
         {

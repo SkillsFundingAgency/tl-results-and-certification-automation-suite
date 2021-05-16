@@ -83,6 +83,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddre
 testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
+testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
 testRunner.And("I navigate to the cancel page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -100,7 +103,7 @@ testRunner.And("I navigate to the cancel page", ((string)(null)), ((TechTalk.Spe
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3220 Select Yes Radio button on Cancel page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 12
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -123,10 +126,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 13
+#line 14
 testRunner.Given("I click the \"Yes, cancel\" radio button and press Continue on the Cancel page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
+#line 15
 testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -146,7 +149,7 @@ testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3220 Select No Radio button on Cancel page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 17
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -169,11 +172,11 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 18
+#line 19
 testRunner.Given("I click the \"No, do not cancel\" radio button and press Continue on the Cancel pag" +
                         "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 19
+#line 20
 testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -193,7 +196,7 @@ testRunner.Then("I should see the Add Address Check and Submit page", ((string)(
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3220 Select Back link on Cancel page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 22
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -216,10 +219,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 23
+#line 24
 testRunner.Given("I click the Back link on the Cancel page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 24
+#line 25
 testRunner.Then("I should see the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

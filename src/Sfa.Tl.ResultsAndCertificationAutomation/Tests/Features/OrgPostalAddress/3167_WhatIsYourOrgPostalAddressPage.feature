@@ -5,6 +5,7 @@
 
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
+And I deleted the address in database
 
 @RegressionTest @Provider @PostalAddress
 Scenario: 3167_Verify what is your postal code page 

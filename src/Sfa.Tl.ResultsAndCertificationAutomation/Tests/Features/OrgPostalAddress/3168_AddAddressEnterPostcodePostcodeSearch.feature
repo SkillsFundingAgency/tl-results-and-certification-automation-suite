@@ -4,6 +4,7 @@
 
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
+And I deleted the address in database
 
 @RegressionTest @Provider @PostalAddress
 Scenario: 3168 No postcode entered validation

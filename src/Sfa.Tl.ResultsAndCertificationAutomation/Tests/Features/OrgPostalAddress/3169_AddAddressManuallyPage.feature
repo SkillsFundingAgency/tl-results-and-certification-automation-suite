@@ -5,6 +5,7 @@
 
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
+And I deleted the address in database
 And I click on "Manage your organisation’s postal address" link
 And I click on "Add address" button on Org postal address page
 And I click on "Add your organisation’s address manually" link
@@ -14,7 +15,8 @@ Scenario: 3169 Verify manul add address page
 And I see Add address manually page
 And I see following fields in the page
 | Field name            |
-| Department			|
+| DepartmentName		|
+| OrganisationName		|
 | AddressLine1			|
 | AddressLine2			|
 | Town					|

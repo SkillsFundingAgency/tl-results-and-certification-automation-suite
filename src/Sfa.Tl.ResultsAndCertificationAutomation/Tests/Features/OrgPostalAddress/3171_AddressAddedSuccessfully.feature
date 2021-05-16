@@ -7,6 +7,7 @@
 
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
+And I deleted the address in database
 
 @RegressionTest @Provider @PostalAddress
 Scenario: 3171 Add Address from select address dropdown - No Dept and Org Name

@@ -81,6 +81,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddre
 #line 6
 testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 7
+testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
@@ -103,7 +106,7 @@ testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Error Message", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3168 No postcode entered validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 9
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -126,19 +129,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 10
+#line 11
 testRunner.When("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 12
 testRunner.And("I click on \"Add address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 13
 testRunner.Then("I should see the \'What is your organisation\'s postal address?\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 13
+#line 14
 testRunner.And("when I click the Find Address button without entering a postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 15
 testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
                             "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -166,7 +169,7 @@ testRunner.Then(string.Format("I will be shown the following {0} on the \'What i
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Error Message", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3168 Invalid postcode entered validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 20
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -189,47 +192,47 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 21
+#line 22
 testRunner.When("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 23
 testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 24
 testRunner.Then("I should see the \'What is your organisation\'s postal address?\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 24
+#line 25
 testRunner.And("when I click the Find Address button after entering postcode as \"B43 J66\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 26
 testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
                             "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 26
-testRunner.And("when I click the Find Address button after entering postcode as \"B43 J6J\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
-testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
-                            "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("when I click the Find Address button after entering postcode as \"B43 J6J\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
-testRunner.And("when I click the Find Address button after entering postcode as \"BBBB 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
+                            "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 29
-testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
-                            "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("when I click the Find Address button after entering postcode as \"BBBB 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
-testRunner.And("when I click the Find Address button after entering postcode as \"BB! 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 31
 testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
                             "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 31
+testRunner.And("when I click the Find Address button after entering postcode as \"BB! 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 32
-testRunner.And("when I click the Find Address button after entering postcode as \"B! 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
+                            "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 33
+testRunner.And("when I click the Find Address button after entering postcode as \"B! 6JN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 34
 testRunner.Then(string.Format("I will be shown the following {0} on the \'What is your organisation\'s postal addr" +
                             "ess?\' page", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

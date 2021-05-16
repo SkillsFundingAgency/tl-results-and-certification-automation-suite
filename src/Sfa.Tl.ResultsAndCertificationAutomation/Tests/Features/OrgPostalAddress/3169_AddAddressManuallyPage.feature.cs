@@ -82,12 +82,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddre
 testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.And("I click on \"Add address\" button on Org postal address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
+testRunner.And("I click on \"Add address\" button on Org postal address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
 testRunner.And("I click on \"Add your organisation’s address manually\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -105,7 +108,7 @@ testRunner.And("I click on \"Add your organisation’s address manually\" link",
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3169 Verify manul add address page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -128,13 +131,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 14
+#line 15
 testRunner.And("I see Add address manually page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name"});
                 table7.AddRow(new string[] {
-                            "Department"});
+                            "DepartmentName"});
+                table7.AddRow(new string[] {
+                            "OrganisationName"});
                 table7.AddRow(new string[] {
                             "AddressLine1"});
                 table7.AddRow(new string[] {
@@ -143,10 +148,10 @@ testRunner.And("I see Add address manually page", ((string)(null)), ((TechTalk.S
                             "Town"});
                 table7.AddRow(new string[] {
                             "Postcode"});
-#line 15
+#line 16
 testRunner.And("I see following fields in the page", ((string)(null)), table7, "And ");
 #line hidden
-#line 22
+#line 24
 testRunner.And("Back link takes me to what is Org postal address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -166,7 +171,7 @@ testRunner.And("Back link takes me to what is Org postal address page", ((string
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3169 Verify manadatory fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 25
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -189,7 +194,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 26
+#line 28
 testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -204,7 +209,7 @@ testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.Spe
                 table8.AddRow(new string[] {
                             "Postcode",
                             "Enter your postcode"});
-#line 27
+#line 29
 testRunner.Then("I should see the following error messages", ((string)(null)), table8, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -215,10 +220,10 @@ testRunner.Then("I should see the following error messages", ((string)(null)), t
                             "Enter your town or city"});
                 table9.AddRow(new string[] {
                             "Enter your postcode"});
-#line 32
+#line 34
 testRunner.And("I should see the following error summary messages", ((string)(null)), table9, "And ");
 #line hidden
-#line 37
+#line 39
 testRunner.And("I should see error in page title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -238,7 +243,7 @@ testRunner.And("I should see error in page title", ((string)(null)), ((TechTalk.
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3169 Validate postcode field", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 40
+#line 42
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -273,10 +278,10 @@ this.FeatureBackground();
                 table10.AddRow(new string[] {
                             "Postcode",
                             "Test"});
-#line 41
+#line 43
 testRunner.And("I filled form with following information", ((string)(null)), table10, "And ");
 #line hidden
-#line 46
+#line 48
 testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -285,17 +290,17 @@ testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.Spe
                 table11.AddRow(new string[] {
                             "Postcode",
                             "Enter a valid UK postcode"});
-#line 47
+#line 49
 testRunner.Then("I should see the following error messages", ((string)(null)), table11, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
                 table12.AddRow(new string[] {
                             "Enter a valid UK postcode"});
-#line 50
+#line 52
 testRunner.And("I should see the following error summary messages", ((string)(null)), table12, "And ");
 #line hidden
-#line 53
+#line 55
 testRunner.And("I should see error in page title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

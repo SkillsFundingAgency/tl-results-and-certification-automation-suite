@@ -5,6 +5,7 @@
 
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
+And I deleted the address in database
 And I click on "Manage your organisation’s postal address" link
 And I click on "Add address" button on Org postal address page
 

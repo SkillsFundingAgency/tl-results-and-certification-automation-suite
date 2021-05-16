@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddre
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("3140_ManageOrgPostalAddressPage")]
-    public partial class _3140_ManageOrgPostalAddressPageFeature
+    [NUnit.Framework.DescriptionAttribute("3214_ManagePostalAddressExists")]
+    public partial class _3214_ManagePostalAddressExistsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "3140_ManageOrgPostalAddressPage.feature"
+#line 1 "3214_ManagePostalAddressExists.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/OrgPostalAddress", "3140_ManageOrgPostalAddressPage", "\tAs a Provider\r\n\tI need a link on dashboard page to go to add postal address page" +
-                    "\r\n\tSo that I can add postal address", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/OrgPostalAddress", "3214_ManagePostalAddressExists", "\tAs a Provider\r\n\tI need a page see if postal address is already added\r\n\tSo that I" +
+                    " do not have to add it again", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,23 +82,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddre
 testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I deleted the exisintg address and created a new address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3140_Verify manage organisation postal address page")]
+        [NUnit.Framework.DescriptionAttribute("3214_Verify manage organisation postal address exists page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         [NUnit.Framework.CategoryAttribute("PostalAddress")]
-        public virtual void _3140_VerifyManageOrganisationPostalAddressPage()
+        public virtual void _3214_VerifyManageOrganisationPostalAddressExistsPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Provider",
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3140_Verify manage organisation postal address page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3214_Verify manage organisation postal address exists page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
