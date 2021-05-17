@@ -129,12 +129,12 @@ testRunner.And("I click on \"Results\" link", ((string)(null)), ((TechTalk.SpecF
 #line 14
 testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table55.AddRow(new string[] {
+                table56.AddRow(new string[] {
                             "This learner\'s registration has been withdrawn."});
 #line 15
-testRunner.Then("I should see following message for that registration", ((string)(null)), table55, "Then ");
+testRunner.Then("I should see following message for that registration", ((string)(null)), table56, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,5 +1,6 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress;
+using System;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalAddress
@@ -62,6 +63,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
             CancelPage.VerifyCancelPage();
             CancelPage.VerifyYesRadioButtonsPopulated();
         }
+
+    
+        [Then(@"the following values will be displayed on the Check and Submit page with '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")]
+        public void ThenTheFollowingValuesWillBeDisplayedOnTheCheckAndSubmitPageWith(string Dept, string Organisation, string Address1, string Address2, string Town, string Postcode)
+        {
+            CheckAndSubmit.VerifyAddressDisplayed(Dept,Organisation,Address1, Address2, Town, Postcode);
+        }
+
+
+
 
 
     }
