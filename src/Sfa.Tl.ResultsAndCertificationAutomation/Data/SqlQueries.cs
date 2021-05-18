@@ -302,7 +302,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
             return (int)profileId.FirstOrDefault().FirstOrDefault();
         }
-
-
+        public static void DeleteAddress()
+        {
+            string DeleteAddress = "Delete pa from TlProviderAddress pa join  TlProvider tp on pa.TlProviderId = tp.Id where tp.Name ='Barnsley College'";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAddress, ConnectionString);
+        }
+        public static void InsertAddress()
+        {
+            string ProviderId = "Select Id from TlProvider where Name='Barnsley College'";
+            var GetProviderId  = SqlDatabaseConncetionHelper.ReadDataFromDataBase(ProviderId, ConnectionString);
+            int result = Convert.ToInt32(GetProviderId[0][0]);
+            string InsertAddress = "Insert Into TlProviderAddress values ('"+ result +"','Department', 'BARNSLEY COLLEGE','CHURCH STREET',NULL,'BARNSLEY','S70 2AX',1,GETDATE(),'System',Null,Null)";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertAddress, ConnectionString);
+        }
     }
 }

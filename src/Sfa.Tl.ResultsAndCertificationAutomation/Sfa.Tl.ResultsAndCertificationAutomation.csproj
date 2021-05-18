@@ -29,6 +29,9 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3168_AddAddressEnterPostcodePostcodeSearch - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3220_CheckAndSubmitCancel - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2694_LearnerHasLearnerAchievedMinEnglishMathsPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2801_HasLearnerAchievedEnglishMaths(SEND) - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2843_IPStatusUpdatedConfirmationPage - Copy.feature.cs" />
@@ -256,6 +259,15 @@
     <Compile Update="Tests\Features\1881_UserGuidePage.feature.cs">
       <DependentUpon>1881_UserGuidePage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\OrgPostalAddress\3171_AddressAddedSuccessfully.feature.cs">
+      <DependentUpon>3171_AddressAddedSuccessfully.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\OrgPostalAddress\3220_CheckAndSubmitCancel.feature.cs">
+      <DependentUpon>3220_CheckAndSubmitCancel.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit.feature.cs">
+      <DependentUpon>3170_AddAddressCheckAndSubmit.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\Providers\2695_LearnerSearchForALearnerPage.feature.cs">
       <DependentUpon>2695_LearnerSearchForALearnerPage.feature</DependentUpon>
     </Compile>
@@ -291,6 +303,18 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\1881_UserGuidePage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\OrgPostalAddress\3171_AddressAddedSuccessfully.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\OrgPostalAddress\3220_CheckAndSubmitCancel.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

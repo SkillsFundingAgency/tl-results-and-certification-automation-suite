@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.OrgPostalAddress
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("RegistrationsStage1Validations")]
-    public partial class RegistrationsStage1ValidationsFeature
+    [NUnit.Framework.DescriptionAttribute("3187_SearchPostcode")]
+    public partial class _3187_SearchPostcodeFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "RegistrationsStage1Validations.feature"
+#line 1 "3187_SearchPostcode.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Registrations", "RegistrationsStage1Validations", "\tAs a Registrations Editor\r\n\tI need to upload registrations entry data in bulk\r\n\t" +
-                    "So that entry data can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/OrgPostalAddress", "3187_SearchPostcode", "\tAs a Provider\r\n\tI enter the postcode in the search page\r\n\tSo that I can select t" +
+                    "he correct postal address for the organisation.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,80 +79,33 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
 #line 6
 #line hidden
 #line 7
-testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I am on Registrations upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
+testRunner.And("I click on \"Manage your organisation’s postal address\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+testRunner.And("I click on \"Add address\" button on Org postal address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify registration mandatory field validation")]
+        [NUnit.Framework.DescriptionAttribute("3187 Verify Search postcode result page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Registrations")]
-        public virtual void VerifyRegistrationMandatoryFieldValidation()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3187VerifySearchPostcodeResultPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Registrations"};
+                    "Provider",
+                    "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify registration mandatory field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-#line 12
-testRunner.When("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table43.AddRow(new string[] {
-                            "Select a file to upload"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3187 Verify Search postcode result page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 13
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table43, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table44.AddRow(new string[] {
-                            "Select a file to upload"});
-#line 16
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table44, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload registration non csv file")]
-        [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Registrations")]
-        public virtual void UploadRegistrationNonCsvFile()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RegressionTest",
-                    "Registrations"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload registration non csv file", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -175,42 +128,49 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 22
-testRunner.When("I upload \"RegistrationsUploadInvalidFile.xlsx\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field name",
+                            "Value"});
+                table17.AddRow(new string[] {
+                            "Postcode",
+                            "CV12WT"});
+#line 14
+testRunner.And("I filled form with following information", ((string)(null)), table17, "And ");
 #line hidden
-#line 23
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+testRunner.When("I click on \"Find address\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table45.AddRow(new string[] {
-                            "The selected file must be a CSV"});
-#line 24
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table45, "Then ");
+#line 18
+testRunner.Then("I should see address result page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table46.AddRow(new string[] {
-                            "The selected file must be a CSV"});
-#line 27
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table46, "And ");
+#line 19
+testRunner.And("back link takes me to find postal address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Postcode"});
+                table18.AddRow(new string[] {
+                            "CV12WT"});
+#line 20
+testRunner.And("I see postcode is retained", ((string)(null)), table18, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload registration max file size")]
+        [NUnit.Framework.DescriptionAttribute("3187 Verify change link")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Registrations")]
-        public virtual void UploadRegistrationMaxFileSize()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3187VerifyChangeLink()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Registrations"};
+                    "Provider",
+                    "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload registration max file size", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 32
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3187 Verify change link", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -233,100 +193,113 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 33
-testRunner.When("I upload \"RegistrationsStage1MaxFileSize.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field name",
+                            "Value"});
+                table19.AddRow(new string[] {
+                            "Postcode",
+                            "CV12WT"});
+#line 26
+testRunner.And("I filled form with following information", ((string)(null)), table19, "And ");
 #line hidden
+#line 29
+testRunner.And("I click on \"Find address\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+testRunner.When("I click on \"Change\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 31
+testRunner.Then("it should takes me to find postal address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3187 Verify manadatory filed validation")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3187VerifyManadatoryFiledValidation()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "Provider",
+                    "PostalAddress"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3187 Verify manadatory filed validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 34
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
-                TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table47.AddRow(new string[] {
-                            "File size too large – must be no more than 5MB"});
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field name",
+                            "Value"});
+                table20.AddRow(new string[] {
+                            "Postcode",
+                            "CV12WT"});
 #line 35
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table47, "Then ");
+testRunner.And("I filled form with following information", ((string)(null)), table20, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table48.AddRow(new string[] {
-                            "File size too large – must be no more than 5MB"});
 #line 38
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table48, "And ");
+testRunner.And("I click on \"Find address\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload registration max rows")]
-        [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Registrations")]
-        public virtual void UploadRegistrationMaxRows()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RegressionTest",
-                    "Registrations"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload registration max rows", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 39
+testRunner.When("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Error messages"});
+                table21.AddRow(new string[] {
+                            "SelectedAddressUprn",
+                            "Select your address from the list"});
+#line 40
+testRunner.Then("I should see the following error messages", ((string)(null)), table21, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error messages"});
+                table22.AddRow(new string[] {
+                            "Select your address from the list"});
 #line 43
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-#line 44
-testRunner.When("I upload \"RegistrationsUploadMaxRows.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 45
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table49.AddRow(new string[] {
-                            "File must contain between one and 10,000 registrations"});
-#line 46
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table49, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table50.AddRow(new string[] {
-                            "File must contain between one and 10,000 registrations"});
-#line 49
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table50, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table22, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload registration png file")]
+        [NUnit.Framework.DescriptionAttribute("3187 Navigate to add address manually page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Registrations")]
-        public virtual void UploadRegistrationPngFile()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3187NavigateToAddAddressManuallyPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Registrations"};
+                    "Provider",
+                    "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload registration png file", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 54
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3187 Navigate to add address manually page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 48
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -348,26 +321,82 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field name",
+                            "Value"});
+                table23.AddRow(new string[] {
+                            "Postcode",
+                            "CV12WT"});
+#line 49
+testRunner.And("I filled form with following information", ((string)(null)), table23, "And ");
+#line hidden
+#line 52
+testRunner.And("I click on \"Find address\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 53
+testRunner.And("I click Can\'t find address link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 54
+testRunner.When("I click on \"add it manually\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 55
-testRunner.When("I upload \"Test.png\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("I should be navigated to add address manually page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 56
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3187 Verify address count")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        [NUnit.Framework.CategoryAttribute("PostalAddress")]
+        public virtual void _3187VerifyAddressCount()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "Provider",
+                    "PostalAddress"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3187 Verify address count", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 58
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
-                TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error message"});
-                table51.AddRow(new string[] {
-                            "The selected file must be a CSV"});
-#line 57
-testRunner.Then("I should see following error message in upload registration page", ((string)(null)), table51, "Then ");
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error summary"});
-                table52.AddRow(new string[] {
-                            "The selected file must be a CSV"});
-#line 60
-testRunner.And("I should see the following error summary message in upload registration page", ((string)(null)), table52, "And ");
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field name",
+                            "Value"});
+                table24.AddRow(new string[] {
+                            "Postcode",
+                            "CV12WT"});
+#line 59
+testRunner.And("I filled form with following information", ((string)(null)), table24, "And ");
+#line hidden
+#line 62
+testRunner.When("I click on \"Find address\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 63
+testRunner.Then("it should return addresses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

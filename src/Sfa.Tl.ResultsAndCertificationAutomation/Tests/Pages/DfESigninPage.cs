@@ -30,7 +30,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string ProUserPassword = WebDriverFactory.Config["ProUserPassword"];
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "home");
         public static readonly By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
-        public const string SigninError = "Information missing or incorrect";
+        public const string SigninError = "There is a problem";
         protected static readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         public static By UserIdTxtBox { get; } = By.Id("username");
         public static By PasswordTxtBox { get; } = By.Id("password");
