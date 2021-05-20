@@ -35,7 +35,7 @@ Then I should see the Add Postal Address Select page
 
 
 @RegressionTest @Provider @PostalAddress
-Scenario: 3170 Press Back Link on Check And Submit Page - Journey from Add Address Manually
+Scenario: 3170 Press Back and Change links on Check And Submit Page - Journey from Add Address Manually
 When I click on "Manage your organisation’s postal address" link
 And I click on "Add address"
 And I click on "Add your organisation’s address manually" link

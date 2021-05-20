@@ -230,20 +230,20 @@ testRunner.Then("I should see the Add Postal Address Select page", ((string)(nul
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3170 Press Back Link on Check And Submit Page - Journey from Add Address Manually" +
-            "")]
+        [NUnit.Framework.DescriptionAttribute("3170 Press Back and Change links on Check And Submit Page - Journey from Add Addr" +
+            "ess Manually")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         [NUnit.Framework.CategoryAttribute("PostalAddress")]
-        public virtual void _3170PressBackLinkOnCheckAndSubmitPage_JourneyFromAddAddressManually()
+        public virtual void _3170PressBackAndChangeLinksOnCheckAndSubmitPage_JourneyFromAddAddressManually()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Provider",
                     "PostalAddress"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3170 Press Back Link on Check And Submit Page - Journey from Add Address Manually" +
-                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3170 Press Back and Change links on Check And Submit Page - Journey from Add Addr" +
+                    "ess Manually", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
