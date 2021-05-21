@@ -42,7 +42,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
         [Then(@"I should see the Add your address manually page")]
         public void ThenIShouldSeeTheAddYourAddressManuallyPage()
         {
-            AddAddressManually.VerifyNavigateToAddAddressManuallyPage();
+            AddAddressManually.VerifyAddAddressManuallyPage();
         }
 
         [When(@"I click the Change address link on the Add Address Check and Submit page")]

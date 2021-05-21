@@ -16,7 +16,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         [When(@"I click on Remove entry link")]
         public void WhenIClickOnRemoveEntryLink()
         {
-            AssessmentEntriesLearnersAssessmentEntriesPage.ClickElement(AssessmentEntriesLearnersAssessmentEntriesPage.AddRemoveEntryLink);
+            ClickElement(AssessmentEntriesLearnersAssessmentEntriesPage.AddRemoveEntryLink);
         }
 
         [Given(@"I search for the learner assessment")]
@@ -51,7 +51,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesLearnersRemoveCoreAssessmentEntryPage.PressNoRadioButton();
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
         }
-
-
     }
 }
