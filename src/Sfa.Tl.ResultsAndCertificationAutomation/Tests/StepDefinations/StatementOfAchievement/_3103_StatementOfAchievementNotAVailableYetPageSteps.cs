@@ -15,7 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Stateme
         {
             DateTime date1 = DateTime.UtcNow;
             Console.WriteLine(date1);
-            DateTime SOADate = new DateTime(2021,08,10);
+            DateTime SOADate = new DateTime(2021,08,20);
             Console.WriteLine(SOADate);
 
             int result = DateTime.Compare(date1, SOADate);

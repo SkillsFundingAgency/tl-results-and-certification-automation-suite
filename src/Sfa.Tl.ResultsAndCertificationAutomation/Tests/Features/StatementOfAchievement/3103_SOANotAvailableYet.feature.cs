@@ -90,13 +90,15 @@ testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3103_Verify SOA not available yet page and Back link")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public virtual void _3103_VerifySOANotAvailableYetPageAndBackLink()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA"};
+                    "SOA",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3103_Verify SOA not available yet page and Back link", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
@@ -142,13 +144,15 @@ testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3103_Verify Back to home button on SOA not yet available page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public virtual void _3103_VerifyBackToHomeButtonOnSOANotYetAvailablePage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA"};
+                    "SOA",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3103_Verify Back to home button on SOA not yet available page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 19

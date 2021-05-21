@@ -8,14 +8,14 @@
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
 
-@RegressionTest @SOA
+@RegressionTest @SOA @Ignore
 Scenario: 3103_Verify SOA not available yet page and Back link
 And I click on "Request statement of achievement" link
 Then I am navigated to the SOA not yet available page if the date is less than 10th August 2021
 When I click the back link on the SOA not yet available page then I am taken back to the dashboard
 Then I will be navigated to the T Levels Dashboard page
 
-@RegressionTest @SOA
+@RegressionTest @SOA @Ignore
 Scenario: 3103_Verify Back to home button on SOA not yet available page
 And I click on "Request statement of achievement" link
 Then I am navigated to the SOA not yet available page if the date is less than 10th August 2021
