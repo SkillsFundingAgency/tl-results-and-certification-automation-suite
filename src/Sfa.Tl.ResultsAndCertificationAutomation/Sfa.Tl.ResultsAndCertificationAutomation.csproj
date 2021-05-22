@@ -38,6 +38,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2848_LearnerLinkingEnglishMathsAndIPpage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3105_RequestStatementOfAchievement - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3187_SearchPostcode.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\VerifyTermsAndConditions - Copy.feature.cs" />
   </ItemGroup>
@@ -282,6 +283,12 @@
     <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
       <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\StatementOfAchievement\3104_MissingPostalAddress.feature.cs">
+      <DependentUpon>3104_MissingPostalAddress.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\StatementOfAchievement\3106_SearchForLearner.feature.cs">
+      <DependentUpon>3106_SearchForLearner.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\StatementOfAchievement\3105_RequestStatementOfAchievement.feature.cs">
       <DependentUpon>3105_RequestStatementOfAchievement.feature</DependentUpon>
     </Compile>
@@ -339,6 +346,14 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\StatementOfAchievement\3104_MissingPostalAddress.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\StatementOfAchievement\3106_SearchForLearner.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
