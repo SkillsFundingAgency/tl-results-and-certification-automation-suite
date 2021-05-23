@@ -214,6 +214,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var profileId = SqlQueries.ReturnRegistrationProfileID(uln);
             SqlQueries.CreateQualificationAcheivedForLrs(profileId);
         }
-
+        public void CreateRegistrationForBarnsley(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+        }
     }
 }

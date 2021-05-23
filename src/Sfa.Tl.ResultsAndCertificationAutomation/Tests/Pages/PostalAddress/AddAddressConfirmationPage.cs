@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Data;
-using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
 {
@@ -16,9 +13,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         private static By PageHeaderElement { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By RequestSOABtn { get; } = By.Id("requestSoaButton");
         private static By BackToHomeLink { get; } = By.Id("backToHome");
-     
-
-
         public static void VerifyAddPostalAddressPage()
         {
             Assert.AreEqual(PageUrl, WebDriver.Url);
@@ -36,7 +30,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
             ClickElement(BackToHomeLink);
         }
 
-
         public static void VerifyAddressAdded(string expDeptName, string expOrganisation, string expAddLine1, string expAddLine2, string expTown, string expPostcode)
         {
             string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
@@ -53,25 +46,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
                 string AddressLine2 = fieldNo[5].ToString();
                 string Town = fieldNo[6].ToString();
                 string PostCode = fieldNo[7].ToString();
-
-                Console.WriteLine("Show the dept name: " + DepartmentName);
-                Console.WriteLine("Show the Org name: " + OrganisationName);
-                Console.WriteLine("Show the ExpOrg name: " + AddressLine1);
-                Console.WriteLine("Show the DEPR name: " + AddressLine2);
-                Console.WriteLine("Show the DEPR name: " + Town);
-                Console.WriteLine("Show the DEPR name: " + PostCode);
-                //Assert values on database match expected address values
                 Assert.AreEqual(expOrganisation, OrganisationName);
                 Assert.AreEqual(expDeptName, DepartmentName);
                 Assert.AreEqual(expAddLine1, AddressLine1);
                 Assert.AreEqual(expAddLine2, AddressLine2);
                 Assert.AreEqual(expTown, Town);
                 Assert.AreEqual(expPostcode, PostCode);
-
-
             }
-
         }
-
     }
 }
