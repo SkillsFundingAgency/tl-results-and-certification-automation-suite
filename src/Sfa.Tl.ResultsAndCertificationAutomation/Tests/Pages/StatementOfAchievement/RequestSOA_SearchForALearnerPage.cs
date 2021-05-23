@@ -29,7 +29,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By RequestStatementOfAchievementBreadcrumb { get; } = By.Id("breadcrumb1");
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
 
-
+        public static void VerifySearchLearnerPage()
+        {
+            Assert.AreEqual(PageUrl, WebDriver.Url);
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+            Assert.AreEqual(PageHeaderText, WebDriver.FindElement(PageHeader).Text);
+        }
 
         public static void VerifySearchForALearnerPage()
         {
@@ -39,30 +44,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ULNHintText, WebDriver.FindElement(UlnHint).Text);
             Assert.AreEqual(ExpectedPageText, WebDriver.FindElement(PageText).Text);
         }
-
         public static void ClickSearch()
         {
-            WebDriver.FindElement((SearchButton)).Click();
+            ClickButton(SearchButton);
         }
-
         public static void ClickHomeBreadcrumb()
         {
-            WebDriver.FindElement((HomeBreadcrumb)).Click();
+            ClickElement(HomeBreadcrumb);
         }
-
-
         public static void ClickRequestStatementOfAchievementBreadcrumb()
         {
-            WebDriver.FindElement((RequestStatementOfAchievementBreadcrumb)).Click();
+            ClickElement(RequestStatementOfAchievementBreadcrumb);
         }
-
-
         public static void VerifySeachUlnField(string uln)
         {
             Assert.AreEqual(uln, WebDriver.FindElement(ULNTextField).GetAttribute("value"));
         }
-
-
         public static void VerifyErrorMessage(string ErrorMessage)
         {
             Assert.AreEqual(ErrorPageTitle, WebDriver.Title);
@@ -76,6 +73,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             EnterText(ULNTextField, ULN);
             ClickElement(SearchButton);
         }
-
     }
 }
