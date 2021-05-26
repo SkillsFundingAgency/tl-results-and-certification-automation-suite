@@ -220,5 +220,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
             SqlQueries.CreateRegSpecialism(pathwayId);
         }
+        public void CreateAndWithdrawRegBarnsley(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForNonLRS(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+            var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+            SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+            SqlQueries.UpdateRegWithdrawn(uln);
+        }
     }
 }

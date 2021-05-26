@@ -189,7 +189,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyPathwayAssessment, ConnectionString);
             string ModifyPathwayResult = "update TqPathwayResult set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rp on rp.Id = pa.TqRegistrationPathwayId join TqRegistrationProfile pf on pf.id = rp.TqRegistrationProfileId where UniqueLearnerNumber = '" + uln + "'";
             SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyPathwayResult, ConnectionString);
-
         }
 
 

@@ -14,7 +14,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
         private static By BackToHomeBtn { get; } = By.Id("buttonHome");
         private static By RequestSoaLink { get; } = By.LinkText("Request statement of achievement");
         private static By ContinueBtn { get; } = By.Id("continueButton");
-        // Uln not withdrawn pge
+        // Uln not withdrawn page
         private static string UlnNotWithdrawnPageUrl { get; } = "request-statement-of-achievement-ULN-not-withdrawn";
         private static string UlnNotWithdrawnPageTitle { get; } = "Request statement of achievement - ULN not withdrawn page – Manage T Level results – GOV.UK";
         private static string UlnNotWithdrawnPageHeader { get; } = "Learner has not been withdrawn by the exam board";
@@ -63,6 +63,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
             Assert.IsTrue(WebDriver.FindElement(MainContent).Text.Contains("Barnsley College (10000536)"));
             Assert.IsTrue(WebDriver.FindElement(MainContent).Text.Contains("T Level in Agriculture, Environmental and Animal Care"));
         }
-
     }
 }
