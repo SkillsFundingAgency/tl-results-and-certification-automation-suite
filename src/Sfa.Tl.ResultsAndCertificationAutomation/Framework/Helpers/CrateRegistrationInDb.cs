@@ -229,5 +229,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreatePathwayResult(pathwayAssessmentId);
             SqlQueries.UpdateRegWithdrawn(uln);
         }
+
+        public void CreateRegForBarnsleyNoCoreGrade_Withdrawn_IndPlacementNotComplete(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForNonLrsWithEM(uln);
+            var pathwayId = SqlQueries.CreateWithdrawnRegistrationPathwayRecord(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+            SqlQueries.CreateIndustryPlacement(pathwayId, 3);
+        }
     }
 }

@@ -314,5 +314,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string InsertAddress = "Insert Into TlProviderAddress values ('"+ result +"','Department', 'BARNSLEY COLLEGE','CHURCH STREET',NULL,'BARNSLEY','S70 2AX',1,GETDATE(),'System',Null,Null)";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertAddress, ConnectionString);
         }
+
+        public static int CreateWithdrawnRegistrationPathwayRecord(int profileId)
+        {
+            var tqProviderId = Constants.TqProviderIdForLrs;
+            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),GETDATE(),4,1,GETDATE(),'System',NULL,NULL)";
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegPathway, ConnectionString);
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
     }
 }
