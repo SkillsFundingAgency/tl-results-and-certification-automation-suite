@@ -214,6 +214,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var profileId = SqlQueries.ReturnRegistrationProfileID(uln);
             SqlQueries.CreateQualificationAcheivedForLrs(profileId);
         }
+        public void CreateRegistrationForBarnsley(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+        }
+        public void CreateAndWithdrawRegBarnsley(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForNonLRS(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathwayForLrs(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+            var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+            SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+            SqlQueries.UpdateRegWithdrawn(uln);
+        }
 
+        public void CreateRegForBarnsleyNoCoreGrade_Withdrawn_IndPlacementNotComplete(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfileForNonLrsWithEM(uln);
+            var pathwayId = SqlQueries.CreateWithdrawnRegistrationPathwayRecord(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+            SqlQueries.CreateIndustryPlacement(pathwayId, 3);
+        }
     }
 }

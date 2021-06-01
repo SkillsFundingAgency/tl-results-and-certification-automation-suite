@@ -189,7 +189,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyPathwayAssessment, ConnectionString);
             string ModifyPathwayResult = "update TqPathwayResult set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rp on rp.Id = pa.TqRegistrationPathwayId join TqRegistrationProfile pf on pf.id = rp.TqRegistrationProfileId where UniqueLearnerNumber = '" + uln + "'";
             SqlDatabaseConncetionHelper.UpdateSqlCommand(ModifyPathwayResult, ConnectionString);
-
         }
 
 
@@ -314,6 +313,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             int result = Convert.ToInt32(GetProviderId[0][0]);
             string InsertAddress = "Insert Into TlProviderAddress values ('"+ result +"','Department', 'BARNSLEY COLLEGE','CHURCH STREET',NULL,'BARNSLEY','S70 2AX',1,GETDATE(),'System',Null,Null)";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertAddress, ConnectionString);
+        }
+
+        public static int CreateWithdrawnRegistrationPathwayRecord(int profileId)
+        {
+            var tqProviderId = Constants.TqProviderIdForLrs;
+            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),GETDATE(),4,1,GETDATE(),'System',NULL,NULL)";
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegPathway, ConnectionString);
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
         }
     }
 }

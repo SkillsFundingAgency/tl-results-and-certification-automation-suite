@@ -30,7 +30,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
 
         public static void VerifyAddPostalAddressPage()
         {
-            Assert.AreEqual(AddOrgPostalAddressPageUrl, WebDriver.Url);
+            //Assert.AreEqual(AddOrgPostalAddressPageUrl, WebDriver.Url);
+            Assert.IsTrue(WebDriver.Url.Contains(AddOrgPostalAddressPageUrl));
             Assert.AreEqual(AddOrgPostalAddressPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ManageOrgPostalAddressPageTitle, WebDriver.Title);
         }
@@ -44,6 +45,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         public static void ClickFindAddressBtn()
         {
             ClickElement(FindAddressBtn);
+        }
+
+        public static void ClickBackLink()
+        {
+            ClickElement(BackLink);
         }
 
         public static void ValidateErrorMessage(string ErrorMessage)

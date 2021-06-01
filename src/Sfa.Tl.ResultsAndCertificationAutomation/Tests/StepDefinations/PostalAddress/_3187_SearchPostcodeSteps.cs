@@ -44,7 +44,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
         [Then(@"I should be navigated to add address manually page")]
         public void ThenIShouldBeNavigatedToAddAddressManuallyPage()
         {
-            AddAddressManually.VerifyNavigateToAddAddressManuallyPage();
+            AddAddressManually.VerifyAddAddressManuallyPage();
         }
         [Then(@"it should return addresses")]
         public void ThenItShouldReturnAddresses()

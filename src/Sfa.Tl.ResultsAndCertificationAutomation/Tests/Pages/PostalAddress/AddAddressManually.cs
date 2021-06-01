@@ -13,19 +13,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static void VerifyAddAddressManuallyPage()
         {
-            Assert.AreEqual(AddAddressManuallyPageUrl, WebDriver.Url);
+            Assert.IsTrue(WebDriver.Url.Contains(AddAddressManuallyPageUrl));
             Assert.AreEqual(AddAddressManuallyPageTitle, WebDriver.Title);
             Assert.AreEqual(AddAddressManuallyPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
         public static void VerifyAddAddressManuallyErrorPage()
         {
             Assert.AreEqual(AddAddressManuallyErrorPageTitle, WebDriver.Title);
-        }
-        public static void VerifyNavigateToAddAddressManuallyPage()
-        {
-            Assert.IsTrue(WebDriver.Url.Contains(AddAddressManuallyPageUrl));
-            Assert.AreEqual(AddAddressManuallyPageTitle, WebDriver.Title);
-            Assert.AreEqual(AddAddressManuallyPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
     }
 }

@@ -71,4 +71,14 @@ And the record will be written to the database with '' '' '99 Test Street' '' 'L
 And when I press the Back to home link
 Then I am taken to the home page
 
-
+@RegressionTest @Provider @PostalAddress
+Scenario: 3315 Navigate to SOA from Add Address confirmation page
+When I click on "Manage your organisation’s postal address" link
+And I click on "Add address"
+Then I should see the 'What is your organisation's postal address?' page
+And when I click the Find Address button after entering postcode as "CV1 2WT"
+And I enter a department name as "Test"
+And I select the first option from the dropdown and select Continue 
+When I click Submit
+And I click on Request SOA button
+Then I am taken to request SOA page

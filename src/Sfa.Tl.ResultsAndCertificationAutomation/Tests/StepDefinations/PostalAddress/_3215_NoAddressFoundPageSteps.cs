@@ -20,7 +20,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
         [Then(@"I should see Add address manually page")]
         public void ThenIShouldSeeAddAddressManuallyPage()
         {
-            AddAddressManually.VerifyNavigateToAddAddressManuallyPage();
+            AddAddressManually.VerifyAddAddressManuallyPage();
         }
         [Then(@"I should see search postal address page")]
         public void ThenIShouldSeeSearchPostalAddressPage()

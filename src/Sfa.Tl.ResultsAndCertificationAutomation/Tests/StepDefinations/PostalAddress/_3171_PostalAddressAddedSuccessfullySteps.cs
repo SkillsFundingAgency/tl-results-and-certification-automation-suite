@@ -1,13 +1,11 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress;
-using System;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchievement;
 using TechTalk.SpecFlow;
-
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalAddress
 {
     [Binding]
-    public class _3171_ProviderPostalAddress_OrgPostalAddressAddedSuccessfullySteps
+    public class _3171_ProviderPostalAddress_OrgPostalAddressAddedSuccessfullySteps : AddAddressConfirmationPage
     {
         [When(@"I click Submit")]
         public void WhenIClickSubmit()
@@ -18,14 +16,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
         [Then(@"I am shown the Address address confirmation page")]
         public void ThenIAmShownTheAddressAddressConfirmationPage()
         {
-            AddAddressConfirmationPage.VerifyAddPostalAddressPage();
+            VerifyAddPostalAddressPage();
         }
-
 
         [Then(@"the record will be written to the database with '(.*)' '(.*)' '(.*)' '(.*)' '(.*)' '(.*)'")]
         public void ThenTheRecordWillBeWrittenToTheDatabaseWith(string OrgName, string DeptName, string AddLine1, string AddLine2, string Town, string Postcode)
         {
-            AddAddressConfirmationPage.VerifyAddressAdded(OrgName, DeptName, AddLine1, AddLine2,Town,Postcode);
+            VerifyAddressAdded(OrgName, DeptName, AddLine1, AddLine2,Town,Postcode);
         }
 
         [Then(@"I enter a department name as ""(.*)""")]
@@ -37,11 +34,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostalA
         [Then(@"when I press the Back to home link")]
         public void ThenWhenIPressTheBackToHomeLink()
         {
-            AddAddressConfirmationPage.ClickBackToHomeLink();
+            ClickBackToHomeLink();
+        }
+        [When(@"I click on Request SOA button")]
+        public void WhenIClickOnRequestSOAButton()
+        {
+            ClickRequestSOABtn();
         }
 
-
-
-
+        [Then(@"I am taken to request SOA page")]
+        public void ThenIAmTakenToRequestSOAPage()
+        {
+            RequestStatementOfAchievementPage.VerifyRequestStatementOfAchievementPage();
+        }
     }
 }
