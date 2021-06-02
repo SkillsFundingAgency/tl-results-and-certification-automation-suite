@@ -84,20 +84,23 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
 #line 8
 testRunner.And("I have a registration with an assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 9
+testRunner.And("I am on Learner assessment entries page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2141_Do you want to add core assessment entry page validations")]
+        [NUnit.Framework.DescriptionAttribute("2141 Verify remove core assessment page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
-        public virtual void _2141_DoYouWantToAddCoreAssessmentEntryPageValidations()
+        public virtual void _2141VerifyRemoveCoreAssessmentPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141_Do you want to add core assessment entry page validations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141 Verify remove core assessment page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -120,17 +123,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 12
-testRunner.And("I search for the learner assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 13
-testRunner.When("I click on Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click the Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
-testRunner.Then("I am shown the \'Are you sure you want to remove the Core Assessment entry\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I am shown the Are you sure you want to remove the Core Assessment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 15
-testRunner.And("clicking on back link should take me back to Assessment deails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("click on back link should take me to learner assessment entries page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -140,16 +140,16 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2141_Submit button validations")]
+        [NUnit.Framework.DescriptionAttribute("2141 Validate remove core assessment page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
-        public virtual void _2141_SubmitButtonValidations()
+        public virtual void _2141ValidateRemoveCoreAssessmentPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141_Submit button validations", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141 Validate remove core assessment page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 19
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -174,21 +174,18 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 20
-testRunner.And("I search for the learner assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
-testRunner.And("I click on Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 22
 testRunner.When("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 22
 testRunner.Then("I am shown an error message \'Select yes to remove the core entry\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 24
+#line 23
 testRunner.And("selecting no option takes me back to Assessment deails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 24
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

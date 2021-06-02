@@ -6,19 +6,18 @@
 Background: 
 Given I have logged in as a "RegistrationEditor" user
 And I have a registration with an assessment entry
+And I am on Learner assessment entries page
 
 @RegressionTest @AssessmentEntries
-Scenario: 2141_Do you want to add core assessment entry page validations
-And I search for the learner assessment
-When I click on Remove entry link
-Then I am shown the 'Are you sure you want to remove the Core Assessment entry' page
-And clicking on back link should take me back to Assessment deails page
+Scenario: 2141 Verify remove core assessment page
+When I click the Remove entry link
+Then I am shown the Are you sure you want to remove the Core Assessment entry page
+And click on back link should take me to learner assessment entries page
 And the registration for this test is deleted
 
 @RegressionTest @AssessmentEntries
-Scenario: 2141_Submit button validations
-And I search for the learner assessment
-And I click on Remove entry link
+Scenario: 2141 Validate remove core assessment page
+And I click on remove entry link
 When I click on "Submit" button
 Then I am shown an error message 'Select yes to remove the core entry'
 And selecting no option takes me back to Assessment deails page

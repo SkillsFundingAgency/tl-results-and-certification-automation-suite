@@ -10,7 +10,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "remove-core-assessment-entry");
         private const string PageTitle = "Are you sure you want to remove this core assessment entry page – Manage T Level results – GOV.UK";
         private const string ExpectedPageHeader = "Are you sure you want to remove this core assessment entry from Summer 2021?";
-       
+        private const string PageTitleError = "Error: Are you sure you want to remove this core assessment entry page – Manage T Level results – GOV.UK";
+
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
        
         private static By YesRadioButton { get; } = By.XPath("//*[contains(text(),'Yes, remove the core entry')]");
@@ -33,6 +34,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedSubmitButtonText, WebDriver.FindElement(SubmitButton).Text);
             Assert.AreEqual(ExpectedYesRadioText, WebDriver.FindElement(YesRadioButton).Text);
             Assert.AreEqual(ExpectedNoRadioText, WebDriver.FindElement(NoRadioButton).Text);
+        }
+        public static void VerifyRemoveCoreAssessmentEntryErrorPage()
+        {
+            Assert.AreEqual(PageTitleError, WebDriver.Title);
+            Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
 
         public static void VerifyRadioButtonsNotPrepopulated()

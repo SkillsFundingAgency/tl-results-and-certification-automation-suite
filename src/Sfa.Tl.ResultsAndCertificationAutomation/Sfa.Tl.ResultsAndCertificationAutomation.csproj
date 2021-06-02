@@ -247,9 +247,6 @@
     <Compile Update="Tests\Features\AssessmentEntries\2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature.cs">
       <DependentUpon>2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\Features\AssessmentEntries\2142_AssessmentEntryRemovedSuccessfully.feature.cs">
-      <DependentUpon>2142_AssessmentEntryRemovedSuccessfully.feature</DependentUpon>
-    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully.feature.cs">
       <DependentUpon>2140_AssessmentEntryAddedSuccessfully.feature</DependentUpon>
     </Compile>
@@ -298,10 +295,6 @@
   </ItemGroup>
   <ItemGroup>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2139_AssessmentEntryAddCoreNextAssessmentSeriesPage.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\2142_AssessmentEntryRemovedSuccessfully.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
