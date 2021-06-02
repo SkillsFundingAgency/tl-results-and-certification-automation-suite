@@ -3,6 +3,7 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchievement;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.StatementOfAchievement
 {
@@ -69,14 +70,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Stateme
             SOAMinRequirementsNotMetPage.ClickUpdateTheirLearnerTLevelRecordLink();
         }
 
-        [Then(@"I am shown the Leaner Search for a learner page")]
-        public void ThenIAmShownTheLeanerSearchForALearnerPage()
+        [Then(@"I am shown the Leaner record page")]
+        public void ThenIAmShownTheLeanerRecordPage()
         {
-            LearnerSearchForLearnerPage.VerifySearchForALearnerPage();
+            LearnerRecordPage.VerifyLearnerRecordPage();
+            var uln = _scenarioContext["uln"] as string;
+            LearnerRecordPage.VerifyLearnerRecordData(uln);
+            LearnerRecordPage.VerifyLinksOnLearnerRecordPage();
         }
-
-
-
 
     }
 }
