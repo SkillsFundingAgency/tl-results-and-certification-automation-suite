@@ -237,5 +237,118 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreateRegSpecialism(pathwayId);
             SqlQueries.CreateIndustryPlacement(pathwayId, 3);
         }
+
+        public void CreateDbRegistationForLrsCombination(string uln, string EMStatus, string IPStatus)
+        {
+            int IPStat;
+            if (IPStatus == "IP completed")
+            {
+                IPStat = 1;
+            }
+            else if (IPStatus == "IP completed with special consideration")
+            {
+                IPStat = 2;
+            }
+            else IPStat = 3;
+
+            switch (EMStatus)
+            {
+                case "MathEng not Achieved Min Standard Math-A Eng-NA":
+                    var profileId = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "NULL", "0", "NULL", "0");
+                    var pathwayId = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+                    SqlQueries.CreateQualificationAcheivedForLrsMathsAEnglishNA(profileId);
+                    SqlQueries.CreateIndustryPlacement(pathwayId, IPStat);
+                    var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+                    break;
+
+                case "MathEng not Achieved Min Standard Math-NA Eng-A":
+                    var profileId1 = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "NULL", "0", "NULL", "0");
+                    var pathwayId1 = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId1);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId1);
+                    SqlQueries.CreateQualificationAcheivedForLrsMathsAEnglishNA(profileId1);
+                    SqlQueries.CreateIndustryPlacement(pathwayId1, IPStat);
+                    var pathwayAssessmentId1 = SqlQueries.CreatePathwayAssessment(pathwayId1);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId1);
+                    break;
+
+                case "MathEng not Achieved Min Standard Math-NA Eng-NA":
+                    var profileId4 = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "NULL", "0", "NULL", "0");
+                    var pathwayId4 = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId4);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId4);
+                    SqlQueries.CreateQualificationAcheivedForLrsMathsNAEnglishNA(profileId4);
+                    SqlQueries.CreateIndustryPlacement(pathwayId4, IPStat);
+                    var pathwayAssessmentId4 = SqlQueries.CreatePathwayAssessment(pathwayId4);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId4);
+                    break;
+
+                case "MathEng Achieved with SEND":
+                    var profileId2 = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "1", "1", "NULL", "0");
+                    var pathwayId2 = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId2);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId2);
+                    SqlQueries.CreateQualificationAcheivedForLrsSEND(profileId2);
+                    SqlQueries.CreateIndustryPlacement(pathwayId2, IPStat);
+                    var pathwayAssessmentId2 = SqlQueries.CreatePathwayAssessment(pathwayId2);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId2);
+                    break;
+
+                case "MathEng Achieved Min Standard":
+                    var profileId3 = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "NULL", "1", "NULL", "0");
+                    var pathwayId3 = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId3);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId3);
+                    SqlQueries.CreateQualificationAcheivedForLrs(profileId3);
+                    SqlQueries.CreateIndustryPlacement(pathwayId3, IPStat);
+                    var pathwayAssessmentId3 = SqlQueries.CreatePathwayAssessment(pathwayId3);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId3);
+                    break;
+            }
+        }
+
+        public void CreateDbRegistationForNonLrsCombination(string uln, string EMStatus, string IPStatus)
+        {
+            int IPStat;
+            if (IPStatus == "IP completed")
+            {
+                IPStat = 1;
+            }
+            else if (IPStatus == "IP completed with special consideration")
+            {
+                IPStat = 2;
+            }
+            else IPStat = 3;
+
+            switch (EMStatus)
+            {
+                case "MathEng achieved the minimum standard":
+                    var profileId = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "0", "1", "NULL", "1");
+                    var pathwayId = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId);
+                    SqlQueries.CreateIndustryPlacement(pathwayId, IPStat);
+                    var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+                    break;
+
+                case "MathEng achieved the minimum standard for learners with SEND":
+                    var profileId1 = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "0", "1", "1", "1");
+                    var pathwayId1 = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId1);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId1);
+                    SqlQueries.CreateIndustryPlacement(pathwayId1, IPStat);
+                    var pathwayAssessmentId1 = SqlQueries.CreatePathwayAssessment(pathwayId1);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId1);
+                    break;
+
+                case "MathEng not achieved the minimum standard":
+                    var profileId4 = SqlQueries.CreateRegistrationProfileForLrsCOMBINATION(uln, "0", "0", "NULL", "1");
+                    var pathwayId4 = SqlQueries.CreateRegistrationPathwayForLrsCOMBINATION(profileId4);
+                    SqlQueries.CreateRegSpecialismForLrs(pathwayId4);
+                    SqlQueries.CreateIndustryPlacement(pathwayId4, IPStat);
+                    var pathwayAssessmentId4 = SqlQueries.CreatePathwayAssessment(pathwayId4);
+                    SqlQueries.CreatePathwayResult(pathwayAssessmentId4);
+                    break;
+
+            }
+        }
+
     }
 }
