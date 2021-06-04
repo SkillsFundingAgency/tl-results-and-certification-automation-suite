@@ -91,13 +91,15 @@ testRunner.And("I am on Learner assessment entries page", ((string)(null)), ((Te
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2141 Verify remove core assessment page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         public virtual void _2141VerifyRemoveCoreAssessmentPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "AssessmentEntries"};
+                    "AssessmentEntries",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141 Verify remove core assessment page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
@@ -141,13 +143,15 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2141 Validate remove core assessment page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         public virtual void _2141ValidateRemoveCoreAssessmentPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "AssessmentEntries"};
+                    "AssessmentEntries",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2141 Validate remove core assessment page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 19
