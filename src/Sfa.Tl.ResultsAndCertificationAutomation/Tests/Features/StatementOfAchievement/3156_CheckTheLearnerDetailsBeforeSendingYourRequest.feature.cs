@@ -20,9 +20,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.StatementOfAch
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TLRC_3156 Statement of Achievement - Check the learner details before sending you" +
-        "r request")]
-    public partial class TLRC_3156StatementOfAchievement_CheckTheLearnerDetailsBeforeSendingYourRequestFeature
+    [NUnit.Framework.DescriptionAttribute("Feature: TLRC_3156 Statement of Achievement - Check the learner details before se" +
+        "nding your request")]
+    public partial class FeatureTLRC_3156StatementOfAchievement_CheckTheLearnerDetailsBeforeSendingYourRequestFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -36,8 +36,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.StatementOfAch
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/StatementOfAchievement", "TLRC_3156 Statement of Achievement - Check the learner details before sending you" +
-                    "r request", "\tAs a provider, \r\n\tif I search for a ULN that has been registered, has component " +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/StatementOfAchievement", "Feature: TLRC_3156 Statement of Achievement - Check the learner details before se" +
+                    "nding your request", "\tAs a provider, \r\n\tif I search for a ULN that has been registered, has component " +
                     "results recorded and has been withdrawn by AO \r\n\tthen the ‘Check the learner’s d" +
                     "etails before sending your request\' page should be displayed", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
@@ -84,22 +84,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.StatementOfAch
 #line 7
 testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 8
+testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
+testRunner.And("I add an address for Barnsley", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3156_LRS Test 1")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("3156_Validate Check and submit page for LRS registration (Maths achieved Eng not " +
+            "achieved)")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3156_LRSTest1()
+        public virtual void _3156_ValidateCheckAndSubmitPageForLRSRegistrationMathsAchievedEngNotAchieved()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA",
-                    "Ignore"};
+                    "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_LRS Test 1", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Validate Check and submit page for LRS registration (Maths achieved Eng not " +
+                    "achieved)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -122,18 +128,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 11
+#line 13
 testRunner.Given("a registration is created for LRS where \'MathEng not Achieved Min Standard Math-A" +
                         " Eng-NA\' and \'IP completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
-testRunner.And("I click on \"Request statement of achievement\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 13
-testRunner.And("I click Continue on the Request SOA page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 14
-testRunner.And("I enter the ULN created for the Request SOA journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
 testRunner.Then("I am shown the SOA Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -143,24 +143,30 @@ testRunner.And("the learners T Level component achievement details display \'Not
                         "standard (Data from the Learning Records Service - LRS)\' and IP displays \'Placem" +
                         "ent completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 17
+testRunner.And("the learners registration and qualification details are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3156_LRS Test 2")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("3156_Validate Check and submit page for LRS registration (Maths Not achieved Eng " +
+            "achieved)")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3156_LRSTest2()
+        public virtual void _3156_ValidateCheckAndSubmitPageForLRSRegistrationMathsNotAchievedEngAchieved()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA",
-                    "Ignore"};
+                    "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_LRS Test 2", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 20
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Validate Check and submit page for LRS registration (Maths Not achieved Eng " +
+                    "achieved)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -183,18 +189,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 21
+#line 23
 testRunner.Given("a registration is created for LRS where \'MathEng not Achieved Min Standard Math-N" +
                         "A Eng-A\' and \'IP completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 22
-testRunner.And("I click on \"Request statement of achievement\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 23
-testRunner.And("I click Continue on the Request SOA page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 24
-testRunner.And("I enter the ULN created for the Request SOA journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
 testRunner.Then("I am shown the SOA Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -204,24 +204,30 @@ testRunner.And("the learners T Level component achievement details display \'Not
                         "standard (Data from the Learning Records Service - LRS)\' and IP displays \'Placem" +
                         "ent completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 27
+testRunner.And("the learners registration and qualification details are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3156_LRS Test 3")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("3156_Validate Check and submit page for LRS registration (Maths and English achie" +
+            "ved)")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3156_LRSTest3()
+        public virtual void _3156_ValidateCheckAndSubmitPageForLRSRegistrationMathsAndEnglishAchieved()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA",
-                    "Ignore"};
+                    "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_LRS Test 3", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 30
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Validate Check and submit page for LRS registration (Maths and English achie" +
+                    "ved)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 31
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -244,37 +250,45 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 31
+#line 32
 testRunner.Given("a registration is created for LRS where \'MathEng Achieved Min Standard\' and \'IP s" +
                         "till to be completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 32
-testRunner.And("I click on \"Request statement of achievement\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 33
-testRunner.And("I click Continue on the Request SOA page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
-testRunner.And("I enter the ULN created for the Request SOA journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("I am shown the SOA Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 35
+testRunner.And("the learners T Level component achievement details display \'Achieved minimum stan" +
+                        "dard (Data from the Learning Records Service - LRS)\' and IP displays \'Placement " +
+                        "still to be completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+testRunner.And("the learners registration and qualification details are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3156_LRS Test 4")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("3156_Validate Check and submit page for LRS registration (Maths and English both " +
+            "not achieved)")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3156_LRSTest4()
+        public virtual void _3156_ValidateCheckAndSubmitPageForLRSRegistrationMathsAndEnglishBothNotAchieved()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA",
-                    "Ignore"};
+                    "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_LRS Test 4", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 38
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Validate Check and submit page for LRS registration (Maths and English both " +
+                    "not achieved)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -297,36 +311,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 39
+#line 41
 testRunner.Given("a registration is created for LRS where \'MathEng not Achieved Min Standard Math-N" +
                         "A Eng-NA\' and \'IP completed with special consideration\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 40
-testRunner.And("I click on \"Request statement of achievement\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 41
-testRunner.And("I click Continue on the Request SOA page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 42
-testRunner.And("I enter the ULN created for the Request SOA journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 43
+testRunner.Then("I am shown the SOA Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 44
+testRunner.And("the learners T Level component achievement details display \'Not achieved minimum " +
+                        "standard (Data from the Learning Records Service - LRS)\' and IP displays \'Placem" +
+                        "ent completed with special consideration\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 45
+testRunner.And("the learners registration and qualification details are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 46
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3156_NON LRS Test 6")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("3156_Verify breadcrumbs on Request Statement of Achievement Check and Submit page" +
+            "")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3156_NONLRSTest6()
+        public virtual void _3156_VerifyBreadcrumbsOnRequestStatementOfAchievementCheckAndSubmitPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA",
-                    "Ignore"};
+                    "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_NON LRS Test 6", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Verify breadcrumbs on Request Statement of Achievement Check and Submit page" +
+                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -355,84 +377,56 @@ testRunner.Given("a registration is created for NON LRS where \'MathEng achieved
                         "d\' and \'IP completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 52
-testRunner.And("I click on \"Request statement of achievement\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 53
-testRunner.And("I click Continue on the Request SOA page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I press the \'Search for a learner\' breadcrumb on the Request SOA Check and Submit" +
+                        " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 54
-testRunner.And("I enter the ULN created for the Request SOA journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("I am shown the Request SOA Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3156_NON LRS Test 7")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
-        [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3156_NONLRSTest7()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RegressionTest",
-                    "SOA",
-                    "Ignore"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_NON LRS Test 7", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 55
+testRunner.When("I navigate back to the Request SOA Check and Submit page from the request Stateme" +
+                        "nt of Achievement -  Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 56
+testRunner.And("I press the \'Request statement of achievement\' breadcrumb on the Request SOA Chec" +
+                        "k and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 57
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+testRunner.Then("I am shown the Request statement of achievement page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 58
-testRunner.Given("a registration is created for NON LRS where \'MathEng achieved the minimum standar" +
-                        "d for learners with SEND\' and \'IP completed with special consideration\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.When("I navigate back to the Request SOA Check and Submit page from the request Stateme" +
+                        "nt of Achievement page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 59
-testRunner.And("I click on \"Request statement of achievement\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I press the \'Home\' breadcrumb on the Request SOA Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 60
-testRunner.And("I click Continue on the Request SOA page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 61
-testRunner.And("I enter the ULN created for the Request SOA journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3156_NON LRS Test 8")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("3156_Validate Check and submit page for NON LRS registration (Achieved min standa" +
+            "rd)")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3156_NONLRSTest8()
+        public virtual void _3156_ValidateCheckAndSubmitPageForNONLRSRegistrationAchievedMinStandard()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "SOA",
-                    "Ignore"};
+                    "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_NON LRS Test 8", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Validate Check and submit page for NON LRS registration (Achieved min standa" +
+                    "rd)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 64
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -457,17 +451,144 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 65
+testRunner.Given("a registration is created for NON LRS where \'MathEng achieved the minimum standar" +
+                        "d\' and \'IP completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 66
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 67
+testRunner.Then("I am shown the SOA Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 68
+testRunner.And("the learners T Level component achievement details display \'Achieved minimum stan" +
+                        "dard\' and IP displays \'Placement completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 69
+testRunner.And("the learners registration and qualification details are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3156_Validate Check and submit page for NON LRS registration (Achieved min standa" +
+            "rd with SEND)")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("SOA")]
+        public virtual void _3156_ValidateCheckAndSubmitPageForNONLRSRegistrationAchievedMinStandardWithSEND()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "SOA"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Validate Check and submit page for NON LRS registration (Achieved min standa" +
+                    "rd with SEND)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 73
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 74
+testRunner.Given("a registration is created for NON LRS where \'MathEng achieved the minimum standar" +
+                        "d for learners with SEND\' and \'IP completed with special consideration\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 75
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 76
+testRunner.Then("I am shown the SOA Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 77
+testRunner.And("the learners T Level component achievement details display \'Achieved minimum stan" +
+                        "dard\' and IP displays \'Placement completed with special consideration\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 78
+testRunner.And("the learners registration and qualification details are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 79
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3156_Validate Check and submit page for NON LRS registration (Not achieved min st" +
+            "andard)")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("SOA")]
+        public virtual void _3156_ValidateCheckAndSubmitPageForNONLRSRegistrationNotAchievedMinStandard()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "SOA"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3156_Validate Check and submit page for NON LRS registration (Not achieved min st" +
+                    "andard)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 82
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 83
 testRunner.Given("a registration is created for NON LRS where \'MathEng not achieved the minimum sta" +
                         "ndard\' and \'IP not completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 66
-testRunner.And("I click on \"Request statement of achievement\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 67
-testRunner.And("I click Continue on the Request SOA page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+testRunner.Then("I am shown the SOA Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 68
-testRunner.And("I enter the ULN created for the Request SOA journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+testRunner.And("the learners T Level component achievement details display \'Not achieved minimum " +
+                        "standard\' and IP displays \'Placement still to be completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 87
+testRunner.And("the learners registration and qualification details are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 88
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

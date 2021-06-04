@@ -51,6 +51,68 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.StatementOfAch
         }
 
 
+        [Then(@"the learners registration and qualification details are shown")]
+        public void ThenTheLearnersRegistrationAndQualificationDetailsAreShown()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            SOACheckAndSubmitPage.VerifyLearnerDetails(uln);
+            SOACheckAndSubmitPage.VerifyQualificationDetails();
+            SOACheckAndSubmitPage.VerifyPostalAddress();
+        }
 
+        [Then(@"the registration is deleted for this test")]
+        public void ThenTheRegistrationIsDeletedForThisTest()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            CrateRegistrationInDb createReg = new CrateRegistrationInDb();
+            createReg.DeleteLrsRecordsFromTables(uln);
+            createReg.DeleteRegistrationFromTables(uln);
+        }
+
+        [When(@"I press the '(.*)' breadcrumb on the Request SOA Check and Submit page")]
+        [Given(@"I press the '(.*)' breadcrumb on the Request SOA Check and Submit page")]
+        public void GivenIPressTheBreadcrumbOnTheRequestSOACheckAndSubmitPage(string Breadcrumb)
+        {
+            SOACheckAndSubmitPage.ClickBreadCrumb(Breadcrumb);
+        }
+
+        [Then(@"I am shown the Request SOA Search for a learner page")]
+        public void ThenIAmShownTheRequestSOASearchForALearnerPage()
+        {
+            RequestSOA_SearchForALearnerPage.VerifySearchLearnerPage();
+        }
+
+
+        [When(@"I navigate back to the Request SOA Check and Submit page from the request Statement of Achievement -  Search for a learner page")]
+        public void WhenINavigateBackToTheRequestSOACheckAndSubmitPageFromTheRequestStatementOfAchievement_SearchForALearnerPage()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            RequestSOA_SearchForALearnerPage.EnterULN(uln);
+        }
+
+        [When(@"I navigate back to the Request SOA Check and Submit page from the request Statement of Achievement page")]
+        public void WhenINavigateBackToTheRequestSOACheckAndSubmitPageFromTheRequestStatementOfAchievementPage()
+        {
+            ClickLinkByLabel("Continue");
+            var uln = _scenarioContext["uln"] as string;
+            RequestSOA_SearchForALearnerPage.EnterULN(uln);
+        }
+
+
+        [Then(@"I am shown the Request statement of achievement page")]
+        public void ThenIAmShownTheRequestStatementOfAchievementPage()
+        {
+            RequestStatementOfAchievementPage.VerifyRequestStatementOfAchievementPage();
+        }
+
+        [Given(@"I navigate to Request statement of achievment - Check and submit page")]
+        public void GivenINavigateToRequestStatementOfAchievment_CheckAndSubmitPage()
+        {
+            ClickLinkByLabel("Request statement of achievement");
+            ClickLinkByLabel("Continue");
+            var uln = _scenarioContext["uln"] as string;
+            RequestSOA_SearchForALearnerPage.EnterULN(uln);
+        }
     }
 }
+
