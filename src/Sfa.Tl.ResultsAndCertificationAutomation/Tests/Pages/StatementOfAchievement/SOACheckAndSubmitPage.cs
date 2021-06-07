@@ -20,6 +20,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
         private static By HomeBreadcrumb = By.Id("breadcrumb0");
         private static By RequestSOABreadcrumb = By.Id("breadcrumb1");
         private static By SearchForLearnerBreadcrumb = By.Id("breadcrumb2");
+        private static By TLevelComponentAchievementChangeLink { get; } = By.XPath("//a[contains(@href,'change-learner-component')]");
 
         public static void VerifySOACheckAndSubmitPage()
         {
@@ -91,5 +92,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
             }
         }
 
+        public static void ClickTLevelComponentAchievement_ChangeLink()
+        {
+            ClickElement(TLevelComponentAchievementChangeLink);
+        }
     }
 }
