@@ -12,6 +12,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By AddAddressBtn { get; } = By.Id("addAddressButton");
         private static By HomeBreadCrumb { get; } = By.Id("breadcrumb0");
+        private static By PostalAddressElement = By.ClassName("govuk-grid-column-three-quarters");
+
         //Search post code page
         private static string SearchPostalAddressPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-postal-address-postcode");
         private static string SearchPostalAddressPageHeader { get; } = "What is your organisation's postal address?";
@@ -26,6 +28,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostalAddress
             Assert.AreEqual(ManageOrgPostalAddressPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ManageOrgPostalAddressPageTitle, WebDriver.Title);
         }
+
+        public static void VerifyPostalAddress()
+        {
+            Assert.IsTrue(WebDriver.FindElement(PostalAddressElement).Text.Contains("Department"));
+            Assert.IsTrue(WebDriver.FindElement(PostalAddressElement).Text.Contains("BARNSLEY COLLEGE"));
+            Assert.IsTrue(WebDriver.FindElement(PostalAddressElement).Text.Contains("CHURCH STREET"));
+            Assert.IsTrue(WebDriver.FindElement(PostalAddressElement).Text.Contains("BARNSLEY"));
+            Assert.IsTrue(WebDriver.FindElement(PostalAddressElement).Text.Contains("S70 2AX"));
+        }
+
         public static void ClickHomeBreadCrumb()
         {
             ClickElement(HomeBreadCrumb);

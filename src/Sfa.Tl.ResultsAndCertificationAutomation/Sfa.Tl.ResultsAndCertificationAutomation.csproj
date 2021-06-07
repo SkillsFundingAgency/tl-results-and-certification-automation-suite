@@ -40,6 +40,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3105_RequestStatementOfAchievement - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3156_CheckTheLearnerDetailsBeforeSendingYourRequest - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3165_ChangeLearnersTLevelComponentAchievements - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3187_SearchPostcode.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\VerifyTermsAndConditions - Copy.feature.cs" />
   </ItemGroup>
@@ -293,6 +294,9 @@
     <Compile Update="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet.feature.cs">
       <DependentUpon>3103_SOANotAvailableYet.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\StatementOfAchievement\3160_ChangePostalAddress.feature.cs">
+      <DependentUpon>3160_ChangePostalAddress.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\StatementOfAchievement\3165_ChangeLearnersTLevelComponentAchievements.feature.cs">
       <DependentUpon>3165_ChangeLearnersTLevelComponentAchievements.feature</DependentUpon>
     </Compile>
@@ -359,6 +363,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\StatementOfAchievement\3160_ChangePostalAddress.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

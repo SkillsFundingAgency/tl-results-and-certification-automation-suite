@@ -15,12 +15,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
 
         private static By AcceptAndRequestBtn { get; } = By.ClassName("govuk-button");
         private static By CheckAndSubmitTextArea = By.ClassName("govuk-grid-column-two-thirds-from-desktop");
-        private static By LearnerTLevelComponentChangeLink = By.XPath("//*[@href ='/request-statement-of-achievement-change-learner-components");
-        private static By PostalAddressChangeLink = By.XPath("//*[@href ='//*[@href ='request-statement-of-achievement-change-postal-address']");
         private static By HomeBreadcrumb = By.Id("breadcrumb0");
         private static By RequestSOABreadcrumb = By.Id("breadcrumb1");
         private static By SearchForLearnerBreadcrumb = By.Id("breadcrumb2");
         private static By TLevelComponentAchievementChangeLink { get; } = By.XPath("//a[contains(@href,'change-learner-component')]");
+        private static By TLevelPostalAddressChangeLink { get; } = By.XPath("//a[contains(@href,'change-postal-address')]");
 
         public static void VerifySOACheckAndSubmitPage()
         {
@@ -32,16 +31,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
         public static void ClickAcceptAndRequestBtn()
         {
             ClickElement(AcceptAndRequestBtn);
-        }
-
-        public static void ClickPostalAddressChangeLink()
-        {
-            ClickElement(PostalAddressChangeLink);
-        }
-
-        public static void ClickTLevelComponentChangeLink()
-        {
-            ClickElement(LearnerTLevelComponentChangeLink);
         }
 
         public static void VerifyLearnersTLevelComponentAchievements(string EngAndMathAchievementStatus, string IndustryPlacementStatus)
@@ -96,5 +85,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
         {
             ClickElement(TLevelComponentAchievementChangeLink);
         }
+
+        public static void ClickTLevelPostalAddress_ChangeLink()
+        {
+            ClickElement(TLevelPostalAddressChangeLink);
+        }
+        
     }
 }
