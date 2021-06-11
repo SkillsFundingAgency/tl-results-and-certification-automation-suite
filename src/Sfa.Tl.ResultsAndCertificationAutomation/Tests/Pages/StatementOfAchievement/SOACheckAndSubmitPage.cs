@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
         private static string SOACheckAndSubmitPageTitle { get; } = "Request statement of achievement – Check the learner’s details page – Manage T Level results – GOV.UK";
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
 
-        private static By AcceptAndRequestBtn { get; } = By.ClassName("govuk-button");
+        private static By AcceptAndRequestBtn { get; } = By.Id("acceptAndSendButton");
         private static By CheckAndSubmitTextArea = By.ClassName("govuk-grid-column-two-thirds-from-desktop");
         private static By HomeBreadcrumb = By.Id("breadcrumb0");
         private static By RequestSOABreadcrumb = By.Id("breadcrumb1");

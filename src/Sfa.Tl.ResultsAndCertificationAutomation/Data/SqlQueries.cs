@@ -354,5 +354,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
         }
 
+        public static void DeletePrintTableRecords(string uln)
+        {
+            string RecordCountSQL = "select count(*) from PrintCertificate where uln =" + uln;
+            var RecordCount = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RecordCountSQL, ConnectionString);
+            int RecordCount1 = Convert.ToInt32(RecordCount[0][0]);
+           
+            if (RecordCount1 == 0)
+            {
+                Console.WriteLine("Do Nothing");
+            }
+            else
+            {
+                string RetrievePrintBatchItemID = "select top 1 printbatchitemid from PrintCertificate where uln =" + uln;
+                var PrintBatchItemID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrievePrintBatchItemID, ConnectionString);
+                string RetrieveBatchID = "Select top 1 batchID from PrintBatchItem where id in (select printbatchitemid from PrintCertificate where uln =" + uln + ")";
+                var BatchID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveBatchID, ConnectionString);
+                string DeletePrintCertificateRecord = "delete from PrintCertificate where ULN =" + uln;
+                string DeletePrintBatchItemRecord = "delete from PrintBatchItem where id =" + PrintBatchItemID[0][0];
+                string DeleteBatchRecord = "delete from batch where id =" + BatchID[0][0];
+                SqlDatabaseConncetionHelper.ExecuteSqlCommand(DeletePrintCertificateRecord, ConnectionString);
+                SqlDatabaseConncetionHelper.ExecuteSqlCommand(DeletePrintBatchItemRecord, ConnectionString);
+                SqlDatabaseConncetionHelper.ExecuteSqlCommand(DeleteBatchRecord, ConnectionString);
+            }
+        }
+
     }
 }
