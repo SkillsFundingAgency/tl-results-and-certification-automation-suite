@@ -16,7 +16,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Stateme
             _scenarioContext = scenarioContext;
         }
 
-
+        [Then(@"I click the Accept and send request button")]
         [Given(@"I click the Accept and send request button")]
         public void GivenIClickTheAcceptAndSendRequestButton()
         {
