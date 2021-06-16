@@ -36,14 +36,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By SpecialismAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[2]//p");
         public static By AddRemoveEntryLink = By.Id("coreassessmententry");
 
-
-
         public static void VerifyLearnersAssessmentEntriesPage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
-            
         }
 
         public static void VerifyCoreSpecialismTableHeaders()
@@ -108,8 +105,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifySpecialismAssessmentEntryDisplayed()
         {
             Assert.AreEqual(ExpectedSpecialismAssessmentEntry, WebDriver.FindElement(SpecialismAssessmentDetails).Text);
-           
-            
         }
 
         public static void VerifyNoSpecialismAssessmentEntryDisplayed()
@@ -146,6 +141,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(AddRemoveEntryLink);
         }
-
     }
 }

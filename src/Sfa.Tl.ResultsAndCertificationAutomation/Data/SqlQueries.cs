@@ -324,5 +324,60 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
             return (int)pathwayId.FirstOrDefault().FirstOrDefault();
         }
+
+        public static int CreateRegistrationProfileForLrsCOMBINATION(string uln, string IsLearnerVerified, string isEMAchieved, string SendLearner, string isRCFeed)
+        {
+            string CreateRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null," + IsLearnerVerified + "," + isEMAchieved + "," + SendLearner + "," + isRCFeed + ",GETDATE(),'System', GETDATE(),'System')";
+            Console.WriteLine(CreateRegistrationProfile);
+            string GetRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegistrationProfile, ConnectionString);
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
+
+        public static int CreateRegistrationPathwayForLrsCOMBINATION(int profileId)
+        {
+            var tqProviderId = Constants.TqProviderIdForLrs;
+            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),GETDATE(),4,0,GETDATE(),'System',NULL,NULL)";
+            string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegPathway, ConnectionString);
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
+
+        public static void CreateQualificationAcheivedForLrsMathsNAEnglishNA(int profileId)
+        {
+            string CreateQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',38,9,0,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+
+            string CreateQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',69,9,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived1, ConnectionString);
+        }
+
+        public static void DeletePrintTableRecords(string uln)
+        {
+            string RecordCountSQL = "select count(*) from PrintCertificate where uln =" + uln;
+            var RecordCount = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RecordCountSQL, ConnectionString);
+            int RecordCount1 = Convert.ToInt32(RecordCount[0][0]);
+           
+            if (RecordCount1 == 0)
+            {
+                Console.WriteLine("Do Nothing");
+            }
+            else
+            {
+                string RetrievePrintBatchItemID = "select top 1 printbatchitemid from PrintCertificate where uln =" + uln;
+                var PrintBatchItemID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrievePrintBatchItemID, ConnectionString);
+                string RetrieveBatchID = "Select top 1 batchID from PrintBatchItem where id in (select printbatchitemid from PrintCertificate where uln =" + uln + ")";
+                var BatchID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveBatchID, ConnectionString);
+                string DeletePrintCertificateRecord = "delete from PrintCertificate where ULN =" + uln;
+                string DeletePrintBatchItemRecord = "delete from PrintBatchItem where id =" + PrintBatchItemID[0][0];
+                string DeleteBatchRecord = "delete from batch where id =" + BatchID[0][0];
+                SqlDatabaseConncetionHelper.ExecuteSqlCommand(DeletePrintCertificateRecord, ConnectionString);
+                SqlDatabaseConncetionHelper.ExecuteSqlCommand(DeletePrintBatchItemRecord, ConnectionString);
+                SqlDatabaseConncetionHelper.ExecuteSqlCommand(DeleteBatchRecord, ConnectionString);
+            }
+        }
+
     }
 }

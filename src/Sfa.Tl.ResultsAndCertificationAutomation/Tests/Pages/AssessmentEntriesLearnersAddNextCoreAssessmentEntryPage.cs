@@ -34,7 +34,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedYesRadioText, WebDriver.FindElement(YesRadioButton).Text);
             Assert.AreEqual(ExpectedNoRadioText, WebDriver.FindElement(NoRadioButton).Text);
         }
-
         public static void VerifyRadioButtonsNotPrepopulated()
         {
             Assert.AreEqual(false, WebDriver.FindElement(YesRadioButton).Selected);
@@ -68,9 +67,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(WebDriver.FindElement(MainNoRadioButtonSelectedError).Text.Contains(NoRadioSelectedErrorMessage));
             Assert.IsTrue(WebDriver.FindElement(SubNoRadioButtonSelectedError).Text.Contains(NoRadioSelectedErrorMessage));
         }
-
-
-
-
     }
 }

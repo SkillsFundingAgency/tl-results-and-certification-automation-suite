@@ -17,7 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
         private static By SearchForALearnerBreadcrumb { get; } = By.Id("breadcrumb2");
         private static By RegistrationDetailsElement { get; } = By.ClassName("govuk-grid-column-three-quarters");
         private static By BackToHomeBtn { get; } = By.Id("backButton");
-        private static By UpdateLearnerRecordLink { get; } = By.XPath("//a[@href='/search-learner-record-unique-learner-number']");
+        private static By UpdateLearnerRecordLink { get; } = By.XPath("//a[contains(@href,'/learner-record-page')]");
 
         public static void VerifySOANotAvailablePage(string ULN, string Name, string DOB, string Provider, string TLevelTitle)
         {

@@ -29,9 +29,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedPageHeading, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ExpectedPageSubHeading, WebDriver.FindElement(PageSubHeader).Text);
             Assert.AreEqual(ExpectedButtonText, WebDriver.FindElement(BackToLearnersAssessmentEntriesButton).Text);
-         
         }
-
-        
     }
 }

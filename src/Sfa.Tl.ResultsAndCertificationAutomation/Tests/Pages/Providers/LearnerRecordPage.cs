@@ -45,6 +45,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(statusEM));
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(statusIP));
         }
+
+        public static void VerifyEMAndIPStatus(string EMStatus, string IPStatus)
+        {
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(EMStatus));
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(IPStatus));
+        }
+
         public static void VerifyEMAndIPStatusForNonLRS()
         {
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(statusEMNonLRS));
@@ -109,5 +116,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         {
             Assert.IsTrue(WebDriver.FindElement(statusElement).Text.Contains(Status));
         }
+
+
+
+
     }
 }

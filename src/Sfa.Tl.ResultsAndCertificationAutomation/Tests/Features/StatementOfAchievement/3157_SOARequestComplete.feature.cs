@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntries
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.StatementOfAchievement
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2142_Create \'Assessment entry removed successfully\' page")]
-    public partial class _2142_CreateAssessmentEntryRemovedSuccessfullyPageFeature
+    [NUnit.Framework.DescriptionAttribute("3157_Statement of Achievement - Request Complete")]
+    public partial class _3157_StatementOfAchievement_RequestCompleteFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2142_AssessmentEntryRemovedSuccessfully.feature"
+#line 1 "3157_SOARequestComplete.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "2142_Create \'Assessment entry removed successfully\' page", "\tAs a Registrations Editor\r\n\tI need to be able to see that I have removed an asse" +
-                    "ssment entry\r\n\tSo that I can see that I have completed my task", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/StatementOfAchievement", "3157_Statement of Achievement - Request Complete", "\tAs a provider, \r\n\twhen I click ‘Accept and send request’  on the check the learn" +
+                    "er’s details page,\r\n\tI should be presented with the request complete page which " +
+                    "will display the green  box, the learner name and the learner ULN.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,27 +77,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         
         public virtual void FeatureBackground()
         {
+#line 6
+#line hidden
 #line 7
+testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.And("I deleted the address in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.And("I have a registration with an assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I add an address for Barnsley", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2142_Remove an assessment entry for the learner and validate the success page")]
+        [NUnit.Framework.DescriptionAttribute("3157_Verify Request Statmewnt of achievement confirmation page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
-        public virtual void _2142_RemoveAnAssessmentEntryForTheLearnerAndValidateTheSuccessPage()
+        [NUnit.Framework.CategoryAttribute("SOA")]
+        public virtual void _3157_VerifyRequestStatmewntOfAchievementConfirmationPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "AssessmentEntries"};
+                    "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2142_Remove an assessment entry for the learner and validate the success page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3157_Verify Request Statmewnt of achievement confirmation page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -117,27 +121,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
 this.FeatureBackground();
 #line hidden
 #line 13
-testRunner.And("I search the learner assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("a registration is created for LRS where \'MathEng not Achieved Min Standard Math-A" +
+                        " Eng-NA\' and \'IP completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
-testRunner.And("I click on Remove entry link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I navigate to Request statement of achievment - Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-testRunner.And("I select Yes radio button and press submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click the Accept and send request button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
-testRunner.Then("I am shown assessment entry removed successfully page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the Request statement of achievement confirmation page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 17
-testRunner.And("the core assessment entry displays as \"Not specified\" and link should be \"Add ent" +
-                        "ry\" when i click on back to learner assessment entries button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I press the Back to home button on the statement of achievement confirmation page" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
-testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 19
+testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
