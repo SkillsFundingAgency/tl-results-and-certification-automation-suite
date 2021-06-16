@@ -84,5 +84,26 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Stateme
         {
             SOARequestAlreadySubmitted.ClickBreadCrumb(Breadcrumb);
         }
+
+
+        [Then(@"I press the Back to Home button")]
+        public void ThenIPressTheBackToHomeButton()
+        {
+            SOARequestAlreadySubmitted.ClickBackToHomeBtn();
+        }
+
+
+
+        [Then(@"I navigate back to the Statement of achievement already requested page")]
+        public void ThenINavigateBackToTheStatementOfAchievementAlreadyRequestedPage()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            ClickLinkByLabel("Request statement of achievement");
+            ClickLinkByLabel("Continue");
+            RequestSOA_SearchForALearnerPage.EnterULN(uln);
+        }
+
+
+
     }
 }

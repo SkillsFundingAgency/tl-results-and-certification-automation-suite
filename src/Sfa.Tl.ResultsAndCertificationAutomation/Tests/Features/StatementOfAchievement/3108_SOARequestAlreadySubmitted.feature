@@ -51,7 +51,7 @@ And the registration is deleted for this test
 
 
 @RegressionTest @SOA
-Scenario: 3108_Validate breadcrumbs on SOA Request already submitted page
+Scenario: 3108_Validate breadcrumbs and Back to Home button on SOA Request already submitted page
 Given a registration is created for NON LRS where 'MathEng achieved the minimum standard' and 'IP completed'
 And I requested a statement of achievement
 And I attempt to request a statement of achievement again within 21 days 
@@ -63,6 +63,9 @@ And I press the 'Request statement of achievement' breadcrumb on the SOA Request
 Then I am shown the Request statement of achievement page
 When I navigate back to the SOA Request already submitted page from the request Statement of Achievement page
 And I press the 'Home' breadcrumb on the SOA Request already submitted page
+Then I will be navigated to the T Levels Dashboard page
+And I navigate back to the Statement of achievement already requested page
+And I press the Back to Home button
 Then I will be navigated to the T Levels Dashboard page
 And the registration is deleted for this test
 

@@ -352,16 +352,18 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3108_Validate breadcrumbs on SOA Request already submitted page")]
+        [NUnit.Framework.DescriptionAttribute("3108_Validate breadcrumbs and Back to Home button on SOA Request already submitte" +
+            "d page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
-        public virtual void _3108_ValidateBreadcrumbsOnSOARequestAlreadySubmittedPage()
+        public virtual void _3108_ValidateBreadcrumbsAndBackToHomeButtonOnSOARequestAlreadySubmittedPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3108_Validate breadcrumbs on SOA Request already submitted page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3108_Validate breadcrumbs and Back to Home button on SOA Request already submitte" +
+                    "d page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 54
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -427,6 +429,15 @@ testRunner.And("I press the \'Home\' breadcrumb on the SOA Request already submi
 testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 67
+testRunner.And("I navigate back to the Statement of achievement already requested page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 68
+testRunner.And("I press the Back to Home button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 69
+testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 70
 testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -446,7 +457,7 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3108_Validate SOA Request already submitted page for NON LRS registration (Achiev" +
                     "ed min standard)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 70
+#line 73
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -469,29 +480,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 71
+#line 74
 testRunner.Given("a registration is created for NON LRS where \'MathEng achieved the minimum standar" +
                         "d\' and \'IP completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 72
+#line 75
 testRunner.And("I requested a statement of achievement", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 73
+#line 76
 testRunner.And("I attempt to request a statement of achievement again within 21 days", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 74
+#line 77
 testRunner.Then("I am shown the Statement of achievement already requested page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 75
+#line 78
 testRunner.And("the learners T Level component achievement details display \'Achieved minimum stan" +
                         "dard\' and IP displays \'Placement completed\' on the Request already submitted pag" +
                         "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 76
+#line 79
 testRunner.And("the learners registration and qualification details are shown on the Request alre" +
                         "ady submitted page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 77
+#line 80
 testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -511,7 +522,7 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3108_Validate SOA Request already submitted page for NON LRS registration (Achiev" +
                     "ed min standard with SEND)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 80
+#line 83
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -534,29 +545,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 81
+#line 84
 testRunner.Given("a registration is created for NON LRS where \'MathEng achieved the minimum standar" +
                         "d for learners with SEND\' and \'IP completed with special consideration\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 82
+#line 85
 testRunner.And("I requested a statement of achievement", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 83
+#line 86
 testRunner.And("I attempt to request a statement of achievement again within 21 days", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 84
+#line 87
 testRunner.Then("I am shown the Statement of achievement already requested page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 85
+#line 88
 testRunner.And("the learners T Level component achievement details display \'Achieved minimum stan" +
                         "dard\' and IP displays \'Placement completed with special consideration\' on the Re" +
                         "quest already submitted page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 86
+#line 89
 testRunner.And("the learners registration and qualification details are shown on the Request alre" +
                         "ady submitted page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 87
+#line 90
 testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -576,7 +587,7 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3108_Validate SOA Request already submitted page for NON LRS registration (Not ac" +
                     "hieved min standard)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 90
+#line 93
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -599,29 +610,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 91
+#line 94
 testRunner.Given("a registration is created for NON LRS where \'MathEng not achieved the minimum sta" +
                         "ndard\' and \'IP not completed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 92
+#line 95
 testRunner.And("I requested a statement of achievement", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 93
+#line 96
 testRunner.And("I attempt to request a statement of achievement again within 21 days", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 94
+#line 97
 testRunner.Then("I am shown the Statement of achievement already requested page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 95
+#line 98
 testRunner.And("the learners T Level component achievement details display \'Not achieved minimum " +
                         "standard\' and IP displays \'Placement still to be completed\' on the Request alrea" +
                         "dy submitted page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 96
+#line 99
 testRunner.And("the learners registration and qualification details are shown on the Request alre" +
                         "ady submitted page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 97
+#line 100
 testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
