@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
@@ -16,6 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By ProviderLink = By.XPath("//a[contains(text(),'Providers')]");
         private static readonly By RegistrationsLink = By.XPath("//a[contains(text(),'Registrations')]");
         private static By ResultsLink { get; } = By.LinkText("Results");
+        private static By ReviewAndAppealsLink { get; } = By.LinkText("Reviews and appeals");
         private static readonly By AccountLink = By.XPath("//a[contains(text(),'Account')]");
         private static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
         private const string ExpectedUrl = "https://pp-profile.signin.education.gov.uk/";
@@ -83,8 +85,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ResultsLink);
             ResultsDashboardPage.VerifyResultsDashboardPage();
             ClickOnLink(ManageTlevelBanner);
-            ClickOnLink(ResultsLink);
-            ResultsDashboardPage.VerifyResultsDashboardPage();
+            ClickOnLink(ReviewAndAppealsLink);
+            ReviewAndAppealsStartPage.VerifyReviewAndAppealsStartPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
@@ -102,6 +104,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(ResultsLink);
+            VerifyAccessDeniedPage();
+            ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ReviewAndAppealsLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
@@ -122,6 +127,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ResultsLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ReviewAndAppealsLink);
+            VerifyAccessDeniedPage();
+            ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
         public void AccessLevelRegistrationEditor()
@@ -138,6 +146,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             AssessmentEntriesPage.VerifyAssessmentEntriesPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(ResultsLink);
+            VerifyAccessDeniedPage();
+            ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ReviewAndAppealsLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
@@ -159,6 +170,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ResultsLink);
             ResultsDashboardPage.VerifyResultsDashboardPage();
             ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ReviewAndAppealsLink);
+            ReviewAndAppealsStartPage.VerifyReviewAndAppealsStartPage();
+            ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
         public void AccessLevelNoRoles()
@@ -176,6 +190,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(ResultsLink);
+            VerifyAccessDeniedPage();
+            ClickOnLink(ManageTlevelBanner);
+            ClickOnLink(ReviewAndAppealsLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
