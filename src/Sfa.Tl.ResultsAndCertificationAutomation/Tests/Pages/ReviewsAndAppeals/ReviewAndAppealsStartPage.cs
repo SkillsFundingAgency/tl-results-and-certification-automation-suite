@@ -12,6 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static readonly By pageHeaderElement = By.XPath("//*[@id='main-content']//h1");
         private static By continueBtn { get; } = By.Id("continueButton");
         private static By homeBreadcrumb { get; } = By.Id("breadcrumb0");
+        private static By reviewsAndAppealsLink { get; } = By.LinkText("Reviews and appeals");
         public static void VerifyReviewAndAppealsStartPage()
         {
             Assert.AreEqual(pageUrl, WebDriver.Url);
@@ -25,5 +26,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             Assert.IsTrue(WebDriver.Title.Contains("Home page – Manage T Level results – GOV.UK"));
         }
         public static void PressContinueBtn() => ClickButton(continueBtn);
+        public static void ClickAppealsLink() => ClickElement(reviewsAndAppealsLink);
     }
 }
