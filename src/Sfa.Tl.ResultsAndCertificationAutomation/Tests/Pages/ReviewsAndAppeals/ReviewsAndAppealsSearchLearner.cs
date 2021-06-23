@@ -17,10 +17,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static By homeBreadcrumb { get; } = By.Id("breadcrumb0");
         public static void VerifySearchLearnerPage()
         {
-            Assert.AreEqual(pageUrl, WebDriver.Url);
+            Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
             Assert.AreEqual(pageTitle, WebDriver.Title);
             Assert.AreEqual(pageHeader, WebDriver.FindElement(pageHeaderElement).Text);
         }
+
         public static void VerifySearchLearnerErrorPage()
         {
             Assert.AreEqual(pageErrorTitle, WebDriver.Title);
