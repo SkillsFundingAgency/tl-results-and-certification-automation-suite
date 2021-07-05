@@ -20,7 +20,7 @@ Scenario: 2000_Verify searching for a ULN which is registered to another AO resu
 Given I have logged in as a "PearsonSiteAdmin" user
 And I click on Add a new registration link
 And I create a manual registration for Pearson
-When I click on Signout from Menu
+When I click on Sign Out link
 Then I should be redirectted to Tlevel Start page
 Given I have logged in as a "RegistrationEditor" user
 And I navigate to the Search for a learner page

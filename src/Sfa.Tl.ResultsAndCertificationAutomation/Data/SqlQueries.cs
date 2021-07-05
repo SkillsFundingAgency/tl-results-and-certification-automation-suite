@@ -112,7 +112,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static void CreatePathwayResult(int pathwayAssessmentId)
         {
-            string CreatePathwayResult = "Insert into TqPathwayResult values ('" + pathwayAssessmentId + "',2,GETDATE(),NULL,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            string CreatePathwayResult = "Insert into TqPathwayResult values ('" + pathwayAssessmentId + "',2,GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreatePathwayResult, ConnectionString);
         }
         public static int CreateRegistrationProfileForLrs(string uln)
