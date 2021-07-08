@@ -91,16 +91,16 @@ testRunner.When("I click on \"Reviews and appeals\" link", ((string)(null)), ((T
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3477_Verify learner component grade status page")]
+        [NUnit.Framework.DescriptionAttribute("3477_Validate Core Component Grade Status page and Search again button")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3477_VerifyLearnerComponentGradeStatusPage()
+        public virtual void _3477_ValidateCoreComponentGradeStatusPageAndSearchAgainButton()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3477_Verify learner component grade status page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3477_Validate Core Component Grade Status page and Search again button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -130,9 +130,81 @@ testRunner.Given("I navigate to the Review and Appeals Learner Component Grade s
 #line hidden
 #line 15
 testRunner.Then("the Review and Appeals Learner Component Grade status page is displayed as per th" +
-                        "e acceptane criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "e acceptance criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 16
+testRunner.And("when I press the Search again button on the Core Component Grade Status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+testRunner.Then("the Review and Appeals Search page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 18
+testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("3477_Verify breadcrumbs on Core Component Grade Status page")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
+        public virtual void _3477_VerifyBreadcrumbsOnCoreComponentGradeStatusPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "ReviewsAndAppeals"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3477_Verify breadcrumbs on Core Component Grade Status page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 21
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 22
+testRunner.Given("I navigate to the Review and Appeals Learner Component Grade status page using th" +
+                        "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 23
+testRunner.When("I press the Search for a learner breadcrumb on the Review and Appeals Learner Com" +
+                        "ponent Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 24
+testRunner.Then("the Review and Appeals Search page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 25
+testRunner.When("I press the Reviews and Appeals breadcrumb on the Review and Appeals Learner Comp" +
+                        "onent Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 26
+testRunner.Then("the Reviews and Appeals start page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 27
+testRunner.When("I press the Home breadcrumb on the Review and Appeals Learner Component Grade sta" +
+                        "tus page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 28
+testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 29
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

@@ -23,11 +23,53 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
             WebDriver.Navigate().GoToUrl(RAAURL);
         }
 
-        [Then(@"the Review and Appeals Learner Component Grade status page is displayed as per the acceptane criteria")]
-        public void ThenTheReviewAndAppealsLearnerComponentGradeStatusPageIsDisplayedAsPerTheAcceptaneCriteria()
+        [Then(@"the Review and Appeals Learner Component Grade status page is displayed as per the acceptance criteria")]
+        public void ThenTheReviewAndAppealsLearnerComponentGradeStatusPageIsDisplayedAsPerTheAcceptanceCriteria()
         {
             RAULearnersComponentGradesStatusPage.VerifyRAULearnersComponentGradesStatusPage();
-           
+            RAULearnersComponentGradesStatusPage.VerifyCoreDetailsOnInitialEntry();
+        }
+
+        [Then(@"when I press the Search again button on the Core Component Grade Status page")]
+        public void ThenWhenIPressTheSearchAgainButtonOnTheCoreComponentGradeStatusPage()
+        {
+            RAULearnersComponentGradesStatusPage.ClickSearchAgainBtn();
+        }
+
+        [Then(@"the Review and Appeals Search page is displayed")]
+        public void ThenTheReviewAndAppealsSearchPageIsDisplayed()
+        {
+            ReviewsAndAppealsSearchLearner.VerifySearchLearnerPage();
+        }
+
+        [When(@"I press the Search for a learner breadcrumb on the Review and Appeals Learner Component Grade status page")]
+        public void WhenIPressTheSearchForALearnerBreadcrumbOnTheReviewAndAppealsLearnerComponentGradeStatusPage()
+        {
+            RAULearnersComponentGradesStatusPage.ClickSearchForALearnerBreadcrumb();
+        }
+
+        [When(@"I press the Reviews and Appeals breadcrumb on the Review and Appeals Learner Component Grade status page")]
+        public void WhenIPressTheReviewsAndAppealsBreadcrumbOnTheReviewAndAppealsLearnerComponentGradeStatusPage()
+        {
+            string uln = _scenarioContext["uln"] as string;
+            string RAAURL = SqlQueries.CreateRegistrationAppealURL(uln);
+            WebDriver.Navigate().GoToUrl(RAAURL);
+            RAULearnersComponentGradesStatusPage.ClickReviewsAndAppealsBreadcrumb();
+        }
+
+        [Then(@"the Reviews and Appeals start page is displayed")]
+        public void ThenTheReviewsAndAppealsStartPageIsDisplayed()
+        {
+            ReviewAndAppealsStartPage.VerifyReviewAndAppealsStartPage();
+        }
+
+        [When(@"I press the Home breadcrumb on the Review and Appeals Learner Component Grade status page")]
+        public void WhenIPressTheHomeBreadcrumbOnTheReviewAndAppealsLearnerComponentGradeStatusPage()
+        {
+            string uln = _scenarioContext["uln"] as string;
+            string RAAURL = SqlQueries.CreateRegistrationAppealURL(uln);
+            WebDriver.Navigate().GoToUrl(RAAURL);
+            RAULearnersComponentGradesStatusPage.ClickHomeBreadcrumb();
         }
 
 

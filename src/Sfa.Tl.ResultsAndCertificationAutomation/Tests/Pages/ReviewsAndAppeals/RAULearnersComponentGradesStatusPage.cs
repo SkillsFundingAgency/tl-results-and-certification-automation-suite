@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 {
@@ -22,7 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         {
             Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
             Assert.AreEqual(pageTitle, WebDriver.Title);
-            Assert.AreEqual(pageHeader, WebDriver.FindElement(pageHeaderElement).Text);
+            Assert.AreEqual(WebDriver.FindElement(pageHeaderElement).Text, pageHeader); 
         }
 
         public static void VerifyRAULearnerDetails(string ULN)
@@ -36,10 +37,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
       
         }
 
-        public static void VerifyCoreDetails()
+        public static void VerifyCoreDetailsOnInitialEntry()
         {
+            string ExpectedDate = DateTime.Now.ToString("dd MMMM yyyy");
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("Summer 2021"));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("C"));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("A"));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("SYSTEM"));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(ExpectedDate));
         }
 
 
