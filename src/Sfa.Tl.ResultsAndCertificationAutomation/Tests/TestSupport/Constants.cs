@@ -146,7 +146,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DudleyProviderIdForLrs = "11493";
         public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
         //Reviews And Appeals Data
-        public const string RAAName = "Db FirstName DB LastName";
+        public const string RAAName = "Db FirstName Db LastName";
         public const string RAADOB = "01 January 2001";
         public const string RAACoreTitle = "Agriculture, Environmental and Animal Care";
         public const string RAACoreCode = "(77777777)";

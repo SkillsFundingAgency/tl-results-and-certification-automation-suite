@@ -17,6 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static By homeBreadcrumbElement = By.Id("breadcrumb0");
         private static By reviewsAndAppealsBreadcrumbElement = By.Id("breadcrumb1");
         private static By searchForALearnerBreadcrumbElement = By.Id("breadcrumb2");
+        private static By updateLink = By.Id("pathwaygrade");
 
 
         public static void VerifyRAULearnersComponentGradesStatusPage()
@@ -50,6 +51,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         public static void ClickSearchAgainBtn()
         {
             ClickButton(searchAgainBtn);
+        }
+
+        public static void ClickUpdateLink()
+        {
+            ClickButton(updateLink);
         }
 
         public static void ClickHomeBreadcrumb()

@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 {
@@ -26,9 +27,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         public static void VerifyRAULearnerDetails(string ULN)
         {
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(ULN));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("Db FirstName Db LastName"));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("01 January 2001"));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("Summer 2021"));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAName));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAADOB));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
             //add check for core code
             //add check for old grade
         }

@@ -26,7 +26,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         [Then(@"the Review and Appeals Learner Component Grade status page is displayed as per the acceptance criteria")]
         public void ThenTheReviewAndAppealsLearnerComponentGradeStatusPageIsDisplayedAsPerTheAcceptanceCriteria()
         {
+            string uln = _scenarioContext["uln"] as string;
             RAULearnersComponentGradesStatusPage.VerifyRAULearnersComponentGradesStatusPage();
+            RAULearnersComponentGradesStatusPage.VerifyRAULearnerDetails(uln);
             RAULearnersComponentGradesStatusPage.VerifyCoreDetailsOnInitialEntry();
         }
 

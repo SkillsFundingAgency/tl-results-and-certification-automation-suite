@@ -49,7 +49,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
             WebDriver.FindElement(by: StartNowButton).Click();
-            //WebDriver.FindElement(By.Id("cookie-accept"));
+            //WebDriver.FindElement(By.Id("cookie-accept")).Click();
             PageHelper.WaitForPageElementBy(10, SignInButton);
             WebDriver.FindElement(UserIdTxtBox).SendKeys(username);
             WebDriver.FindElement(PasswordTxtBox).SendKeys(password);

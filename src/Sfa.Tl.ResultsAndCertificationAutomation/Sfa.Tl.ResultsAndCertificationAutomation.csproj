@@ -39,6 +39,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3473_ReviewsAndAppealsStartPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3474_ReviewsAndAppealsSearchForLearner - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3477_LearnersComponentGradesStatus - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3105_RequestStatementOfAchievement - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3156_CheckTheLearnerDetailsBeforeSendingYourRequest - Copy.feature.cs" />
@@ -284,6 +285,9 @@
     <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
       <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3478_CoreComponentBeingAppealed.feature.cs">
+      <DependentUpon>3478_CoreComponentBeingAppealed.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewsAndAppeals\3477_LearnersComponentGradesStatus.feature.cs">
       <DependentUpon>3477_LearnersComponentGradesStatus.feature</DependentUpon>
     </Compile>
@@ -361,6 +365,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3478_CoreComponentBeingAppealed.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
