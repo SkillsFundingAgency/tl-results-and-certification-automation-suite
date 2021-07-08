@@ -49,6 +49,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
             WebDriver.FindElement(by: StartNowButton).Click();
+            //-------Disable the following line if you don't want to accept cookies on cookie banner----
+           // WebDriver.FindElement(By.Id("cookie-accept")).Click();
             PageHelper.WaitForPageElementBy(10, UserIdTxtBox);
             WebDriver.FindElement(UserIdTxtBox).SendKeys(username);
             WebDriver.FindElement(PasswordTxtBox).SendKeys(password);

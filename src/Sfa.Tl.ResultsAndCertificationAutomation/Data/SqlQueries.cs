@@ -379,5 +379,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             }
         }
 
+        public static string CreateRegistrationAppealURL(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.ReturnRegistrationPathwayForLrs(profileId);
+            string RetrieveTqPathwayAssessmentID = "Select top 1 Id from TqPathwayAssessment where TqRegistrationPathwayId =" + pathwayId;
+            var PathwayAssessmentID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveTqPathwayAssessmentID, ConnectionString);
+            string URL = "https://test.manage-tlevel-results.tlevels.gov.uk/reviews-and-appeals-learner-status/" + profileId + "/" + PathwayAssessmentID[0][0];
+            return URL;
+        }
+
     }
 }
