@@ -10,7 +10,7 @@ When I click on "Reviews and appeals" link
 
 
 @RegressionTest @ReviewsAndAppeals
-Scenario: 3477_Test 1
+Scenario: 3477_Verify learner component grade status page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then the Review and Appeals Learner Component Grade status page is displayed as per the acceptane criteria
 And the registration for this test is deleted

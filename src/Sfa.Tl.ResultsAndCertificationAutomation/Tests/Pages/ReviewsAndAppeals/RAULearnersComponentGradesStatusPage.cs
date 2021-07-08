@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static string pageUrl { get; } = string.Concat(StartPage.StartPageUrl, "reviews-and-appeals-learner-status");
         private static string pageTitle { get; } = "Learner’s component grades status – Manage T Level results – GOV.UK";
         private static By pageHeaderElement { get; } = By.XPath("//*[@id='main-content']//h1");
-        private static string  pageHeader { get; } = "Learner’s component grade status";
+        private static string  pageHeader { get; } = "Learner’s component grades status";
         private static By searchAgainBtn { get; } = By.Id("buttonSearchAgain");
         private static By learnerDetailsElement { get; } = By.ClassName("govuk-grid-column-three-quarters");
         private static By homeBreadcrumbElement = By.Id("breadcrumb0");
@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         {
             Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
             Assert.AreEqual(pageTitle, WebDriver.Title);
-            Assert.AreEqual(pageHeader, pageHeaderElement);
+            Assert.AreEqual(pageHeader, WebDriver.FindElement(pageHeaderElement).Text);
         }
 
         public static void VerifyRAULearnerDetails(string ULN)
@@ -62,8 +62,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         {
             ClickButton(searchForALearnerBreadcrumbElement);
         }
-
-
-
     }
 }
