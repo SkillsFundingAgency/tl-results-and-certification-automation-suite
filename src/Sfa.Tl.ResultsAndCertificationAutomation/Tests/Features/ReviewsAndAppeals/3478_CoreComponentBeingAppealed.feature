@@ -19,7 +19,7 @@ Then the Review and Appeals Learner Component Grade status page is displayed as 
 And the registration for this test is deleted
 
 @RegressionTest @ReviewsAndAppeals
-Scenario: 3478_Verify error messages
+Scenario: 3478_Verify error message on Core component being appealed page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal
 And I press Submit without selecting a radio button on the Core component being appealed page

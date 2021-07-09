@@ -20,24 +20,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewsAndAppe
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("3478 Post Results Services - Core component being appealed")]
-    public partial class _3478PostResultsServices_CoreComponentBeingAppealedFeature
+    [NUnit.Framework.DescriptionAttribute("3480 Post Results Services - Component grade status updated")]
+    public partial class _3480PostResultsServices_ComponentGradeStatusUpdatedFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "3478_CoreComponentBeingAppealed.feature"
+#line 1 "3480_ComponentGradeStatusUpdated.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/ReviewsAndAppeals", "3478 Post Results Services - Core component being appealed", "\tAs an AO with a results editor user role, \r\n\tI need to confirm that this learner" +
-                    "’s core component is the one I want to appeal before I continue \r\n\tso that I can" +
-                    " be sure all of the information is correct.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/ReviewsAndAppeals", "3480 Post Results Services - Component grade status updated", "\tAs an AO, \r\n\tI need to know that the learner’s core component has been successfu" +
+                    "lly changed to ‘being appealed’ \r\n\tso that I can be sure everything is correct b" +
+                    "efore I leave the page", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -91,16 +91,16 @@ testRunner.When("I click on \"Reviews and appeals\" link", ((string)(null)), ((T
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3478_Validate Core Component Grade Status page and Back link")]
+        [NUnit.Framework.DescriptionAttribute("3480_Validate Core Component Grade Status shows grade status \'Being appealed\'")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3478_ValidateCoreComponentGradeStatusPageAndBackLink()
+        public virtual void _3480_ValidateCoreComponentGradeStatusShowsGradeStatusBeingAppealed()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3478_Validate Core Component Grade Status page and Back link", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3480_Validate Core Component Grade Status shows grade status \'Being appealed\'", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -132,16 +132,22 @@ testRunner.Given("I navigate to the Review and Appeals Learner Component Grade s
 testRunner.And("I press the update button next to the grade I would like to appeal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
-testRunner.Then("I am shown the Core component being appealed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I select the \'yes, it is being appealed\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
-testRunner.And("when I press the Back link on the Core component being appealed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("the Review and Appeals Learner Component Grade status page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 18
-testRunner.Then("the Review and Appeals Learner Component Grade status page is displayed as per th" +
-                        "e acceptance criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("\'Being appealed\' will now appear as the status on the ‘Grade’ row within the core" +
+                        " details table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
+testRunner.And("when I press the Search again button on the Core Component Grade Status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 20
+testRunner.Then("the Review and Appeals Search page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 21
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -149,17 +155,19 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3478_Verify error message on Core component being appealed page")]
+        [NUnit.Framework.DescriptionAttribute("3480_Verify breadcrumbs on Core Component Grade Status page after Being Appealed " +
+            "status is shown")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3478_VerifyErrorMessageOnCoreComponentBeingAppealedPage()
+        public virtual void _3480_VerifyBreadcrumbsOnCoreComponentGradeStatusPageAfterBeingAppealedStatusIsShown()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3478_Verify error message on Core component being appealed page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 22
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3480_Verify breadcrumbs on Core Component Grade Status page after Being Appealed " +
+                    "status is shown", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -182,22 +190,45 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 23
+#line 25
 testRunner.Given("I navigate to the Review and Appeals Learner Component Grade status page using th" +
                         "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 24
+#line 26
 testRunner.And("I press the update button next to the grade I would like to appeal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
-testRunner.And("I press Submit without selecting a radio button on the Core component being appea" +
-                        "led page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 26
-testRunner.Then("I am shown an error message on the Core component being appealed page stating \'Pl" +
-                        "ease select whether a grade is being appealed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 27
+testRunner.And("I select the \'yes, it is being appealed\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+testRunner.Then("the Review and Appeals Learner Component Grade status page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 29
+testRunner.And("\'Being appealed\' will now appear as the status on the ‘Grade’ row within the core" +
+                        " details table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+testRunner.When("I press the Search for a learner breadcrumb on the Review and Appeals Learner Com" +
+                        "ponent Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 31
+testRunner.Then("the Review and Appeals Search page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 32
+testRunner.When("I press the Reviews and Appeals breadcrumb on the Review and Appeals Learner Comp" +
+                        "onent Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
+testRunner.Then("the Reviews and Appeals start page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 34
+testRunner.When("I press the Home breadcrumb on the Review and Appeals Learner Component Grade sta" +
+                        "tus page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 35
+testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 36
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

@@ -62,5 +62,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             Assert.AreEqual(false, WebDriver.FindElement(noRadioBtn).Selected);
         }
 
+        public static void ClickYesRadioBtn()
+        {
+            ClickButton(yesRadioBtn);
+        }
+
     }
 }

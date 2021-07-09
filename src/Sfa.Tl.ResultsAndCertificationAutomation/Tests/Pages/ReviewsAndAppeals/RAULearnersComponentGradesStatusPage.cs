@@ -2,6 +2,8 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+
 using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
@@ -41,10 +43,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         public static void VerifyCoreDetailsOnInitialEntry()
         {
             string ExpectedDate = DateTime.Now.ToString("dd MMMM yyyy");
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("Summer 2021"));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("A"));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("SYSTEM"));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(ExpectedDate));
+        }
+
+        public static void VerifyCoreDetailsStatusBeingAppealed(string ULN)
+        {
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("BEING APPEALED"));
+
+            //Verify the created by and creaed on date from the TqPathwayResult table against the values on the Learner’s component grades status page
+            string CreatedBy = SqlQueries.RetrieveResultUpdatedData(ULN);
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedBy));
+            string CreatedOnDate = SqlQueries.RetrieveResultCreatedOnData(ULN);
+            DateTime oDate = Convert.ToDateTime(CreatedOnDate);
+            string CreatedOnDate1 = oDate.ToString("dd MMMM yyyy");
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedOnDate1));
         }
 
 
