@@ -67,5 +67,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             ClickButton(yesRadioBtn);
         }
 
+        public static void ClickNoRadioBtn()
+        {
+            ClickButton(noRadioBtn);
+        }
+
     }
 }

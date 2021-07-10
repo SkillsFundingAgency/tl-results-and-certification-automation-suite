@@ -20,7 +20,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static By reviewsAndAppealsBreadcrumbElement = By.Id("breadcrumb1");
         private static By searchForALearnerBreadcrumbElement = By.Id("breadcrumb2");
         private static By updateLink = By.Id("pathwaygrade");
-
+        private static By successBannerHeaderElement = By.Id("govuk-notification-banner-title");
+        private static By successBannerTextElement = By.ClassName("govuk-notification-banner__heading");
 
         public static void VerifyRAULearnersComponentGradesStatusPage()
         {
@@ -55,13 +56,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("BEING APPEALED"));
 
-            //Verify the created by and creaed on date from the TqPathwayResult table against the values on the Learner’s component grades status page
+            //Verify the Created By and Created On date from the TqPathwayResult table against the values on the Learner’s component grades status page
             string CreatedBy = SqlQueries.RetrieveResultUpdatedData(ULN);
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedBy));
             string CreatedOnDate = SqlQueries.RetrieveResultCreatedOnData(ULN);
             DateTime oDate = Convert.ToDateTime(CreatedOnDate);
             string CreatedOnDate1 = oDate.ToString("dd MMMM yyyy");
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedOnDate1));
+        }
+
+        public static void VerifySuccessBannerDisplayed()
+        {
+            string SuccessBannerText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode + " status has been updated";
+            Assert.IsTrue(WebDriver.FindElement(successBannerTextElement).Text.Contains(SuccessBannerText));
+            Assert.IsTrue(WebDriver.FindElement(successBannerHeaderElement).Text.Contains("Success"));             
+        }
+
+        public static void VerifySuccessBannerIsNotDisplayed()
+        {
+            bool expectedResponse = false;
+            Assert.AreEqual(expectedResponse, IsPresent(successBannerHeaderElement));
+            Assert.AreEqual(expectedResponse, IsPresent(successBannerTextElement));
+        }
+
+        public static void VerifyGradeStatusSetToBeingAppealed(string ULN)
+        {
+            //Verify the TqPathwayResult table record is updated to state the grade is being appealed
+            int resultStatus = SqlQueries.RetrieveResultStatus(ULN);
+            Assert.AreEqual(3, resultStatus);
         }
 
 
