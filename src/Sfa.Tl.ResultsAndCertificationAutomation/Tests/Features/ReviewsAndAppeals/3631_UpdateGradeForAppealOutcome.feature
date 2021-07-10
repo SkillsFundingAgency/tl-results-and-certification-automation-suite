@@ -27,3 +27,5 @@ Then the Update grade for appeal outcome page is displayed
 When I click the Continue button without selecting a radio button on the Update grade for appeal outcome page
 Then the following error message will be displayed 'Please select the new core component grade'
 And the registration for this test is deleted
+
+
