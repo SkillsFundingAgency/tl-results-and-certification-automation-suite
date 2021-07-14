@@ -19,8 +19,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         public void GivenINavigateToTheReviewAndAppealsLearnerComponentGradeStatusPageUsingTheURL()
         {
             string uln = _scenarioContext["uln"] as string;
-            string RAAURL = SqlQueries.CreateRegistrationAppealURL(uln);
-            WebDriver.Navigate().GoToUrl(RAAURL);
+            PressContinueBtn();
+            ReviewsAndAppealsSearchLearner.EnterUln(uln);
+            ReviewsAndAppealsSearchLearner.ClickSearchBtn();
+            //string RAAURL = SqlQueries.CreateRegistrationAppealURL(uln);
+            //WebDriver.Navigate().GoToUrl(RAAURL);
         }
 
         [Then(@"the Review and Appeals Learner Component Grade status page is displayed as per the acceptance criteria")]
