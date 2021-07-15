@@ -51,6 +51,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ULNText, WebDriver.FindElement(ULNTextLabel).Text);
             Assert.AreEqual(ProviderText, WebDriver.FindElement(ProviderTextLabel).Text);
         }
+        public static void VerifyLearnerResultPage()
+        {
+            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+            Assert.AreEqual(ExpectedPageHeaderText, WebDriver.FindElement(PageHeader).Text);
+        }
 
         public static void VerifyCore(string CoreText)
         {

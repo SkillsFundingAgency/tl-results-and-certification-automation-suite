@@ -197,9 +197,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             RegistrationsManualPage.ClickElement(RegistrationsPage.BacktoRegistrationLink);
             RegistrationsManualPage.ClickHomeBreadcrumb();
         }
-
-
-
-
     }
 }

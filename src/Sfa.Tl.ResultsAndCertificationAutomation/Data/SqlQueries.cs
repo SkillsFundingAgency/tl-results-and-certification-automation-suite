@@ -112,7 +112,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static void CreatePathwayResult(int pathwayAssessmentId)
         {
-            string CreatePathwayResult = "Insert into TqPathwayResult values ('" + pathwayAssessmentId + "',2,GETDATE(),NULL,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            string CreatePathwayResult = "Insert into TqPathwayResult values ('" + pathwayAssessmentId + "',2,GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreatePathwayResult, ConnectionString);
         }
         public static int CreateRegistrationProfileForLrs(string uln)
@@ -378,6 +378,68 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
                 SqlDatabaseConncetionHelper.ExecuteSqlCommand(DeleteBatchRecord, ConnectionString);
             }
         }
+
+        public static string CreateRegistrationAppealURL(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.ReturnRegistrationPathwayForLrs(profileId);
+            string RetrieveTqPathwayAssessmentID = "Select top 1 Id from TqPathwayAssessment where TqRegistrationPathwayId =" + pathwayId;
+            var PathwayAssessmentID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveTqPathwayAssessmentID, ConnectionString);
+            string URL = "https://test.manage-tlevel-results.tlevels.gov.uk/reviews-and-appeals-learner-status/" + profileId + "/" + PathwayAssessmentID[0][0];
+            return URL;
+        }
+
+        public static string RetrieveResultUpdatedData(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.ReturnRegistrationPathwayForLrs(profileId);
+            string RetrieveTqPathwayAssessmentID = "Select top 1 Id from TqPathwayAssessment where TqRegistrationPathwayId =" + pathwayId;
+            var PathwayAssessmentID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveTqPathwayAssessmentID, ConnectionString);
+            string TqPathwayResultCreatedByValue = "select top 1 createdby from TqPathwayResult where TqPathwayAssessmentId =" + PathwayAssessmentID[0][0] + " order by id desc";
+            var CreatedByValue = SqlDatabaseConncetionHelper.ReadDataFromDataBase(TqPathwayResultCreatedByValue, ConnectionString);
+            string CreatedByValue1 = Convert.ToString(CreatedByValue[0][0]);
+            return CreatedByValue1;
+        }
+
+        public static string RetrieveResultCreatedOnData(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.ReturnRegistrationPathwayForLrs(profileId);
+            string RetrieveTqPathwayAssessmentID = "Select top 1 Id from TqPathwayAssessment where TqRegistrationPathwayId =" + pathwayId;
+            var PathwayAssessmentID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveTqPathwayAssessmentID, ConnectionString);
+            string TqPathwayResultCreatedByValue = "select top 1 createdOn from TqPathwayResult where TqPathwayAssessmentId =" + PathwayAssessmentID[0][0] + " order by id desc";
+            var CreatedOnValue = SqlDatabaseConncetionHelper.ReadDataFromDataBase(TqPathwayResultCreatedByValue, ConnectionString);
+            string CreatedOnValue1 = Convert.ToString(CreatedOnValue[0][0]);
+            return CreatedOnValue1;
+        }
+        
+
+        public static int RetrieveResultStatus(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.ReturnRegistrationPathwayForLrs(profileId);
+            string RetrieveTqPathwayAssessmentID = "Select top 1 Id from TqPathwayAssessment where TqRegistrationPathwayId =" + pathwayId;
+            var PathwayAssessmentID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveTqPathwayAssessmentID, ConnectionString);
+            string TqPathwayResultStatusValue = "select top 1 prsstatus from TqPathwayResult where TqPathwayAssessmentId =" + PathwayAssessmentID[0][0] + " order by id desc";
+            var resultStatusValue = SqlDatabaseConncetionHelper.ReadDataFromDataBase(TqPathwayResultStatusValue, ConnectionString);
+            int resultStatusValue1 = Convert.ToInt32(resultStatusValue[0][0]);
+            return resultStatusValue1;
+        }
+
+        public static string RetrieveLatestGrade(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileForLrs(uln);
+            var pathwayId = SqlQueries.ReturnRegistrationPathwayForLrs(profileId);
+            string RetrieveTqPathwayAssessmentID = "Select top 1 Id from TqPathwayAssessment where TqRegistrationPathwayId =" + pathwayId;
+            var PathwayAssessmentID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(RetrieveTqPathwayAssessmentID, ConnectionString);
+            string TqPathwayResultGradeLookup = "select top 1 TlLookupId from TqPathwayResult where TqPathwayAssessmentId =" + PathwayAssessmentID[0][0] + " order by id desc";
+            var GradeLookupValue = SqlDatabaseConncetionHelper.ReadDataFromDataBase(TqPathwayResultGradeLookup, ConnectionString);
+            string LookupGrade = "select value from TlLookup where ID = " + GradeLookupValue[0][0];
+            var Grade = SqlDatabaseConncetionHelper.ReadDataFromDataBase(LookupGrade, ConnectionString);
+            string Grade1 = Convert.ToString(Grade[0][0]);
+            return Grade1;
+        }
+
 
     }
 }

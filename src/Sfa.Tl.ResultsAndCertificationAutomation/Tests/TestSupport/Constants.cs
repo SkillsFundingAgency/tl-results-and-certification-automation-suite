@@ -137,12 +137,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DbDOB = "01/01/2001";
         public const string DbProviderName = "Automation Test1 (99999901)";
         public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
-        public const string TqProviderId = "9479";
+        //public const string TqProviderId = "9479";
+        public const string TqProviderId = "13161";
         public const string TlSpecialismId = "179";
         public const string TqProviderId2 = "9479";
         public const string TqProviderIdForLrs = "10229";
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";
         public const string DudleyProviderIdForLrs = "11493";
         public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
+        //Reviews And Appeals Data
+        public const string RAAName = "Db FirstName Db LastName";
+        public const string RAADOB = "01 January 2001";
+        public const string RAACoreTitle = "Agriculture, Environmental and Animal Care";
+        public const string RAACoreCode = "(77777777)";
+        public const string RAATLevelTitle = "T Level in Agriculture, Environmental and Animal Care";
+        public const string RAAUKPRN = "Automation Test1";
+        public const string RAAProvider = "(99999901)";
+        public const string RAAExamPeriod = "Summer 2021";
+        public const string RAAOriginalGrade = "A";
     }
 }

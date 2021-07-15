@@ -37,7 +37,16 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2843_IPStatusUpdatedConfirmationPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2848_LearnerLinkingEnglishMathsAndIPpage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3473_ReviewsAndAppealsStartPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3474_ReviewsAndAppealsSearchForLearner - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3477_LearnersComponentGradesStatus - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3478_CoreComponentBeingAppealed - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3480_ComponentGradeStatusUpdated - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3629_AddOutcomeOfAppeal - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3630_CheckAndSubmitAppealOutcome - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3631_UpdateGradeForAppealOutcome - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3635_SubmitAppealRequestSuccessBanner - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3637_UpdateCheckAndSUbmitWithNewGrade - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3105_RequestStatementOfAchievement - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3156_CheckTheLearnerDetailsBeforeSendingYourRequest - Copy.feature.cs" />
@@ -94,19 +103,19 @@
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
     <PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="3.2.26">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="90.0.4430.2400" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="91.0.4472.10100" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.150.1.2" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.7.38" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.8" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +292,33 @@
     <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
       <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3636_ChangeLinkFromCheckAndSubmitPage.feature.cs">
+      <DependentUpon>3636_ChangeLinkFromCheckAndSubmitPage.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3637_UpdateCheckAndSUbmitWithNewGrade.feature.cs">
+      <DependentUpon>3637_UpdateCheckAndSUbmitWithNewGrade.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3631_UpdateGradeForAppealOutcome.feature.cs">
+      <DependentUpon>3631_UpdateGradeForAppealOutcome.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3630_CheckAndSubmitAppealOutcome.feature.cs">
+      <DependentUpon>3630_CheckAndSubmitAppealOutcome.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3629_AddOutcomeOfAppeal.feature.cs">
+      <DependentUpon>3629_AddOutcomeOfAppeal.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3635_SubmitAppealRequestSuccessBanner.feature.cs">
+      <DependentUpon>3635_SubmitAppealRequestSuccessBanner.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3480_ComponentGradeStatusUpdated.feature.cs">
+      <DependentUpon>3480_ComponentGradeStatusUpdated.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3478_CoreComponentBeingAppealed.feature.cs">
+      <DependentUpon>3478_CoreComponentBeingAppealed.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3477_LearnersComponentGradesStatus.feature.cs">
+      <DependentUpon>3477_LearnersComponentGradesStatus.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewsAndAppeals\3476_LearnerWithdrawnByExamBoard.feature.cs">
       <DependentUpon>3476_LearnerWithdrawnByExamBoard.feature</DependentUpon>
     </Compile>
@@ -357,6 +393,42 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3636_ChangeLinkFromCheckAndSubmitPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3637_UpdateCheckAndSUbmitWithNewGrade.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3631_UpdateGradeForAppealOutcome.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3630_CheckAndSubmitAppealOutcome.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3629_AddOutcomeOfAppeal.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3635_SubmitAppealRequestSuccessBanner.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3480_ComponentGradeStatusUpdated.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3478_CoreComponentBeingAppealed.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3477_LearnersComponentGradesStatus.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
