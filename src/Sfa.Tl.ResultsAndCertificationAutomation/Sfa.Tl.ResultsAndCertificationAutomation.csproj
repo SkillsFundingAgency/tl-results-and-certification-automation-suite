@@ -292,6 +292,9 @@
     <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
       <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3743_CancelButtonOnCheckAndSubmitPage.feature.cs">
+      <DependentUpon>3743_CancelButtonOnCheckAndSubmitPage.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewsAndAppeals\3636_ChangeLinkFromCheckAndSubmitPage.feature.cs">
       <DependentUpon>3636_ChangeLinkFromCheckAndSubmitPage.feature</DependentUpon>
     </Compile>
@@ -393,6 +396,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3743_CancelButtonOnCheckAndSubmitPage.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

@@ -439,7 +439,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string Grade1 = Convert.ToString(Grade[0][0]);
             return Grade1;
         }
-
-
     }
 }
