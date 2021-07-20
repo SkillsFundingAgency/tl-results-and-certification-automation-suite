@@ -21,5 +21,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         {
             ClickElement(addResultLink);
         }
+
+        public static void VerifyNoRegisteredGradesPageforAutumn2021()
+        {
+            Assert.AreEqual(pageUrl, WebDriver.Url);
+            Assert.AreEqual(pageTitle, WebDriver.Title);
+            Assert.AreEqual("Learner does not have any registered grades for Autumn 2021", WebDriver.FindElement(PageHeader).Text);
+        }
     }
 }

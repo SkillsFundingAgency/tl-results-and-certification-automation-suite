@@ -77,6 +77,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
             SqlQueries.CreatePathwayResult(pathwayAssessmentId);
         }
+
+        public void CreateDbRegWithResultAndTwoAssessmentEntries(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfile(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+            var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+            SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+            var pathwayAssessmentId1 = SqlQueries.CreateSecondPathwayAssessmentEntry(pathwayId);
+            //SqlQueries.CreatePathwayResult(pathwayAssessmentId1);
+        }
+
         public void CreateDbRegWithResultForLrs(string uln)
         {
             //var uln = UlnHelper.GenerateUln().ToString();
