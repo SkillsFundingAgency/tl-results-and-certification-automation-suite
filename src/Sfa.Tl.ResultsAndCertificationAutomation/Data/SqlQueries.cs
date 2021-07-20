@@ -110,6 +110,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
             return (int)regPathwayId.FirstOrDefault().FirstOrDefault();
         }
+
+        public static int CreateSecondPathwayAssessmentEntry(int pathwayId)
+        {
+            string CreatePathwayAssessment2 = "Insert into TqPathwayAssessment values('" + pathwayId + "',2,GETDATE(),NULL,1,0,GETDATE(),'System',Null,Null )";
+            string GetRegPathwayId = "select top 1 id from TqPathwayAssessment where TqRegistrationPathwayId  = '" + pathwayId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreatePathwayAssessment2, ConnectionString);
+            var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
+            return (int)regPathwayId.FirstOrDefault().FirstOrDefault();
+        }
+
         public static void CreatePathwayResult(int pathwayAssessmentId)
         {
             string CreatePathwayResult = "Insert into TqPathwayResult values ('" + pathwayAssessmentId + "',2,GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
