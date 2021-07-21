@@ -17,7 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         [Then(@"a success banner is shown on the Component Grade status page")]
         public void ThenASuccessBannerIsShownOnTheComponentGradeStatusPage()
         {
-            RAULearnersComponentGradesStatusPage.VerifySuccessBannerDisplayed();
+            RAULearnersComponentGradesStatusPage.VerifySuccessBannerBeingAppealedDisplayed();
         }
         
         [Then(@"the database will be updated to create a record which shows the grade as being in an appealed state")]

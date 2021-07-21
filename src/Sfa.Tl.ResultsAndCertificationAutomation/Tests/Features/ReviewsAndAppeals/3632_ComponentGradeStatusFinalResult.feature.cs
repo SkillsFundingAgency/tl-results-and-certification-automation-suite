@@ -20,24 +20,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewsAndAppe
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("3727 Post - Results Services - Multiple assessment entries")]
-    public partial class _3727Post_ResultsServices_MultipleAssessmentEntriesFeature
+    [NUnit.Framework.DescriptionAttribute("3632 Post Results Services - Component grade status - Final result")]
+    public partial class _3632PostResultsServices_ComponentGradeStatus_FinalResultFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "3727_MultipleAssessmentEntries.feature"
+#line 1 "3632_ComponentGradeStatusFinalResult.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/ReviewsAndAppeals", "3727 Post - Results Services - Multiple assessment entries", "\tAs an AO with a results editor user role, \r\n\tI need to select the relevant asses" +
-                    "sment series I am looking to appeal \r\n\tso that I can make sure I record the data" +
-                    " accurately ", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/ReviewsAndAppeals", "3632 Post Results Services - Component grade status - Final result", "\tAs an AO, \r\n\tI need to know that the learner’s core component has been successfu" +
+                    "lly changed to ‘Final’ \r\n\tso that I can be sure I have successfully recorded the" +
+                    " outcome of the appeal.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,7 +83,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewsAndAppe
 testRunner.Given("I have logged in as a \"ResultsEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.And("I have a registration with a result and two assessment entries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
 testRunner.When("I click on \"Reviews and appeals\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -91,16 +91,18 @@ testRunner.When("I click on \"Reviews and appeals\" link", ((string)(null)), ((T
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3727_Validate Select assessment entry page and back link navigation")]
+        [NUnit.Framework.DescriptionAttribute("3632_Validate Core Component Grade Status shows grade status as \'FINAL\' when grad" +
+            "e was kept the same after appeal")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3727_ValidateSelectAssessmentEntryPageAndBackLinkNavigation()
+        public virtual void _3632_ValidateCoreComponentGradeStatusShowsGradeStatusAsFINALWhenGradeWasKeptTheSameAfterAppeal()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3727_Validate Select assessment entry page and back link navigation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3632_Validate Core Component Grade Status shows grade status as \'FINAL\' when grad" +
+                    "e was kept the same after appeal", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -129,15 +131,25 @@ testRunner.Given("I navigate to the Review and Appeals Learner Component Grade s
                         "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
-testRunner.Then("the Select exam period page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I select \'The grade is the same\' radio button on the Add outcome of appeal page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.When("I press the back link on the Select assessment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I select Submit on the Appeals Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
-testRunner.Then("the Review and appeals Search for a learner page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I am shown the component grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 18
+testRunner.And("there will be a success banner showing the grade is Final", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+testRunner.And("the orignal grade and a status of ‘Final’ will now be shown on the ‘grade’ row of" +
+                        " the core details table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 20
+testRunner.And("the result on the database is set to final", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 21
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -145,17 +157,19 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3727_Validate error message when no radio button is selected")]
+        [NUnit.Framework.DescriptionAttribute("3632_Validate Core Component Grade Status shows grade status as \'FINAL\' when grad" +
+            "e was appealed")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3727_ValidateErrorMessageWhenNoRadioButtonIsSelected()
+        public virtual void _3632_ValidateCoreComponentGradeStatusShowsGradeStatusAsFINALWhenGradeWasAppealed()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3727_Validate error message when no radio button is selected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3632_Validate Core Component Grade Status shows grade status as \'FINAL\' when grad" +
+                    "e was appealed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -177,77 +191,41 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line hidden
-#line 22
-testRunner.Given("I navigate to the Review and Appeals Learner Component Grade status page using th" +
-                        "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 23
-testRunner.Then("the Select exam period page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 24
-testRunner.When("I press the Submit button on the Select assessment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
-testRunner.Then("the following error message is displayed on the Select exam period page \"Please s" +
-                        "elect the exam period\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Given("I navigate to the Review and Appeals Learner Component Grade status page using th" +
+                        "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 26
-testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I select I need to change the grade radio button on the Add outcome of appeal pag" +
+                        "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3727_Select a assessment series with a grade against it")]
-        [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3727_SelectAAssessmentSeriesWithAGradeAgainstIt()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "RegressionTest",
-                    "ReviewsAndAppeals"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3727_Select a assessment series with a grade against it", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 27
+testRunner.And("I click the grade B radio button on the Update grade for appeal outcome page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+testRunner.And("I select Submit on the Appeals Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 29
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+testRunner.Then("I am shown the component grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 30
-testRunner.Given("I navigate to the Review and Appeals Learner Component Grade status page using th" +
-                        "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.And("there will be a success banner showing the grade is Final", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
-testRunner.Then("the Select exam period page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("the new grade \'B\' and a status of ‘Final’ will now be shown on the ‘grade’ row of" +
+                        " the core details table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
-testRunner.When("I select an assessment series which has a grade against it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("the result on the database is set to final", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
-testRunner.Then("the Review and Appeals Learner Component Grade status page is displayed as per th" +
-                        "e acceptance criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I refresh the Component Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
+testRunner.Then("the success banner is not shown on the Component Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 35
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -255,17 +233,19 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3727_Select a assessment series without a grade against it")]
+        [NUnit.Framework.DescriptionAttribute("3632_Verify breadcrumbs and Search again button on Core Component Grade Status pa" +
+            "ge after FINAL status is shown")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3727_SelectAAssessmentSeriesWithoutAGradeAgainstIt()
+        public virtual void _3632_VerifyBreadcrumbsAndSearchAgainButtonOnCoreComponentGradeStatusPageAfterFINALStatusIsShown()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3727_Select a assessment series without a grade against it", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 37
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3632_Verify breadcrumbs and Search again button on Core Component Grade Status pa" +
+                    "ge after FINAL status is shown", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -288,21 +268,48 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 38
+#line 39
 testRunner.Given("I navigate to the Review and Appeals Learner Component Grade status page using th" +
                         "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 39
-testRunner.Then("the Select exam period page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 40
-testRunner.When("I select an assessment series which has not got a grade against it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I select \'The grade is the same\' radio button on the Add outcome of appeal page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 41
-testRunner.Then("the no grades to appeal page will reflect the assessment series selected on the r" +
-                        "adio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I select Submit on the Appeals Check and submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 42
+testRunner.Then("I am shown the component grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 43
+testRunner.When("I press the Search for a learner breadcrumb on the Review and Appeals Learner Com" +
+                        "ponent Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+testRunner.Then("the Review and Appeals Search page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 45
+testRunner.When("I press the Reviews and Appeals breadcrumb on the Review and Appeals Learner Comp" +
+                        "onent Grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 46
+testRunner.Then("the Reviews and Appeals start page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 47
+testRunner.When("I press the Home breadcrumb on the Review and Appeals Learner Component Grade sta" +
+                        "tus page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 48
+testRunner.Then("I will be navigated to the T Levels Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 49
+testRunner.When("I press the Search again button on the Review and Appeals Learner Component Grade" +
+                        " status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 50
+testRunner.Then("the Review and Appeals Search page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 51
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
