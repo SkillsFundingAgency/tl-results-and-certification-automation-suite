@@ -362,6 +362,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
             }
         }
-
+        public void CreateRegWithAppealState(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfile(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+            var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+            SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+            string UpdateResult = "update TqPathwayResult set EndDate = GETDATE() where TqPathwayAssessmentId='" + pathwayAssessmentId + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(UpdateResult, ConnectionString);
+            string InsertAppealRow = "Insert into TqPathwayResult values('" + pathwayAssessmentId + "',2,GETDATE(),Null,3,1,0,GETDATE(),'System',GETDATE(),'System')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertAppealRow, ConnectionString);
+        }
     }
 }
