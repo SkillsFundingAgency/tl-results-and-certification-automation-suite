@@ -125,6 +125,7 @@ testRunner.Then("I will be navigated to the Results Search for a Learner page", 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2311_Results learners page for a registration with no assessment entry and a spec" +
             "ialism is added")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000006", null)]
@@ -132,7 +133,8 @@ testRunner.Then("I will be navigated to the Results Search for a Learner page", 
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "Results",
+                    "Ignore"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -203,6 +205,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2311_Results learners page for a registration with no assessment entry and a spec" +
             "ialism is not added")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000007", null)]
@@ -210,7 +213,8 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "Results",
+                    "Ignore"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

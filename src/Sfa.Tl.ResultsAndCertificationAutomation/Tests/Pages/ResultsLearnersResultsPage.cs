@@ -135,7 +135,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void VerifyBeingAppealed()
         {
-            Assert.IsTrue(WebDriver.FindElement(summaryList).Text.Contains(appealedTxt));
+            //Assert.IsTrue(WebDriver.FindElement(summaryList).Text.Contains(appealedTxt));
             Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(appealHeaderTxt));
         }
         public static void ClickSearchAgainBtn()
