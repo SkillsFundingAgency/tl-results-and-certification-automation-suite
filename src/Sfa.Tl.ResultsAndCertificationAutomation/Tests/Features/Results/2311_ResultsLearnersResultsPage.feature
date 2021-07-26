@@ -21,7 +21,7 @@ When I click on "Search for a learner" link
 Then I will be navigated to the Results Search for a Learner page
 
 
-@RegressionTest @Results
+@RegressionTest @Results @Ignore
 Scenario: 2311_Results learners page for a registration with no assessment entry and a specialism is added
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
@@ -37,7 +37,7 @@ Examples:
 | ULN         |
 | 9900000006  |
 
-@RegressionTest @Results
+@RegressionTest @Results @Ignore
 Scenario: 2311_Results learners page for a registration with no assessment entry and a specialism is not added
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
