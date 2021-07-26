@@ -164,9 +164,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 26
-testRunner.Given(string.Format("I have a {0} with core result of \"Grade: A*\" with core \"Agriculture, Environmenta" +
-                            "l and Animal Care (77777777)\" and assessment series \"Summer 2021\" and specialism" +
-                            " \"Agriculture, Land Management and Production (70000002)\"", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("I have a {0} with core result of \"A*\" with core \"Agriculture, Environmental and A" +
+                            "nimal Care (77777777)\" and assessment series \"Summer 2021\" and specialism \"Agric" +
+                            "ulture, Land Management and Production (70000002)\"", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 27
 testRunner.When("I press the Change link on the Results Learners Results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -180,18 +180,14 @@ testRunner.Then("the Results Change Result page is displayed for is displayed fo
 testRunner.When("I press the back link in the Results Change Results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
-testRunner.Then("the Core is displayed as \"Core: Agriculture, Environmental and Animal Care (77777" +
-                        "777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the Core is displayed as \"Core (code): Agriculture, Environmental and Animal Care" +
+                        " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 31
-testRunner.And("Specialism is displayed as \"Specialism: Agriculture, Land Management and Producti" +
-                        "on (70000002)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
+                        "A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
-testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
-                        "Grade: A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 33
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -218,7 +214,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2371_Navigate to the Change Core Result page and press the Change button without " +
                     "changing the result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 40
+#line 39
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -241,36 +237,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 41
-testRunner.Given(string.Format("I have a {0} with core result of \"Grade: A*\" with core \"Agriculture, Environmenta" +
-                            "l and Animal Care (77777777)\" and assessment series \"Summer 2021\" and specialism" +
-                            " \"Agriculture, Land Management and Production (70000002)\"", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 40
+testRunner.Given(string.Format("I have a {0} with core result of \"A*\" with core \"Agriculture, Environmental and A" +
+                            "nimal Care (77777777)\" and assessment series \"Summer 2021\" and specialism \"Agric" +
+                            "ulture, Land Management and Production (70000002)\"", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 42
+#line 41
 testRunner.When("I press the Change link on the Results Learners Results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 43
+#line 42
 testRunner.Then("the Results Change Result page is displayed for is displayed for the registration" +
                         " with core \"Agriculture, Environmental and Animal Care (77777777)\" and assessmen" +
                         "t series of \"Summer 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 44
+#line 43
 testRunner.When("I press the Change button on the Results Change Results page without changing the" +
                         " grade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 44
+testRunner.Then("the Core is displayed as \"Core (code): Agriculture, Environmental and Animal Care" +
+                        " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
 #line 45
-testRunner.Then("the Core is displayed as \"Core: Agriculture, Environmental and Animal Care (77777" +
-                        "777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
+                        "A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
-testRunner.And("Specialism is displayed as \"Specialism: Agriculture, Land Management and Producti" +
-                        "on (70000002)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 47
-testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
-                        "Grade: A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 48
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

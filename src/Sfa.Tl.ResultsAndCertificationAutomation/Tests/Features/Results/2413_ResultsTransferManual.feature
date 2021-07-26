@@ -17,5 +17,5 @@ And I am on results dashboard page
 When I search the learner
 Then I should see newly transferred Provider in learner detail page with original Grade
 | Provider                    | Grade |
-| Automation Test2 (99999902) | A     |
+| Automation Test2			  | A     |
 And the registration for this test is deleted

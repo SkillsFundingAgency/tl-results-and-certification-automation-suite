@@ -43,7 +43,7 @@ Scenario: 2309_Searching for a ULN registered to another AO will display the Res
 Given I have logged in as a "PearsonSiteAdmin" user
 And I click on Add a new registration link
 And I create a manual registration for Pearson
-When I click on Signout from Menu
+When I click on Sign Out link
 Then I should be redirectted to Tlevel Start page
 Given I have logged in as a "ResultsEditor" user
 When I click on "Results" link

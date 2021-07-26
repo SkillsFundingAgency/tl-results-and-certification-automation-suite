@@ -136,7 +136,7 @@ testRunner.And("I successfully change the grade to E", ((string)(null)), ((TechT
 testRunner.And("I withdraw the registration and reactivate it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
-testRunner.Then("the reactivated registration will display the grade as \"Grade: E\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the reactivated registration will display the grade as \"E\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 19
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -191,7 +191,7 @@ testRunner.And("I successfully remove the grade", ((string)(null)), ((TechTalk.S
 testRunner.And("I withdraw the registration and reactivate it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
-testRunner.Then("the reactivated registration will display the grade as \"Grade: Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the reactivated registration will display the grade as \"Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 27
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

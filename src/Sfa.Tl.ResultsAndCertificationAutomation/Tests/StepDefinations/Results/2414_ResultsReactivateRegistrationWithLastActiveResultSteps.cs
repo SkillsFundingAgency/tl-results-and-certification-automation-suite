@@ -73,15 +73,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             if (GradeCount == 0)
             {
 
-                string ExpectedDBGrade = "Grade: Not received";
+                string ExpectedDBGrade = "Not received";
                 Console.WriteLine(ExpectedDBGrade);
                 ResultsLearnersResultsPage.VerifyGradeText(ExpectedGrade);
-                //This checks the last active grade on the database matches the grade shown against the registration
                 ResultsLearnersResultsPage.VerifyGradeText(ExpectedDBGrade);
             }
             else
             {
-                string ExpectedDBGrade = "Grade: " + SqlQueries.ReturnLastActiveGrade(uln);
+                string ExpectedDBGrade = SqlQueries.ReturnLastActiveGrade(uln);
                 Console.WriteLine(ExpectedDBGrade);
                 ResultsLearnersResultsPage.VerifyGradeText(ExpectedGrade);
                 //This checks the last active grade on the database matches the grade shown against the registration

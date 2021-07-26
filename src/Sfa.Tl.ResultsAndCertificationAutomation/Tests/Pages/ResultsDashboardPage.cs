@@ -36,8 +36,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         //Learner result page
         private static string LearnerResultPageTitle { get; } = "Learner’s results page – Manage T Level results – GOV.UK";
         private static string LearnerResultUrl { get; } = "learners-results";
-        private static By addResult { get; } = By.XPath("//a[@id='coreresult' and contains(text(),'Add result')]");
-        public static By changeResult { get; } = By.XPath("//a[@id='coreresult' and contains(text(),'Change')]");
+        private static By addResult { get; } = By.XPath("//a[@id='pathwaygrade' and contains(text(),'Add result')]");
+        public static By changeResult { get; } = By.XPath("//a[@id='pathwaygrade' and contains(text(),'Change')]");
         //Learner Withdrawn
         private static string LearnerResultWithdrawnPageTitle { get; } = "Learner’s results - Withdrawn learner page – Manage T Level results – GOV.UK";
         private static string LearnerResultWithdrawnUrl { get; } = "learners-results-withdrawn-learner";

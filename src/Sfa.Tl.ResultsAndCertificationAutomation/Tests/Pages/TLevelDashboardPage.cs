@@ -68,6 +68,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(MenuBtn);
             ClickElement(SignOutLink);
         }
+        public void SignOut()
+        {
+            ClickElement(SignOutLink);
+        }
 
         public void CheckServiceBannerLink()
         {

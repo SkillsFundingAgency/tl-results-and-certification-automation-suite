@@ -151,7 +151,7 @@ testRunner.When("I search the learner result", ((string)(null)), table54, "When 
                             "Provider",
                             "Grade"});
                 table55.AddRow(new string[] {
-                            "Automation Test2 (99999902)",
+                            "Automation Test2",
                             "A*"});
 #line 21
 testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +

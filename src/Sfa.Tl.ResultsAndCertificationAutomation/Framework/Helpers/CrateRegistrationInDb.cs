@@ -374,5 +374,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             string InsertAppealRow = "Insert into TqPathwayResult values('" + pathwayAssessmentId + "',2,GETDATE(),Null,3,1,0,GETDATE(),'System',GETDATE(),'System')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertAppealRow, ConnectionString);
         }
+        public void CreateRegWithFinalState(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfile(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+            var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+            SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+            string UpdateResult = "update TqPathwayResult set EndDate = GETDATE() where TqPathwayAssessmentId='" + pathwayAssessmentId + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(UpdateResult, ConnectionString);
+            string InsertAppealRow = "Insert into TqPathwayResult values('" + pathwayAssessmentId + "',2,GETDATE(),Null,3,1,0,GETDATE(),'System',GETDATE(),'System')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertAppealRow, ConnectionString);
+            string UpdateResult1 = "update TqPathwayResult set EndDate = GETDATE() where TqPathwayAssessmentId='" + pathwayAssessmentId + "' and PrsStatus=3";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(UpdateResult1, ConnectionString);
+            string InsertFinalRow = "Insert into TqPathwayResult values('" + pathwayAssessmentId + "',2,GETDATE(),Null,4,1,0,GETDATE(),'System',GETDATE(),'System')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertFinalRow, ConnectionString);
+        }
     }
 }

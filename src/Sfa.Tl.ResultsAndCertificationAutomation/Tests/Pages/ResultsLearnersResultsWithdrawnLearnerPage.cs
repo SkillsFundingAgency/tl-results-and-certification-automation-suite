@@ -30,10 +30,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             WebDriver.FindElement((locator)).Click();
         }
-        public static void VerifyWithdrawnLearnersResultsPage(string ULN, string FirstName, string Surname, string Provider)
+        public static void VerifyWithdrawnLearnersResultsPage(string ULN, string FirstName, string Surname)
         {
             string ULNText = "ULN: " + ULN;
-            string ProviderText = "Provider: " + Provider;
             string NameText = "Name: " + FirstName + " " + Surname;
 
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
@@ -41,7 +40,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedPageHeaderText, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(NameText, WebDriver.FindElement(NameTextLabel).Text);
             Assert.AreEqual(ULNText, WebDriver.FindElement(ULNTextLabel).Text);
-            Assert.AreEqual(ProviderText, WebDriver.FindElement(ProviderTextLabel).Text);
             Assert.IsTrue(WebDriver.FindElement(WithdrawnTextLabel).Text.Contains(ExpectedWithdrawnLabelText));
         }
 

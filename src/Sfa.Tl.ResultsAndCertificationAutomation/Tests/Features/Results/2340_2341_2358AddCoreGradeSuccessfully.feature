@@ -41,9 +41,8 @@ When I click the Add result link
 Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Summer 2021"
 When I click Submit on the Select a core result page without making any changes
 Then the Learners Results page will be displayed for <ULN> 
-And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
-And Specialism is displayed as "Specialism: Agriculture, Land Management and Production (70000002)"
-And the text below the Core will display the assessment series as "Summer 2021" and "Grade: Not received"
+And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
+And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
 And I cleared the data in DB
 Examples: 
 | ULN         |
@@ -58,9 +57,8 @@ When I click the Add result link
 Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Summer 2021"
 When I click the back link on the results select core page
 Then the Learners Results page will be displayed for <ULN> 
-And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
-And Specialism is displayed as "Specialism: Agriculture, Land Management and Production (70000002)"
-And the text below the Core will display the assessment series as "Summer 2021" and "Grade: Not received"
+And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
+And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
 And I cleared the data in DB
 Examples: 
 | ULN         |
@@ -76,9 +74,8 @@ When I select a core result as "A*"
 Then the result added successfully confirmation page is displayed for <ULN>
 When I press the Back to learners results button
 Then the Learners Results page will be displayed for <ULN> 
-And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
-And Specialism is displayed as "Specialism: Agriculture, Land Management and Production (70000002)"
-And the text below the Core will display the assessment series as "Summer 2021" and "Grade: A*"
+And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
+And the text below the Core will display the assessment series as "Summer 2021" and "A*"
 And "Change" link is displayed
 And I cleared the data in DB
 Examples: 
