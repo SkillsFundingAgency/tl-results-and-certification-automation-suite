@@ -25,13 +25,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Then(@"the Learners Results for Withdrawn Learner page will be displayed for (.*)")]
         public void ThenTheLearnersResultsForWithdrawnLearnerPageWillBeDisplayedFor(string ULN)
         {
-            ResultsLearnersResultsPage.VerifyLearnersResultsPage(ULN);
+            ResultsLearnersResultsPage.VerifyLearnersResultsPage();
         }
 
         [Then(@"the Learners Results page will be displayed for (.*)")]
         public void ThenTheLearnersResultsPageWillBeDisplayedFor(string ULN)
         {
-            ResultsLearnersResultsPage.VerifyLearnersResultsPage(ULN);
+            ResultsLearnersResultsPage.VerifyLearnersResultsPage();
         }
 
 

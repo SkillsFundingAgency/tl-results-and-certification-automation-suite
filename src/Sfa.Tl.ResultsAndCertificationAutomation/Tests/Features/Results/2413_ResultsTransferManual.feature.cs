@@ -140,7 +140,7 @@ testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Ta
                             "Provider",
                             "Grade"});
                 table71.AddRow(new string[] {
-                            "Automation Test2 (99999902)",
+                            "Automation Test2",
                             "A"});
 #line 18
 testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +

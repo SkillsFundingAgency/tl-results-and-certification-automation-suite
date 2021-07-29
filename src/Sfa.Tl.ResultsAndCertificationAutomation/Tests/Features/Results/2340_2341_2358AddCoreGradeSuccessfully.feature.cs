@@ -196,18 +196,14 @@ testRunner.When("I click Submit on the Select a core result page without making 
 testRunner.Then(string.Format("the Learners Results page will be displayed for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 44
-testRunner.And("the Core is displayed as \"Core: Agriculture, Environmental and Animal Care (77777" +
-                        "777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the Core is displayed as \"Core (code): Agriculture, Environmental and Animal Care" +
+                        " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 45
-testRunner.And("Specialism is displayed as \"Specialism: Agriculture, Land Management and Producti" +
-                        "on (70000002)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
+                        "Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
-testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
-                        "Grade: Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 47
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -232,7 +228,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2340_Press back link on the Select Core page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 54
+#line 53
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -255,39 +251,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 18
 this.FeatureBackground();
 #line hidden
-#line 55
+#line 54
 testRunner.Given(string.Format("I search for a {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 56
+#line 55
 testRunner.Then(string.Format("the Learners Results page will be displayed for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 57
+#line 56
 testRunner.When("I click the Add result link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 58
+#line 57
 testRunner.Then("the Select the core result page is displayed  for a registration with core \"Agric" +
                         "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Summ" +
                         "er 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 59
+#line 58
 testRunner.When("I click the back link on the results select core page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 60
+#line 59
 testRunner.Then(string.Format("the Learners Results page will be displayed for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 60
+testRunner.And("the Core is displayed as \"Core (code): Agriculture, Environmental and Animal Care" +
+                        " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 61
-testRunner.And("the Core is displayed as \"Core: Agriculture, Environmental and Animal Care (77777" +
-                        "777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
+                        "Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 62
-testRunner.And("Specialism is displayed as \"Specialism: Agriculture, Land Management and Producti" +
-                        "on (70000002)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 63
-testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
-                        "Grade: Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 64
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -314,7 +306,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2341_2358_Add a grade and verify the result is added and  validate the result add" +
                     "ed confirmation page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 70
+#line 68
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -337,48 +329,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 18
 this.FeatureBackground();
 #line hidden
-#line 71
+#line 69
 testRunner.Given(string.Format("I search for a {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 72
+#line 70
 testRunner.Then(string.Format("the Learners Results page will be displayed for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 73
+#line 71
 testRunner.When("I click the Add result link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 74
+#line 72
 testRunner.Then("the Select the core result page is displayed  for a registration with core \"Agric" +
                         "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Summ" +
                         "er 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 75
+#line 73
 testRunner.When("I select a core result as \"A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 76
+#line 74
 testRunner.Then(string.Format("the result added successfully confirmation page is displayed for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 77
+#line 75
 testRunner.When("I press the Back to learners results button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 78
+#line 76
 testRunner.Then(string.Format("the Learners Results page will be displayed for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 79
-testRunner.And("the Core is displayed as \"Core: Agriculture, Environmental and Animal Care (77777" +
-                        "777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+testRunner.And("the Core is displayed as \"Core (code): Agriculture, Environmental and Animal Care" +
+                        " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 80
-testRunner.And("Specialism is displayed as \"Specialism: Agriculture, Land Management and Producti" +
-                        "on (70000002)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 81
+#line 78
 testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
-                        "Grade: A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 82
+#line 79
 testRunner.And("\"Change\" link is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 83
+#line 80
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

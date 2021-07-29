@@ -21,11 +21,11 @@ When I click on "Search for a learner" link
 Then I will be navigated to the Results Search for a Learner page
 
 
-@RegressionTest @Results
+@RegressionTest @Results @Ignore
 Scenario: 2311_Results learners page for a registration with no assessment entry and a specialism is added
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
-And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
+And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
 And Specialism is displayed as "Specialism: Agriculture, Land Management and Production (70000002)"
 And the text below the Core will display "Core result cannot be entered until an assessment entry is added."
 And the text below the Specialism will display "Specialism result cannot be entered until an assessment entry is added."
@@ -37,12 +37,11 @@ Examples:
 | ULN         |
 | 9900000006  |
 
-@RegressionTest @Results
+@RegressionTest @Results @Ignore
 Scenario: 2311_Results learners page for a registration with no assessment entry and a specialism is not added
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
-And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
-And Specialism is displayed as "Specialism: Not specified"
+And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
 And the text below the Core will display "Core result cannot be entered until an assessment entry is added."
 And there will no text below the Specialism
 And I cleared the data in DB
@@ -54,11 +53,8 @@ Examples:
 Scenario: 2311_Results learners page for a registration with an assessment entry and a specialism is added
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
-And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
-And Specialism is displayed as "Specialism: Agriculture, Land Management and Production (70000002)"
-And the text below the Core will display the assessment series as "Summer 2021" and "Grade: Not received"
+And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
 And "Add result" link is displayed
-And the text below the Specialism will display "Specialism result cannot be entered until an assessment entry is added."
 And I cleared the data in DB
 Examples: 
 | ULN         |
@@ -68,9 +64,8 @@ Examples:
 Scenario: 2311_Results learners page for a registration with an assessment entry but no specialism
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
-And the Core is displayed as "Core: Agriculture, Environmental and Animal Care (77777777)"
-And Specialism is displayed as "Specialism: Not specified"
-And the text below the Core will display the assessment series as "Summer 2021" and "Grade: Not received"
+And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
+And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
 And there will no text below the Specialism
 And I cleared the data in DB
 Examples: 

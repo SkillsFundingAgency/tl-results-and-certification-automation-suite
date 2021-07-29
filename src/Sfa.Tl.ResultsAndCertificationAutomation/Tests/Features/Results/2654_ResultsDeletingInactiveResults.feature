@@ -9,7 +9,6 @@ And I have a registration with result
 @RegressionTest @Results
 Scenario: 2654_PARALLEL TEST Attempt to delete a registration without an active result - Refresh the page 
 Given I am on result details page
-And I maximise the browser window
 And I click on "Change" link in result page
 And I successfully remove the grade
 And I attempt to delete an active registration without an active result however someone else has just added a result
@@ -21,7 +20,6 @@ And the registration for this test is deleted
 @RegressionTest @Results
 Scenario: 2654_PARALLEL TEST Attempt to delete a registration without an active result by selecting Submit button
 Given I am on result details page
-And I maximise the browser window
 And I click on "Change" link in result page
 And I successfully remove the grade
 And I attempt to delete an active registration without an active result however someone else has just added a result
@@ -34,7 +32,6 @@ And the registration for this test is deleted
 @RegressionTest @Results
 Scenario: 2654_Attempt to delete a registration without an active result
 Given I am on result details page
-And I maximise the browser window
 And I click on "Change" link in result page
 And I successfully remove the grade
 And I attempt to delete an active registration without an active result

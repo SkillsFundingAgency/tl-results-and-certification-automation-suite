@@ -65,11 +65,33 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedOnDate1));
         }
 
-        public static void VerifySuccessBannerDisplayed()
+        public static void VerifyCoreDetailsStatusFinal(string ULN, string Grade)
+        {
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Grade));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("FINAL"));
+
+            //Verify the Created By and Created On date from the TqPathwayResult table against the values on the Learner’s component grades status page
+            string CreatedBy = SqlQueries.RetrieveResultUpdatedData(ULN);
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedBy));
+            string CreatedOnDate = SqlQueries.RetrieveResultCreatedOnData(ULN);
+            DateTime oDate = Convert.ToDateTime(CreatedOnDate);
+            string CreatedOnDate1 = oDate.ToString("dd MMMM yyyy");
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedOnDate1));
+        }
+
+        public static void VerifySuccessBannerBeingAppealedDisplayed()
         {
             string SuccessBannerText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode + " status has been updated";
             Assert.IsTrue(WebDriver.FindElement(successBannerTextElement).Text.Contains(SuccessBannerText));
             Assert.IsTrue(WebDriver.FindElement(successBannerHeaderElement).Text.Contains("Success"));             
+        }
+
+        public static void VerifySuccessBannerFINALStatusDisplayed()
+        {
+            string SuccessBannerText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode + " grade is final";
+            Assert.IsTrue(WebDriver.FindElement(successBannerTextElement).Text.Contains(SuccessBannerText));
+            Assert.IsTrue(WebDriver.FindElement(successBannerHeaderElement).Text.Contains("Success"));
         }
 
         public static void VerifySuccessBannerIsNotDisplayed()
@@ -84,6 +106,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             //Verify the TqPathwayResult table record is updated to state the grade is being appealed
             int resultStatus = SqlQueries.RetrieveResultStatus(ULN);
             Assert.AreEqual(3, resultStatus);
+        }
+
+        public static void VerifyGradeStatusSetToFinal(string ULN)
+        {
+            //Verify the TqPathwayResult table record is updated to state the grade is being appealed
+            int resultStatus = SqlQueries.RetrieveResultStatus(ULN);
+            Assert.AreEqual(4, resultStatus);
+        }
+
+        public static void VerifyUpdateByAndDateValues(string ULN)
+        {
+            //Get current UpdatedBy value from TqPathwayResult table and compare against Updated By value on screen
+            string CreatedBy = SqlQueries.RetrieveResultUpdatedData(ULN);
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedBy));
+            string CreatedOnDate = SqlQueries.RetrieveResultCreatedOnData(ULN);
+            DateTime oDate = Convert.ToDateTime(CreatedOnDate);
+            string CreatedOnDate1 = oDate.ToString("dd MMMM yyyy");
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CreatedOnDate1));
+
         }
 
 

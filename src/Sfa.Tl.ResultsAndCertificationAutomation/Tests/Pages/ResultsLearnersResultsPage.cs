@@ -12,44 +12,42 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static readonly string ExpectedPageHeaderText = "Learner’s results";
-        public static By ULNTextLabel { get; } = By.XPath("//*[@id='main-content']//h2");
-
+        public static By ULNTextLabel { get; } = By.XPath("//*[@id='main-content']");
+        public static By pageContent { get; } = By.XPath("//*[@id='main-content']");
         public static By NameTextLabel { get; } = By.XPath("//*[@id='main-content']//p[1]");
         public static By ProviderTextLabel { get; } = By.XPath("//*[@id='main-content']//p[2]");
         public static By CoreTextLabel { get; } = By.XPath("//*[contains(text(),'Core:')]");
         public static By SpecialismTextLabel { get; } = By.XPath("//*[contains(text(),'Specialism:')]");
         public static By CoreAssessmentEntryTextLabel { get; } = By.XPath("//*[contains(text(),'Core result cannot')]");
-                                                           
+        private static By summaryList { get; } = By.XPath("//*[@class='govuk-summary-list']");
+        private static string appealedTxt = "Being Appealed";
+        private static string appealHeaderTxt = "This learner's results cannot be changed because they are appealing a grade.";
+        private static string finalHeaderTxt = "This result is final as the outcome of an appeal has been recorded. If you need to change the grade please contact us.";
+
+
         public static By SpecialismAssessmentEntryTextLabel { get; } = By.XPath("//*[contains(text(),'Specialism result cannot be entered')]");
         public static By SearchAgainLink { get; } = By.XPath("//*[contains(text(),'Search again')]");
+        public static By searchAgainBtn { get; } = By.Id("buttonSearchAgain");
 
         public static By AssessmentSeriesLabel { get; } = By.XPath("//*[contains(text(),'Summer')]");
         public static By GradeLabel { get; } = By.XPath("//*[contains(text(),'Grade')]");
-        public static By ResultLabel = By.XPath("//*[@id='main-content']//dt");
-        public static By AddResultLink = By.Id("coreresult");
+        public static By AddResultLink = By.Id("pathwaygrade");
         public static readonly string ExpectedResultLabelText = "Result";
 
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         public static By ResultsBreadcrumb { get; } = By.Id("breadcrumb1");
         public static By SearchForLearnerBreadcrumb { get; } = By.Id("breadcrumb2");
 
-        public static By ChangeLink = By.Id("coreresult");
+        public static By ChangeLink = By.Id("pathwaygrade");
         public static new void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
         }
-        public static void VerifyLearnersResultsPage(string ULN)
+        public static void VerifyLearnersResultsPage()
         {
-            string ULNText = "ULN: " + ULN;
-            string ProviderText = "Provider: " + "Automation Test2 (99999902)";
-            string NameText = "Name: " + "Test Analyst";
-
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedPageHeaderText, WebDriver.FindElement(PageHeader).Text);
-            Assert.AreEqual(NameText, WebDriver.FindElement(NameTextLabel).Text);
-            Assert.AreEqual(ULNText, WebDriver.FindElement(ULNTextLabel).Text);
-            Assert.AreEqual(ProviderText, WebDriver.FindElement(ProviderTextLabel).Text);
         }
         public static void VerifyLearnerResultPage()
         {
@@ -60,7 +58,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyCore(string CoreText)
         {
-            Assert.AreEqual(CoreText, WebDriver.FindElement(CoreTextLabel).Text);
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(CoreText));
         }
 
         public static void VerifySpecialismAdded(string SpecialismText)
@@ -80,9 +78,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyAssessmenSeriesText(string Series, string Grade)
         {
-            Assert.AreEqual(Series, WebDriver.FindElement(AssessmentSeriesLabel).Text);
-            Assert.AreEqual(Grade, WebDriver.FindElement(GradeLabel).Text);
-            Assert.AreEqual(ExpectedResultLabelText, WebDriver.FindElement(ResultLabel).Text);
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(Series));
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(Grade));
         }
 
         public static void VerifyAddEntryLink(string AddEntryLink)
@@ -135,8 +132,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyGradeText(string Grade)
         {
-            Assert.AreEqual(Grade, WebDriver.FindElement(GradeLabel).Text);
-            Assert.AreEqual(ExpectedResultLabelText, WebDriver.FindElement(ResultLabel).Text);
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(Grade));
+        }
+        public static void VerifyBeingAppealed()
+        {
+            //Assert.IsTrue(WebDriver.FindElement(summaryList).Text.Contains(appealedTxt));
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(appealHeaderTxt));
+        }
+        public static void VerifyFinalHeader()
+        {
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(finalHeaderTxt));
+        }
+        public static void ClickSearchAgainBtn()
+        {
+            ClickButton(searchAgainBtn);
+            ResultsSearchForALearnerPage.VerifyResultsSearchLearnerPage();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
@@ -37,22 +36,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             
         }
 
-
-        //[Then(@"the Learners Results for Withdrawn Learner page will be displayed for the (.*)")]
-        //public void ThenTheLearnersResultsForWithdrawnLearnerPageWillBeDisplayedForThe(string ULN)
-        //{
-        //    ResultsLearnersResultsWithdrawnLearnerPage.VerifyWithdrawnLearnersResultsPage(ULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, RegistrationsManualPage.InputPovider);
-
-        //}
-
         [Then(@"the Learners Results \(for a Withdrawn Learner\) page will be displayed for the (.*)")]
         public void ThenTheLearnersResultsForAWithdrawnLearnerPageWillBeDisplayedForThe(string ULN)
         {
-            ResultsLearnersResultsWithdrawnLearnerPage.VerifyWithdrawnLearnersResultsPage(ULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, RegistrationsManualPage.InputPovider);
+            ResultsLearnersResultsWithdrawnLearnerPage.VerifyWithdrawnLearnersResultsPage(ULN, Constants.ManualRegFirstName, Constants.ManualRegLastName);
 
         }
-
-
 
         [When(@"I click the Search again link on the Learners Results page")]
         public void WhenIClickTheSearchAgainLinkOnTheLearnersResultsPage()
@@ -96,9 +85,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             ResultsLearnersResultsWithdrawnLearnerPage.ClickHomeBreadcrumb();
         }
-
-
-
-
     }
 }

@@ -268,7 +268,7 @@ testRunner.And("I click on Add a new registration link", ((string)(null)), ((Tec
 testRunner.And("I create a manual registration for Pearson", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
-testRunner.When("I click on Signout from Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on Sign Out link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 47
 testRunner.Then("I should be redirectted to Tlevel Start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
