@@ -22,6 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By summaryList { get; } = By.XPath("//*[@class='govuk-summary-list']");
         private static string appealedTxt = "Being Appealed";
         private static string appealHeaderTxt = "This learner's results cannot be changed because they are appealing a grade.";
+        private static string finalHeaderTxt = "This result is final as the outcome of an appeal has been recorded. If you need to change the grade please contact us.";
 
 
         public static By SpecialismAssessmentEntryTextLabel { get; } = By.XPath("//*[contains(text(),'Specialism result cannot be entered')]");
@@ -137,6 +138,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             //Assert.IsTrue(WebDriver.FindElement(summaryList).Text.Contains(appealedTxt));
             Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(appealHeaderTxt));
+        }
+        public static void VerifyFinalHeader()
+        {
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(finalHeaderTxt));
         }
         public static void ClickSearchAgainBtn()
         {
