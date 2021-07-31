@@ -17,15 +17,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             VerifyLearnerWithdrawnPage();
         }
 
-        [Then(@"Back link should take me to searhc learner page with Uln")]
-        public void ThenBackLinkShouldTakeMeToSearhcLearnerPageWithUln()
+        [Then(@"Back link should take me to search learner page with Uln")]
+        public void ThenBackLinkShouldTakeMeToSearchLearnerPageWithUln()
         {
             var uln = _scenarioContext["uln"] as string;
             VerifyBackLink(uln);
         }
 
-        [Then(@"Search again shoud take me to searhc learner page without Uln")]
-        public void ThenSearchAgainShoudTakeMeToSearhcLearnerPageWithoutUln()
+        [Then(@"Search again shoud take me to search learner page without Uln")]
+        public void ThenSearchAgainShoudTakeMeToSearchLearnerPageWithoutUln()
         {
             ClickSearchBtn();
             VerifySearchAgain();
