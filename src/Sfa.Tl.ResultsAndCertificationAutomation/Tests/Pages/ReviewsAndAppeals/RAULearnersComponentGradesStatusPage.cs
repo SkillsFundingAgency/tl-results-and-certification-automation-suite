@@ -152,5 +152,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         {
             ClickButton(searchForALearnerBreadcrumbElement);
         }
+
+        public static void VerifyNoBeingAppeal()
+        {
+            Assert.IsFalse(WebDriver.FindElement(learnerDetailsElement).Text.Contains("BEING APPEALED"));
+        }
     }
 }
