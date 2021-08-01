@@ -44,8 +44,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             ResultsSearchForALearnerPage.EnterULN(ULN);
         }
-
-
-
+        [Then(@"the search box will not be populated with the (.*) entered originally")]
+        public void ThenTheSearchBoxWillNotBePopulatedWithTheEnteredOriginally(string p0)
+        {
+            ResultsSearchForALearnerPage.VerifySearchFieldIsEmpty();
+        }
     }
 }

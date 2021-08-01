@@ -212,7 +212,7 @@ testRunner.When("I click the Back to Search button on the Results ULN cannot be 
 testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 35
-testRunner.And(string.Format("the search box will be populated with the {0} entered originally", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("the search box will not be populated with the {0} entered originally", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
