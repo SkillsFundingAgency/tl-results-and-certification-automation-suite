@@ -27,3 +27,4 @@ When I select Reactivate with same course radio button and click continue
 And I select Yes I want to reactivate option and click submit
 And I click on Home button in confirmation page
 Then I should be navated back to dashboard
+And I cleared the data in DB
