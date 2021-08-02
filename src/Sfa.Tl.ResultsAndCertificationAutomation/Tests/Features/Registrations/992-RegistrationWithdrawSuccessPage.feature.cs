@@ -138,6 +138,9 @@ testRunner.When("I select Yes, withdraw registration", ((string)(null)), ((TechT
 testRunner.Then("I will be navigated to the Registration withdrawn successfully page (from Change " +
                         "Core page)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 18
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -155,7 +158,7 @@ testRunner.Then("I will be navigated to the Registration withdrawn successfully 
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("992_Navigate to the Registration Withdrawn Successfully page from the Change Prov" +
                     "ider and Core Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -178,18 +181,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 22
+#line 23
 testRunner.When("I click Withdraw Registration on the Change Provider and Core page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 24
 testRunner.Then("I will be directed to the are you sure you want to withdraw this page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 24
+#line 25
 testRunner.When("I select Yes, withdraw registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 26
 testRunner.Then("I will be navigated to the Registration withdrawn successfully page (from Change " +
                         "Provide and Core page)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 27
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -208,7 +214,7 @@ testRunner.Then("I will be navigated to the Registration withdrawn successfully 
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("992_Navigate to the Registration Withdrawn Successfully page from the Active Opti" +
                     "ons Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+#line 31
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -231,25 +237,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 30
+#line 32
 testRunner.When("I click Withdraw Registration on the Active Options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
+#line 33
 testRunner.Then("I will be directed to the are you sure you want to withdraw this page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 32
+#line 34
 testRunner.When("I select Yes, withdraw registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 35
 testRunner.Then("I will be navigated to the Registration withdrawn successfully page (From Active " +
                         "Options page)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 34
+#line 36
 testRunner.When("I click the View Withdrawn Registration button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 37
 testRunner.Then("I am navigated to the Registration Details page which shows my registration is wi" +
                         "thdrawn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 38
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -266,7 +275,7 @@ testRunner.Then("I am navigated to the Registration Details page which shows my 
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("992_Click the Home button on the Registration Withdrawn Successfully page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 39
+#line 42
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -289,18 +298,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 40
+#line 43
 testRunner.When("I Withdraw my Registration starting on the Active Options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
+#line 44
 testRunner.Then("I will be navigated to the Registration withdrawn successfully page (From Active " +
                         "Options page)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 42
+#line 45
 testRunner.When("I click the Home button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 43
+#line 46
 testRunner.Then("I will be navigated to the Registrations Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 47
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -319,7 +331,7 @@ testRunner.Then("I will be navigated to the Registrations Dashboard page", ((str
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("992_Searching for a Withdrawn registration shows the Registration Details page re" +
                     "gistration status as Withdrawn", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 47
+#line 51
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -342,25 +354,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 48
+#line 52
 testRunner.When("I click Withdraw Registration on the Change Core page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 49
+#line 53
 testRunner.Then("I will be directed to the are you sure you want to withdraw this page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 50
+#line 54
 testRunner.When("I select Yes, withdraw registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 51
+#line 55
 testRunner.Then("I will be navigated to the Registration withdrawn successfully page (from Change " +
                         "Core page)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 52
+#line 56
 testRunner.When("I search for my registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 53
+#line 57
 testRunner.Then("I am navigated to the Registration Details page which shows my registration is wi" +
                         "thdrawn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 58
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -12,9 +12,11 @@ And I am on registration deails page
 Scenario: 983-Change Core page
 When I click on Change core link
 Then I should see change Core page
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 983-Change Core Back link
 When I click on Change core link
 And I click on Back link
 Then I should be navigated back to registration details page
+And I cleared the data in DB

@@ -15,6 +15,7 @@ When I click Withdraw Registration on the Change Core page
 Then I will be directed to the are you sure you want to withdraw this page
 When I select Yes, withdraw registration
 Then I will be navigated to the Registration withdrawn successfully page (from Change Core page)
+And I cleared the data in DB
 
     
 @RegressionTest @WithdrawRegistration
@@ -23,6 +24,7 @@ When I click Withdraw Registration on the Change Provider and Core page
 Then I will be directed to the are you sure you want to withdraw this page
 When I select Yes, withdraw registration
 Then I will be navigated to the Registration withdrawn successfully page (from Change Provide and Core page)
+And I cleared the data in DB
 
 
 @RegressionTest @WithdrawRegistration
@@ -33,6 +35,7 @@ When I select Yes, withdraw registration
 Then I will be navigated to the Registration withdrawn successfully page (From Active Options page)
 When I click the View Withdrawn Registration button 
 Then I am navigated to the Registration Details page which shows my registration is withdrawn
+And I cleared the data in DB
 
 
 @RegressionTest @WithdrawRegistration
@@ -41,6 +44,7 @@ When I Withdraw my Registration starting on the Active Options page
 Then I will be navigated to the Registration withdrawn successfully page (From Active Options page)
 When I click the Home button
 Then I will be navigated to the Registrations Dashboard page
+And I cleared the data in DB
 
 
 @RegressionTest @WithdrawRegistration
@@ -51,6 +55,4 @@ When I select Yes, withdraw registration
 Then I will be navigated to the Registration withdrawn successfully page (from Change Core page)
 When I search for my registration
 Then I am navigated to the Registration Details page which shows my registration is withdrawn
-    
-
-
+And I cleared the data in DB
