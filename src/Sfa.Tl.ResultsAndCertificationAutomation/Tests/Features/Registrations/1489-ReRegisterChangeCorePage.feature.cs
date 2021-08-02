@@ -140,6 +140,9 @@ testRunner.When("I click the back link on the Reactivate Registration Change Cor
 #line 20
 testRunner.Then("I am navigated to the Reactivate Registration Change Provider page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 21
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -155,7 +158,7 @@ testRunner.Then("I am navigated to the Reactivate Registration Change Provider p
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1489-Error message is displayed if a dropdown value is not selected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -178,21 +181,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 24
+#line 25
 testRunner.When("I click the Change Status link on the Withdrawn options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 26
 testRunner.And("I Register the learner on a new course using the same provider", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 27
 testRunner.Then("I am navigated to the Select the Core Page for reactivate registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 27
+#line 28
 testRunner.When("I click continue without selecting a dropdown value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 29
 testRunner.Then("I am shown an error message on the  Select the Core Page for reactivate registrat" +
                         "ion page stating \"Select a core\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 30
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -213,7 +219,7 @@ testRunner.Then("I am shown an error message on the  Select the Core Page for re
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1489-Verify the page cannot be accessed using bookmarks if the registration is no" +
                     " longer withdrawn", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 32
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -236,27 +242,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 33
+#line 35
 testRunner.When("I click the Change Status link on the Withdrawn options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
-testRunner.And("I Register the learner on a new course using the same provider", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 35
-testRunner.Then("I am navigated to the Select the Core Page for reactivate registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 36
-testRunner.When("I navigate away and attempt to navigate back using the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I Register the learner on a new course using the same provider", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
 testRunner.Then("I am navigated to the Select the Core Page for reactivate registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 38
+testRunner.When("I navigate away and attempt to navigate back using the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 39
+testRunner.Then("I am navigated to the Select the Core Page for reactivate registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 40
 testRunner.When("I reactivate my registration and attempt to navigate back to the Change Core page" +
                         " using the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 39
+#line 41
 testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 42
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -7,7 +7,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
     public class LearnerResultNoAssessmentPage : ElementHelper
     {
         private static string pageUrl { get; } = "no-assessment-entries";
-        private static string pageTitle { get; } = "No assessment entry – Manage T Level results – GOV.UK";
+        private static string pageTitle { get; } = "No registered assessments – Manage T Level results – GOV.UK";
         private static By pageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By pageContent { get; } = By.XPath("//*[@id='main-content']");
         private static string pageHeader = "Learner does not have any registered assessments";

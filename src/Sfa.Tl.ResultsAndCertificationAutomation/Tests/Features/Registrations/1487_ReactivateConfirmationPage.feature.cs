@@ -232,6 +232,9 @@ testRunner.And("I click on Home button in confirmation page", ((string)(null)), 
 #line 29
 testRunner.Then("I should be navated back to dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 30
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
