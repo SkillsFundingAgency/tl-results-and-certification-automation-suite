@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static By updateLink = By.Id("pathwaygrade");
         private static By successBannerHeaderElement = By.Id("govuk-notification-banner-title");
         private static By successBannerTextElement = By.ClassName("govuk-notification-banner__heading");
-
+        private static By contactUsLink = By.Id("contactusLink");
         public static void VerifyRAULearnersComponentGradesStatusPage()
         {
             Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
@@ -156,6 +156,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         public static void VerifyNoBeingAppeal()
         {
             Assert.IsFalse(WebDriver.FindElement(learnerDetailsElement).Text.Contains("BEING APPEALED"));
+        }
+        public static void ClickContactUsLink()
+        {
+            ClickButton(contactUsLink);
         }
     }
 }
