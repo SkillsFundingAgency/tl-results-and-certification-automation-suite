@@ -139,7 +139,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
         //public const string TqProviderId = "9479";
         public const string TqProviderId = "14085";
-        public const string TlSpecialismId = "187";
+        public const string TlSpecialismId = "194";
         public const string TqProviderId2 = "14088";
         public const string TqProviderIdForLrs = "14098";
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";
