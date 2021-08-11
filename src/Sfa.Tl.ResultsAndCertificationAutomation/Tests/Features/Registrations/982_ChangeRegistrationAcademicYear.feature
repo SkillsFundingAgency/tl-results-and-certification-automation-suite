@@ -13,9 +13,11 @@ Scenario: 982-Change Academic Year Page
 When I click on Academic Year change link
 Then I should see change Academic year page
 And I should navigated back to Registration details page when i click on Back to regisration details button
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 982-Change Academic Year Back link
 When I click on Academic Year change link
 And I click on Back link on page
 Then I should be navigated back to registration details page
+And I cleared the data in DB

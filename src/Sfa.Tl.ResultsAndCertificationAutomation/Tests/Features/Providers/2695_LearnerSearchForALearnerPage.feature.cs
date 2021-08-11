@@ -140,6 +140,9 @@ testRunner.And("I press the Manage learner records breadcrumb on the  Manage Lea
 #line 17
 testRunner.Then("I am shown the Manage learner records page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 18
+testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -155,7 +158,7 @@ testRunner.Then("I am shown the Manage learner records page", ((string)(null)), 
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2695 Verify invalid entry error message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -178,19 +181,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 22
+#line 23
 testRunner.When("I enter \"123456789\" in the Search ULN box and click Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 24
 testRunner.Then("the error message \"Enter a valid 10-digit ULN\" is shown on the Manage learner Sea" +
                         "rch for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 24
-testRunner.When("I enter \"ABCDEFGHIJ\" in the Search ULN box and click Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
+testRunner.When("I enter \"ABCDEFGHIJ\" in the Search ULN box and click Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 26
 testRunner.Then("the error message \"Enter a valid 10-digit ULN\" is shown on the Manage learner Sea" +
                         "rch for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 27
+testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -207,7 +213,7 @@ testRunner.Then("the error message \"Enter a valid 10-digit ULN\" is shown on th
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2695 Verify No ULN entered error messages", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 28
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -230,12 +236,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 29
+#line 31
 testRunner.When("I click on \"Search\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 32
 testRunner.Then("the error message \"Enter a ULN with 10 digits\" is shown on the Manage learner rec" +
                         "ords Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 33
+testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

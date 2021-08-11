@@ -323,6 +323,9 @@ testRunner.When("I select Yes delete registration option and click submit", ((st
 #line 52
 testRunner.Then("I will be shown the Problem with service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 53
+testRunner.And("I have deleted LRS records from the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

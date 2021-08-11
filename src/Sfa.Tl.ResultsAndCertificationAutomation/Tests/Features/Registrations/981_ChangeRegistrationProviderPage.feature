@@ -19,6 +19,7 @@ When I click on change Provider link on Regisration details page
 And I click on Change button without changing provider
 Then I should be navigated back to registration details page
 And I should see same provider in the details
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 981-Change Provider change another provider
@@ -27,9 +28,11 @@ And I change another provider has same core from the list
 And I click on Change button
 Then I should see Change successfull message
 And I should see new provider details in registration details page
+And I cleared the data in DB
 
 @RegressionTest @ChangeRegistration
 Scenario: 981-Change Provider back link
 When I click on change Provider link on Regisration details page
 And I click on Back link on page
 Then I should be navigated back to registration details page
+And I cleared the data in DB

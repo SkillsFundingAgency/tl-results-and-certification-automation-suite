@@ -132,7 +132,7 @@ testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Ta
                 TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table56.AddRow(new string[] {
-                            "This learner\'s registration has been withdrawn."});
+                            "Learner has been withdrawn by the exam board"});
 #line 15
 testRunner.Then("I should see following message for that registration", ((string)(null)), table56, "Then ");
 #line hidden

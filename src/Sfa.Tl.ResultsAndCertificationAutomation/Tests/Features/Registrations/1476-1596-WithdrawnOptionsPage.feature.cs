@@ -149,6 +149,9 @@ testRunner.Then("I am navigated to the Registration Details page which shows my 
 #line 24
 testRunner.And("there are no change links next to any of the data items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 25
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -164,7 +167,7 @@ testRunner.And("there are no change links next to any of the data items", ((stri
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1476-Error message is displayed if radio buttons are not selected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -187,23 +190,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
 this.FeatureBackground();
 #line hidden
-#line 30
+#line 29
 testRunner.When("I withdraw my application and navigate to the Withdrawn Registration Details page" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
+#line 30
 testRunner.And("I click the Change Status link on the Withdrawn options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 31
 testRunner.Then("I am navigated to the Withdrawn options page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 33
+#line 32
 testRunner.When("I click continue without selecting any radio buttons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 33
 testRunner.Then("I am shown an error message on the Registrations Withdrawn Options page stating \"" +
                         "Select if you would like to reactivate this registration with the same course or" +
                         " register a different course\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 34
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

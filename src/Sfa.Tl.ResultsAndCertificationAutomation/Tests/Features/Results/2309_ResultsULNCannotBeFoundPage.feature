@@ -32,7 +32,7 @@ And I search for a <ULN> which is not registered
 Then I will be navigated to the Results ULN Cannot be found page for <ULN>
 When I click the Back to Search button on the Results ULN cannot be found page
 Then I will be navigated to the Results Search for a Learner page
-And the search box will be populated with the <ULN> entered originally
+And the search box will not be populated with the <ULN> entered originally
 Examples: 
 | ULN         |
 | 9900000040  |

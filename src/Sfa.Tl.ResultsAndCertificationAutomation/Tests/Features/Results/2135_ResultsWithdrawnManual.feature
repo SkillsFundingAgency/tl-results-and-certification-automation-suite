@@ -14,4 +14,4 @@ And I click on "Results" link
 When I search the learner
 Then I should see following message for that registration
 | Message                                         |
-| This learner's registration has been withdrawn. |
+| Learner has been withdrawn by the exam board	  |

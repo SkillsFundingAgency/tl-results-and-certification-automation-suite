@@ -18,6 +18,7 @@ And I Register the learner on a new course using the same provider
 Then I am navigated to the Select the Core Page for reactivate registration
 When I click the back link on the Reactivate Registration Change Core Page
 Then I am navigated to the Reactivate Registration Change Provider page
+And I cleared the data in DB
 
 @RegressionTest @WithdrawRegistration
 Scenario: 1489-Error message is displayed if a dropdown value is not selected
@@ -26,6 +27,7 @@ And I Register the learner on a new course using the same provider
 Then I am navigated to the Select the Core Page for reactivate registration
 When I click continue without selecting a dropdown value 
 Then I am shown an error message on the  Select the Core Page for reactivate registration page stating "Select a core"
+And I cleared the data in DB
 ##checks all error messages on the page and checks page title includes "Error"
 
 @Ignore @RegressionTest @WithdrawRegistration
@@ -37,4 +39,5 @@ When I navigate away and attempt to navigate back using the URL
 Then I am navigated to the Select the Core Page for reactivate registration
 When I reactivate my registration and attempt to navigate back to the Change Core page using the URL
 Then I am shown the Page Not Found page
+And I cleared the data in DB
 

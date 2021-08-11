@@ -37,6 +37,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         public static By ResultsBreadcrumb { get; } = By.Id("breadcrumb1");
         public static By SearchForLearnerBreadcrumb { get; } = By.Id("breadcrumb2");
+        private static By contactUsLink = By.Id("contactusLink");
 
         public static By ChangeLink = By.Id("pathwaygrade");
         public static new void ClickButton(By locator)
@@ -80,6 +81,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(Series));
             Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(Grade));
+        }
+
+        public static void VerifyAssessmenSeriesTextFINALState()
+        {
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains("A"));
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains("Summer 2021"));
+            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains("FINAL"));
         }
 
         public static void VerifyAddEntryLink(string AddEntryLink)
@@ -148,5 +156,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickButton(searchAgainBtn);
             ResultsSearchForALearnerPage.VerifyResultsSearchLearnerPage();
         }
+
+        public static void ClickContactUsLink()
+        {
+            ClickButton(contactUsLink);
+        }
+
     }
 }

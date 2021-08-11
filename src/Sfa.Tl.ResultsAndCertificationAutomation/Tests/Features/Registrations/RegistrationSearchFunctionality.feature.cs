@@ -156,6 +156,9 @@ testRunner.And(string.Format("I enter {0} into the ULN field and press Submit", 
 #line 19
 testRunner.Then("the Registration Details page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 20
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -183,7 +186,7 @@ testRunner.Then("the Registration Details page is displayed", ((string)(null)), 
             argumentsOfScenario.Add("Month", month);
             argumentsOfScenario.Add("Year", year);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for a valid ULN which is not registered", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 26
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -206,22 +209,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 27
+#line 28
 testRunner.When("I click on Search For A registration link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 29
 testRunner.Then("the Search for a registration page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 29
+#line 30
 testRunner.And(string.Format("I enter {0} as a valid ULN which is not registered and press enter", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 30
+#line 31
 testRunner.Then("I am shown the ULN cannot be found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 31
+#line 32
 testRunner.And("when I click the back link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 33
 testRunner.Then(string.Format("the Registration Search page is displayed with the ULN field still populated with" +
                             " {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -248,7 +251,7 @@ testRunner.Then(string.Format("the Registration Search page is displayed with th
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Search Page Invalid ULN error", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 38
+#line 39
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -271,16 +274,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 39
+#line 40
 testRunner.When("I click on Search For A registration link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 40
+#line 41
 testRunner.Then("the Search for a registration page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 41
+#line 42
 testRunner.And(string.Format("I enter {0} as an invalid ULN which is not registered and press enter", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 43
 testRunner.Then("I will be presented with an error stating ULN is invalid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -298,7 +301,7 @@ testRunner.Then("I will be presented with an error stating ULN is invalid", ((st
                     "ManaulRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Search Page Blank ULN error", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 50
+#line 51
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -321,16 +324,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 51
+#line 52
 testRunner.When("I click on Search For A registration link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 52
+#line 53
 testRunner.Then("the Search for a registration page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 53
+#line 54
 testRunner.And("I press enter on Search for a registration page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 54
+#line 55
 testRunner.Then("I will be presented with an error stating Enter a ULN", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -348,7 +351,7 @@ testRunner.Then("I will be presented with an error stating Enter a ULN", ((strin
                     "RegistrationSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click Registrations link in breadcrumbs on the Search Registration page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 58
+#line 59
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -371,13 +374,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 59
+#line 60
 testRunner.When("I click on Search For A registration link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 60
+#line 61
 testRunner.When("I click the Registrations link in the breadcrumbs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 61
+#line 62
 testRunner.Then("I will be shown the Registrations dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -395,7 +398,7 @@ testRunner.Then("I will be shown the Registrations dashboard page", ((string)(nu
                     "RegistrationSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click Home link in breadcrumbs on the Search Registration page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 65
+#line 66
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -418,13 +421,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 66
+#line 67
 testRunner.When("I click on Search For A registration link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 67
+#line 68
 testRunner.When("I click the Home link in the breadcrumbs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 68
+#line 69
 testRunner.Then("I will be shown the Tlevel dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

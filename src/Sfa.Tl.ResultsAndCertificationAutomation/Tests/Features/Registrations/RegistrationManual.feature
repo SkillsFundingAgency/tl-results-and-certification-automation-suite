@@ -17,6 +17,7 @@ And I select Specialism and click Continue
 And I click Continue in Academic Year page
 And I click Submit button
 Then I should see ULN Added successfully message
+And I cleared the data in DB
 Examples: 
 | Uln        | First Name | Last Name | Day | Month | Year |
 | 9900000050 | FirstName1 | LastName1 | 01  | 01    | 2010 |
@@ -34,6 +35,7 @@ And I select No from has decided specialism and click Continue
 And I click Continue in Academic Year page
 And I click Submit button
 Then I should see ULN Added successfully message
+And I cleared the data in DB
 Examples: 
 | Uln        | First Name | Last Name  | Day | Month | Year |
 | 9900000051 | FirstName1 | LaastName1 | 01  | 01    | 2010 |
@@ -53,6 +55,7 @@ And I click Submit button
 And I click on back to registration link
 And I enter <Uln> and click Continue button
 Then I should see ULN already registered page
+And I cleared the data in DB
 Examples:
 | Uln        | First Name | Last Name  | Day | Month | Year |
 | 9900000052 | FirstName1 | LaastName1 | 01  | 01    | 2010 |
@@ -72,6 +75,7 @@ And I click on Sign Out link
 And I logged in with RegistrationEditor user
 And I enter <Uln> and click Continue button
 Then I should see ULN already registered with another AO error
+And I cleared the data in DB
 Examples:
 | Uln        | First Name | Last Name  | Day | Month | Year |
 | 9900000053 | FirstName1 | LaastName1 | 01  | 01    | 2010 |
@@ -87,6 +91,7 @@ And I have logged in as a "RegistrationEditor" user
 And I navigated to serach registration page
 And I entered the <Uln> and click serach
 Then I should see an error with <Uln>
+And I cleared the data in DB
 Examples: 
 | Uln        |
 | 9900000054 |

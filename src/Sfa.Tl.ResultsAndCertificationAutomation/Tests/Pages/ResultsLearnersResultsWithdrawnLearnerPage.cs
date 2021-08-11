@@ -8,11 +8,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class ResultsLearnersResultsWithdrawnLearnerPage : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "learners-results-withdrawn-learner");
-        private static readonly string PageTitle = "Learner’s results - Withdrawn learner page – Manage T Level results – GOV.UK";
+        private static readonly string PageTitle = "Learner withdrawn – Manage T Level results – GOV.UK";
         
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-        public static readonly string ExpectedPageHeaderText = "Learner's results";
-        public static By ULNTextLabel { get; } = By.XPath("//*[@id='main-content']//h2");
+        public static readonly string ExpectedPageHeaderText = "Learner has been withdrawn by the exam board";
+        public static By ULNTextLabel { get; } = By.XPath("//*[@id='main-content']");
         public static readonly string ExpectedPageTextLine1Text = "You can add, view and amend a learner's results.";
         public static By NameTextLabel { get; } = By.XPath("//*[@id='main-content']//p[1]");
         public static By ProviderTextLabel { get; } = By.XPath("//*[@id='main-content']//p[2]");
@@ -32,15 +32,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void VerifyWithdrawnLearnersResultsPage(string ULN, string FirstName, string Surname)
         {
-            string ULNText = "ULN: " + ULN;
-            string NameText = "Name: " + FirstName + " " + Surname;
+            string ULNText = ULN;
+            string NameText = FirstName + " " + Surname;
 
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedPageHeaderText, WebDriver.FindElement(PageHeader).Text);
-            Assert.AreEqual(NameText, WebDriver.FindElement(NameTextLabel).Text);
-            Assert.AreEqual(ULNText, WebDriver.FindElement(ULNTextLabel).Text);
-            Assert.IsTrue(WebDriver.FindElement(WithdrawnTextLabel).Text.Contains(ExpectedWithdrawnLabelText));
+            Assert.IsTrue(WebDriver.FindElement(ULNTextLabel).Text.Contains(NameText));
+            Assert.IsTrue(WebDriver.FindElement(ULNTextLabel).Text.Contains(ULNText));
         }
 
         public static void ClickHomeBreadcrumb()

@@ -15,11 +15,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static By backLink { get; } = By.Id("backLink");
         private static By theGradeIsTheSameRadioBtn = By.Id("appealoutcome");
         private static By iNeedToUpdateTheGradeRadioBtn = By.Id("appealoutcome-updategrade");
+        private static By withdrawnAppeal { get; } = By.Id("appealoutcome-withdraw");
         private static By learnerDetailsElement = By.XPath("//*[@id='main-content']/div/div/form");
         private static By RadioButtonTextElement = By.ClassName("govuk-fieldset");
         private static By originalGrade = By.XPath("//*[@id='main-content']//div[6]");
         private static By mainErrorMesg = By.ClassName("govuk-error-summary__body");
         private static By subErrorMesg = By.ClassName("govuk-error-message");
+        private static By confirmationMgs { get; } = By.XPath("//*[@id='main-content']//h3");
+        private static string withdrawnConfirmationTxt = "appeal has been withdrawn";
 
 
         public static void VerifyAddOutcomeOfAppealPage()
@@ -42,8 +45,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 
         public static void VerifRadioButtonText()
         {
-            Assert.IsTrue(WebDriver.FindElement(RadioButtonTextElement).Text.Contains("The grade is the same"));
-            Assert.IsTrue(WebDriver.FindElement(RadioButtonTextElement).Text.Contains("I need to update the grade")); 
+            Assert.IsTrue(WebDriver.FindElement(RadioButtonTextElement).Text.Contains("No change to the grade"));
+            Assert.IsTrue(WebDriver.FindElement(RadioButtonTextElement).Text.Contains("The grade is changed"));
+            Assert.IsTrue(WebDriver.FindElement(RadioButtonTextElement).Text.Contains("The appeal is withdrawn"));
         }
 
         public static void ClickBackLink()
@@ -61,6 +65,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         {
             ClickButton(iNeedToUpdateTheGradeRadioBtn);
         }
+        public static void ClickWithdrawnAppealRadioBtn()
+        {
+            ClickButton(withdrawnAppeal);
+        }
 
         public static void ClickContinueBtn()
         {
@@ -77,6 +85,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         {
             Assert.IsTrue(WebDriver.FindElement(mainErrorMesg).Text.Contains(ErrorMsg));
             Assert.IsTrue(WebDriver.FindElement(subErrorMesg).Text.Contains(ErrorMsg));
+        }
+        public static void VerifyAppealWithdrawnSuccessMgs()
+        {
+            Assert.IsTrue(WebDriver.FindElement(confirmationMgs).Text.Contains(withdrawnConfirmationTxt));
         }
     }
 }

@@ -50,3 +50,4 @@ And I navigate to the Delete Registration Page
 And I add IP data in parallel to the registration 
 When I select Yes delete registration option and click submit
 Then I will be shown the Problem with service page
+And I have deleted LRS records from the database

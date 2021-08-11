@@ -17,6 +17,7 @@ And I click Search For A registration link
 Then the Search for a registration page is displayed
 And I enter <ULN> into the ULN field and press Submit
 Then the Registration Details page is displayed
+And I cleared the data in DB
 Examples: 
 | ULN        | FirstName  | LastName   | Day | Month | Year |
 | 9900000051 | FirstName1 | LastName10 | 01  | 01    | 2010 |

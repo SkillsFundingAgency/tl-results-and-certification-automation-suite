@@ -21,6 +21,7 @@ And I click on back to registration link
 And I click on Search for registrations link
 When I enter <Uln> and click on Search
 Then I should see results in the page
+And I cleared the data in DB
 Examples: 
 | Uln        | FirstName | LastName  | Day | Month | Year | Provider                    | Core                                     |
 | 9900000055 | FirstName1 | LaastName1 | 01  | 01    | 2010 | Automation Test2 (99999902) | Legal, Finance and Accounting (55555555) |
