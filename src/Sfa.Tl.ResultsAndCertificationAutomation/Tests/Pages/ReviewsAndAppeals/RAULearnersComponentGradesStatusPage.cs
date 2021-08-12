@@ -82,7 +82,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 
         public static void VerifySuccessBannerBeingAppealedDisplayed()
         {
-            string SuccessBannerText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode + " status has been updated";
+            string SuccessBannerText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode + " is being appealed";
             Assert.IsTrue(WebDriver.FindElement(successBannerTextElement).Text.Contains(SuccessBannerText));
             Assert.IsTrue(WebDriver.FindElement(successBannerHeaderElement).Text.Contains("Success"));             
         }
