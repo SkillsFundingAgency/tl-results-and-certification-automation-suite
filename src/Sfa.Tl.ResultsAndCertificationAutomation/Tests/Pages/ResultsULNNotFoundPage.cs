@@ -8,20 +8,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class ResultsULNNotFoundPage : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "search-for-learner-results-ULN-not-found");
-        private static readonly string PageTitle = "Results - ULN cannot be found page – Manage T Level results – GOV.UK";
+        private static readonly string PageTitle = "ULN cannot be found – Results – Manage T Level results – GOV.UK";
         
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         
-        public static By PageTextLine1 { get; } = By.XPath("//*[@id='main-content']/div/div/div/p");
-        public static readonly string ExpectedPageText = "If you think that the ULN should exist it may be that it:";
-        public static By Bullet1 { get; } = By.XPath("//*[@id='main-content']//ul/li[1]");
-        public static readonly string ExpectedBullet1Text = "is registered with another awarding organisation";
-        public static By Bullet2 { get; } = By.XPath("//*[@id='main-content']//ul/li[2]");
-        public static readonly string ExpectedBullet2Text = "is not registered with us";
-
-        public static By BackToSearchButton { get; } = By.Id("backButton");
-        public static readonly string ExpectedButtonText = "Back to search";
-        public static By BackLink    { get; } = By.Id("backLink");
+        public static By BackToSearchButton { get; } = By.Id("searchAgainButton");
+        public static readonly string ExpectedButtonText = "Search again";
+        public static By BackLink  { get; } = By.Id("backLink");
+        public static By BackHome { get; } = By.Id("backToHomeButton");
 
         public static new void ClickButton(By locator)
         {
@@ -29,14 +23,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         }
         public static void VerifyResultsULNNotFoundPage(string ULN)
         {
-            string ExpectedHeaderText = "ULN (" + ULN + ") cannot be found";
+            string ExpectedHeaderText = "Unique learner number (ULN) " + ULN + " not found";
 
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedHeaderText, WebDriver.FindElement(PageHeader).Text);
-            Assert.AreEqual(ExpectedPageText, WebDriver.FindElement(PageTextLine1).Text);
-            Assert.AreEqual(ExpectedBullet1Text, WebDriver.FindElement(Bullet1).Text);
-            Assert.AreEqual(ExpectedBullet2Text, WebDriver.FindElement(Bullet2).Text);
             Assert.IsTrue(WebDriver.FindElement(BackToSearchButton).Text.Contains(ExpectedButtonText));
         }   
 
@@ -49,7 +40,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             WebDriver.FindElement((BackToSearchButton)).Click();
         }
-
+        public static void VerifyBackToHome()
+        {
+            ClickButton(By.Id("searchButton"));
+            ClickButton(BackHome);
+            Assert.IsTrue(WebDriver.Url.Contains("home"));
+            Assert.AreEqual("Home page – Manage T Level results – GOV.UK", WebDriver.Title);
+        }
 
     }
 }

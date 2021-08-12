@@ -16,6 +16,7 @@ Then I will be navigated to the Results ULN Cannot be found page for <ULN>
 When I click the Back link on the Results ULN cannot be found page
 Then I will be navigated to the Results Search for a Learner page
 And the search box will be populated with the <ULN> entered originally
+And clicking on back to home button takes to dashboard page
 Examples: 
 | ULN         |
 | 9900000040  |
