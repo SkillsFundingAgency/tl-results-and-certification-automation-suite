@@ -46,6 +46,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3630_CheckAndSubmitAppealOutcome - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3631_UpdateGradeForAppealOutcome - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3635_SubmitAppealRequestSuccessBanner - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3636_ChangeLinkFromCheckAndSubmitPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3637_UpdateCheckAndSUbmitWithNewGrade - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3858_RequestAGradeChange - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet - Copy.feature.cs" />
@@ -308,6 +309,9 @@
     <Compile Update="Tests\Features\ReviewsAndAppeals\3632_ComponentGradeStatusFinalResult.feature.cs">
       <DependentUpon>3632_ComponentGradeStatusFinalResult.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3995_ ExceptionsComponentGradeStatusPage.feature.cs">
+      <DependentUpon>3995_ ExceptionsComponentGradeStatusPage.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewsAndAppeals\3727_MultipleAssessmentEntries.feature.cs">
       <DependentUpon>3727_MultipleAssessmentEntries.feature</DependentUpon>
     </Compile>
@@ -422,6 +426,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3632_ComponentGradeStatusFinalResult.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3995_ ExceptionsComponentGradeStatusPage.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

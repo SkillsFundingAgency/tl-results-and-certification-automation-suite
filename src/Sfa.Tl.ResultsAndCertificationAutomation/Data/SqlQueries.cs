@@ -449,5 +449,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string Grade1 = Convert.ToString(Grade[0][0]);
             return Grade1;
         }
+
+        public static void UpdateAutumn2021AssessmentSeriesWithPastDate()
+        {
+            string CreateQualificationAcheived = "update AssessmentSeries set appealenddate = '2021-08-04 00:00:00.000' where id = 1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+        }
+
+        public static void UpdateAutumn2021AssessmentSeriesWithFutureDate()
+        {
+            string CreateQualificationAcheived = "update AssessmentSeries set appealenddate = '2021-09-24 00:00:00.000' where id = 1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+        }
+
     }
 }

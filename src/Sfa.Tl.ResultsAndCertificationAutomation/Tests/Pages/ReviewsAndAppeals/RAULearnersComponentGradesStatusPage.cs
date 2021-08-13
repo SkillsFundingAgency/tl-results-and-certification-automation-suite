@@ -23,6 +23,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static By successBannerHeaderElement = By.Id("govuk-notification-banner-title");
         private static By successBannerTextElement = By.ClassName("govuk-notification-banner__heading");
         private static By contactUsLink = By.Id("contactusLink");
+        private static String appealDatePassedText = "This result is final as the date for appeal has passed. To tell us that the grade is being appealed please";
+
         public static void VerifyRAULearnersComponentGradesStatusPage()
         {
             Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
@@ -48,13 +50,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("SYSTEM"));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(ExpectedDate));
+
+            string CoreCodeHeaderText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode;
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CoreCodeHeaderText));
+
         }
 
         public static void VerifyCoreDetailsStatusBeingAppealed(string ULN)
         {
+            string CoreCodeHeaderText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode;
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("BEING APPEALED"));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CoreCodeHeaderText));
 
             //Verify the Created By and Created On date from the TqPathwayResult table against the values on the Learner’s component grades status page
             string CreatedBy = SqlQueries.RetrieveResultUpdatedData(ULN);
@@ -67,9 +75,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 
         public static void VerifyCoreDetailsStatusFinal(string ULN, string Grade)
         {
+            string CoreCodeHeaderText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode;
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Grade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("FINAL"));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CoreCodeHeaderText));
 
             //Verify the Created By and Created On date from the TqPathwayResult table against the values on the Learner’s component grades status page
             string CreatedBy = SqlQueries.RetrieveResultUpdatedData(ULN);
@@ -99,6 +109,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             bool expectedResponse = false;
             Assert.AreEqual(expectedResponse, IsPresent(successBannerHeaderElement));
             Assert.AreEqual(expectedResponse, IsPresent(successBannerTextElement));
+        }
+
+        public static void VerifyResultIsFinalBecauseAppealDateHasPassedTextIsDisplayed()
+        {
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(appealDatePassedText));            
         }
 
         public static void VerifyGradeStatusSetToBeingAppealed(string ULN)
