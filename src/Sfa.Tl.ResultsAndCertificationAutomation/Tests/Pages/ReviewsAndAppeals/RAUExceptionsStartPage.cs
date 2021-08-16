@@ -23,8 +23,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         }
         public static void ClickBackLink()
         {
-            ClickElement(backLink);
-    
+            ClickElement(backLink);    
+        }
+        public static void ClickContinueBtn()
+        {
+            ClickElement(continueBtn);
         }
     }
 }

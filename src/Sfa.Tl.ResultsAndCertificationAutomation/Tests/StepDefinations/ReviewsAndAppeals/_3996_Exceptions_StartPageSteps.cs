@@ -1,8 +1,4 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
-using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewsAndAppeals
@@ -10,6 +6,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
     [Binding]
     public class _3996PostResultsServices_Exceptions_StartPageSteps
     {
+        [When(@"I click the Raise a request link")]
         [Then(@"I click the Raise a request link")]
         public void ThenIClickTheRaiseARequestLink()
         {
