@@ -49,6 +49,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3636_ChangeLinkFromCheckAndSubmitPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3637_UpdateCheckAndSUbmitWithNewGrade - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3858_RequestAGradeChange - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewsAndAppeals\3995_ ExceptionsComponentGradeStatusPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3103_SOANotAvailableYet - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3105_RequestStatementOfAchievement - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\StatementOfAchievement\3156_CheckTheLearnerDetailsBeforeSendingYourRequest - Copy.feature.cs" />
@@ -309,6 +310,9 @@
     <Compile Update="Tests\Features\ReviewsAndAppeals\3632_ComponentGradeStatusFinalResult.feature.cs">
       <DependentUpon>3632_ComponentGradeStatusFinalResult.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ReviewsAndAppeals\3996_ Exceptions - Start page.feature.cs">
+      <DependentUpon>3996_ Exceptions - Start page.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewsAndAppeals\3995_ ExceptionsComponentGradeStatusPage.feature.cs">
       <DependentUpon>3995_ ExceptionsComponentGradeStatusPage.feature</DependentUpon>
     </Compile>
@@ -426,6 +430,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3632_ComponentGradeStatusFinalResult.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewsAndAppeals\3996_ Exceptions - Start page.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

@@ -24,6 +24,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         private static By successBannerTextElement = By.ClassName("govuk-notification-banner__heading");
         private static By contactUsLink = By.Id("contactusLink");
         private static String appealDatePassedText = "This result is final as the date for appeal has passed. To tell us that the grade is being appealed please";
+        private static By raiseARequestLink = By.Id("raiseRequestLink");
+
 
         public static void VerifyRAULearnersComponentGradesStatusPage()
         {
@@ -175,6 +177,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         public static void ClickContactUsLink()
         {
             ClickButton(contactUsLink);
+        }
+
+        public static void ClickRaiseARequestLink()
+        {
+            ClickButton(raiseARequestLink);
         }
     }
 }
