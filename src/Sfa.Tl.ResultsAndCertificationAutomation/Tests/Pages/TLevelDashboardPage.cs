@@ -42,7 +42,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By AssessmentEntriesLink = By.XPath("//a[@href='/assessment-entries']");
         public static By RegistrationsLink = By.XPath("//a[@href='/registrations']");
         public static By ManageLearnerRecordsLink = By.XPath("//a[@href='/manage-learner-records']");
-        public static By ReviewAndApealsLink = By.Id("reviewsAndAppealsLink");
+        public static By ReviewAndApealsLink = By.Id("appealLink");
 
         public void ViewUserAccount()
         {
