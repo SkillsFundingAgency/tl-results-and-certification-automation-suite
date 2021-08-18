@@ -86,7 +86,7 @@ testRunner.Given("I have logged in as a \"ResultsEditor\" user", ((string)(null)
 testRunner.And("I have a registration with a result and two assessment entries", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-testRunner.When("I click on \"Reviews and appeals\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
         }
         

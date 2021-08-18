@@ -142,5 +142,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(ReviewAndApealsLink);
         }
+
+        public static void ClickTLevelsLinks()
+        {
+            ClickElement(TlevelLink);
+        }
+
     }
 }
