@@ -53,5 +53,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         {
             RAUExceptionsConfirmAppeal.ClickBackLink();
         }
+
+        [When(@"I select the No radio button followed by Submit on the Exceptions Confirm Appeal page")]
+        public void WhenISelectTheNoRadioButtonOnTheExceptionsConfirmAppealPage()
+        {
+            RAUExceptionsConfirmAppeal.ClickNoRadioBtn();
+            RAUExceptionsConfirmAppeal.ClickSubmitBtn();
+        }
+
     }
 }

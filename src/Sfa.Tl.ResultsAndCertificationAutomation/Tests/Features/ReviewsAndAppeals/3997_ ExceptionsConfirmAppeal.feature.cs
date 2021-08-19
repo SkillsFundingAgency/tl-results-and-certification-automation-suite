@@ -94,16 +94,16 @@ testRunner.When("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.Spec
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3997_Verify the Exceptions Confirm Appeal page and back link")]
+        [NUnit.Framework.DescriptionAttribute("3997_Verify the Exceptions Confirm Appeal page, back link and No radio button")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3997_VerifyTheExceptionsConfirmAppealPageAndBackLink()
+        public virtual void _3997_VerifyTheExceptionsConfirmAppealPageBackLinkAndNoRadioButton()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3997_Verify the Exceptions Confirm Appeal page and back link", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3997_Verify the Exceptions Confirm Appeal page, back link and No radio button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -150,9 +150,19 @@ testRunner.When("I click the back link on the Exceptions Confirm Appeal page", (
 testRunner.Then("the Exceptions start page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 22
-testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I click Continue on the Exeptions Start Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
+testRunner.And("I select the No radio button followed by Submit on the Exceptions Confirm Appeal " +
+                        "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 24
+testRunner.Then("I am shown the component grade status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 25
+testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
 testRunner.And("the End date for the Summer Assessment Series is reset to the date in the future", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -161,18 +171,18 @@ testRunner.And("the End date for the Summer Assessment Series is reset to the da
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3997_Verify error message when pressing Submit on Exception Confirm Appeal page w" +
-            "ithout selecting a redio button")]
+            "ithout selecting a radio button")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3997_VerifyErrorMessageWhenPressingSubmitOnExceptionConfirmAppealPageWithoutSelectingARedioButton()
+        public virtual void _3997_VerifyErrorMessageWhenPressingSubmitOnExceptionConfirmAppealPageWithoutSelectingARadioButton()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3997_Verify error message when pressing Submit on Exception Confirm Appeal page w" +
-                    "ithout selecting a redio button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 26
+                    "ithout selecting a radio button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -195,31 +205,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 27
+#line 30
 testRunner.Given("I navigate to the Review and Appeals Learner Component Grade status page using th" +
                         "e URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 28
+#line 31
 testRunner.When("I click the Raise a request link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 32
 testRunner.And("I click Continue on the Exeptions Start Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 30
+#line 33
 testRunner.Then("I am shown the Exceptions Confirm Appeal page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 31
+#line 34
 testRunner.When("I click Submit without selecting a radio button on the Exceptions Confirm Appeal " +
                         "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 35
 testRunner.Then("the following error message is displayed on the Exceptions Confirm Appeal page \"P" +
                         "lease select whether you want to appeal the record\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 33
+#line 36
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 34
+#line 37
 testRunner.And("the End date for the Summer Assessment Series is reset to the date in the future", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

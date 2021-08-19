@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
 {
     public class TLevelJourneyDashboardPage : ElementHelper
     {
@@ -12,7 +12,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string pageHeader { get; } = "T Levels";
         private static readonly By pageHeaderElement = By.XPath("//*[@id='main-content']//h1");
         private static By homeBreadcrumb { get; } = By.Id("breadcrumb0");
-        private static By RegistrationDetailsElement = By.ClassName("govuk-grid-column-three-quarters");
         private static By reviewNewTlevelsLink { get; } = By.Id("reviewTlevelsLink");
         private static By confirmedTlevelsLink { get; } = By.Id("confirmedTlevelsLink");
         private static By queriedTlevelsLink { get; } = By.Id("queriedTlevelsLink");
@@ -30,6 +29,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickHomeBreadcrumb()
         {
             ClickElement(homeBreadcrumb);
+        }
+
+        public static void ClickReviewNewTLevelsLink()
+        {
+            ClickElement(reviewNewTlevelsLink);
         }
 
 

@@ -462,5 +462,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
         }
 
+        public static void SetAllTLevelsToNotReviewed()
+        {
+            string SetAllTLevelsToNotReviewed = "Update TqAwardingOrganisation set ReviewStatus=1 where TlAwardingOrganisatonId=1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetAllTLevelsToNotReviewed, ConnectionString);
+        }
+
     }
 }
