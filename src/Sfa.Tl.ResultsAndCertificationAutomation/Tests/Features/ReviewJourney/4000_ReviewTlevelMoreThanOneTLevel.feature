@@ -8,7 +8,7 @@ Given I have logged in as a "Reviewer" user
 And I set all of the T Levels for NCFE to unconfirmed
 
 @RegressionTest @ReviewJourney
-Scenario: Verify Select T Level to review page and breadcrumbs
+Scenario: 4000_Verify Select T Level to review page and breadcrumbs
 Given I click on the TLevels link on the homepage
 When I click the Review new T Levels link on the TLevels dashboard page
 Then I am navigated to the Select T Level to review page
@@ -20,7 +20,7 @@ Then I should be navigated back to home page
 And I set all of the T Levels for NCFE to unconfirmed
 
 @RegressionTest @ReviewJourney
-Scenario: Verify Error message on Select T Level to review page when pressing continue without selecting a T Level
+Scenario: 4000_Verify Error message on Select T Level to review page when pressing continue without selecting a T Level
 Given I click on the TLevels link on the homepage
 When I click the Review new T Levels link on the TLevels dashboard page
 Then I am navigated to the Select T Level to review page
@@ -29,7 +29,7 @@ Then I am shown the following error message on the Select a T Level to review pa
 And I set all of the T Levels for NCFE to unconfirmed
 
 @RegressionTest @ReviewJourney
-Scenario: Verify Contact Us link on the Select T Level to review page
+Scenario: 4000_Verify Contact Us link on the Select T Level to review page
 Given I click on the TLevels link on the homepage
 When I click the Review new T Levels link on the TLevels dashboard page
 And I click the Contact Us link on the Select T Level to review page

@@ -19,6 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
         private static By subErrorMesg = By.ClassName("govuk-error-message");
         private static By contactUsLink = By.XPath("//*[contains(text(),'contact us')]");
         private static By iCannotFindATLevelLink = By.XPath("//*[contains(text(),'I cannot find a T Level')]");
+        private static By agricultureTLevelRadioButton = By.XPath("//*[contains(text(),'T Level in Agriculture, Environmental and Animal Care')]");
 
         public static void VerifySelectTLevelPage()
         {          
@@ -48,6 +49,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
         public static void ClickICannotFinaATLevelLink()
         {
             ClickElement(iCannotFindATLevelLink);
+        }
+
+        public static void SelectAgricultureTLevel()
+        {
+            ClickElement(agricultureTLevelRadioButton);
         }
 
         public static void VerifyErrorMessage(string ErrorMsg)

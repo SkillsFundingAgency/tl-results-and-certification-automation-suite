@@ -109,5 +109,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Submit();
             SubmitTlevelInProvider();
         }
+        public static void VerifyFindAProviderPage()
+        {
+            Assert.IsTrue(WebDriver.Url.Contains(ProviderUrl));
+            Assert.AreEqual(WebDriver.Title, FindProviderPageTitle);
+            Assert.AreEqual(WebDriver.FindElement(PageHeader).Text, FindProviderPageHead);
+        } 
+
     }
 }

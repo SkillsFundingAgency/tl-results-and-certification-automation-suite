@@ -467,6 +467,26 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string SetAllTLevelsToNotReviewed = "Update TqAwardingOrganisation set ReviewStatus=1 where TlAwardingOrganisatonId=1";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetAllTLevelsToNotReviewed, ConnectionString);
         }
+        public static void SetAllTLevelsToReviewed()
+        {
+            string SetAllTLevelsToNotReviewed = "Update TqAwardingOrganisation set ReviewStatus=2 where TlAwardingOrganisatonId=1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetAllTLevelsToNotReviewed, ConnectionString);
+        }
+        public static void SetTwoTLevelsToNotReviewed()
+        {
+            string SetTwoTLevelsToNotReviewed = "update TqAwardingOrganisation set reviewstatus = 1 where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care','T Level in Business and Administration'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetTwoTLevelsToNotReviewed, ConnectionString);
+        }
+        public static void SetThreeTLevelsToNotReviewed()
+        {
+            string SetTwoTLevelsToNotReviewed = "update TqAwardingOrganisation set reviewstatus = 1 where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care','T Level in Business and Administration','T Level in Digital Business Services'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetTwoTLevelsToNotReviewed, ConnectionString);
+        }
 
+        public static void SetOneTLevelsToNotReviewed()
+        {
+            string SetTwoTLevelsToNotReviewed = "update TqAwardingOrganisation set reviewstatus = 1 where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetTwoTLevelsToNotReviewed, ConnectionString);
+        }
     }
 }
