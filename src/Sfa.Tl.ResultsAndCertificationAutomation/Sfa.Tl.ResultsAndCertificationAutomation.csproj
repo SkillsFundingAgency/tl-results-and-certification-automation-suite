@@ -317,6 +317,9 @@
     <Compile Update="Tests\Features\ReviewJourney\4001_ReviewTLevelsNoMoreTLevelsToReview.feature.cs">
       <DependentUpon>4001_ReviewTLevelsNoMoreTLevelsToReview.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ReviewJourney\4011_DetailsConfirmedAllComplete.feature.cs">
+      <DependentUpon>4011_DetailsConfirmedAllComplete.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewJourney\4003_DetailsConfirmedMoreToGo.feature.cs">
       <DependentUpon>4003_DetailsConfirmedMoreToGo.feature</DependentUpon>
     </Compile>
@@ -455,6 +458,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\ReviewJourney\4001_ReviewTLevelsNoMoreTLevelsToReview.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewJourney\4011_DetailsConfirmedAllComplete.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
