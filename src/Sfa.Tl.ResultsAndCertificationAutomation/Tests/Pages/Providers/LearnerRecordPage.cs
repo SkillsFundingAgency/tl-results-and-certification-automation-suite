@@ -84,11 +84,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
                     break;
             }
         }
-        public static void VerifyHomePage()
-        {
-            Assert.IsTrue(WebDriver.Url.Contains("home"));
-            Assert.AreEqual("Home page – Manage T Level results – GOV.UK", WebDriver.Title);
-        }
+        //public static void VerifyHomePage()
+        //{
+        //    Assert.IsTrue(WebDriver.Url.Contains("home"));
+        //    Assert.AreEqual("Home page – Manage T Level results – GOV.UK", WebDriver.Title);
+        //}
         public static void NavigateToLearnerRecordPage(string uln)
         {
             ClickLinkByLabel("Manage learner T Level records");

@@ -43,7 +43,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By RegistrationsLink = By.XPath("//a[@href='/registrations']");
         public static By ManageLearnerRecordsLink = By.XPath("//a[@href='/manage-learner-records']");
         public static By ReviewAndApealsLink = By.Id("appealLink");
-
+        private static string expectedPageTitle { get; } = "Home – Manage T Level results – GOV.UK";
+     
         public void ViewUserAccount()
         {
             WebDriver.FindElement(UserAccountLink).Click();
@@ -116,7 +117,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             PageHelper.VerifyPageUrl(WebDriver.Url, DashboardUrl);
             Assert.AreEqual(Constants.DashBoardHeader, WebDriver.FindElement(PageTitle).Text);
-
+            Assert.AreEqual(WebDriver.Title, expectedPageTitle);
         }
 
         public static void ClickResultsLink()

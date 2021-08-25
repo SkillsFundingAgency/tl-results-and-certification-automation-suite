@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewsAndAppeals
@@ -16,7 +17,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         [Given(@"I am on reviews and appeals search for learner page")]
         public void GivenIAmOnReviewsAndAppealsSearchForLearnerPage()
         {
-            ReviewAndAppealsStartPage.ClickAppealsLink();
+            TlevelDashboardPage.ClickReviewAndAppealsLinks();
             ReviewAndAppealsStartPage.PressContinueBtn();
         }
         
@@ -53,8 +54,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         public void ThenClickOnBackToHomeTakesMeBackToHomePage()
         {
             ClickbackToHomeBtn();
-            Assert.IsTrue(WebDriver.Url.Contains("home"));
-            Assert.IsTrue(WebDriver.Title.Contains("Home page – Manage T Level results – GOV.UK"));
+            TlevelDashboardPage.VerifyDashboardpage();
+            //Assert.IsTrue(WebDriver.Url.Contains("home"));
+            //Assert.IsTrue(WebDriver.Title.Contains("Home page – Manage T Level results – GOV.UK"));
         }
 
     }

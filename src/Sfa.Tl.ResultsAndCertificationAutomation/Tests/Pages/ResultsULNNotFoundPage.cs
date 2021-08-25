@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -44,8 +45,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickButton(By.Id("searchButton"));
             ClickButton(BackHome);
-            Assert.IsTrue(WebDriver.Url.Contains("home"));
-            Assert.AreEqual("Home page – Manage T Level results – GOV.UK", WebDriver.Title);
+            TlevelDashboardPage.VerifyDashboardpage();
         }
 
     }

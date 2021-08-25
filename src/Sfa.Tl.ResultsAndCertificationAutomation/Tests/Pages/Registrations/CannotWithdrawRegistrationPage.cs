@@ -39,8 +39,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Registrations
         public static void CheckBackToHome()
         {
             ClickButton(backToHomeBtn);
-            Assert.IsTrue(WebDriver.Title.Equals("Home page – Manage T Level results – GOV.UK"));
-            Assert.IsTrue(WebDriver.Url.Contains("home"));
+            TlevelDashboardPage.VerifyDashboardpage();
+            //Assert.IsTrue(WebDriver.Title.Equals("Home page – Manage T Level results – GOV.UK"));
+            //Assert.IsTrue(WebDriver.Url.Contains("home"));
         }
     }
 }
