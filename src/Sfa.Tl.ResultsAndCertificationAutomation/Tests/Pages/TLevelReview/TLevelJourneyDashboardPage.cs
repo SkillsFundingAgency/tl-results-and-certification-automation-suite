@@ -36,6 +36,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
             ClickElement(reviewNewTlevelsLink);
         }
 
+        public static void ClickConfirmedTLevelsLink()
+        {
+            ClickElement(confirmedTlevelsLink);
+        }
 
+        public static void ClickQueriedTLevelsLink()
+        {
+            ClickElement(queriedTlevelsLink);
+        }
     }
 }
