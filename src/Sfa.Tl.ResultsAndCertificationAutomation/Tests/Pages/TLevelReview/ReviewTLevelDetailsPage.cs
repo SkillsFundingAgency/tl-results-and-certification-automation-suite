@@ -18,6 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
         private static By yesRadioBtn { get; } = By.Id("iseverythingcorrect");
         private static By noRadioBtn { get; } = By.Id("tl-verify-no");
         private static By backLink { get; } = By.Id("backLink");
+        private static By homeLink = By.LinkText("Manage T Level results");
 
         public static void VerifyReviewTLevelDetailsPage()
         {          
@@ -70,7 +71,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
         {
             ClickElement(backLink);
         }
-
+        public static void ClickHomeLInk()
+        {
+            ClickElement(homeLink);
+        }
 
         public static void VerifyErrorMessage(string ErrorMsg)
         {

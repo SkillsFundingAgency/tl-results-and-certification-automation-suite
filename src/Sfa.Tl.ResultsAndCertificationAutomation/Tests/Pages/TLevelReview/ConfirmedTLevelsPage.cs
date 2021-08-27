@@ -2,6 +2,8 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using System;
+using System.Collections.Generic;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
 {
@@ -66,5 +68,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
             bool ExpectedContactUsLinkPresence = true;
             Assert.AreEqual(ExpectedContactUsLinkPresence, ContactUsLinkPresent);
         }
+
+        public static void ClickTLevelLink(string TLevel)
+        {
+             IList<IWebElement> all = WebDriver.FindElements(By.XPath("//*[@id='main-content']/div/div/dl/div"));
+
+            String[] allText = new String[all.Count];
+            int i = 0;
+            foreach (IWebElement element in all)
+            {
+                
+                allText[i] = element.Text;
+                string Test = allText[i];
+                int indexOfSteam = Test.IndexOf("View");
+                if (indexOfSteam >= 0)
+                {
+                    Test = Test.Remove(indexOfSteam).Trim();
+                }
+
+                i = i + 1;
+
+                if (Test == TLevel)
+                {
+                    String ExpectedXpath = "//*[@id='main-content']/div/div/dl/div[" + i + "]/dd[2]/a";
+                    WebDriver.FindElement(By.XPath(ExpectedXpath)).Click();
+                    //break;
+                }
+            }
+        }
+
     }
 }
