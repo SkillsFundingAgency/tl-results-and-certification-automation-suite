@@ -88,18 +88,16 @@ testRunner.And("I set some T Levels for NCFE to unconfirmed, queried and reviewe
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4049_Verify the Confirmed T Levels page, Contact Us link presence and breadcrumbs" +
-            "")]
+        [NUnit.Framework.DescriptionAttribute("4049_Verify the Confirmed T Levels details page, Back link and Back button")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
-        public virtual void _4049_VerifyTheConfirmedTLevelsPageContactUsLinkPresenceAndBreadcrumbs()
+        public virtual void _4049_VerifyTheConfirmedTLevelsDetailsPageBackLinkAndBackButton()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4049_Verify the Confirmed T Levels page, Contact Us link presence and breadcrumbs" +
-                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4049_Verify the Confirmed T Levels details page, Back link and Back button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -137,10 +135,94 @@ testRunner.When("I click on the View link for the \"T Level in Agriculture, Envi
                         "l Care\" Tlevel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.Then("the details for the \"T Level in Agriculture, Environmental and Animal Care\" T lev" +
-                        "el are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the details for the confirmed T Level \"T Level in Agriculture, Environmental and " +
+                        "Animal Care\" are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 17
+testRunner.When("I click the back link on the confirmed T Level details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 18
+testRunner.Then("I am navigated to the Confirmed T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 19
+testRunner.When("I When I click on the View link for the \"T Level in Agriculture, Environmental an" +
+                        "d Animal Care\" Tlevel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 20
+testRunner.And("I click the Back to confirmed T Levels button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 21
+testRunner.Then("I am navigated to the Confirmed T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 22
+testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("4049_Verify raise a query link on the Confirmed T Levels details page")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("ReviewJourney")]
+        public virtual void _4049_VerifyRaiseAQueryLinkOnTheConfirmedTLevelsDetailsPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "ReviewJourney"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4049_Verify raise a query link on the Confirmed T Levels details page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 25
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+#line 26
+testRunner.Given("I click on the TLevels link on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 27
+testRunner.And("I click the Confirmed T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+testRunner.Then("I am navigated to the Confirmed T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 29
+testRunner.When("I click on the View link for the \"T Level in Agriculture, Environmental and Anima" +
+                        "l Care\" Tlevel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 30
+testRunner.Then("the details for the confirmed T Level \"T Level in Agriculture, Environmental and " +
+                        "Animal Care\" are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 31
+testRunner.When("I click the Raise a query link on the Confirmed T Level details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 32
+testRunner.Then("I am shown the Query T Level Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 33
+testRunner.And("the Query T Level Details page will display details for the T Level \"T Level in A" +
+                        "griculture, Environmental and Animal Care\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 34
 testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

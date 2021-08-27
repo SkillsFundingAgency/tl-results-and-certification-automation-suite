@@ -92,7 +92,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
                 {
                     String ExpectedXpath = "//*[@id='main-content']/div/div/dl/div[" + i + "]/dd[2]/a";
                     WebDriver.FindElement(By.XPath(ExpectedXpath)).Click();
-                    //break;
+                    break;
                 }
             }
         }

@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewJourney
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TLRC_4102 Journey Improvements - Queried T Levels - None queried")]
-    public partial class TLRC_4102JourneyImprovements_QueriedTLevels_NoneQueriedFeature
+    [NUnit.Framework.DescriptionAttribute("TLRC_4096 Journey Improvements - Confirmed T Levels - None confirmed")]
+    public partial class TLRC_4096JourneyImprovements_ConfirmedTLevels_NoneConfirmedFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "4102_QueriedTLevelsNoneQueried.feature"
+#line 1 "4096_ConfirmedTLevelsNoneConfirmed.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/ReviewJourney", "TLRC_4102 Journey Improvements - Queried T Levels - None queried", "\tAs an AO with a T Levels reviewer user role \r\n\tI need to know if I have not prev" +
-                    "iously queried any T Levels \r\n\tso that I can choose my next step", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/ReviewJourney", "TLRC_4096 Journey Improvements - Confirmed T Levels - None confirmed", "\tAs an AO with a T Levels reviewer user role \r\n\tI need to know if I have not prev" +
+                    "iously confirmed any T Levels \r\n\tso that I can choose my next step", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -84,18 +84,16 @@ testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4102_Verify the No T Levels queried page, Contact Us link presence and breadcrumb" +
-            "s")]
+        [NUnit.Framework.DescriptionAttribute("4096_Verify the No T Levels confirmed page, Contact Us link and breadcrumbs")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
-        public virtual void _4102_VerifyTheNoTLevelsQueriedPageContactUsLinkPresenceAndBreadcrumbs()
+        public virtual void _4096_VerifyTheNoTLevelsConfirmedPageContactUsLinkAndBreadcrumbs()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4102_Verify the No T Levels queried page, Contact Us link presence and breadcrumb" +
-                    "s", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4096_Verify the No T Levels confirmed page, Contact Us link and breadcrumbs", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -120,28 +118,28 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 12
-testRunner.Given("I set all of the T Levels for NCFE to confirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I set all of the T Levels for NCFE to queried", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 13
 testRunner.And("I click on the TLevels link on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
-testRunner.And("I click the Queried T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click the Confirmed T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-testRunner.Then("I am navigated to the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I am navigated to the No T Levels confirmed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 16
-testRunner.When("I click the TLevels breadcrumb on the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click the TLevels breadcrumb on the No T Levels confirmed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
 testRunner.Then("I should see the TLevels dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 18
-testRunner.When("I click the Queried T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click the Confirmed T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
-testRunner.And("I click on the Home breadcrumb on the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on the Home breadcrumb on the No T Levels confirmed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
 testRunner.Then("I should be navigated back to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -150,10 +148,10 @@ testRunner.Then("I should be navigated back to home page", ((string)(null)), ((T
 testRunner.When("I click on the TLevels link on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 22
-testRunner.And("I click the Queried T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click the Confirmed T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
-testRunner.And("I click the Contact Us link on the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click the Contact Us link on the No T Levels confirmed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
 testRunner.Then("I should see the Contact Us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -166,18 +164,18 @@ testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(nu
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4102_Verify Back to T Levels button and Review and Confirmed links on the No T Le" +
-            "vels queried page")]
+        [NUnit.Framework.DescriptionAttribute("4096_Verify Back to T Levels button and Review and Queried links on the No T Leve" +
+            "ls confirmed page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
-        public virtual void _4102_VerifyBackToTLevelsButtonAndReviewAndConfirmedLinksOnTheNoTLevelsQueriedPage()
+        public virtual void _4096_VerifyBackToTLevelsButtonAndReviewAndQueriedLinksOnTheNoTLevelsConfirmedPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4102_Verify Back to T Levels button and Review and Confirmed links on the No T Le" +
-                    "vels queried page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4096_Verify Back to T Levels button and Review and Queried links on the No T Leve" +
+                    "ls confirmed page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -202,31 +200,31 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 30
-testRunner.Given("I set three of the T Levels for NCFE to unconfirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I set all of the T Levels for NCFE to queried", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 31
 testRunner.And("I click on the TLevels link on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
-testRunner.And("I click the Queried T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click the Confirmed T Levels link on the T Level dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
-testRunner.And("I click the Review link on the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click the Review link on the No T Levels confirmed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
-testRunner.Then("I am navigated to the Select T Level to review page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the Review T Levels - All T Levels reviewed page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 35
-testRunner.When("I navigate back to the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I navigate back to the No T Levels confirmed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 36
-testRunner.And("I click the Confirmed link on the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click the Queried link on the No T Levels confirmed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
-testRunner.Then("I am navigated to the Confirmed T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I am navigated to the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 38
-testRunner.When("I navigate back to the No T Levels queried page from the Confirmed T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I navigate back to the No T Levels confirmed page from the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 39
 testRunner.And("I press the Back to T Levels button on the No T Levels queried page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -13,12 +13,15 @@ Given I set all of the T Levels for NCFE to confirmed
 And I click on the TLevels link on the homepage
 And I click the Queried T Levels link on the T Level dashboard
 Then I am navigated to the No T Levels queried page
-And there is a Contact Us link present on the No T Levels queried page
 When I click the TLevels breadcrumb on the No T Levels queried page
 Then I should see the TLevels dashboard page
 When I click the Queried T Levels link on the T Level dashboard
 And I click on the Home breadcrumb on the No T Levels queried page
 Then I should be navigated back to home page
+When I click on the TLevels link on the homepage
+And I click the Queried T Levels link on the T Level dashboard
+And I click the Contact Us link on the No T Levels queried page
+Then I should see the Contact Us page
 And I set all of the T Levels for NCFE to unconfirmed
 
 

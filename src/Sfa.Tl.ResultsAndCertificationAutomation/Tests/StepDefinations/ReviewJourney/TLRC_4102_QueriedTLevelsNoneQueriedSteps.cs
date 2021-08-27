@@ -60,10 +60,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
             QueriedTLevelsNoneQueriedPage.VerifyNoTLevelsQueriedPage();
         }
         
-        [Then(@"there is a Contact Us link present on the No T Levels queried page")]
-        public void ThenThereIsAContactUsLinkPresentOnTheNoTLevelsQueriedPage()
+
+        [When(@"I click the Contact Us link on the No T Levels queried page")]
+        public void WhenIClickTheContactUsLinkOnTheNoTLevelsQueriedPage()
         {
-            QueriedTLevelsNoneQueriedPage.VerifyContactUsLinkPresent();
+            QueriedTLevelsNoneQueriedPage.ClickICannotFinaATLevelLink();
+            QueriedTLevelsNoneQueriedPage.ClickContactUsLink();
         }
+
     }
 }
