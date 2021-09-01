@@ -5,7 +5,7 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
 {
-    public class QueriedTLevelsQueryDetailsPage : ElementHelper
+    public class ReviewTLevelsQueryDetailsPage : ElementHelper
     {
         private static string pageUrl { get; } = string.Concat(StartPage.StartPageUrl, "query-t-level");
         private static string pageTitle { get; } = "Query T Level – Manage T Level results – GOV.UK";

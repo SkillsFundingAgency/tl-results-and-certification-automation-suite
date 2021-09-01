@@ -85,13 +85,15 @@ testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Breadcrumb on Select Tlevel to Review page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void BreadcrumbOnSelectTlevelToReviewPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Breadcrumb on Select Tlevel to Review page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10
@@ -132,13 +134,15 @@ testRunner.Then("I should be navated back to dashboard", ((string)(null)), ((Tec
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Breadcrumb on Your Tlevel Confirmed Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void BreadcrumbOnYourTlevelConfirmedPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Breadcrumb on Your Tlevel Confirmed Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
@@ -179,13 +183,15 @@ testRunner.Then("I should be navated back to dashboard", ((string)(null)), ((Tec
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Breadcrumb on Your Tlevel Queried Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void BreadcrumbOnYourTlevelQueriedPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Breadcrumb on Your Tlevel Queried Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 22
@@ -226,13 +232,15 @@ testRunner.Then("I should be navated back to dashboard", ((string)(null)), ((Tec
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Breadcrumb on Tlevel Details Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void BreadcrumbOnTlevelDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Breadcrumb on Tlevel Details Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 28

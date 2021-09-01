@@ -76,13 +76,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewJourney
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("BackLink-Are These Details correct Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void BackLink_AreTheseDetailsCorrectPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("BackLink-Are These Details correct Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
@@ -123,13 +125,15 @@ testRunner.Then("I should be navigated back to Select T Level to review Page", (
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("BackLink-Query details Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void BackLink_QueryDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("BackLink-Query details Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 14
@@ -170,13 +174,15 @@ testRunner.Then("I should be navigated back to Are these details correct page", 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("BackLink-Query Tlevel Details Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void BackLink_QueryTlevelDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("BackLink-Query Tlevel Details Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 21

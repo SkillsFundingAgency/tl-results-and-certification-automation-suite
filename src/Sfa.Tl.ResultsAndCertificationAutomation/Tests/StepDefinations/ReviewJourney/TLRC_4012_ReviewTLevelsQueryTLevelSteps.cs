@@ -18,31 +18,31 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
         [When(@"I select Submit on the Query T Level Details page")]
         public void WhenISelectSubmitOnTheQueryTLevelDetailsPage()
         {
-            QueriedTLevelsQueryDetailsPage.ClickSubmitBtn();
+            ReviewTLevelsQueryDetailsPage.ClickSubmitBtn();
         }
         
         [Then(@"I am shown the Query T Level Details page")]
         public void ThenIAmShownTheQueryTLevelDetailsPage()
         {
-            QueriedTLevelsQueryDetailsPage.VerifyQueryTLevelDetailsPage();
+            ReviewTLevelsQueryDetailsPage.VerifyQueryTLevelDetailsPage();
         }
         
         [Then(@"when I press the Back link on the Query T Level Details page")]
         public void ThenWhenIPressTheBackLinkOnTheQueryTLevelDetailsPage()
         {
-            QueriedTLevelsQueryDetailsPage.ClickBackLink();
+            ReviewTLevelsQueryDetailsPage.ClickBackLink();
         }
         
         [Then(@"I am shown an error stating ""(.*)"" on the Query T Level Details page")]
         public void ThenIAmShownAnErrorStatingOnTheQueryTLevelDetailsPage(string ErrorMessage)
         {
-            QueriedTLevelsQueryDetailsPage.VerifyErrorMessage(ErrorMessage);
+            ReviewTLevelsQueryDetailsPage.VerifyErrorMessage(ErrorMessage);
         }
 
         [Then(@"the Query T Level Details page will display details for the T Level ""(.*)""")]
         public void ThenTheQueryTLevelDetailsPageWillDisplayDetailsForTheTLevel(string TLevel)
         {
-            QueriedTLevelsQueryDetailsPage.VerifyTLevelDetails(TLevel);
+            ReviewTLevelsQueryDetailsPage.VerifyTLevelDetails(TLevel);
         }
 
     }
