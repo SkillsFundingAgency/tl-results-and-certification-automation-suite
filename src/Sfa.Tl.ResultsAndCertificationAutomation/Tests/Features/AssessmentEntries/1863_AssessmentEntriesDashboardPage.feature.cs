@@ -118,7 +118,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 11
-testRunner.When("I click on \"Assessment entries\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Assessments\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
 testRunner.Then("I should see Assessment entry dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -162,7 +162,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 16
-testRunner.And("I click on \"Assessment entries\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Assessments\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
 testRunner.When("I click on \"Home\" in breadcrumbs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

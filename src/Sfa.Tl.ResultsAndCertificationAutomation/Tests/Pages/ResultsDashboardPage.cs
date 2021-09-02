@@ -12,8 +12,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By SuccessMsg { get; } = By.XPath("//*[@id='main-content']");
         private static string ResultsDashboardPageTitle { get; } = "Results page – Manage T Level results – GOV.UK";
-        public static By UploadResultLink { get; } = By.LinkText("Upload results file");
-        public static By SearchLearnerLink { get; } = By.LinkText("Search for a learner");
+        public static By UploadResultLink { get; } = By.LinkText("Upload multiple results");
+        public static By SearchLearnerLink { get; } = By.LinkText("Manage a result");
         // Upload results page
         private static string UploadResultsUrl { get; } = string.Concat(StartPage.StartPageUrl, "upload-results-file");
         private static string UploadResultsPageTitle { get; } = "Upload results file page – Manage T Level results – GOV.UK";

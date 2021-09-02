@@ -12,22 +12,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string AssessmentUploadUnsuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessment-entries-upload-unsuccessful");
         private static string AssessmentUploadSuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessment-entries-upload-confirmation");
         //Page Titles
-        private static string AssessmentEntriesPageTitle { get; } = "Assessment entries page – Manage T Level results – GOV.UK";
+        private static string AssessmentEntriesPageTitle { get; } = "Assessments – Manage T Level results – GOV.UK";
         private static string AssessmentEntriesUploadPageTitle { get; } = "Upload assessment entries file page – Manage T Level results – GOV.UK";
         private static string AssessmentUploadUnsucccessTitle { get; } = "Assessment entries upload unsuccessful page – Manage T Level results – GOV.UK";
         private static string AssessmentUploadSucccessTitle { get; } = "Assessment entries upload successful page – Manage T Level results – GOV.UK";
         private static string AssessmentEntriesUploadPageErrorTitle { get; } = "Error: Upload assessment entries file page – Manage T Level results – GOV.UK";
         //Page Headers
-        private static string AssessmentEntriesPageHeader { get; } = "Assessment entries";
+        private static string AssessmentEntriesPageHeader { get; } = "Assessments";
         private static string AssessmentEntriesUploadPageHeader { get; } = "Upload assessment entries file";
         private static string AssessmentUploadUnsuccessPageHeader { get; } = "Assessment entries upload unsuccessful";
         private static string AssessmentUploadSuccessPageHeader { get; } = "Assessment entries upload successful";
 
         // Objects
-        public static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
+        public static By AssessmentEntriesLink { get; } = By.LinkText("Assessments");
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-        public static By UploadAssessmentEntryLink { get; } = By.LinkText("Upload assessment entries file");
-        public static By SearchForLearnerLink { get; } = By.LinkText("Search for a learner");
+        public static By UploadAssessmentEntryLink { get; } = By.LinkText("Upload multiple assessments");
+        public static By SearchForLearnerLink { get; } = By.LinkText("Manage an assessment");
         public static By AssessmentFileUploadError { get; } = By.XPath("//a[@href='#file']");
         public static By AddOrRemoveAssessmentEntry { get; } = By.Id("coreassessmententry");
         //Upload files

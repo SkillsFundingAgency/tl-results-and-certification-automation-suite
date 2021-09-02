@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By BackLink = By.Id("backLink");
         private static By ContinueBtn { get; } = By.XPath("//button[contains(text(),'Continue')]");
         private static By SubmitBtn { get; } = By.XPath("//button[contains(text(),'Submit')]");
-        private static By AddRegistrationLink { get; } = By.XPath("//a[contains(text(),'Add a new registration')]");
+        private static By AddRegistrationLink { get; } = By.XPath("//a[contains(text(),'Register a new learner')]");
         // ULN Page
         public static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
         public static By UlnInput { get; } = By.Id("uln");

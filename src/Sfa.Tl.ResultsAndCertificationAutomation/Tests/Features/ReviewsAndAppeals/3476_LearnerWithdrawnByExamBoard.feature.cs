@@ -89,7 +89,7 @@ testRunner.And("I have created a registration which is withdrawn, where \'MathEn
                     " Standard Math-A Eng-NA\' and \'IP completed\' with a grade attached", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
-testRunner.And("I click on \"Reviews and appeals\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         

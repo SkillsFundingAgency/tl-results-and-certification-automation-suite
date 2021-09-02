@@ -9,7 +9,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     {
         private static readonly By RegistrationLink = By.XPath("//a[contains(text(),'Registrations')]");
         private static string RestrationUrl => string.Concat(StartPage.StartPageUrl, "registrations");
-        public static By UploadRegistationLink = By.XPath("//a[contains(text(),'Upload registrations')]");
+        public static By UploadRegistationLink = By.XPath("//a[contains(text(),'Upload multiple registrations')]");
         private static string UploadRegistrationUrl => string.Concat(StartPage.StartPageUrl, "upload-registrations-file");
         public static By SearchRegistrationLink = By.XPath("//a[contains(text(),'Search for a registration')]");
         public static By AddRegistrationLink = By.XPath("//a[contains(text(),'Add a new registration')]");

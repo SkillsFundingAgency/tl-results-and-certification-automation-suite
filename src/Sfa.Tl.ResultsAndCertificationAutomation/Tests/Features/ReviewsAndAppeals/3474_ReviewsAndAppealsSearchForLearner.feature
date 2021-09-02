@@ -5,7 +5,7 @@
 
 Background: 
 Given I have logged in as a "ResultsEditor" user
-And I click on "Reviews and appeals" link
+And I click on "Appeals" link
 
 @RegressionTest @ReviewsAndAppeals
 Scenario: 3474 Verify search for learner page
