@@ -319,6 +319,9 @@
     <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
       <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ReviewJourney\4047_ReviewTLevelsQuerySuccess.feature.cs">
+      <DependentUpon>4047_ReviewTLevelsQuerySuccess.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewJourney\4051_QueriedTLevelsQueriedTLevelDetails.feature.cs">
       <DependentUpon>4051_QueriedTLevelsQueriedTLevelDetails.feature</DependentUpon>
     </Compile>
@@ -480,6 +483,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ReviewJourney\4047_ReviewTLevelsQuerySuccess.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

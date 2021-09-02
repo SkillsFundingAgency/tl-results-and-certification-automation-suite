@@ -176,6 +176,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(By.XPath("//*[contains(text(),'NCFE')]")).Click();
             WebDriver.FindElement(By.XPath("//*[@id='content']/div/div[1]/form/div/input")).Click();
             PageHelper.WaitForUrl(DashboardUrl);
+
         }
     }
 }

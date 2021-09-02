@@ -65,11 +65,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
             ClickElement(backLink);
         }
 
-
         public static void VerifyErrorMessage(string ErrorMsg)
         {
             Assert.IsTrue(WebDriver.FindElement(mainErrorMesg).Text.Contains(ErrorMsg));
             Assert.IsTrue(WebDriver.FindElement(subErrorMesg).Text.Contains(ErrorMsg));
         }
+
+        public static void EnterWhatIsWrongWithThisTLevelText(string Text)
+        {
+            EnterText(textBoxElement, Text);
+            ClickSubmitBtn();
+        }
+
     }
 }
