@@ -15,7 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         // Todo: Dev should implement id.
         private static By ContinueBtn { get { return By.XPath("//button[contains(text(),'Continue')]"); } }
-        public static By AddRegistrationLink { get { return By.XPath("//a[contains(text(),'Add a new registration')]"); } }
+        public static By AddRegistrationLink { get { return By.XPath("//a[contains(text(),'Register a new learner')]"); } }
         public static By RegistrationLink { get { return By.XPath("//a[contains(text(),'Registrations')]"); } }
 
         public void NavigateToManualRegistrationNamePage()

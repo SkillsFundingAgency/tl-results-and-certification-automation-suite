@@ -14,7 +14,7 @@ And I click on the TLevels link on the homepage
 When I click the Review new T Levels link on the TLevels dashboard page
 Then the Review T Levels - All T Levels reviewed page is displayed
 When I press the confirmed T Levels link on the All T Levels reviewed page
-Then I am navigated to the Your TLevels page
+Then I am navigated to the Confirmed T Levels page
 When I navigate back to the Review T Levels - All T Levels reviewed page
 And I click the Register link on the All T Levels reviewed page
 Then I will be shown the Registrations dashboard page

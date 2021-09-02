@@ -45,7 +45,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string ErrorAreYouSureRemove = "Error: Are you sure you want to remove this T Level page – Manage T Level results – GOV.UK";
         public const string ErrorAddTlevel = "Error: Add T Levels page – Manage T Level results – GOV.UK";
         //Registration Page
-        public const string RegistrationsPageTitle = "Registrations page – Manage T Level results – GOV.UK";
+        public const string RegistrationsPageTitle = "Registrations – Manage T Level results – GOV.UK";
         public const string RegistationPageHeader = "Registrations";
         public const string UploadRegPageTitle = "Upload registrations file page – Manage T Level results – GOV.UK";
         public const string UploadRegPageHeader = "Upload registrations file";

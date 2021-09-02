@@ -133,7 +133,7 @@ testRunner.Then("the Review T Levels - All T Levels reviewed page is displayed",
 testRunner.When("I press the confirmed T Levels link on the All T Levels reviewed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
-testRunner.Then("I am navigated to the Your TLevels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I am navigated to the Confirmed T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 18
 testRunner.When("I navigate back to the Review T Levels - All T Levels reviewed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

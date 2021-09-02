@@ -20,8 +20,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string AddTlevelPageTitle = "Add T Levels page – Manage T Level results – GOV.UK";
         public const string YourProviderTitle = "Your providers list page – Manage T Level results – GOV.UK";
         public const string YourProviderHeader = "Your providers";
-        public const string FindProviderPageHead = "Find a provider";
-        public const string FindProviderPageTitle = "Find a provider page – Manage T Level results – GOV.UK";
+        public const string FindProviderPageHead = "Which provider do you want to manage?";
+        public const string FindProviderPageTitle = "Manage providers – Manage T Level results – GOV.UK";
         public const string SelectProvidersTlevelPageTitle = "Select provider’s T Levels page – Manage T Level results – GOV.UK";
         public static string ProviderTLevelPageHeader = "Provider's T Levels";
         public static string ProviderTLevelPageTitle = "Provider’s T Levels list page – Manage T Level results – GOV.UK";
