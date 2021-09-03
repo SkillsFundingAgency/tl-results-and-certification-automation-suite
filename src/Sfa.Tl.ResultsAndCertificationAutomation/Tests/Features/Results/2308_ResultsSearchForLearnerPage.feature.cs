@@ -115,7 +115,7 @@ testRunner.When("I click on \"Results\" link", ((string)(null)), ((TechTalk.Spec
 testRunner.Then("I should be navigated to Results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 12
-testRunner.When("I click on \"Search for a learner\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Manage a result\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
 testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -165,7 +165,7 @@ testRunner.When("I click on \"Results\" link", ((string)(null)), ((TechTalk.Spec
 testRunner.Then("I should be navigated to Results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 20
-testRunner.When("I click on \"Search for a learner\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Manage a result\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 21
 testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -233,7 +233,7 @@ testRunner.When("I click on \"Results\" link", ((string)(null)), ((TechTalk.Spec
 testRunner.Then("I should be navigated to Results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 34
-testRunner.When("I click on \"Search for a learner\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Manage a result\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
 testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -245,7 +245,7 @@ testRunner.When("I click on the Results breadcrumb link", ((string)(null)), ((Te
 testRunner.Then("I should be navigated to Results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 38
-testRunner.When("I click on \"Search for a learner\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Manage a result\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 39
 testRunner.And("I click on the Home breadcrumb link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

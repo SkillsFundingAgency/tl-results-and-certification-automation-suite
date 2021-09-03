@@ -28,7 +28,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewJourney
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "4002_ReviewTlevelDetails.feature"
+#line 1 "4002_4078_ReviewTlevelDetails.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -84,16 +84,16 @@ testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4002_Verify Review T Level to review page and breadcrumbs")]
+        [NUnit.Framework.DescriptionAttribute("4002_4078_Verify Review T Level to review page and breadcrumbs")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
-        public virtual void _4002_VerifyReviewTLevelToReviewPageAndBreadcrumbs()
+        public virtual void _4002_4078_VerifyReviewTLevelToReviewPageAndBreadcrumbs()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4002_Verify Review T Level to review page and breadcrumbs", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4002_4078_Verify Review T Level to review page and breadcrumbs", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -154,16 +154,18 @@ testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(nu
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4002_Verify Review T Level to review page when only one TLevel is unconfirmed")]
+        [NUnit.Framework.DescriptionAttribute("4002_4078_Verify Review T Level to review page when only one TLevel is unconfirme" +
+            "d")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
-        public virtual void _4002_VerifyReviewTLevelToReviewPageWhenOnlyOneTLevelIsUnconfirmed()
+        public virtual void _4002_4078_VerifyReviewTLevelToReviewPageWhenOnlyOneTLevelIsUnconfirmed()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4002_Verify Review T Level to review page when only one TLevel is unconfirmed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4002_4078_Verify Review T Level to review page when only one TLevel is unconfirme" +
+                    "d", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -210,8 +212,8 @@ testRunner.And("the details for the \"T Level in Agriculture, Environmental and 
 #line 31
 testRunner.When("I press the back link on the Review T Level details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
-testRunner.Then("I am navigated to the Select T Level to review page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 33
+testRunner.Then("I should see the TLevels dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 34
 testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
