@@ -21,6 +21,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public const string YourProviderTitle = "Your providers list page – Manage T Level results – GOV.UK";
         public const string YourProviderHeader = "Your providers";
         public const string FindProviderPageHead = "Which provider do you want to manage?";
+        public const string FindProviderSubPageHead = "Before you start";
+        public const string ExpectedInsetText = "Enter the provider's name";
         public const string FindProviderPageTitle = "Manage providers – Manage T Level results – GOV.UK";
         public const string SelectProvidersTlevelPageTitle = "Select provider’s T Levels page – Manage T Level results – GOV.UK";
         public static string ProviderTLevelPageHeader = "Provider's T Levels";
@@ -37,6 +39,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private readonly By SearchProvider = By.Id("search");
         public static string SearchProviderTxt = "Automation Test5";
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
+        public static By subPageHeader { get; } = By.XPath("//*[@id='main-content']//h2");
+        public static By insetTextElement { get; } = By.ClassName("govuk-label");
         public static By SelectProviderPageHeader { get; } = By.TagName("h2");
         //private readonly By Health = By.XPath("//*[contains(text(),'T Level in Health')]");
         public readonly By Legal = By.XPath("//*[contains(text(),'T Level in Legal')]");
@@ -58,6 +62,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By BcProviderTlevel = By.XPath("//a[@id='breadcrumb2']");
         public By BcYourProvider = By.XPath("//a[@id='breadcrumb1']");
         public By BcHome = By.XPath("//a[@id='breadcrumb0']");
+        private static By iCannotFindProviderLink = By.XPath("//*[contains (text(),'I cannot find a provider')]");
+        private static By confirmYourTLevelsLink = By.XPath("//*[contains (text(),'confirm your T Levels')]");
+        private static By viewExistingProvidersBtn = By.Id("viewExistingProvidersButton");
+        private static By ContactUsLink = By.XPath("//*[contains (text(),'contact us')]");
 
         public void DeleteTlevelFromDB()
         {
@@ -114,7 +122,27 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(WebDriver.Url.Contains(ProviderUrl));
             Assert.AreEqual(WebDriver.Title, FindProviderPageTitle);
             Assert.AreEqual(WebDriver.FindElement(PageHeader).Text, FindProviderPageHead);
-        } 
+            Assert.AreEqual(WebDriver.FindElement(subPageHeader).Text, FindProviderSubPageHead);
+            Assert.AreEqual(WebDriver.FindElement(iCannotFindProviderLink).Text, "I cannot find a provider");
+            Assert.AreEqual(WebDriver.FindElement(viewExistingProvidersBtn).Text, "View existing providers");
+            Assert.AreEqual(WebDriver.FindElement(insetTextElement).Text, ExpectedInsetText);
+        }
+        public static void ClickICannotFindAProviderLink()
+        {
+            ClickElement(iCannotFindProviderLink);
+        }
 
+        public static void ClickConfirmYourTLevelsLink()
+        {
+            ClickElement(confirmYourTLevelsLink);
+        }
+        public static void ClickViewExistingProvidersBtn()
+        {
+            ClickElement(viewExistingProvidersBtn);
+        }
+        public static void ClickContactUsLink()
+        {
+            ClickElement(ContactUsLink);
+        }
     }
 }

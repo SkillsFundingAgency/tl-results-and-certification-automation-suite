@@ -32,6 +32,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3168_AddAddressEnterPostcodePostcodeSearch - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3220_CheckAndSubmitCancel - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ProviderJourney\ProviderBreadcrumb - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2694_LearnerHasLearnerAchievedMinEnglishMathsPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2801_HasLearnerAchievedEnglishMaths(SEND) - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2843_IPStatusUpdatedConfirmationPage - Copy.feature.cs" />
@@ -307,6 +308,9 @@
     <Compile Update="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit.feature.cs">
       <DependentUpon>3170_AddAddressCheckAndSubmit.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\ProviderJourney\3988_ProviderBreadcrumb.feature.cs">
+      <DependentUpon>3988_ProviderBreadcrumb.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\Providers\2695_LearnerSearchForALearnerPage.feature.cs">
       <DependentUpon>2695_LearnerSearchForALearnerPage.feature</DependentUpon>
     </Compile>
@@ -467,6 +471,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\ProviderJourney\3988_ProviderBreadcrumb.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

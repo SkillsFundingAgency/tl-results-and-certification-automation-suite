@@ -31,8 +31,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string AccessibilityUrl = "https://www.gov.uk/help/accessibility-statement";
         public const string TLevelsPageHeader = "Select a T Level to review";
         public const string TLevelsPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
-        public const string ProviderPageHeader = "Find a provider";
-        public const string ProviderPageTitle = "Find a provider page – Manage T Level results – GOV.UK";
+        public const string ProviderPageHeader = "Which provider do you want to manage?";
+        public const string ProviderPageTitle = "Manage providers – Manage T Level results – GOV.UK";
         public const string PrivacyPageTitle = "Privacy policy page – Manage T Level results – GOV.UK";
         public const string UserGuideTitle = "User guide page – Manage T Level results – GOV.UK";
         //Reviewer Error Page Titles

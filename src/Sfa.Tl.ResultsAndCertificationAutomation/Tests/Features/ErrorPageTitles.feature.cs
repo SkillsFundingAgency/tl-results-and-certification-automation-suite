@@ -77,13 +77,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Error Title for Select Tlevel to Review Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void ErrorTitleForSelectTlevelToReviewPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error Title for Select Tlevel to Review Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
@@ -125,13 +127,15 @@ testRunner.Then("I should see \'Error: Select a T Level to review page – Manag
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Error Title for Are these details correct Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void ErrorTitleForAreTheseDetailsCorrectPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error Title for Are these details correct Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 14
@@ -176,13 +180,15 @@ testRunner.Then("I shoud see \'Error: Are these details correct page – Manage 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Error Title for Query T Level details Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void ErrorTitleForQueryTLevelDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error Title for Query T Level details Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 22
