@@ -18,7 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By ChooseFile = By.Id("file");
         public static By SubmitFileBtn = By.XPath("//button[contains(text(),'Submit')]");
         public static By BacktoRegistrationLink = By.XPath("//a[contains(text(),'Back to registrations')]");
-        private static string RegistrationUploadSuccessUrl => string.Concat(StartPage.StartPageUrl, "registrations-upload-successful");
+        private static string RegistrationUploadSuccessUrl => string.Concat(StartPage.StartPageUrl, "upload-registrations-file-success");
         private static string RegistrationUploadUnSuccessUrl => string.Concat(StartPage.StartPageUrl, "registrations-upload-unsuccessful");
         public static string UploadValidFile = "RegistrationsValidData.csv";
         public static string UploadValidFileSingle = "RegistrationsValidDataSingle.csv";

@@ -17,7 +17,7 @@ Then I will be shown the Assessments Upload success page
 Given I navigate to the Results Search for a learner page
 When I click on "Results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 
 
@@ -53,7 +53,7 @@ Examples:
 Scenario: 2311_Results learners page for a registration with an assessment entry and a specialism is added
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
-And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
+And the text below the Core will display the assessment series as "Autumn 2021" and "Not received"
 And "Add result" link is displayed
 And I cleared the data in DB
 Examples: 
@@ -65,7 +65,7 @@ Scenario: 2311_Results learners page for a registration with an assessment entry
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
 And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
-And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
+And the text below the Core will display the assessment series as "Autumn 2021" and "Not received"
 And there will no text below the Specialism
 And I cleared the data in DB
 Examples: 

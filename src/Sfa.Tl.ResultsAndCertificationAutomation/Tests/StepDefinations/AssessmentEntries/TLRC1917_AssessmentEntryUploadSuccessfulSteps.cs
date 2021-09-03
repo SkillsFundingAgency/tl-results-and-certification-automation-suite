@@ -13,5 +13,35 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             VerifyAssessmentUploadSuccessPage();
             SqlQueries.DeleteFromRegistrationTables();
         }
+
+        [When(@"I click the Upload another file button")]
+        public void WhenIClickTheUploadAnotherFileButton()
+        {
+            ClickUploadAnotherFileBtn();
+        }
+
+        [When(@"I click the Back to home button")]
+        public void WhenIClickTheBackToHomeButton()
+        {
+            ClickBacktoHomeBtn();
+        }
+
+        [When(@"I click the manage individual assessments link")]
+        public void WhenIClickTheManageIndividualAssessmentsLink()
+        {
+            ClickManageIndividualAssessmentsLink();
+        }
+
+        [When(@"I click the upload another multiple assessments file link")]
+        public void WhenIClickTheUploadAnotherMultipleAssessmentsFileLink()
+        {
+            ClickUploadAnotherFileLink();
+        }
+
+        [When(@"I click the add results link")]
+        public void WhenIClickTheAddResultsLink()
+        {
+            ClickAddResultsLink();
+        }
     }
 }

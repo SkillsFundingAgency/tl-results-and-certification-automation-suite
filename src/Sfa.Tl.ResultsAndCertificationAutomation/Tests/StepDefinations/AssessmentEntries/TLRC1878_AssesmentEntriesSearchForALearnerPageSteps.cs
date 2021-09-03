@@ -8,12 +8,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
     [Binding]
     public class TLRC1878_AssesmentEntriesSearchForALearnerPageSteps 
     {
+        [Then(@"the Assessments Search for a learner page is shown")]
         [Then(@"the heading, page title and URL will be as expected")]
         public void ThenTheHeadingPageTitleAndURLWillBeAsExpected()
         {
             AssessmentEntriesSearchForLearnerPage.VerifyAssessmentEntriesSearchForLearnerPage();
         }
-        
+
         [Then(@"the expected page text will be displayed")]
         public void ThenTheExpectedPageTextWillBeDisplayed()
         {

@@ -112,7 +112,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Given(@"I navigate back to the Results Learners Results page from the Results dashboard using (.*) and click the Home breadcrumb")]
         public void GivenINavigateBackToTheResultsLearnersResultsPageFromTheResultsDashboardUsingAndClickTheHomeBreadcrumb(string ULN)
         {
-            AssessmentEntriesPage.ClickLinkByLabel("Search for a learner");
+            AssessmentEntriesPage.ClickLinkByLabel("Manage a result");
             ResultsSearchForALearnerPage.EnterULN(ULN);
         }
 
