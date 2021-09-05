@@ -39,6 +39,8 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2843_IPStatusUpdatedConfirmationPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2848_LearnerLinkingEnglishMathsAndIPpage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Registrations\RegistrationsPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Results\2265_ResultsUploadSuccess - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewJourney\3999_TLevelDashboard - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewJourney\4000_ReviewTlevelMoreThanOneTLevel - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewJourney\4002_ReviewTlevelDetails - Copy.feature.cs" />
@@ -327,6 +329,12 @@
     <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
       <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\Features\Registrations\4174_RegistrationsUploadSuccessNavigation.feature.cs">
+      <DependentUpon>4174_RegistrationsUploadSuccessNavigation.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\Results\4172_ResultsUploadSuccessNavigation.feature.cs">
+      <DependentUpon>4172_ResultsUploadSuccessNavigation.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\ReviewJourney\4047_ReviewTLevelsQuerySuccess.feature.cs">
       <DependentUpon>4047_ReviewTLevelsQuerySuccess.feature</DependentUpon>
     </Compile>
@@ -499,6 +507,14 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\Registrations\4174_RegistrationsUploadSuccessNavigation.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\Results\4172_ResultsUploadSuccessNavigation.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

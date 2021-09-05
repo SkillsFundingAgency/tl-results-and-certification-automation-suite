@@ -34,6 +34,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By BackToResultsBtn { get; } = By.Id("backToResultsButton");
         public static string ResultsSuccessCountMsg { get; } = "You successfully sent results for 3 registrations.";
         public static string ResultSingleSuccessMsg { get; } = "You successfully sent results data for one registration.";
+        public static By manageIndividualResultsLink { get; } = By.XPath("//*[contains (text(),'manage individual results')]");
+        public static By uploadAnotherMultipleResultsFileLink { get; } = By.XPath("//*[contains (text(),'upload another multiple results file')]");
+        public static By appealLink { get; } = By.XPath("//*[contains (text(),'appeal')]");
+        public static By BackToHomeBtn { get; } = By.Id("backToHomeButton");
+        public static By uploadAnotherFileBtn = By.Id("uploadAnotherFileButton");
+
         //Learner result page
         private static string LearnerResultPageTitle { get; } = "Learner’s results page – Manage T Level results – GOV.UK";
         private static string LearnerResultUrl { get; } = "learners-results";
@@ -135,6 +141,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickSearchForALearnerLink()
         {
             ClickElement(SearchLearnerLink);
+        }
+
+        public static void ClickBacktoHomeBtn()
+        {
+            ClickElement(BackToHomeBtn);
+        }
+
+        public static void ClickUploadAnotherFileBtn()
+        {
+            ClickElement(uploadAnotherFileBtn);
+        }
+        public static void ClickAppealLink()
+        {
+            ClickElement(appealLink);
+        }
+        public static void ClickUploadAnotherFileLink()
+        {
+            ClickElement(uploadAnotherMultipleResultsFileLink);
+        }
+        public static void ClickManageIndividualResultsLink()
+        {
+            ClickElement(manageIndividualResultsLink);
         }
     }
 }

@@ -31,6 +31,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string UploadStage4File = "RegistrationsInvalidDataStage4.csv";
         public static string Stage4Errors = string.Concat("Data\\", "Stage4ValidationErrors.csv");
         public static string Stage4WithdrawnErrorFile = string.Concat("Data\\", "RegistrationStage4ErrorForWithdrawn.csv");
+        public static By manageIndividualRegistrationsLink { get; } = By.XPath("//*[contains (text(),'manage individual registrations')]");
+        public static By uploadAnotherMultipleRegistrationsFileLink { get; } = By.XPath("//*[contains (text(),'upload another multiple registrations file')]");
+        public static By assessmentPeriodsLink { get; } = By.XPath("//*[contains (text(),'assessment periods')]");
+        public static By BackToHomeBtn { get; } = By.Id("homeButton");
+        public static By uploadAnotherFileBtn = By.Id("uploadAnotherButton");
 
         public static void ClickRegLink()
         {
@@ -67,6 +72,27 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(RegistrationUploadUnSuccessUrl, WebDriver.Url);
             Assert.AreEqual(Constants.RegistrationUploadUnSuccessTitle, WebDriver.Title);
             Assert.AreEqual(Constants.RegistrationUnSuccessHeader, WebDriver.FindElement(PageHeader).Text);
+        }
+        public static void ClickBacktoHomeBtn()
+        {
+            ClickElement(BackToHomeBtn);
+        }
+
+        public static void ClickUploadAnotherFileBtn()
+        {
+            ClickElement(uploadAnotherFileBtn);
+        }
+        public static void ClickAssessmentPeriodsLink()
+        {
+            ClickElement(assessmentPeriodsLink);
+        }
+        public static void ClickUploadAnotherFileLink()
+        {
+            ClickElement(uploadAnotherMultipleRegistrationsFileLink);
+        }
+        public static void ClickManageIndividualRegistrationsLink()
+        {
+            ClickElement(manageIndividualRegistrationsLink);
         }
     }
 }
