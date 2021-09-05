@@ -127,13 +127,15 @@ testRunner.Then("Registration page should open", ((string)(null)), ((TechTalk.Sp
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Upload Registration file")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Registrations")]
         public virtual void UploadRegistrationFile()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Registrations"};
+                    "Registrations",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload Registration file", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 15

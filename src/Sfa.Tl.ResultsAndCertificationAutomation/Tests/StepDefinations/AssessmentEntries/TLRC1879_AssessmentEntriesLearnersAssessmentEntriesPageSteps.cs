@@ -23,7 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             UploadFile(RegistrationsPage.ChooseFile, "1879AssessmentEntrySuccessfulData.csv");
             CommonPage.ClickButtonByLabel("Submit");
             VerifyAssessmentUploadSuccessPage();
-            ClickBacktoAssessmentEntriesButton();
+            ClickManageIndividualAssessmentsLink();
         }
 
 
@@ -154,5 +154,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyAddRemoveLinkText(LinkText);
         }
+
+        [Given(@"I am on the Search for a learner page and enter the (.*)")]
+        public void GivenIAmOnTheSearchForALearnerPageAndEnterThe(string ULN)
+        {
+            AssessmentEntriesSearchForLearnerPage.EnterULN(ULN);
+        }
+
     }
 }

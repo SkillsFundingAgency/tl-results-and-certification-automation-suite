@@ -28,8 +28,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ResultsUploadBlockAppealErrors = string.Concat("Data\\", "BlockResultUpdateForAppeal.csv");
         public static string ResultsUploadBlockFinalErrors = string.Concat("Data\\", "BlockResultUpdateForFinal.csv");
         // Upload Results success page
-        private static string ResultsUploadSuccessMsg { get; } = "Results upload successful";
-        private static string ResultsUploadSuccessPageTitle { get; } = "Results upload confirmation page – Manage T Level results – GOV.UK";
+        private static string ResultsUploadSuccessMsg { get; } = "Results uploaded";
+        private static string ResultsUploadSuccessPageTitle { get; } = "Results upload success – Manage T Level results – GOV.UK";
         private static string ResultsUploadSuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-upload-confirmation");
         public static By BackToResultsBtn { get; } = By.Id("backToResultsButton");
         public static string ResultsSuccessCountMsg { get; } = "You successfully sent results for 3 registrations.";

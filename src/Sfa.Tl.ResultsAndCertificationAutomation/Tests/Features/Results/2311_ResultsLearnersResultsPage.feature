@@ -14,8 +14,8 @@ And I am on Assessment entries upload page
 When I upload "2311AssessmentData.csv" file
 And I click on "Submit" button
 Then I will be shown the Assessments Upload success page
-Given I navigate to the Results Search for a learner page
-When I click on "Results" link
+##Given I navigate to the Results Search for a learner page
+Given I click on "add results" link
 Then I should be navigated to Results dashboard page
 When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page

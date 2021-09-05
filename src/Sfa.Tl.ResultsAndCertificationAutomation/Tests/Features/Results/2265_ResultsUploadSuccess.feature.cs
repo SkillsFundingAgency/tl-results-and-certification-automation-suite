@@ -153,9 +153,6 @@ testRunner.Then("I should see results upload success page", ((string)(null)), ((
 #line 22
 testRunner.And("I should see number of records been uploaded message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
-testRunner.And("I should go back to results dashboad on clicking Back to Results button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 24
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -232,9 +229,6 @@ testRunner.Then("I should see results upload success page", ((string)(null)), ((
 #line hidden
 #line 39
 testRunner.And("I should see single record has been uploaded message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 40
-testRunner.And("I should go back to results dashboad on clicking Back to Results button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 41
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
