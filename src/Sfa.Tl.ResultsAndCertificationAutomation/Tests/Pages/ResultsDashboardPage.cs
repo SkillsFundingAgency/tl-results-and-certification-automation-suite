@@ -16,8 +16,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By SearchLearnerLink { get; } = By.LinkText("Manage a result");
         // Upload results page
         private static string UploadResultsUrl { get; } = string.Concat(StartPage.StartPageUrl, "upload-results-file");
-        private static string UploadResultsPageTitle { get; } = "Upload results file page – Manage T Level results – GOV.UK";
-        private static string UploadResultsErrorPageTitle { get; } = "Error: Upload results file page – Manage T Level results – GOV.UK";
+        private static string UploadResultsPageTitle { get; } = "Upload multiple results – Manage T Level results – GOV.UK";
+        private static string UploadResultsErrorPageTitle { get; } = "Error: Upload multiple results – Manage T Level results – GOV.UK";
         private static string ResultsUploadUnsuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-upload-unsuccessful");
         private static string ResultsUploadUnsuccessTitle { get; } = "Results upload unsuccessful page – Manage T Level results – GOV.UK";
         public static string ResultsUploadStage2InvalidHeaderErrors = string.Concat("Data\\", "ResultsErrorInvalidHeader.csv");

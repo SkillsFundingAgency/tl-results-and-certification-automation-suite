@@ -13,10 +13,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string AssessmentUploadSuccessPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessment-entries-upload-confirmation");
         //Page Titles
         private static string AssessmentEntriesPageTitle { get; } = "Assessments – Manage T Level results – GOV.UK";
-        private static string AssessmentEntriesUploadPageTitle { get; } = "Upload assessment entries file page – Manage T Level results – GOV.UK";
+        private static string AssessmentEntriesUploadPageTitle { get; } = "Upload multiple assessments – Manage T Level results – GOV.UK";
         private static string AssessmentUploadUnsucccessTitle { get; } = "Assessment entries upload unsuccessful page – Manage T Level results – GOV.UK";
         private static string AssessmentUploadSucccessTitle { get; } = "Assessments upload success – Manage T Level results – GOV.UK";
-        private static string AssessmentEntriesUploadPageErrorTitle { get; } = "Error: Upload assessment entries file page – Manage T Level results – GOV.UK";
+        private static string AssessmentEntriesUploadPageErrorTitle { get; } = "Error: Upload multiple assessments – Manage T Level results – GOV.UK";
         //Page Headers
         private static string AssessmentEntriesPageHeader { get; } = "Assessments";
         private static string AssessmentEntriesUploadPageHeader { get; } = "Upload assessment entries file";

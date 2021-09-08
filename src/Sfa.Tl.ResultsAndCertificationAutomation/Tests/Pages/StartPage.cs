@@ -46,7 +46,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string RegistrationDownloadLinkText = "Download registrations data format and rules guide";
         public static string AssessmentEntriesDownloadLinkText = "Download assessment entries data format and rules guide";
         public static string ResultsDownloadLinkText = "Download results data format and rules guide";
-        public static By UserGuideLink = By.XPath("//a[contains(text(),'Manage T Level results user guide')]");
+        public static By UserGuideLink = By.XPath("//a[contains(text(),'T Level data format and rules')]");
         public static By ContactLink = By.XPath("//a[contains(text(),'Contact')]");
         public void CheckCookies()
         {
