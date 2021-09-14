@@ -11,7 +11,7 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see Upload success page
 When I click the Upload another file button
 Then I am shown the Assessment entries upload page
@@ -24,7 +24,7 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see Upload success page
 When I click the Back to home button
 Then I should be navigated back to home page
@@ -37,7 +37,7 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see Upload success page
 When I click the manage individual assessments link
 Then the Assessments Search for a learner page is shown
@@ -51,7 +51,7 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see Upload success page
 When I click the upload another multiple assessments file link
 Then I am shown the Assessment entries upload page
@@ -64,7 +64,7 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see Upload success page
 When I click the add results link
 Then I should be navigated to Results dashboard page

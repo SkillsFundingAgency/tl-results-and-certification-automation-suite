@@ -22,6 +22,6 @@ And I have a registration in Withdrawn state
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntryStage3ValidationsWithdrawnReg.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I download the error file and verify
 Then I should see validation error for withdrawn registration

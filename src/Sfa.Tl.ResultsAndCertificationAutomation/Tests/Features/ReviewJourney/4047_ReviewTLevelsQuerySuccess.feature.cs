@@ -88,11 +88,13 @@ testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(nu
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("4047_Verify the Query T Level success page and Back to TLevels button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void _4047_VerifyTheQueryTLevelSuccessPageAndBackToTLevelsButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -158,11 +160,13 @@ testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(nu
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("4047_Verify the Query T Level success page and Back to home button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void _4047_VerifyTheQueryTLevelSuccessPageAndBackToHomeButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

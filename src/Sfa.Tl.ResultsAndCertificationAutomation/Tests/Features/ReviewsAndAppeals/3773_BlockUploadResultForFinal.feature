@@ -13,7 +13,7 @@ And I have a registration in Final state for this Uln
 | 9900000302 |
 And I am on results upload page
 And I upload "3773BlockResultForFinal.csv" result file
-And I click on "Submit" button
+And I click on "Upload" button
 When I download the Results error file and verify
 Then I should see update is blocked for final in the results downloaded file
 And I cleared the data in DB

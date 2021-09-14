@@ -7,7 +7,7 @@ Background: Log in as user with Reviewer role that has email attached to allow f
 Given I have logged in as a "TLevelUser" user
 And I set all of the T Levels for NCFE to unconfirmed
 
-@RegressionTest @ReviewJourney
+@Ignore @RegressionTest @ReviewJourney
 Scenario: 4047_Verify the Query T Level success page and Back to TLevels button
 Given I click on the TLevels link on the homepage
 When I click the Review new T Levels link on the TLevels dashboard page
@@ -21,7 +21,7 @@ Then I should see the TLevels dashboard page
 And I set all of the T Levels for NCFE to unconfirmed
 
 
-@RegressionTest @ReviewJourney
+@Ignore @RegressionTest @ReviewJourney
 Scenario: 4047_Verify the Query T Level success page and Back to home button
 Given I click on the TLevels link on the homepage
 When I click the Review new T Levels link on the TLevels dashboard page

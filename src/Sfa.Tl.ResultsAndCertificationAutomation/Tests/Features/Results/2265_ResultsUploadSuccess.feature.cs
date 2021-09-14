@@ -133,7 +133,7 @@ testRunner.And("I am on Assessment entries upload page", ((string)(null)), ((Tec
 testRunner.When("I upload \"AssessmentEntrySuccessfulData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
 testRunner.And("I navigated Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -145,7 +145,7 @@ testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecF
 testRunner.And("I upload \"ResultsUploadSuccess.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
 testRunner.Then("I should see results upload success page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -210,7 +210,7 @@ testRunner.And("I am on Assessment entries upload page", ((string)(null)), ((Tec
 testRunner.When("I upload \"AssessmentEntrySuccessfulData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
 testRunner.And("I navigated Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -222,7 +222,7 @@ testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecF
 testRunner.And("I upload \"ResultsUploadSuccessSingle.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 38
 testRunner.Then("I should see results upload success page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

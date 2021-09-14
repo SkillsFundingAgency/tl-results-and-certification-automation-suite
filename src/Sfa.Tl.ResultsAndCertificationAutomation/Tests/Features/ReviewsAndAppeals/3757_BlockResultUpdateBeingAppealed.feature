@@ -13,7 +13,7 @@ And I have a registration in Appealed state for this Uln
 | 9900000301 |
 And I am on results upload page
 And I upload "3757BlockResultUpdate.csv" result file
-And I click on "Submit" button
+And I click on "Upload" button
 When I download the Results error file and verify
 Then I should see update is blocked validation error in the results downloaded file
 And I cleared the data in DB

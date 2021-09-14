@@ -9,18 +9,18 @@ And I am on results upload page
 
 @RegressionTest @ResultsUpload
 Scenario: Verify mandatory field validation
-When I click on "Submit" button
+When I click on "Upload" button
 Then I should see following error message in Results page
 | Error message              |
-| Please select results file |
+| Select a file to upload |
 And I should see the following error summary message in Results page
 | Error summary				 |
-| Please select results file |
+| Select a file to upload |
 
 @RegressionTest @ResultsUpload
 Scenario: Upload non csv file
 When I upload "AssessmentEntryStage1InvalidFileType.xlsx" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see following error message in Results page
 | Error message                                 |
 | File extension not valid - must be a CSV file |
@@ -31,7 +31,7 @@ And I should see the following error summary message in Results page
 @RegressionTest @ResultsUpload
 Scenario: Upload file with max number of rows
 When I upload "AssessmentEntryStage1MaxNoOfRows.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see following error message in Results page
 | Error message                                                      |
 | File must contain results for between one and 10,000 registrations |
@@ -42,7 +42,7 @@ And I should see the following error summary message in Results page
 @RegressionTest @ResultsUpload
 Scenario: Upload file more than 5MB
 When I upload "RegistrationsStage1MaxFileSize.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see following error message in Results page
 | Error message                                  |
 | File size too large – must be no more than 5MB |

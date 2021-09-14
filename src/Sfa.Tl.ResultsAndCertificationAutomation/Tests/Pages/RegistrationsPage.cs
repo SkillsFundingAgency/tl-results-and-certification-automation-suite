@@ -16,8 +16,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         //upload Registrations
         public static By ChooseFile = By.Id("file");
-        public static By SubmitFileBtn = By.XPath("//button[contains(text(),'Submit')]");
-        public static By BacktoRegistrationLink = By.XPath("//a[contains(text(),'Back to registrations')]");
+        public static By SubmitFileBtn = By.XPath("//button[contains(text(),'Upload')]");
+        public static By BacktoRegistrationLink = By.Id("uploadAnotherButton");
+        public static By BacktoRegistrationBtn = By.XPath("//a[contains(text(),'Back to registrations')]");
         private static string RegistrationUploadSuccessUrl => string.Concat(StartPage.StartPageUrl, "upload-registrations-file-success");
         private static string RegistrationUploadUnSuccessUrl => string.Concat(StartPage.StartPageUrl, "registrations-upload-unsuccessful");
         public static string UploadValidFile = "RegistrationsValidData.csv";
@@ -25,7 +26,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string UploadValidUpdatedFile = "RegistrationsUpdateValidData.csv";
         public static string UploadStage2File = "RegistrationsInvalidDataStage2.csv";
         public static string Stage2Errors = string.Concat("Data\\", "Stage2Validations.csv");
-        public static By DownloadErrorLink = By.XPath("//a[contains(text(),'Download error report')]");
+        public static By DownloadErrorLink = By.XPath("//a[contains(text(),'error report')]");
         public static string UploadStage3File = "RegistrationsInvalidDataStage3.csv";
         public static string Stage3Errors = string.Concat("Data\\", "Stage3ValidationErrors.csv");
         public static string UploadStage4File = "RegistrationsInvalidDataStage4.csv";

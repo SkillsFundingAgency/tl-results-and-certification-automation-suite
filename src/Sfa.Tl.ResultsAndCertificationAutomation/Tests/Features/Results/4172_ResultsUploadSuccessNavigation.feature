@@ -13,11 +13,11 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadSuccess.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see results upload success page
 And I should see number of records been uploaded message
 When I click the Upload another file button on the results upload success page
@@ -31,11 +31,11 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadSuccess.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see results upload success page
 And I should see number of records been uploaded message
 When I click the Back to home button on the results upload success page
@@ -49,11 +49,11 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadSuccess.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see results upload success page
 And I should see number of records been uploaded message
 And I cleared the data in DB
@@ -66,11 +66,11 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadSuccess.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see results upload success page
 And I should see number of records been uploaded message
 When I click the upload another multiple registrations file link on the results upload success page
@@ -84,11 +84,11 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadSuccess.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see results upload success page
 And I should see number of records been uploaded message
 When I click the appeal link on the results upload success page

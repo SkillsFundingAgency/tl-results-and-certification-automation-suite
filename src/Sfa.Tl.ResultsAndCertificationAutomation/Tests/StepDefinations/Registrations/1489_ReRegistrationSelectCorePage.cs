@@ -26,7 +26,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
             RegistrationsManualPage.AddNewRegistrations();
             RegistrationsManualPage.CreateRegistrationWithSpecialism(Constants.ManualRegULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
             RegistrationsManualPage.ClickSubmit();
-            ClickElement(RegistrationsPage.BacktoRegistrationLink);
+            ClickElement(RegistrationsPage.BacktoRegistrationBtn);
             ClickElement(RegistrationsSearchPage.SearchRegistrationLink);
             RegistrationsSearchPage.SearchForULN();
             RegistrationsSearchPage.VerifySearchResultPage();

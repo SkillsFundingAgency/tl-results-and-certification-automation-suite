@@ -71,7 +71,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         [Given(@"I click on back to registration link")]
         public void GivenIClickOnBackToRegistrationLink()
         {
-            ClickElement(RegistrationsPage.BacktoRegistrationLink);
+            ClickElement(RegistrationsPage.BacktoRegistrationBtn);
         }
         
         [Given(@"I click on Search for registrations link")]

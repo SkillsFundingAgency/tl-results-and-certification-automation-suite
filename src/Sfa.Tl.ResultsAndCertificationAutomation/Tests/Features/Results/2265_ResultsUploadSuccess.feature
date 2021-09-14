@@ -13,11 +13,11 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadSuccess.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see results upload success page
 And I should see number of records been uploaded message
 ##And I should go back to results dashboad on clicking Back to Results button
@@ -30,11 +30,11 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadSuccessSingle.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see results upload success page
 And I should see single record has been uploaded message
 ##And I should go back to results dashboad on clicking Back to Results button

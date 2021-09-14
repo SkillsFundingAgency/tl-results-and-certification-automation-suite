@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string UploadResultsPageTitle { get; } = "Upload multiple results – Manage T Level results – GOV.UK";
         private static string UploadResultsErrorPageTitle { get; } = "Error: Upload multiple results – Manage T Level results – GOV.UK";
         private static string ResultsUploadUnsuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-upload-unsuccessful");
-        private static string ResultsUploadUnsuccessTitle { get; } = "Results upload unsuccessful page – Manage T Level results – GOV.UK";
+        private static string ResultsUploadUnsuccessTitle { get; } = "Results upload error – Manage T Level results – GOV.UK";
         public static string ResultsUploadStage2InvalidHeaderErrors = string.Concat("Data\\", "ResultsErrorInvalidHeader.csv");
         public static string ResultsUploadStage2NoDataErrors = string.Concat("Data\\", "ResultsErrorNoData.csv");
         public static string ResultsUploadStage2Errors = string.Concat("Data\\", "ResultsErrorStage2Validations.csv");
@@ -86,7 +86,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(UploadResultsUrl, WebDriver.Url);
             Assert.AreEqual(UploadResultsPageTitle, WebDriver.Title);
-            Assert.AreEqual("Upload results file", WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual("Upload multiple results", WebDriver.FindElement(PageHeader).Text);
         }
         public static void VerifyUploadResultsErrorPage()
         {
@@ -97,7 +97,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(ResultsUploadUnsuccessUrl, WebDriver.Url);
             Assert.AreEqual(ResultsUploadUnsuccessTitle, WebDriver.Title);
-            Assert.AreEqual("Results upload unsuccessful", WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual("There is a problem", WebDriver.FindElement(PageHeader).Text);
         }
         public static void VerifyUploadResultsSuccessPage()
         {

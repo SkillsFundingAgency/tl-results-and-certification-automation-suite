@@ -132,7 +132,7 @@ testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecF
 testRunner.And("I upload \"3757BlockResultUpdate.csv\" result file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
 testRunner.When("I download the Results error file and verify", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
