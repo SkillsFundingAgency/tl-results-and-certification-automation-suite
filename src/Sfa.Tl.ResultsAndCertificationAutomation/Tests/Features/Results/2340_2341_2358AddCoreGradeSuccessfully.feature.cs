@@ -112,7 +112,7 @@ testRunner.And("I am on Assessment entries upload page", ((string)(null)), ((Tec
 testRunner.When("I upload \"2311AssessmentData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
 testRunner.Then("I will be shown the Assessments Upload success page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

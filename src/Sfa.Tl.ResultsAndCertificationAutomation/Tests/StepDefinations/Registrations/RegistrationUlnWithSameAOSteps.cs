@@ -9,7 +9,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
         [When(@"I click on back to registration link")]
         public void WhenIClickOnBackToRegistrationLink()
         {
-            ClickElement(RegistrationsPage.BacktoRegistrationLink);
+            ClickElement(RegistrationsPage.BacktoRegistrationBtn);
             AddRegistrations();
         }
         

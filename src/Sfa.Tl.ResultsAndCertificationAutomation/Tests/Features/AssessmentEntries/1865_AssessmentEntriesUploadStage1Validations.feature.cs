@@ -121,19 +121,19 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 12
-testRunner.When("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
                 table1.AddRow(new string[] {
-                            "Please select assessment entries file"});
+                            "Select a file to upload"});
 #line 13
 testRunner.Then("I should see following error message", ((string)(null)), table1, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
                 table2.AddRow(new string[] {
-                            "Please select assessment entries file"});
+                            "Select a file to upload"});
 #line 16
 testRunner.And("I should see the following error summary message", ((string)(null)), table2, "And ");
 #line hidden
@@ -179,7 +179,7 @@ this.FeatureBackground();
 testRunner.When("I upload \"AssessmentEntryStage1InvalidFileType.xlsx\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
@@ -237,7 +237,7 @@ this.FeatureBackground();
 testRunner.When("I upload \"AssessmentEntryStage1MaxNoOfRows.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});

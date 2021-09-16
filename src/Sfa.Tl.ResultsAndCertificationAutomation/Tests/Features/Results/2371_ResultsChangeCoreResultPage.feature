@@ -12,7 +12,7 @@ And I upload "2311RegistrationsData.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "2311AssessmentData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I will be shown the Assessments Upload success page
 ##Given I navigate to the Results Search for a learner page
 When I click on "add results" link

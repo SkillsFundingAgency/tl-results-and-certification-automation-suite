@@ -21,7 +21,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             ClickElement(UploadAssessmentEntryLink);
             VerifyAssessmentEntriesUploadPage();
             UploadFile(RegistrationsPage.ChooseFile, "1879AssessmentEntrySuccessfulData.csv");
-            CommonPage.ClickButtonByLabel("Submit");
+            ClickElement(RegistrationsPage.SubmitFileBtn);
             VerifyAssessmentUploadSuccessPage();
             ClickManageIndividualAssessmentsLink();
         }
