@@ -3,14 +3,14 @@
 	I need the Error on a given page to be included on the Page Title
 	So that when using Screen Reader functionality I am aware of the error
 
-@RegressionTest @ReviewJourney
+@RegressionTest @ReviewJourney @Ignore
 Scenario: Error Title for Select Tlevel to Review Page
 Given I have logged in as a "Reviewer" user
 When I click on TLevel link
 And I click on Continue button
 Then I should see 'Error: Select a T Level to review page – Manage T Level results – GOV.UK' in page title
 
-@RegressionTest @ReviewJourney
+@RegressionTest @ReviewJourney @Ignore
 Scenario: Error Title for Are these details correct Page
 Given I have logged in as a "Reviewer" user
 When I click on TLevel link
@@ -18,7 +18,7 @@ And I am on Are these correct page
 And I click on Continue button
 Then I shoud see 'Error: Are these details correct page – Manage T Level results – GOV.UK' in page title
 
-@RegressionTest @ReviewJourney
+@RegressionTest @ReviewJourney @Ignore
 Scenario: Error Title for Query T Level details Page
 Given I have logged in as a "Reviewer" user
 When I click on TLevel link

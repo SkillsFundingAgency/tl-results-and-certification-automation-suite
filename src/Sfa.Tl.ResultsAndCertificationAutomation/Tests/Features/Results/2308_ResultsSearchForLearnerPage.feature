@@ -9,7 +9,7 @@ Scenario: 2308_Verify Results Search for a Learner page when logged in as Result
 Given I have logged in as a "ResultsEditor" user
 When I click on "Results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 
 @RegressionTest @Results
@@ -17,7 +17,7 @@ Scenario: 2308_validate the error messages on the Results Search for a Learner p
 Given I have logged in as a "ResultsEditor" user
 When I click on "Results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 When I enter an invalid ULN as "123456789"
 Then I will see an error message stating Invalid ULN
@@ -31,11 +31,11 @@ Scenario: 2308_validate breadcrumbs on the Results Search for a Learner page
 Given I have logged in as a "ResultsEditor" user
 When I click on "Results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 When I click on the Results breadcrumb link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 And I click on the Home breadcrumb link
 Then I am taken to the home page
 

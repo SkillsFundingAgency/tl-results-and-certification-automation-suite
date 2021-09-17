@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By BackLink = By.Id("backLink");
         private static By ContinueBtn { get; } = By.XPath("//button[contains(text(),'Continue')]");
         private static By SubmitBtn { get; } = By.XPath("//button[contains(text(),'Submit')]");
-        private static By AddRegistrationLink { get; } = By.XPath("//a[contains(text(),'Add a new registration')]");
+        private static By AddRegistrationLink { get; } = By.XPath("//a[contains(text(),'Register a new learner')]");
         // ULN Page
         public static string UlnUrl { get; } = string.Concat(StartPage.StartPageUrl, "add-registration-unique-learner-number");
         public static By UlnInput { get; } = By.Id("uln");
@@ -79,7 +79,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         //Registration Search Page
         public static By BackToRegistrationsBtn { get; } = By.XPath("//a[contains(text(),'Back to registrations')]");
         public static By BackToRegDetailsBtn { get; } = By.Id("registrationDetailsButton");
-        private static By SearchForRegistrationLink { get; } = By.XPath("//a[contains(text(),'Search for a registration')]");
+        private static By SearchForRegistrationLink { get; } = By.XPath("//a[contains(text(),'Manage existing registrations')]");
         private static string RegistrationSearchPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "search-for-registration");
         private static readonly string RegistrationSearchHeader = "Search for a registration";
         private static By SearchPageUlnInput { get; } = By.Id("searchuln");

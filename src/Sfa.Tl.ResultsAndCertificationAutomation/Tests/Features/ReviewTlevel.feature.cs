@@ -85,13 +85,15 @@ testRunner.Given("I have logged in as a \"Reviewer\" user", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Manage TLevel Page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void ManageTLevelPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "ReviewJourney"};
+                    "ReviewJourney",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manage TLevel Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10
@@ -129,11 +131,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Review single Tlevel")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         public virtual void ReviewSingleTlevel()
         {
             string[] tagsOfScenario = new string[] {
-                    "RegressionTest"};
+                    "RegressionTest",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Review single Tlevel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 15
@@ -174,11 +178,13 @@ testRunner.Then("I should see TLevel Confirmation message", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Query a Tlevel")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         public virtual void QueryATlevel()
         {
             string[] tagsOfScenario = new string[] {
-                    "RegressionTest"};
+                    "RegressionTest",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Query a Tlevel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 21
@@ -222,11 +228,13 @@ testRunner.Then("I should see Tlevel queried message", ((string)(null)), ((TechT
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Review a Confirmed TLevel")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         public virtual void ReviewAConfirmedTLevel()
         {
             string[] tagsOfScenario = new string[] {
-                    "RegressionTest"};
+                    "RegressionTest",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Review a Confirmed TLevel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 28
@@ -270,11 +278,13 @@ testRunner.And("I should see Reviewed Tlevel details when i click on view review
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Query a Confirmed TLevel")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         public virtual void QueryAConfirmedTLevel()
         {
             string[] tagsOfScenario = new string[] {
-                    "RegressionTest"};
+                    "RegressionTest",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Query a Confirmed TLevel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 35

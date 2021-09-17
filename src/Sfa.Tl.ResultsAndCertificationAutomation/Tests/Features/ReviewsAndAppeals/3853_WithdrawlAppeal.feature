@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ResultsEditor" user
 And I have a registration in Appealed state
-And I click on "Reviews and appeals" link
+And I click on "Appeals" link
 And I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal
 

@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string PageTitle = "Contact us page – Manage T Level results – GOV.UK";
 
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-        
+        public static string ExpectedPageHeaderText = "Contact us";
         public static By SubPageHeader { get; } = By.XPath("//*[@id='main-content']//h2");
         public static readonly string ExpectedSubHeaderText = "Discussion forum";
         
@@ -33,6 +33,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedH1Text, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ExpectedSubHeaderText, WebDriver.FindElement(SubPageHeader).Text);
             
+        }
+
+        public static void VerifyContactUsPage()
+        {
+            Assert.IsTrue(WebDriver.Url.Contains(PageURL));
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+            Assert.AreEqual(ExpectedPageHeaderText, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(ExpectedSubHeaderText, WebDriver.FindElement(SubPageHeader).Text);
         }
 
         public static void SupportLink()

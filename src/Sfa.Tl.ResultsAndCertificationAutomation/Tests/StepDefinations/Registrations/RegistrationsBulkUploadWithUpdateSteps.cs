@@ -11,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             VerifyRegistrationSuccessPage();
             ClickElement(BacktoRegistrationLink);
-            ClickElement(UploadRegistationLink);
+            //ClickElement(UploadRegistationLink);
         }
         
         [When(@"upload file with updated data and submit")]

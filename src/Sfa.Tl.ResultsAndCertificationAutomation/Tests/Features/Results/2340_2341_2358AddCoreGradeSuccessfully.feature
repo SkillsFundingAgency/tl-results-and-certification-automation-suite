@@ -23,12 +23,12 @@ And I upload "2311RegistrationsData.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "2311AssessmentData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I will be shown the Assessments Upload success page
-Given I navigate to the Results Search for a learner page
-When I click on "Results" link
+##Given I navigate to the Results Search for a learner page
+When I click on "add results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 
 
@@ -38,11 +38,11 @@ Scenario: 2340_Press Submit on the Select Core page without changing the default
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
 When I click the Add result link
-Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Summer 2021"
+Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Autumn 2021"
 When I click Submit on the Select a core result page without making any changes
 Then the Learners Results page will be displayed for <ULN> 
 And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
-And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
+And the text below the Core will display the assessment series as "Autumn 2021" and "Not received"
 And I cleared the data in DB
 Examples: 
 | ULN         |
@@ -54,11 +54,11 @@ Scenario: 2340_Press back link on the Select Core page
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
 When I click the Add result link
-Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Summer 2021"
+Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Autumn 2021"
 When I click the back link on the results select core page
 Then the Learners Results page will be displayed for <ULN> 
 And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
-And the text below the Core will display the assessment series as "Summer 2021" and "Not received"
+And the text below the Core will display the assessment series as "Autumn 2021" and "Not received"
 And I cleared the data in DB
 Examples: 
 | ULN         |
@@ -69,13 +69,13 @@ Scenario: 2341_2358_Add a grade and verify the result is added and  validate the
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
 When I click the Add result link
-Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Summer 2021"
+Then the Select the core result page is displayed  for a registration with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series of "Autumn 2021"
 When I select a core result as "A*"
 Then the result added successfully confirmation page is displayed for <ULN>
 When I press the Back to learners results button
 Then the Learners Results page will be displayed for <ULN> 
 And the Core is displayed as "Core (code): Agriculture, Environmental and Animal Care (77777777)"
-And the text below the Core will display the assessment series as "Summer 2021" and "A*"
+And the text below the Core will display the assessment series as "Autumn 2021" and "A*"
 And "Change" link is displayed
 And I cleared the data in DB
 Examples: 

@@ -7,7 +7,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string InvalidUser = "InvalidUser";
         public const string InvalidPass = "InvalidPass";
         public const string Banner = "This is a new service – your feedback will help us to improve it.";
-        public const string DashBoardTitle = "Home page – Manage T Level results – GOV.UK";
+        public const string DashBoardTitle = "Home – Manage T Level results – GOV.UK";
         public const string DashBoardHeader = "Manage T Level results";
         public const string CookieHeader = "Cookies";
         public const string DfEInvalidUserName = "testuser@digital.education.gov.uk";
@@ -31,8 +31,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string AccessibilityUrl = "https://www.gov.uk/help/accessibility-statement";
         public const string TLevelsPageHeader = "Select a T Level to review";
         public const string TLevelsPageTitle = "Select a T Level to review page – Manage T Level results – GOV.UK";
-        public const string ProviderPageHeader = "Find a provider";
-        public const string ProviderPageTitle = "Find a provider page – Manage T Level results – GOV.UK";
+        public const string ProviderPageHeader = "Which provider do you want to manage?";
+        public const string ProviderPageTitle = "Manage providers – Manage T Level results – GOV.UK";
         public const string PrivacyPageTitle = "Privacy policy page – Manage T Level results – GOV.UK";
         public const string UserGuideTitle = "User guide page – Manage T Level results – GOV.UK";
         //Reviewer Error Page Titles
@@ -40,20 +40,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string ErrorAreTheseDetailsCorrect = "Error: Are these details correct page – Manage T Level results – GOV.UK";
         public const string ErrorQueryTlevel = "Error: Query T Level details page – Manage T Level results – GOV.UK";
         //Provider Error Page Titles
-        public const string ErrorFindProvider = "Error: Find a provider page – Manage T Level results – GOV.UK";
+        public const string ErrorFindProvider = "Error: Manage providers – Manage T Level results – GOV.UK";
         public const string ErrorSelectProviderTlevel = "Error: Select provider’s T Levels page – Manage T Level results – GOV.UK";
         public const string ErrorAreYouSureRemove = "Error: Are you sure you want to remove this T Level page – Manage T Level results – GOV.UK";
         public const string ErrorAddTlevel = "Error: Add T Levels page – Manage T Level results – GOV.UK";
         //Registration Page
-        public const string RegistrationsPageTitle = "Registrations page – Manage T Level results – GOV.UK";
+        public const string RegistrationsPageTitle = "Registrations – Manage T Level results – GOV.UK";
         public const string RegistationPageHeader = "Registrations";
-        public const string UploadRegPageTitle = "Upload registrations file page – Manage T Level results – GOV.UK";
-        public const string UploadRegPageHeader = "Upload registrations file";
-        public const string UploadRegPageErrorTitle = "Error: Upload registrations file page – Manage T Level results – GOV.UK";
-        public const string RegistrationUploadSuccessTitle = "Registrations upload successful page – Manage T Level results – GOV.UK";
-        public const string RegistrationSuccessHeader = "Registrations upload successful";
-        public const string RegistrationUploadUnSuccessTitle = "Registrations upload unsuccessful page – Manage T Level results – GOV.UK";
-        public const string RegistrationUnSuccessHeader = "Registrations upload unsuccessful";
+        public const string UploadRegPageTitle = "Upload multiple registrations – Manage T Level results – GOV.UK";
+        public const string UploadRegPageHeader = "Upload multiple registrations";
+        public const string UploadRegPageErrorTitle = "Error: Upload multiple registrations – Manage T Level results – GOV.UK";
+        public const string RegistrationUploadSuccessTitle = "Registrations upload success – Manage T Level results – GOV.UK";
+        public const string RegistrationSuccessHeader = "Registrations uploaded successfully";
+        public const string RegistrationUploadUnSuccessTitle = "Registrations upload error – Manage T Level results – GOV.UK";
+        public const string RegistrationUnSuccessHeader = "There is a problem";
         public const string UlnPageTitle = "Add a new registration - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
         public const string UlnPageErrorTitle = "Error: Add a new registration - Enter Unique Learner Number page – Manage T Level results – GOV.UK";
         public const string LearnerPageTitle = "Add a new registration - Enter the learner’s name page – Manage T Level results – GOV.UK";
@@ -138,12 +138,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DbProviderName = "Automation Test1 (99999901)";
         public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
         //public const string TqProviderId = "9479";
-        public const string TqProviderId = "14085";
-        public const string TlSpecialismId = "194";
-        public const string TqProviderId2 = "14088";
-        public const string TqProviderIdForLrs = "14098";
+        public const string TqProviderId = "15000";
+        public const string TlSpecialismId = "209";
+        public const string TqProviderId2 = "15001";
+        public const string TqProviderIdForLrs = "15013";
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";
-        public const string DudleyProviderIdForLrs = "14102";
+        public const string DudleyProviderIdForLrs = "15014";
         public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
         //Reviews And Appeals Data
         public const string RAAName = "Db FirstName Db LastName";

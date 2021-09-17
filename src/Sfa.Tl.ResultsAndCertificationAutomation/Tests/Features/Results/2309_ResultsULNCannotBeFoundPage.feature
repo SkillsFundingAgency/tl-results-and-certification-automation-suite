@@ -9,13 +9,14 @@ Scenario: 2309_Validate back link on the Results Search for a Learner page
 Given I have logged in as a "ResultsEditor" user
 When I click on "Results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 And I search for a <ULN> which is not registered
 Then I will be navigated to the Results ULN Cannot be found page for <ULN>
 When I click the Back link on the Results ULN cannot be found page
 Then I will be navigated to the Results Search for a Learner page
 And the search box will be populated with the <ULN> entered originally
+And clicking on back to home button takes to dashboard page
 Examples: 
 | ULN         |
 | 9900000040  |
@@ -26,7 +27,7 @@ Scenario: 2309_validate Back to Search button on the Results Search for a Learne
 Given I have logged in as a "ResultsEditor" user
 When I click on "Results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 And I search for a <ULN> which is not registered
 Then I will be navigated to the Results ULN Cannot be found page for <ULN>
@@ -48,7 +49,7 @@ Then I should be redirectted to Tlevel Start page
 Given I have logged in as a "ResultsEditor" user
 When I click on "Results" link
 Then I should be navigated to Results dashboard page
-When I click on "Search for a learner" link
+When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 And I enter the <ULN> which has been registered with another AO
 Then I will be navigated to the Results ULN Cannot be found page for <ULN>

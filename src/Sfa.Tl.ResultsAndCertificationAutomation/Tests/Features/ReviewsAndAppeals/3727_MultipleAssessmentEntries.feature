@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ResultsEditor" user
 And I have a registration with a result and two assessment entries
-When I click on "Reviews and appeals" link
+When I click on "Appeals" link
 
 
 @RegressionTest @ReviewsAndAppeals

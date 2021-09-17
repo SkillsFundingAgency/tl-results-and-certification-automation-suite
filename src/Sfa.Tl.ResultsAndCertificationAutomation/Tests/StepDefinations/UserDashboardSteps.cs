@@ -72,7 +72,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                     case "ProviderDudleyAll":
                         DfESignInPage.SigninAsProviderDudleyAllUser();
                         break;
-                }
+                    case "TLevelUser":
+                        DfESignInPage.SigninAsTLevelUser();
+                         break;
+            }
         }
         [When(@"I enter any AO user account to login")]
         public void WhenIEnterAnyAOUserAccountToLogin()

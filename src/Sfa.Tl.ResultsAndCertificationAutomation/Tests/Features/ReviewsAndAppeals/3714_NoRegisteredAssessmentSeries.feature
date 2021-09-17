@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ResultsEditor" user
 And I have a registration without assessment and result
-And I click on "Reviews and appeals" link
+And I click on "Appeals" link
 
 @RegressionTest @ReviewsAndAppeals
 Scenario: 3714 Verify no registered assessment series page

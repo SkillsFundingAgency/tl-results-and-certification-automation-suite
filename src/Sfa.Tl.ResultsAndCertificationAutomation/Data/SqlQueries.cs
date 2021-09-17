@@ -449,5 +449,60 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string Grade1 = Convert.ToString(Grade[0][0]);
             return Grade1;
         }
+
+        public static void UpdateAutumn2021AssessmentSeriesWithPastDate()
+        {
+            string CreateQualificationAcheived = "update AssessmentSeries set appealenddate = '2021-08-04 00:00:00.000' where id = 1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+        }
+
+        public static void UpdateAutumn2021AssessmentSeriesWithFutureDate()
+        {
+            string CreateQualificationAcheived = "update AssessmentSeries set appealenddate = '2021-09-24 00:00:00.000' where id = 1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateQualificationAcheived, ConnectionString);
+        }
+
+        public static void SetAllTLevelsToNotReviewed()
+        {
+            string SetAllTLevelsToNotReviewed = "Update TqAwardingOrganisation set ReviewStatus=1 where TlAwardingOrganisatonId=1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetAllTLevelsToNotReviewed, ConnectionString);
+        }
+        public static void SetAllTLevelsToReviewed()
+        {
+            string SetAllTLevelsToNotReviewed = "Update TqAwardingOrganisation set ReviewStatus=2 where TlAwardingOrganisatonId=1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetAllTLevelsToNotReviewed, ConnectionString);
+        }
+
+        public static void SetAllTLevelsToQueried()
+        {
+            string SetAllTLevelsToNotReviewed = "Update TqAwardingOrganisation set ReviewStatus=3 where TlAwardingOrganisatonId=1";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetAllTLevelsToNotReviewed, ConnectionString);
+        }
+        public static void SetTwoTLevelsToNotReviewed()
+        {
+            string SetTwoTLevelsToNotReviewed = "update TqAwardingOrganisation set reviewstatus = 1 where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care','T Level in Business and Administration'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetTwoTLevelsToNotReviewed, ConnectionString);
+        }
+        public static void SetThreeTLevelsToNotReviewed()
+        {
+            string SetTwoTLevelsToNotReviewed = "update TqAwardingOrganisation set reviewstatus = 1 where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care','T Level in Business and Administration','T Level in Digital Business Services'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetTwoTLevelsToNotReviewed, ConnectionString);
+        }
+
+        public static void SetOneTLevelsToNotReviewed()
+        {
+            string SetTwoTLevelsToNotReviewed = "update TqAwardingOrganisation set reviewstatus = 1 where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetTwoTLevelsToNotReviewed, ConnectionString);
+        }
+
+        public static void SetTLevelstoReviewedQueriedUnconfirmed()
+        {
+            string SetThreeTLevelsToReviewed = "update TqAwardingOrganisation set reviewstatus = 2, modifiedon = GETDATE(), ModifiedBy = 'Test User' where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care','T Level in Business and Administration','T Level in Digital Business Services'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetThreeTLevelsToReviewed, ConnectionString);
+            string SetThreeTLevelsToQueried = "update TqAwardingOrganisation set reviewstatus = 3, modifiedon = GETDATE(), ModifiedBy = 'Test User' where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Digital Support and Services','T Level in Education and Childcare','T Level in Engineering and Manufacturing'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetThreeTLevelsToQueried, ConnectionString);
+            string SetFourTLevelsToUnconfirmed = "update TqAwardingOrganisation set reviewstatus = 1, modifiedon = GETDATE(), ModifiedBy = 'Test User' where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Health','T Level in Healthcare Science','T Level in Legal, Finance and Accounting','T Level in Science'))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetFourTLevelsToUnconfirmed, ConnectionString);
+        }
     }
 }

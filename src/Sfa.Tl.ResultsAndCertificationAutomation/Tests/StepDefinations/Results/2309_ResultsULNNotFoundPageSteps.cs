@@ -49,5 +49,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             ResultsSearchForALearnerPage.VerifySearchFieldIsEmpty();
         }
+        [Then(@"clicking on back to home button takes to dashboard page")]
+        public void ThenClickingOnBackToHomeButtonTakesToDashboardPage()
+        {
+            ResultsULNNotFoundPage.VerifyBackToHome();
+        }
+
     }
 }

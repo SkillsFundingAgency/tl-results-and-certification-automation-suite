@@ -11,5 +11,5 @@ And I upload "RegistrationsDataForAssessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see Upload success page

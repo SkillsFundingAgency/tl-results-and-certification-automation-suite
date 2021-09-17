@@ -1,5 +1,6 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Providers
@@ -43,7 +44,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I should see Provider home page")]
         public void ThenIShouldSeeProviderHomePage()
         {
-            LearnerRecordPage.VerifyHomePage();
+            TlevelDashboardPage.VerifyDashboardpage();
         }
     }
 }

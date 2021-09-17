@@ -13,11 +13,11 @@ And I upload "RegistrationsDataForResultsStage3.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentsDataForResultsStage3.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I navigated Home page
 And I am on results upload page
 And I upload "ResultsUploadStage3Validations.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I download the Results error file and verify
 Then I should see all stage 3 validation errors in the results downloaded file
 
@@ -27,6 +27,6 @@ And I have a registration in Withdrawn state
 And I navigated Home page
 And I am on results upload page
 When I upload "ResultsUploadStage3WithdrawnReg.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 And I download the Results error file and verify
 Then I should see stage3 withdrawn validation error in the results downloaded file

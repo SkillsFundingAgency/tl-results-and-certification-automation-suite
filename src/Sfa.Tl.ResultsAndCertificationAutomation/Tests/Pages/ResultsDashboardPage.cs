@@ -11,15 +11,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By BreadCrumb0 { get; } = By.Id("breadcrumb0");
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By SuccessMsg { get; } = By.XPath("//*[@id='main-content']");
-        private static string ResultsDashboardPageTitle { get; } = "Results page – Manage T Level results – GOV.UK";
-        public static By UploadResultLink { get; } = By.LinkText("Upload results file");
-        public static By SearchLearnerLink { get; } = By.LinkText("Search for a learner");
+        private static string ResultsDashboardPageTitle { get; } = "Results – Manage T Level results – GOV.UK";
+        public static By UploadResultLink { get; } = By.LinkText("Upload multiple results");
+        public static By SearchLearnerLink { get; } = By.LinkText("Manage a result");
         // Upload results page
         private static string UploadResultsUrl { get; } = string.Concat(StartPage.StartPageUrl, "upload-results-file");
-        private static string UploadResultsPageTitle { get; } = "Upload results file page – Manage T Level results – GOV.UK";
-        private static string UploadResultsErrorPageTitle { get; } = "Error: Upload results file page – Manage T Level results – GOV.UK";
+        private static string UploadResultsPageTitle { get; } = "Upload multiple results – Manage T Level results – GOV.UK";
+        private static string UploadResultsErrorPageTitle { get; } = "Error: Upload multiple results – Manage T Level results – GOV.UK";
         private static string ResultsUploadUnsuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-upload-unsuccessful");
-        private static string ResultsUploadUnsuccessTitle { get; } = "Results upload unsuccessful page – Manage T Level results – GOV.UK";
+        private static string ResultsUploadUnsuccessTitle { get; } = "Results upload error – Manage T Level results – GOV.UK";
         public static string ResultsUploadStage2InvalidHeaderErrors = string.Concat("Data\\", "ResultsErrorInvalidHeader.csv");
         public static string ResultsUploadStage2NoDataErrors = string.Concat("Data\\", "ResultsErrorNoData.csv");
         public static string ResultsUploadStage2Errors = string.Concat("Data\\", "ResultsErrorStage2Validations.csv");
@@ -28,12 +28,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string ResultsUploadBlockAppealErrors = string.Concat("Data\\", "BlockResultUpdateForAppeal.csv");
         public static string ResultsUploadBlockFinalErrors = string.Concat("Data\\", "BlockResultUpdateForFinal.csv");
         // Upload Results success page
-        private static string ResultsUploadSuccessMsg { get; } = "Results upload successful";
-        private static string ResultsUploadSuccessPageTitle { get; } = "Results upload confirmation page – Manage T Level results – GOV.UK";
+        private static string ResultsUploadSuccessMsg { get; } = "Results uploaded";
+        private static string ResultsUploadSuccessPageTitle { get; } = "Results upload success – Manage T Level results – GOV.UK";
         private static string ResultsUploadSuccessUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-upload-confirmation");
         public static By BackToResultsBtn { get; } = By.Id("backToResultsButton");
         public static string ResultsSuccessCountMsg { get; } = "You successfully sent results for 3 registrations.";
         public static string ResultSingleSuccessMsg { get; } = "You successfully sent results data for one registration.";
+        public static By manageIndividualResultsLink { get; } = By.XPath("//*[contains (text(),'manage individual results')]");
+        public static By uploadAnotherMultipleResultsFileLink { get; } = By.XPath("//*[contains (text(),'upload another multiple results file')]");
+        public static By appealLink { get; } = By.XPath("//*[contains (text(),'appeal')]");
+        public static By BackToHomeBtn { get; } = By.Id("backToHomeButton");
+        public static By uploadAnotherFileBtn = By.Id("uploadAnotherFileButton");
+
         //Learner result page
         private static string LearnerResultPageTitle { get; } = "Learner’s results page – Manage T Level results – GOV.UK";
         private static string LearnerResultUrl { get; } = "learners-results";
@@ -80,7 +86,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(UploadResultsUrl, WebDriver.Url);
             Assert.AreEqual(UploadResultsPageTitle, WebDriver.Title);
-            Assert.AreEqual("Upload results file", WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual("Upload multiple results", WebDriver.FindElement(PageHeader).Text);
         }
         public static void VerifyUploadResultsErrorPage()
         {
@@ -91,7 +97,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(ResultsUploadUnsuccessUrl, WebDriver.Url);
             Assert.AreEqual(ResultsUploadUnsuccessTitle, WebDriver.Title);
-            Assert.AreEqual("Results upload unsuccessful", WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual("There is a problem", WebDriver.FindElement(PageHeader).Text);
         }
         public static void VerifyUploadResultsSuccessPage()
         {
@@ -135,6 +141,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickSearchForALearnerLink()
         {
             ClickElement(SearchLearnerLink);
+        }
+
+        public static void ClickBacktoHomeBtn()
+        {
+            ClickElement(BackToHomeBtn);
+        }
+
+        public static void ClickUploadAnotherFileBtn()
+        {
+            ClickElement(uploadAnotherFileBtn);
+        }
+        public static void ClickAppealLink()
+        {
+            ClickElement(appealLink);
+        }
+        public static void ClickUploadAnotherFileLink()
+        {
+            ClickElement(uploadAnotherMultipleResultsFileLink);
+        }
+        public static void ClickManageIndividualResultsLink()
+        {
+            ClickElement(manageIndividualResultsLink);
         }
     }
 }

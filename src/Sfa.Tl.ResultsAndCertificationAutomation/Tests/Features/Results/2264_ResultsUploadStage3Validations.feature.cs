@@ -133,7 +133,7 @@ testRunner.And("I am on Assessment entries upload page", ((string)(null)), ((Tec
 testRunner.When("I upload \"AssessmentsDataForResultsStage3.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
 testRunner.And("I navigated Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -145,7 +145,7 @@ testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecF
 testRunner.And("I upload \"ResultsUploadStage3Validations.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
 testRunner.And("I download the Results error file and verify", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -204,7 +204,7 @@ testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecF
 testRunner.When("I upload \"ResultsUploadStage3WithdrawnReg.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
 testRunner.And("I download the Results error file and verify", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

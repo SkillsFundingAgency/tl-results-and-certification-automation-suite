@@ -33,20 +33,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public By TCLink = By.XPath("//a[contains(text(),'Terms and conditions')]");
         public By TCTitle = By.TagName("h1");
         protected readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
-        private const string TechSpecPageTitle = "T Level data format and rules guides page – Manage T Level results – GOV.UK";
-        private const string TechSpecPageHeader = "T Level data format and rules guides";
+        private const string TechSpecPageTitle = "T Levels data format and rules – Manage T Level results – GOV.UK";
+        private const string TechSpecPageHeader = "T Levels data format and rules";
         public const string CookiePageTitle = "Cookies on Manage T Level results page – Manage T Level results – GOV.UK";
         public static By RegistrationsHeader = By.XPath("//H2[contains(text(),'Registrations')]");
         public static By AssessmentEntriesHeader = By.XPath("//H2[contains(text(),'Assessment entries')]");
         public static string RegistrationHeaderText = "Registrations";
         public static string AssessmentEntriesText = "Assessment entries";
-        public static By RegistrationDownloadLink = By.PartialLinkText("Download registrations data");
-        public static By AssessmentEntriesDownloadLink = By.PartialLinkText("Download assessment entries");
-        public static By ResultsDownloadLink = By.PartialLinkText("Download results data");
-        public static string RegistrationDownloadLinkText = "Download registrations data format and rules guide";
-        public static string AssessmentEntriesDownloadLinkText = "Download assessment entries data format and rules guide";
-        public static string ResultsDownloadLinkText = "Download results data format and rules guide";
-        public static By UserGuideLink = By.XPath("//a[contains(text(),'Manage T Level results user guide')]");
+        public static By RegistrationDownloadLink = By.PartialLinkText("registrations data");
+        public static By AssessmentEntriesDownloadLink = By.PartialLinkText("assessment entries");
+        public static By ResultsDownloadLink = By.PartialLinkText("results data");
+        public static string RegistrationDownloadLinkText = "registrations data format and rules";
+        public static string AssessmentEntriesDownloadLinkText = "assessment entries data format and rules";
+        public static string ResultsDownloadLinkText = "results data format and rules";
+        public static By UserGuideLink = By.XPath("//a[contains(text(),'T Level data format and rules')]");
         public static By ContactLink = By.XPath("//a[contains(text(),'Contact')]");
         public void CheckCookies()
         {

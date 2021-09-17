@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
+using System.Threading;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -28,6 +30,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static readonly string ProDudleyLRE = WebDriverFactory.Config["ProDudleyLRE"];
         public static readonly string ProDudleyAll = WebDriverFactory.Config["ProDudleyAll"];
         public static readonly string ProUserPassword = WebDriverFactory.Config["ProUserPassword"];
+        public static readonly string TLevelUser = WebDriverFactory.Config["TLevelUser"];
+        public static readonly string TLevelUserPassword = WebDriverFactory.Config["TLevelUserPassword"];
         public static string DashboardUrl = string.Concat(StartPage.StartPageUrl, "home");
         public static readonly By SignInButton = By.XPath("//button[contains(text(),'Sign in')]");
         public const string SigninError = "There is a problem";
@@ -50,6 +54,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
             WebDriver.FindElement(by: StartNowButton).Click();
             //WebDriver.FindElement(By.Id("cookie-accept")).Click();
+            //WebDriver.Manage().Window.Maximize();
+            var element = WebDriver.FindElement(SignInButton);
             PageHelper.WaitForPageElementBy(10, SignInButton);
             WebDriver.FindElement(UserIdTxtBox).SendKeys(username);
             WebDriver.FindElement(PasswordTxtBox).SendKeys(password);
@@ -142,6 +148,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             TLevelSignIn(ProDudleyAll, ProUserPassword);
         }
+        public static void SigninAsTLevelUser()
+        {
+            TLevelSignInExtended(TLevelUser, TLevelUserPassword);
+        }
         public static void SigninAsNoServiceUser()
         {
             WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
@@ -150,6 +160,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             WebDriver.FindElement(PasswordTxtBox).SendKeys(AOAppPassword);
             WebDriver.FindElement(SignInButton).Click();
             PageHelper.WaitForUrl(StartPage.Error403);
+        }
+
+        public static void TLevelSignInExtended(string username, string password)
+        {
+            WebDriver.Navigate().GoToUrl(StartPage.StartPageUrl);
+            WebDriver.FindElement(by: StartNowButton).Click();
+            WebDriver.Manage().Window.Maximize();
+            var element = WebDriver.FindElement(SignInButton);
+            PageHelper.WaitForPageElementBy(10, SignInButton);
+            WebDriver.FindElement(UserIdTxtBox).SendKeys(username);
+            WebDriver.FindElement(PasswordTxtBox).SendKeys(password);
+            WebDriver.FindElement(SignInButton).Click();
+            Thread.Sleep(1000);
+            WebDriver.FindElement(By.XPath("//*[contains(text(),'NCFE')]")).Click();
+            WebDriver.FindElement(By.XPath("//*[@id='content']/div/div[1]/form/div/input")).Click();
+            PageHelper.WaitForUrl(DashboardUrl);
+
         }
     }
 }

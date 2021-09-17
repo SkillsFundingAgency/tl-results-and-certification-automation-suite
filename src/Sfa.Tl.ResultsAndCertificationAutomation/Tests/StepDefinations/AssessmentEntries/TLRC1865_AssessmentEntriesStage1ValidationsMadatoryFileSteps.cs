@@ -6,6 +6,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
     [Binding]
     public class TLRC1865_AssessmentEntriesStage1ValidationsMadatoryFileSteps : AssessmentEntriesPage
     {
+        [Then(@"I am shown the Assessment entries upload page")]
         [Given(@"I am on Assessment entries upload page")]
         public void GivenIAmOnAssessmentEntriesUploadPage()
         {

@@ -11,7 +11,7 @@ Scenario: Registration Dashboard Page
 When I click on Registrations link on Home page
 Then Registration page should open
 
-@RegressionTest @Registrations
+@RegressionTest @Registrations @ignore
 Scenario: Upload Registration file
 When I click on Registrations link on Home page
 And I click on Upload Registration file link
@@ -52,7 +52,6 @@ And I upload a file and click on Submit button
 And click on back to registration link
 And upload file with updated data and submit
 Then I should see upload successful message
-And I should be navigated back to Registrations Page when i click on Back to registration button
 And I cleared the data in DB
 
 @RegressionTest @Registrations
@@ -60,6 +59,6 @@ Scenario: 2037_Stage4 Validations for Withdrawn registration
 And I have a registration in Withdrawn state
 And I am on upload registration page
 When I upload "RegistrationsWithdrawnValidationSingle.csv" file
-And I click on "Submit" button
+And I click on "Upload" button
 Then I should see validation errror for witdrawn record
 And I cleared the data in DB

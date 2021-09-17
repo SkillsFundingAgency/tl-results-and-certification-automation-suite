@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ResultsEditor" user
 And I have a registration with an assessment entry
-And I click on "Reviews and appeals" link
+And I click on "Appeals" link
 
 @RegressionTest @ReviewsAndAppeals
 Scenario: 3726 Verify no avaiable grade page

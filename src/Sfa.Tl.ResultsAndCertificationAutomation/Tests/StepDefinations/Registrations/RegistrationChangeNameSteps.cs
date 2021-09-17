@@ -177,7 +177,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             SqlQueries.DeleteFromRegistrationTables();
             RegistrationsManualPage.CreateRegistrationWithSpecialism(Constants.ManualRegULN,Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
             RegistrationsManualPage.ClickSubmit();
-            RegistrationsManualPage.ClickElement(RegistrationsPage.BacktoRegistrationLink);
+            Framework.Helpers.ElementHelper.ClickElement(RegistrationsPage.BacktoRegistrationBtn);
         }
 
         [Given(@"I search for my registration")]
@@ -194,7 +194,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             SqlQueries.DeleteFromRegistrationTables();
             RegistrationsManualPage.CreateRegistrationWithSpecialismForPearson(Constants.ManualRegULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
             RegistrationsManualPage.ClickSubmit();
-            RegistrationsManualPage.ClickElement(RegistrationsPage.BacktoRegistrationLink);
+            Framework.Helpers.ElementHelper.ClickElement(RegistrationsPage.BacktoRegistrationBtn);
             RegistrationsManualPage.ClickHomeBreadcrumb();
         }
     }

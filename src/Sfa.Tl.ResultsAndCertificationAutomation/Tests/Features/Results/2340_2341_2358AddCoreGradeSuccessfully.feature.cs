@@ -112,22 +112,19 @@ testRunner.And("I am on Assessment entries upload page", ((string)(null)), ((Tec
 testRunner.When("I upload \"2311AssessmentData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
-testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
 testRunner.Then("I will be shown the Assessments Upload success page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 28
-testRunner.Given("I navigate to the Results Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 29
-testRunner.When("I click on \"Results\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"add results\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
 testRunner.Then("I should be navigated to Results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 31
-testRunner.When("I click on \"Search for a learner\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on \"Manage a result\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
 testRunner.Then("I will be navigated to the Results Search for a Learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -186,8 +183,8 @@ testRunner.When("I click the Add result link", ((string)(null)), ((TechTalk.Spec
 #line hidden
 #line 41
 testRunner.Then("the Select the core result page is displayed  for a registration with core \"Agric" +
-                        "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Summ" +
-                        "er 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Autu" +
+                        "mn 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 42
 testRunner.When("I click Submit on the Select a core result page without making any changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -200,7 +197,7 @@ testRunner.And("the Core is displayed as \"Core (code): Agriculture, Environment
                         " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 45
-testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
+testRunner.And("the text below the Core will display the assessment series as \"Autumn 2021\" and \"" +
                         "Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
@@ -262,8 +259,8 @@ testRunner.When("I click the Add result link", ((string)(null)), ((TechTalk.Spec
 #line hidden
 #line 57
 testRunner.Then("the Select the core result page is displayed  for a registration with core \"Agric" +
-                        "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Summ" +
-                        "er 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Autu" +
+                        "mn 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 58
 testRunner.When("I click the back link on the results select core page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -276,7 +273,7 @@ testRunner.And("the Core is displayed as \"Core (code): Agriculture, Environment
                         " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 61
-testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
+testRunner.And("the text below the Core will display the assessment series as \"Autumn 2021\" and \"" +
                         "Not received\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 62
@@ -340,8 +337,8 @@ testRunner.When("I click the Add result link", ((string)(null)), ((TechTalk.Spec
 #line hidden
 #line 72
 testRunner.Then("the Select the core result page is displayed  for a registration with core \"Agric" +
-                        "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Summ" +
-                        "er 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "ulture, Environmental and Animal Care (77777777)\" and assessment series of \"Autu" +
+                        "mn 2021\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 73
 testRunner.When("I select a core result as \"A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -360,7 +357,7 @@ testRunner.And("the Core is displayed as \"Core (code): Agriculture, Environment
                         " (77777777)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 78
-testRunner.And("the text below the Core will display the assessment series as \"Summer 2021\" and \"" +
+testRunner.And("the text below the Core will display the assessment series as \"Autumn 2021\" and \"" +
                         "A*\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 79

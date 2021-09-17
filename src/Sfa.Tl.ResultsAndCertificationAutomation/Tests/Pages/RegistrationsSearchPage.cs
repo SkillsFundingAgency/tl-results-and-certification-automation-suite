@@ -10,7 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string SearchResultUrl = string.Concat(StartPage.StartPageUrl, "search-for-registration-registration-details");
         private static readonly string CancelRegUrl = string.Concat(StartPage.StartPageUrl, "delete-registration");
         private static readonly string UlnNotFoundUrl = string.Concat(StartPage.StartPageUrl, "search-for-registration-ULN-not-found");
-        public static readonly By SearchRegistrationLink = By.XPath("//a[contains(text(),'Search for a registration')]");
+        public static readonly By SearchRegistrationLink = By.XPath("//a[contains(text(),'Manage existing registrations')]");
         public static readonly By SearchBox = By.Id("searchuln");
         public static readonly By SearchBtn = By.XPath("//button[contains(text(),'Search')]");
         private static readonly By CancelRegBtn = By.XPath("//a[contains(text(),'Cancel this registration')]");
