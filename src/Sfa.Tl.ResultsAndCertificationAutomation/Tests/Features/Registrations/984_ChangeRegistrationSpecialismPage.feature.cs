@@ -127,7 +127,7 @@ this.FeatureBackground();
 testRunner.When("I click on change Specialism link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
-testRunner.Then("I should be navigated to Has learner decided on specialism page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should be navigated to Do you want to change or remove your specialism page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 15
 testRunner.And("the redio button is selected to yes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

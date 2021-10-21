@@ -513,7 +513,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifySpecialismPageDynamicHeader()
         {
             //Construct dynamic page header
-            string SelecSpecialismPageHeader = "Select the specialism for " + InputCore;
+            string SelecSpecialismPageHeader = "Select the occupational specialism(s) for " + InputCore;
             string ExpectedSelecSpecialismPageHeader = SelecSpecialismPageHeader.Substring(0, SelecSpecialismPageHeader.Length - 11);
             Assert.AreEqual(ExpectedSelecSpecialismPageHeader, WebDriver.FindElement(SelectSpecialismPageHeader).Text);
         }

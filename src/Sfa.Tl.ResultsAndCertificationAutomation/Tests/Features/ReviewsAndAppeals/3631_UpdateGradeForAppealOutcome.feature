@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3631_Validate Update grade for appeal outcome page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  
@@ -19,7 +19,7 @@ When I click the Back link on the Update grade for appeal outcome page
 Then the Add outcome of appeal page is displayed
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3631_Validate error message on Update grade for appeal outcome page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  

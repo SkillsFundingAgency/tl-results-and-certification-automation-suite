@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "SiteAdmin" user
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 4172 Results upload Success - Verify Upload another file button navigation
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -24,7 +24,7 @@ When I click the Upload another file button on the results upload success page
 Then I am shown the Upload Results file page
 And I cleared the data in DB
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 4172 Results upload Success - Verify Back to home button navigation
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -42,7 +42,7 @@ When I click the Back to home button on the results upload success page
 Then I should be navigated back to home page
 And I cleared the data in DB
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 4172 Results upload Success - Verify manage individual registrations link navigation
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -59,7 +59,7 @@ And I should see number of records been uploaded message
 And I cleared the data in DB
 
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 4172 Results upload Success - Verify upload another multiple registrations file link navigation
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -77,7 +77,7 @@ When I click the upload another multiple registrations file link on the results 
 Then I am shown the Upload Results file page
 And I cleared the data in DB
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 4172 Results upload Success - Verify appeal link navigation
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file

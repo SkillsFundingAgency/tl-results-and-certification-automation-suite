@@ -59,7 +59,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             RegistrationsSearchPage.VerifySpecialism(Constants.ManualRegUpdatedSpecialism);
             RegistrationsSearchPage.VerifyName(expectedName);
             RegistrationsSearchPage.VerifyDOBChangesAreDisplayed(Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
-            RegistrationsSearchPage.VerifyActiveYear();
+            //RegistrationsSearchPage.VerifyActiveYear();
         }
 
     }

@@ -133,12 +133,14 @@ testRunner.Then("I will be navigated to the Results Search for a Learner page", 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2340_Press Submit on the Select Core page without changing the default grade")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000008", null)]
         public virtual void _2340_PressSubmitOnTheSelectCorePageWithoutChangingTheDefaultGrade(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))
@@ -209,12 +211,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2340_Press back link on the Select Core page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000008", null)]
         public virtual void _2340_PressBackLinkOnTheSelectCorePage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))
@@ -286,12 +290,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2341_2358_Add a grade and verify the result is added and  validate the result add" +
             "ed confirmation page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000008", null)]
         public virtual void _2341_2358_AddAGradeAndVerifyTheResultIsAddedAndValidateTheResultAddedConfirmationPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))

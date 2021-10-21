@@ -10,6 +10,7 @@ And I have a registration in Db with IP against Dudley provider
 | Uln        |
 | 9900000011 |
 And I am on Registration upload page
+And I have a Academic Year in "2951RegistrationsValidDataBarnsley.csv"
 And I upload "2951RegistrationsValidDataBarnsley.csv" file
 And I click on the Sign Out link
 And I have logged in as a "ProviderBarnsleyPA" user

@@ -10,7 +10,7 @@ And I have a registration with result
 And I am on result details page
 And I maximise the browser window
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2414_Reactivate a registration which had an active grade when it was withdrawn
 Given I click on "Change" link in result page
 And I successfully change the grade to E 
@@ -18,7 +18,7 @@ And I withdraw the registration and reactivate it
 Then the reactivated registration will display the grade as "E"
 And the registration for this test is deleted
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2414_Reactivate a registration which didn't have an active grade when it was withdrawn
 Given I click on "Change" link in result page
 And I successfully remove the grade

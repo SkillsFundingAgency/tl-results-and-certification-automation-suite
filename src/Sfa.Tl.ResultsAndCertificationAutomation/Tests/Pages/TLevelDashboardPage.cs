@@ -33,8 +33,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private readonly By MenuBtn = By.XPath("//button[contains(text(),'Menu')]");
         public static By PageTitle { get; } = By.XPath("//*[@id='main-content']//h1");
         private static readonly string ManageCentresPageHeader = "Your T Levels";
-        private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-button' and @href='/cookies']");
-        public static By CookieDetailsLink { get; } = By.XPath("//a[@href='/cookie-details']");
+        private static readonly By ViewCookieBannerBtn = By.XPath("//a[@class='govuk-link' and @href='/cookie-details']");
+        //public static By CookieDetailsLink { get; } = By.XPath("//a[@href='/cookie-details']");
+        public static By CookieDetailsLink = By.LinkText("Find out more about cookies on Manage T Level results");
         public const string CookeDetailsPageTitle = "Details about cookies on Manage T Level results – Manage T Level results – GOV.UK";
         public const string CookieDetailsPageHeader = "Details about cookies on Manage T Level results";
         public By AccesslibilityLink = By.XPath("//a[contains(text(),'Accessibility statement')]");

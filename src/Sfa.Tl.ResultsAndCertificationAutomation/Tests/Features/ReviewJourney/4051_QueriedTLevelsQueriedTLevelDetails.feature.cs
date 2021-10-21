@@ -133,12 +133,12 @@ testRunner.And("I click the Queried T Levels link on the T Level dashboard", ((s
 testRunner.Then("I am navigated to the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 15
-testRunner.When("I click on the View link for the \"T Level in Digital Support and Services\" Tlevel" +
-                        " on the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on the View link for the \"T Level in Digital Support Services\" Tlevel on " +
+                        "the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.Then("the details for the queried T Level \"T Level in Digital Support and Services\" are" +
-                        " displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the details for the queried T Level \"T Level in Digital Support Services\" are dis" +
+                        "played", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 17
 testRunner.When("I click the back link on the Queried T Level details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -147,8 +147,8 @@ testRunner.When("I click the back link on the Queried T Level details page", ((s
 testRunner.Then("I am navigated to the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 19
-testRunner.When("I click on the View link for the \"T Level in Digital Support and Services\" Tlevel" +
-                        " on the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on the View link for the \"T Level in Digital Support Services\" Tlevel on " +
+                        "the Queried T Levels page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
 testRunner.And("I click the Back to queried T Levels button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

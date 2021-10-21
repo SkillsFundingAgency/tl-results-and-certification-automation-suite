@@ -23,7 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
             FindProvider();
             Assert.IsTrue(WebDriver.Title.Equals(SelectProvidersTlevelPageTitle));
             Assert.IsTrue(WebDriver.Url.Contains(SelectProviderUrl));
-            Assert.IsTrue(WebDriver.FindElement(SelectProviderPageHeader).Text.Contains(SearchProviderTxt));
+            //Assert.IsTrue(WebDriver.FindElement(SelectProviderPageHeader).Text.Contains(SearchProviderTxt));
         }
     }
 }

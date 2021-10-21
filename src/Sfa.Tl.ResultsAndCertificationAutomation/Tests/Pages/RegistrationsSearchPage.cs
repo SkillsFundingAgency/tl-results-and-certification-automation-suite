@@ -27,6 +27,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private const string ChangeSpecialismDecidePageTitle = "Change registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
         private static readonly string ChangeSpecialismDecidePageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-learner-decided-specialism-question");
         private static readonly string ChangeSpecialismDecidePageHeader = "Has the learner decided on the specialism?";
+        private static readonly string SpecialismDecideChangePageHeader = "Do you want to change or remove your specialism?";
         public const string SelectSpecialismPageTitle = "Select specialisms page – Manage T Level results – GOV.UK";
         public const string ChangeSpecialismPageTitle = "Change registration - Select specialism page – Manage T Level results – GOV.UK";
         public static readonly string SelectSpecialismPageUrl = string.Concat(StartPage.StartPageUrl, "change-registration-select-specialism");
@@ -63,7 +64,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By RegistrationDetailsPageSubheading = By.XPath("//*[@id='main-content']//h2");
         private static By RegistrationDetailsheading = By.XPath("//*[@id='main-content']//h1");
         private static By ActiveYear { get; } = By.XPath("//*[@id='main-content']//div[7]/dd[1]/p");
-        private static string ExpectedActiveYear = "2020/21";
+        private static string ExpectedActiveYear = "{AcademicYear}";
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By ViewAndAmendLearnersEntriesLink { get; } = By.Id("AssessmentEntriesLink");
 
@@ -232,6 +233,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.AreEqual(ChangeSpecialismDecidePageTitle, WebDriver.Title);
             Assert.AreEqual(ChangeSpecialismDecidePageHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.IsTrue(WebDriver.Url.Contains(ChangeSpecialismDecidePageUrl));
+        }
+
+        public static void VerifyDecideSpecialismChangePage()
+        {
+            Assert.AreEqual(ChangeSpecialismDecidePageTitle, WebDriver.Title);
+            Assert.AreEqual(SpecialismDecideChangePageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(ChangeSpecialismDecidePageUrl));
         }
 

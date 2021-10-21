@@ -121,12 +121,14 @@ testRunner.Then("I will be navigated to the Results Search for a Learner page", 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2371_Navigate to the Change Core Result page and press the back link")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000008", null)]
         public virtual void _2371_NavigateToTheChangeCoreResultPageAndPressTheBackLink(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))
@@ -194,12 +196,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2371_Navigate to the Change Core Result page and press the Change button without " +
             "changing the result")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000008", null)]
         public virtual void _2371_NavigateToTheChangeCoreResultPageAndPressTheChangeButtonWithoutChangingTheResult(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))

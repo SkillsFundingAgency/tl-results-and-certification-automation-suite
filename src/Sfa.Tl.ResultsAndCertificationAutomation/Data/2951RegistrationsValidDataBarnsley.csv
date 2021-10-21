@@ -1,2 +1,2 @@
-ULN,First Name,Last Name,Date of Birth,UKPRN,Academic year,Core code,Specialism code
-9900000011,Db FirstName,Db LastName,01012001,10000536,2020/21,77777777,70000002
+ULN,First Name,Last Name,Date of Birth,UKPRN,Academic year,Core code,Specialism code(s)
+9900000011,Db FirstName,Db LastName,01012001,10000536,{AcademicYear},77777777,70000002

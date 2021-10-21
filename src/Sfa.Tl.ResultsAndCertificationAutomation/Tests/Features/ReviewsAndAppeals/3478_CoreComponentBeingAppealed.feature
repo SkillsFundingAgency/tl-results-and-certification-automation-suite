@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3478_Validate Core Component Grade Status page and Back link
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal
@@ -18,7 +18,7 @@ And when I press the Back link on the Core component being appealed page
 Then the Review and Appeals Learner Component Grade status page is displayed as per the acceptance criteria
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3478_Verify error message on Core component being appealed page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal

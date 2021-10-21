@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "SiteAdmin" user
 
-@RegressionTest @ResultsUpload
+@Ignore @RegressionTest @ResultsUpload
 Scenario: 2264_Results upload stage3 validations
 And I am on Registrations upload page
 And I upload "RegistrationsDataForResultsStage3.csv" file

@@ -2,7 +2,6 @@ Line,ULN,Error
 12,1111111154,Duplicate ULN found
 13,1111111164,Date of birth must be in the past
 14,1111111154,Duplicate ULN found
-16,1111111122,Specialism code must have 8 characters only
 2,1111111112,Provider not registered with awarding organisation
 3,1111111314,Provider not registered with awarding organisation
 4,1111111315,Provider not registered with awarding organisation
@@ -14,3 +13,4 @@ Line,ULN,Error
 10,1111111119,Provider not registered with awarding organisation
 11,1111111120,Provider not registered with awarding organisation
 15,1111111121,Provider not registered with awarding organisation
+16,1111111122,Provider not registered with awarding organisation

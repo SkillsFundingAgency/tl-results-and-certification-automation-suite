@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3743_Verify Cancel appeal update page and back link 
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  
@@ -21,7 +21,7 @@ When I press the Back link on the Check & submit appeal outcome page
 Then the Check & submit appeal outcome page is displayed showing the old and newly selected grades
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3743_Click Continue button on Cancel appeal update page without selecting a radio button
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  
@@ -32,7 +32,7 @@ And I press the Continue button without selecting a radio button on the Add outc
 Then I am shown an error message on the Cancel appeal update page stating 'Please select whether you want to cancel the update to this appeal'
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3743_Click Yes, cancel, radio button on the Cancel appeal update page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  
@@ -43,7 +43,7 @@ And I press the Yes, I want to cancel radio button on the Add outcome of appeal 
 Then the Review and Appeals Learner Component Grade status page is displayed with the original grade
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3743_Click 'No, I do not want to cancel' radio button on the Cancel appeal update page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  

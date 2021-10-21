@@ -58,6 +58,7 @@ And I cleared the data in DB
 Scenario: 2037_Stage4 Validations for Withdrawn registration
 And I have a registration in Withdrawn state
 And I am on upload registration page
+And I have a Academic Year in "RegistrationsWithdrawnValidationSingle.csv"
 When I upload "RegistrationsWithdrawnValidationSingle.csv" file
 And I click on "Upload" button
 Then I should see validation errror for witdrawn record

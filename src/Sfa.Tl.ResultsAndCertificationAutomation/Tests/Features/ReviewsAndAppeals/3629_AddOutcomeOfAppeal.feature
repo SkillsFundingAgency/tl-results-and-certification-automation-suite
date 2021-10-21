@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3629_Validate Add outcome of appeal page and Back link
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And my registration is set to BEING APPEALED
@@ -20,7 +20,7 @@ Then the Review and Appeals Learner Component Grade status page is displayed
 And the registration for this test is deleted
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3629_Verify error message displayed when no radio button is selected
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And my registration is set to BEING APPEALED
