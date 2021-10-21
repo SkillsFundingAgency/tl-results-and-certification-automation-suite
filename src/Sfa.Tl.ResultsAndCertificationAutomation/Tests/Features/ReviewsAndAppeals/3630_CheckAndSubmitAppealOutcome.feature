@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3630_Validate Check and submit outcome of appeal page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When  I select 'The grade is the same' radio button on the Add outcome of appeal page  
