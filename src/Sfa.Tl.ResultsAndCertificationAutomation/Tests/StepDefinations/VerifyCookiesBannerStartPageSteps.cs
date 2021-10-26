@@ -23,8 +23,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void ThenCookiePolicyPageShouldOpen()
         {
             Assert.AreEqual(StartPage.CookiePageTitle, WebDriver.Title);
-            Assert.AreEqual(StartPage.CookieUrl, WebDriver.Url);
-            Assert.AreEqual("Cookies on Manage T Level results", WebDriver.FindElement(StartPage.TlevelCookies).Text);
+            Assert.AreEqual(StartPage.CookieDetailsUrl, WebDriver.Url);
+            Assert.AreEqual("Details about cookies on Manage T Level results", WebDriver.FindElement(StartPage.TlevelCookies).Text);
         }
     }
 }

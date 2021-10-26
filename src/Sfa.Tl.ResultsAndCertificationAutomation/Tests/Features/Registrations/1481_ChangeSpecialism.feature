@@ -15,7 +15,7 @@ When I click on change Specialism link
 Then I should see change specialism page with all specialisms
 And I cleared the data in DB
 
-@RegressionTest @ChangeRegistration
+@Ignore @RegressionTest @ChangeRegistration
 Scenario: 1481_Change Specialism Page Error Validations
 And I have created a registration without Specialism
 And I am on registration deails page

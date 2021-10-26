@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "SiteAdmin" user
 
-@RegressionTest @ResultsUpload
+@Ignore @RegressionTest @ResultsUpload
 Scenario: 2265_Multiple Results upload success
 And I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -23,7 +23,7 @@ And I should see number of records been uploaded message
 ##And I should go back to results dashboad on clicking Back to Results button
 And I cleared the data in DB
 
-@RegressionTest @ResultsUpload
+@Ignore @RegressionTest @ResultsUpload
 Scenario: 2265_Single Result upload success
 And I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file

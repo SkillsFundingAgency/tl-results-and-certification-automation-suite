@@ -1,7 +1,9 @@
 ﻿using CSVReaderHelper;
 using NUnit.Framework;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using System;
+using System.IO;
 using System.Linq;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
@@ -26,6 +28,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
 
                 index++;
             }
+        }
+        public static void CsvAcademicYearUpdate(string fileName)
+        {
+            var GetFile = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{fileName}";
+            var AcademicYear = SqlQueries.GetAcademicYear();
+            string text = File.ReadAllText(GetFile);
+            text = text.Replace("{AcademicYear}", AcademicYear);
+            File.WriteAllText(GetFile, text);
+        }
+        public static void CsvAssessmentSeriesUpdate(string fileName)
+        {
+            var GetFile = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{fileName}";
+            var AssessmentSeries = SqlQueries.GetAssessmentSeries();
+            string text = File.ReadAllText(GetFile);
+            text = text.Replace("{AssessmentSeries}", AssessmentSeries);
+            File.WriteAllText(GetFile, text);
         }
     }
 }

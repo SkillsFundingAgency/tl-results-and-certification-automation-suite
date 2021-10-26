@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3480_Validate Core Component Grade Status shows grade status 'Being appealed' and validate Search button
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal
@@ -20,7 +20,7 @@ And when I press the Search again button on the Core Component Grade Status page
 Then the Review and Appeals Search page is displayed
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3480_Verify breadcrumbs on Core Component Grade Status page after Being Appealed status is shown
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal

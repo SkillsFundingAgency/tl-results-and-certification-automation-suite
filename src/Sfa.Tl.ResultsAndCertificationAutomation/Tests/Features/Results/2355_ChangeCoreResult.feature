@@ -8,20 +8,20 @@ Given I have logged in as a "ResultsEditor" user
 And I have a registration with result
 And I am on result details page
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2355_Change result
 And I click on "Change" link in result page
 And I change the grade
 When I click on "Change" button
 Then I should see result change successfull page
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2355_Click Change without changing result
 And I click on "Change" link in result page
 When I click on "Change" button
 Then I should go back to learner result page
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2355_Change success deleting result
 And I click on "Change" link in result page
 And I change the grade to Not Reveved

@@ -93,11 +93,13 @@ testRunner.When("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.Spec
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3637_Verify the Check and submit page displays the updated grade when a different" +
             " grade to the old grade is selected")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3637_VerifyTheCheckAndSubmitPageDisplaysTheUpdatedGradeWhenADifferentGradeToTheOldGradeIsSelected()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -151,11 +153,13 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3637_Verify the Check and submit page displays the updated grade when the same gr" +
             "ade as the old grade is selected")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3637_VerifyTheCheckAndSubmitPageDisplaysTheUpdatedGradeWhenTheSameGradeAsTheOldGradeIsSelected()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

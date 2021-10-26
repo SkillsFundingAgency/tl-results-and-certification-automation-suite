@@ -88,11 +88,13 @@ testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2654_PARALLEL TEST Attempt to delete a registration without an active result - Re" +
             "fresh the page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2654_PARALLELTESTAttemptToDeleteARegistrationWithoutAnActiveResult_RefreshThePage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -150,17 +152,19 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2654_PARALLEL TEST Attempt to delete a registration without an active result by s" +
             "electing Submit button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2654_PARALLELTESTAttemptToDeleteARegistrationWithoutAnActiveResultBySelectingSubmitButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2654_PARALLEL TEST Attempt to delete a registration without an active result by s" +
                     "electing Submit button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -183,26 +187,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 22
+#line 21
 testRunner.Given("I am on result details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 22
 testRunner.And("I click on \"Change\" link in result page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 23
 testRunner.And("I successfully remove the grade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 24
 testRunner.And("I attempt to delete an active registration without an active result however someo" +
                         "ne else has just added a result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 25
 testRunner.When("I select continue on the Are you sure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 26
 testRunner.Then("I will be shown the Problem with service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 28
+#line 27
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -211,16 +215,18 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2654_Attempt to delete a registration without an active result")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2654_AttemptToDeleteARegistrationWithoutAnActiveResult()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2654_Attempt to delete a registration without an active result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 33
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -243,22 +249,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 34
+#line 31
 testRunner.Given("I am on result details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 35
+#line 32
 testRunner.And("I click on \"Change\" link in result page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 33
 testRunner.And("I successfully remove the grade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 34
 testRunner.And("I attempt to delete an active registration without an active result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 35
 testRunner.Then("the registration is deleted along with all previous inactive results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 39
+#line 36
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

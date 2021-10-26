@@ -11,7 +11,7 @@ And I am on registration deails page
 @RegressionTest @ChangeRegistration
 Scenario: 984-Change Specialism page
 When I click on change Specialism link
-Then I should be navigated to Has learner decided on specialism page
+Then I should be navigated to Do you want to change or remove your specialism page
 And the redio button is selected to yes
 And button name should be continue
 And I cleared the data in DB

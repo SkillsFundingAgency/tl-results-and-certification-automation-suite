@@ -32,6 +32,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string UploadStage4File = "RegistrationsInvalidDataStage4.csv";
         public static string Stage4Errors = string.Concat("Data\\", "Stage4ValidationErrors.csv");
         public static string Stage4WithdrawnErrorFile = string.Concat("Data\\", "RegistrationStage4ErrorForWithdrawn.csv");
+        public static string MultiSpecialismErrors = string.Concat("Data\\", "4328registrationserrorreport.csv");
         public static By manageIndividualRegistrationsLink { get; } = By.XPath("//*[contains (text(),'manage individual registrations')]");
         public static By uploadAnotherMultipleRegistrationsFileLink { get; } = By.XPath("//*[contains (text(),'upload another multiple registrations file')]");
         public static By assessmentPeriodsLink { get; } = By.XPath("//*[contains (text(),'assessment periods')]");

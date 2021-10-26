@@ -138,11 +138,13 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1481_Change Specialism Page Error Validations")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ChangeRegistration")]
         public virtual void _1481_ChangeSpecialismPageErrorValidations()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ChangeRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

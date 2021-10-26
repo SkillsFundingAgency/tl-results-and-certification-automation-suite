@@ -37,7 +37,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.StatementOfAchiev
         {
             string ExpectedDate = DateTime.Now.ToString("dd MMMM yyyy");
             Assert.IsTrue(WebDriver.FindElement(CheckAndSubmitTextArea).Text.Contains(ExpectedDate));
-            Assert.IsTrue(WebDriver.FindElement(CheckAndSubmitTextArea).Text.Contains("Barnsley Provider Administrator"));
+            Assert.IsTrue(WebDriver.FindElement(CheckAndSubmitTextArea).Text.Contains("Barnsley Provider administrator"));
         }
 
         public static void VerifyLearnersTLevelComponentAchievements(string EngAndMathAchievementStatus, string IndustryPlacementStatus)

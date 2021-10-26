@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3632_Validate Core Component Grade Status shows grade status as 'FINAL' when grade was kept the same after appeal
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When  I select 'The grade is the same' radio button on the Add outcome of appeal page 
@@ -20,7 +20,7 @@ And the orignal grade and a status of ‘Final’ will now be shown on the ‘gr
 And the result on the database is set to final
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3632_Validate Core Component Grade Status shows grade status as 'FINAL' when grade was appealed
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  
@@ -34,7 +34,7 @@ When I refresh the Component Grade status page
 Then the success banner is not shown on the Component Grade status page
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3632_Verify breadcrumbs and Search again button on Core Component Grade Status page after FINAL status is shown
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When  I select 'The grade is the same' radio button on the Add outcome of appeal page 

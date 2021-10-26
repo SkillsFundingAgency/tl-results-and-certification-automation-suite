@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3637_Verify the Check and submit page displays the updated grade when a different grade to the old grade is selected
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  
@@ -17,7 +17,7 @@ And I click the grade B radio button on the Update grade for appeal outcome page
 Then the Check & submit appeal outcome page is displayed showing the old and newly selected grades
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3637_Verify the Check and submit page displays the updated grade when the same grade as the old grade is selected
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I select I need to change the grade radio button on the Add outcome of appeal page  

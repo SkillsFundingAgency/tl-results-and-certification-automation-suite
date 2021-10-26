@@ -83,9 +83,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
 testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-testRunner.And("I maximise the browser window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
 testRunner.And("I have a registration with an assessment entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -93,17 +90,19 @@ testRunner.And("I have a registration with an assessment entry", ((string)(null)
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2605_Attempt to navigate to the Are you sure you want to remove this core assessm" +
             "ent entry page after a result is added")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2605_AttemptToNavigateToTheAreYouSureYouWantToRemoveThisCoreAssessmentEntryPageAfterAResultIsAdded()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2605_Attempt to navigate to the Are you sure you want to remove this core assessm" +
                     "ent entry page after a result is added", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 14
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -126,21 +125,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 15
+#line 14
 testRunner.Given("I capture the URL for the the Are you sure you want to remove this core assessmen" +
                         "t entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 15
 testRunner.And("I add a result to the registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 16
 testRunner.When("I attempt to access the URL for the Are you sure you want to remove this core ass" +
                         "essment entry page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 17
 testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 19
+#line 18
 testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

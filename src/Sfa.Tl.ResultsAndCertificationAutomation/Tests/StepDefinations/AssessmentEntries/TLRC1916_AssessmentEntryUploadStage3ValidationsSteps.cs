@@ -15,7 +15,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             RegistrationsPage.ClickRegLink();
             ClickElement(RegistrationsPage.UploadRegistationLink);
         }
-        
+        [Given(@"I have a Academic Year in ""(.*)""")]
+        public void GivenIHaveAAcademicYearIn(string filename)
+        {
+            CsvFileReader.CsvAcademicYearUpdate(filename);
+        }
+
         [Given(@"I upload ""(.*)"" file")]
         public void GivenIUploadFile(string file)
         {

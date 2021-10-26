@@ -10,7 +10,7 @@ And I uploaded following files
 | Registration                     | Assessment                     | Result                      |
 | RegistrationsValidDataSingle.csv | AssessmentUploadSingleData.csv | ResultsUploadSingleData.csv |
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2134_Transfer result from bulk upload
 And I am on Registration upload page
 And I upload "RegistrationForTransfer.csv" file

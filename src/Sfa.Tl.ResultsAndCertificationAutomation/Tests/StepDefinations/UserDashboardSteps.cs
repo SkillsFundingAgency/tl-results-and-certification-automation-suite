@@ -1,8 +1,6 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
-using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+﻿using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using System;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
@@ -44,6 +42,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
                         break;
                     case "NoServiceTole":
                         DfESignInPage.SigninAsNoServiceUser();
+                        break;
+                    case "CityAndGuildsAdmin":
+                        DfESignInPage.SigninAsCityAndGuildsAdminUser();
                         break;
                     case "ProviderBarnsleyPA":
                         DfESignInPage.SigninAsProviderBarnsleyPAUser();

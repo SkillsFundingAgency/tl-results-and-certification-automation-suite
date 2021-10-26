@@ -89,12 +89,14 @@ testRunner.And("I upload registrations and associated assessments", ((string)(nu
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1879_Click the \'View and amend this learner’s registration details\' link to navig" +
             "ate to the registration details page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000004", null)]
         public virtual void _1879_ClickTheViewAndAmendThisLearnerSRegistrationDetailsLinkToNavigateToTheRegistrationDetailsPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -151,12 +153,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1879_Click the Search again details\' link to navigate to the \'Search for a learne" +
             "r\' page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000004", null)]
         public virtual void _1879_ClickTheSearchAgainDetailsLinkToNavigateToTheSearchForALearnerPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -215,12 +219,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1879_Validate breadcrumb links on the Learner\'s Assessment Entries page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000004", null)]
         public virtual void _1879_ValidateBreadcrumbLinksOnTheLearnersAssessmentEntriesPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -299,12 +305,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2138_Replace \'Assessment entry\' for Core and Specialism with \'First assessment en" +
             "try\'")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000004", null)]
         public virtual void _2138_ReplaceAssessmentEntryForCoreAndSpecialismWithFirstAssessmentEntry(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))

@@ -93,11 +93,13 @@ testRunner.When("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.Spec
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3480_Validate Core Component Grade Status shows grade status \'Being appealed\' and" +
             " validate Search button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3480_ValidateCoreComponentGradeStatusShowsGradeStatusBeingAppealedAndValidateSearchButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -159,11 +161,13 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3480_Verify breadcrumbs on Core Component Grade Status page after Being Appealed " +
             "status is shown")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3480_VerifyBreadcrumbsOnCoreComponentGradeStatusPageAfterBeingAppealedStatusIsShown()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

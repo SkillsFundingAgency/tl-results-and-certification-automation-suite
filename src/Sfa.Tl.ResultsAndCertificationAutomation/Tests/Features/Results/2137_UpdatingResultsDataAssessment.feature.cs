@@ -88,11 +88,13 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2137_ No Remove entry link in assessment if result added from bulk upload")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2137_NoRemoveEntryLinkInAssessmentIfResultAddedFromBulkUpload()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -150,11 +152,13 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2137_ No Remove entry link in assessment if result added manually")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2137_NoRemoveEntryLinkInAssessmentIfResultAddedManually()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -200,11 +204,13 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2137_ Display Remove entry link in assessment if result removed from bulk upload")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2137_DisplayRemoveEntryLinkInAssessmentIfResultRemovedFromBulkUpload()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -269,11 +275,13 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2137_ Display Remove entry link in assessment if result removed manually")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         public virtual void _2137_DisplayRemoveEntryLinkInAssessmentIfResultRemovedManually()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

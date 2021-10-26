@@ -19,6 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string AOResultsUser = WebDriverFactory.Config["AOResultsEditor"];
         private static readonly string AONoRoleUser = WebDriverFactory.Config["AONoRole"];
         private static readonly string AONoServiceUser = WebDriverFactory.Config["AONoService"];
+        public static readonly string AOCityAndGuildsSA = WebDriverFactory.Config["AOCityAndGuildsUser"];
         public static readonly string AOAppPassword = WebDriverFactory.Config["AOPassword"];
         public static readonly string ProBarnsleyPA = WebDriverFactory.Config["ProBarnsleyPA"];
         public static readonly string ProBarnsleyLRE = WebDriverFactory.Config["ProBarnsleyLRE"];
@@ -111,6 +112,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void SigninAsNoRoleNoServiceUser()
         {
             TLevelSignIn(AONoRoleUser, AOAppPassword);
+        }
+        public static void SigninAsCityAndGuildsAdminUser()
+        {
+            TLevelSignIn(AOCityAndGuildsSA, AOAppPassword);
         }
         public static void SigninAsProviderBarnsleyPAUser()
         {

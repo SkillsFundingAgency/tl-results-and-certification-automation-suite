@@ -12,11 +12,11 @@ Scenario: 4051_Verify the Queried T Levels details page, Back link and Back to q
 Given I click on the TLevels link on the homepage
 And I click the Queried T Levels link on the T Level dashboard
 Then I am navigated to the Queried T Levels page
-When I click on the View link for the "T Level in Digital Support and Services" Tlevel on the Queried T Levels page
-Then the details for the queried T Level "T Level in Digital Support and Services" are displayed
+When I click on the View link for the "T Level in Digital Support Services" Tlevel on the Queried T Levels page
+Then the details for the queried T Level "T Level in Digital Support Services" are displayed
 When I click the back link on the Queried T Level details page
 Then I am navigated to the Queried T Levels page
-When I click on the View link for the "T Level in Digital Support and Services" Tlevel on the Queried T Levels page
+When I click on the View link for the "T Level in Digital Support Services" Tlevel on the Queried T Levels page
 And I click the Back to queried T Levels button
 Then I am navigated to the Queried T Levels page
 And I set all of the T Levels for NCFE to unconfirmed

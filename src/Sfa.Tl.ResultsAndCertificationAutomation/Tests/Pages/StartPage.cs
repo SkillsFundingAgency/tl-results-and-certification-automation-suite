@@ -27,7 +27,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By TlevelCookies { get; } = By.XPath("//*[@id='main-content']/div/div/h1");
         public By StartNowButton = By.XPath("//a[@role='button' and contains(text(),'Start now')]");
         public IWebElement CookiesLink => WebDriver.FindElement(By.LinkText("Cookies"));
-        public By CookieLink = By.XPath("//a[contains(text(),'Cookies')]");
+        //public By CookieLink = By.XPath("//a[@class='govuk-footer__link' and @href='/cookies']");
+        public By CookieLink = By.LinkText("Cookies");
         public By PrivacyLink = By.XPath("//a[contains(text(),'Privacy')]");
         public By PrivacyTitle = By.TagName("h1");
         public By TCLink = By.XPath("//a[contains(text(),'Terms and conditions')]");
@@ -35,7 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         protected readonly By PageHeader = By.XPath("//*[@id='main-content']//h1");
         private const string TechSpecPageTitle = "T Levels data format and rules – Manage T Level results – GOV.UK";
         private const string TechSpecPageHeader = "T Levels data format and rules";
-        public const string CookiePageTitle = "Cookies on Manage T Level results page – Manage T Level results – GOV.UK";
+        public const string CookiePageTitle = "Details about cookies on Manage T Level results – Manage T Level results – GOV.UK";
         public static By RegistrationsHeader = By.XPath("//H2[contains(text(),'Registrations')]");
         public static By AssessmentEntriesHeader = By.XPath("//H2[contains(text(),'Assessment entries')]");
         public static string RegistrationHeaderText = "Registrations";

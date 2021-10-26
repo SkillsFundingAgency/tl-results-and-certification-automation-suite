@@ -12,7 +12,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         {
             ClickElement(SpecialismChangeLink);
         }
-        
+
+        [Then(@"I should be navigated to Do you want to change or remove your specialism page")]
+        public void ThenIShouldBeNavigatedToDoYouWantToChangeOrRemoveYourSpecialismPage()
+        {
+            VerifyDecideSpecialismChangePage();
+        }
+
         [Then(@"I should be navigated to Has learner decided on specialism page")]
         public void ThenIShouldBeNavigatedToHasLearnerDecidedOnSpecialismPage()
         {

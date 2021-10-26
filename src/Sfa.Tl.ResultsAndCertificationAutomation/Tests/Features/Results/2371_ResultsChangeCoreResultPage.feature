@@ -21,7 +21,7 @@ When I click on "Manage a result" link
 Then I will be navigated to the Results Search for a Learner page
 
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2371_Navigate to the Change Core Result page and press the back link 
 Given I have a <ULN> with core result of "A*" with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series "Autumn 2021" and specialism "Agriculture, Land Management and Production (70000002)"
 When I press the Change link on the Results Learners Results page
@@ -35,7 +35,7 @@ Examples:
 | 9900000008  |
 
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2371_Navigate to the Change Core Result page and press the Change button without changing the result
 Given I have a <ULN> with core result of "A*" with core "Agriculture, Environmental and Animal Care (77777777)" and assessment series "Autumn 2021" and specialism "Agriculture, Land Management and Production (70000002)"
 When I press the Change link on the Results Learners Results page

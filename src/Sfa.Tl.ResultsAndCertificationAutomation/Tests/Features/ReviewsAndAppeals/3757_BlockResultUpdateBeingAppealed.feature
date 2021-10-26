@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ResultsEditor" user
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3757 Validate upload result update for a appealed state
 And I have a registration in Appealed state for this Uln
 | Uln        |

@@ -161,7 +161,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         public static int CreateRegistrationPathwayForDudley(int profileId)
         {
             var tqProviderId = Constants.DudleyProviderIdForLrs;
-            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            string CreateRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2021', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
             string GetRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateRegPathway, ConnectionString);
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
@@ -499,10 +499,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         {
             string SetThreeTLevelsToReviewed = "update TqAwardingOrganisation set reviewstatus = 2, modifiedon = GETDATE(), ModifiedBy = 'Test User' where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Agriculture, Environmental and Animal Care','T Level in Business and Administration','T Level in Digital Business Services'))";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetThreeTLevelsToReviewed, ConnectionString);
-            string SetThreeTLevelsToQueried = "update TqAwardingOrganisation set reviewstatus = 3, modifiedon = GETDATE(), ModifiedBy = 'Test User' where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Digital Support and Services','T Level in Education and Childcare','T Level in Engineering and Manufacturing'))";
+            string SetThreeTLevelsToQueried = "update TqAwardingOrganisation set reviewstatus = 3, modifiedon = GETDATE(), ModifiedBy = 'Test User' where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Digital Support Services','T Level in Education and Childcare','T Level in Engineering and Manufacturing'))";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetThreeTLevelsToQueried, ConnectionString);
             string SetFourTLevelsToUnconfirmed = "update TqAwardingOrganisation set reviewstatus = 1, modifiedon = GETDATE(), ModifiedBy = 'Test User' where TlPathwayId in (select ao.TlPathwayId from TqAwardingOrganisation AO, TlPathway p where AO.TlPathwayId = p.id and ao.TlAwardingOrganisatonId = 1 and p.TlevelTitle in ('T Level in Health','T Level in Healthcare Science','T Level in Legal, Finance and Accounting','T Level in Science'))";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(SetFourTLevelsToUnconfirmed, ConnectionString);
+        }
+        public static string GetAcademicYear()
+        {
+            string GetAcademicYear = "Select Name from dbo.AcademicYear where getdate() >= StartDate and getdate() <= EndDate" ;
+            var AcademicYear = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetAcademicYear, ConnectionString);
+            var result = Convert.ToString(AcademicYear[0][0]);
+            return result;
+        }
+        public static string GetAssessmentSeries()
+        {
+            string GetAssessmentSeries = "Select Name from dbo.AssessmentSeries where getdate() >= StartDate and getdate() <= EndDate";
+            var AssessmentSeries = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetAssessmentSeries, ConnectionString);
+            var result = Convert.ToString(AssessmentSeries[0][0]);
+            return result;
         }
     }
 }

@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3635_Validate Core Component Grade Status page shows Success banner and validate Search again button functionality
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal
@@ -21,7 +21,7 @@ And when I press the Search again button on the Core Component Grade Status page
 Then the Review and Appeals Search page is displayed
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3635_Validate Success banner is not shown on Core Component Grade Status page if the page is refreshed
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal
@@ -32,7 +32,7 @@ When I refresh the Component Grade status page
 Then the success banner is not shown on the Component Grade status page
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3635_Verify breadcrumbs on Core Component Grade Status page after Success banner is shown
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal

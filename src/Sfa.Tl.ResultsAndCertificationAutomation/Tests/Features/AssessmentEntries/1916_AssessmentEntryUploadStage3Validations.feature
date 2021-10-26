@@ -3,7 +3,7 @@
 	I need to be able to see why my file has failed to upload
 	So that I can make any relevant changes
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 1916_Assessment upload stage3 validations
 Given I have logged in as a "RegistrationEditor" user
 And I am on Registrations upload page

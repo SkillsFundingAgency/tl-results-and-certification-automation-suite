@@ -271,12 +271,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2311_Results learners page for a registration with an assessment entry and a spec" +
             "ialism is added")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000008", null)]
         public virtual void _2311_ResultsLearnersPageForARegistrationWithAnAssessmentEntryAndASpecialismIsAdded(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))
@@ -334,12 +336,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2311_Results learners page for a registration with an assessment entry but no spe" +
             "cialism")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000009", null)]
         public virtual void _2311_ResultsLearnersPageForARegistrationWithAnAssessmentEntryButNoSpecialism(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))
@@ -400,12 +404,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2311_Breadcrumbs verification")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000010", null)]
         public virtual void _2311_BreadcrumbsVerification(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))

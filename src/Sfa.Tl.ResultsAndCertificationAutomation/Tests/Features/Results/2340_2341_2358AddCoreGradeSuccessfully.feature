@@ -33,7 +33,7 @@ Then I will be navigated to the Results Search for a Learner page
 
 
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2340_Press Submit on the Select Core page without changing the default grade
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
@@ -49,7 +49,7 @@ Examples:
 | 9900000008  |
 
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2340_Press back link on the Select Core page 
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>
@@ -64,7 +64,7 @@ Examples:
 | ULN         |
 | 9900000008  |
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 2341_2358_Add a grade and verify the result is added and  validate the result added confirmation page   
 Given I search for a <ULN>
 Then the Learners Results page will be displayed for <ULN>

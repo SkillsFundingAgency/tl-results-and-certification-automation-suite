@@ -66,8 +66,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string SelectCoreErrorTitle = "Error: Add a new registration - Select the core page – Manage T Level results – GOV.UK";
         public const string SpecialismDecideTitle = "Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
         public const string SpecialismDecideErrorTitle = "Error: Add a new registration - Has the learner decided on the specialism page – Manage T Level results – GOV.UK";
-        public const string SelectSpecialismTitle = "Add a new registration - Select the specialism page – Manage T Level results – GOV.UK";
-        public const string SelectSpecialismErrorTitle = "Error: Add a new registration - Select the specialism page – Manage T Level results – GOV.UK"; public const string SelectAcademicYearTitle = "Add a new registration - Select the academic year page – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismTitle = "Add a new registration - Select the specialism – Manage T Level results – GOV.UK";
+        public const string SelectSpecialismErrorTitle = "Error: Add a new registration - Select the specialism – Manage T Level results – GOV.UK"; public const string SelectAcademicYearTitle = "Add a new registration - Select the academic year page – Manage T Level results – GOV.UK";
         public const string ManualRegSummaryTitle = "Add a new registration - Check and submit page – Manage T Level results – GOV.UK";
         public const string ReggistrationSuccessTitle = "Add registration - Registration added confirmation page – Manage T Level results – GOV.UK";
         public const string UlnRegisteredWithSameAOTitle = "Add a new registration - ULN already registered page – Manage T Level results – GOV.UK";
@@ -138,12 +138,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DbProviderName = "Automation Test1 (99999901)";
         public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
         //public const string TqProviderId = "9479";
-        public const string TqProviderId = "15000";
-        public const string TlSpecialismId = "209";
-        public const string TqProviderId2 = "15001";
-        public const string TqProviderIdForLrs = "15013";
+        public const string TqProviderId = "15166";
+        public const string TlSpecialismId = "42";
+        public const string TqProviderId2 = "15167";
+        public const string TqProviderIdForLrs = "15179";
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";
-        public const string DudleyProviderIdForLrs = "15014";
+        public const string DudleyProviderIdForLrs = "15181";
         public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
         //Reviews And Appeals Data
         public const string RAAName = "Db FirstName Db LastName";

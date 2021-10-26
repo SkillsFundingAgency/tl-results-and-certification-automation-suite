@@ -1,0 +1,5 @@
+Line,ULN,Error
+2,9900000001,Specialism is not valid
+3,9900000002,This specialism cannot be selected as a single option (for when only one code of a paired specialism has been entered)
+4,9900000003,Specialism is not valid
+5,9900000004,Specialism is not valid

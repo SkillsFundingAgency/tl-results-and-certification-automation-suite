@@ -4,7 +4,7 @@
 Background:
 Given I have logged in as a "AllUser" user
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 4170_Assessment upload Success - Verify Upload another file button
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -17,7 +17,7 @@ When I click the Upload another file button
 Then I am shown the Assessment entries upload page
 And I cleared the data in DB
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 4170_Assessment upload Success - Verify Back to home button
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -30,7 +30,7 @@ When I click the Back to home button
 Then I should be navigated back to home page
 And I cleared the data in DB
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 4170_Assessment upload Success - Verify manage individual registrations link
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -44,7 +44,7 @@ Then the Assessments Search for a learner page is shown
 And I cleared the data in DB
 
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 4170_Assessment upload Success - Verify upload another multiple assessments file link
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
@@ -57,7 +57,7 @@ When I click the upload another multiple assessments file link
 Then I am shown the Assessment entries upload page
 And I cleared the data in DB
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 4170_Assessment upload Success - Verify add results link
 Given I am on Registrations upload page
 And I upload "RegistrationsDataForAssessments.csv" file
