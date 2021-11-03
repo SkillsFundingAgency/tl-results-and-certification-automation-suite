@@ -1,0 +1,70 @@
+schedules:
+  - cron: "0 0 * * *"
+    displayName: Daily midnight build
+    branches:
+      include:
+        - feature/sprint-44
+resources:
+  repositories:
+    - repository: self
+      persistCredentials: true
+      clean: true
+
+    - repository: RESAC
+      type: github
+      endpoint: S126-Tlevelservice
+      name: SkillsFundingAgency/tl-results-and-certification
+      ref: feature/sprint-44
+
+    - repository: devopsTools
+      type: github
+      endpoint: DFE-Digital
+      name: DFE-Digital/operations-devops-tools
+
+    - repository: devopsTemplates
+      type: github
+      endpoint: DfE-Digital
+      name: DFE-Digital/operations-devops-pipeline-templates
+trigger:
+  batch: true
+  branches:
+    include:
+      - feature/*
+      - master
+pr: none
+
+variables:
+  buildConfiguration: 'release'
+  MSBUILDSINGLELOADCONTEXT: 1
+  buildPlatform: 'anycpu'
+  applicationName: 'resac automation'
+
+stages:  
+  - template: ./yaml/stages/resac-build.yml
+    parameters: 
+      buildConfiguration: $(buildConfiguration)
+      buildPlatform: $(buildPlatform)
+      artifactname: 'appdrop'    
+ 
+  - template: ./yaml/stages/resac-test.yml
+    parameters:
+      stageName: 'Test'
+      deploymentDependencyName: 'Build'
+      testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+      searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+      filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+      variableGroups:
+        - 'Test Shared Resources-new infra'
+        - 'Common Shared Resources-new infra'
+  
+  # - template: ./yaml/stages/resac-test.yml
+  #   parameters:
+  #     stageName: 'PreProd'
+  #     deploymentDependencyName: 'Build'
+  #     testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+  #     searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+  #     filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+  #     testFiltercriteria: 'TestCategory=SmokeTest'
+  #     variableGroups:
+  #       - 'PreProd Shared Resources'
+  #       - 'Common Shared Resources'
