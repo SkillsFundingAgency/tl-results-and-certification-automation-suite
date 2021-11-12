@@ -44,6 +44,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static string AssessmentUploadStage2InvalidHeaderErrors = string.Concat("Data\\", "AssessmentStage2InvalidHeaderError.csv");
         public static string AssessmentUploadStage2NoDataErrors = string.Concat("Data\\", "AssessmentStage2NoDataError.csv");
         public static string AssessmentUploadStage3Errors = string.Concat("Data\\", "AssessmentStage3Errors.csv");
+        public static string AssessmentUploadAddFirstAssessEntry = string.Concat("Data\\", "AssessmentAddFirstAssessSeriesErrors.csv");
         public static string AssessmentUploadStage3WithdrawnRegError = string.Concat("Data\\", "AssessmentStage3WithdrawnRegError.csv");
         //Buttons
         public static By BackToAssessmentEntriesButton = By.XPath("//*[contains(text(),'Back to assessment')]");

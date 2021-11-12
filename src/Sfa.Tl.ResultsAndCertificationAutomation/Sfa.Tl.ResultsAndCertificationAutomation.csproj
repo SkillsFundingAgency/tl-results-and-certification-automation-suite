@@ -204,6 +204,9 @@
     <None Update="Data\AssessmentStage2ErrorReport.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\AssessmentAddFirstAssessSeriesErrors.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\AssessmentStage3Errors.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -300,6 +303,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\4708_AssessmentEntryUpload-NoAssessSeriesFirstOne.feature.cs">
+      <DependentUpon>4708_AssessmentEntryUpload-NoAssessSeriesFirstOne.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\4170_AssessmentEntryUploadSuccessfulNavigation.feature.cs">
       <DependentUpon>4170_AssessmentEntryUploadSuccessfulNavigation.feature</DependentUpon>
     </Compile>
@@ -467,6 +473,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4708_AssessmentEntryUpload-NoAssessSeriesFirstOne.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4170_AssessmentEntryUploadSuccessfulNavigation.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>

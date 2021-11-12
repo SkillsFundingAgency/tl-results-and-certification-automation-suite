@@ -42,5 +42,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             CsvFileReader.CsvDataFileCompare(AssessmentUploadStage3Errors);
             SqlQueries.DeleteFromRegistrationTables();
         }
+
+        [Then(@"I should see all errors in the file for attempting to add a first assessment series")]
+        public void ThenIShouldSeeAllErrorsInTheFileForAttemptingToAddAFirstAssessmentSeries()
+        {
+            CsvFileReader.CsvDataFileCompare(AssessmentUploadAddFirstAssessEntry);
+            SqlQueries.DeleteFromRegistrationTables();
+        }
+
     }
 }
