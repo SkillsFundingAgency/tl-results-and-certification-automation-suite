@@ -8,6 +8,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
     [Binding]
     public class TLRC1878_AssesmentEntriesSearchForALearnerPageSteps 
     {
+
+        private readonly ScenarioContext _scenarioContext;
+        public TLRC1878_AssesmentEntriesSearchForALearnerPageSteps(ScenarioContext scenarioContext)
+        {
+            _scenarioContext = scenarioContext;
+        }
+
+
         [Then(@"the Assessments Search for a learner page is shown")]
         [Then(@"the heading, page title and URL will be as expected")]
         public void ThenTheHeadingPageTitleAndURLWillBeAsExpected()
@@ -118,16 +126,40 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesULNCannotBeFoundPage.PressBackToSearch();
         }
 
+        [Given(@"I search for my withdrawn registration")]
+        public void GivenISearchForMyWithdrawnRegistration()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            AssessmentEntriesSearchForLearnerPage.EnterULN(uln);
+        }
+
+        [When(@"I click on the back link on the learner withdrawn page")]
+        public void WhenIClickOnTheBackLinkOnTheLearnerWithdrawnPage()
+        {
+            AssessmentEntriesWithdrawnPage.PressBackLink();
+        }
 
 
 
+        [Then(@"I am taken to the Assessment search page with Uln prepopulated")]
+        public void ThenIAmTakenToTheAssessmentSearchPageWithUlnPrepopulated()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            AssessmentEntriesSearchForLearnerPage.VerifyULNSearchFieldValue(uln);
+        }
 
+        [When(@"I press the Search again button on the learner withdrawn page")]
+        public void WhenIPressTheSearchAgainButtonOnTheLearnerWithdrawnPage()
+        {
+            AssessmentEntriesSearchForLearnerPage.PressSearch();
+            AssessmentEntriesWithdrawnPage.PressSearchAgain();
+        }
 
-
-
-
-
-
+        [Then(@"I am taken to the Assessment search page with the Search field empty")]
+        public void ThenIAmTakenToTheAssessmentSearchPageWithTheSearchFieldEmpty()
+        {
+            AssessmentEntriesSearchForLearnerPage.VerifyULNSearchFieldIsEmpty();
+        }
 
     }
 }

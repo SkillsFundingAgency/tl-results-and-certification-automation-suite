@@ -1,4 +1,5 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
@@ -35,5 +36,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             VerifyBackToHome();
         }
+
+        [Then(@"I should see the Learner has been withdrawn page")]
+        public void ThenIShouldSeeTheLearnerHasBeenWithdrawnPage()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            AssessmentEntriesWithdrawnPage.VerifyAssessmentLearnerWithdrawnPage();
+            AssessmentEntriesWithdrawnPage.VerifyDynamicHeaders(uln);
+        }
+
+        [When(@"I press the Back to home button on the learner withdrawn page")]
+        public void WhenIPressTheBackToHomeButtonOnTheLearnerWithdrawnPage()
+        
+        {
+            var uln = _scenarioContext["uln"] as string;
+            AssessmentEntriesSearchForLearnerPage.EnterULN(uln);
+            AssessmentEntriesWithdrawnPage.PressBackToHomeBtn();
+        }
+
     }
 }
