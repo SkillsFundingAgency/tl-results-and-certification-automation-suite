@@ -301,6 +301,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\4707_AssessmentEntryLearnerCannotBeFoundPage.feature.cs">
+      <DependentUpon>4707_AssessmentEntryLearnerCannotBeFoundPage.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\4710_AssessmentEntryLearnerIsWithdrawn.feature.cs">
       <DependentUpon>4710_AssessmentEntryLearnerIsWithdrawn.feature</DependentUpon>
     </Compile>
@@ -471,6 +474,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4707_AssessmentEntryLearnerCannotBeFoundPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4710_AssessmentEntryLearnerIsWithdrawn.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>

@@ -20,22 +20,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2000_Create ULN cannot be found(assessment entries)")]
-    public partial class _2000_CreateULNCannotBeFoundAssessmentEntriesFeature
+    [NUnit.Framework.DescriptionAttribute("4707_MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - learner not found")]
+    public partial class _4707_MANUALJOURNEYASSESSMENTENTRYCHANGES_LearnerNotFoundFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2000_AssessmentEntryULNCannotBeFoundPage.feature"
+#line 1 "4707_AssessmentEntryLearnerCannotBeFoundPage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "2000_Create ULN cannot be found(assessment entries)", "\tAs a Registrations Editor\r\n    I need to be able to understand that I cannot sea" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "4707_MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - learner not found", "\tAs a Registrations Editor\r\n    I need to be able to understand that I cannot sea" +
                     "rch for a ULN which is registered with a different AO\r\n\tSo that I can search for" +
                     " a different ULN", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
@@ -76,15 +76,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2000_Verify ULN cannot be found page headings, URL, page title")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("4707_Verify ULN cannot be found page headings, URL, page title")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000005", null)]
-        public virtual void _2000_VerifyULNCannotBeFoundPageHeadingsURLPageTitle(string uLN, string[] exampleTags)
+        public virtual void _4707_VerifyULNCannotBeFoundPageHeadingsURLPageTitle(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -94,7 +92,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2000_Verify ULN cannot be found page headings, URL, page title", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4707_Verify ULN cannot be found page headings, URL, page title", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -132,16 +130,14 @@ testRunner.Then(string.Format("I am navigated to the ULN connot be found page wh
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2000_Verify searching for a ULN which is registered to another AO results in the " +
+        [NUnit.Framework.DescriptionAttribute("4707_Verify searching for a ULN which is registered to another AO results in the " +
             "ULN not found page being displayed")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000005", null)]
-        public virtual void _2000_VerifySearchingForAULNWhichIsRegisteredToAnotherAOResultsInTheULNNotFoundPageBeingDisplayed(string uLN, string[] exampleTags)
+        public virtual void _4707_VerifySearchingForAULNWhichIsRegisteredToAnotherAOResultsInTheULNNotFoundPageBeingDisplayed(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -151,7 +147,7 @@ testRunner.Then(string.Format("I am navigated to the ULN connot be found page wh
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2000_Verify searching for a ULN which is registered to another AO results in the " +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4707_Verify searching for a ULN which is registered to another AO results in the " +
                     "ULN not found page being displayed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 19
 this.ScenarioInitialize(scenarioInfo);
@@ -205,16 +201,13 @@ testRunner.Then(string.Format("I am navigated to the ULN connot be found page wh
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2000_Pressing the Back to search button takes the user back to the Search for a l" +
-            "earner page")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("4707_Verify button navigation on the Assessment ULN not found page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
         [NUnit.Framework.TestCaseAttribute("9900000099", null)]
-        public virtual void _2000_PressingTheBackToSearchButtonTakesTheUserBackToTheSearchForALearnerPage(string uLN, string[] exampleTags)
+        public virtual void _4707_VerifyButtonNavigationOnTheAssessmentULNNotFoundPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntries"};
             if ((exampleTags != null))
@@ -224,8 +217,7 @@ testRunner.Then(string.Format("I am navigated to the ULN connot be found page wh
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2000_Pressing the Back to search button takes the user back to the Search for a l" +
-                    "earner page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4707_Verify button navigation on the Assessment ULN not found page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -259,13 +251,34 @@ testRunner.And(string.Format("I enter the following {0}", uLN), ((string)(null))
 testRunner.Then(string.Format("I am navigated to the ULN connot be found page which shows a header with the {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 40
-testRunner.And("I press the Back to search button on the ULN not found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("I press the Back link on the Assessment ULN not found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 41
 testRunner.Then("I am navigated back to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 42
 testRunner.And(string.Format("the search field on the ULN not found page still shows the {0} entered", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 43
+testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+testRunner.And("I press the Search again button on the ULN not found page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 45
+testRunner.Then("I am navigated back to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 46
+testRunner.And("Search field on the ULN not found page is shown and the Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 47
+testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 48
+testRunner.And("I press the Back to home button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 49
+testRunner.Then("I should be navigated back to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

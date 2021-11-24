@@ -36,6 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesSearchForLearnerPage.EnterULN(ULN);
         }
 
+        [When(@"I enter the following (.*)")]
         [Given(@"I enter the following (.*)")]
         public void GivenIEnterTheFollowing(string ULN)
         {
@@ -120,10 +121,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             SqlQueries.DeleteFromRegistrationTables();
         }
 
+        [Then(@"Search field on the ULN not found page is shown and the Search field is empty")]
+        public void ThenSearchFieldOnTheULNNotFoundPageIsShownAndTheSearchFieldIsEmpty()
+        {
+            AssessmentEntriesSearchForLearnerPage.VerifyULNSearchFieldIsEmpty();
+        }
+
+
         [Then(@"I press the Back to search button on the ULN not found page")]
         public void ThenIPressTheBackToSearchButtonOnTheULNNotFoundPage()
         {
-            AssessmentEntriesULNCannotBeFoundPage.PressBackToSearch();
+            //AssessmentEntriesULNCannotBeFoundPage.PressBackToSearch();
         }
 
         [Given(@"I search for my withdrawn registration")]
@@ -161,5 +169,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesSearchForLearnerPage.VerifyULNSearchFieldIsEmpty();
         }
 
+        [Then(@"I press the Search again button on the ULN not found page")]
+        public void ThenIPressTheSearchAgainButtonOnTheULNNotFoundPage()
+        {
+            AssessmentEntriesULNCannotBeFoundPage.PressSearchAgainBtn();
+        }
+
+        [When(@"I press the Back link on the Assessment ULN not found page")]
+        public void WhenIPressTheBackLinkOnTheAssessmentULNNotFoundPage()
+        {
+            AssessmentEntriesULNCannotBeFoundPage.PressBackLink();
+        }
+
+        [When(@"I press the Search again button on the ULN not found page")]
+        public void WhenIPressTheSearchAgainButtonOnTheULNNotFoundPage()
+        {
+            AssessmentEntriesULNCannotBeFoundPage.PressSearchAgainBtn();
+        }
+
+        [When(@"I press the Back to home button")]
+        public void WhenIPressTheBackToHomeButton()
+        {
+            AssessmentEntriesULNCannotBeFoundPage.PressBackToHomeBtn();
+        }
     }
 }
