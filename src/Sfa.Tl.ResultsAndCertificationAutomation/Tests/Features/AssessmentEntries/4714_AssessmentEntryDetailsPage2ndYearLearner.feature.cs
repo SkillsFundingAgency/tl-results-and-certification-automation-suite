@@ -20,9 +20,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - Details page - 2nd year learners and t" +
-        "hose going into 3rd-4th years")]
-    public partial class MANUALJOURNEYASSESSMENTENTRYCHANGES_DetailsPage_2NdYearLearnersAndThoseGoingInto3Rd_4ThYearsFeature
+    [NUnit.Framework.DescriptionAttribute("TLRC_4714 MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - Details page - 2nd year lear" +
+        "ners and those going into 3rd-4th years")]
+    public partial class TLRC_4714MANUALJOURNEYASSESSMENTENTRYCHANGES_DetailsPage_2NdYearLearnersAndThoseGoingInto3Rd_4ThYearsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -36,8 +36,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - Details page - 2nd year learners and t" +
-                    "hose going into 3rd-4th years", @"	Journey and accessibility improvements to the page and to allow users to add assessment entries for core post Autumn 2021 
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "TLRC_4714 MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - Details page - 2nd year lear" +
+                    "ners and those going into 3rd-4th years", @"	Journey and accessibility improvements to the page and to allow users to add assessment entries for core post Autumn 2021 
 	and specialisms from Summer 2022.
 	Give users clear understanding of the learner’s assessment entries status, provides more learner details, 
 	learner details structured with accessibility in mind, 
@@ -96,7 +96,7 @@ testRunner.And("I am on upload registration page", ((string)(null)), ((TechTalk.
 testRunner.And("I have a Academic Year in \"4714RegistrationsData.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
-testRunner.When("I upload \"4713RegistrationsData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I upload \"4714RegistrationsData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
 testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -117,7 +117,7 @@ testRunner.And("I navigate to the Search for a learner page", ((string)(null)), 
             "specialism code")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
-        [NUnit.Framework.TestCaseAttribute("6900000011", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000011", null)]
         public virtual void _4714_NavigateToAssessmentDetailsPageForALearnerIn2NdYearWithASingleSpecialismCode(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -195,7 +195,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             "lism codes recorded")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
-        [NUnit.Framework.TestCaseAttribute("6900000013", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000013", null)]
         public virtual void _4714_NavigateToAssessmentDetailsPageForALearnerIn2NdYearWithNoSpecialismCodesRecorded(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -272,7 +272,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             "specialism codes")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
-        [NUnit.Framework.TestCaseAttribute("6900000012", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000012", null)]
         public virtual void _4714_NavigateToAssessmentDetailsPageForALearnerIn2NdYearWithMultipleSpecialismCodes(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {

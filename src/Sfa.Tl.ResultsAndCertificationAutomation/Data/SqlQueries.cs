@@ -527,7 +527,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             String PreviousAcademicYear = result.Substring(0, 4);
             int x = Int32.Parse(PreviousAcademicYear);
             x = x - 1;
-            string UpdateRegistrationYear = "Update TqRegistrationPathway set AcademicYear = " + x + " where tqregistrationprofileid in (select id from TqRegistrationProfile where  UniqueLearnerNumber like '69%')";
+            string UpdateRegistrationYear = "Update TqRegistrationPathway set AcademicYear = " + x + " where tqregistrationprofileid in (select id from TqRegistrationProfile where  UniqueLearnerNumber like '99%')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(UpdateRegistrationYear, ConnectionString);
         }
     }

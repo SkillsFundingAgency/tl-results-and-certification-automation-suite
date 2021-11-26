@@ -79,6 +79,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesLearnersDetailsPage.PressHomeBreadcrumb();
         }
 
+
+        [Given(@"I update the registrations to the previous year")]
         [When(@"I update the registrations to the previous year")]
         public void WhenIUpdateTheRegistrationsToThePreviousYear()
         {

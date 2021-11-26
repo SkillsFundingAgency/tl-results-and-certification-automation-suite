@@ -10,7 +10,7 @@ Given I have logged in as a "CityAndGuildsAdmin" user
 And I am on Registrations upload page
 And I am on upload registration page
 And I have a Academic Year in "4714RegistrationsData.csv"
-When I upload "4713RegistrationsData.csv" file	
+When I upload "4714RegistrationsData.csv" file	
 And I click on "Upload" button
 And I update the registrations to the previous year
 And I navigated Home page
@@ -30,7 +30,7 @@ And I cleared the data in DB
 
 Examples: 
 | ULN         |
-| 6900000011  |
+| 9900000011  |
 
 
 @RegressionTest @AssessmentEntriesUpload
@@ -47,7 +47,7 @@ And I cleared the data in DB
 
 Examples: 
 | ULN         |
-| 6900000013  |
+| 9900000013  |
 
 
 @RegressionTest @AssessmentEntriesUpload
@@ -64,6 +64,6 @@ And I cleared the data in DB
 
 Examples: 
 | ULN         |
-| 6900000012  |
+| 9900000012  |
 
 
