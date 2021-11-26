@@ -1,0 +1,4 @@
+ULN,First Name,Last Name,Date of Birth,UKPRN,Academic year,Core code,Specialism code(s)
+9900000001,Test,Analyst,10102001,10000536,{AcademicYear},60369115,ZTLOS029
+9900000002,Test,Analyst,10102001,10000536,{AcademicYear},60369115,
+9900000003,Test,Analyst,10102001,10000536,{AcademicYear},60369115,"10202101,10202102"
