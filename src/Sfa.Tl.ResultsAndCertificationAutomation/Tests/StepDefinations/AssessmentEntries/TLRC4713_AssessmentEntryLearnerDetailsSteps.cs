@@ -1,6 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
@@ -77,6 +78,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesSearchForLearnerPage.EnterULN(ULN);
             AssessmentEntriesLearnersDetailsPage.PressHomeBreadcrumb();
         }
+
+        [When(@"I update the registrations to the previous year")]
+        public void WhenIUpdateTheRegistrationsToThePreviousYear()
+        {
+            SqlQueries.UpdateAcademicYearToPreviousYear();
+        }
+
 
 
 

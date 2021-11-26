@@ -32,6 +32,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\3823_LearnerWithdrawnPage.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4713_AssessmentEntryDetailsPageNewLearner - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3168_AddAddressEnterPostcodePostcodeSearch - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3220_CheckAndSubmitCancel - Copy.feature.cs" />
@@ -159,6 +160,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\2311AssessmentData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4714RegistrationsData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\4713RegistrationsData.csv">
@@ -305,6 +309,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner.feature.cs">
+      <DependentUpon>4714_AssessmentEntryDetailsPage2ndYearLearner.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\4713_AssessmentEntryDetailsPageNewLearner.feature.cs">
       <DependentUpon>4713_AssessmentEntryDetailsPageNewLearner.feature</DependentUpon>
     </Compile>
@@ -481,6 +488,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4713_AssessmentEntryDetailsPageNewLearner.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>

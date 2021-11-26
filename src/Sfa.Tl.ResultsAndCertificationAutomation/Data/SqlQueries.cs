@@ -518,5 +518,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var result = Convert.ToString(AssessmentSeries[0][0]);
             return result;
         }
+
+        public static void UpdateAcademicYearToPreviousYear()
+        {
+            string GetAcademicYear = "Select Name from dbo.AcademicYear where getdate() >= StartDate and getdate() <= EndDate";
+            var AcademicYear = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetAcademicYear, ConnectionString);
+            var result = Convert.ToString(AcademicYear[0][0]);
+            String PreviousAcademicYear = result.Substring(0, 4);
+            int x = Int32.Parse(PreviousAcademicYear);
+            x = x - 1;
+            string UpdateRegistrationYear = "Update TqRegistrationPathway set AcademicYear = " + x + " where tqregistrationprofileid in (select id from TqRegistrationProfile where  UniqueLearnerNumber like '69%')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(UpdateRegistrationYear, ConnectionString);
+        }
     }
 }
