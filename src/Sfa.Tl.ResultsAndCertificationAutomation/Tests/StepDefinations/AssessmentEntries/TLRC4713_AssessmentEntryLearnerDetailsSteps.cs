@@ -8,18 +8,35 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
     [Binding]
     public class _4713_AssessmentLearnerDetailsSteps : AssessmentEntriesPage
     {
-        [Then(@"I am navigated to the Assessment Details page")]
-        public void ThenIAmNavigatedToTheAssessmentDetailsPage()
+
+        [Then(@"I am navigated to the Assessment Details page for (.*)")]
+        public void ThenIAmNavigatedToTheAssessmentDetailsPageFor(string ULN)
         {
             AssessmentEntriesLearnersDetailsPage.VerifyAssessmentEntriesDetailsPage();
-            
+            AssessmentEntriesLearnersDetailsPage.VerifyLearnerDetails(ULN);
         }
+
 
         [Then(@"the Core section will state ""(.*)""")]
         public void ThenTheCoreSectionWillState(string CoreText)
         {
             AssessmentEntriesLearnersDetailsPage.VerifyCoreDetailsText(CoreText);
         }
+
+        [Then(@"the Core section will state No assessment entries have yet been recorded for the current open assessment period")]
+        public void ThenTheCoreSectionWillStateNoAssessmentEntriesHaveYetBeenRecordedForTheCurrentOpenAssessmentPeriod()
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifyCoreNoAssessSeriesAddedText();
+        }
+
+
+        [Then(@"the Core section Add/Remove link will state ""(.*)""")]
+        public void ThenTheCoreSectionAddRemoveLinkWillState(string LinkText)
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifyAddRemoveCoreLinkText(LinkText);
+
+        }
+
 
         [Then(@"the core code will display ""(.*)""")]
         public void ThenTheCoreCodeWillDisplay(string CoreText)
@@ -32,6 +49,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesLearnersDetailsPage.VerifySpecialismDetailsText(SpecialismText);
         }
+
+        [Then(@"the specialism section Add/Remove link will state ""(.*)""")]
+        public void ThenTheSpecialismSectionAddRemoveLinkWillState(string LinkText)
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifySpecialismDetailsText(LinkText);
+        }
+
+
+        [Then(@"the specialism section will state No assessment entries have yet been recorded for the current open assessment period")]
+        public void ThenTheSpecialismSectionWillStateNoAssessmentEntriesHaveYetBeenRecordedForTheCurrentOpenAssessmentPeriod()
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifySpecialismNoAssessSeriesAddedText();
+        }
+
 
         [Then(@"the Specialism code will display ""(.*)""")]
         public void ThenTheSpecialismCodeWillDisplay(string SpecialismText)
@@ -87,8 +118,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             SqlQueries.UpdateAcademicYearToPreviousYear();
         }
 
-
-
-
+        [When(@"I click the Add assessment series link")]
+        public void WhenIClickTheAddAssessmentSeriesLink()
+        {
+            AssessmentEntriesLearnersDetailsPage.PressAddACoreAssessmentSeries();
+        }
     }
 }

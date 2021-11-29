@@ -19,12 +19,12 @@ And I navigate to the Search for a learner page
 @RegressionTest @AssessmentEntriesUpload
 Scenario: 4714_Navigate to Assessment Details page for a learner in 2nd year with a single specialism code
 When I enter the following <ULN>
-Then I am navigated to the Assessment Details page
-And the Core section will state "No assessment entries have yet been recorded for autumn 2021" 
-And the Core section will state "Add an assessment entry for Building Services Engineering (60369115)" 
+Then I am navigated to the Assessment Details page for <ULN>
+And the Core section will state No assessment entries have yet been recorded for the current open assessment period 
+And the Core section Add/Remove link will state "Add an assessment entry for Building Services Engineering (60369115)" 
 And the core code will display "Building Services Engineering (60369115)"
-And the specialism section will state "No assessment entries have yet been recorded for summer 2022"
-And the specialism section will state "Add an assessment entry for Gas Engineering (ZTLOS029)"
+And the specialism section will state No assessment entries have yet been recorded for the current open assessment period 
+And the specialism section Add/Remove link will state "Add an assessment entry for Gas Engineering (ZTLOS029)"
 And the Specialism code will display "Gas Engineering (ZTLOS029)"
 And I cleared the data in DB
 
@@ -36,9 +36,9 @@ Examples:
 @RegressionTest @AssessmentEntriesUpload
 Scenario: 4714_Navigate to Assessment Details page for a learner in 2nd year with no specialism codes recorded
 When I enter the following <ULN>
-Then I am navigated to the Assessment Details page
-And the Core section will state "No assessment entries have yet been recorded for autumn 2021" 
-And the Core section will state "Add an assessment entry for Building Services Engineering (60369115)" 
+Then I am navigated to the Assessment Details page for <ULN>
+And the Core section will state No assessment entries have yet been recorded for the current open assessment period 
+And the Core section Add/Remove link will state "Add an assessment entry for Building Services Engineering (60369115)" 
 And the core code will display "Building Services Engineering (60369115)"
 And the specialism section will state "This learner does not have an occupational specialism recorded on this service"
 And when I click on the Add an occupational specialism recorded on this service link
@@ -53,12 +53,12 @@ Examples:
 @RegressionTest @AssessmentEntriesUpload
 Scenario: 4714_Navigate to Assessment Details page for a learner in 2nd year with multiple specialism codes
 When I enter the following <ULN>
-Then I am navigated to the Assessment Details page
-And the Core section will state "No assessment entries have yet been recorded for autumn 2021" 
-And the Core section will state "Add an assessment entry for Building Services Engineering (60369115)" 
+Then I am navigated to the Assessment Details page for <ULN>
+And the Core section will state No assessment entries have yet been recorded for the current open assessment period 
+And the Core section Add/Remove link will state "Add an assessment entry for Building Services Engineering (60369115)"  
 And the core code will display "Building Services Engineering (60369115)"
-And the specialism section will state "No assessment entries have yet been recorded for summer 2022"
-And the specialism section will state "Add an assessment entry for Heating Engineering (10202101) and Plumbing (10202102)"
+And the specialism section will state No assessment entries have yet been recorded for the current open assessment period 
+And the specialism section Add/Remove link will state "Add an assessment entry for Heating Engineering (10202101) and Plumbing (10202102)"
 And the Specialism code will display "Heating Engineering (10202101) and Plumbing (10202102)"
 And I cleared the data in DB
 

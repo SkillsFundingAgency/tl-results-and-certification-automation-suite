@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -20,6 +21,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By SearchAgainButton { get; } = By.Id("searchAgainButton");
 
         private static By AddAnOccupationalSpecialismLink { get; } = By.LinkText("Add an occupational specialism to this learner's record");
+        private static By AddCoreAssessmentSeriesLink { get; } = By.XPath("//*[@id='add-entries']/p[2]/a");
+        
         private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By AssessmentsBreadcrumb { get; } = By.Id("breadcrumb1");
         private static By SearchForALearnerBreadcrumb { get; } = By.Id("breadcrumb2");
@@ -34,15 +37,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyLearnerDetails(string ULN)
         {
-            string ExpectedName = "Db FirstName Db LastName";
-            string ExpectedProvider = "Automation Test1";
-            string ExpectedDOB = "01 January 2001";
-            string ExpectedTLevel = "T Level in Agriculture, Environmental and Animal Care";
+            string ExpectedName = "4714 Name 1 Name 2";
+            string ExpectedProvider = "Barnsley College";
+            string ExpectedDOB = "10 January 2006";
+            string ExpectedTLevel = "T Level in Building Services Engineering for Construction";
+            string ExpectedUKPRN = "10000536";
 
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ULN));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedName));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedDOB));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedProvider));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedUKPRN));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedTLevel));
         }
 
@@ -50,6 +55,26 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(CoreText));
         }
+
+        public static void VerifyCoreNoAssessSeriesAddedText()
+        {
+            string CurrentAssessmentSeries = SqlQueries.GetAssessmentSeries();
+            string ExpectedNoAssessmentSeriedAddedText = "No assessment entries have yet been recorded for " + CurrentAssessmentSeries.ToLower();
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(ExpectedNoAssessmentSeriedAddedText));
+        }
+
+        public static void VerifySpecialismNoAssessSeriesAddedText()
+        {
+            string CurrentSpecialismAssessmentSeries = SqlQueries.GetSpecialismAssessmentSeries();
+            string ExpectedNoSpecialismAssessmentSeriedAddedText = "No assessment entries have yet been recorded for " + CurrentSpecialismAssessmentSeries.ToLower();
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(ExpectedNoSpecialismAssessmentSeriedAddedText));
+        }
+
+        public static void VerifyAddRemoveCoreLinkText(string LinkText)
+        {
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(LinkText));
+        }
+             
 
         public static void VerifySpecialismDetailsText(string SpecialismText)
         {
@@ -83,7 +108,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyAddOccupationalSpecialismLinkText()
         {
             Assert.IsTrue(WebDriver.FindElement(AddAnOccupationalSpecialismLink).Text.Contains("Add an occupational specialism to this learner's record"));
+        }
 
+        public static void PressAddACoreAssessmentSeries()
+        {
+            ClickElement(AddCoreAssessmentSeriesLink);
         }
     }
 }

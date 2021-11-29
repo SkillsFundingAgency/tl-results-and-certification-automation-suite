@@ -519,6 +519,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             return result;
         }
 
+        public static string GetSpecialismAssessmentSeries()
+        {
+            string GetSpecialismAssessmentSeries = "Select Name from dbo.AssessmentSeries where getdate() >= StartDate and getdate() <= EndDate and componenttype = 2";
+            var SpecialismAssessmentSeries = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetSpecialismAssessmentSeries, ConnectionString);
+            var result = Convert.ToString(SpecialismAssessmentSeries[0][0]);
+            return result;
+        }
+
         public static void UpdateAcademicYearToPreviousYear()
         {
             string GetAcademicYear = "Select Name from dbo.AcademicYear where getdate() >= StartDate and getdate() <= EndDate";

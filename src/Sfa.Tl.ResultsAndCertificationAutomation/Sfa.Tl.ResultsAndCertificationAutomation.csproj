@@ -323,6 +323,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature.cs">
+      <DependentUpon>4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner.feature.cs">
       <DependentUpon>4714_AssessmentEntryDetailsPage2ndYearLearner.feature</DependentUpon>
     </Compile>
@@ -507,6 +510,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4708_AssessmentEntryUpload-NoAssessSeriesFirstOne.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
