@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -26,6 +27,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By AssessmentsBreadcrumb { get; } = By.Id("breadcrumb1");
         private static By SearchForALearnerBreadcrumb { get; } = By.Id("breadcrumb2");
+        private static By SuccessBannerTextElement { get; } = By.XPath("//*[@id='main-content']//h3");
+        private static By SuccessTextElement { get; } = By.Id("govuk-notification-banner-title");
+        private static By RemoveLink { get; } = By.Id("examperiod");
 
         public static void VerifyAssessmentEntriesDetailsPage()
         {
@@ -49,6 +53,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedProvider));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedUKPRN));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedTLevel));
+        }
+
+        public static void VerifySuccessBanner(string CoreTitle)
+        {
+            string CurrentAssessmentSeries = SqlQueries.GetAssessmentSeries();
+            string SuccessBannerText = "This learner is now registered for the " + CurrentAssessmentSeries.ToLower() + " " + CoreTitle;
+            Assert.IsTrue(WebDriver.FindElement(SuccessBannerTextElement).Text.Contains(SuccessBannerText));
+            Assert.IsTrue(WebDriver.FindElement(SuccessTextElement).Text.Contains("Success"));
+        }
+
+        public static void VerifyCoreAssessmentEntryDetails()
+        {
+            //Return the current open Core assessment series - this is the one which will just have been added
+            string CurrentAssessmentSeries = SqlQueries.GetAssessmentSeries();
+            //Build the created on date - this will be used to verify the Last Updated date for the core assessment series
+            System.DateTime localDate = DateTime.Now;
+            DateTime oDate = Convert.ToDateTime(localDate);
+            string CreatedOnDate1 = oDate.ToString("dd MMMM yyyy");
+
+            String UpdatedBy = "ao_cityandguilds_sa ao_cityandguilds_sa";
+
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(CurrentAssessmentSeries));
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(CreatedOnDate1));
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(UpdatedBy));
         }
 
         public static void VerifyCoreDetailsText(string CoreText)
@@ -114,5 +142,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(AddCoreAssessmentSeriesLink);
         }
+
+        public static void VerifyAddRemoveCoreLinkTextIsDisplayed()
+        {
+           bool Flag = IsPresent(RemoveLink);
+           Assert.IsTrue(Flag);
+
+        }
+
+
+
+
+
     }
 }

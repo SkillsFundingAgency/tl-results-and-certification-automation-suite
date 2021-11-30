@@ -123,5 +123,26 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesLearnersDetailsPage.PressAddACoreAssessmentSeries();
         }
+
+        [Then(@"the success banner is displayed for the core assessment series added for ""(.*)""")]
+        public void ThenTheSuccessBannerIsDisplayedForTheCoreAssessmentSeriesAddedFor(string CoreTitle)
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifySuccessBanner(CoreTitle);
+        }
+
+        [Then(@"the new assessment entry which has been added is displayed in the Core\(code\) section")]
+        public void ThenTheNewAssessmentEntryWhichHasBeenAddedIsDisplayedInTheCoreCodeSection()
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifyCoreAssessmentEntryDetails();
+        }
+
+        [Then(@"the remove link will be displayed next to the Core Assessment series details")]
+        public void ThenTheRemoveLinkWillBeDisplayedNextToTheCoreAssessmentSeriesDetails()
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifyAddRemoveCoreLinkTextIsDisplayed();
+        }
+
+
+
     }
 }

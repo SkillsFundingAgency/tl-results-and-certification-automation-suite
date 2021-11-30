@@ -41,6 +41,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesAddCoreAssessmentEntryPage.PressNoRadioButton();
         }
 
+        [When(@"I select the Yes radio button and press Submit on the Add Core assessment entry page")]
+        public void WhenISelectTheYesRadioButtonAndPressSubmitOnTheAddCoreAssessmentEntryPage()
+        {
+            AssessmentEntriesAddCoreAssessmentEntryPage.PressYesRadioButton();
+        }
+
+
 
     }
 }
