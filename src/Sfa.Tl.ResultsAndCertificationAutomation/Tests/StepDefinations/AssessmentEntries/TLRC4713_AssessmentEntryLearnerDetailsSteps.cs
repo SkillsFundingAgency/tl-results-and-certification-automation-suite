@@ -142,6 +142,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesLearnersDetailsPage.VerifyAddRemoveCoreLinkTextIsDisplayed();
         }
 
+        [When(@"I click the remove link on the Assessment Details page")]
+        public void GivenIClickTheRemoveLinkOnTheAssessmentDetailsPage()
+        {
+            AssessmentEntriesLearnersDetailsPage.ClickRemoveLink();
+        }
+
+
 
 
     }

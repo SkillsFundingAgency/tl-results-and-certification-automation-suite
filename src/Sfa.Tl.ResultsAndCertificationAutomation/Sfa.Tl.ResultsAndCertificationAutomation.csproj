@@ -35,6 +35,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4708_AssessmentEntryUpload-NoAssessSeriesFirstOne - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4713_AssessmentEntryDetailsPageNewLearner - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3168_AddAddressEnterPostcodePostcodeSearch - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit - Copy.feature.cs" />
@@ -324,8 +325,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy.feature.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
+    <Compile Update="Tests\Features\AssessmentEntries\4723_AssessmentEntryRemoveCoreAssessmentEntry.feature.cs">
+      <DependentUpon>4723_AssessmentEntryRemoveCoreAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature.cs">
+      <DependentUpon>4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature</DependentUpon>
     </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\4727_AssessmentEntrySuccessBannerAfterAddingCoreAssessmentEntry.feature.cs">
       <DependentUpon>4727_AssessmentEntrySuccessBannerAfterAddingCoreAssessmentEntry.feature</DependentUpon>
@@ -517,7 +521,11 @@
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy.feature">
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4723_AssessmentEntryRemoveCoreAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

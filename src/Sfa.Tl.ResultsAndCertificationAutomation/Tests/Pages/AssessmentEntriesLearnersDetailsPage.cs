@@ -147,12 +147,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
            bool Flag = IsPresent(RemoveLink);
            Assert.IsTrue(Flag);
-
         }
 
-
-
-
-
+        public static void ClickRemoveLink()
+        {
+            ClickElement(RemoveLink);        
+        }
     }
 }

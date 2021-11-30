@@ -29,7 +29,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy.feature"
+#line 1 "4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
