@@ -55,13 +55,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedTLevel));
         }
 
-        public static void VerifySuccessBanner(string CoreTitle)
+        public static void VerifyAddCoreSuccessBanner(string CoreTitle)
         {
             string CurrentAssessmentSeries = SqlQueries.GetAssessmentSeries();
             string SuccessBannerText = "This learner is now registered for the " + CurrentAssessmentSeries.ToLower() + " " + CoreTitle;
             Assert.IsTrue(WebDriver.FindElement(SuccessBannerTextElement).Text.Contains(SuccessBannerText));
             Assert.IsTrue(WebDriver.FindElement(SuccessTextElement).Text.Contains("Success"));
+        }        
+        public static void VerifyRemoveCoreAssessmentSuccessBanner(string CoreTitle)
+        {
+            string CurrentAssessmentSeries = SqlQueries.GetAssessmentSeries();
+            string SuccessBannerText = "You have removed the " + CoreTitle + " assessment for " + CurrentAssessmentSeries.ToLower() + " " + "from this learner's record";
+            Assert.IsTrue(WebDriver.FindElement(SuccessBannerTextElement).Text.Contains(SuccessBannerText));
+            Assert.IsTrue(WebDriver.FindElement(SuccessTextElement).Text.Contains("Success"));
         }
+
 
         public static void VerifyCoreAssessmentEntryDetails()
         {

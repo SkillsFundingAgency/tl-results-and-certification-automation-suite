@@ -127,8 +127,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         [Then(@"the success banner is displayed for the core assessment series added for ""(.*)""")]
         public void ThenTheSuccessBannerIsDisplayedForTheCoreAssessmentSeriesAddedFor(string CoreTitle)
         {
-            AssessmentEntriesLearnersDetailsPage.VerifySuccessBanner(CoreTitle);
+            AssessmentEntriesLearnersDetailsPage.VerifyAddCoreSuccessBanner(CoreTitle);
         }
+
+        [Then(@"the success banner is removed for the core assessment series added for ""(.*)""")]
+        public void ThenTheSuccessBannerIsRemovedForTheCoreAssessmentSeriesAddedFor(string CoreTitle)
+        {
+            AssessmentEntriesLearnersDetailsPage.VerifyRemoveCoreAssessmentSuccessBanner(CoreTitle);
+        }
+
 
         [Then(@"the new assessment entry which has been added is displayed in the Core\(code\) section")]
         public void ThenTheNewAssessmentEntryWhichHasBeenAddedIsDisplayedInTheCoreCodeSection()

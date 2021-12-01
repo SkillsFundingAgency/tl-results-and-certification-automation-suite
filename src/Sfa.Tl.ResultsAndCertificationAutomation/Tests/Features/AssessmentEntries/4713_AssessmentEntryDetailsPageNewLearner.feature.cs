@@ -92,7 +92,7 @@ testRunner.And("I am on upload registration page", ((string)(null)), ((TechTalk.
 testRunner.And("I have a Academic Year in \"4713RegistrationsData.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
-testRunner.When("I upload \"4713RegistrationsData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I upload \"4714RegistrationsData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
 testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -110,7 +110,7 @@ testRunner.And("I navigate to the Search for a learner page", ((string)(null)), 
             "sm code")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
-        [NUnit.Framework.TestCaseAttribute("9900000001", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000011", null)]
         public virtual void _4713_NavigateToAssessmentDetailsPageForANewLearnerWithASingleSpecialismCode(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -152,7 +152,7 @@ this.FeatureBackground();
 testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
-testRunner.Then("I am navigated to the Assessment Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("I am navigated to the Assessment Details page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 20
 testRunner.And("the Core section will state \"You cannot register this learner for a core componen" +
@@ -180,7 +180,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             "es recorded")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
-        [NUnit.Framework.TestCaseAttribute("9900000002", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000013", null)]
         public virtual void _4713_NavigateToAssessmentDetailsPageForANewLearnerWithNoSpecialismCodesRecorded(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -222,26 +222,26 @@ this.FeatureBackground();
 testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
-testRunner.Then("I am navigated to the Assessment Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("I am navigated to the Assessment Details page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 35
+#line 36
 testRunner.And("the Core section will state \"You cannot register this learner for a core componen" +
                         "t assessment until the summer 2022 window opens.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 37
 testRunner.And("the core code will display \"Building Services Engineering (60369115)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 38
 testRunner.And("the specialism section will state \"This learner does not have an occupational spe" +
                         "cialism recorded on this service\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 39
 testRunner.And("when I click on the Add an occupational specialism recorded on this service link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 40
 testRunner.Then(string.Format("I am navigated to the Registration Details page for the learner\'s {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 40
+#line 41
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -253,7 +253,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             "sm codes")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
-        [NUnit.Framework.TestCaseAttribute("9900000003", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000012", null)]
         public virtual void _4713_NavigateToAssessmentDetailsPageForANewLearnerWithMultipleSpecialismCodes(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -268,7 +268,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4713_Navigate to Assessment Details page for a new learner with multiple speciali" +
                     "sm codes", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 48
+#line 49
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -291,28 +291,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 49
+#line 50
 testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 50
-testRunner.Then("I am navigated to the Assessment Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 51
+testRunner.Then(string.Format("I am navigated to the Assessment Details page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 52
 testRunner.And("the Core section will state \"You cannot register this learner for a core componen" +
                         "t assessment until the summer 2022 window opens.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 52
+#line 53
 testRunner.And("the core code will display \"Building Services Engineering (60369115)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 53
+#line 54
 testRunner.And("the specialism section will state \"You cannot register this learner for an occupa" +
                         "tional specialism assessment until the summer 2023 window opens.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 54
+#line 55
 testRunner.And("the Specialism code will display \"Heating Engineering (10202101) and Plumbing (10" +
                         "202102)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 55
+#line 56
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -323,7 +323,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.DescriptionAttribute("4713_Validate the breadcrumbs on the Assessment Entry Learner Details page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
-        [NUnit.Framework.TestCaseAttribute("9900000003", null)]
+        [NUnit.Framework.TestCaseAttribute("9900000012", null)]
         public virtual void _4713_ValidateTheBreadcrumbsOnTheAssessmentEntryLearnerDetailsPage(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -337,7 +337,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4713_Validate the breadcrumbs on the Assessment Entry Learner Details page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 63
+#line 64
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -360,37 +360,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 64
+#line 65
 testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 65
-testRunner.Then("I am navigated to the Assessment Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 66
+testRunner.Then(string.Format("I am navigated to the Assessment Details page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 67
 testRunner.When("I click the Search for a learner breadcrumb on the Assessment Entry Learner Detai" +
                         "ls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 67
-testRunner.And("I navigate to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 68
+#line 69
 testRunner.Then("I am navigated to the Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 69
+#line 70
 testRunner.When(string.Format("I search for the {0} and click the Asessments breadcrumb on the Assessment Entry " +
                             "Learner Details page", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 70
+#line 71
 testRunner.Then("I am navigated to the assessments dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 71
+#line 72
 testRunner.When(string.Format("I search for the {0} and click the Home breadcrumb on the Assessment Entry Learne" +
                             "r Details page", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 72
+#line 73
 testRunner.Then("I am navigated to the Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 73
+#line 74
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
