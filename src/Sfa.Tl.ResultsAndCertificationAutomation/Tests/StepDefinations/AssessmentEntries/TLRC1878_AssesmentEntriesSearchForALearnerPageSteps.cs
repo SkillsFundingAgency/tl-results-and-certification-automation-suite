@@ -192,5 +192,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             AssessmentEntriesULNCannotBeFoundPage.PressBackToHomeBtn();
         }
+
+        [Then(@"I am navigated to the Assessment Search for a learner page")]
+        public void ThenIAmNavigatedToTheAssessmentSearchForALearnerPage()
+        {
+            AssessmentEntriesSearchForLearnerPage.VerifyAssessmentEntriesSearchForLearnerPage();
+        }
+
     }
 }

@@ -155,6 +155,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             AssessmentEntriesLearnersDetailsPage.ClickRemoveLink();
         }
 
+        [When(@"I press the Search again button on the Assessment Details page")]
+        public void WhenIPressTheSearchAgainButtonOnTheAssessmentDetailsPage()
+        {
+            AssessmentEntriesLearnersDetailsPage.PressSearchAgainButton();
+        }
+
+        [Given(@"I navigate to the Home page from the Assessment Search for a learner page")]
+        public void GivenINavigateToTheHomePageFromTheAssessmentSearchForALearnerPage()
+        {
+            AssessmentEntriesSearchForLearnerPage.PressHomeBreadcrumb();
+        }
+
+        [When(@"I update the assessment series for (.*)")]
+        public void WhenIUpdateTheAssessmentSeriesFor(string ULN)
+        {
+            SqlQueries.UpdateAssessmentSeriesToPastOne(ULN);
+        }
 
 
 

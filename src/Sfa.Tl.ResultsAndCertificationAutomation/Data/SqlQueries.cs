@@ -538,5 +538,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             string UpdateRegistrationYear = "Update TqRegistrationPathway set AcademicYear = " + x + " where tqregistrationprofileid in (select id from TqRegistrationProfile where  UniqueLearnerNumber like '99%')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(UpdateRegistrationYear, ConnectionString);
         }
+
+        public static void UpdateAssessmentSeriesToPastOne(string ULN)
+        {
+            string UpdateAssessmentSeries = "update TqPathwayAssessment set AssessmentSeriesId = 1 where Id in (select max(Id) from TqPathwayAssessment where TqRegistrationPathwayId in (select Id from TqRegistrationPathway where tqregistrationprofileid in (select id from TqRegistrationProfile where UniqueLearnerNumber = " + ULN + ")))";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(UpdateAssessmentSeries, ConnectionString);
+        }
+        
     }
 }

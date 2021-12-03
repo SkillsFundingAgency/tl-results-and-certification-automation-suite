@@ -43,5 +43,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         {
             ClickAddResultsLink();
         }
+
+        [When(@"I navigate to the Assesment Search for a learner page")]
+        public void WhenINavigateToTheAssesmentSearchForALearnerPage()
+        {
+            ClickBacktoHomeBtn();
+            AssessmentEntriesPage.ClickElement(AssessmentEntriesLink);
+            AssessmentEntriesPage.ClickElement(SearchForLearnerLink);
+        }
+
     }
 }

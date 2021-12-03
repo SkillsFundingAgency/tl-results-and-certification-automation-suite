@@ -114,11 +114,11 @@ testRunner.And("I navigate to the Search for a learner page", ((string)(null)), 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("4714_Navigate to Assessment Details page for a learner in 2nd year with a single " +
-            "specialism code")]
+            "specialism code and Press Search again")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
         [NUnit.Framework.TestCaseAttribute("9900000011", null)]
-        public virtual void _4714_NavigateToAssessmentDetailsPageForALearnerIn2NdYearWithASingleSpecialismCode(string uLN, string[] exampleTags)
+        public virtual void _4714_NavigateToAssessmentDetailsPageForALearnerIn2NdYearWithASingleSpecialismCodeAndPressSearchAgain(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "RegressionTest",
@@ -131,7 +131,7 @@ testRunner.And("I navigate to the Search for a learner page", ((string)(null)), 
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4714_Navigate to Assessment Details page for a learner in 2nd year with a single " +
-                    "specialism code", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+                    "specialism code and Press Search again", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -184,6 +184,12 @@ testRunner.And("the specialism section Add/Remove link will state \"Add an asses
 testRunner.And("the Specialism code will display \"Gas Engineering (ZTLOS029)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
+testRunner.When("I press the Search again button on the Assessment Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 30
+testRunner.Then("I am navigated to the Assessment Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 31
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -210,7 +216,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4714_Navigate to Assessment Details page for a learner in 2nd year with no specia" +
                     "lism codes recorded", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 37
+#line 39
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -233,34 +239,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 38
+#line 40
 testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 39
+#line 41
 testRunner.Then(string.Format("I am navigated to the Assessment Details page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 40
+#line 42
 testRunner.And("the Core section will state No assessment entries have yet been recorded for the " +
                         "current open assessment period", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 43
 testRunner.And("the Core section Add/Remove link will state \"Add an assessment entry for Building" +
                         " Services Engineering (60369115)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 44
 testRunner.And("the core code will display \"Building Services Engineering (60369115)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 45
 testRunner.And("the specialism section will state \"This learner does not have an occupational spe" +
                         "cialism recorded on this service\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 44
+#line 46
 testRunner.And("when I click on the Add an occupational specialism recorded on this service link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 45
+#line 47
 testRunner.Then(string.Format("I am navigated to the Registration Details page for the learner\'s {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 46
+#line 48
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -287,7 +293,7 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             argumentsOfScenario.Add("ULN", uLN);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4714_Navigate to Assessment Details page for a learner in 2nd year with multiple " +
                     "specialism codes", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 54
+#line 56
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -310,36 +316,131 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
 this.FeatureBackground();
 #line hidden
-#line 55
+#line 57
 testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 56
+#line 58
 testRunner.Then(string.Format("I am navigated to the Assessment Details page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 57
+#line 59
 testRunner.And("the Core section will state No assessment entries have yet been recorded for the " +
                         "current open assessment period", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 58
+#line 60
 testRunner.And("the Core section Add/Remove link will state \"Add an assessment entry for Building" +
                         " Services Engineering (60369115)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 59
+#line 61
 testRunner.And("the core code will display \"Building Services Engineering (60369115)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 60
+#line 62
 testRunner.And("the specialism section will state No assessment entries have yet been recorded fo" +
                         "r the current open assessment period", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 61
+#line 63
 testRunner.And("the specialism section Add/Remove link will state \"Add an assessment entry for He" +
                         "ating Engineering (10202101) and Plumbing (10202102)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 62
+#line 64
 testRunner.And("the Specialism code will display \"Heating Engineering (10202101) and Plumbing (10" +
                         "202102)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 63
+#line 65
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("4714_Assessment details page - search for a ULN with a closed assessment entry wh" +
+            "ich doesn\'t have a result recorded")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
+        [NUnit.Framework.TestCaseAttribute("9900000011", null)]
+        public virtual void _4714_AssessmentDetailsPage_SearchForAULNWithAClosedAssessmentEntryWhichDoesntHaveAResultRecorded(string uLN, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "RegressionTest",
+                    "AssessmentEntriesUpload"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("ULN", uLN);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4714_Assessment details page - search for a ULN with a closed assessment entry wh" +
+                    "ich doesn\'t have a result recorded", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 73
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 8
+this.FeatureBackground();
+#line hidden
+#line 74
+testRunner.Given("I navigate to the Home page from the Assessment Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 75
+testRunner.And("I am on Assessment entries upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 76
+testRunner.And("I have a active Assessment Series in \"4714AssessmentData.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 77
+testRunner.When("I upload \"4714AssessmentData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 78
+testRunner.And("I click on \"Upload\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 79
+testRunner.And(string.Format("I update the assessment series for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 80
+testRunner.And("I navigate to the Assesment Search for a learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 81
+testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 82
+testRunner.Then(string.Format("I am navigated to the Assessment Details page for {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 83
+testRunner.And("the Core section Add/Remove link will state \"add a result to this learner\'s previ" +
+                        "ous assessment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 84
+testRunner.And("the core code will display \"Building Services Engineering (60369115)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 85
+testRunner.And("the specialism section will state No assessment entries have yet been recorded fo" +
+                        "r the current open assessment period", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 86
+testRunner.And("the specialism section Add/Remove link will state \"Add an assessment entry for Ga" +
+                        "s Engineering (ZTLOS029)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 87
+testRunner.And("the Specialism code will display \"Gas Engineering (ZTLOS029)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 88
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
