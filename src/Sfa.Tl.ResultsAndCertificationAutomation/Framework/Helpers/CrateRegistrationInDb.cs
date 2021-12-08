@@ -390,5 +390,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             string InsertFinalRow = "Insert into TqPathwayResult values('" + pathwayAssessmentId + "',2,GETDATE(),Null,4,1,0,GETDATE(),'System',GETDATE(),'System')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertFinalRow, ConnectionString);
         }
+
+        public void RegisterWithdrawnLearnerWithAnotherAO(string uln)
+        {
+            var profileId = SqlQueries.ReturnRegistrationProfileID(uln);
+            
+            string CreateNewRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + "15184" + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateNewRegPathway, ConnectionString);
+
+            //var profileId = SqlQueries.CreateRegistrationProfile(uln);
+            //var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
+            //SqlQueries.CreateRegSpecialism(pathwayId);
+            //var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
+            //SqlQueries.CreatePathwayResult(pathwayAssessmentId);
+        }
     }
 }

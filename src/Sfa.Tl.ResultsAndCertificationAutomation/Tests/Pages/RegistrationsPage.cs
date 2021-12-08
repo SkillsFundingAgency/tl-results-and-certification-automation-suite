@@ -38,6 +38,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By assessmentPeriodsLink { get; } = By.XPath("//*[contains (text(),'assessment periods')]");
         public static By BackToHomeBtn { get; } = By.Id("homeButton");
         public static By uploadAnotherFileBtn = By.Id("uploadAnotherButton");
+        public static By manageExistingRegistrationsLink { get; } = By.XPath("//*[contains (text(),'Manage existing registrations')]");
 
         public static void ClickRegLink()
         {
@@ -95,6 +96,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickManageIndividualRegistrationsLink()
         {
             ClickElement(manageIndividualRegistrationsLink);
+        }
+
+        public static void ClickManageExistingRegistrationsLink()
+        {
+            ClickElement(manageExistingRegistrationsLink);
         }
     }
 }
