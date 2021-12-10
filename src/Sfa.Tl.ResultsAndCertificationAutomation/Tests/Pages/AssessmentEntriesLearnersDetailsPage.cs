@@ -23,7 +23,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         private static By AddAnOccupationalSpecialismLink { get; } = By.LinkText("Add an occupational specialism to this learner's record");
         private static By AddCoreAssessmentSeriesLink { get; } = By.XPath("//*[@id='add-entries']/p[2]/a");
-        
+        private static By AddSpecialismAssessmentSeriesLinkForCouplet { get; } = By.LinkText("Add an assessment entry for Heating Engineering (10202101) and Plumbing (10202102)");
+
         private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By AssessmentsBreadcrumb { get; } = By.Id("breadcrumb1");
         private static By SearchForALearnerBreadcrumb { get; } = By.Id("breadcrumb2");
@@ -160,6 +161,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void ClickRemoveLink()
         {
             ClickElement(RemoveLink);        
+        }
+
+        public static void PressAddSpecialismAssessmentSeriesForCouplet()
+        {
+            ClickElement(AddSpecialismAssessmentSeriesLinkForCouplet);
         }
     }
 }
