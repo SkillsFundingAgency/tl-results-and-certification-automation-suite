@@ -24,6 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By AddAnOccupationalSpecialismLink { get; } = By.LinkText("Add an occupational specialism to this learner's record");
         private static By AddCoreAssessmentSeriesLink { get; } = By.XPath("//*[@id='add-entries']/p[2]/a");
         private static By AddSpecialismAssessmentSeriesLinkForCouplet { get; } = By.LinkText("Add an assessment entry for Heating Engineering (10202101) and Plumbing (10202102)");
+        private static By AddSpecialismAssessmentSeriesLinkForSingleSpecialism { get; } = By.LinkText("Add an assessment entry for Gas Engineering (ZTLOS029)");
 
         private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By AssessmentsBreadcrumb { get; } = By.Id("breadcrumb1");
@@ -31,7 +32,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By SuccessBannerTextElement { get; } = By.XPath("//*[@id='main-content']//h3");
         private static By SuccessTextElement { get; } = By.Id("govuk-notification-banner-title");
         private static By RemoveLink { get; } = By.Id("examperiod");
-
+        private static By RemoveAssessmentSeriesLink = By.XPath("//a[contains(@href,'assessment-entry-remove-specialisms')]");
         public static void VerifyAssessmentEntriesDetailsPage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
@@ -71,6 +72,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(WebDriver.FindElement(SuccessTextElement).Text.Contains("Success"));
         }
 
+        public static void VerifyRemoveSpecialismAssessmentSeriesSuccessBanner(string SpecialismTitle)
+        {
+            string CurrentAssessmentSeries = SqlQueries.GetSpecialismAssessmentSeries();
+            string SuccessBannerText = "You have removed the " + SpecialismTitle + " assessment for " + CurrentAssessmentSeries.ToLower() + " " + "from this learner's record";
+            Assert.IsTrue(WebDriver.FindElement(SuccessBannerTextElement).Text.Contains(SuccessBannerText));
+            Assert.IsTrue(WebDriver.FindElement(SuccessTextElement).Text.Contains("Success"));
+        }
 
         public static void VerifyCoreAssessmentEntryDetails()
         {
@@ -163,9 +171,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(RemoveLink);        
         }
 
+        public static void ClickRemoveAssessmentSeriesLink()
+        {
+            ClickElement(RemoveAssessmentSeriesLink);
+        }
+
         public static void PressAddSpecialismAssessmentSeriesForCouplet()
         {
             ClickElement(AddSpecialismAssessmentSeriesLinkForCouplet);
+        }
+        public static void PressAddSpecialismAssessmentforSingleSpecialism()
+        {
+            ClickElement(AddSpecialismAssessmentSeriesLinkForSingleSpecialism);
         }
     }
 }
