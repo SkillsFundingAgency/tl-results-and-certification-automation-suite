@@ -156,7 +156,7 @@ this.FeatureBackground();
 testRunner.When(string.Format("I enter the following {0}", uLN), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
-testRunner.And("I add a specialism entry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I add an assessment entry for a couplet specialism", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
 testRunner.And("I click the remove link on the Assessment Details page for the specialism/s", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

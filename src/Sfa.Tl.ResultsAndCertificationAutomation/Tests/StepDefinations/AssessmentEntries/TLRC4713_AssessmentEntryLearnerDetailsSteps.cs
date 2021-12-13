@@ -146,7 +146,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
         [Then(@"the remove link will be displayed next to the Core Assessment series details")]
         public void ThenTheRemoveLinkWillBeDisplayedNextToTheCoreAssessmentSeriesDetails()
         {
-            AssessmentEntriesLearnersDetailsPage.VerifyAddRemoveCoreLinkTextIsDisplayed();
+            AssessmentEntriesLearnersDetailsPage.VerifyAddRemoveCoreAssessmentEntryLinkTextIsDisplayed();
         }
 
         [When(@"I click the remove link on the Assessment Details page")]

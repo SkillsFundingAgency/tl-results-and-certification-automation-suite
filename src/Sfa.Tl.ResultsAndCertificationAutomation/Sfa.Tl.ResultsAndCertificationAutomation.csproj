@@ -37,6 +37,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4724_AssessmentEntrySuccessBannerAfterRemovingCoreAssessmentEntry - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4727_AssessmentEntrySuccessBannerAfterAddingCoreAssessmentEntry - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4765_AssessmentEntryAddMultipleSpecialismResitsToOpenAssessmentEntry - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3168_AddAddressEnterPostcodePostcodeSearch - Copy.feature.cs" />
@@ -328,6 +329,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\4722_AssessmentEntryRemoveSpecialismAssessmentEntry.feature.cs">
+      <DependentUpon>4722_AssessmentEntryRemoveSpecialismAssessmentEntry.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\4725_AssessmentEntrySuccessBannerAfterRemovingSpecialismAssessmentEntry.feature.cs">
       <DependentUpon>4725_AssessmentEntrySuccessBannerAfterRemovingSpecialismAssessmentEntry.feature</DependentUpon>
     </Compile>
@@ -533,6 +537,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4708_AssessmentEntryUpload-NoAssessSeriesFirstOne.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4722_AssessmentEntryRemoveSpecialismAssessmentEntry.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

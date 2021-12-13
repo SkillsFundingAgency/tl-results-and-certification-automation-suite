@@ -16,7 +16,7 @@ And I navigate to the Search for a learner page
 @RegressionTest @AssessmentEntries
 Scenario: 4725_Verify the success banner when removing Assessment Series for multiple specialisms
 When I enter the following <ULN>
-And I add a specialism entry 
+And I add an assessment entry for a couplet specialism
 And I click the remove link on the Assessment Details page for the specialism/s
 And I click the Yes, remove the entry radio button and press Submit
 Then I am navigated to the Assessment Details page for <ULN>

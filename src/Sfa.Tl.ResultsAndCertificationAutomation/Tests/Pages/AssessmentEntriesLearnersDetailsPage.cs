@@ -96,6 +96,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(UpdatedBy));
         }
 
+        public static void VerifySpecialismAssessmentEntryDetails()
+        {
+            //Return the current open Specialism assessment series - this is the one which will just have been added
+            string CurrentAssessmentSeries = SqlQueries.GetSpecialismAssessmentSeries();
+            //Build the created on date - this will be used to verify the Last Updated date for the core assessment series
+            System.DateTime localDate = DateTime.Now;
+            DateTime oDate = Convert.ToDateTime(localDate);
+            string CreatedOnDate1 = oDate.ToString("dd MMMM yyyy");
+
+            String UpdatedBy = "ao_cityandguilds_sa ao_cityandguilds_sa";
+
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(CurrentAssessmentSeries));
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(CreatedOnDate1));
+            Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(UpdatedBy));
+        }
+
         public static void VerifyCoreDetailsText(string CoreText)
         {
             Assert.IsTrue(WebDriver.FindElement(CoreSpecialismTextElement).Text.Contains(CoreText));
@@ -160,10 +176,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(AddCoreAssessmentSeriesLink);
         }
 
-        public static void VerifyAddRemoveCoreLinkTextIsDisplayed()
+        public static void VerifyAddRemoveCoreAssessmentEntryLinkTextIsDisplayed()
         {
            bool Flag = IsPresent(RemoveLink);
            Assert.IsTrue(Flag);
+        }
+
+        public static void VerifyAddRemoveSpecialismAssessEntryLinkTextIsDisplayed()
+        {
+            bool Flag = IsPresent(RemoveAssessmentSeriesLink);
+            Assert.IsTrue(Flag);
         }
 
         public static void ClickRemoveLink()

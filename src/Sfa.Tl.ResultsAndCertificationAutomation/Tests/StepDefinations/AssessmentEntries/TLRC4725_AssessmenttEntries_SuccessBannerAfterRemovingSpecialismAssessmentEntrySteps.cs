@@ -10,12 +10,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
     [Binding]
     public class TLRC_4725MANUALJOURNEYASSESSMENTENTRYCHANGES_SuccessBannerAfterRemovingSpecialismAssessmentEntrySteps : ElementHelper
     {
-        [When(@"I add a specialism entry")]
-        public void WhenIAddASpecialismEntry()
+
+        [When(@"I add an assessment entry for a couplet specialism")]
+        public void WhenIAddAnAssessmentEntryForACoupletSpecialism()
         {
             AssessmentEntriesLearnersDetailsPage.PressAddSpecialismAssessmentSeriesForCouplet();
             AssessmentEntriesAddSpecialismAssessmentEntryPage.PressYesRadioButton();
         }
+
 
         [When(@"I add a specialism assessment entry for a single specialism")]
         public void WhenIAddASpecialismAssessmentEntryForASingleSpecialism()
