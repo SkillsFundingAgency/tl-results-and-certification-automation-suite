@@ -35,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             CommonPage.VerifyValidationSummaryMessages(table);
         }
 
-
+        [When(@"I navigate to the Search for a learner page")]
         [Given(@"I navigate to the Search for a learner page")]
         public void GivenINavigateToTheSearchForALearnerPage()
         {

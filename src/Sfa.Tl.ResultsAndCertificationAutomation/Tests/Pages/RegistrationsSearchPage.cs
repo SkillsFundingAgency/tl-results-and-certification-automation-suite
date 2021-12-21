@@ -11,6 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly string CancelRegUrl = string.Concat(StartPage.StartPageUrl, "delete-registration");
         private static readonly string UlnNotFoundUrl = string.Concat(StartPage.StartPageUrl, "search-for-registration-ULN-not-found");
         public static readonly By SearchRegistrationLink = By.XPath("//a[contains(text(),'Manage existing registrations')]");
+        public static By RegistrationDetailsPageTextAreaElement { get; } = By.XPath("//*[@id='main-content']/div");
         public static readonly By SearchBox = By.Id("searchuln");
         public static readonly By SearchBtn = By.XPath("//button[contains(text(),'Search')]");
         private static readonly By CancelRegBtn = By.XPath("//a[contains(text(),'Cancel this registration')]");
@@ -67,6 +68,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string ExpectedActiveYear = "{AcademicYear}";
         public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By ViewAndAmendLearnersEntriesLink { get; } = By.Id("AssessmentEntriesLink");
+    
 
         public static new void ClickButton(By locator)
         {
@@ -269,5 +271,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         {
             ClickElement(ViewAndAmendLearnersEntriesLink);
         }
+
+        public static void VerifyChangeStatusLinkNotPresent()
+        {
+            bool Present = IsPresent(ChangeStatusLink);
+            Assert.IsFalse(Present);
+        }
+
+        public static void VerifyChangeStatusLinkIsPresent()
+        {
+            bool Present = IsPresent(ChangeStatusLink);
+            Assert.IsTrue(Present);
+        }
+
+        public static void VerifyWithdrawnLearnerRegisteredWithAnotherAOTextDisplayed()
+        {
+            Assert.IsTrue(WebDriver.FindElement(RegistrationDetailsPageTextAreaElement).Text.Contains("This learner's details cannot be changed. The learner has been withdrawn and has registered with a different awarding organisation."));
+
+        }
+        
     }
 }

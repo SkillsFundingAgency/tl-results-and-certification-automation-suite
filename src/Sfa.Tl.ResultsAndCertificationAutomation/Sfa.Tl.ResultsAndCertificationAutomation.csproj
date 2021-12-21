@@ -24,12 +24,22 @@
   </ItemGroup>
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\1879_AssessmentLearnersEntriesPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\1916_AssessmentEntryUploadStage3Validations - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\1917_AssessmentEntryUploadSuccessful - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2000_AssessmentEntryULNCannotBeFoundPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2001_AssessmentEntryWithdrawnLearnersPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2139_AssessmentLearnersAddCoreNextAssessmentSeriesPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\2140_AssessmentEntryAddedSuccessfully - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\3823_LearnerWithdrawnPage.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4708_AssessmentEntryUpload-NoAssessSeriesFirstOne - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4713_AssessmentEntryDetailsPageNewLearner - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4724_AssessmentEntrySuccessBannerAfterRemovingCoreAssessmentEntry - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4727_AssessmentEntrySuccessBannerAfterAddingCoreAssessmentEntry - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\AssessmentEntries\4765_AssessmentEntryAddMultipleSpecialismResitsToOpenAssessmentEntry - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3168_AddAddressEnterPostcodePostcodeSearch - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3170_AddAddressCheckAndSubmit - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\OrgPostalAddress\3220_CheckAndSubmitCancel - Copy.feature.cs" />
@@ -39,6 +49,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2843_IPStatusUpdatedConfirmationPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\2848_LearnerLinkingEnglishMathsAndIPpage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Registrations\2135_ResultsWithdrawnManual.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Registrations\RegistrationsPage - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\Results\2265_ResultsUploadSuccess - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Features\ReviewJourney\3999_TLevelDashboard - Copy.feature.cs" />
@@ -133,7 +144,7 @@
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Selenium.Support" Version="4.0.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.0.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="94.0.4606.6100" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="96.0.4664.4500" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.150.1.2" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.22" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
@@ -156,7 +167,16 @@
     <None Update="Data\1879RegistrationsDataForAssessments.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\4693AssessmentEntryData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\2311AssessmentData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4693RegistrationsData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4714RegistrationsData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\2311RegistrationsData.csv">
@@ -186,6 +206,9 @@
     <None Update="Data\AssessmentEntryStage2NoData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\4714AssessmentData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\AssessmentEntryStage2Validations.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -201,7 +224,13 @@
     <None Update="Data\AssessmentsDataForResultsStage3.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\AssessmentAddFirstAssessSeriesErrors.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\AssessmentStage2ErrorReport.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AssessmentMultipleSpecialismErrors.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\AssessmentStage3Errors.csv">
@@ -300,6 +329,39 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Tests\Features\AssessmentEntries\4722_AssessmentEntryRemoveSpecialismAssessmentEntry.feature.cs">
+      <DependentUpon>4722_AssessmentEntryRemoveSpecialismAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4725_AssessmentEntrySuccessBannerAfterRemovingSpecialismAssessmentEntry.feature.cs">
+      <DependentUpon>4725_AssessmentEntrySuccessBannerAfterRemovingSpecialismAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4765_AssessmentEntryAddMultipleSpecialismResitsToOpenAssessmentEntry.feature.cs">
+      <DependentUpon>4765_AssessmentEntryAddMultipleSpecialismResitsToOpenAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4723_AssessmentEntryRemoveCoreAssessmentEntry.feature.cs">
+      <DependentUpon>4723_AssessmentEntryRemoveCoreAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature.cs">
+      <DependentUpon>4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4724_AssessmentEntrySuccessBannerAfterRemovingCoreAssessmentEntry.feature.cs">
+      <DependentUpon>4724_AssessmentEntrySuccessBannerAfterRemovingCoreAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4727_AssessmentEntrySuccessBannerAfterAddingCoreAssessmentEntry.feature.cs">
+      <DependentUpon>4727_AssessmentEntrySuccessBannerAfterAddingCoreAssessmentEntry.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner.feature.cs">
+      <DependentUpon>4714_AssessmentEntryDetailsPage2ndYearLearner.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4713_AssessmentEntryDetailsPageNewLearner.feature.cs">
+      <DependentUpon>4713_AssessmentEntryDetailsPageNewLearner.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4707_AssessmentEntryLearnerCannotBeFoundPage.feature.cs">
+      <DependentUpon>4707_AssessmentEntryLearnerCannotBeFoundPage.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\AssessmentEntries\4710_AssessmentEntryLearnerIsWithdrawn.feature.cs">
+      <DependentUpon>4710_AssessmentEntryLearnerIsWithdrawn.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\Features\AssessmentEntries\4170_AssessmentEntryUploadSuccessfulNavigation.feature.cs">
       <DependentUpon>4170_AssessmentEntryUploadSuccessfulNavigation.feature</DependentUpon>
     </Compile>
@@ -341,6 +403,9 @@
     </Compile>
     <Compile Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature.cs">
       <DependentUpon>3001_AddSENDStatusToLearnerTLevelRecordPage.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\Features\Registrations\4889_CannotChangeWithdrawnStatusIfLearnerRegisteredWithActiveRegistrationAtDifferentAO.feature.cs">
+      <DependentUpon>4889_CannotChangeWithdrawnStatusIfLearnerRegisteredWithActiveRegistrationAtDifferentAO.feature</DependentUpon>
     </Compile>
     <Compile Update="Tests\Features\Registrations\4174_RegistrationsUploadSuccessNavigation.feature.cs">
       <DependentUpon>4174_RegistrationsUploadSuccessNavigation.feature</DependentUpon>
@@ -467,6 +532,58 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4693_AssessmentEntryUploadMultipleSpecialismStage3Validations.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4708_AssessmentEntryUpload-NoAssessSeriesFirstOne.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4722_AssessmentEntryRemoveSpecialismAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4725_AssessmentEntrySuccessBannerAfterRemovingSpecialismAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4765_AssessmentEntryAddMultipleSpecialismResitsToOpenAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4723_AssessmentEntryRemoveCoreAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4720_AssessmentEntryAddCoreToOpenAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4724_AssessmentEntrySuccessBannerAfterRemovingCoreAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4727_AssessmentEntrySuccessBannerAfterAddingCoreAssessmentEntry.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4714_AssessmentEntryDetailsPage2ndYearLearner.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4713_AssessmentEntryDetailsPageNewLearner.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4707_AssessmentEntryLearnerCannotBeFoundPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4710_AssessmentEntryLearnerIsWithdrawn.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\AssessmentEntries\4170_AssessmentEntryUploadSuccessfulNavigation.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
@@ -520,6 +637,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\Features\Providers\3001_AddSENDStatusToLearnerTLevelRecordPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\Features\Registrations\4889_CannotChangeWithdrawnStatusIfLearnerRegisteredWithActiveRegistrationAtDifferentAO.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

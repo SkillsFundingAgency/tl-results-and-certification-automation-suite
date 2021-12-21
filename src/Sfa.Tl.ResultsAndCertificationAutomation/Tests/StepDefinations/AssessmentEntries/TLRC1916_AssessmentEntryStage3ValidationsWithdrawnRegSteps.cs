@@ -15,5 +15,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             CsvFileReader.CsvDataFileCompare(AssessmentUploadStage3WithdrawnRegError);
             SqlQueries.DeleteFromRegistrationTables();
         }
+
+        [Then(@"I should see all errors in the file for attempting to add a first assessment series")]
+        public void ThenIShouldSeeAllErrorsInTheFileForAttemptingToAddAFirstAssessmentSeries()
+        {
+            CsvFileReader.CsvDataFileCompare(AssessmentUploadAddFirstAssessEntry);
+            SqlQueries.DeleteFromRegistrationTables();
+        }
+
+        [Then(@"I should see all errors in the file for attempting to add invalid mulitple specialism entries")]
+        public void ThenIShouldSeeAllErrorsInTheFileForAttemptingToAddInvalidMulitpleSpecialismEntries()
+        {
+            CsvFileReader.CsvDataFileCompare(AssessmentUploadMultipleSpecialismErrors);
+            SqlQueries.DeleteFromRegistrationTables();
+        }
+
     }
 }

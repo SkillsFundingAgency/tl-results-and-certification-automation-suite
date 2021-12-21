@@ -28,14 +28,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             ClickElement(RegistrationsPage.SubmitFileBtn);
             RegistrationsPage.VerifyRegistrationSuccessPage();
         }
-        
+
+        [Then(@"I am navigated to the Home page")]
         [Given(@"I navigated Home page")]
         [When(@"I navigated Home page")]
         public void GivenINavigatedHomePage()
         {
             ClickElement(TlevelDashboardPage.DashboardHeadLink);
         }
-        
+
+      
         [Then(@"I should see all stage(.*) errors in the file")]
         public void ThenIShouldSeeAllStageErrorsInTheFile(int p0)
         {
