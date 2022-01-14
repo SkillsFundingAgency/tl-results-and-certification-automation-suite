@@ -20,9 +20,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TLRC_4722 MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - add core to open assessment " +
-        "entry")]
-    public partial class TLRC_4722MANUALJOURNEYASSESSMENTENTRYCHANGES_AddCoreToOpenAssessmentEntryFeature
+    [NUnit.Framework.DescriptionAttribute("TLRC_4722 MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - remove specialism assessment" +
+        " entry")]
+    public partial class TLRC_4722MANUALJOURNEYASSESSMENTENTRYCHANGES_RemoveSpecialismAssessmentEntryFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -36,9 +36,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "TLRC_4722 MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - add core to open assessment " +
-                    "entry", @"	journey and accessibility improvements to the page and to allow users to add to open assessment entries for core post Autumn 2021
-	provides more learner details, learner details structured with accessibility in mind, give clear information to user what they will be adding to.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "TLRC_4722 MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - remove specialism assessment" +
+                    " entry", @"		  BUSINESS NEED: NEW PAGE - journey and accessibility improvements to the page and to allow users to remove assessment entry for Specialisms from Summer 2022 onwards
+		  SUMMARY/CONTEXT: provides more learner details, learner details structured with accessibility in mind, give clear information to user what they will be removing.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
