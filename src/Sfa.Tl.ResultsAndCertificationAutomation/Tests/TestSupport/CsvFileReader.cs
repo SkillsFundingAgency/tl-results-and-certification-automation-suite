@@ -45,5 +45,84 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
             text = text.Replace("{AssessmentSeries}", AssessmentSeries);
             File.WriteAllText(GetFile, text);
         }
+        public static void CsvRegistrationDataFileCompare(string file)
+        {
+            CSVHelperRegistrationData read = new CSVHelperRegistrationData();
+            var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
+            string registrationDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var expectedErrors = read.ExpectedData(registrationDataFile);
+
+            var index = 0;
+            foreach (var expectedError in expectedErrors)
+            {
+                var actualError = actualErrors.Skip(index).First();
+                Assert.AreEqual(expectedError.UlnNo, actualError.UlnNo);
+                Assert.AreEqual(expectedError.FirstName, actualError.FirstName);
+                Assert.AreEqual(expectedError.LastName, actualError.LastName);
+                Assert.AreEqual(expectedError.DateOfBirth, actualError.DateOfBirth);
+                Assert.AreEqual(expectedError.Ukprn, actualError.Ukprn);
+                Assert.AreEqual(expectedError.AcademicYear, actualError.AcademicYear);
+                Assert.AreEqual(expectedError.CoreCode, actualError.CoreCode);
+                Assert.AreEqual(expectedError.SpecialismCode, actualError.SpecialismCode);
+                Assert.AreEqual(expectedError.Status, actualError.Status);
+
+                index++;
+            }
+        }
+        public static void CsvCoreAssessmentDataFileCompare(string file)
+        {
+            CSVHelperCoreAssessmentData read = new CSVHelperCoreAssessmentData();
+            var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
+            string coreAssessmentDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var expectedErrors = read.ExpectedData(coreAssessmentDataFile);
+
+            var index = 0;
+            foreach (var expectedError in expectedErrors)
+            {
+                var actualError = actualErrors.Skip(index).First();
+                Assert.AreEqual(expectedError.UlnNo, actualError.UlnNo);
+                Assert.AreEqual(expectedError.CoreCode, actualError.CoreCode);
+                Assert.AreEqual(expectedError.CoreAssessmentEntry, actualError.CoreAssessmentEntry);
+
+                index++;
+            }
+        }
+        public static void CsvSpecialismAssessmentDataFileCompare(string file)
+        {
+            CSVHelperSpecialismAssessmentData read = new CSVHelperSpecialismAssessmentData();
+            var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
+            string specialismAssessmentDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var expectedErrors = read.ExpectedData(specialismAssessmentDataFile);
+
+            var index = 0;
+            foreach (var expectedError in expectedErrors)
+            {
+                var actualError = actualErrors.Skip(index).First();
+                Assert.AreEqual(expectedError.UlnNo, actualError.UlnNo);
+                Assert.AreEqual(expectedError.SpecialismCodes, actualError.SpecialismCodes);
+                Assert.AreEqual(expectedError.SpecialismAssessmentEntry, actualError.SpecialismAssessmentEntry);
+
+                index++;
+            }
+        }
+        public static void CsvCoreResultsDataFileCompare(string file)
+        {
+            CSVHelperCoreResultsData read = new CSVHelperCoreResultsData();
+            var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
+            string coreResultsDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var expectedErrors = read.ExpectedData(coreResultsDataFile);
+
+            var index = 0;
+            foreach (var expectedError in expectedErrors)
+            {
+                var actualError = actualErrors.Skip(index).First();
+                Assert.AreEqual(expectedError.UlnNo, actualError.UlnNo);
+                Assert.AreEqual(expectedError.ComponentCodeCore, actualError.ComponentCodeCore);
+                Assert.AreEqual(expectedError.AssessmentSeriesCore, actualError.AssessmentSeriesCore);
+                Assert.AreEqual(expectedError.ComponenetGradeCore, actualError.ComponenetGradeCore);
+
+                index++;
+            }
+        }
     }
 }

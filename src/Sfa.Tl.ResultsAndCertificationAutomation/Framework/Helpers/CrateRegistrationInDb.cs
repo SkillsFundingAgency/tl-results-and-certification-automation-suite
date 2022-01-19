@@ -60,6 +60,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreateRegSpecialism(pathwayId);
             SqlQueries.CreatePathwayAssessment(pathwayId);
         }
+        public void CreateDbRegWithSpecialismAssessment(string uln)
+        {
+            var profileId = SqlQueries.CreateRegistrationProfile(uln);
+            var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
+            var specialismId = SqlQueries.CreateRegSpecialism(pathwayId);
+            SqlQueries.CreatePathwayAssessment(pathwayId);
+            SqlQueries.CreateSpecialismAssessment(specialismId);
+        }
         public void CreateDbRegWithAssessmentForLrs(string uln)
         {
             var profileId = SqlQueries.CreateRegistrationProfileForLrs(uln);
