@@ -140,6 +140,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         //public const string TqProviderId = "9479";
         public const string TqProviderId = "15166";
         public const string TlSpecialismId = "42";
+        public const string TlAssessmentSeriesId = "7";
         public const string TqProviderId2 = "15167";
         public const string TqProviderIdForLrs = "15179";
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";

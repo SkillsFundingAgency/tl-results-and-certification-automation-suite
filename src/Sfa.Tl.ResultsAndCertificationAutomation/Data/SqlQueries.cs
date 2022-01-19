@@ -110,6 +110,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetRegPathwayId, ConnectionString);
             return (int)regPathwayId.FirstOrDefault().FirstOrDefault();
         }
+        public static void CreateSpecialismAssessment(int specialismId)
+        {
+            var tlAssessmentSeriesId = Constants.TlAssessmentSeriesId;
+            string CreateSpecialismAssessment = "Insert into TqSpecialismAssessment values('" + specialismId + "','" + tlAssessmentSeriesId + "',GETDATE(),Null,1,0,GETDATE(),'System',GETDATE(),'System')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateSpecialismAssessment, ConnectionString);
+        }
 
         public static int CreateSecondPathwayAssessmentEntry(int pathwayId)
         {
