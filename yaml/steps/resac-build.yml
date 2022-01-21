@@ -30,8 +30,6 @@ steps:
       workingDir: src/Sfa.Tl.ResultsAndCertification.Web
       verbose: false  
 
-
-
   - task: DotNetCoreCLI@2
     displayName: dotnet restore
     inputs:
