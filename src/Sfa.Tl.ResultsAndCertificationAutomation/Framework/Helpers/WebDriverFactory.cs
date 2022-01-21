@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
@@ -51,11 +50,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
                 default:
                     throw new Exception($"Driver name - {browser} does not match OR this framework does not support the webDriver specified");
             }
-        }
-
-        public static string GetSetting(string name)
-        {
-            return ConfigurationManager.AppSettings[name];
         }
     }
 }

@@ -34,6 +34,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             string UpdateAcademicYear = "Update TqRegistrationPathway set AcademicYear= "+ year +" where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '95%')";
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(UpdateAcademicYear, ConnectionString);
         }
+        public static void UpdateAcademicYearTo2020()
+        {
+            string UpdateAcademicYear = "Update TqRegistrationPathway set AcademicYear= 2020 where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '99%')";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(UpdateAcademicYear, ConnectionString);
+        }
         public static void DeleteRegistrations(List<long> ulns)
         {
             var uln = string.Join(",", ulns);

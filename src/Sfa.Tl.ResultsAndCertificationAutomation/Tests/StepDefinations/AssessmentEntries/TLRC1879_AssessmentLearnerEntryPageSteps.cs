@@ -35,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             var uln = _scenarioContext["uln"] as string;
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyLearnersAssessmentEntriesPage();
             AssessmentEntriesLearnersAssessmentEntriesPage.VerifyDataCreatedFromDb(uln);
-            AssessmentEntriesLearnersAssessmentEntriesPage.VerifyCoreAndSpecialismText();
+            //AssessmentEntriesLearnersAssessmentEntriesPage.VerifyCoreAndSpecialismText();
         }
         
         [Then(@"Core assessment entry should be ""(.*)""")]

@@ -1,4 +1,5 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
+using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using TechTalk.SpecFlow;
@@ -27,6 +28,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             UploadFile(RegistrationsPage.ChooseFile, file);
             ClickElement(RegistrationsPage.SubmitFileBtn);
             RegistrationsPage.VerifyRegistrationSuccessPage();
+        }
+        [Given(@"I have updated academic year to (.*) in DB")]
+        public void GivenIHaveUpdatedAcademicYearToInDB(int p0)
+        {
+            SqlQueriesBulkUploads.UpdateAcademicYearTo2020();
         }
 
         [Then(@"I am navigated to the Home page")]
