@@ -18,8 +18,11 @@ steps:
       packageType: 'sdk'
       version: '6.x'
   
-  - task: gittools.gitversion.gitversion-task.GitVersion@5
-    displayName: GitVersion
+  # - task: gittools.gitversion.gitversion-task.GitVersion@5
+  #   displayName: GitVersion
+  #   inputs:
+  #     versionSpec: '5.x'
+  #     updateAssemblyInfo: true
 
   - task: DotNetCoreCLI@2
     displayName: dotnet restore
