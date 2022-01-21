@@ -14,7 +14,7 @@ resources:
       type: github
       endpoint: S126-Tlevelservice
       name: SkillsFundingAgency/tl-results-and-certification
-      ref: feature/sprint-44
+      ref: feature/sprint-49
 
     - repository: devopsTools
       type: github
