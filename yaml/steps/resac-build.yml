@@ -8,9 +8,6 @@ parameters:
 steps:
   - checkout: self
   
-  - task: gittools.gitversion.gitversion-task.GitVersion@5
-    displayName: GitVersion
-  
   - task: NodeTool@0
     inputs:
       versionSpec: '14.x'
@@ -20,6 +17,9 @@ steps:
     inputs:
       packageType: 'sdk'
       version: '6.x'
+  
+  - task: gittools.gitversion.gitversion-task.GitVersion@5
+    displayName: GitVersion
 
   - task: DotNetCoreCLI@2
     displayName: dotnet restore
