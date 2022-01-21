@@ -29,6 +29,12 @@ jobs:
           SourcePath: '$(System.ArtifactsDirectory)/appdrop/tests'
           TargetFileNames: '*.json'
       
+      - task: UseDotNet@2 
+        displayName: "Install .NET 6 SDK"
+        inputs:
+          packageType: 'sdk'
+          version: '6.x'
+
       - task: VSTest@2
         displayName: 'VsTest - Test Execution'
         inputs:
