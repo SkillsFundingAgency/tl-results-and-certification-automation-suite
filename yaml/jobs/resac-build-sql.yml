@@ -9,7 +9,7 @@ jobs:
     displayName: Build SQL Job
     pool:
       name: 'Azure Pipelines'
-      vmImage: 'windows-2019'
+      vmImage: 'windows-2022'
     workspace:
       clean: all
     steps:
