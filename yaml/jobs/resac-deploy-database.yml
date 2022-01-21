@@ -19,7 +19,7 @@ jobs:
     displayName: Deploy SQL DB
     pool:
       name: 'Azure Pipelines'
-      vmImage: 'windows-2022'
+      vmImage: 'windows-latest'
     steps:
       - task: DownloadBuildArtifacts@0
         inputs:

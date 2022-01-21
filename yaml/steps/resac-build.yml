@@ -8,6 +8,12 @@ parameters:
 steps:
   - checkout: self
   
+  - task: gittools.gitversion.gitversion-task.GitVersion@5
+    displayName: GitVersion
+    inputs:
+      versionSpec: '5.x'
+      updateAssemblyInfo: true
+
   - task: NodeTool@0
     inputs:
       versionSpec: '14.x'
@@ -18,11 +24,13 @@ steps:
       packageType: 'sdk'
       version: '6.x'
   
-  # - task: gittools.gitversion.gitversion-task.GitVersion@5
-  #   displayName: GitVersion
-  #   inputs:
-  #     versionSpec: '5.x'
-  #     updateAssemblyInfo: true
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs: 
+      workingDir: src/Sfa.Tl.ResultsAndCertification.Web
+      verbose: false  
+
+
 
   - task: DotNetCoreCLI@2
     displayName: dotnet restore
