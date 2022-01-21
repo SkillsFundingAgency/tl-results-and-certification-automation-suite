@@ -13,7 +13,7 @@ jobs:
     displayName: Run the automation tests
     pool:
         name: 'Azure Pipelines'
-        vmImage: 'windows-latest'
+        vmImage: 'windows-2019'
     steps:
       - checkout: devopsTools
       - task: DownloadBuildArtifacts@0

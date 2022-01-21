@@ -10,7 +10,7 @@ jobs:
     displayName: Build App Job
     pool:
       name: 'Azure Pipelines'
-      vmImage: 'windows-latest'
+      vmImage: 'windows-2019'
     workspace:
       clean: all
     steps:
