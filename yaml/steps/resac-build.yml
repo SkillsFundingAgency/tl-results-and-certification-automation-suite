@@ -27,7 +27,7 @@ steps:
   - task: Npm@1
     displayName: 'npm install'
     inputs: 
-      workingDir: src/Sfa.Tl.ResultsAndCertification.Web
+      workingDir: src/Sfa.Tl.ResultsAndCertificationAutomation
       verbose: false  
 
   - task: DotNetCoreCLI@2
