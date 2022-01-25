@@ -8,7 +8,7 @@ Given I have logged in as a "ResultsEditor" user
 And I have a registration without assessment and result
 And I click on "Results" link
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 3808_Verify learner no assessment page
 When I search the learner
 Then I should see learner result no assessment page
@@ -16,7 +16,7 @@ And Back link should take me to search learner page with Uln
 And Search again shoud take me to search learner page without Uln
 And the registration for this test is deleted
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 3808_Navigate to dashboard
 When I search the learner
 Then I should see learner result no assessment page

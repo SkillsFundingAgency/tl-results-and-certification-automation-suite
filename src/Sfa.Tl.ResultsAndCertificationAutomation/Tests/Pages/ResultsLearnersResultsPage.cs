@@ -8,7 +8,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
     public class ResultsLearnersResultsPage : ElementHelper
     {
         private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "learners-results");
-        private static readonly string PageTitle = "Learner’s results page – Manage T Level results – GOV.UK";
+        private static readonly string PageTitle = "Learner’s results – Manage T Level results – GOV.UK";
         
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
         public static readonly string ExpectedPageHeaderText = "Learner’s results";

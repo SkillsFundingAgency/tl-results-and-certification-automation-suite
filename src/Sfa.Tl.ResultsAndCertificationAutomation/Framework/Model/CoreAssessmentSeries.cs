@@ -1,6 +1,6 @@
 ﻿namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Model
 {
-    public enum AssessmentSeries
+    public enum CoreAssessmentSeries
     {
         Summer2021 = 1,
         Autumn2021 = 2,
