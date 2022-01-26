@@ -64,9 +64,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.TLevelReview
 
         public static void VerifyLinks()
         {
-            Assert.AreEqual(ExpectedAddTLevelsLink, "https://test.manage-tlevel-results.tlevels.gov.uk/find-provider");
+            Assert.AreEqual(ExpectedAddTLevelsLink, string.Concat(StartPage.StartPageUrl,"find-provider"));
             //Assert.IsTrue(ExpectedConfirmedTLevelLink.Contains("https://test.manage-tlevel-results.tlevels.gov.uk/confirmed-tlevels"));
-            Assert.AreEqual(ExpectedRegisterLink, "https://test.manage-tlevel-results.tlevels.gov.uk/registrations");
+            Assert.AreEqual(ExpectedRegisterLink, string.Concat(StartPage.StartPageUrl, "registrations"));
         }
     }
 }

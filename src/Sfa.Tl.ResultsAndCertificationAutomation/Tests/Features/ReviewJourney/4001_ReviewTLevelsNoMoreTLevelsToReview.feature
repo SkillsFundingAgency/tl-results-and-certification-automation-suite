@@ -7,7 +7,7 @@ Background: Log in as Reviewer
 Given I have logged in as a "AllUser" user
 
 
-@RegressionTest @ReviewJourney
+@Ignore @RegressionTest @ReviewJourney
 Scenario: 4001_Verify Review T Levels - All T Levels confirmed page and page links
 Given I set all of the T Levels for NCFE to confirmed
 And I click on the TLevels link on the homepage

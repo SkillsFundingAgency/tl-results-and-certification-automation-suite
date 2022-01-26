@@ -154,5 +154,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RAAProvider = "(99999901)";
         public const string RAAExamPeriod = "Summer 2021";
         public const string RAAOriginalGrade = "A";
+        // City and Guillds
+        public const string CityAndGuildsProviderId = "15399";
+        public const string HeatingSpecialismId = "11";
+        public const string VentilationSpecialismId = "16";
+        public const string PathwayAssessmentSeriesId = "2";
     }
 }

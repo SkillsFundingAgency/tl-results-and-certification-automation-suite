@@ -17,7 +17,7 @@ And when I press the Search again button on the Core Component Grade Status page
 Then the Review and Appeals Search page is displayed
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3477_Verify breadcrumbs on Core Component Grade Status page
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 When I press the Search for a learner breadcrumb on the Review and Appeals Learner Component Grade status page
