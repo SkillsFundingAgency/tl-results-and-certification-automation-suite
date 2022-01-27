@@ -1,17 +1,16 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
     public class ResultsLearnersResultsPage : ElementHelper
     {
-        private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "learners-results");
+        private static readonly string PageUrl = string.Concat(StartPage.StartPageUrl, "learner-results");
         private static readonly string PageTitle = "Learner's results – Manage T Level results – GOV.UK";
         
         public static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-        public static readonly string ExpectedPageHeaderText = "Learner’s results";
+        public static readonly string ExpectedPageHeaderText = "Db FirstName Db LastName's results";
         public static By ULNTextLabel { get; } = By.XPath("//*[@id='main-content']");
         public static By pageContent { get; } = By.XPath("//*[@id='main-content']");
         public static By NameTextLabel { get; } = By.XPath("//*[@id='main-content']//p[1]");

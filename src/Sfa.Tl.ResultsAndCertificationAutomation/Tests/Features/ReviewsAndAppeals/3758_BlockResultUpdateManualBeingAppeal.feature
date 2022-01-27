@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ResultsEditor" user
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3758 Validate manual result update for a appealed state
 And I have registration in appeal state
 When I search the Uln to update result
