@@ -46,6 +46,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         public void ThenIShouldSeeAddResultPageForCore()
         {
             AddCoreResultPage.VerifyLearnerCoreResultsPage();
+            AddCoreResultPage.VerifyAddGradesUnchecked();
         }
         [Then(@"back link should take me to learner result page")]
         public void ThenBackLinkShouldTakeMeToLearnerResultPage()
