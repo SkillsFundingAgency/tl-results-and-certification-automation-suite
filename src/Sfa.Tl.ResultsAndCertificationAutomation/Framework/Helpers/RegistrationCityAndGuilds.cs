@@ -36,7 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             var tlSpecialismId2 = Constants.VentilationSpecialismId;
             var createRegSpecialism = "Insert into TqRegistrationSpecialism values('" + pathwayId + "','" + tlSpecialismId2 + "',GETDATE(),NULL,1,0,GETDATE(),'System',Null,Null )";
-            var getSpecialismId = "select top 1 id from TqRegistrationSpecialism where TqRegistrationPathwayId  = '" + pathwayId + "'";
+            var getSpecialismId = "select top 1 id from TqRegistrationSpecialism where TqRegistrationPathwayId  = '" + pathwayId + "'order by Id desc";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegSpecialism, ConnectionString);
             var specialismId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSpecialismId, ConnectionString);
             return (int)specialismId.FirstOrDefault().FirstOrDefault();
@@ -68,7 +68,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','"+ tlAssessmentSeriesId +"',GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
         }
-        public void CreateRegistration(string uln)
+
+        public static void CreateRegistration(string uln)
         {
             var profileId = InsertRegistrationProfile(uln);
             var pathwayId = InsertRegistrationPathway(profileId);
@@ -76,7 +77,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertRegistrationSpecialism2(pathwayId);
         }
 
-        public void RegWithCoreAssessment(string uln)
+        public static void RegWithCoreAssessment(string uln)
         {
             var profileId = InsertRegistrationProfile(uln);
             var pathwayId = InsertRegistrationPathway(profileId);
@@ -84,7 +85,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertRegistrationSpecialism2(pathwayId);
             InsertCoreAssessment(pathwayId);
         }
-        public void RegWithCoreAndSpecialismAssessment(string uln)
+
+        public static void RegWithCoreAndSpecialismAssessment(string uln)
         {
             var profileId = InsertRegistrationProfile(uln);
             var pathwayId = InsertRegistrationPathway(profileId);
@@ -94,7 +96,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertSpecialismAssessment(specialismId1);
             InsertSpecialismAssessment(specialismId2);
         }
-        public void RegWithCoreAndSpecialismAssessmentResults(string uln)
+        public  static void RegWithCoreAndSpecialismAssessmentResults(string uln)
         {
             var profileId = InsertRegistrationProfile(uln);
             var pathwayId = InsertRegistrationPathway(profileId);
