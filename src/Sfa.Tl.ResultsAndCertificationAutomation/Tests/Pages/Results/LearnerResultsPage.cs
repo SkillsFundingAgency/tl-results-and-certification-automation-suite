@@ -11,6 +11,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
         private static string PageTitle { get; } = "Learner's results – Manage T Level results – GOV.UK";
         private static By AddCoreAssessment { get; } = By.Id(("addCoreAssessmentLink"));
         private static By AddSpecialismAssessment { get; } = By.Id(("addSpecialismAssessmentLink"));
+        private  static By SuccessBanner { get; } = By.XPath("//*[@id='main-content']//h2");
+        private static By SuccessMessage { get; } = By.XPath("//*[@id='main-content']//h3");
 
         public static void VerifyLearnerResultsPage()
         {
@@ -37,23 +39,55 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
                 case "Assessment2 add result":
                     ClickAssessment2AddResult();
                     break;
+                case "Core change result":
+                    ClickCoreChangeResult();
+                    break;
+                case "Assessment1 change result":
+                    ClickAssessment1ChangeResult();
+                    break;
+                case "Assessment2 change result":
+                    ClickAssessment2ChangeResult();
+                    break;
             }
         }
 
         private static void ClickCoreAddResult()
         {
-            IList<IWebElement> all = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
-            all[0].Click();
+            IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
+            element[0].Click();
         }
         private static void ClickAssessment1AddResult()
         {
-            IList<IWebElement> all = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
-            all[1].Click();
+            IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
+            element[1].Click();
         }
+
         private static void ClickAssessment2AddResult()
         {
-            IList<IWebElement> all = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
-            all[2].Click();
+            IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
+            element[2].Click();
+        }
+        private static void ClickCoreChangeResult()
+        {
+            IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Change')]"));
+            element[0].Click();
+        }
+        private static void ClickAssessment1ChangeResult()
+        {
+            IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Change')]"));
+            element[1].Click();
+        }
+
+        private static void ClickAssessment2ChangeResult()
+        {
+            IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Change')]"));
+            element[2].Click();
+        }
+
+        public static void VerifyBanner(string message)
+        {
+            Assert.AreEqual("Success", WebDriver.FindElement(SuccessBanner).Text);
+            Assert.IsTrue(WebDriver.FindElement(SuccessMessage).Text.Contains(message));
         }
     }
 }

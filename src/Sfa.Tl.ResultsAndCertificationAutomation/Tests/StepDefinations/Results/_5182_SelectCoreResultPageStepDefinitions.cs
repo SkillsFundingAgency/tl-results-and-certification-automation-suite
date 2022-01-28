@@ -1,4 +1,3 @@
-using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results;
@@ -22,10 +21,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             RegistrationCityAndGuilds.CreateRegistration(uln);
         }
 
+        [Given(@"I click '([^']*)' link")]
         [When(@"I click '([^']*)' link")]
         public void WhenIClickLink(string linkName)
         {
-            LearnerResultsPage.AddAssessmentLink(linkName);
+            AddAssessmentLink(linkName);
         }
 
         [Then(@"learner assessment entries page is open")]
