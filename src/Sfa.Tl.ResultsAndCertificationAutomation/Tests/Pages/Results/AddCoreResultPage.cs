@@ -16,7 +16,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
         private static By SelectGradeD { get; } = By.Id("selectedgradecode-4");
         private static By SelectGradeE { get; } = By.Id("selectedgradecode-5");
         private static By SelectGradeUnclassified { get; } = By.Id("selectedgradecode-6");
-        private  static  By SubmitBtn { get; } = By.Id("submitButton");
+        private static By SelectGradeNotReceived { get; } = By.Id("selectedgradecode-7");
+
         public static void VerifyLearnerCoreResultsPage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
@@ -28,7 +29,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
 
-        public static void VerifyGradesUnchecked()
+        public static void VerifyAddGradesUnchecked()
         {
             Assert.False(WebDriver.FindElement(SelectGradeAStar).Selected);
             Assert.False(WebDriver.FindElement(SelectGradeA).Selected);
@@ -37,6 +38,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
             Assert.False(WebDriver.FindElement(SelectGradeD).Selected);
             Assert.False(WebDriver.FindElement(SelectGradeE).Selected);
             Assert.False(WebDriver.FindElement(SelectGradeUnclassified).Selected);
+        }
+        public static void VerifyChangeGradesUnchecked()
+        {
+            Assert.False(WebDriver.FindElement(SelectGradeAStar).Selected);
+            Assert.False(WebDriver.FindElement(SelectGradeA).Selected);
+            Assert.False(WebDriver.FindElement(SelectGradeB).Selected);
+            Assert.False(WebDriver.FindElement(SelectGradeC).Selected);
+            Assert.False(WebDriver.FindElement(SelectGradeD).Selected);
+            Assert.False(WebDriver.FindElement(SelectGradeE).Selected);
+            Assert.False(WebDriver.FindElement(SelectGradeUnclassified).Selected);
+            Assert.False(WebDriver.FindElement(SelectGradeNotReceived).Selected);
         }
 
         public static void SelectGrade(string grade)
@@ -64,14 +76,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
                 case "Grade Unclassified":
                     ClickElement(SelectGradeUnclassified);
                     break;
+                case "Grade not received":
+                    ClickElement(SelectGradeNotReceived);
+                    break;
             }
         }
-
-        public static void ClickSubmit()
-        {
-            ClickButton(SubmitBtn);
-        }
-
         public static void ClickBackLink()
         {
             ClickElement(WebDriver.FindElement(By.Id("backLink")));

@@ -50,22 +50,32 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);
             return (int)regPathwayId.FirstOrDefault().FirstOrDefault();
         }
-        private static void InsertSpecialismAssessment(int specialismId)
+        private static int InsertSpecialismAssessment1(int specialismId)
         {
             var tlAssessmentSeriesId = Constants.TlAssessmentSeriesId;
             var createSpecialismAssessment = "Insert into TqSpecialismAssessment values('" + specialismId + "','" + tlAssessmentSeriesId + "',GETDATE(),Null,1,0,GETDATE(),'System',GETDATE(),'System')";
+            var getSpecialismAssessmentId = "select top 1 id from TqSpecialismAssessment where TqRegistrationSpecialismId  = '" + specialismId + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismAssessment, ConnectionString);
+            var specialismAssessmentId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSpecialismAssessmentId, ConnectionString);
+            return (int)specialismAssessmentId.FirstOrDefault().FirstOrDefault();
         }
-        private static void InsertCoreResult(int coreAssessmentId)
-        {
-            var coreAssessmentSeriesId = Constants.PathwayAssessmentSeriesId;
-            var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','"+ coreAssessmentSeriesId + "',GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
-            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
-        }
-        private static void InsertAssessmentResult(int specialismAssessmentId)
+        private static int InsertSpecialismAssessment2(int specialismId)
         {
             var tlAssessmentSeriesId = Constants.TlAssessmentSeriesId;
-            var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','"+ tlAssessmentSeriesId +"',GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            var createSpecialismAssessment = "Insert into TqSpecialismAssessment values('" + specialismId + "','" + tlAssessmentSeriesId + "',GETDATE(),Null,1,0,GETDATE(),'System',GETDATE(),'System')";
+            var getSpecialismAssessmentId = "select top 1 id from TqSpecialismAssessment where TqRegistrationSpecialismId  = '" + specialismId + "'order by Id desc";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismAssessment, ConnectionString);
+            var specialismAssessmentId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSpecialismAssessmentId, ConnectionString);
+            return (int)specialismAssessmentId.FirstOrDefault().FirstOrDefault();
+        }
+        private static void InsertCoreResult(int coreAssessmentId, int grade)
+        {
+            var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','"+ grade + "',GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
+        }
+        private static void InsertAssessmentResult(int specialismAssessmentId, int grade)
+        {
+            var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','"+ grade +"',GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
         }
 
@@ -93,8 +103,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
             var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
             InsertCoreAssessment(pathwayId);
-            InsertSpecialismAssessment(specialismId1);
-            InsertSpecialismAssessment(specialismId2);
+            InsertSpecialismAssessment1(specialismId1);
+            InsertSpecialismAssessment2(specialismId2);
         }
         public  static void RegWithCoreAndSpecialismAssessmentResults(string uln)
         {
@@ -103,11 +113,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
             var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
             var coreAssessmentId = InsertCoreAssessment(pathwayId);
-            InsertSpecialismAssessment(specialismId1);
-            InsertSpecialismAssessment(specialismId2);
-            InsertCoreResult(coreAssessmentId);
-            InsertAssessmentResult(specialismId1);
-            InsertAssessmentResult(specialismId2);
+            var specialismAssessmentId1= InsertSpecialismAssessment1(specialismId1);
+            var specialismAssessmentId2= InsertSpecialismAssessment2(specialismId2);
+            InsertCoreResult(coreAssessmentId,1);
+            InsertAssessmentResult(specialismAssessmentId1, 10);
+            InsertAssessmentResult(specialismAssessmentId2, 11);
         }
     }
 }
