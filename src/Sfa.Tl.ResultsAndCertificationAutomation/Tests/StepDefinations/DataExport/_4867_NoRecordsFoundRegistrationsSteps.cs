@@ -14,13 +14,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.DataExp
             switch (aoName)
             {
                 case "Pearson":
-                    SqlQueriesBulkUploads.DeleteAORecords(10022490);
+                    SqlQueriesBulkUploads.DeleteAoRecords(10022490);
                     break;
                 case "Ncfe":
-                    SqlQueriesBulkUploads.DeleteAORecords(10009696);
+                    SqlQueriesBulkUploads.DeleteAoRecords(10009696);
                     break;
                 case "CityAndGuilds":
-                    SqlQueriesBulkUploads.DeleteAORecords(10009931);
+                    SqlQueriesBulkUploads.DeleteAoRecords(10009931);
                     break;
             }
         }

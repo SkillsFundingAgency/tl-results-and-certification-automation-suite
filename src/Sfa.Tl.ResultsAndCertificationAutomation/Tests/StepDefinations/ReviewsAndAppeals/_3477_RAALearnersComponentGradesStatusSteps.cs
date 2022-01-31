@@ -57,7 +57,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         public void WhenIPressTheReviewsAndAppealsBreadcrumbOnTheReviewAndAppealsLearnerComponentGradeStatusPage()
         {
             string uln = _scenarioContext["uln"] as string;
-            string RAAURL = SqlQueries.CreateRegistrationAppealURL(uln);
+            string RAAURL = SqlQueries.CreateRegistrationAppealUrl(uln);
             WebDriver.Navigate().GoToUrl(RAAURL);
             RAULearnersComponentGradesStatusPage.ClickReviewsAndAppealsBreadcrumb();
         }
@@ -72,7 +72,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         public void WhenIPressTheHomeBreadcrumbOnTheReviewAndAppealsLearnerComponentGradeStatusPage()
         {
             string uln = _scenarioContext["uln"] as string;
-            string RAAURL = SqlQueries.CreateRegistrationAppealURL(uln);
+            string RAAURL = SqlQueries.CreateRegistrationAppealUrl(uln);
             WebDriver.Navigate().GoToUrl(RAAURL);
             RAULearnersComponentGradesStatusPage.ClickHomeBreadcrumb();
         }
