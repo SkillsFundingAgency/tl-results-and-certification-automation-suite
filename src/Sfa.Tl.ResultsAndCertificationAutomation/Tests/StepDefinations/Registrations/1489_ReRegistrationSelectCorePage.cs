@@ -24,7 +24,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
         {
             SqlQueries.DeleteFromRegistrationTables();
             RegistrationsManualPage.AddNewRegistrations();
-            RegistrationsManualPage.CreateRegistrationWithSpecialism(Constants.ManualRegULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
+            RegistrationsManualPage.CreateRegistrationWithSpecialism(Constants.ManualRegUln, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDobDay, Constants.ManualRegDobMonth, Constants.ManualRegDobYear);
             RegistrationsManualPage.ClickSubmit();
             ClickElement(RegistrationsPage.BacktoRegistrationBtn);
             ClickElement(RegistrationsSearchPage.SearchRegistrationLink);

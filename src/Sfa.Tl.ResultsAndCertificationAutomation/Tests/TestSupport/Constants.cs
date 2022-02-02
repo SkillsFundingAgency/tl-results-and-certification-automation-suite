@@ -2,32 +2,18 @@
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
 {
-    public class Constants
+    public static class Constants
     {
-        public const string InvalidUser = "InvalidUser";
-        public const string InvalidPass = "InvalidPass";
-        public const string Banner = "This is a new service – your feedback will help us to improve it.";
         public const string DashBoardTitle = "Home – Manage T Level results – GOV.UK";
         public const string DashBoardHeader = "Manage T Level results";
         public const string CookieHeader = "Cookies";
-        public const string DfEInvalidUserName = "testuser@digital.education.gov.uk";
-        public const string DfEInvalidPassword = "testing@@2020";
         private static string StartPageUrl => WebDriverFactory.Config["BaseUrl"];
         public static string TlevelDashboardUrl => string.Concat(StartPageUrl, "dashboard");
         public const string Error404 = "Page not found";
         public const string Error401 = "Access denied";
         public const string Error500 = "Sorry, there is a problem with the service";
-        public const string SelectOrganisation = "Select your organisation";
         public const string TlevelTitleAgricluture = "T Level in Agriculture, Environmental and Animal Care";
         public const string TlevelTitleEducation = "T Level in Education and Childcare";
-        public const string TlevelTitleEngineering = "T Level in Engineering and Manufacturing";
-        public const string TlevelTitleHealth = "T Level in Health and Science";
-        public const string TlevelTitleLegal = "T Level in Legal, Finance and Accounting";
-        public const string TlevelAgricluture = "Agriculture, Environmental and Animal Care: Agriculture, Environmental and Animal Care";
-        public const string TlevelEducation = "Education and Childcare: Education";
-        public const string TlevelEngineering = "Engineering and Manufacturing: Engineering and Manufacturing";
-        public const string TlevelHealth = "Health and Science: Health and Science";
-        public const string TlevelLegal = "Legal, Finance and Accounting: Health and Science";
         public const string AccessibilityUrl = "https://www.gov.uk/help/accessibility-statement";
         public const string ProviderPageHeader = "Which provider do you want to manage?";
         public const string ProviderPageTitle = "Manage providers – Manage T Level results – GOV.UK";
@@ -68,23 +54,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string SelectSpecialismErrorTitle = "Error: Add a new registration - Select the specialism – Manage T Level results – GOV.UK"; public const string SelectAcademicYearTitle = "Add a new registration - Select the academic year page – Manage T Level results – GOV.UK";
         public const string ManualRegSummaryTitle = "Add a new registration - Check and submit page – Manage T Level results – GOV.UK";
         public const string ReggistrationSuccessTitle = "Add registration - Registration added confirmation page – Manage T Level results – GOV.UK";
-        public const string UlnRegisteredWithSameAOTitle = "Add a new registration - ULN already registered page – Manage T Level results – GOV.UK";
-        public const string UlnRegisteredWithSameAOHeader = "ULN is already registered";
-        public const string UlnRegisteredWithAnotherAOTitle = "Add a new registration - ULN cannot be registered page – Manage T Level results – GOV.UK";
-        public const string UlnRegisteredWithAnotherAOHeader = "ULN cannot be registered";
+        public const string UlnRegisteredWithSameAoTitle = "Add a new registration - ULN already registered page – Manage T Level results – GOV.UK";
+        public const string UlnRegisteredWithSameAoHeader = "ULN is already registered";
+        public const string UlnRegisteredWithAnotherAoTitle = "Add a new registration - ULN cannot be registered page – Manage T Level results – GOV.UK";
+        public const string UlnRegisteredWithAnotherAoHeader = "ULN cannot be registered";
         //Reg Search Page
-        public const string SearchRegTitle = "Search for a registration page – Manage T Level results – GOV.UK";
-        public const string SearchRegHeader = "Search for a registration";
-        public const string SearchNotFoundTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
         public const string SearchDetailsTitle = "Search for a registration - Registration details page – Manage T Level results – GOV.UK";
         public const string SearchDetailsHeader = "Registration details";
-        public const string CancelRegTitle = "Cancel registration page – Manage T Level results – GOV.UK";
-        public const string CancelRegHeader = "Are you sure you want to cancel this registration?";
-        public const string CancelRegSuccessTitle = "Registration cancelled confirmation page – Manage T Level results – GOV.UK";
-        public const string CancelRegSuccessHeader = "Registration cancelled successfully";
         //Registration Search Page
         public const string SearchRegistrationsPageTitle = "Search for a registration page – Manage T Level results – GOV.UK";
-        public const string SearchRegistrationURLNotFoundPagePageTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
+        public const string SearchRegistrationUrlNotFoundPagePageTitle = "ULN cannot be found page – Manage T Level results – GOV.UK";
         //Registration ChangeName Page
         public const string RegistrationChangeNamePageTitle = "Change registration - Enter the learner's name page – Manage T Level results – GOV.UK";
         public const string RegistrationChangeNamePageHeading = "Change registration";
@@ -96,27 +75,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RegistrationChangeSuccessPageTitle = "Registration details change confirmation page – Manage T Level results – GOV.UK";
         public const string RegistrationChangeSuccessPageHeader = "Change successful";
         //Manual Registration Details
-        public const string ManualRegULN = "9900000001";
+        public const string ManualRegUln = "9900000001";
         public const string ManualRegFirstName = "Test1";
         public const string ManualRegLastName = "Test2";
-        public const string ManualRegDOBDay = "01";
-        public const string ManualRegDOBMonth = "02";
-        public const string ManualRegDOBYear = "2000";
+        public const string ManualRegDobDay = "01";
+        public const string ManualRegDobMonth = "02";
+        public const string ManualRegDobYear = "2000";
         //Updated Registration Details
-        public const string ManualRegUpdatedFirstName = "UpdatedFirstName";
-        public const string ManualRegUpdatedLastName = "UpdatedLastName";
-        public const string ManualRegUpdatedDOBDay = "12";
-        public const string ManualRegUpdatedDOBMonth = "11";
-        public const string ManualRegUpdatedDOBYear = "2010";
         public const string ManualRegUpdatedProvider = "Automation Test3 (99999903)";
         public const string ManualRegUpdatedProvider1 = "Automation Test4 (99999904)";
         public const string ManualRegUpdatedCore = "Engineering and Manufacturing (66666666)";
         public const string ManualRegUpdatedSpecialism = "Design, Development and Control (60000002)";
         //Registration Change DOB Page
-        public const string RegistrationChangeDOBPageTitle = "Change registration - Enter the learner's date of birth page – Manage T Level results – GOV.UK";
-        public const string RegistrationChangeDOBPageHeading = "Change registration";
-        public const string RegistrationChangeDOBPageSubHeading = "Enter the learner's date of birth";
-        public const string RegistrationChangeDOBErrorTitle = "Error: Change registration - Enter the learner's date of birth page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeDobPageTitle = "Change registration - Enter the learner's date of birth page – Manage T Level results – GOV.UK";
+        public const string RegistrationChangeDobPageHeading = "Change registration";
+        public const string RegistrationChangeDobPageSubHeading = "Enter the learner's date of birth";
+        public const string RegistrationChangeDobErrorTitle = "Error: Change registration - Enter the learner's date of birth page – Manage T Level results – GOV.UK";
         //Registration Amend Active Registration Page
         public const string AmendActiveRegistrationPageTitle = "What would you like to do with this active registration page – Manage T Level results – GOV.UK";
         public const string AmendActiveRegistrationPageHeading = "What would you like to do with this active registration?";
@@ -132,7 +106,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         //Registration data in DB
         public const string DbFirstName = "Db FirstName";
         public const string DbLastName = "Db LastName";
-        public const string DbDOB = "01/01/2001";
+        public const string DbDob = "01/01/2001";
         public const string DbProviderName = "Automation Test1 (99999901)";
         public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
         //public const string TqProviderId = "9479";
@@ -145,15 +119,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DudleyProviderIdForLrs = "15181";
         public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
         //Reviews And Appeals Data
-        public const string RAAName = "Db FirstName Db LastName";
-        public const string RAADOB = "01 January 2001";
-        public const string RAACoreTitle = "Agriculture, Environmental and Animal Care";
-        public const string RAACoreCode = "(77777777)";
-        public const string RAATLevelTitle = "T Level in Agriculture, Environmental and Animal Care";
-        public const string RAAUKPRN = "Automation Test1";
-        public const string RAAProvider = "(99999901)";
-        public const string RAAExamPeriod = "Summer 2021";
-        public const string RAAOriginalGrade = "A";
+        public const string RaaName = "Db FirstName Db LastName";
+        public const string Raadob = "01 January 2001";
+        public const string RaaCoreTitle = "Agriculture, Environmental and Animal Care";
+        public const string RaaCoreCode = "(77777777)";
+        public const string RaatLevelTitle = "T Level in Agriculture, Environmental and Animal Care";
+        public const string Raaukprn = "Automation Test1";
+        public const string RaaProvider = "(99999901)";
+        public const string RaaExamPeriod = "Summer 2021";
+        public const string RaaOriginalGrade = "A";
         // City and Guillds
         public const string CityAndGuildsProviderId = "15399";
         public const string HeatingSpecialismId = "11";

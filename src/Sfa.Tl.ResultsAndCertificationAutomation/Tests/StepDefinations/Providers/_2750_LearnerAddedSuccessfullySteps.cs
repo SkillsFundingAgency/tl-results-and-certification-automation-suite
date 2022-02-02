@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
-            CreateDbRegistationForLrsWithEMAcheived(uln);
+            CreateDbRegistationForLrsWithEmAcheived(uln);
         }
         [Given(@"I select ""(.*)"" in english and maths page and press continue")]
         public void GivenISelectInEnglishAndMathsPageAndPressContinue(string radioOption)
@@ -41,7 +41,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             string uln = _scenarioContext["uln"] as string;
             var expectedResult = LearnerHasTheLearnerCompletedIPPage.GetIpStatusByLabel(text);
-            var actualResult = GetIPStatus(uln);
+            var actualResult = GetIpStatus(uln);
             Assert.AreEqual(expectedResult, actualResult);
         }
         [Then(@"the profile table is updated with ""(.*)""")]
@@ -49,7 +49,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             string uln = _scenarioContext["uln"] as string;
             var expectedResult = LearnerHasTheLearnerCompletedIPPage.GetEMStatusByLabel(text);
-            var actualResult = GetEMStatus(uln);
+            var actualResult = GetEmStatus(uln);
             Assert.AreEqual(expectedResult, actualResult);
         }
         [Then(@"I should see Manage learner records page when i click on Back to learner page link")]

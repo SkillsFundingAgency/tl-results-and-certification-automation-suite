@@ -65,8 +65,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.StatementOfAch
         {
             var uln = _scenarioContext["uln"] as string;
             CrateRegistrationInDb createReg = new CrateRegistrationInDb();
-            createReg.DeleteLrsRecordsFromTables(uln);
-            createReg.DeleteRegistrationFromTables(uln);
+            DeleteLrsRecordsFromTables(uln);
+            DeleteRegistrationFromTables(uln);
         }
 
         [When(@"I press the '(.*)' breadcrumb on the Request SOA Check and Submit page")]

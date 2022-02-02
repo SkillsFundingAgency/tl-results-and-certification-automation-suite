@@ -72,7 +72,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyUpdatedReregisterData()
         {
 
-            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(Constants.ManualRegULN));
+            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(Constants.ManualRegUln));
             RegistrationsSearchPage.VerifyProvider(Constants.ManualRegUpdatedProvider);
             RegistrationsSearchPage.VerifyCore(Constants.ManualRegUpdatedCore);
             RegistrationsSearchPage.VerifySpecialism(Constants.ManualRegUpdatedSpecialism);

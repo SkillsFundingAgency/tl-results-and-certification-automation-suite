@@ -101,7 +101,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             var uln = scenarionContext["uln"] as string;
             CrateRegistrationInDb createReg = new CrateRegistrationInDb();
-            createReg.DeleteRegistrationFromTables(uln);
+            CrateRegistrationInDb.DeleteRegistrationFromTables(uln);
         }
 
     }

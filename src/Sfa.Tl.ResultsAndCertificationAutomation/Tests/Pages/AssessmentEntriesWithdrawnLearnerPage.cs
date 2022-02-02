@@ -34,7 +34,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyDynamicHeaders()
         {
             //The registration being asserted has been created using data from the Constants class
-            string ExpectedULNString = "ULN: " + Constants.ManualRegULN;
+            string ExpectedULNString = "ULN: " + Constants.ManualRegUln;
             Assert.AreEqual(ExpectedULNString, WebDriver.FindElement(SubHeaderULN).Text);
             string ExpectedNameString = "Name: " + Constants.ManualRegFirstName + " " + Constants.ManualRegLastName;
             Assert.AreEqual(ExpectedNameString, WebDriver.FindElement(SubHeaderName).Text);

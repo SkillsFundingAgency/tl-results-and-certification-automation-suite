@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
-            CreateLrsRegWithEMAndIPForDudley(uln);
+            CreateLrsRegWithEmAndIpForDudley(uln);
         }
         
         [Given(@"I search the registration and on change provider page")]

@@ -14,13 +14,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
         private  static By SuccessBanner { get; } = By.XPath("//*[@id='main-content']//h2");
         private static By SuccessMessage { get; } = By.XPath("//*[@id='main-content']//h3");
 
-        public static void VerifyLearnerResultsPage()
+        protected static void VerifyLearnerResultsPage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
 
-        public static void AddAssessmentLink(string linkName)
+        protected static void AddAssessmentLink(string linkName)
         {
             switch (linkName)
             {
@@ -33,19 +33,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
                 case "Core add result":
                     ClickCoreAddResult();
                     break;
-                case "Assessment1 add result":
+                case "Specialism1 add result":
                     ClickAssessment1AddResult();
                     break;
-                case "Assessment2 add result":
+                case "Specialism2 add result":
                     ClickAssessment2AddResult();
                     break;
                 case "Core change result":
                     ClickCoreChangeResult();
                     break;
-                case "Assessment1 change result":
+                case "Specialism1 change result":
                     ClickAssessment1ChangeResult();
                     break;
-                case "Assessment2 change result":
+                case "Specialism2 change result":
                     ClickAssessment2ChangeResult();
                     break;
             }
@@ -84,7 +84,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
             element[2].Click();
         }
 
-        public static void VerifyBanner(string message)
+        protected static void VerifyBanner(string message)
         {
             Assert.AreEqual("Success", WebDriver.FindElement(SuccessBanner).Text);
             Assert.IsTrue(WebDriver.FindElement(SuccessMessage).Text.Contains(message));

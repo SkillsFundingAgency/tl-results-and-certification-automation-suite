@@ -165,7 +165,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void SearchForULN()
         {
-            EnterText(RegistrationsSearchPage.SearchBox, Constants.ManualRegULN);
+            EnterText(RegistrationsSearchPage.SearchBox, Constants.ManualRegUln);
             ClickElement(RegistrationsSearchPage.SearchBtn);
         }
 
@@ -204,7 +204,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyRegistrationDetailsPageSubHeading()
         {
-            string ExpectedSubHeading = "ULN: " + Constants.ManualRegULN;
+            string ExpectedSubHeading = "ULN: " + Constants.ManualRegUln;
             Assert.AreEqual(ExpectedSubHeading, WebDriver.FindElement(RegistrationDetailsPageSubheading).Text);
         }
 

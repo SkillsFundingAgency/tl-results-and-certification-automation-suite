@@ -17,29 +17,27 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         {
             get
             {
-                if (_config == null)
-                {
-                    var builder = new ConfigurationBuilder()
-                        .SetBasePath(Directory.GetCurrentDirectory())
-                        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                if (_config != null) return _config;
+                var builder = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-                    _config = builder.Build();
-                }
+                _config = builder.Build();
                 return _config;
             }
         }
 
-        public IWebDriver GetWebDriver(string browser)
+        public static IWebDriver GetWebDriver(string browser)
         {
             switch (browser)
             {
-                case var _ when browser == "FireFox":
+                case "FireFox":
                     return new FirefoxDriver();
-                case var _ when browser == "Edge":
+                case "Edge":
                     return new EdgeDriver();
-                case var _ when browser == "IE":
+                case "IE":
                     return new InternetExplorerDriver();
-                case var _ when browser == "Chrome":
+                case "Chrome":
                     var chromeOptions = new ChromeOptions();
                     //chromeOptions.AddArguments(new List<string>() { "--incognito", "headless" });
                     chromeOptions.AddArguments("--incognito", "--headless");

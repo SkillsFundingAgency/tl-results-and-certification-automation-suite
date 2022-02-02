@@ -25,7 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
 
-            CreateDbRegistationForLrsMathsAEnglishNA(uln);
+            CreateDbRegistationForLrsMathsAEnglishNa(uln);
         }
 
 
@@ -53,7 +53,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
 
-            CreateDbRegistationForLrsMathsNAEnglishA(uln);
+            CreateDbRegistationForLrsMathsNaEnglishA(uln);
         }
         
         [Given(@"I have a created a registration with LRS qualifications \(Maths and English achieved\)")]
@@ -62,7 +62,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
 
-            CreateDbRegistationForLrsWithEMAcheived(uln);
+            CreateDbRegistationForLrsWithEmAcheived(uln);
         }
         
         [Then(@"I am shown the Check and submit page for the Add a new learner journey")]

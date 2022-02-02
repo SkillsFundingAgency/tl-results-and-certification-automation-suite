@@ -37,14 +37,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 
         public static void VerifyLearnerDetails(string ULN)
         {
-            string CoreCode = Constants.RAACoreTitle + " " + Constants.RAACoreCode;
+            string CoreCode = Constants.RaaCoreTitle + " " + Constants.RaaCoreCode;
            
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAName));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaName));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(ULN));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAADOB));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.Raadob));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CoreCode));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));           
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaExamPeriod));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaOriginalGrade));           
         }
 
         
