@@ -9,12 +9,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
     [Binding]
     public class Hooks
     {
-        public static IWebDriver WebDriver { get; set; }
+        public static IWebDriver WebDriver { get; private set; }
 
         [Before]
         public static void SetUp()
         {
-            var webDriverFactory = new WebDriverFactory();
             var browser = WebDriverFactory.Config["Browser"];
             WebDriver = WebDriverFactory.GetWebDriver(browser);
             WebDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(10);

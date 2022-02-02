@@ -79,6 +79,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
                 case "Grade not received":
                     ClickElement(SelectGradeNotReceived);
                     break;
+                case "Grade Distinction":
+                    ClickElement(SelectGradeAStar);
+                    break;
+                case "Grade Merit":
+                    ClickElement((SelectGradeA));
+                    break;
+                case "Grade PAss":
+                    ClickElement(SelectGradeB);
+                    break;
+                case "Unclassified":
+                    ClickElement(SelectGradeC);
+                    break;
             }
         }
         public static void ClickBackLink()

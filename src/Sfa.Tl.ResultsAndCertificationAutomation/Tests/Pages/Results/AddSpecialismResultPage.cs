@@ -19,7 +19,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
-        public static void VerifyLearnerSpecialismResultErrorPage()
+
+        protected static void VerifyLearnerSpecialismResultErrorPage()
         {
             Assert.AreEqual(ErrorPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
@@ -32,7 +33,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
             Assert.False(WebDriver.FindElement(SelectGradePass).Selected);
             Assert.False(WebDriver.FindElement(SelectGradeUnclassified).Selected);
         }
-        public static void VerifyChangeGradesUnchecked()
+        protected static void VerifyChangeGradesUnchecked()
         {
             Assert.False(WebDriver.FindElement(SelectGradeDistinction).Selected);
             Assert.False(WebDriver.FindElement(SelectGradeMerit).Selected);
