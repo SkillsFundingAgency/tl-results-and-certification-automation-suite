@@ -11,7 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static string ExpectedPageUrl => string.Concat(StartPage.StartPageUrl, "registration-withdrawn-confirmation");
         private static By PageHeading = By.XPath("//*[@id='main-content']//h1");
         private static By SubPageHeading = By.XPath("//*[contains(text(),'ULN')]");
-        private static string ExpectedSubPageHeading = "ULN: " + Constants.ManualRegULN;
+        private static string ExpectedSubPageHeading = "ULN: " + Constants.ManualRegUln;
         
         private static By HomeButton = By.Id("dashboardButton");
         private static string ExpectedHomeButtonText = "Home";

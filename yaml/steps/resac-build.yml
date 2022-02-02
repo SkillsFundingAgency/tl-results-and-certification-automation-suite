@@ -10,7 +10,26 @@ steps:
   
   - task: gittools.gitversion.gitversion-task.GitVersion@5
     displayName: GitVersion
+    inputs:
+      versionSpec: '5.x'
+      updateAssemblyInfo: true
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
   
+  - task: UseDotNet@2 
+    displayName: "Install .NET 6 SDK"
+    inputs:
+      packageType: 'sdk'
+      version: '6.x'
+  
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs: 
+      workingDir: src/Sfa.Tl.ResultsAndCertificationAutomation
+      verbose: false  
+
   - task: DotNetCoreCLI@2
     displayName: dotnet restore
     inputs:

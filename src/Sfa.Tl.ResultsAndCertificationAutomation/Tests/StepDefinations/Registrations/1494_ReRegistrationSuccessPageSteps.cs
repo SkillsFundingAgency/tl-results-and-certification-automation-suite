@@ -58,7 +58,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
             RegistrationsSearchPage.VerifyCore(Constants.ManualRegUpdatedCore);
             RegistrationsSearchPage.VerifySpecialism(Constants.ManualRegUpdatedSpecialism);
             RegistrationsSearchPage.VerifyName(expectedName);
-            RegistrationsSearchPage.VerifyDOBChangesAreDisplayed(Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
+            RegistrationsSearchPage.VerifyDOBChangesAreDisplayed(Constants.ManualRegDobDay, Constants.ManualRegDobMonth, Constants.ManualRegDobYear);
             //RegistrationsSearchPage.VerifyActiveYear();
         }
 

@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ResultsEditor" user
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3772 Validate manual result update for a Final state
 And I have registration in final state
 When I search the Uln to update result

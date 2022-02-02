@@ -41,7 +41,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         public void ThenTheOrignalGradeAndAStatusOfFinalWillNowBeShownOnTheGradeRowOfTheCoreDetailsTable()
         {
             string uln = _scenarioContext["uln"] as string;
-            RAULearnersComponentGradesStatusPage.VerifyCoreDetailsStatusFinal(uln, Constants.RAAOriginalGrade);
+            RAULearnersComponentGradesStatusPage.VerifyCoreDetailsStatusFinal(uln, Constants.RaaOriginalGrade);
         }
 
         [Then(@"the new grade '(.*)' and a status of ‘Final’ will now be shown on the ‘grade’ row of the core details table")]

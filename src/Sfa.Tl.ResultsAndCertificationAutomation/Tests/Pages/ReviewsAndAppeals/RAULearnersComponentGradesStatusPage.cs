@@ -37,32 +37,32 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
         public static void VerifyRAULearnerDetails(string ULN)
         {
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(ULN));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAName));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAADOB));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAATLevelTitle));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAProvider));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAUKPRN));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaName));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.Raadob));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaatLevelTitle));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaProvider));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.Raaukprn));
       
         }
 
         public static void VerifyCoreDetailsOnInitialEntry()
         {
             string ExpectedDate = DateTime.Now.ToString("dd MMMM yyyy");
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaExamPeriod));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaOriginalGrade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("SYSTEM"));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(ExpectedDate));
 
-            string CoreCodeHeaderText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode;
+            string CoreCodeHeaderText = "Core (code): " + Constants.RaaCoreTitle + " " + Constants.RaaCoreCode;
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CoreCodeHeaderText));
 
         }
 
         public static void VerifyCoreDetailsStatusBeingAppealed(string ULN)
         {
-            string CoreCodeHeaderText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode;
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAOriginalGrade));
+            string CoreCodeHeaderText = "Core (code): " + Constants.RaaCoreTitle + " " + Constants.RaaCoreCode;
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaExamPeriod));
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaOriginalGrade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("BEING APPEALED"));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CoreCodeHeaderText));
 
@@ -77,8 +77,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 
         public static void VerifyCoreDetailsStatusFinal(string ULN, string Grade)
         {
-            string CoreCodeHeaderText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode;
-            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RAAExamPeriod));
+            string CoreCodeHeaderText = "Core (code): " + Constants.RaaCoreTitle + " " + Constants.RaaCoreCode;
+            Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Constants.RaaExamPeriod));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(Grade));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains("FINAL"));
             Assert.IsTrue(WebDriver.FindElement(learnerDetailsElement).Text.Contains(CoreCodeHeaderText));
@@ -94,14 +94,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
 
         public static void VerifySuccessBannerBeingAppealedDisplayed()
         {
-            string SuccessBannerText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode + " is being appealed";
+            string SuccessBannerText = "Core (code): " + Constants.RaaCoreTitle + " " + Constants.RaaCoreCode + " is being appealed";
             Assert.IsTrue(WebDriver.FindElement(successBannerTextElement).Text.Contains(SuccessBannerText));
             Assert.IsTrue(WebDriver.FindElement(successBannerHeaderElement).Text.Contains("Success"));             
         }
 
         public static void VerifySuccessBannerFINALStatusDisplayed()
         {
-            string SuccessBannerText = "Core (code): " + Constants.RAACoreTitle + " " + Constants.RAACoreCode + " grade is final";
+            string SuccessBannerText = "Core (code): " + Constants.RaaCoreTitle + " " + Constants.RaaCoreCode + " grade is final";
             Assert.IsTrue(WebDriver.FindElement(successBannerTextElement).Text.Contains(SuccessBannerText));
             Assert.IsTrue(WebDriver.FindElement(successBannerHeaderElement).Text.Contains("Success"));
         }

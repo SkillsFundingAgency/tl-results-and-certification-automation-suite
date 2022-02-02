@@ -30,7 +30,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void GivenIRegisterTheRegistrationWithAnotherAO()
         {
             string uln = scenarionContext["uln"] as string;
-            RegisterWithdrawnLearnerWithAnotherAO(uln);
+            RegisterWithdrawnLearnerWithAnotherAo(uln);
         }
 
         [Then(@"the Change Status link is not displayed")]

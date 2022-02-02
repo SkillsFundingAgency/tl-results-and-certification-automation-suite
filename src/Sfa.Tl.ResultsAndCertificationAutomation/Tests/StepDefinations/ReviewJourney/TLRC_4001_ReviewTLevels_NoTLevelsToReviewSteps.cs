@@ -25,7 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.ReviewJ
         [When(@"I navigate back to the Review T Levels - All T Levels reviewed page")]
         public void WhenINavigateBackToTheReviewTLevels_AllTLevelsReviewedPage()
         {
-            WebDriver.Navigate().GoToUrl("https://test.manage-tlevel-results.tlevels.gov.uk/all-tlevels-reviewed");
+            WebDriver.Navigate().GoToUrl("https://01.manage-tlevel-results.tlevels.gov.uk/all-tlevels-reviewed");
         }
         
         [When(@"I click the Register link on the All T Levels reviewed page")]

@@ -42,7 +42,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Stateme
             var uln = _scenarioContext["uln"] as string;
             SqlQueries.DeletePrintTableRecords(uln);
             CrateRegistrationInDb createReg = new CrateRegistrationInDb();
-            createReg.DeleteLrsRecordsFromTables(uln);
+            CrateRegistrationInDb.DeleteLrsRecordsFromTables(uln);
         }
 
     }

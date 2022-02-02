@@ -197,14 +197,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyULNRegWithSameAo()
         {
             Assert.AreEqual(UlnRegSameAOUrl, WebDriver.Url);
-            Assert.AreEqual(Constants.UlnRegisteredWithSameAOTitle, WebDriver.Title);
-            Assert.AreEqual(Constants.UlnRegisteredWithSameAOHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(Constants.UlnRegisteredWithSameAoTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.UlnRegisteredWithSameAoHeader, WebDriver.FindElement(PageHeader).Text);
         }
         public static void VerifyULNRegWithAnotherAo()
         {
             Assert.AreEqual(UlnRegSameAOUrl, WebDriver.Url);
-            Assert.AreEqual(Constants.UlnRegisteredWithAnotherAOTitle, WebDriver.Title);
-            Assert.AreEqual(Constants.UlnRegisteredWithAnotherAOHeader, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(Constants.UlnRegisteredWithAnotherAoTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.UlnRegisteredWithAnotherAoHeader, WebDriver.FindElement(PageHeader).Text);
         }
         public static void SelectProviderFromList(string provider)
         {
@@ -293,7 +293,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             string ExpectedURLNotFoundPageHeader = "ULN (" + ULN + ") cannot be found";
 
             Assert.AreEqual(URLNotFoundPageUrl, WebDriver.Url);
-            Assert.AreEqual(Constants.SearchRegistrationURLNotFoundPagePageTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.SearchRegistrationUrlNotFoundPagePageTitle, WebDriver.Title);
             Assert.AreEqual(ExpectedURLNotFoundPageHeader, WebDriver.FindElement(PageHeader).Text);
             Assert.AreEqual(ExpectedPageText, WebDriver.FindElement(PageTextLine1).Text);
             Assert.AreEqual(ExpectedBullet1Text, WebDriver.FindElement(Bullet1).Text);

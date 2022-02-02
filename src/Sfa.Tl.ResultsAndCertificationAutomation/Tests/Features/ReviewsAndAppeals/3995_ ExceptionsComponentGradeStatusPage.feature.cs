@@ -155,11 +155,13 @@ testRunner.And("the End date for the Summer Assessment Series is reset to the da
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3995_Verify breadcrumbs and Search again button on Core Component Grade Status pa" +
             "ge after the date for appeal has passed")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3995_VerifyBreadcrumbsAndSearchAgainButtonOnCoreComponentGradeStatusPageAfterTheDateForAppealHasPassed()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

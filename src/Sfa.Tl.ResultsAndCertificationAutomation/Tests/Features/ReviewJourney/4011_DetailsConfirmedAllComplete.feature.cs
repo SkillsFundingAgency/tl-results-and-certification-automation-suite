@@ -222,11 +222,13 @@ testRunner.And("I set all of the T Levels for NCFE to unconfirmed", ((string)(nu
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("4011_Verify All T Levels Reviewed page and the page links are linked to the expec" +
             "ted pages")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewJourney")]
         public virtual void _4011_VerifyAllTLevelsReviewedPageAndThePageLinksAreLinkedToTheExpectedPages()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewJourney"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

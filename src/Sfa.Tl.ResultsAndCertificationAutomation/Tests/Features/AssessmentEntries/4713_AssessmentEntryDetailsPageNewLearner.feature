@@ -7,7 +7,7 @@ Background:
 Given I have logged in as a "CityAndGuildsAdmin" user
 And I am on Registrations upload page
 And I am on upload registration page
-And I have a Academic Year in "4713RegistrationsData.csv"
+And I have a Academic Year in "4714RegistrationsData.csv"
 When I upload "4714RegistrationsData.csv" file
 And I click on "Upload" button
 And I navigated Home page

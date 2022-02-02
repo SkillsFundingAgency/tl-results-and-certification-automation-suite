@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             var row = table.Rows;
             var uln = row[0]["Uln"];
-            CreateLrsRegWithEMAndIPForDudley(uln);
+            CreateLrsRegWithEmAndIpForDudley(uln);
         }
 
         [Given(@"I am back to registration upload page")]

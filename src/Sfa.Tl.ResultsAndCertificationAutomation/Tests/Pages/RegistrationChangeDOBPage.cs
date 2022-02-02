@@ -29,9 +29,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void VerifyChangeDOBPageDetails()
         {
             Assert.IsTrue((WebDriver.Url).Contains(ExpectedChangeNamePageUrl));
-            Assert.AreEqual(Constants.RegistrationChangeDOBPageTitle, WebDriver.Title);
-            Assert.AreEqual(Constants.RegistrationChangeDOBPageHeading, WebDriver.FindElement(PageHeading).Text);
-            Assert.AreEqual(Constants.RegistrationChangeDOBPageSubHeading, WebDriver.FindElement(PageSubHeading).Text);
+            Assert.AreEqual(Constants.RegistrationChangeDobPageTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.RegistrationChangeDobPageHeading, WebDriver.FindElement(PageHeading).Text);
+            Assert.AreEqual(Constants.RegistrationChangeDobPageSubHeading, WebDriver.FindElement(PageSubHeading).Text);
             Assert.AreEqual(ExpectedButtonText, WebDriver.FindElement(ChangeButton).Text);
         }
 
@@ -146,7 +146,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void AssertPageErrorTitle()
         {
-            Assert.AreEqual(Constants.RegistrationChangeDOBErrorTitle, WebDriver.Title);
+            Assert.AreEqual(Constants.RegistrationChangeDobErrorTitle, WebDriver.Title);
         }
 
 
@@ -178,9 +178,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 
         public static void VerifyDOBFieldsArePrePopulated()
         {
-            Assert.AreEqual(Constants.ManualRegDOBDay, WebDriver.FindElement(Day).GetAttribute("value"));
-            Assert.AreEqual(Constants.ManualRegDOBMonth, WebDriver.FindElement(Month).GetAttribute("value"));
-            Assert.AreEqual(Constants.ManualRegDOBYear, WebDriver.FindElement(Year).GetAttribute("value"));
+            Assert.AreEqual(Constants.ManualRegDobDay, WebDriver.FindElement(Day).GetAttribute("value"));
+            Assert.AreEqual(Constants.ManualRegDobMonth, WebDriver.FindElement(Month).GetAttribute("value"));
+            Assert.AreEqual(Constants.ManualRegDobYear, WebDriver.FindElement(Year).GetAttribute("value"));
         }
     }
 }

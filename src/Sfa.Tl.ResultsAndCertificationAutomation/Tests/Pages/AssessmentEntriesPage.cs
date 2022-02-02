@@ -30,26 +30,26 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static By SearchForLearnerLink { get; } = By.LinkText("Manage an assessment");
         public static By AssessmentFileUploadError { get; } = By.XPath("//a[@href='#file']");
         public static By AddOrRemoveAssessmentEntry { get; } = By.Id("coreassessmententry");
-        public static By manageIndividualAssessmentsLink { get; } = By.XPath("//*[contains (text(),'manage individual assessments')]");
-        public static By uploadAnotherMultipleAssessmentsFileLink { get; } = By.XPath("//*[contains (text(),'upload another multiple assessments file')]");
-        public static By addResultsLink { get; } = By.XPath("//*[contains (text(),'add results')]");
-        public static By BackToHomeBtn { get; } = By.Id("backToHomeButton");
-        public static By uploadAnotherFileBtn = By.Id("uploadAnotherFileButton");
+        private static By ManageIndividualAssessmentsLink { get; } = By.XPath("//*[contains (text(),'manage individual assessments')]");
+        private static By UploadAnotherMultipleAssessmentsFileLink { get; } = By.XPath("//*[contains (text(),'upload another multiple assessments file')]");
+        private static By AddResultsLink { get; } = By.XPath("//*[contains (text(),'add results')]");
+        private static By BackToHomeBtn { get; } = By.Id("backToHomeButton");
+        private static readonly By UploadAnotherFileBtn = By.Id("uploadAnotherFileButton");
 
 
         //Upload files
         public static string AssessmentStage1InvalidFile = "AssessmentEntryStage1InvalidFileType.xslx";
         public static string AssessmentStage1MaxRows = "AssessmentEntryStage1MaxNoOfRows.csv";
-        public static string AssessmentUploadStage2Errors = string.Concat("Data\\", "AssessmentStage2ErrorReport.csv");
-        public static string AssessmentUploadStage2InvalidHeaderErrors = string.Concat("Data\\", "AssessmentStage2InvalidHeaderError.csv");
-        public static string AssessmentUploadStage2NoDataErrors = string.Concat("Data\\", "AssessmentStage2NoDataError.csv");
-        public static string AssessmentUploadStage3Errors = string.Concat("Data\\", "AssessmentStage3Errors.csv");
-        public static string AssessmentUploadStage3WithdrawnRegError = string.Concat("Data\\", "AssessmentStage3WithdrawnRegError.csv");
-        public static string AssessmentUploadAddFirstAssessEntry = string.Concat("Data\\", "AssessmentAddFirstAssessSeriesErrors.csv");
-        public static string AssessmentUploadMultipleSpecialismErrors = string.Concat("Data\\", "AssessmentMultipleSpecialismErrors.csv");
+        protected static readonly string AssessmentUploadStage2Errors = string.Concat("Data\\", "AssessmentStage2ErrorReport.csv");
+        protected static readonly string AssessmentUploadStage2InvalidHeaderErrors = string.Concat("Data\\", "AssessmentStage2InvalidHeaderError.csv");
+        protected static readonly string AssessmentUploadStage2NoDataErrors = string.Concat("Data\\", "AssessmentStage2NoDataError.csv");
+        protected static readonly string AssessmentUploadStage3Errors = string.Concat("Data\\", "AssessmentStage3Errors.csv");
+        protected static readonly string AssessmentUploadStage3WithdrawnRegError = string.Concat("Data\\", "AssessmentStage3WithdrawnRegError.csv");
+        protected static readonly string AssessmentUploadAddFirstAssessEntry = string.Concat("Data\\", "AssessmentAddFirstAssessSeriesErrors.csv");
+        protected static readonly string AssessmentUploadMultipleSpecialismErrors = string.Concat("Data\\", "AssessmentMultipleSpecialismErrors.csv");
 
         //Buttons
-        public static By BackToAssessmentEntriesButton = By.XPath("//*[contains(text(),'Back to assessment')]");
+        private static readonly By BackToAssessmentEntriesButton = By.XPath("//*[contains(text(),'Back to assessment')]");
 
 
 
@@ -60,7 +60,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(AssessmentEntriesPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
 
-        public static void CheckLinksOnAssessmentEntriesPage()
+        protected static void CheckLinksOnAssessmentEntriesPage()
         {
             Assert.IsTrue(IsPresent(UploadAssessmentEntryLink));
             Assert.IsTrue(IsPresent(SearchForLearnerLink));
@@ -72,14 +72,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(AssessmentEntriesUploadPageTitle, WebDriver.Title);
             Assert.AreEqual(AssessmentEntriesUploadPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
-        public static void VerifyAssessmentEntriesUploadErrorPage()
+
+        protected static void VerifyAssessmentEntriesUploadErrorPage()
         {
             Assert.AreEqual(AssessmentEntriesUploadPageUrl, WebDriver.Url);
             Assert.AreEqual(AssessmentEntriesUploadPageErrorTitle, WebDriver.Title);
             Assert.AreEqual(AssessmentEntriesUploadPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
 
-        public static void VerifyAssessmentUploadUnsuccessPage()
+        protected static void VerifyAssessmentUploadUnsuccessPage()
         {
             Assert.AreEqual(AssessmentUploadUnsuccessPageUrl, WebDriver.Url);
             Assert.AreEqual(AssessmentUploadUnsucccessTitle, WebDriver.Title);
@@ -113,21 +114,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickElement(BackToHomeBtn);
         }
 
-        public static void ClickUploadAnotherFileBtn()
+        protected static void ClickUploadAnotherFileBtn()
         {
-            ClickElement(uploadAnotherFileBtn);
+            ClickElement(UploadAnotherFileBtn);
         }
-        public static void ClickAddResultsLink()
+
+        protected static void ClickAddResultsLink()
         {
-            ClickElement(addResultsLink);
+            ClickElement(AddResultsLink);
         }
-        public static void ClickUploadAnotherFileLink()
+
+        protected static void ClickUploadAnotherFileLink()
         {
-            ClickElement(uploadAnotherMultipleAssessmentsFileLink);
+            ClickElement(UploadAnotherMultipleAssessmentsFileLink);
         }
-        public static void ClickManageIndividualAssessmentsLink()
+
+        protected static void ClickManageIndividualAssessmentsLink()
         {
-            ClickElement(manageIndividualAssessmentsLink);
+            ClickElement(ManageIndividualAssessmentsLink);
         }
     }
 }

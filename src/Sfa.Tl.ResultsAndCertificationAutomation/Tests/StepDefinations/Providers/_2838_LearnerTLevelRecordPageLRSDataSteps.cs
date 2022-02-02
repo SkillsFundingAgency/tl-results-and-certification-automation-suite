@@ -18,7 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             var uln = UlnHelper.GenerateUln().ToString();
             _scenarioContext["uln"] = uln;
-            CreateDbRegistationForLrsWithEMAndIP(uln);
+            CreateDbRegistationForLrsWithEmAndIp(uln);
         }
         
         [Then(@"I should see Learner T Level Record page")]

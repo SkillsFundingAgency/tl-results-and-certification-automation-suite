@@ -16,7 +16,7 @@ And when I press the Back Link on the 'Request a change to this learner’s grad
 Then the orignal grade and a status of ‘Final’ will now be shown on the ‘grade’ row of the core details table 
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3858 Validate Request a change to this learner’s grade page - Access from Results option
 When I search for my UlN through the Results option on the dashboard
 And I click on the Contact us link on the Results Learners Results page

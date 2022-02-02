@@ -89,7 +89,7 @@ testRunner.And("I am on Registrations upload page", ((string)(null)), ((TechTalk
 testRunner.And("I am on upload registration page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
-testRunner.And("I have a Academic Year in \"4713RegistrationsData.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have a Academic Year in \"4714RegistrationsData.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
 testRunner.When("I upload \"4714RegistrationsData.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

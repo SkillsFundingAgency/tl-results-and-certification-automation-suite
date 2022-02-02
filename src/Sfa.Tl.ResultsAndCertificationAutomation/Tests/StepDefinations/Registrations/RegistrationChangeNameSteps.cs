@@ -175,7 +175,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void GivenICreateAManualRegistration()
         {
             SqlQueries.DeleteFromRegistrationTables();
-            RegistrationsManualPage.CreateRegistrationWithSpecialism(Constants.ManualRegULN,Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
+            RegistrationsManualPage.CreateRegistrationWithSpecialism(Constants.ManualRegUln,Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDobDay, Constants.ManualRegDobMonth, Constants.ManualRegDobYear);
             RegistrationsManualPage.ClickSubmit();
             Framework.Helpers.ElementHelper.ClickElement(RegistrationsPage.BacktoRegistrationBtn);
         }
@@ -192,7 +192,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Registr
         public void GivenICreateAManualRegistrationForPearson()
         {
             SqlQueries.DeleteFromRegistrationTables();
-            RegistrationsManualPage.CreateRegistrationWithSpecialismForPearson(Constants.ManualRegULN, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDOBDay, Constants.ManualRegDOBMonth, Constants.ManualRegDOBYear);
+            RegistrationsManualPage.CreateRegistrationWithSpecialismForPearson(Constants.ManualRegUln, Constants.ManualRegFirstName, Constants.ManualRegLastName, Constants.ManualRegDobDay, Constants.ManualRegDobMonth, Constants.ManualRegDobYear);
             RegistrationsManualPage.ClickSubmit();
             Framework.Helpers.ElementHelper.ClickElement(RegistrationsPage.BacktoRegistrationBtn);
             RegistrationsManualPage.ClickHomeBreadcrumb();

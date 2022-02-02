@@ -19,7 +19,7 @@ And the user will be shown text to state the result is final as the date for app
 And the registration for this test is deleted
 And the End date for the Summer Assessment Series is reset to the date in the future
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3995_Verify breadcrumbs and Search again button on Core Component Grade Status page after the date for appeal has passed
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then I am shown the component grade status page

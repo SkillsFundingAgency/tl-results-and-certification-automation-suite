@@ -31,7 +31,7 @@ When I click the Back to T Levels button on the All T Levels reviewed success pa
 Then I should see the TLevels dashboard page
 And I set all of the T Levels for NCFE to unconfirmed
 
-@RegressionTest @ReviewJourney
+@Ignore @RegressionTest @ReviewJourney
 Scenario: 4011_Verify All T Levels Reviewed page and the page links are linked to the expected pages
 Given I set one of the T Levels for NCFE to unconfirmed
 And I click on the TLevels link on the homepage

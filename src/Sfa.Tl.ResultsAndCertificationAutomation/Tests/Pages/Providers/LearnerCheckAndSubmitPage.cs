@@ -43,7 +43,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
             Assert.IsTrue(WebDriver.FindElement(LearnerDetails).Text.Contains(ExpectedULN));
             string ExpectedNameString = Constants.DbFirstName + " " + Constants.DbLastName;
             Assert.IsTrue(WebDriver.FindElement(LearnerDetails).Text.Contains(ExpectedNameString));
-            Assert.IsTrue(WebDriver.FindElement(LearnerDetails).Text.Contains(Constants.DbDOB));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetails).Text.Contains(Constants.DbDob));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetails).Text.Contains(Constants.DbProviderNameForLrs));
         }
 

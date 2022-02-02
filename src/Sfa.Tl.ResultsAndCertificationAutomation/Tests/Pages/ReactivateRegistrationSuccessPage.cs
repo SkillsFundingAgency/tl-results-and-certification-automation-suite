@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By PageSubHeader = By.XPath("//*[@id='main-content']/div/div/div/div");
         public static By ViewThisRegistrationButton = By.Id("viewRegistrationButton");
         private static string ExpectedPageHeading = "Registration created successfully";
-        private static string ExpectedPageSubHeading = "ULN: " + Constants.ManualRegULN;
+        private static string ExpectedPageSubHeading = "ULN: " + Constants.ManualRegUln;
         private static string ExpectedSubText = "You successfully registered the learner on a new course.";
         private static string ExpectedPageTitle = "New registration created confirmation page – Manage T Level results – GOV.UK";
         private static string ExpectedButtonText = "View registration";

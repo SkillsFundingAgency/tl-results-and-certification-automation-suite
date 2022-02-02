@@ -3,7 +3,7 @@ schedules:
     displayName: Daily midnight build
     branches:
       include:
-        - feature/sprint-44
+        - feature/sprint-50
 resources:
   repositories:
     - repository: self
@@ -14,7 +14,7 @@ resources:
       type: github
       endpoint: S126-Tlevelservice
       name: SkillsFundingAgency/tl-results-and-certification
-      ref: feature/sprint-44
+      ref: feature/sprint-50
 
     - repository: devopsTools
       type: github
@@ -46,25 +46,25 @@ stages:
       buildPlatform: $(buildPlatform)
       artifactname: 'appdrop'    
  
-  - template: ./yaml/stages/resac-test.yml
-    parameters:
-      stageName: 'Test'
-      deploymentDependencyName: 'Build'
-      testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-      searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
-      filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-      variableGroups:
-        - 'Test Shared Resources'
-        - 'Common Shared Resources'
+#  - template: ./yaml/stages/resac-test.yml
+#    parameters:
+#      stageName: 'Test'
+#      deploymentDependencyName: 'Build'
+#      testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+#      searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+#      filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+#      variableGroups:
+#        - 'Test Shared Resources'
+#        - 'Common Shared Resources'
   
-  - template: ./yaml/stages/resac-test.yml
-    parameters:
-      stageName: 'PreProd'
-      deploymentDependencyName: 'Build'
-      testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
-      searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
-      filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
-      testFiltercriteria: 'TestCategory=SmokeTest'
-      variableGroups:
-        - 'PreProd Shared Resources'
-        - 'Common Shared Resources'
+ # - template: ./yaml/stages/resac-test.yml
+ #   parameters:
+ #     stageName: 'PreProd'
+ #     deploymentDependencyName: 'Build'
+ #     testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
+ #     searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
+ #     filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+ #     testFiltercriteria: 'TestCategory=SmokeTest'
+ #     variableGroups:
+ #       - 'PreProd Shared Resources'
+ #       - 'Common Shared Resources'

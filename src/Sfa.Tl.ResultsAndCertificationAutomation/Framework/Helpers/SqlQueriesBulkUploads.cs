@@ -1,8 +1,5 @@
-﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
@@ -31,34 +28,41 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         }
         public static void UpdateAcademicYear(int year)
         {
-            string UpdateAcademicYear = "Update TqRegistrationPathway set AcademicYear= "+ year +" where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '95%')";
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(UpdateAcademicYear, ConnectionString);
+            var updateAcademicYear = "Update TqRegistrationPathway set AcademicYear= "+ year +" where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '95%')";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(updateAcademicYear, ConnectionString);
         }
-        public static void DeleteRegistrations(List<long> ulns)
+        public static void UpdateAcademicYearTo2020()
+        {
+            var updateAcademicYear = "Update TqRegistrationPathway set AcademicYear= 2020 where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '99%')";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(updateAcademicYear, ConnectionString);
+        }
+
+        private static void DeleteRegistrations(List<long> ulns)
         {
             var uln = string.Join(",", ulns);
-            string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId = rp.Id where UniqueLearnerNumber in (" + uln + ")";
-            string DeleteRegSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber in (" + uln + ")";
-            string DeleteRegPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber in (" + uln + "))";
-            string DeleteRegProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber in (" + uln + ")";
-            string DeleteAssPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber in (" + uln + ")";
-            string DeleteAssSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber in (" + uln + ")";
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeletePathwayResults, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAssPathway, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAssSpecialism, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegSpecialism, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegPathway, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteRegProfile, ConnectionString);
+            var deletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId = rp.Id where UniqueLearnerNumber in (" + uln + ")";
+            var deleteRegSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber in (" + uln + ")";
+            var deleteRegPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber in (" + uln + "))";
+            var deleteRegProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber in (" + uln + ")";
+            var deleteAssPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber in (" + uln + ")";
+            var deleteAssSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber in (" + uln + ")";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deletePathwayResults, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteAssPathway, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteAssSpecialism, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteRegSpecialism, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteRegPathway, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteRegProfile, ConnectionString);
         }
-        public static List<long> getUlns(int ukprn)
+
+        private static List<long> GetUlns(int ukprn)
         {
-            string getUlnNo = "SELECT [tqProfile].[UniqueLearnerNumber] FROM [TqRegistrationPathway] AS [tqPathway] INNER JOIN [TqProvider] AS [tqProvider] ON [tqPathway].[TqProviderId] = [tqProvider].[Id] INNER JOIN [TqAwardingOrganisation] AS [tqAo] ON [tqProvider].[TqAwardingOrganisationId] = [tqAo].[Id] INNER JOIN [TlAwardingOrganisation] AS [tlAo] ON [tqAo].[TlAwardingOrganisatonId] = [tlAo].[Id] INNER JOIN [TqRegistrationProfile] AS [tqProfile] ON [tqPathway].[TqRegistrationProfileId] = [tqProfile].[Id] WHERE [tlAo].[UkPrn] = '" + ukprn + "'";
+            var getUlnNo = "SELECT [tqProfile].[UniqueLearnerNumber] FROM [TqRegistrationPathway] AS [tqPathway] INNER JOIN [TqProvider] AS [tqProvider] ON [tqPathway].[TqProviderId] = [tqProvider].[Id] INNER JOIN [TqAwardingOrganisation] AS [tqAo] ON [tqProvider].[TqAwardingOrganisationId] = [tqAo].[Id] INNER JOIN [TlAwardingOrganisation] AS [tlAo] ON [tqAo].[TlAwardingOrganisatonId] = [tlAo].[Id] INNER JOIN [TqRegistrationProfile] AS [tqProfile] ON [tqPathway].[TqRegistrationProfileId] = [tqProfile].[Id] WHERE [tlAo].[UkPrn] = '" + ukprn + "'";
             List<long> ulnId = SqlDatabaseConncetionHelper.GetUlnsFromDatabse(getUlnNo, ConnectionString);
             return ulnId;
         }
-        public static void DeleteAORecords(int ukprn)
+        public static void DeleteAoRecords(int ukprn)
         {
-            var ulns = getUlns(ukprn);
+            var ulns = GetUlns(ukprn);
             if(ulns.Count > 0)
             {
                 DeleteRegistrations(ulns);
@@ -67,14 +71,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         }
         public static void UpdateToWithdrawn(string uln)
         {
-            string UpdatePathway = "Update TqRegistrationPathway set status=4, EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqRegistrationPathway rp join TqRegistrationProfile pr on rp.TqRegistrationProfileId = pr.Id where UniqueLearnerNumber = " + uln + "";
-            string UpdateSpecialism = "Update TqRegistrationSpecialism set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqRegistrationSpecialism rs join TqRegistrationPathway rp on rs.TqRegistrationPathwayId = rp.Id join TqRegistrationProfile pr on rp.TqRegistrationProfileId = pr.Id where UniqueLearnerNumber =" + uln + "";
-            string UpdateAssessment = "Update TqPathwayAssessment set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayAssessment pa join TqRegistrationPathway rp on rp.Id = pa.TqRegistrationPathwayId join TqRegistrationProfile pf on pf.id = rp.TqRegistrationProfileId where UniqueLearnerNumber =" + uln + "";
-            string UpdateResult = "Update TqPathwayResult set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rp on rp.Id = pa.TqRegistrationPathwayId join TqRegistrationProfile pf on pf.id = rp.TqRegistrationProfileId where UniqueLearnerNumber =" + uln + "";
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(UpdateResult, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(UpdateAssessment, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(UpdateSpecialism, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(UpdatePathway, ConnectionString);
+            var updatePathway = "Update TqRegistrationPathway set status=4, EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqRegistrationPathway rp join TqRegistrationProfile pr on rp.TqRegistrationProfileId = pr.Id where UniqueLearnerNumber = " + uln + "";
+            var updateSpecialism = "Update TqRegistrationSpecialism set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqRegistrationSpecialism rs join TqRegistrationPathway rp on rs.TqRegistrationPathwayId = rp.Id join TqRegistrationProfile pr on rp.TqRegistrationProfileId = pr.Id where UniqueLearnerNumber =" + uln + "";
+            var updateAssessment = "Update TqPathwayAssessment set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayAssessment pa join TqRegistrationPathway rp on rp.Id = pa.TqRegistrationPathwayId join TqRegistrationProfile pf on pf.id = rp.TqRegistrationProfileId where UniqueLearnerNumber =" + uln + "";
+            var updateResult = "Update TqPathwayResult set EndDate=GETDATE(),ModifiedOn=GETDATE(),ModifiedBy='SYSTEM' from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rp on rp.Id = pa.TqRegistrationPathwayId join TqRegistrationProfile pf on pf.id = rp.TqRegistrationProfileId where UniqueLearnerNumber =" + uln + "";
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(updateResult, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(updateAssessment, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(updateSpecialism, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(updatePathway, ConnectionString);
         }
     }
 }
