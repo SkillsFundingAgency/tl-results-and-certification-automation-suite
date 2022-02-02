@@ -12,7 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Then(@"I will be navigated to the Results ULN Cannot be found page for (.*)")]
         public void ThenIWillBeNavigatedToTheResultsULNCannotBeFoundPageFor(string ULN)
         {
-            ResultsULNNotFoundPage.VerifyResultsULNNotFoundPage(ULN);              
+            ResultsUlnNotFoundPage.VerifyResultsUlnNotFoundPage(ULN);              
         }
 
         [Then(@"I search for a (.*) which is not registered")]
@@ -24,13 +24,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [When(@"I click the Back link on the Results ULN cannot be found page")]
         public void WhenIClickTheBackLinkOnTheResultsULNCannotBeFoundPage()
         {
-            ResultsULNNotFoundPage.ClickBackLink();
+            ResultsUlnNotFoundPage.ClickBackLink();
         }
 
         [When(@"I click the Back to Search button on the Results ULN cannot be found page")]
         public void WhenIClickTheBackToSearchButtonOnTheResultsULNCannotBeFoundPage()
         {
-            ResultsULNNotFoundPage.ClickBackToSearchButton();
+            ResultsUlnNotFoundPage.ClickBackToSearchButton();
         }
 
         [Then(@"the search box will be populated with the (.*) entered originally")]
@@ -52,7 +52,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Then(@"clicking on back to home button takes to dashboard page")]
         public void ThenClickingOnBackToHomeButtonTakesToDashboardPage()
         {
-            ResultsULNNotFoundPage.VerifyBackToHome();
+            ResultsUlnNotFoundPage.VerifyBackToHome();
         }
 
     }
