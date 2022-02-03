@@ -14,7 +14,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By PageTextLine1 { get; } = By.XPath("//*[@id='main-content']//form//p");
         private const string ExpectedPageTextLine1Text = "You can add, view and amend a learner's results.";
         private static By PageTextLine2 { get; } = By.XPath("//label[@for='searchuln']");
-        private const string ExpectedPageTextLine2Text = "Enter the Unique Learner Number (ULN)";
+        private const string ExpectedPageTextLine2Text = "Enter the unique learner number (ULN)";
         private static By PageTextGreyText { get; } = By.XPath("//*[@id='main-content']//span[1]");
         private const string ExpectedPageTextGreyText = "ULN must be 10 digits long";
         private static By SearchButton { get; } = By.Id("searchButton");
@@ -22,7 +22,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By SearchBox = By.Id("searchuln");
 
         private const string NullErrorMsgText = "Enter a ULN";
-        private const string InvalidErrorMsgText = "Enter a valid ULN";
+        private const string InvalidErrorMsgText = "Enter a valid 10-digit ULN";
         private static By MainErrorMsg { get; } = By.XPath("//*[contains(@href,'searchuln')]");
         private static By SubErrorMsg { get; } = By.XPath("//*[@id='main-content']//div/span[2]");
 
