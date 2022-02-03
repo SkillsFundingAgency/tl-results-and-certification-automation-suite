@@ -32,7 +32,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [When(@"I search for the (.*) which is withdrawn")]
         public void WhenISearchForTheWhichIsWithdrawn(string ULN)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
             
         }
 
@@ -64,7 +64,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [When(@"I navigate back to the Learners Results Page \(Withdrawn\) page using (.*) from the Results Search for a Learner page")]
         public void WhenINavigateBackToTheLearnersResultsPageWithdrawnPageUsingFromTheResultsSearchForALearnerPage(string ULN)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
 
         [When(@"I press the Results breadcrumb link")]
@@ -77,7 +77,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         public void WhenINavigateBackToTheLearnersResultsPageWithdrawnPageForFromTheResultsDashboardPage(string ULN)
         {
             ClickLinkByLabel("Search for a learner");
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
 
         [When(@"I click the Home breadcrumb link")]

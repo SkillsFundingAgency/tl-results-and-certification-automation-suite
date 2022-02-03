@@ -25,19 +25,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Then(@"I will see an error message stating Invalid ULN")]
         public void ThenIWillSeeAnErrorMessageStatingInvalidULN()
         {
-            ResultsSearchForALearnerPage.VerifyInvalidULNSearchErrorMessage();
+            ResultsSearchForALearnerPage.VerifyInvalidUlnSearchErrorMessage();
         }
 
         [When(@"I enter an invalid ULN as ""(.*)""")]
         public void WhenIEnterAnInvalidULNAs(string ULN)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
 
         [Then(@"I will see an error message stating Enter a ULN")]
         public void ThenIWillSeeAnErrorMessageStatingEnterAULN()
         {
-            ResultsSearchForALearnerPage.VerifyEmptyULNSearchErrorMessage();
+            ResultsSearchForALearnerPage.VerifyEmptyUlnSearchErrorMessage();
         }
 
         [When(@"I click on the Results breadcrumb link")]

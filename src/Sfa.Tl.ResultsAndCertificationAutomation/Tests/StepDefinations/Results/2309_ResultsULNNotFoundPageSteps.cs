@@ -18,7 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Then(@"I search for a (.*) which is not registered")]
         public void ThenISearchForAWhichIsNotRegistered(string ULN)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
 
         [When(@"I click the Back link on the Results ULN cannot be found page")]
@@ -42,7 +42,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Then(@"I enter the (.*) which has been registered with another AO")]
         public void ThenIEnterTheWhichHasBeenRegisteredWithAnotherAO(string ULN)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
         [Then(@"the search box will not be populated with the (.*) entered originally")]
         public void ThenTheSearchBoxWillNotBePopulatedWithTheEnteredOriginally(string p0)

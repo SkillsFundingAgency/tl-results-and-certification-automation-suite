@@ -38,7 +38,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Given(@"I have a (.*) with core result of ""(.*)"" with core ""(.*)"" and assessment series ""(.*)"" and specialism ""(.*)""")]
         public void GivenIHaveAWithCoreResultOfWithCoreAndAssessmentSeriesAndSpecialism(string ULN, string Grade, string CoreText, string AssessmentSeries, string SpecialismText)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
             ResultsLearnersResultsPage.MaximiseWindow();
             ResultsLearnersResultsPage.ClickAddResultLink();
             ResultsSelectCorePage.VerifyAddCorePage(CoreText, AssessmentSeries);

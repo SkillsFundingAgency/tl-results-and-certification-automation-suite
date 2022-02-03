@@ -9,7 +9,7 @@ using OpenQA.Selenium.IE;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
-    public class WebDriverFactory
+    public static class WebDriverFactory
     {
         private static IConfigurationRoot _config;
 
