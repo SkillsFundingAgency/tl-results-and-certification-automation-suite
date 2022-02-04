@@ -85,7 +85,7 @@ public class AddCoreResultPage : ElementHelper
             case "Grade Merit":
                 ClickElement((SelectGradeA));
                 break;
-            case "Grade PAss":
+            case "Grade Pass":
                 ClickElement(SelectGradeB);
                 break;
             case "Unclassified":

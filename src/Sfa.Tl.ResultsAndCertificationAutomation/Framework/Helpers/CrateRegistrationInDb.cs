@@ -86,7 +86,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 
         protected static void CreateDbRegWithResult(string uln)
         {
-            //var uln = UlnHelper.GenerateUln().ToString();
             var profileId = SqlQueries.CreateRegistrationProfile(uln);
             var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
             SqlQueries.CreateRegSpecialism(pathwayId);
