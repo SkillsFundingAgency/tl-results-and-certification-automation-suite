@@ -50,6 +50,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);
             return (int)regPathwayId.FirstOrDefault().FirstOrDefault();
         }
+
+        private static int InsertCoreAssessment(int pathwayId, int assessmentSeries)
+        {
+            var pathwayAssessmentSeriesId = assessmentSeries;
+            var createPathwayAssessment = "Insert into TqPathwayAssessment values('" + pathwayId + "','" + pathwayAssessmentSeriesId + "',GETDATE(),NULL,1,0,GETDATE(),'System',Null,Null )";
+            var getRegPathwayId = "select top 1 id from TqPathwayAssessment where TqRegistrationPathwayId  = '" + pathwayId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayAssessment, ConnectionString);
+            var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);
+            return (int)regPathwayId.FirstOrDefault().FirstOrDefault();
+        }
         private static int InsertSpecialismAssessment1(int specialismId)
         {
             var tlAssessmentSeriesId = Constants.TlAssessmentSeriesId;
@@ -118,6 +128,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertCoreResult(coreAssessmentId,1);
             InsertAssessmentResult(specialismAssessmentId1, 10);
             InsertAssessmentResult(specialismAssessmentId2, 11);
+        }
+
+        public static void RegWithResitCoreAssessment(string uln)
+        {
+            var profileId = InsertRegistrationProfile(uln);
+            var pathwayId = InsertRegistrationPathway(profileId);
+            InsertRegistrationSpecialism1(pathwayId);
+            InsertRegistrationSpecialism2(pathwayId);
+            //Insert Summer 2021 Assessment Series
+            var coreAssessmentId1 = InsertCoreAssessment(pathwayId, 1);
+            //Insert Autumn 2021Assessment Series
+            var coreAssessmentId2 = InsertCoreAssessment(pathwayId, 2);
+            InsertCoreResult(coreAssessmentId1, 1);
         }
     }
 }
