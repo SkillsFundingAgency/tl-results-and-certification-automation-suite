@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using System;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -39,6 +40,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By contactUsLink = By.Id("contactusLink");
 
         public static By ChangeLink = By.Id("pathwaygrade");
+        
         public static new void ClickButton(By locator)
         {
             WebDriver.FindElement((locator)).Click();
@@ -161,5 +163,41 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickButton(contactUsLink);
         }
 
-    }
+        public static void VerifySummer2021CoreGrade(string Grade)
+        {
+           Assert.IsTrue(WebDriver.FindElement(By.XPath("//*[@id='main-content']//table[1]//tr[2]/td[2]/span[2]/span")).Text.Contains(Grade));
+        }
+
+        public static void VerifyAutumn2021CoreGradeNotEntered()
+        {
+          
+          //Verify Add result link is present
+          By addResultLink = By.XPath("//*[contains(text(),'Add result')]");
+          bool present = IsPresent(addResultLink);
+          Assert.AreEqual(true, present);
+
+          //Verify change link is not present
+          By ChangeLink = By.XPath("//*[contains(text(),'Change')]");
+          bool isPresent = IsPresent(ChangeLink);
+          Assert.AreEqual(false, isPresent);
+
+        }
+
+        public static void VerifyAutumn2021CoreGrade(string Grade)
+        {
+            Assert.AreEqual(Grade, WebDriver.FindElement(By.XPath("//*[@id='main-content']//table[1]/tbody/tr[1]/td[2]/span[2]/span")).Text);
+            
+            //Verify Change result link is present
+            By changeResultLink = By.XPath("//*[contains(text(),'Change')]");
+            bool present = IsPresent(changeResultLink);
+            Assert.AreEqual(true, present);
+
+            //Verify Add result link is not present
+            By addResultLink = By.XPath("//*[contains(text(),'Add result')]");
+            bool isPresent = IsPresent(addResultLink);
+            Assert.AreEqual(false, isPresent);
+
+        }
+
+}
 }
