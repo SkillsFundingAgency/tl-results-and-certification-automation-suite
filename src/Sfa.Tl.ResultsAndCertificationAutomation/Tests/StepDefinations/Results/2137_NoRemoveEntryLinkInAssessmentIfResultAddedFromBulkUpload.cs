@@ -18,10 +18,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             var row = table.Rows;
             var uln = row[0]["Uln"];
             ClickResultsLink();
-            searchResult(uln);
-            ClickElement(changeResult);
-            ClickElement(notreceivedGrade);
-            ClickButton(changeBtn);
+            SearchResult(uln);
+            ClickElement(ChangeResult);
+            ClickElement(NotreceivedGrade);
+            ClickButton(ChangeBtn);
             VerifyResultChangeSuccessPage();
         }
         [Given(@"I removed the result for the uln by selecting not received")]
@@ -29,10 +29,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             var uln = _scenarioContext["uln"] as string;
             ClickResultsLink();
-            searchResult(uln);
-            ClickElement(changeResult);
-            ClickElement(notreceivedGrade);
-            ClickButton(changeBtn);
+            SearchResult(uln);
+            ClickElement(ChangeResult);
+            ClickElement(NotreceivedGrade);
+            ClickButton(ChangeBtn);
             VerifyResultChangeSuccessPage();
         }
 

@@ -53,7 +53,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             RegistrationsSearchPage.PressHomeBreadcrumb();
 
             ResultsDashboardPage.ClickResultsLink();
-            ResultsDashboardPage.searchResult(uln);
+            ResultsDashboardPage.SearchResult(uln);
        
         }
 

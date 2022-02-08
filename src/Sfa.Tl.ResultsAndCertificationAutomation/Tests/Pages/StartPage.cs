@@ -51,12 +51,12 @@ public class StartPage : ElementHelper
 
     protected static void ClickDataFormatLink()
     {
-        ElementHelper.ClickElement(DataFormatLink);
+        ClickElement(DataFormatLink);
     }
 
     public static void ClickContactLink()
     {
-        ElementHelper.ClickElement(ContactLink);
+        ClickElement(ContactLink);
     }
 
     protected static void VerifyRegistrationDataFormat()

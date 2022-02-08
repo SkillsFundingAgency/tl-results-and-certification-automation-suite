@@ -25,19 +25,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             ResultsDashboardPage.ClickResultsLink();
             var uln = _scenarioContext["uln"] as string;
-            ResultsDashboardPage.searchResult(uln);
+            ResultsDashboardPage.SearchResult(uln);
         }
         
         [Given(@"I click on ""(.*)"" link in result page")]
         public void GivenIClickOnLinkInResultPage(string p0)
         {
-            WebDriver.FindElement(ResultsDashboardPage.changeResult).Click();
+            WebDriver.FindElement(ResultsDashboardPage.ChangeResult).Click();
         }
 
         [Given(@"I change the grade")]
         public void GivenIChangeTheGrade()
         {
-            ClickElement(ResultsDashboardPage.selectResultB);
+            ClickElement(ResultsDashboardPage.SelectResultB);
         }
         
         [Then(@"I should see result change successfull page")]
