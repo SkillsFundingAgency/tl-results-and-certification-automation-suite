@@ -3,7 +3,7 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
-    public class RegistrationCityAndGuilds
+    public static class RegistrationCityAndGuilds
     {
         private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
         private static int InsertRegistrationProfile(string uln)
@@ -83,10 +83,35 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','"+ grade + "',GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
         }
+        private static void InsertCoreResultAppeal(int coreAssessmentId, int grade)
+        {
+            var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','" + grade + "',GETDATE(),NULL,3,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
+        }
+        private static void InsertCoreResultFinal(int coreAssessmentId, int grade)
+        {
+            var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','" + grade + "',GETDATE(),NULL,3,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
+            var updatePathwayResult = "Update TqPathwayResult set PrsStatus=4 where TqPathwayAssessmentId='" + coreAssessmentId + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(updatePathwayResult, ConnectionString);
+        }
         private static void InsertAssessmentResult(int specialismAssessmentId, int grade)
         {
             var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','"+ grade +"',GETDATE(),NULL,Null,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
+        }
+        private static void InsertAssessmentResultAppeal(int specialismAssessmentId, int grade)
+        {
+            var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),NULL,3,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
+        }
+        private static void InsertAssessmentResultFinal(int specialismAssessmentId, int grade)
+        {
+            var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),NULL,3,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
+            var updateSpecialismAssessment = "Update TqSpecialismResult set PrsStatus=4 where TqSpecialismAssessmentId='" + specialismAssessmentId + "'";
+            SqlDatabaseConncetionHelper.UpdateSqlCommand(updateSpecialismAssessment, ConnectionString);
+
         }
 
         public static void CreateRegistration(string uln)
@@ -141,6 +166,32 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             //Insert Autumn 2021Assessment Series
             var coreAssessmentId2 = InsertCoreAssessment(pathwayId, 2);
             InsertCoreResult(coreAssessmentId1, 1);
+        }
+        public static void CreateRegWithResultInAppealState(string uln)
+        {
+            var profileId = InsertRegistrationProfile(uln);
+            var pathwayId = InsertRegistrationPathway(profileId);
+            var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
+            var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
+            var coreAssessmentId = InsertCoreAssessment(pathwayId);
+            var specialismAssessmentId1 = InsertSpecialismAssessment1(specialismId1);
+            var specialismAssessmentId2 = InsertSpecialismAssessment2(specialismId2);
+            InsertCoreResultAppeal(coreAssessmentId, 1);
+            InsertAssessmentResultAppeal(specialismAssessmentId1, 10);
+            InsertAssessmentResultAppeal(specialismAssessmentId2, 11);
+        }
+        public static void CreateRegWithResultInFinalState(string uln)
+        {
+            var profileId = InsertRegistrationProfile(uln);
+            var pathwayId = InsertRegistrationPathway(profileId);
+            var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
+            var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
+            var coreAssessmentId = InsertCoreAssessment(pathwayId);
+            var specialismAssessmentId1 = InsertSpecialismAssessment1(specialismId1);
+            var specialismAssessmentId2 = InsertSpecialismAssessment2(specialismId2);
+            InsertCoreResultFinal(coreAssessmentId, 1);
+            InsertAssessmentResultFinal(specialismAssessmentId1, 10);
+            InsertAssessmentResultFinal(specialismAssessmentId2, 11);
         }
     }
 }
