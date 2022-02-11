@@ -40,13 +40,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         private static void DeleteRegistrations(List<long> ulns)
         {
             var uln = string.Join(",", ulns);
+            var deleteIP = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id = pw.TqRegistrationProfileId where rp.UniqueLearnerNumber in (" + uln + ")";
             var deletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId = rp.Id where UniqueLearnerNumber in (" + uln + ")";
+            var deleteSpecialismResults = "Delete sr from TqSpecialismResult sr join TqSpecialismAssessment sa on sr.TqSpecialismAssessmentId = sa.Id join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber in (" + uln + ")"; //
             var deleteRegSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber in (" + uln + ")";
             var deleteRegPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber in (" + uln + "))";
             var deleteRegProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber in (" + uln + ")";
             var deleteAssPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber in (" + uln + ")";
             var deleteAssSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber in (" + uln + ")";
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deletePathwayResults, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteIP, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteSpecialismResults, ConnectionString); //
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteAssPathway, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteAssSpecialism, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(deleteRegSpecialism, ConnectionString);

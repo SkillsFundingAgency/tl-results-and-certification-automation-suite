@@ -124,5 +124,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
                 index++;
             }
         }
+
+        public static void CsvSpecialismResultsDataFileCompare(string file)
+        {
+            CSVHelperSpecialismResultsData read = new CSVHelperSpecialismResultsData();
+            var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
+            var SpecialismResultsDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var expectedErrors = read.ExpectedData(SpecialismResultsDataFile);
+
+            var index = 0;
+            foreach (var expectedError in expectedErrors)
+            {
+                var actualError = actualErrors.Skip(index).First();
+                Assert.AreEqual(expectedError.UlnNo, actualError.UlnNo);
+                Assert.AreEqual(expectedError.ComponentCodeSpecialism, actualError.ComponentCodeSpecialism);
+                Assert.AreEqual(expectedError.AssessmentSeriesSpecialism, actualError.AssessmentSeriesSpecialism);
+                Assert.AreEqual(expectedError.ComponenetGradeSpecialism, actualError.ComponenetGradeSpecialism);
+
+                index++;
+            }
+        }
+
+
+
     }
 }

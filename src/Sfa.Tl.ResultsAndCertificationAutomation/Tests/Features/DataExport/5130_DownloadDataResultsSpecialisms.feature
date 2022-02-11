@@ -1,4 +1,4 @@
-﻿Feature: 4896_DownloadDataResults
+﻿Feature: 5130_Data Export : Download Data Page - Results (specialisms)
 	As an AO
 	I need the ability to download the result data to my local drive
 	So that I can open the .csv file.
@@ -15,12 +15,22 @@ And I upload assessment "4895_DataExportAssessments.csv" file
 And I am on assessment entries home page
 And I am on Home page
 And I am on results upload page
-And I upload results "4896_DataExportResults.csv" file
-And I am on results dashboard page
+
 
 @RegressionTest @DataExport
-Scenario: 4896_Download core results data
+Scenario: 5130_Download Specialism results data
+And I upload results "5130_DataExportSpecialismResults.csv" file
+And I am on results dashboard page
 And I click on "Download results data" link
-When I click on link containg core results data
-Then core results file should be downloaded
+When I click on link containg specialism results data
+Then the specialism results file should be downloaded
+And there will only be a download links for Specialism results
+And I have deleted all data for "CityAndGuilds"
+
+@RegressionTest @DataExport
+Scenario: 5130_verify both core and specialism download results links available if both results available
+And I upload results "5130_DataExportCoreAndSpecialismResults.csv" file
+And I am on results dashboard page
+And I click on "Download results data" link
+Then I will see download links for both Core and Specialism results download links
 And I have deleted all data for "CityAndGuilds"

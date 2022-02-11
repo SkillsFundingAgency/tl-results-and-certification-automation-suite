@@ -4,8 +4,8 @@
 	So that I can change search criteria
 
 Background: 
-Given I have logged in as a "PearsonSiteAdmin" user
-And I have deleted all data for "Pearson"
+Given I have logged in as a "CityAndGuildsAdmin" user
+And I have deleted all data for "CityAndGuilds"
 And I click on "Assessments" link
 
 
