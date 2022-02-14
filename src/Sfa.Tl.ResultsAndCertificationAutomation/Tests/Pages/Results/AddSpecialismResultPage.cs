@@ -13,6 +13,8 @@ public class AddSpecialismResultPage : ElementHelper
     private static By SelectGradeMerit { get; } = By.Id("selectedgradecode-1");
     private static By SelectGradePass { get; } = By.Id("selectedgradecode-2");
     private static By SelectGradeUnclassified { get; } = By.Id("selectedgradecode-3");
+    private static By submitButton = By.Id("submitButton");
+    private static By homeBreadcrumb = By.Id("breadcrumb0");
 
     protected static void VerifyLearnerSpecialismResultPage()
     {
@@ -60,4 +62,17 @@ public class AddSpecialismResultPage : ElementHelper
                 break;
         }
     }
+
+
+    public static void pressSubmitButton()
+    {
+        ClickElement(submitButton);
+    }
+
+    public static void pressHomeBreadcrumb()
+    {
+        ClickElement(homeBreadcrumb);
+    }
+
+
 }

@@ -558,6 +558,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var updateAssessmentSeries = "update TqPathwayAssessment set AssessmentSeriesId = 1 where Id in (select max(Id) from TqPathwayAssessment where TqRegistrationPathwayId in (select Id from TqRegistrationPathway where tqregistrationprofileid in (select id from TqRegistrationProfile where UniqueLearnerNumber = " + Uln + ")))";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(updateAssessmentSeries, ConnectionString);
         }
-        
+
+        public static int InsertSummer2021SpecialismAssessSeries()
+        {
+            var InsertSummer2021SpecialismSeriesSQL = "insert into assessmentSeries values (2,'Summer 2021', 'Summer 2021', '2021','2020-10-01','2021-08-01','2021-09-24','2021-11-17','System',NULL,NULL)";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertSummer2021SpecialismSeriesSQL, ConnectionString);
+            var getSummer2021SpecialismSeriesIDSQL = "select id from assessmentSeries where Name = 'Summer 2021' and ComponentType= 2";
+            var Summer2021SeriesID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSummer2021SpecialismSeriesIDSQL, ConnectionString);
+            int resultStatusValue1 = Convert.ToInt32(Summer2021SeriesID[0][0]);
+            return resultStatusValue1;     
+        }
+
+        public static void DeleteSummer2021SpecialismAssessSeries()
+        {
+            var deleteSummer2021SpecialismSeriesSQL = "delete from assessmentSeries where Name = 'Summer 2021' and ComponentType= 2;";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(deleteSummer2021SpecialismSeriesSQL, ConnectionString);
+        }
+
     }
 }

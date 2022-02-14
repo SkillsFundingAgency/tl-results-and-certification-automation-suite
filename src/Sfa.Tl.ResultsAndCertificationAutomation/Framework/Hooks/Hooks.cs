@@ -23,6 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Hooks
         public static void CleanUp()
         {
             SqlQueries.DeleteFromRegistrationTables();
+            SqlQueries.DeleteSummer2021SpecialismAssessSeries();
             WebDriver.Dispose();
         }
     }

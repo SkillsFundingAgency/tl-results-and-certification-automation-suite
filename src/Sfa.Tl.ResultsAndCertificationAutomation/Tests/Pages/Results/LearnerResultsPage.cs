@@ -13,7 +13,8 @@ public class LearnerResultsPage: ElementHelper
     private static By AddSpecialismAssessment { get; } = By.Id(("addSpecialismAssessmentLink"));
     private  static By SuccessBanner { get; } = By.XPath("//*[@id='main-content']//h2");
     private static By SuccessMessage { get; } = By.XPath("//*[@id='main-content']//h3");
-
+    private static By AddResultToPreviousSpecialismLink { get; } = By.XPath("//*[contains (text(),'add a result to this learner')]");
+    
     protected static void VerifyLearnerResultsPage()
     {
         Assert.AreEqual(PageTitle, WebDriver.Title);
@@ -89,4 +90,25 @@ public class LearnerResultsPage: ElementHelper
         Assert.AreEqual("Success", WebDriver.FindElement(SuccessBanner).Text);
         Assert.IsTrue(WebDriver.FindElement(SuccessMessage).Text.Contains(message));
     }
+
+    public static void VerifyCountOfAddResultToPreviousSpecialismLinksDsplayed(int countOfLinksDisplayed)
+    {        
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'add a result to this learner')]"));
+        int count = element.Count;
+        Assert.AreEqual(countOfLinksDisplayed, count);
+    }
+
+    public static void ClickAddResultToPreviousSpecialism()
+    {
+        ClickElement(AddResultToPreviousSpecialismLink);   
+    }
+
+    public static void VerifyAddResultToPreviousSpecialismLinksNotDisplayed()
+    {
+        bool notPresent = IsPresent(AddResultToPreviousSpecialismLink);
+        Assert.AreEqual(false, notPresent);
+    }
+
+    
+
 }
