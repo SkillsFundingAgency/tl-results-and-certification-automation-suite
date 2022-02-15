@@ -28,9 +28,11 @@ public class ResultsDashboardPage : ElementHelper
     protected static readonly string ResultsUploadStage3WithdrawnErrors = string.Concat("Data\\", "ResultsErrorStage3Withdrawn.csv");
     public static readonly string ResultsUploadBlockAppealErrors = string.Concat("Data\\", "BlockResultUpdateForAppeal.csv");
     public static readonly string ResultsUploadBlockFinalErrors = string.Concat("Data\\", "BlockResultUpdateForFinal.csv");
-
+    
     public static readonly string AssessmentResultStage2ValidationErrors = string.Concat("Data\\", "5047_ResultsErrorReport.csv");
     public static readonly string AssessmentResultStage2NoDataValidationError = string.Concat("Data\\", "5047_ResultsErrorReportNoData.csv");
+
+    protected static readonly string AssessmentResultStage3ValidationError = string.Concat("Data\\", "5048_AssessmentResultsErrorReportStage3.csv");
     // Upload Results success page
     private static string ResultsUploadSuccessMsg { get; } = "Results uploaded";
     private static string ResultsUploadSuccessPageTitle { get; } = "Results upload success – Manage T Level results – GOV.UK";

@@ -126,7 +126,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlQueries.CreateIndustryPlacement(pathwayId, status);
         }
 
-        protected static void CreateDbRegInWithdrawn(string uln)
+        public static void CreateDbRegInWithdrawn(string uln)
         {
             SqlQueries.UpdateRegWithdrawn(uln);
         }
