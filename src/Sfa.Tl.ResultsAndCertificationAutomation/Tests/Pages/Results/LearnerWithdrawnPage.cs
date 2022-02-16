@@ -6,42 +6,46 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
 {
     public class LearnerWithdrawnPage : ElementHelper
     {
-        private static string pageUrl { get; } = "learners-results-withdrawn-learner";
-        private static string pageTitle { get; } = "Learner withdrawn – Manage T Level results – GOV.UK";
-        private static By pageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
-        private static By pageContent { get; } = By.XPath("//*[@id='main-content']");
-        private static string pageHeader = "Learner has been withdrawn by the exam board";
-        private static string pageInlineText = "This learner’s registration has been withdrawn. You cannot change or add a result. Please speak to your organisation’s registrations editor to change this learner’s status.";
-        private static By backLink { get; } = By.Id("backLink");
-        private static By searchAgainBtn { get; } = By.Id("searchAgainButton");
-        private static By backHomeBtn { get; } = By.Id("backToHomeButton");
+        private static string PageUrl { get; } = "results-learner-withdrawn";
+        private static string PageTitle { get; } = "Learner withdrawn - Results – Manage T Level results – GOV.UK";
+        private static By PageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
+        private static By PageContent { get; } = By.XPath("//*[@id='main-content']");
+        private const string PageHeader = "Db FirstName Db LastName is withdrawn";
+        private const string PageInlineText = "This learner’s registration has been withdrawn. You cannot change or add a result. Please speak to your organisation’s registrations editor to change this learner’s status.";
+        private static By BackLink { get; } = By.Id("backLink");
+        private static By SearchAgainBtn { get; } = By.Id("searchAgainButton");
+        private static By BackHomeBtn { get; } = By.Id("backToHomeButton");
         private static By SearchBtn { get; } = By.Id("searchButton");
 
-        public static void VerifyLearnerWithdrawnPage()
+        protected static void VerifyLearnerWithdrawnPage()
         {
-            Assert.AreEqual(pageTitle, WebDriver.Title);
-            Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
-            Assert.AreEqual(pageHeader, WebDriver.FindElement(pageHeadElement).Text);
-            Assert.IsTrue(WebDriver.FindElement(pageContent).Text.Contains(pageInlineText));
+            Assert.AreEqual(PageTitle, WebDriver.Title);
+            Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+            Assert.AreEqual(PageHeader, WebDriver.FindElement(PageHeadElement).Text);
+            Assert.IsTrue(WebDriver.FindElement(PageContent).Text.Contains(PageInlineText));
         }
-        public static void VerifyBackLink(string uln)
+
+        protected static void VerifyBackLink(string uln)
         {
-            ClickElement(backLink);
+            ClickElement(BackLink);
             ResultsSearchForALearnerPage.VerifyResultsSearchLearnerPage();
             ResultsSearchForALearnerPage.VerifySearchFieldIsPrePopulated(uln);
         }
-        public static void VerifyBackToHome()
+
+        protected static void VerifyBackToHome()
         {
-            ClickButton(backHomeBtn);
+            ClickButton(BackHomeBtn);
             TlevelDashboardPage.VerifyDashboardpage();
         }
-        public static void VerifySearchAgain()
+
+        protected static void VerifySearchAgain()
         {
-            ClickButton(searchAgainBtn);
+            ClickButton(SearchAgainBtn);
             ResultsSearchForALearnerPage.VerifyResultsSearchLearnerPage();
             ResultsSearchForALearnerPage.VerifySearchFieldIsEmpty();
         }
-        public static void ClickSearchBtn()
+
+        protected static void ClickSearchBtn()
         {
             ClickButton(SearchBtn);
         }

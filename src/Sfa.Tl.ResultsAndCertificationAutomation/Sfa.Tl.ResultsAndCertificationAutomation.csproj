@@ -221,6 +221,48 @@
     <None Update="Data\4896_DownloadedCoreResultsData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\5047_ResultsErrorReport.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5047_ResultsErrorReportNoData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5047_ResultsStage2NoData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5047_ResultsStage2Validation.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5048_AssessmentResultsErrorReportStage3.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5048_AssessmentResultsStage3Validations.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5048_AssessmentsValid.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5048_RegistrationsWithAssessmentsValid.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5130_DataExportCoreAndSpecialismResults.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5130_DataExportSpecialismResults.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5130_DownloadedSpecialismResultsData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5330_AssessmentsValid.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5330_RegistrationsValid.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5330_ResultsValid.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\AssessmentEntryStage2InvalidHeader.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -347,6 +389,12 @@
     <None Update="Data\TestRegistrationsData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\TLRC5045_ResultUploadSuccess.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\TLRC5045_ResultUploadSuccessRemoveGrade.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Sfa.Tl.ResultsAndCertificationAutomation.runtimeconfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -404,8 +452,8 @@
     <Compile Update="Tests\Features\AssessmentEntries\2035_AssessmentEntryProblemWithUploadPage.feature.cs">
       <DependentUpon>2035_AssessmentEntryProblemWithUploadPage.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\Features\1881_UserGuidePage.feature.cs">
-      <DependentUpon>1881_UserGuidePage.feature</DependentUpon>
+    <Compile Update="Tests\Features\DataFormatAndRules.feature.cs">
+      <DependentUpon>DataFormatAndRules.feature</DependentUpon>
     </Compile>
     <Compile Update="Tests\Features\OrgPostalAddress\3171_AddressAddedSuccessfully.feature.cs">
       <DependentUpon>3171_AddressAddedSuccessfully.feature</DependentUpon>
@@ -631,7 +679,7 @@
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\Features\1881_UserGuidePage.feature">
+    <SpecFlowFeatureFiles Update="Tests\Features\DataFormatAndRules.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

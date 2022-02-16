@@ -25,7 +25,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
         {
             ResultsDashboardPage.ClickResultsLink();
             var uln = _scenarioContext["uln"] as string;
-            ResultsDashboardPage.searchResult(uln);
+            ResultsDashboardPage.SearchResult(uln);
         }
         
         [Then(@"I should see a being appealed message on the page")]

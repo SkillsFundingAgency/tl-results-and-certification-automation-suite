@@ -35,7 +35,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         public void WhenISearchTheLearner()
         {
             var uln = _scenarioContext["uln"] as string;
-            ResultsDashboardPage.searchResult(uln);
+            ResultsDashboardPage.SearchResult(uln);
         }
 
     }

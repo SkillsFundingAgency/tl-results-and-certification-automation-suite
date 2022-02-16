@@ -11,21 +11,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
     {
         private static readonly string ConnectionString = WebDriverFactory.Config["DBConnectionString"];
         //Delete from Registration Tables
-        private static readonly string UlnList = "select Id,UniqueLearnerNumber,Firstname,Lastname,DateofBirth from TqRegistrationProfile";
-        private static readonly string DeleteRegistrationSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        private static readonly string DeleteRegistrationPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '9%')";
-        private static readonly string DeleteRegistrationProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber like '9%'";
-        private static readonly string DeleteAssessmentPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        private static readonly string DeleteAssessmentSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
-        private static readonly string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        private static readonly string DeleteAssessmentResult = "Delete sr from TqSpecialismResult sr join TqSpecialismAssessment sa on sr.TqSpecialismAssessmentId = sa.Id join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
-        private static readonly string DeleteIpData = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id=pw.TqRegistrationProfileId where rp.UniqueLearnerNumber like '9%'";
-        private static readonly string DeleteEMData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber like '9%'";
+        private const string UlnList = "select Id,UniqueLearnerNumber,Firstname,Lastname,DateofBirth from TqRegistrationProfile";
+        private const string DeleteRegistrationSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
+        private const string DeleteRegistrationPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '9%')";
+        private const string DeleteRegistrationProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber like '9%'";
+        private const string DeleteAssessmentPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
+        private const string DeleteAssessmentSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
+        private const string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
+        private const string DeleteAssessmentResult = "Delete sr from TqSpecialismResult sr join TqSpecialismAssessment sa on sr.TqSpecialismAssessmentId = sa.Id join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
+        private const string DeleteIpData = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id=pw.TqRegistrationProfileId where rp.UniqueLearnerNumber like '9%'";
+        private const string DeleteEmData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber like '9%'";
 
         public static void DeleteFromRegistrationTables()
         {
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteIpData, ConnectionString);
-            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteEMData, ConnectionString);
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteEmData, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAssessmentResult, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeletePathwayResults, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAssessmentPathway, ConnectionString);
@@ -558,6 +558,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var updateAssessmentSeries = "update TqPathwayAssessment set AssessmentSeriesId = 1 where Id in (select max(Id) from TqPathwayAssessment where TqRegistrationPathwayId in (select Id from TqRegistrationPathway where tqregistrationprofileid in (select id from TqRegistrationProfile where UniqueLearnerNumber = " + Uln + ")))";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(updateAssessmentSeries, ConnectionString);
         }
-        
+
+        public static int InsertSummer2021SpecialismAssessSeries()
+        {
+            var InsertSummer2021SpecialismSeriesSQL = "insert into assessmentSeries values (2,'Summer 2021', 'Summer 2021', '2021','2020-10-01','2021-08-01','2021-09-24','2021-11-17','System',NULL,NULL)";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertSummer2021SpecialismSeriesSQL, ConnectionString);
+            var getSummer2021SpecialismSeriesIDSQL = "select id from assessmentSeries where Name = 'Summer 2021' and ComponentType= 2";
+            var Summer2021SeriesID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSummer2021SpecialismSeriesIDSQL, ConnectionString);
+            int resultStatusValue1 = Convert.ToInt32(Summer2021SeriesID[0][0]);
+            return resultStatusValue1;     
+        }
+
+        public static void DeleteSummer2021SpecialismAssessSeries()
+        {
+            var deleteSummer2021SpecialismSeriesSQL = "delete from assessmentSeries where Name = 'Summer 2021' and ComponentType= 2;";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(deleteSummer2021SpecialismSeriesSQL, ConnectionString);
+        }
+
     }
 }

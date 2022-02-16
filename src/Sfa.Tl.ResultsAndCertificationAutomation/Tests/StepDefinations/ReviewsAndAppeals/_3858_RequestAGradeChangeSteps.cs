@@ -51,7 +51,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Reviews
             string uln = _scenarioContext["uln"] as string;
             TlevelDashboardPage.ClickResultsLink();
             ResultsDashboardPage.ClickSearchForALearnerLink();
-            ResultsSearchForALearnerPage.EnterULN(uln);
+            ResultsSearchForALearnerPage.EnterUln(uln);
         }
 
         [Then(@"when I press the Send button without entering any text")]

@@ -4,8 +4,8 @@
 	So that I can open the .csv file.
 
 Background: 
-Given I have logged in as a "PearsonSiteAdmin" user
-And I have deleted all data for "Pearson"
+Given I have logged in as a "CityAndGuildsAdmin" user
+And I have deleted all data for "CityAndGuilds"
 And I click on "Registrations" link
 And I click on "Upload multiple registrations" link
 And I upload "4866_DataExportRegistrations.csv" file
@@ -18,4 +18,4 @@ Scenario: 4866_Download registrations data
 And I click on "Download registrations data" link
 When I click the link containing 'Registrations data'
 Then registration file should be downloaded
-And I have deleted all data for "Pearson"
+And I have deleted all data for "CityAndGuilds"

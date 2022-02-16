@@ -17,7 +17,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.DataExport
         private static By backToHomeBtn { get; } = By.Id("backToHomeButton");
         private static By addResultsBtn { get; } = By.Id("backToAddResults");
         private static By downloadcoreResultsLink { get; } = By.XPath("//a[contains(text(),'Core results data')]");
+        private static By downloadSpecilismResultsLink { get; } = By.XPath("//a[contains(text(),'Specialism results data')]");
         public static string CoreResultsDownloadFile = string.Concat("Data\\", "4896_DownloadedCoreResultsData.csv");
+        public static string SpecialismResultsDownloadFile = string.Concat("Data\\", "5130_DownloadedSpecialismResultsData.csv");
         public static void VerifyNoResultsRecordPage()
         {
             Assert.AreEqual(noResultsPageUrl, WebDriver.Url);
@@ -45,5 +47,27 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.DataExport
             ClickElement(downloadcoreResultsLink);
             Thread.Sleep(5000);
         }
+        public static void DownloadSpecialismResults()
+        {
+            ClickElement(downloadSpecilismResultsLink);
+            Thread.Sleep(5000);
+        }
+
+        public static void VerifyCoreSpecialismDownloadLinksPresent()
+        {
+            bool coreLinkIsPresent = IsPresent(downloadcoreResultsLink);
+            Assert.AreEqual(true, coreLinkIsPresent);
+            bool specialismLinkIsPresent = IsPresent(downloadcoreResultsLink);
+            Assert.AreEqual(true, specialismLinkIsPresent);
+        }
+
+        public static void VerifyOnlySpecialismDownloadLinksPresent()
+        {
+            bool coreLinkIsPresent = IsPresent(downloadcoreResultsLink);
+            Assert.AreEqual(false, coreLinkIsPresent);
+            bool specialismLinkIsPresent = IsPresent(downloadSpecilismResultsLink);
+            Assert.AreEqual(true, specialismLinkIsPresent);
+        }
+
     }
 }

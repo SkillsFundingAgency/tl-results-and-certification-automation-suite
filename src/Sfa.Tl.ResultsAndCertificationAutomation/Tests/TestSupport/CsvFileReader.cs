@@ -8,14 +8,14 @@ using System.Linq;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
 {
-    class CsvFileReader
+    internal static class CsvFileReader
     {
         private static string Folder => FileHelper.GetDownloadFolder();
         public static void CsvDataFileCompare(string file)
         {
             CSVHelper read = new CSVHelper();
             var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
-            string stage2Results = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var stage2Results = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
             var expectedErrors = read.ExpectedData(stage2Results);
 
             var index = 0;
@@ -31,25 +31,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         }
         public static void CsvAcademicYearUpdate(string fileName)
         {
-            var GetFile = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{fileName}";
-            var AcademicYear = SqlQueries.GetAcademicYear();
-            string text = File.ReadAllText(GetFile);
-            text = text.Replace("{AcademicYear}", AcademicYear);
-            File.WriteAllText(GetFile, text);
+            var getFile = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{fileName}";
+            var academicYear = SqlQueries.GetAcademicYear();
+            var text = File.ReadAllText(getFile);
+            text = text.Replace("{AcademicYear}", academicYear);
+            File.WriteAllText(getFile, text);
         }
         public static void CsvAssessmentSeriesUpdate(string fileName)
         {
-            var GetFile = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{fileName}";
+            var getFile = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{fileName}";
             var AssessmentSeries = SqlQueries.GetAssessmentSeries();
-            string text = File.ReadAllText(GetFile);
+            var text = File.ReadAllText(getFile);
             text = text.Replace("{AssessmentSeries}", AssessmentSeries);
-            File.WriteAllText(GetFile, text);
+            File.WriteAllText(getFile, text);
         }
         public static void CsvRegistrationDataFileCompare(string file)
         {
             CSVHelperRegistrationData read = new CSVHelperRegistrationData();
             var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
-            string registrationDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var registrationDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
             var expectedErrors = read.ExpectedData(registrationDataFile);
 
             var index = 0;
@@ -73,7 +73,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         {
             CSVHelperCoreAssessmentData read = new CSVHelperCoreAssessmentData();
             var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
-            string coreAssessmentDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var coreAssessmentDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
             var expectedErrors = read.ExpectedData(coreAssessmentDataFile);
 
             var index = 0;
@@ -91,7 +91,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         {
             CSVHelperSpecialismAssessmentData read = new CSVHelperSpecialismAssessmentData();
             var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
-            string specialismAssessmentDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var specialismAssessmentDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
             var expectedErrors = read.ExpectedData(specialismAssessmentDataFile);
 
             var index = 0;
@@ -109,7 +109,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         {
             CSVHelperCoreResultsData read = new CSVHelperCoreResultsData();
             var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
-            string coreResultsDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var coreResultsDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
             var expectedErrors = read.ExpectedData(coreResultsDataFile);
 
             var index = 0;
@@ -124,5 +124,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
                 index++;
             }
         }
+
+        public static void CsvSpecialismResultsDataFileCompare(string file)
+        {
+            CSVHelperSpecialismResultsData read = new CSVHelperSpecialismResultsData();
+            var actualErrors = read.Main(Folder, PageHelper.GetLatestFile(Folder, "*.csv"));
+            var SpecialismResultsDataFile = $"{AppDomain.CurrentDomain.BaseDirectory}{file}";
+            var expectedErrors = read.ExpectedData(SpecialismResultsDataFile);
+
+            var index = 0;
+            foreach (var expectedError in expectedErrors)
+            {
+                var actualError = actualErrors.Skip(index).First();
+                Assert.AreEqual(expectedError.UlnNo, actualError.UlnNo);
+                Assert.AreEqual(expectedError.ComponentCodeSpecialism, actualError.ComponentCodeSpecialism);
+                Assert.AreEqual(expectedError.AssessmentSeriesSpecialism, actualError.AssessmentSeriesSpecialism);
+                Assert.AreEqual(expectedError.ComponenetGradeSpecialism, actualError.ComponenetGradeSpecialism);
+
+                index++;
+            }
+        }
+
+
+
     }
 }

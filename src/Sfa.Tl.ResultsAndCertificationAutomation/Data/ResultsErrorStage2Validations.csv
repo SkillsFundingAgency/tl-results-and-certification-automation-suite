@@ -1,20 +1,19 @@
 Line,ULN,Error
-2,,Data in more than the required 4 columns
+2,,Data in more than the required 7 columns
 3,,ULN required
-4,12345678901,ULN must be a 10 digit number
-5,123456789,ULN must be a 10 digit number
-6,1234567890,Core component code must have 8 digits only
-7,1234567892,Core component code must have 8 digits only
-8,1234567893,Core component code must have 8 digits only
-9,2233445566,Duplicate ULN found
-10,2233445566,Duplicate ULN found
-11,2233555566,No data after ULN - need a core component code
-12,1234123412,Core component code required when result is included
-13,1234123413,Core component code required when result is included
-14,1234123419,Core component code required when result is included
-14,1234123419,Assessment series needs to be provided
-15,1234123414,Assessment series needs to be provided
-16,1234123415,Core assessment series format must be text followed by a space and a 4-digit year
-17,1234123416,Core assessment series format must be text followed by a space and a 4-digit year
-18,1234123417,Core assessment series format must be text followed by a space and a 4-digit year
-19,1234123418,Core assessment series format must be text followed by a space and a 4-digit year
+4,95345678901,ULN must be a 10 digit number
+5,953456789,ULN must be a 10 digit number
+6,9534567890,Core component code must have 8 characters only
+7,9534567892,Core component code must have 8 characters only
+8,9533445566,Duplicate ULN found
+9,9533445566,Duplicate ULN found
+10,9533555566,No data provided for this learner. Please provide data or remove the row.
+11,9534123412,Core component code required when result is included
+12,9534123413,Core component code required when result is included
+13,9534123419,Core component code required when result is included
+13,9534123419,Assessment series needs to be provided
+14,9534123414,Assessment series needs to be provided
+15,9534123415,Core assessment series format must be text followed by a space and a 4-digit year
+16,9534123416,Core assessment series format must be text followed by a space and a 4-digit year
+17,9534123417,Core assessment series format must be text followed by a space and a 4-digit year
+18,9534123418,Core assessment series format must be text followed by a space and a 4-digit year

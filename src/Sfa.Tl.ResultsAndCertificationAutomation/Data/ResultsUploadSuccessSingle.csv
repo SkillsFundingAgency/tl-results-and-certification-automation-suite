@@ -1,2 +1,2 @@
-ULN,ComponentCode (Core),AssessmentSeries (Core),ComponentGrade (Core)
-9900000002,77777777,Autumn 2021,Unclassified
+ULN,ComponentCode (Core),AssessmentSeries (Core),ComponentGrade (Core),ComponentCode (Specialisms),AssessmentSeries (Specialisms),ComponentGrade (Specialisms)
+9900000002,77777777,Autumn 2021,Unclassified,,,

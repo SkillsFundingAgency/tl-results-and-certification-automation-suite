@@ -10,18 +10,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results
         private static string PageTitle { get; } = "Change core result – Manage T Level results – GOV.UK";
         private static string ErrorPageTitle { get; } = "Error: Change core result – Manage T Level results – GOV.UK";
         private  static  By ChangeBtn { get; } = By.Id("changeButton");
-        public static void VerifyChangeCoreResultsPage()
+
+        protected static void VerifyChangeCoreResultsPage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
-        public static void VerifyChangeCoreResultsErrorPage()
+
+        protected static void VerifyChangeCoreResultsErrorPage()
         {
             Assert.AreEqual(ErrorPageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
 
-        public static void ClickChangeBtn()
+        protected static void ClickChangeBtn()
         {
             ClickButton(ChangeBtn);
         }

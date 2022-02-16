@@ -1,0 +1,19 @@
+Line,ULN,Error
+2,9500000001,ComponentCode (Specialisms) must be provided when there is an entry in the AssessmentSeries (Specialisms) field
+2,9500000001,AssessmentSeries (Specialisms) must contain the word Summer followed by a space and a 4-digit year
+3,9500000002,AssessmentSeries (Specialisms) cannot be blank
+4,9500000003,ComponentCode (Specialisms) must have 8 characters only
+4,9500000003,AssessmentSeries (Specialisms) cannot be blank
+5,9500000004,ComponentCode (Specialisms) must have 8 characters only
+5,9500000004,AssessmentSeries (Specialisms) cannot be blank
+6,9500000005,AssessmentSeries (Specialisms) cannot be blank
+7,9500000006,ComponentCode (Specialisms) must be provided when there is an entry in the AssessmentSeries (Specialisms) field
+7,9500000006,AssessmentSeries (Specialisms) cannot be blank
+8,,Data in more than the required 7 columns
+9,,ULN required
+10,9500000009,No data provided for this learner. Please provide data or remove the row.
+11,95000000088,ULN must be a 10 digit number
+12,,ULN required
+13,9500000010,Specialism codes must be two different numbers
+14,9500000011,There is only one paired specialism grade. Please either add another grade or indicate a blank field using comma separation.
+15,9500000012,ComponentCode (Specialisms) must be provided when there is an entry in the AssessmentSeries (Specialisms) field

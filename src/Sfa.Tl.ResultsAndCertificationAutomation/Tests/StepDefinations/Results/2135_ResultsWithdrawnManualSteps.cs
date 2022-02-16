@@ -25,8 +25,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Then(@"I should see following message for that registration")]
         public void ThenIShouldSeeFollowingMessageForThatRegistration(Table table)
         {
-            var row = table.Rows;
-            var message = row[0]["Message"];
+            //var row = table.Rows;
+            //var message = row[0]["Message"];
+            var message = "Db FirstName Db LastName is withdrawn";
             ResultsDashboardPage.VerifyLearnerResultWithdrawnPage();
             Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(message));
             var uln = _scenarioContext["uln"] as string;

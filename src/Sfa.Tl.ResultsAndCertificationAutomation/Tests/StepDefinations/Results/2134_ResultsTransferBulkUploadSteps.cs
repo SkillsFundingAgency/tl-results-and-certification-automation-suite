@@ -56,7 +56,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         {
             var row = table.Rows;
             var uln = row[0]["Uln"];
-            searchResult(uln);
+            SearchResult(uln);
         }
 
         [Then(@"I should see newly transferred Provider in learner detail page with original Grade")]

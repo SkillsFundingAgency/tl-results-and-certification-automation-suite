@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
 {
-    public class UlnHelper
+    public static class UlnHelper
     {
         public static long GenerateUln()
         {
             // Step 1: Get all Ulns
-            List<long> existingUlns = GetExistingUlns();
-            Random random = new Random();
-            // Step 2: Random number Genera
-            bool sameUln = true;
+            var existingUlns = GetExistingUlns();
+            var random = new Random();
+            // Step 2: Random number Generator
+            var sameUln = true;
             long result = 0;
             while (sameUln)
             {

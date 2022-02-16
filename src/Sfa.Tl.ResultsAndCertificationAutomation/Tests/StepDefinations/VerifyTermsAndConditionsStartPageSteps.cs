@@ -12,13 +12,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations
         public void GivenTermsAndConditionsLinkInStartPage()
         {
             WebDriver.Navigate().GoToUrl(StartPageUrl);
-            Assert.True(WebDriver.FindElement(TCLink).Displayed);
+            Assert.True(WebDriver.FindElement(TcLink).Displayed);
         }
         
         [When(@"I click on Terms And Conditions link")]
         public void WhenIClickOnTermsAndConditionsLink()
         {
-            WebDriver.FindElement(TCLink).Click();
+            WebDriver.FindElement(TcLink).Click();
         }
         
         [Then(@"Terms And Conditions page should open")]

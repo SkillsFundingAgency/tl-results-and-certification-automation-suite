@@ -15,7 +15,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Given(@"I change the grade to Not Reveved")]
         public void GivenIChangeTheGradeToNotReveved()
         {
-            WebDriver.FindElement(ResultsDashboardPage.notreceivedGrade).Click();
+            WebDriver.FindElement(ResultsDashboardPage.NotreceivedGrade).Click();
         }
 
         [Then(@"I should see result change successfull message page")]

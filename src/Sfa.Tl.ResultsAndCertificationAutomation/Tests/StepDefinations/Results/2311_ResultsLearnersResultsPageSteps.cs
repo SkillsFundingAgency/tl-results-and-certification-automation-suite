@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Given(@"I search for a (.*)")]
         public void GivenISearchForA(string ULN)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
 
         [Then(@"the Learners Results for Withdrawn Learner page will be displayed for (.*)")]
@@ -99,7 +99,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         [Given(@"I navigate back to the Results Learners Results page from the Results Search for a learner page using (.*) and click the Results breadcrumb")]
         public void GivenINavigateBackToTheResultsLearnersResultsPageFromTheResultsSearchForALearnerPageUsingAndClickTheResultsBreadcrumb(string ULN)
         {
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
 
         [Given(@"I click the Results breadcrumb link")]
@@ -113,7 +113,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
         public void GivenINavigateBackToTheResultsLearnersResultsPageFromTheResultsDashboardUsingAndClickTheHomeBreadcrumb(string ULN)
         {
             AssessmentEntriesPage.ClickLinkByLabel("Manage a result");
-            ResultsSearchForALearnerPage.EnterULN(ULN);
+            ResultsSearchForALearnerPage.EnterUln(ULN);
         }
 
         [Given(@"I click the Home breadcrumb link")]

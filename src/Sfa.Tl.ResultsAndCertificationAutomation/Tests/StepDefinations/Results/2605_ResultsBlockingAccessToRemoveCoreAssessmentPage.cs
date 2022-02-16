@@ -42,7 +42,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results
             AssessmentEntriesLearnersAssessmentEntriesPage.PressHomeBreadcrumb();
             TlevelDashboardPage.ClickResultsLink();
             ResultsDashboardPage.ClickSearchForALearnerLink();
-            ResultsSearchForALearnerPage.EnterULN(uln);
+            ResultsSearchForALearnerPage.EnterUln(uln);
             ResultsLearnersResultsPage.ClickAddResultLink();
             ResultsSelectCorePage.SelectAStarResult();
         }
