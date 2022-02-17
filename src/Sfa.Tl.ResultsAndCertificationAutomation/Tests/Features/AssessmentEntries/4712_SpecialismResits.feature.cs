@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntries
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2535_EnterUlnPageValidations")]
-    public partial class _2535_EnterUlnPageValidationsFeature
+    [NUnit.Framework.DescriptionAttribute("4712_SpecialismResits")]
+    public partial class _4712_SpecialismResitsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2535_EnterUlnPageValidations.feature"
+#line 1 "4712_SpecialismResits.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "2535_EnterUlnPageValidations", "\tAs a Provider\r\n\tI need to be able to add English/Maths and Industry Placement da" +
-                    "ta for learners\r\n\tSo that learner details can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "4712_SpecialismResits", "As an AO , I want to bulk upload assessment entry for a resit without affecting p" +
+                    "revious assessment result.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,34 +76,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
         
         public virtual void FeatureBackground()
         {
+#line 5
+#line hidden
 #line 6
-#line hidden
-#line 7
-testRunner.Given("I have logged in as a \"ProviderBarnsleyAll\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
-testRunner.And("I click on \"Manage learner T Level records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
-testRunner.And("I click on \"Add a new learner T Level record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
-testRunner.And("I clear Uln data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2535 Verify mandatory field validation")]
+        [NUnit.Framework.DescriptionAttribute("4712 Add current specialism for a resit from bulkupload")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2535VerifyMandatoryFieldValidation()
+        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
+        public virtual void _4712AddCurrentSpecialismForAResitFromBulkupload()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Provider"};
+                    "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2535 Verify mandatory field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4712 Add current specialism for a resit from bulkupload", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -123,42 +114,42 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
 #line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table7.AddRow(new string[] {
+                            "9500000001"});
+#line 10
+testRunner.And("I have a registration with Specialism assessment series added for previous assess" +
+                        "ment year with grade", ((string)(null)), table7, "And ");
+#line hidden
+#line 13
+testRunner.And("I am on Assessment entries upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 14
-testRunner.When("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I upload assessment \"4712_AssessmentsValid.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table29.AddRow(new string[] {
-                            "Enter a ULN with 10 digits"});
 #line 15
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table29, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table30.AddRow(new string[] {
-                            "Enter a ULN with 10 digits"});
-#line 18
-testRunner.And("I should see the following error summary messages", ((string)(null)), table30, "And ");
+testRunner.Then("assessment upload success message will be shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2535 Verify Uln field validation")]
+        [NUnit.Framework.DescriptionAttribute("4712 Add current specialism for a resit manually")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2535VerifyUlnFieldValidation()
+        [NUnit.Framework.CategoryAttribute("AssessmentEntries")]
+        public virtual void _4712AddCurrentSpecialismForAResitManually()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Provider"};
+                    "AssessmentEntries"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2535 Verify Uln field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4712 Add current specialism for a resit manually", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -178,34 +169,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field name",
-                            "Value"});
-                table31.AddRow(new string[] {
-                            "EnterUln",
-                            "Abc123!"});
-#line 24
-testRunner.When("I enter following data", ((string)(null)), table31, "When ");
+#line 19
+testRunner.And("I have a registration with Specialism assessment series added for previous assess" +
+                        "ment year with grades", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
-testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+testRunner.And("I am on Learner assessment entries page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Message"});
-                table32.AddRow(new string[] {
-                            "Enter a valid 10-digit ULN"});
-#line 28
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table32, "Then ");
+#line 21
+testRunner.When("I add assessment for specialism couplets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table33.AddRow(new string[] {
-                            "Enter a valid 10-digit ULN"});
-#line 31
-testRunner.And("I should see the following error summary messages", ((string)(null)), table33, "And ");
+#line 22
+testRunner.Then("success message is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -267,29 +267,29 @@ testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFl
 #line 41
 testRunner.And("I click on \"Add your organisation’s address manually\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Value"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "departmentname",
                             "TestDept"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "organisationname",
                             "Test  Org"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "AddressLine1",
                             "99 Test Street"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "AddressLine2",
                             "Line 2"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Town",
                             "Liverpool"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Postcode",
                             "L4 5NN"});
 #line 42
-testRunner.And("I filled form with following information", ((string)(null)), table15, "And ");
+testRunner.And("I filled form with following information", ((string)(null)), table16, "And ");
 #line hidden
 #line 50
 testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -353,20 +353,20 @@ testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFl
 #line 60
 testRunner.And("I click on \"Add your organisation’s address manually\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Value"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "AddressLine1",
                             "99 Test Street"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Town",
                             "Liverpool"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Postcode",
                             "L4 5NN"});
 #line 61
-testRunner.And("I filled form with following information", ((string)(null)), table16, "And ");
+testRunner.And("I filled form with following information", ((string)(null)), table17, "And ");
 #line hidden
 #line 66
 testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -1,18 +1,16 @@
-using OpenQA.Selenium;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results;
-using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using TechTalk.SpecFlow;
-using System;
 
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Results;
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries;
 
 [Binding]
-public class TLRC4764_CannotAddSpecialismEntryWhenPreviousEntryHasNoGradeSteps : LearnerResultsPage
+public class Tlrc4764CannotAddSpecialismEntryWhenPreviousEntryHasNoGradeSteps : LearnerResultsPage
 {
     private readonly ScenarioContext _scenarioContext;
-    public TLRC4764_CannotAddSpecialismEntryWhenPreviousEntryHasNoGradeSteps(ScenarioContext scenarioContext)
+    public Tlrc4764CannotAddSpecialismEntryWhenPreviousEntryHasNoGradeSteps(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
     }
@@ -21,19 +19,19 @@ public class TLRC4764_CannotAddSpecialismEntryWhenPreviousEntryHasNoGradeSteps :
     [Given(@"I have a registration with Specialism assessment series added for previous assessment year with no grade")]
     public void GivenIHaveARegistrationWithSpecialismAssessmentSeriesAddedForPreviousAssessmentYearWithNoGrade()
     {
-        var summer2021SpecialismAssessSeriesID = SqlQueries.InsertSummer2021SpecialismAssessSeries();
+        var summer2021SpecialismAssessSeriesId = SqlQueries.InsertSummer2021SpecialismAssessSeries();
         var uln = UlnHelper.GenerateUln().ToString();
         _scenarioContext["uln"] = uln;
-        RegistrationCityAndGuilds.RegWithResitSpecialismAssessment(uln, summer2021SpecialismAssessSeriesID);
+        RegistrationCityAndGuilds.RegWithResitSpecialismAssessment(uln, summer2021SpecialismAssessSeriesId);
     }
 
     [Given(@"I have a registration with couplet specialism assessment series added for previous assessment year with no grade")]
     public void GivenIHaveARegistrationWithCoupletSpecialismAssessmentSeriesAddedForPreviousAssessmentYearWithNoGrade()
     {
-        var summer2021SpecialismAssessSeriesID = SqlQueries.InsertSummer2021SpecialismAssessSeries();
+        var summer2021SpecialismAssessSeriesId = SqlQueries.InsertSummer2021SpecialismAssessSeries();
         var uln = UlnHelper.GenerateUln().ToString();
         _scenarioContext["uln"] = uln;
-        RegistrationCityAndGuilds.RegWithResitCoupletSpecialismAssessment(uln, summer2021SpecialismAssessSeriesID);
+        RegistrationCityAndGuilds.RegWithResitCoupletSpecialismAssessment(uln, summer2021SpecialismAssessSeriesId);
     }
 
 
@@ -42,8 +40,8 @@ public class TLRC4764_CannotAddSpecialismEntryWhenPreviousEntryHasNoGradeSteps :
     public void GivenINavigateToTheLearnersAssessmentEntriesPage()
     {
         var uln = _scenarioContext["uln"] as string;
-        AssessmentEntriesPage.ClickElement(AssessmentEntriesPage.AssessmentEntriesLink);
-        AssessmentEntriesPage.ClickElement(AssessmentEntriesPage.SearchForLearnerLink);
+        ClickElement(AssessmentEntriesPage.AssessmentEntriesLink);
+        ClickElement(AssessmentEntriesPage.SearchForLearnerLink);
         AssessmentEntriesSearchForLearnerPage.EnterULN(uln);
         AssessmentEntriesLearnersDetailsPage.VerifyAssessmentEntriesDetailsPage();
     

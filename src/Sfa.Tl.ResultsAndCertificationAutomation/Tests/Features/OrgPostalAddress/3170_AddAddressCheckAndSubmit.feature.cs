@@ -276,20 +276,20 @@ testRunner.And("I click on \"Add address\"", ((string)(null)), ((TechTalk.SpecFl
 #line 41
 testRunner.And("I click on \"Add your organisation’s address manually\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Value"});
-                table13.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "AddressLine1",
                             "Test 1"});
-                table13.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Town",
                             "Coventry"});
-                table13.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Postcode",
                             "B43 6JN"});
 #line 42
-testRunner.And("I filled form with following information", ((string)(null)), table13, "And ");
+testRunner.And("I filled form with following information", ((string)(null)), table14, "And ");
 #line hidden
 #line 47
 testRunner.And("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -304,29 +304,29 @@ testRunner.And("the following values will be displayed on the Check and Submit p
 #line 50
 testRunner.When("I click the Change address link on the Add Address Check and Submit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Value"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "departmentname",
                             "Test Department"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "organisationname",
                             "TestOrg"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "AddressLine1",
                             "43 Kenton Street"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "AddressLine2",
                             "Hawthorns"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Town",
                             "Coventry"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Postcode",
                             "B43 6JN"});
 #line 51
-testRunner.And("I filled form with following information", ((string)(null)), table14, "And ");
+testRunner.And("I filled form with following information", ((string)(null)), table15, "And ");
 #line hidden
 #line 59
 testRunner.And("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
