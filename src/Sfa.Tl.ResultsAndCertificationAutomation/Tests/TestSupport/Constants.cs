@@ -133,5 +133,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string HeatingSpecialismId = "11";
         public const string VentilationSpecialismId = "16";
         public const string PathwayAssessmentSeriesId = "2";
+        public const string GasEngineeringId = "12";
     }
 }

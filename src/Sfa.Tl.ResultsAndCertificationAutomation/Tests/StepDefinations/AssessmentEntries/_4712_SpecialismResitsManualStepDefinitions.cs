@@ -14,14 +14,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             _scenarioContext = scenarioContext;
         }
 
-        [Given(@"I have a registration with Specialism assessment series added for previous assessment year with grades")]
-        public void GivenIHaveARegistrationWithSpecialismAssessmentSeriesAddedForPreviousAssessmentYearWithGrades()
-        {
-            var uln = UlnHelper.GenerateUln().ToString();
-            _scenarioContext["uln"] = uln;
-            var summer2021SpecialismAssessSeriesId = SqlQueries.InsertSummer2021SpecialismAssessSeries();
-            RegistrationCityAndGuilds.RegWithResitSpecialismAssessmentResult(uln, summer2021SpecialismAssessSeriesId);
-        }
+        //[Given(@"I have a registration with Specialism assessment series added for previous assessment year with grades")]
+        //public void GivenIHaveARegistrationWithSpecialismAssessmentSeriesAddedForPreviousAssessmentYearWithGrades()
+        //{
+        //    var uln = UlnHelper.GenerateUln().ToString();
+        //    _scenarioContext["uln"] = uln;
+        //    var summer2021SpecialismAssessSeriesId = SqlQueries.InsertSummer2021SpecialismAssessSeries();
+        //    RegistrationCityAndGuilds.RegWithResitSpecialismAssessmentResult(uln, summer2021SpecialismAssessSeriesId);
+        //}
 
         [When(@"I add assessment for specialism couplets")]
         public void WhenIAddAssessmentForSpecialismCouplets()
