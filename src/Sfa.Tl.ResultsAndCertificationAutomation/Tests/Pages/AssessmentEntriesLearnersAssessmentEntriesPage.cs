@@ -11,30 +11,30 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private const string PageTitle = "Learner details - Assessment entries – Manage T Level results – GOV.UK";
         private const string ExpectedPageHeader = "Learner's assessment entries";
         private static By PageHeader { get; } = By.XPath("//*[@id='main-content']//h1");
-        private static By SubHeaderULN { get; } = By.XPath("//*[@id='main-content']/div/div/dl/div[2]");
+        private static By SubHeaderUln { get; } = By.XPath("//*[@id='main-content']/div/div/dl/div[2]");
         private static By SubHeaderName { get; } = By.XPath("//*[@id='main-content']/div/div/dl/div[1]");
-        private static By SubHeaderProvider { get; } = By.XPath("//*[@id='main-content']/div/div/dl/div[4]");
         private static By CoreDetails { get; } = By.XPath("//*[@id='main-content']/div/div/h3[1]");
         private static By SpecialismDetails { get; } = By.XPath("//*[@id='main-content']/div/div/h3[2]");
-        public static By SearchAgainLink { get; } = By.XPath("//*[contains(text(),'Search again')]");
-        public static By ViewAndAmendLearnerDetailsLink { get; } = By.XPath("//*[contains(text(),'View and amend')]");
-        public static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
-        public static By AssessMentEntriesBreadcrumb { get; } = By.Id("breadcrumb1");
-        public static By SearchForALearnerBreadcrumb { get; } = By.Id("breadcrumb2");
-        public static string ExpectedCoreText = "Core: Agriculture, Environmental and Animal Care (77777777)";
-        public static string ExpectedSpecialismText = "Specialism: Agriculture, Land Management and Production (70000002)";
-        public static string ExpectedCoreAssessmentEntry = "Summer 2021";
-        public static string ExpectedNoCoreAssessmentEntry = "Not specified";
-        public static string ExpectedNoSpecialismAssessmentEntry = "Available to add after Autumn 2021 series has passed";
+        private static By SearchAgainLink { get; } = By.XPath("//*[contains(text(),'Search again')]");
+        private static By ViewAndAmendLearnerDetailsLink { get; } = By.XPath("//*[contains(text(),'View and amend')]");
+        private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
+        private static By AssessMentEntriesBreadcrumb { get; } = By.Id("breadcrumb1");
+        private static By SearchForALearnerBreadcrumb { get; } = By.Id("breadcrumb2");
+        private const string ExpectedCoreText = "Core: Agriculture, Environmental and Animal Care (77777777)";
+        private const string ExpectedSpecialismText = "Specialism: Agriculture, Land Management and Production (70000002)";
+        private const string ExpectedCoreAssessmentEntry = "Summer 2021";
+        private const string ExpectedNoCoreAssessmentEntry = "Not specified";
+
+        private static readonly string ExpectedNoSpecialismAssessmentEntry = "Available to add after Autumn 2021 series has passed";
         //public static string ExpectedSpecialismAssessmentEntry = "Autumn 2022";
-        public static string ExpectedSpecialismAssessmentEntry = "Available to add after Autumn 2021 series has passed";
-        public static string ExpectedCoreAndSpecialismHeader = "First assessment entry";
-        public static string ExpectedSpecialismAsessmentEntryText = "Available to add after Autumn 2021 series has passed";
-        public static By CoreAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[1]/div/dt");
-        public static By SpecialismAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[2]/div/dt");
+        private const string ExpectedSpecialismAssessmentEntry = "Available to add after Autumn 2021 series has passed";
+        private const string ExpectedCoreAndSpecialismHeader = "First assessment entry";
+        private const string ExpectedSpecialismAsessmentEntryText = "Available to add after Autumn 2021 series has passed";
+        private static readonly By CoreAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[1]/div/dt");
+        private static readonly By SpecialismAssessmentEntryHeading = By.XPath("//*[@id='main-content']//dl[2]/div/dt");
         public static By CoreAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[1]//p");
         private static By SpecialismAssessmentDetails { get; } = By.XPath("//*[@id='main-content']//dl[2]//p");
-        public static By AddRemoveEntryLink = By.Id("coreassessmententry");
+        public static readonly By AddRemoveEntryLink = By.Id("coreassessmententry");
 
         public static void VerifyLearnersAssessmentEntriesPage()
         {
@@ -60,23 +60,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(ExpectedSpecialismAsessmentEntryText, WebDriver.FindElement(SpecialismAssessmentDetails).Text);
         }
 
-        public static void VerifyDynamicHeaders(string ULN)
+        public static void VerifyDynamicHeaders(string uln)
         {
             //The registration being asserted has been created using data from the Constants class
-            string ExpectedULNString = "ULN\r\n" + ULN;
-            Assert.AreEqual(ExpectedULNString, WebDriver.FindElement(SubHeaderULN).Text);
-            string ExpectedNameString = "Name\r\n" + Constants.ManualRegFirstName + " " + Constants.ManualRegLastName;
-            Assert.AreEqual(ExpectedNameString, WebDriver.FindElement(SubHeaderName).Text);
+            var expectedUlnString = "ULN\r\n" + uln;
+            Assert.AreEqual(expectedUlnString, WebDriver.FindElement(SubHeaderUln).Text);
+            const string expectedNameString = "Name\r\n" + Constants.ManualRegFirstName + " " + Constants.ManualRegLastName;
+            Assert.AreEqual(expectedNameString, WebDriver.FindElement(SubHeaderName).Text);
             //string ExpectedProvider = "Provider\r\n" + RegistrationsManualPage.InputPovider;
             //Assert.AreEqual(ExpectedProvider, WebDriver.FindElement(SubHeaderProvider).Text);
         }
 
         public static void VerifyDataCreatedFromDb(string uln)
         {
-            string ExpectedULNString = "ULN\r\n" + uln;
-            Assert.AreEqual(ExpectedULNString, WebDriver.FindElement(SubHeaderULN).Text);
-            string ExpectedNameString = "Name\r\n" + Constants.DbFirstName + " " + Constants.DbLastName;
-            Assert.AreEqual(ExpectedNameString, WebDriver.FindElement(SubHeaderName).Text);
+            var expectedUlnString = "ULN\r\n" + uln;
+            Assert.AreEqual(expectedUlnString, WebDriver.FindElement(SubHeaderUln).Text);
+            const string expectedNameString = "Name\r\n" + Constants.DbFirstName + " " + Constants.DbLastName;
+            Assert.AreEqual(expectedNameString, WebDriver.FindElement(SubHeaderName).Text);
             //string ExpectedProvider = "Provider: " + Constants.DbProviderName;
             //Assert.AreEqual(ExpectedProvider, WebDriver.FindElement(SubHeaderProvider).Text);
         }

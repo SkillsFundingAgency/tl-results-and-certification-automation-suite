@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Model;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
@@ -264,6 +265,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var specialismAssessmentId2 = InsertOldSpecialismAssessment2(specialismId2, SpecialismAssessmentID);
             InsertAssessmentResult(specialismAssessmentId1, 10);
             InsertAssessmentResult(specialismAssessmentId2, 11);
+        }
+        public static void WithdrawnRegWithCoreAndSpecialismAssessmentResults(string uln)
+        {
+            RegWithCoreAndSpecialismAssessmentResults(uln);
+            SqlQueries.UpdateRegWithdrawn(uln);
         }
     }
 }

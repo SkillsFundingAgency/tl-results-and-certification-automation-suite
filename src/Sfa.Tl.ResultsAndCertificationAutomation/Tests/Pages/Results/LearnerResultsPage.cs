@@ -91,21 +91,21 @@ public class LearnerResultsPage: ElementHelper
         Assert.IsTrue(WebDriver.FindElement(SuccessMessage).Text.Contains(message));
     }
 
-    public static void VerifyCountOfAddResultToPreviousSpecialismLinksDsplayed(int countOfLinksDisplayed)
+    protected static void VerifyCountOfAddResultToPreviousSpecialismLinksDsplayed(int countOfLinksDisplayed)
     {        
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'add a result to this learner')]"));
-        int count = element.Count;
+        var count = element.Count;
         Assert.AreEqual(countOfLinksDisplayed, count);
     }
 
-    public static void ClickAddResultToPreviousSpecialism()
+    protected static void ClickAddResultToPreviousSpecialism()
     {
         ClickElement(AddResultToPreviousSpecialismLink);   
     }
 
-    public static void VerifyAddResultToPreviousSpecialismLinksNotDisplayed()
+    protected static void VerifyAddResultToPreviousSpecialismLinksNotDisplayed()
     {
-        bool notPresent = IsPresent(AddResultToPreviousSpecialismLink);
+        var notPresent = IsPresent(AddResultToPreviousSpecialismLink);
         Assert.AreEqual(false, notPresent);
     }
 
