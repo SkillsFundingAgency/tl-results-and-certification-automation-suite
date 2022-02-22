@@ -45,6 +45,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
             text = text.Replace("{AssessmentSeries}", AssessmentSeries);
             File.WriteAllText(getFile, text);
         }
+
+        public static void CsvSpecialismAssessmentSeriesUpdate(string fileName)
+        {
+            var getFile = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\{fileName}";
+            var specialismAssessmentSeries = SqlQueries.GetSpecialismAssessmentSeries();
+            var text = File.ReadAllText(getFile);
+            text = text.Replace("{SpecialismAssessmentSeries}", specialismAssessmentSeries);
+            File.WriteAllText(getFile, text);
+        }
+
         public static void CsvRegistrationDataFileCompare(string file)
         {
             CSVHelperRegistrationData read = new CSVHelperRegistrationData();

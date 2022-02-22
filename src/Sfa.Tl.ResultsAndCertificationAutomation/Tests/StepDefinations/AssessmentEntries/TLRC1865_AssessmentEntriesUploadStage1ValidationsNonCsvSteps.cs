@@ -13,6 +13,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             CsvFileReader.CsvAssessmentSeriesUpdate(fileName);
         }
 
+        [Given(@"I have a active Specialism Assessment Series in ""([^""]*)""")]
+        public void GivenIHaveAActiveSpecialismAssessmentSeriesIn(string fileName)
+        {
+            CsvFileReader.CsvSpecialismAssessmentSeriesUpdate(fileName);
+        }
+
+
         [When(@"I upload ""(.*)"" file")]
         public void WhenIUpload(string file)
         {
