@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Model;
+﻿using System.Linq;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
@@ -79,6 +77,22 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayAssessment, ConnectionString);
             var regPathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);
             return (int)regPathwayId.FirstOrDefault().FirstOrDefault();
+        }
+        private static int InsertOldSpecialismAssessment1(int specialismId, int Summer2021SpecialismAssessmentSeries)
+        {
+            var createSpecialismAssessment = "Insert into TqSpecialismAssessment values('" + specialismId + "','" + Summer2021SpecialismAssessmentSeries + "',GETDATE(),Null,1,0,GETDATE(),'System',GETDATE(),'System')";
+            var getSpecialismAssessmentId = "select top 1 id from TqSpecialismAssessment where TqRegistrationSpecialismId  = '" + specialismId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismAssessment, ConnectionString);
+            var specialismAssessmentId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSpecialismAssessmentId, ConnectionString);
+            return (int)specialismAssessmentId.FirstOrDefault().FirstOrDefault();
+        }
+        private static int InsertOldSpecialismAssessment2(int specialismId, int Summer2021SpecialismAssessmentSeries)
+        {
+            var createSpecialismAssessment = "Insert into TqSpecialismAssessment values('" + specialismId + "','" + Summer2021SpecialismAssessmentSeries + "',GETDATE(),Null,1,0,GETDATE(),'System',GETDATE(),'System')";
+            var getSpecialismAssessmentId = "select top 1 id from TqSpecialismAssessment where TqRegistrationSpecialismId  = '" + specialismId + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismAssessment, ConnectionString);
+            var specialismAssessmentId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSpecialismAssessmentId, ConnectionString);
+            return (int)specialismAssessmentId.FirstOrDefault().FirstOrDefault();
         }
         private static int InsertSpecialismAssessment1(int specialismId)
         {
@@ -254,34 +268,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertSpecialismAssessment1(specialismId1, SpecialismAssessmentID);
         }
 
-        public static void RegWithResitSpecialismAssessmentWithResult(string uln, int SpecialismAssessmentID)
+        public static void RegWithResitSpecialismAssessmentWithResult(string uln, int specialismAssessmentId)
         {
             var profileId = InsertRegistrationProfile(uln);
             var pathwayId = InsertRegistrationPathway(profileId);
             var specialismId1 = InsertSingleRegistrationSpecialism(pathwayId);
-            var specialismAsssessmentID = InsertSpecialismAssessment1(specialismId1, SpecialismAssessmentID);
-            InsertSpecialismResult(specialismAsssessmentID);
+            var specialismAsssessmentId = InsertSpecialismAssessment1(specialismId1, specialismAssessmentId);
+            InsertSpecialismResult(specialismAsssessmentId);
         }
 
-        public static void RegWithResitCoupletSpecialismAssessment(string uln, int SpecialismAssessmentID)
+        public static void RegWithResitCoupletSpecialismAssessment(string uln, int specialismAssessmentId)
         {
             var profileId = InsertRegistrationProfile(uln);
             var pathwayId = InsertRegistrationPathway(profileId);
             var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
-            InsertSpecialismAssessment1(specialismId1, SpecialismAssessmentID);
+            InsertSpecialismAssessment1(specialismId1, specialismAssessmentId);
             var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
-            InsertSpecialismAssessment2(specialismId2, SpecialismAssessmentID);
+            InsertSpecialismAssessment2(specialismId2, specialismAssessmentId);
             var coreAssessmentId = InsertCoreAssessment(pathwayId);
             InsertCoreResultFinal(coreAssessmentId, 1);
         }
-        public static void RegWithResitSpecialismAssessmentResult(string uln, int SpecialismAssessmentID)
+        public static void RegWithResitSpecialismAssessmentResult(string uln, int specialismAssessmentId)
         {
             var profileId = InsertRegistrationProfile(uln);
             var pathwayId = InsertRegistrationPathway(profileId);
             var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
             var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
-            var specialismAssessmentId1 = InsertOldSpecialismAssessment1(specialismId1, SpecialismAssessmentID);
-            var specialismAssessmentId2 = InsertOldSpecialismAssessment2(specialismId2, SpecialismAssessmentID);
+            var specialismAssessmentId1 = InsertOldSpecialismAssessment1(specialismId1, specialismAssessmentId);
+            var specialismAssessmentId2 = InsertOldSpecialismAssessment2(specialismId2, specialismAssessmentId);
             InsertAssessmentResult(specialismAssessmentId1, 10);
             InsertAssessmentResult(specialismAssessmentId2, 11);
         }
