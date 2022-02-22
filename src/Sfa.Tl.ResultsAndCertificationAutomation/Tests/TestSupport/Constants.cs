@@ -129,7 +129,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RaaExamPeriod = "Summer 2021";
         public const string RaaOriginalGrade = "A";
         // City and Guillds
-        public const string CityAndGuildsProviderId = "15399";
+        //public const string CityAndGuildsProviderId_newEnv = "15399";
+        public const string CityAndGuildsProviderId = "16026";
         public const string HeatingSpecialismId = "11";
         public const string VentilationSpecialismId = "16";
         public const string PathwayAssessmentSeriesId = "2";
