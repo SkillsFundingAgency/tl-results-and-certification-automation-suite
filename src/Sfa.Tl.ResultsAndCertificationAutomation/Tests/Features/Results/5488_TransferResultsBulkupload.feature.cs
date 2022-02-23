@@ -82,16 +82,20 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
 #line 6
 testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Uln"});
+            table82.AddRow(new string[] {
+                        "9000000001"});
 #line 7
-testRunner.And("I have a registration with core and specialism assessments results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 8
-testRunner.And("I click on \"Registrations\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
-testRunner.And("I click on \"Upload multiple registrations\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have below registration with core and specialism assessments results", ((string)(null)), table82, "And ");
 #line hidden
 #line 10
+testRunner.And("I click on \"Registrations\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+testRunner.And("I click on \"Upload multiple registrations\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
 testRunner.And("I upload \"5330_RegistrationsValid.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -107,7 +111,7 @@ testRunner.And("I upload \"5330_RegistrationsValid.csv\" file", ((string)(null))
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5488 Transfer results from bulkupload", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -130,8 +134,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 14
-testRunner.When("I am on result details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table83.AddRow(new string[] {
+                            "9900000001"});
+#line 16
+testRunner.When("I search the learner result", ((string)(null)), table83, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Provider",
+                            "Grade"});
+                table84.AddRow(new string[] {
+                            "Automation Test2",
+                            "A*"});
+#line 19
+testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
+                        "e", ((string)(null)), table84, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

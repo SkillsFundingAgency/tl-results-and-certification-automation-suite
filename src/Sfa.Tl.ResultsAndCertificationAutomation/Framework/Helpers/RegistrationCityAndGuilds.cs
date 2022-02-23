@@ -300,5 +300,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertAssessmentResult(specialismAssessmentId1, 10);
             InsertAssessmentResult(specialismAssessmentId2, 11);
         }
+        public static void RegWithResitCoupletSpecialismAssessmentWithoutResult(string uln, int SpecialismAssessmentID)
+        {
+            var profileId = InsertRegistrationProfile(uln);
+            var pathwayId = InsertRegistrationPathway(profileId);
+            var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
+            InsertSpecialismAssessment1(specialismId1, SpecialismAssessmentID);
+            var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
+            InsertSpecialismAssessment2(specialismId2, SpecialismAssessmentID);
+            var coreAssessmentId = InsertCoreAssessment(pathwayId);
+
+        }
+
+        public static void RegWithCoupletSpecialismAssessmentResults(string uln)
+        {
+            var profileId = InsertRegistrationProfile(uln);
+            var pathwayId = InsertRegistrationPathway(profileId);
+            var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
+            var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
+            var coreAssessmentId = InsertCoreAssessment(pathwayId);
+            var specialismAssessmentId1 = InsertSpecialismAssessment1(specialismId1);
+            var specialismAssessmentId2 = InsertSpecialismAssessment2(specialismId2);
+            InsertAssessmentResult(specialismAssessmentId1, 10);
+            InsertAssessmentResult(specialismAssessmentId2, 11);
+        }
+        public static void WithdrawnRegWithCoreAndSpecialismAssessmentResults(string uln)
+        {
+            RegWithCoreAndSpecialismAssessmentResults(uln);
+            SqlQueries.UpdateRegWithdrawn(uln);
+        }
     }
 }
