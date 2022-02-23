@@ -300,10 +300,5 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertAssessmentResult(specialismAssessmentId1, 10);
             InsertAssessmentResult(specialismAssessmentId2, 11);
         }
-        public static void WithdrawnRegWithCoreAndSpecialismAssessmentResults(string uln)
-        {
-            RegWithCoreAndSpecialismAssessmentResults(uln);
-            SqlQueries.UpdateRegWithdrawn(uln);
-        }
     }
 }
