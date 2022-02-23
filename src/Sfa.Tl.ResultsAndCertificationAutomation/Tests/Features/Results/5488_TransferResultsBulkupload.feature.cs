@@ -96,7 +96,13 @@ testRunner.And("I click on \"Registrations\" link", ((string)(null)), ((TechTalk
 testRunner.And("I click on \"Upload multiple registrations\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
-testRunner.And("I upload \"5330_RegistrationsValid.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I upload \"5488_RegistrationsTransfer.csv\" file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+testRunner.And("I am on Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+testRunner.And("I click on \"Results\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -111,7 +117,7 @@ testRunner.And("I upload \"5330_RegistrationsValid.csv\" file", ((string)(null))
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5488 Transfer results from bulkupload", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -137,19 +143,23 @@ this.FeatureBackground();
                 TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
                 table83.AddRow(new string[] {
-                            "9900000001"});
-#line 16
+                            "9000000001"});
+#line 18
 testRunner.When("I search the learner result", ((string)(null)), table83, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
                             "Provider",
-                            "Grade"});
+                            "Core_Grade",
+                            "Assessment1_Grade",
+                            "Assessment2_Grade"});
                 table84.AddRow(new string[] {
-                            "Automation Test2",
-                            "A*"});
-#line 19
-testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
-                        "e", ((string)(null)), table84, "Then ");
+                            "Barnsley College",
+                            "A*",
+                            "Distinction",
+                            "Merit"});
+#line 21
+testRunner.Then("I should see newly transferred Provider in learner detail page with all original " +
+                        "Grades", ((string)(null)), table84, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

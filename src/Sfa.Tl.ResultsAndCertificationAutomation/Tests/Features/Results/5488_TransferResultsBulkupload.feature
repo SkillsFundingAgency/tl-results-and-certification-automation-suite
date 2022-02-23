@@ -9,13 +9,15 @@ And I have below registration with core and specialism assessments results
 | 9000000001 |
 And I click on "Registrations" link
 And I click on "Upload multiple registrations" link
-And I upload "5330_RegistrationsValid.csv" file
+And I upload "5488_RegistrationsTransfer.csv" file
+And I am on Home page
+And I click on "Results" link
 
 @RegressionTest @Results
 Scenario: 5488 Transfer results from bulkupload
 When I search the learner result
 | Uln        |
-| 9900000001 |
-Then I should see newly transferred Provider in learner detail page with original Grade
-| Provider                    | Grade |
-| Automation Test2			  | A*    |
+| 9000000001 |
+Then I should see newly transferred Provider in learner detail page with all original Grades
+| Provider         | Core_Grade | Assessment1_Grade | Assessment2_Grade |
+| Barnsley College | A*         | Distinction       | Merit              |
