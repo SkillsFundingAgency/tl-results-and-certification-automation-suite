@@ -39,8 +39,8 @@ public static class WebDriverFactory
                 return new InternetExplorerDriver();
             case "Chrome":
                 var chromeOptions = new ChromeOptions();
-                chromeOptions.AddArguments("--incognito", "--headless");
-                //chromeOptions.AddArguments("--incognito");
+                //chromeOptions.AddArguments("--incognito", "--headless");
+                chromeOptions.AddArguments("--incognito");
                 chromeOptions.AddUserProfilePreference("download.default_directory", FileHelper.GetDownloadFolder());
                 return new ChromeDriver(chromeOptions);
 
