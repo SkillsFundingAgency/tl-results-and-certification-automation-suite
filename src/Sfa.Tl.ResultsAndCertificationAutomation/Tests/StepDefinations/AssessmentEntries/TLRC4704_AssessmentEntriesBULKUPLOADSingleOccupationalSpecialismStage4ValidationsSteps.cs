@@ -39,6 +39,39 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Assessm
             RegistrationCityAndGuilds.RegWithSpecialismAssessmentResults(uln);
         }
 
+        [Given(@"I have a registration with Specialism assessment series added for current assessment series with a grade")]
+        public void GivenIHaveARegistrationWithSpecialismAssessmentSeriesAddedForCurrentAssessmentSeriesWithAGrade()
+        {
+            var uln = UlnHelper.GenerateUln().ToString();
+            _scenarioContext["uln"] = uln;
+            RegistrationCityAndGuilds.RegWithSpecialismAssessmentResults(uln);
+        }
+
+        [Given(@"I have a registration with couplet Specialism assessment series added for current assessment series with a grade")]
+        public void GivenIHaveARegistrationWithCoupletSpecialismAssessmentSeriesAddedForCurrentAssessmentSeriesWithAGrade()
+        {
+            var uln = UlnHelper.GenerateUln().ToString();
+            _scenarioContext["uln"] = uln;
+            RegistrationCityAndGuilds.RegWithCoupletSpecialismAssessmentResults(uln);
+        }
+
+        [Given(@"I have a registration with resit couplet Specialism assessment series added for previous assessment series with a grade")]
+        public void GivenIHaveARegistrationWithResitCoupletSpecialismAssessmentSeriesAddedForPreviousAssessmentSeriesWithAGrade()
+        {
+            var uln = UlnHelper.GenerateUln().ToString();
+            _scenarioContext["uln"] = uln;
+            var summer2021SpecialismAssessSeriesID = SqlQueries.InsertSummer2021SpecialismAssessSeries();
+            RegistrationCityAndGuilds.RegWithResitSpecialismAssessmentResult(uln, summer2021SpecialismAssessSeriesID);
+        }
+
+        [Given(@"I have a registration with Specialism assessment series added for previous assessment series with a grade")]
+        public void GivenIHaveARegistrationWithSpecialismAssessmentSeriesAddedForPreviousAssessmentSeriesWithAGrade()
+        {
+            var uln = UlnHelper.GenerateUln().ToString();
+            _scenarioContext["uln"] = uln;
+            var summer2021SpecialismAssessSeriesID = SqlQueries.InsertSummer2021SpecialismAssessSeries();
+            RegistrationCityAndGuilds.RegWithResitSpecialismAssessmentWithResult(uln, summer2021SpecialismAssessSeriesID);
+        }
 
 
     }

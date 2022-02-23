@@ -105,5 +105,23 @@ public class Tlrc4764CannotAddSpecialismEntryWhenPreviousEntryHasNoGradeSteps : 
         VerifyAddResultToPreviousSpecialismLinksNotDisplayed();
     }
 
+    [Given(@"I have a registration with couplet specialism assessment series without result added for previous assessment year with no grade")]
+    public void GivenIHaveARegistrationWithCoupletSpecialismAssessmentSeriesWithoutResultAddedForPreviousAssessmentYearWithNoGrade()
+    {
+        var summer2021SpecialismAssessSeriesId = SqlQueries.InsertSummer2021SpecialismAssessSeries();
+        var uln = UlnHelper.GenerateUln().ToString();
+        _scenarioContext["uln"] = uln;
+        RegistrationCityAndGuilds.RegWithResitCoupletSpecialismAssessmentWithoutResult(uln, summer2021SpecialismAssessSeriesId);
+    }
+
+
+    [Given(@"I have a registration with couplet specialism assessment series and a core assessment with no grade")]
+    public void GivenIHaveARegistrationWithCoupletSpecialismAssessmentSeriesAndACoreAssessmentWithNoGrade()
+    {
+        var uln = UlnHelper.GenerateUln().ToString();
+        _scenarioContext["uln"] = uln;
+        RegistrationCityAndGuilds.RegWithCoreAndSpecialismAssessment(uln);
+    }
+
 
 }
