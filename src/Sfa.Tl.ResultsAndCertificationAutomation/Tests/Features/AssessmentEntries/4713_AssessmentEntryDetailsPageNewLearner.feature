@@ -13,7 +13,7 @@ And I click on "Upload" button
 And I navigated Home page
 And I navigate to the Search for a learner page
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 4713_Navigate to Assessment Details page for a new learner with a single specialism code
 When I enter the following <ULN>
 Then I am navigated to the Assessment Details page for <ULN>
@@ -44,7 +44,7 @@ Examples:
 | 9900000013  |
 
 
-@RegressionTest @AssessmentEntriesUpload
+@Ignore @RegressionTest @AssessmentEntriesUpload
 Scenario: 4713_Navigate to Assessment Details page for a new learner with multiple specialism codes
 When I enter the following <ULN>
 Then I am navigated to the Assessment Details page for <ULN>

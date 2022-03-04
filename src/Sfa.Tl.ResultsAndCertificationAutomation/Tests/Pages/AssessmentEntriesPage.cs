@@ -47,6 +47,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         protected static readonly string AssessmentUploadStage3WithdrawnRegError = string.Concat("Data\\", "AssessmentStage3WithdrawnRegError.csv");
         protected static readonly string AssessmentUploadAddFirstAssessEntry = string.Concat("Data\\", "AssessmentAddFirstAssessSeriesErrors.csv");
         protected static readonly string AssessmentUploadMultipleSpecialismErrors = string.Concat("Data\\", "AssessmentMultipleSpecialismErrors.csv");
+        protected static readonly string TLRC4695AssessmentUploadErrors = string.Concat("Data\\", "4695ExpectedErrorReport.csv");
 
         //Buttons
         private static readonly By BackToAssessmentEntriesButton = By.XPath("//*[contains(text(),'Back to assessment')]");

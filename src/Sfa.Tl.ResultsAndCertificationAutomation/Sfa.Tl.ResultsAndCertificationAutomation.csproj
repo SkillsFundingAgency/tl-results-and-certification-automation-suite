@@ -144,7 +144,7 @@
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Selenium.Support" Version="4.1.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.1.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="97.0.4692.7100" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="98.0.4758.10200" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="4.0.0" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.40" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
@@ -174,6 +174,27 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\4693RegistrationsData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4695AssessmentEntryData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4695ExpectedErrorReport.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4704AssessmentEntryData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4704AssessmentEntryDataRemoveAssessSeries.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4704AssessmentEntryDataRemoveAssessSeriesErrReport.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4704ExpectedErrorReport.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\4712_AssessmentsValid.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\4714RegistrationsData.csv">
@@ -261,6 +282,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\5330_ResultsValid.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\5488_RegistrationsTransfer.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\AssessmentEntryStage2InvalidHeader.csv">

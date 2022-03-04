@@ -95,18 +95,18 @@ testRunner.And("I have moved registration in to withdrawn state", ((string)(null
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4889 Search for a withdrawn registration which is registered and active another A" +
-            "O")]
+        [NUnit.Framework.DescriptionAttribute("4889 Search for a withdrawn registration (NCFE) which is registered and active wi" +
+            "th another AO (Pearson)")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("WithdrawRegistration")]
-        public virtual void _4889SearchForAWithdrawnRegistrationWhichIsRegisteredAndActiveAnotherAO()
+        public virtual void _4889SearchForAWithdrawnRegistrationNCFEWhichIsRegisteredAndActiveWithAnotherAOPearson()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4889 Search for a withdrawn registration which is registered and active another A" +
-                    "O", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4889 Search for a withdrawn registration (NCFE) which is registered and active wi" +
+                    "th another AO (Pearson)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -174,18 +174,18 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("4889 Search for a withdrawn registration which is not registered and active anoth" +
-            "er AO")]
+        [NUnit.Framework.DescriptionAttribute("4889 Search for a withdrawn registration which is not registered and active with " +
+            "another AO")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("WithdrawRegistration")]
-        public virtual void _4889SearchForAWithdrawnRegistrationWhichIsNotRegisteredAndActiveAnotherAO()
+        public virtual void _4889SearchForAWithdrawnRegistrationWhichIsNotRegisteredAndActiveWithAnotherAO()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "WithdrawRegistration"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4889 Search for a withdrawn registration which is not registered and active anoth" +
-                    "er AO", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4889 Search for a withdrawn registration which is not registered and active with " +
+                    "another AO", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

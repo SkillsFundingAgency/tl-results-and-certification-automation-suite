@@ -134,22 +134,22 @@ this.FeatureBackground();
 #line 15
 testRunner.And("I see Add address manually page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "DepartmentName"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "OrganisationName"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "AddressLine1"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "AddressLine2"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Town"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Postcode"});
 #line 16
-testRunner.And("I see following fields in the page", ((string)(null)), table7, "And ");
+testRunner.And("I see following fields in the page", ((string)(null)), table8, "And ");
 #line hidden
 #line 24
 testRunner.And("Back link takes me to what is Org postal address page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -197,31 +197,31 @@ this.FeatureBackground();
 #line 28
 testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Error messages"});
-                table8.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "AddressLine1",
                             "Enter your building and street"});
-                table8.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Town",
                             "Enter your town or city"});
-                table8.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Postcode",
                             "Enter your postcode"});
 #line 29
-testRunner.Then("I should see the following error messages", ((string)(null)), table8, "Then ");
+testRunner.Then("I should see the following error messages", ((string)(null)), table9, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table9.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Enter your building and street"});
-                table9.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Enter your town or city"});
-                table9.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Enter your postcode"});
 #line 34
-testRunner.And("I should see the following error summary messages", ((string)(null)), table9, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table10, "And ");
 #line hidden
 #line 39
 testRunner.And("I should see error in page title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -266,39 +266,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Value"});
-                table10.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "AddressLine1",
                             "Test"});
-                table10.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Town",
                             "Test"});
-                table10.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Postcode",
                             "Test"});
 #line 43
-testRunner.And("I filled form with following information", ((string)(null)), table10, "And ");
+testRunner.And("I filled form with following information", ((string)(null)), table11, "And ");
 #line hidden
 #line 48
 testRunner.When("click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Error messages"});
-                table11.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Postcode",
                             "Enter a valid UK postcode"});
 #line 49
-testRunner.Then("I should see the following error messages", ((string)(null)), table11, "Then ");
+testRunner.Then("I should see the following error messages", ((string)(null)), table12, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table12.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Enter a valid UK postcode"});
 #line 52
-testRunner.And("I should see the following error summary messages", ((string)(null)), table12, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table13, "And ");
 #line hidden
 #line 55
 testRunner.And("I should see error in page title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

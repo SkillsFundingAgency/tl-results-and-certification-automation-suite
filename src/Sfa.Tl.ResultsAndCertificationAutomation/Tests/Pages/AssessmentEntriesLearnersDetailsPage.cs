@@ -26,6 +26,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By AddSpecialismAssessmentSeriesLinkForCouplet { get; } = By.LinkText("Add an assessment entry for Heating Engineering (10202101) and Plumbing (10202102)");
         private static By AddSpecialismAssessmentSeriesLinkForSingleSpecialism { get; } = By.LinkText("Add an assessment entry for Gas Engineering (ZTLOS029)");
 
+        private static By AddAssessmentSpecialismForHeating { get; } = By.LinkText("Add an assessment entry for Heating Engineering (10202101)");
+        private static By AddAssessmentSpecialismForVentilation { get; } = By.LinkText("Add an assessment entry for Ventilation (10202105)");
+
         private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
         private static By AssessmentsBreadcrumb { get; } = By.Id("breadcrumb1");
         private static By SearchForALearnerBreadcrumb { get; } = By.Id("breadcrumb2");
@@ -205,6 +208,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         public static void PressAddSpecialismAssessmentforSingleSpecialism()
         {
             ClickElement(AddSpecialismAssessmentSeriesLinkForSingleSpecialism);
+        }
+        public static void AddAssessmentsforHeatingAndVentilation()
+        {
+            ClickElement(AddAssessmentSpecialismForHeating);
+            AssessmentEntriesAddSpecialismAssessmentEntryPage.PressYesRadioButton();
+            ClickElement(AddAssessmentSpecialismForVentilation);
+            AssessmentEntriesAddSpecialismAssessmentEntryPage.PressYesRadioButton();
         }
     }
 }

@@ -129,19 +129,19 @@ this.FeatureBackground();
 #line 14
 testRunner.When("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table28.AddRow(new string[] {
-                            "Enter a ULN with 10 digits"});
-#line 15
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table28, "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
                 table29.AddRow(new string[] {
                             "Enter a ULN with 10 digits"});
+#line 15
+testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table29, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error Messages"});
+                table30.AddRow(new string[] {
+                            "Enter a ULN with 10 digits"});
 #line 18
-testRunner.And("I should see the following error summary messages", ((string)(null)), table29, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table30, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -181,31 +181,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field name",
                             "Value"});
-                table30.AddRow(new string[] {
+                table31.AddRow(new string[] {
                             "EnterUln",
                             "Abc123!"});
 #line 24
-testRunner.When("I enter following data", ((string)(null)), table30, "When ");
+testRunner.When("I enter following data", ((string)(null)), table31, "When ");
 #line hidden
 #line 27
 testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Message"});
-                table31.AddRow(new string[] {
-                            "Enter a valid 10-digit ULN"});
-#line 28
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table31, "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
+                            "Error Message"});
                 table32.AddRow(new string[] {
                             "Enter a valid 10-digit ULN"});
+#line 28
+testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table32, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error Messages"});
+                table33.AddRow(new string[] {
+                            "Enter a valid 10-digit ULN"});
 #line 31
-testRunner.And("I should see the following error summary messages", ((string)(null)), table32, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table33, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
