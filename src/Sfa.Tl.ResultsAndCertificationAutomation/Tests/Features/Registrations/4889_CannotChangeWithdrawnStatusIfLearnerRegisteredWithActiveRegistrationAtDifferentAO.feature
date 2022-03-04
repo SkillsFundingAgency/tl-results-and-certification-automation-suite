@@ -12,7 +12,7 @@ And I have a registration with result
 And I have moved registration in to withdrawn state
 
 @RegressionTest @WithdrawRegistration
-Scenario: 4889 Search for a withdrawn registration which is registered and active another AO
+Scenario: 4889 Search for a withdrawn registration (NCFE) which is registered and active with another AO (Pearson)
 Given I register the registration with another AO
 And I navigate to the Registration details page for my registration which is withdrawn and active with another AO
 Then the Registration Details page is displayed
@@ -27,7 +27,7 @@ And the Change Status link is displayed
 And I cleared the data in DB
 
 @RegressionTest @WithdrawRegistration
-Scenario: 4889 Search for a withdrawn registration which is not registered and active another AO
+Scenario: 4889 Search for a withdrawn registration which is not registered and active with another AO
 Given I navigate to the Registration details page for my registration which is withdrawn and active with another AO
 Then the Registration Details page is displayed
 And the Change Status link is displayed

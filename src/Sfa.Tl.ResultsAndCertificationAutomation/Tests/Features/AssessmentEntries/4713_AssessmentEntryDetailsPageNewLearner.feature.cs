@@ -108,12 +108,14 @@ testRunner.And("I navigate to the Search for a learner page", ((string)(null)), 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("4713_Navigate to Assessment Details page for a new learner with a single speciali" +
             "sm code")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
         [NUnit.Framework.TestCaseAttribute("9900000011", null)]
         public virtual void _4713_NavigateToAssessmentDetailsPageForANewLearnerWithASingleSpecialismCode(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntriesUpload"};
             if ((exampleTags != null))
@@ -251,12 +253,14 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("4713_Navigate to Assessment Details page for a new learner with multiple speciali" +
             "sm codes")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("AssessmentEntriesUpload")]
         [NUnit.Framework.TestCaseAttribute("9900000012", null)]
         public virtual void _4713_NavigateToAssessmentDetailsPageForANewLearnerWithMultipleSpecialismCodes(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "AssessmentEntriesUpload"};
             if ((exampleTags != null))

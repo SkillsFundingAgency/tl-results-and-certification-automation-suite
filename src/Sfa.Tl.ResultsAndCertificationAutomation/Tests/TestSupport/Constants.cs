@@ -118,6 +118,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";
         public const string DudleyProviderIdForLrs = "16127";
         public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
+        public const string pearsonTQProviderID = "16164";
         //Reviews And Appeals Data
         public const string RaaName = "Db FirstName Db LastName";
         public const string Raadob = "01 January 2001";

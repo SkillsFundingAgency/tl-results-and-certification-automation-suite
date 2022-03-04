@@ -1,5 +1,6 @@
 ﻿using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Model;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -417,15 +418,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         protected static void RegisterWithdrawnLearnerWithAnotherAo(string uln)
         {
             var profileId = SqlQueries.ReturnRegistrationProfileID(uln);
-            
-            var createNewRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + "15184" + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+
+            //var createNewRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + "16133" + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            var createNewRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + Constants.pearsonTQProviderID + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createNewRegPathway, ConnectionString);
 
-            //var profileId = SqlQueries.CreateRegistrationProfile(uln);
-            //var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
-            //SqlQueries.CreateRegSpecialism(pathwayId);
-            //var pathwayAssessmentId = SqlQueries.CreatePathwayAssessment(pathwayId);
-            //SqlQueries.CreatePathwayResult(pathwayAssessmentId);
         }
     }
 }
