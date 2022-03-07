@@ -95,11 +95,13 @@ testRunner.When("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.Spec
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3997_Verify the Exceptions Confirm Appeal page, back link and No radio button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3997_VerifyTheExceptionsConfirmAppealPageBackLinkAndNoRadioButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -172,11 +174,13 @@ testRunner.And("the End date for the Summer Assessment Series is reset to the da
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3997_Verify error message when pressing Submit on Exception Confirm Appeal page w" +
             "ithout selecting a radio button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3997_VerifyErrorMessageWhenPressingSubmitOnExceptionConfirmAppealPageWithoutSelectingARadioButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

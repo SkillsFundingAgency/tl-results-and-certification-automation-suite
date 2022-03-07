@@ -7,7 +7,7 @@ Background:
 Given I have logged in as a "ResultsEditor" user
 And I have registration in final state
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3858 Validate Request a change to this learner’s grade page - Access from Review option
 When I search for my UlN through the Reviews option on the dashboard
 And I click on the Contact us link on the 'Learner’s component grade status' page
@@ -26,7 +26,7 @@ Then the Results Learners Result page is displayed
 And the orignal grade and a status of ‘Final’ will now be shown on the ‘grade’ row of the core details table on the Learner’s results page 
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3858 Validate error messages when pressing Send button without entering any text 
 When I search for my UlN through the Reviews option on the dashboard
 And I click on the Contact us link on the 'Learner’s component grade status' page

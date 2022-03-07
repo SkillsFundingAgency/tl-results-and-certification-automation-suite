@@ -9,7 +9,7 @@ And I have a registration with a result and two assessment entries
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3727_Validate Select assessment entry page and back link navigation
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then the Select exam period page is displayed 
@@ -17,7 +17,7 @@ When I press the back link on the Select assessment entry page
 Then the Review and appeals Search for a learner page is displayed
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3727_Validate error message when no radio button is selected
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then the Select exam period page is displayed 
@@ -25,7 +25,7 @@ When I press the Submit button on the Select assessment entry page
 Then the following error message is displayed on the Select exam period page "Please select the exam period"
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3727_Select a assessment series with a grade against it
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then the Select exam period page is displayed 
@@ -33,7 +33,7 @@ When I select an assessment series which has a grade against it
 Then the Review and Appeals Learner Component Grade status page is displayed as per the acceptance criteria
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3727_Select a assessment series without a grade against it
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then the Select exam period page is displayed 

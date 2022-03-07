@@ -9,7 +9,7 @@ And I have a registration with result
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3477_Validate Core Component Grade Status page and Search again button
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then the Review and Appeals Learner Component Grade status page is displayed as per the acceptance criteria
