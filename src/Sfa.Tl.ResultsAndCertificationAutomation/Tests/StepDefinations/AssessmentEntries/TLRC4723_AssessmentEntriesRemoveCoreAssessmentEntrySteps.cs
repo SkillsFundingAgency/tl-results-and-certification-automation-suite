@@ -1,18 +1,16 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages;
-using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.AssessmentEntries
 {
     [Binding]
-    public class TLRC_4723MANUALJOURNEYASSESSMENTENTRYCHANGES_AddCoreToOpenAssessmentEntrySteps
+    public class Tlrc4723ManualjourneyassessmententrychangesAddCoreToOpenAssessmentEntrySteps
     {
         [Then(@"I am navigated to the Remove core assessment entry page for (.*)")]
-        public void ThenIAmNavigatedToTheRemoveCoreAssessmentEntryPageFor(string ULN)
+        public void ThenIAmNavigatedToTheRemoveCoreAssessmentEntryPageFor(string uln)
         {
             AssessmentEntriesRemoveCoreAssessmentEntryPage.VerifyRemoveCoreComponentAssessmentEntryPage();
-            AssessmentEntriesRemoveCoreAssessmentEntryPage.VerifyLearnerDetails(ULN);
+            AssessmentEntriesRemoveCoreAssessmentEntryPage.VerifyLearnerDetails(uln);
             AssessmentEntriesRemoveCoreAssessmentEntryPage.VerifyRadioButtonsNotPrepopulated();
         }
 

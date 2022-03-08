@@ -7,65 +7,70 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.DataExport
 {
     public class DataExportResultsPage : ElementHelper
     {
-        private static string noResultsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-no-records-found");
-        private static string noResultsPageHeader { get; } = "No records found";
-        private static string noResultsPageTitle { get; } = "No records found - Results – Manage T Level results – GOV.UK";
-        private static By pageHeaderElement { get; } = By.XPath("//*[@id='main-content']//h1");
-        private static string downloadResultsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-download-data");
-        private static string downloadResultsPageHeader { get; } = "Download results data";
-        private static string downloadResultsPageTitle { get; } = "Download data - Results – Manage T Level results – GOV.UK";
-        private static By backToHomeBtn { get; } = By.Id("backToHomeButton");
-        private static By addResultsBtn { get; } = By.Id("backToAddResults");
-        private static By downloadcoreResultsLink { get; } = By.XPath("//a[contains(text(),'Core results data')]");
-        private static By downloadSpecilismResultsLink { get; } = By.XPath("//a[contains(text(),'Specialism results data')]");
-        public static string CoreResultsDownloadFile = string.Concat("Data\\", "4896_DownloadedCoreResultsData.csv");
-        public static string SpecialismResultsDownloadFile = string.Concat("Data\\", "5130_DownloadedSpecialismResultsData.csv");
-        public static void VerifyNoResultsRecordPage()
+        private static string NoResultsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-no-records-found");
+        private static string NoResultsPageHeader { get; } = "No records found";
+        private static string NoResultsPageTitle { get; } = "No records found - Results – Manage T Level results – GOV.UK";
+        private static By PageHeaderElement { get; } = By.XPath("//*[@id='main-content']//h1");
+        private static string DownloadResultsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "results-download-data");
+        private static string DownloadResultsPageHeader { get; } = "Download results data";
+        private static string DownloadResultsPageTitle { get; } = "Download data - Results – Manage T Level results – GOV.UK";
+        private static By BackToHomeBtn { get; } = By.Id("backToHomeButton");
+        private static By AddResultsBtn { get; } = By.Id("backToAddResults");
+        private static By DownloadcoreResultsLink { get; } = By.XPath("//a[contains(text(),'Core results data')]");
+        private static By DownloadSpecilismResultsLink { get; } = By.XPath("//a[contains(text(),'Specialism results data')]");
+        protected static readonly string CoreResultsDownloadFile = string.Concat("Data\\", "4896_DownloadedCoreResultsData.csv");
+        protected static readonly string SpecialismResultsDownloadFile = string.Concat("Data\\", "5130_DownloadedSpecialismResultsData.csv");
+
+        protected static void VerifyNoResultsRecordPage()
         {
-            Assert.AreEqual(noResultsPageUrl, WebDriver.Url);
-            Assert.AreEqual(noResultsPageHeader, WebDriver.FindElement(pageHeaderElement).Text);
-            Assert.AreEqual(noResultsPageTitle, WebDriver.Title);
+            Assert.AreEqual(NoResultsPageUrl, WebDriver.Url);
+            Assert.AreEqual(NoResultsPageHeader, WebDriver.FindElement(PageHeaderElement).Text);
+            Assert.AreEqual(NoResultsPageTitle, WebDriver.Title);
         }
-        public static void VerifyDownloadResultsPage()
+
+        protected static void VerifyDownloadResultsPage()
         {
-            Assert.AreEqual(downloadResultsPageUrl, WebDriver.Url);
-            Assert.AreEqual(downloadResultsPageHeader, WebDriver.FindElement(pageHeaderElement).Text);
-            Assert.AreEqual(downloadResultsPageTitle, WebDriver.Title);
+            Assert.AreEqual(DownloadResultsPageUrl, WebDriver.Url);
+            Assert.AreEqual(DownloadResultsPageHeader, WebDriver.FindElement(PageHeaderElement).Text);
+            Assert.AreEqual(DownloadResultsPageTitle, WebDriver.Title);
         }
         public static void BackToHome()
         {
-            ClickButton(backToHomeBtn);
+            ClickButton(BackToHomeBtn);
             TlevelDashboardPage.VerifyDashboardpage();
         }
-        public static void AddResults()
+
+        protected static void AddResults()
         {
-            ClickButton(addResultsBtn);
+            ClickButton(AddResultsBtn);
             ResultsDashboardPage.VerifyResultsDashboardPage();
         }
-        public static void DownloadCoreResults()
+
+        protected static void DownloadCoreResults()
         {
-            ClickElement(downloadcoreResultsLink);
-            Thread.Sleep(5000);
-        }
-        public static void DownloadSpecialismResults()
-        {
-            ClickElement(downloadSpecilismResultsLink);
+            ClickElement(DownloadcoreResultsLink);
             Thread.Sleep(5000);
         }
 
-        public static void VerifyCoreSpecialismDownloadLinksPresent()
+        protected static void DownloadSpecialismResults()
         {
-            bool coreLinkIsPresent = IsPresent(downloadcoreResultsLink);
+            ClickElement(DownloadSpecilismResultsLink);
+            Thread.Sleep(5000);
+        }
+
+        protected static void VerifyCoreSpecialismDownloadLinksPresent()
+        {
+            bool coreLinkIsPresent = IsPresent(DownloadcoreResultsLink);
             Assert.AreEqual(true, coreLinkIsPresent);
-            bool specialismLinkIsPresent = IsPresent(downloadcoreResultsLink);
+            bool specialismLinkIsPresent = IsPresent(DownloadcoreResultsLink);
             Assert.AreEqual(true, specialismLinkIsPresent);
         }
 
-        public static void VerifyOnlySpecialismDownloadLinksPresent()
+        protected static void VerifyOnlySpecialismDownloadLinksPresent()
         {
-            bool coreLinkIsPresent = IsPresent(downloadcoreResultsLink);
+            bool coreLinkIsPresent = IsPresent(DownloadcoreResultsLink);
             Assert.AreEqual(false, coreLinkIsPresent);
-            bool specialismLinkIsPresent = IsPresent(downloadSpecilismResultsLink);
+            bool specialismLinkIsPresent = IsPresent(DownloadSpecilismResultsLink);
             Assert.AreEqual(true, specialismLinkIsPresent);
         }
 
