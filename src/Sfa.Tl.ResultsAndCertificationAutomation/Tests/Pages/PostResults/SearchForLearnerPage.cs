@@ -14,14 +14,12 @@ public class SearchForLearnerPage : ElementHelper
     private static By SearchUln { get; } = By.Id("searchuln");
     private static By SearchBtn { get; } = By.Id("searchButton");
     private static By PostResultsBreadcrumb { get; } = By.Id("breadcrumb1");
-    private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
 
     //Uln no found page
     private static string UlnNotFoundPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "post-results-uln-not-found");
     private static string UlnNotFoundPageTitle { get; } = "ULN not found - Post-results – Manage T Level results – GOV.UK";
     private static By BackLink { get; } = By.Id("backLink");
     private static By SearchAgainBtn { get; } = By.Id("buttonSearchAgain");
-    private static By BackToHomeBtn { get; } = By.Id("buttonBackToHome");
     private static By ContinueBtn { get; } = By.Id("continueButton");
 
     protected static void VerifySearchLearnerPage()
@@ -42,31 +40,28 @@ public class SearchForLearnerPage : ElementHelper
         PostResultsStartPage.VerifyReviewAndAppealsStartPage();
     }
 
-    protected static void ClickHomeBreadcrumb()
-    {
-        ClickElement(HomeBreadcrumb);
-        TlevelDashboardPage.VerifyDashboardpage();
-    }
-
     protected static void ClickSearchBtn() => ClickButton(SearchBtn);
     protected static void EnterUln(string text) => EnterText(SearchUln, text);
-    public static void VerifyUlnNotFoundPage(string uln)
+
+    protected static void VerifyUlnNotFoundPage(string uln)
     {
         Assert.AreEqual(UlnNotFoundPageUrl, WebDriver.Url);
         Assert.AreEqual(UlnNotFoundPageTitle, WebDriver.Title);
         Assert.AreEqual(uln + " not found", WebDriver.FindElement(PageHeaderElement).Text);
     }
-    public static void VerifyBackLink(string uln)
+
+    protected static void VerifyBackLink(string uln)
     {
         ClickElement(BackLink);
         Assert.AreEqual(uln, WebDriver.FindElement(By.Id("searchuln")).GetAttribute("value"));
     }
-    public static void VerifySearchAgainBtn()
+
+    protected static void VerifySearchAgainBtn()
     {
         ClickButton(SearchAgainBtn);
         VerifySearchLearnerPage();
     }
-    public static void ClickBackToHomeBtn() => ClickButton(BackToHomeBtn);
+
     protected static void PressContinueBtn() => ClickButton(ContinueBtn);
     
 }

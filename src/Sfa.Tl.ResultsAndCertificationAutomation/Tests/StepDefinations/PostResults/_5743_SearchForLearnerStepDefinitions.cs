@@ -7,6 +7,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
 [Binding]
 public class _5743_SearchForLearnerStepDefinitions : SearchForLearnerPage
 {
+    [Given(@"I click ""([^""]*)"" button")]
     [When(@"I click ""([^""]*)"" button")]
     public void WhenIClickButton(string @continue)
     {
