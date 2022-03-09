@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewsAndAppeals
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.PostResults
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewsAndAppe
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("3474_ReviewsAndAppealsSearchForLearner")]
-    public partial class _3474_ReviewsAndAppealsSearchForLearnerFeature
+    [NUnit.Framework.DescriptionAttribute("5743_SearchForLearner")]
+    public partial class _5743_SearchForLearnerFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "3474_ReviewsAndAppealsSearchForLearner.feature"
+#line 1 "5743_SearchForLearner.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/ReviewsAndAppeals", "3474_ReviewsAndAppealsSearchForLearner", "\tAs an AO with a result editor\r\n\tI need to see a search page for the learner\r\n\tSo" +
-                    " that I can search a learner for reviews and appeals", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/PostResults", "5743_SearchForLearner", "As an AO, I want to be able to search for a learner, so that I can perform any po" +
+                    "st-result actions", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,30 +76,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.ReviewsAndAppe
         
         public virtual void FeatureBackground()
         {
+#line 5
+#line hidden
 #line 6
+testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
-testRunner.Given("I have logged in as a \"ResultsEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
-testRunner.And("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on \"Post-results\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3474 Verify search for learner page")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("5743 verify search learner page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3474VerifySearchForLearnerPage()
+        [NUnit.Framework.CategoryAttribute("PostResults")]
+        public virtual void _5743VerifySearchLearnerPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
                     "RegressionTest",
-                    "ReviewsAndAppeals"};
+                    "PostResults"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3474 Verify search for learner page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5743 verify search learner page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -119,39 +117,37 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
+#line hidden
+#line 11
+testRunner.When("I click \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
-testRunner.When("I click on \"Continue\" button in start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("Post result search for a learner page is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 13
-testRunner.Then("I should see reviews and appeals search for learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("clicking on Post-results breadcrumb takes to Post result home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
-testRunner.And("clicking on Reviews and appeals breadcrumb takes me reviews start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 15
-testRunner.And("clicking on home breadcrumb takes me to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clicking Home breadcrumb takes me to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3474 Verify mandatory field validation")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("5743 verify mandatory field validation")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3474VerifyMandatoryFieldValidation()
+        [NUnit.Framework.CategoryAttribute("PostResults")]
+        public virtual void _5743VerifyMandatoryFieldValidation()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
                     "RegressionTest",
-                    "ReviewsAndAppeals"};
+                    "PostResults"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3474 Verify mandatory field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5743 verify mandatory field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -171,47 +167,45 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
+#line hidden
+#line 18
+testRunner.When("I click \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
-testRunner.When("I click on \"Continue\" button in start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I click \"Search\" button on search learner page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 20
-testRunner.And("I click on Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table89.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "Enter a ULN with 10 digits"});
-#line 21
-testRunner.Then("I should see following error message in Reviews and Appeals page", ((string)(null)), table89, "Then ");
+#line 20
+testRunner.Then("I see following error message on search learner page", ((string)(null)), table29, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table90.AddRow(new string[] {
+                table30.AddRow(new string[] {
                             "Enter a ULN with 10 digits"});
-#line 24
-testRunner.And("I should see the following error summary message in Reviews and Appeals page", ((string)(null)), table90, "And ");
+#line 23
+testRunner.And("I see following error summary on search learner page", ((string)(null)), table30, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("3474 Validate data")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.DescriptionAttribute("5743 verify data validation")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
-        public virtual void _3474ValidateData()
+        [NUnit.Framework.CategoryAttribute("PostResults")]
+        public virtual void _5743VerifyDataValidation()
         {
             string[] tagsOfScenario = new string[] {
-                    "Ignore",
                     "RegressionTest",
-                    "ReviewsAndAppeals"};
+                    "PostResults"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3474 Validate data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5743 verify data validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -231,31 +225,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
 #line hidden
+#line 29
+testRunner.When("I click \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 30
-testRunner.When("I click on \"Continue\" button in start page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I enter \"ABC12345\" and click search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
-testRunner.And("I enter \"ABC12345\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 32
-testRunner.And("I click on Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table91.AddRow(new string[] {
+                table31.AddRow(new string[] {
                             "Enter a valid 10-digit ULN"});
-#line 33
-testRunner.Then("I should see following error message in Reviews and Appeals page", ((string)(null)), table91, "Then ");
+#line 31
+testRunner.Then("I see following error message on search learner page", ((string)(null)), table31, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table92.AddRow(new string[] {
+                table32.AddRow(new string[] {
                             "Enter a valid 10-digit ULN"});
-#line 36
-testRunner.And("I should see the following error summary message in Reviews and Appeals page", ((string)(null)), table92, "And ");
+#line 34
+testRunner.And("I see following error summary on search learner page", ((string)(null)), table32, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
