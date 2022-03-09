@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
-using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
@@ -14,72 +13,65 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private const string AccessDenied = "Access denied";
         private const string AccessDeniedTitle = "Access denied due to wrong role page – Manage T Level results – GOV.UK";
         private const string AccessNoServiceTitle = "Service access denied page – Manage T Level results – GOV.UK";
-        private static readonly By LevelLink = By.XPath("//a[contains(text(),'T Levels')]");
+        private static readonly By TLevelLink = By.XPath("//a[contains(text(),'T Levels')]");
         private static readonly By ProviderLink = By.XPath("//a[contains(text(),'Providers')]");
         private static readonly By RegistrationsLink = By.XPath("//a[contains(text(),'Registrations')]");
         private static By ResultsLink { get; } = By.LinkText("Results");
-        private static By AppealsLink { get; } = By.LinkText("Post-results");
+        private static By AppealsLink { get; } = By.LinkText("Appeals");
         private static readonly By AccountLink = By.XPath("//a[contains(text(),'Account')]");
+        private static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
         private const string ExpectedUrl = "https://pp-profile.signin.education.gov.uk/";
         private const string ProfilePageHeader = "Profile";
-        private const string ProviderDashboardUrl = "manage-learner-records";
-        private const string AoSelectTlevelUrl = "select-tlevel";
-
-        protected static void NavigateProviderDashboard()
+        private static string ProviderDashboardUrl = "manage-learner-records";
+        private static string AoSelectTlevelUrl = "select-tlevel";
+        public static void NavigateProviderDashboard()
         {
             NavigateTo(ProviderDashboardUrl);
         }
-
-        protected static void NavigateAoDashboard()
+        public static void NavigateAoDashboard()
         {
             NavigateTo(AoSelectTlevelUrl);
         }
-
-        private static void VerifyAccessDeniedPage()
+        public void VerifyAccessDeniedPage()
         {
             Assert.AreEqual(AccessDeniedTitle, WebDriver.Title);
             Assert.AreEqual(AccessDenied, WebDriver.FindElement(PageHeader).Text);
         }
-
-        protected static void VerifyAccessDeniedWithWrongRolePage()
+        public void VerifyAccessDeniedWithWrongRolePage()
         {
             WaitForElement(DfESignInPage.ManageTlevelHeader, 10);
             Assert.AreEqual(AccessDeniedTitle, WebDriver.Title);
             Assert.AreEqual(AccessDenied, WebDriver.FindElement(PageHeader).Text);
         }
-        private static void ClickOnLink(By locator)
+        private void ClickOnLink(By locator)
         {
             ClickElement(locator);
         }
-
-        private static void VerifyTLevelPage()
+        public void VerifyTLevelPage()
         {
-            ClickOnLink(LevelLink);
+            ClickOnLink(TLevelLink);
             //Assert.AreEqual(Constants.TLevelsPageTitle, WebDriver.Title);
             //Assert.AreEqual(Constants.TLevelsPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
-
-        private static void VerifyProviderPage()
+        public void VerifyProviderPage()
         {
             ClickOnLink(ProviderLink);
             Assert.AreEqual(Constants.ProviderPageTitle, WebDriver.Title);
             Assert.AreEqual(Constants.ProviderPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
-
-        private static void VerifyRegistrationsPage()
+        public void VerifyRegistrationsPage()
         {
             ClickOnLink(RegistrationsLink);
             Assert.AreEqual(Constants.RegistrationsPageTitle, WebDriver.Title);
             Assert.AreEqual(Constants.RegistationPageHeader, WebDriver.FindElement(PageHeader).Text);
         }
-        private static void VerifyProfilePage()
+        private void VerifyProfilePage()
         {
             ClickOnLink(AccountLink);
             Assert.AreEqual(ExpectedUrl, WebDriver.Url);
             Assert.AreEqual(ProfilePageHeader, WebDriver.FindElement(By.TagName("h1")).Text);
         }
-
-        protected static void AccessLevelAdmin()
+        public void AccessLevelAdmin()
         {
             VerifyTLevelPage();
             ClickOnLink(ManageTlevelBanner);
@@ -94,12 +86,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ResultsDashboardPage.VerifyResultsDashboardPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(AppealsLink);
-            PostResultsStartPage.VerifyReviewAndAppealsStartPage();
+            ReviewAndAppealsStartPage.VerifyReviewAndAppealsStartPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
-
-        protected static void AccessLevelTLevelReviewer()
+        public void AccessLevelTLevelReviewer()
         {
             VerifyTLevelPage();
             ClickOnLink(ManageTlevelBanner);
@@ -120,10 +111,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
-
-        protected static void AccessLevelProvidersEditor()
+        public void AccessLevelProvidersEditor()
         {
-            ClickOnLink(LevelLink);
+            ClickOnLink(TLevelLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProviderPage();
@@ -142,10 +132,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
-
-        protected static void AccessLevelRegistrationEditor()
+        public void AccessLevelRegistrationEditor()
         {
-            ClickOnLink(LevelLink);
+            ClickOnLink(TLevelLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(ProviderLink);
@@ -164,10 +153,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
-
-        protected static void AccessLevelResultsEditor()
+        public void AccessLevelResultsEditor()
         {
-            ClickOnLink(LevelLink);
+            ClickOnLink(TLevelLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(ProviderLink);
@@ -187,10 +175,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
-
-        protected static void AccessLevelNoRoles()
+        public void AccessLevelNoRoles()
         {
-            ClickOnLink(LevelLink);
+            ClickOnLink(TLevelLink);
             VerifyAccessDeniedPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(ProviderLink);
@@ -210,8 +197,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
-
-        protected static void AccessLevelNoService()
+        public void AccessLevelNoService()
         {
             Assert.AreEqual(AccessNoServiceTitle, WebDriver.Title);
             Assert.AreEqual(AccessDenied, WebDriver.FindElement(PageHeader).Text);

@@ -5,18 +5,16 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Results;
 
-public class LearnerResultsPage : ElementHelper
+public class LearnerResultsPage: ElementHelper
 {
     private static string PageUrl { get; } = "learner-results";
     private static string PageTitle { get; } = "Learner's results – Manage T Level results – GOV.UK";
     private static By AddCoreAssessment { get; } = By.Id(("addCoreAssessmentLink"));
     private static By AddSpecialismAssessment { get; } = By.Id(("addSpecialismAssessmentLink"));
-    private static By SuccessBanner { get; } = By.XPath("//*[@id='main-content']//h2");
+    private  static By SuccessBanner { get; } = By.XPath("//*[@id='main-content']//h2");
     private static By SuccessMessage { get; } = By.XPath("//*[@id='main-content']//h3");
-
-    private static By AddResultToPreviousSpecialismLink { get; } =
-        By.XPath("//*[contains (text(),'add a result to this learner')]");
-
+    private static By AddResultToPreviousSpecialismLink { get; } = By.XPath("//*[contains (text(),'add a result to this learner')]");
+    
     protected static void VerifyLearnerResultsPage()
     {
         Assert.AreEqual(PageTitle, WebDriver.Title);
@@ -59,7 +57,6 @@ public class LearnerResultsPage : ElementHelper
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
         element[0].Click();
     }
-
     private static void ClickAssessment1AddResult()
     {
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
@@ -71,13 +68,11 @@ public class LearnerResultsPage : ElementHelper
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add result')]"));
         element[2].Click();
     }
-
     private static void ClickCoreChangeResult()
     {
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Change')]"));
         element[0].Click();
     }
-
     private static void ClickAssessment1ChangeResult()
     {
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Change')]"));
@@ -97,16 +92,15 @@ public class LearnerResultsPage : ElementHelper
     }
 
     protected static void VerifyCountOfAddResultToPreviousSpecialismLinksDsplayed(int countOfLinksDisplayed)
-    {
-        IList<IWebElement> element =
-            WebDriver.FindElements(By.XPath("//*[contains(text(),'add a result to this learner')]"));
+    {        
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'add a result to this learner')]"));
         var count = element.Count;
         Assert.AreEqual(countOfLinksDisplayed, count);
     }
 
     protected static void ClickAddResultToPreviousSpecialism()
     {
-        ClickElement(AddResultToPreviousSpecialismLink);
+        ClickElement(AddResultToPreviousSpecialismLink);   
     }
 
     protected static void VerifyAddResultToPreviousSpecialismLinksNotDisplayed()
@@ -114,4 +108,7 @@ public class LearnerResultsPage : ElementHelper
         var notPresent = IsPresent(AddResultToPreviousSpecialismLink);
         Assert.AreEqual(false, notPresent);
     }
+
+    
+
 }

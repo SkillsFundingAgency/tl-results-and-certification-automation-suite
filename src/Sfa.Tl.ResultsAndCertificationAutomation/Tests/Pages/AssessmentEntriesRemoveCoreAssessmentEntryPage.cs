@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Data;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
 {
@@ -17,49 +18,49 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static By YesRadioButton { get; } = By.XPath("//*[contains(text(),'Yes, remove the entry from')]");
         private static By NoRadioButton { get; } = By.XPath("//*[contains(text(),'No, do not remove the entry from')]");
         private static By SubmitButton { get; } = By.Id("submitButton");
-        private static By BackLink { get; } = By.Id("backLink");
-        private const string ExpectedSubmitButtonText = "Submit";
-        private const string ExpectedYesRadioText = "Yes, remove the entry from ";
-        private const string ExpectedNoRadioText = "No, do not remove the entry from ";
+        public static By BackLink { get; } = By.Id("backLink");
+        public static string ExpectedSubmitButtonText = "Submit";
+        public static string ExpectedYesRadioText = "Yes, remove the entry from ";
+        public static string ExpectedNoRadioText = "No, do not remove the entry from ";
 
-        private const string NoRadioSelectedErrorMessage = "Select whether the assessment entry is being removed";
-        private static readonly By MainNoRadioButtonSelectedError = By.XPath("//*[@id='main-content']//li/a");
-        private static readonly By SubNoRadioButtonSelectedError = By.XPath("//*[@id='main-content']//div[2]//span");
+        public static string NoRadioSelectedErrorMessage = "Select whether the assessment entry is being removed";
+        public static By MainNoRadioButtonSelectedError = By.XPath("//*[@id='main-content']//li/a");
+        public static By SubNoRadioButtonSelectedError = By.XPath("//*[@id='main-content']//div[2]//span");
         private static By LearnerDetailsElement { get; } = By.XPath("//*[@id='main-content']//dl");
 
 
         public static void VerifyRemoveCoreComponentAssessmentEntryPage()
         {
-            var currentAssessmentSeries = SqlQueries.GetAssessmentSeries();
-            var expectedPageHeader1 = ExpectedPageHeader + currentAssessmentSeries.ToLower();
-            var expectedSubPageHeader1 = ExpectedSubPageHeader + currentAssessmentSeries.ToLower() + " from this learner's record?";
-            var expectedYesRadioText1 = ExpectedYesRadioText + currentAssessmentSeries.ToLower();
-            var expectedNoRadioText1 = ExpectedNoRadioText + currentAssessmentSeries.ToLower();
+            string CurrentAssessmentSeries = SqlQueries.GetAssessmentSeries();
+            string ExpectedPageHeader1 = ExpectedPageHeader + CurrentAssessmentSeries.ToLower();
+            string ExpectedSubPageHeader1 = ExpectedSubPageHeader + CurrentAssessmentSeries.ToLower() + " from this learner's record?";
+            string ExpectedYesRadioText1 = ExpectedYesRadioText + CurrentAssessmentSeries.ToLower();
+            string ExpectedNoRadioText1 = ExpectedNoRadioText + CurrentAssessmentSeries.ToLower();
          
 
             Assert.AreEqual(PageTitle, WebDriver.Title);
-            Assert.AreEqual(expectedPageHeader1, WebDriver.FindElement(PageHeader).Text);
+            Assert.AreEqual(ExpectedPageHeader1, WebDriver.FindElement(PageHeader).Text);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
             Assert.AreEqual(ExpectedSubmitButtonText, WebDriver.FindElement(SubmitButton).Text);
-            Assert.AreEqual(expectedYesRadioText1, WebDriver.FindElement(YesRadioButton).Text);
-            Assert.AreEqual(expectedNoRadioText1, WebDriver.FindElement(NoRadioButton).Text);
-            Assert.AreEqual(expectedSubPageHeader1, WebDriver.FindElement(SubHeader).Text);
+            Assert.AreEqual(ExpectedYesRadioText1, WebDriver.FindElement(YesRadioButton).Text);
+            Assert.AreEqual(ExpectedNoRadioText1, WebDriver.FindElement(NoRadioButton).Text);
+            Assert.AreEqual(ExpectedSubPageHeader1, WebDriver.FindElement(SubHeader).Text);
         }
 
-        public static void VerifyLearnerDetails(string uln)
+        public static void VerifyLearnerDetails(string ULN)
         {
-            const string expectedName = "4714 Name 1 Name 2";
-            const string expectedProvider = "Barnsley College";
-            const string expectedDob = "10 January 2006";
-            const string expectedTLevel = "T Level in Building Services Engineering for Construction";
-            const string expectedUkprn = "10000536";
+            string ExpectedName = "4714 Name 1 Name 2";
+            string ExpectedProvider = "Barnsley College";
+            string ExpectedDOB = "10 January 2006";
+            string ExpectedTLevel = "T Level in Building Services Engineering for Construction";
+            string ExpectedUKPRN = "10000536";
 
-            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(uln));
-            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(expectedName));
-            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(expectedDob));
-            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(expectedProvider));
-            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(expectedUkprn));
-            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(expectedTLevel));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ULN));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedName));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedDOB));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedProvider));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedUKPRN));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ExpectedTLevel));
         }
 
         public static void VerifyRadioButtonsNotPrepopulated()

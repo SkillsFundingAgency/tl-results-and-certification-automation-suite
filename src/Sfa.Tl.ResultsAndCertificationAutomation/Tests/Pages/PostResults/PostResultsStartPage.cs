@@ -13,7 +13,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         private static By ContinueBtn { get; } = By.Id("continueButton");
         private static By HomeBreadcrumb { get; } = By.Id("breadcrumb0");
 
-        public static void VerifyReviewAndAppealsStartPage()
+        protected static void VerifyReviewAndAppealsStartPage()
         {
             Assert.AreEqual(PageUrl, WebDriver.Url);
             Assert.AreEqual(PageTitle, WebDriver.Title);
