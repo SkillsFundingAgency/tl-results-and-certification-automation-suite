@@ -1,9 +1,13 @@
 Line,ULN,Error
+2,9500000001,Assessment series does not match the series on the registration
 2,9500000001,Specialism grade not valid
+3,9500000002,Assessment series does not match the series on the registration
 3,9500000002,Specialism code(s) either not recognised or not registered for this ULN
 3,9500000002,Specialism assessment series does not exist
 3,9500000002,Specialism grade not valid
 4,9500000003,Assessment series does not match the series on the registration
+4,9500000003,Assessment series does not match the series on the registration
 4,9500000003,Incorrect Assessment series
+5,9500000004,Assessment series does not match the series on the registration
 5,9500000004,No assessment entry is currently active for the Specialism on this registration - needs adding first through assessment entries file upload or manual entry
 6,9500000005,Cannot add results to a withdrawn registration

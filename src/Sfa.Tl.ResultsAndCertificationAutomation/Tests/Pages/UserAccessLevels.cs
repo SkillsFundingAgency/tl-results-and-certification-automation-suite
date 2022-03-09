@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals;
 using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
@@ -17,7 +18,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
         private static readonly By ProviderLink = By.XPath("//a[contains(text(),'Providers')]");
         private static readonly By RegistrationsLink = By.XPath("//a[contains(text(),'Registrations')]");
         private static By ResultsLink { get; } = By.LinkText("Results");
-        private static By AppealsLink { get; } = By.LinkText("Appeals");
+        private static By AppealsLink { get; } = By.LinkText("Post-results");
         private static readonly By AccountLink = By.XPath("//a[contains(text(),'Account')]");
         private static By AssessmentEntriesLink { get; } = By.LinkText("Assessment entries");
         private const string ExpectedUrl = "https://pp-profile.signin.education.gov.uk/";
@@ -86,7 +87,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ResultsDashboardPage.VerifyResultsDashboardPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(AppealsLink);
-            ReviewAndAppealsStartPage.VerifyReviewAndAppealsStartPage();
+            PostResultsStartPage.VerifyReviewAndAppealsStartPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }
@@ -171,7 +172,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             ResultsDashboardPage.VerifyResultsDashboardPage();
             ClickOnLink(ManageTlevelBanner);
             ClickOnLink(AppealsLink);
-            ReviewAndAppealsStartPage.VerifyReviewAndAppealsStartPage();
+            PostResultsStartPage.VerifyReviewAndAppealsStartPage();
             ClickOnLink(ManageTlevelBanner);
             VerifyProfilePage();
         }

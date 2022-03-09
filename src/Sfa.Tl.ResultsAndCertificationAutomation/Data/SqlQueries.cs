@@ -527,7 +527,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static string GetAssessmentSeries()
         {
-            var getAssessmentSeries = "Select Name from dbo.AssessmentSeries where getdate() >= StartDate and getdate() <= EndDate";
+            var getAssessmentSeries = "Select Name from dbo.AssessmentSeries where getdate() >= StartDate and getdate() <= EndDate and ComponentType=1";
             var assessmentSeries = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getAssessmentSeries, ConnectionString);
             var result = Convert.ToString(assessmentSeries[0][0]);
             return result;
@@ -535,7 +535,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
 
         public static string GetSpecialismAssessmentSeries()
         {
-            var getSpecialismAssessmentSeries = "Select Name from dbo.AssessmentSeries where getdate() >= StartDate and getdate() <= EndDate and componenttype = 2";
+            var getSpecialismAssessmentSeries = "Select Name from dbo.AssessmentSeries where getdate() >= StartDate and getdate() <= EndDate and and ComponentType=2";
             var specialismAssessmentSeries = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSpecialismAssessmentSeries, ConnectionString);
             var result = Convert.ToString(specialismAssessmentSeries[0][0]);
             return result;
