@@ -23,6 +23,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
             PostResultsLearnerDetailsPage.VerifyPostResultsLearnerDetailsPage();
         }
 
+        [Given(@"I click ""([^""]*)"" button in post result learner details page")]
         [When(@"I click ""([^""]*)"" button in post result learner details page")]
         public void WhenIClickButtonInPostResultLearnerDetailsPage(string text)
         {
@@ -58,6 +59,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         public void ThenErrorSummaryShownOnAddRommPage(Table table)
         {
             CommonPage.VerifyValidationSummaryMessages(table);
+        }
+        [When(@"I select ""([^""]*)"" radio button on add Romm Page")]
+        public void WhenISelectRadioButtonOnAddRommPage(string option)
+        {
+            AddRommBtn(option);
         }
 
     }

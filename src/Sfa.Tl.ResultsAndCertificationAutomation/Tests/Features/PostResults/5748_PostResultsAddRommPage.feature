@@ -23,3 +23,9 @@ Then error message shown on add romm page
 And error summary shown on add romm page
 | Error summary                                                   |
 | Select ‘yes’ if the learner has requested a ROMM for this grade |
+
+@RegressionTest @PostResults
+Scenario: 5748 Select No radio button in add ROMM page
+When I click "Add core ROMM" button in post result learner details page
+And I select "No, request Romm" radio button on add Romm Page
+Then learner details page is shown
