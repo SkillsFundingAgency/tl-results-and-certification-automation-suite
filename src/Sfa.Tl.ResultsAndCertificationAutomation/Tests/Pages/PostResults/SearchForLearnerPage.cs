@@ -22,7 +22,7 @@ public class SearchForLearnerPage : ElementHelper
     private static By SearchAgainBtn { get; } = By.Id("buttonSearchAgain");
     private static By ContinueBtn { get; } = By.Id("continueButton");
 
-    protected static void VerifySearchLearnerPage()
+    public static void VerifySearchLearnerPage()
     {
         Assert.AreEqual(SearchLearnerPageUrl,WebDriver.Url);
         Assert.AreEqual(SearchLearnerPageTitle, WebDriver.Title);
