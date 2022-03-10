@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.PostResults
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2535_EnterUlnPageValidations")]
-    public partial class _2535_EnterUlnPageValidationsFeature
+    [NUnit.Framework.DescriptionAttribute("5748_PostResultsAddRommPage")]
+    public partial class _5748_PostResultsAddRommPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "2535_EnterUlnPageValidations.feature"
+#line 1 "5748_PostResultsAddRommPage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "2535_EnterUlnPageValidations", "\tAs a Provider\r\n\tI need to be able to add English/Maths and Industry Placement da" +
-                    "ta for learners\r\n\tSo that learner details can be kept up to date", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/PostResults", "5748_PostResultsAddRommPage", "As an AO, I need the ability to inform ESFA that the learner has requested a ROMM" +
+                    " of a grade, so that overall grade is not calculated until result has been throu" +
+                    "gh a ROMM.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,34 +77,31 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
         
         public virtual void FeatureBackground()
         {
+#line 5
+#line hidden
 #line 6
+testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
-testRunner.Given("I have logged in as a \"ProviderBarnsleyAll\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.And("I have a registration with core and specialism assessments results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
-testRunner.And("I click on \"Manage learner T Level records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
-testRunner.And("I click on \"Add a new learner T Level record\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
-testRunner.And("I clear Uln data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am on post results learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2535 Verify mandatory field validation")]
+        [NUnit.Framework.DescriptionAttribute("5748 Verify add ROMM page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2535VerifyMandatoryFieldValidation()
+        [NUnit.Framework.CategoryAttribute("PostResults")]
+        public virtual void _5748VerifyAddROMMPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Provider"};
+                    "PostResults"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2535 Verify mandatory field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5748 Verify add ROMM page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -123,42 +121,34 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
 #line hidden
+#line 12
+ testRunner.When("I click \"Add core ROMM\" button in post result learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 13
+ testRunner.Then("Add a ROMM page is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
 #line 14
-testRunner.When("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table35.AddRow(new string[] {
-                            "Enter a ULN with 10 digits"});
-#line 15
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table35, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table36.AddRow(new string[] {
-                            "Enter a ULN with 10 digits"});
-#line 18
-testRunner.And("I should see the following error summary messages", ((string)(null)), table36, "And ");
+ testRunner.And("back link takes me to post result learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2535 Verify Uln field validation")]
+        [NUnit.Framework.DescriptionAttribute("5748 Error validation add ROMM page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Provider")]
-        public virtual void _2535VerifyUlnFieldValidation()
+        [NUnit.Framework.CategoryAttribute("PostResults")]
+        public virtual void _5748ErrorValidationAddROMMPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Provider"};
+                    "PostResults"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2535 Verify Uln field validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5748 Error validation add ROMM page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -178,34 +168,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field name",
-                            "Value"});
-                table37.AddRow(new string[] {
-                            "EnterUln",
-                            "Abc123!"});
-#line 24
-testRunner.When("I enter following data", ((string)(null)), table37, "When ");
+#line 18
+testRunner.When("I click \"Add core ROMM\" button in post result learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
-testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+testRunner.And("I click on Continue button without selecting ROMM option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Message"});
-                table38.AddRow(new string[] {
-                            "Enter a valid 10-digit ULN"});
-#line 28
-testRunner.Then("I should see the following error message for the Uln", ((string)(null)), table38, "Then ");
+                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error message"});
+                table33.AddRow(new string[] {
+                            "Select ‘yes’ if the learner has requested a ROMM for this grade"});
+#line 20
+testRunner.Then("error message shown on add romm page", ((string)(null)), table33, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table39.AddRow(new string[] {
-                            "Enter a valid 10-digit ULN"});
-#line 31
-testRunner.And("I should see the following error summary messages", ((string)(null)), table39, "And ");
+                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error summary"});
+                table34.AddRow(new string[] {
+                            "Select ‘yes’ if the learner has requested a ROMM for this grade"});
+#line 23
+testRunner.And("error summary shown on add romm page", ((string)(null)), table34, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

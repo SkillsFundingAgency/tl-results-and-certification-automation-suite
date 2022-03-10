@@ -62,6 +62,6 @@ public class SearchForLearnerPage : ElementHelper
         VerifySearchLearnerPage();
     }
 
-    protected static void PressContinueBtn() => ClickButton(ContinueBtn);
+    public static void PressContinueBtn() => ClickButton(ContinueBtn);
     
 }

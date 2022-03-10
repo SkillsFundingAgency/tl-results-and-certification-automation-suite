@@ -11,7 +11,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     private static string PageTitle { get; } = "Learner’s grades - Post-results – Manage T Level results – GOV.UK";
     private static By SearchAgainBtn { get; } = By.Id("buttonSearchAgain");
 
-    protected static void VerifyPostResultsLearnerDetailsPage()
+    public static void VerifyPostResultsLearnerDetailsPage()
     {
         Assert.AreEqual(PageTitle,WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
@@ -32,7 +32,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add ROMM')]"));
         element[2].Click();
     }
-    protected static void AddRommBtn(string buttonName)
+    public static void AddRommBtn(string buttonName)
     {
         switch (buttonName)
         {

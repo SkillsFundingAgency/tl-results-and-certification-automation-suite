@@ -122,23 +122,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
                             "Registration",
                             "Assessment",
                             "Result"});
-                table62.AddRow(new string[] {
+                table64.AddRow(new string[] {
                             "RegistrationsValidDataSingle.csv",
                             "AssessmentUploadSingleData.csv",
                             "ResultsUploadSingleData.csv"});
 #line 12
-testRunner.And("I uploaded following files", ((string)(null)), table62, "And ");
+testRunner.And("I uploaded following files", ((string)(null)), table64, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
-                table63.AddRow(new string[] {
+                table65.AddRow(new string[] {
                             "9900000001"});
 #line 15
-testRunner.When("I search Assessment entry for the Uln", ((string)(null)), table63, "When ");
+testRunner.When("I search Assessment entry for the Uln", ((string)(null)), table65, "When ");
 #line hidden
 #line 18
 testRunner.Then("Remove Entry link should not exists in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -238,30 +238,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
                             "Registration",
                             "Assessment",
                             "Result"});
-                table64.AddRow(new string[] {
+                table66.AddRow(new string[] {
                             "RegistrationsValidDataSingle.csv",
                             "AssessmentUploadSingleData.csv",
                             "ResultsUploadSingleData.csv"});
 #line 30
-testRunner.And("I uploaded following files", ((string)(null)), table64, "And ");
+testRunner.And("I uploaded following files", ((string)(null)), table66, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
-                table65.AddRow(new string[] {
+                table67.AddRow(new string[] {
                             "9900000001"});
 #line 33
-testRunner.And("I removed the result by selecting Not received", ((string)(null)), table65, "And ");
+testRunner.And("I removed the result by selecting Not received", ((string)(null)), table67, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
-                table66.AddRow(new string[] {
+                table68.AddRow(new string[] {
                             "9900000001"});
 #line 36
-testRunner.When("I search Assessment entry for the Uln", ((string)(null)), table66, "When ");
+testRunner.When("I search Assessment entry for the Uln", ((string)(null)), table68, "When ");
 #line hidden
 #line 39
 testRunner.Then("Remove Entry link should exists in the assessment details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

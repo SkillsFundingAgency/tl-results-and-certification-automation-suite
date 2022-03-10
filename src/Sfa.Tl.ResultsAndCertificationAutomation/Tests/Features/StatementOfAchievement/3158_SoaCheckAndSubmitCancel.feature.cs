@@ -186,19 +186,19 @@ testRunner.When("I click on \"Cancel\" link", ((string)(null)), ((TechTalk.SpecF
 #line 23
 testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table95.AddRow(new string[] {
+                table97.AddRow(new string[] {
                             "Select yes if you want to cancel this request"});
 #line 24
-testRunner.Then("I should see the following error summary messages", ((string)(null)), table95, "Then ");
+testRunner.Then("I should see the following error summary messages", ((string)(null)), table97, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table96.AddRow(new string[] {
+                table98.AddRow(new string[] {
                             "Select yes if you want to cancel this request"});
 #line 27
-testRunner.And("I should see the following error message", ((string)(null)), table96, "And ");
+testRunner.And("I should see the following error message", ((string)(null)), table98, "And ");
 #line hidden
 #line 30
 testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
