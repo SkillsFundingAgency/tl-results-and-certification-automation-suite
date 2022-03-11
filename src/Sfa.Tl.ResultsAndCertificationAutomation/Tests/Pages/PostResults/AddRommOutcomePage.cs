@@ -18,7 +18,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         private static readonly By BackLink = By.Id("backLink");
 
         protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
-        protected static void VerifyAddRommOutcomePage()
+
+        public static void VerifyAddRommOutcomePage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
