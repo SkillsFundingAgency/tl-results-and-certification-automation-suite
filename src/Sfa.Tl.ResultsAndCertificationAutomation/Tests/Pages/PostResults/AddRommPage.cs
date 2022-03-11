@@ -17,7 +17,7 @@ public class AddRommPage : ElementHelper
     private static readonly By BackLink = By.Id("backLink");
 
     protected static void ClickBackLink() => ClickElement(BackLink);
-    protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
+    public static void ClickContinueBtn() => ClickButton(ContinueBtn);
 
     public static void VerifyAddRommPage()
     {

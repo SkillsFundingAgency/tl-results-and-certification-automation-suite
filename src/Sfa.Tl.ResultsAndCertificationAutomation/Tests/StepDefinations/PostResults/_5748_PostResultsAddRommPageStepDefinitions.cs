@@ -60,6 +60,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             CommonPage.VerifyValidationSummaryMessages(table);
         }
+        [Given(@"I select ""([^""]*)"" radio button on add Romm Page")]
         [When(@"I select ""([^""]*)"" radio button on add Romm Page")]
         public void WhenISelectRadioButtonOnAddRommPage(string option)
         {
