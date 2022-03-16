@@ -10,6 +10,9 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     private static string PageUrl { get; } = "post-results-learners-grades";
     private static string PageTitle { get; } = "Learner’s grades - Post-results – Manage T Level results – GOV.UK";
     private static By SearchAgainBtn { get; } = By.Id("buttonSearchAgain");
+    private static readonly By SuccessBannerElement = By.XPath("//*[@id='main-content']//h2");
+    private static readonly By MessageHeaderElement = By.XPath("//*[@id='main-content']//h3");
+    private static readonly By CoreAddOutcomeBtn = By.XPath("//a[contains(text(), 'Add outcome')][1]");
 
     public static void VerifyPostResultsLearnerDetailsPage()
     {
@@ -57,5 +60,16 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     protected static void ClickSearchAgainBtn()
     {
         ClickButton(SearchAgainBtn);
+    }
+
+    protected static void VerifyRommAddedSuccessfully()
+    {
+        Assert.AreEqual("Success",WebDriver.FindElement(SuccessBannerElement).Text);
+        Assert.AreEqual("ROMM recorded",WebDriver.FindElement(MessageHeaderElement).Text);
+    }
+
+    protected static void IsCoreAddOutcomeBtnVisible()
+    {
+        IsPresent(CoreAddOutcomeBtn);
     }
 }
