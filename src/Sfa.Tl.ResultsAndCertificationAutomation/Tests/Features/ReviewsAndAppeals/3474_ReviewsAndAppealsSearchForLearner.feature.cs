@@ -180,19 +180,19 @@ testRunner.When("I click on \"Continue\" button in start page", ((string)(null))
 #line 20
 testRunner.And("I click on Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table95.AddRow(new string[] {
+                table97.AddRow(new string[] {
                             "Enter a ULN with 10 digits"});
 #line 21
-testRunner.Then("I should see following error message in Reviews and Appeals page", ((string)(null)), table95, "Then ");
+testRunner.Then("I should see following error message in Reviews and Appeals page", ((string)(null)), table97, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table96.AddRow(new string[] {
+                table98.AddRow(new string[] {
                             "Enter a ULN with 10 digits"});
 #line 24
-testRunner.And("I should see the following error summary message in Reviews and Appeals page", ((string)(null)), table96, "And ");
+testRunner.And("I should see the following error summary message in Reviews and Appeals page", ((string)(null)), table98, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -243,19 +243,19 @@ testRunner.And("I enter \"ABC12345\"", ((string)(null)), ((TechTalk.SpecFlow.Tab
 #line 32
 testRunner.And("I click on Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table97.AddRow(new string[] {
+                table99.AddRow(new string[] {
                             "Enter a valid 10-digit ULN"});
 #line 33
-testRunner.Then("I should see following error message in Reviews and Appeals page", ((string)(null)), table97, "Then ");
+testRunner.Then("I should see following error message in Reviews and Appeals page", ((string)(null)), table99, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table98.AddRow(new string[] {
+                table100.AddRow(new string[] {
                             "Enter a valid 10-digit ULN"});
 #line 36
-testRunner.And("I should see the following error summary message in Reviews and Appeals page", ((string)(null)), table98, "And ");
+testRunner.And("I should see the following error summary message in Reviews and Appeals page", ((string)(null)), table100, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

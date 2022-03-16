@@ -35,6 +35,22 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add ROMM')]"));
         element[2].Click();
     }
+    private static void ClickCoreAddRommOutcome()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add outcome')]"));
+        element[0].Click();
+    }
+    private static void ClickAssessment1AddRommOutcome()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add outcome')]"));
+        element[1].Click();
+    }
+
+    private static void ClickAssessment2AddRommOutcome()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add outcome')]"));
+        element[2].Click();
+    }
     public static void AddRommBtn(string buttonName)
     {
         switch (buttonName)
@@ -48,8 +64,18 @@ public class PostResultsLearnerDetailsPage : ElementHelper
             case "Add specialism2 ROMM":
                 ClickAssessment2AddRomm();
                 break;
+            case "Add core outcome":
+                ClickCoreAddRommOutcome();
+                break;
+            case "Add specialism1 outcome":
+                ClickAssessment1AddRommOutcome();
+                break;
+            case "Add specialism2 outcome":
+                ClickAssessment2AddRommOutcome();
+                break;
         }
     }
+    
     protected static void VerifyCountOfAddRommButtons()
     {
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add ROMM')]"));
