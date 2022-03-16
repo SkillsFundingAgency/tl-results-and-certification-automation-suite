@@ -13,6 +13,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     private static readonly By SuccessBannerElement = By.XPath("//*[@id='main-content']//h2");
     private static readonly By MessageHeaderElement = By.XPath("//*[@id='main-content']//h3");
     private static readonly By CoreAddOutcomeBtn = By.XPath("//a[contains(text(), 'Add outcome')][1]");
+    private static readonly By CoreAddRommBtn = By.XPath("//a[contains(text(), 'Add ROMM')][1]");
 
     public static void VerifyPostResultsLearnerDetailsPage()
     {
@@ -93,9 +94,18 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         Assert.AreEqual("Success",WebDriver.FindElement(SuccessBannerElement).Text);
         Assert.AreEqual("ROMM recorded",WebDriver.FindElement(MessageHeaderElement).Text);
     }
+    protected static void VerifyRommWithdrawnSuccessfully()
+    {
+        Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
+        Assert.AreEqual("ROMM withdrawn", WebDriver.FindElement(MessageHeaderElement).Text);
+    }
 
     protected static void IsCoreAddOutcomeBtnVisible()
     {
         IsPresent(CoreAddOutcomeBtn);
+    }
+    protected static void IsCoreAdRommBtnVisible()
+    {
+        IsPresent(CoreAddRommBtn);
     }
 }

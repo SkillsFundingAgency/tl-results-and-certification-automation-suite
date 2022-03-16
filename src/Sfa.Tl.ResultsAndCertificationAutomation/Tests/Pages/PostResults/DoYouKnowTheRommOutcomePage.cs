@@ -27,7 +27,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
             Assert.AreEqual(PageErrorTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
-        protected static void DoYouKnowRommOutcomeOptions(string optionName)
+
+        public static void DoYouKnowRommOutcomeOptions(string optionName)
         {
             switch (optionName)
             {
