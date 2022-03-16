@@ -110,15 +110,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string DbProviderName = "Automation Test1 (99999901)";
         public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
         //public const string TqProviderId = "9479";
-        public const string TqProviderId = "16112";
+        public const string TqProviderId = "16464";
         public const string TlSpecialismId = "42";
         public const string TlAssessmentSeriesId = "7";
         public const string TqProviderId2 = "15167";
-        public const string TqProviderIdForLrs = "16131";
+        public const string TqProviderIdForLrs = "16477";
         public const string DbProviderNameForLrs = "Barnsley College (10000536)";
-        public const string DudleyProviderIdForLrs = "16127";
+        public const string DudleyProviderIdForLrs = "16480";
         public const string DdudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
-        public const string pearsonTQProviderID = "16164";
+        public const string pearsonTQProviderID = "16484";
         //Reviews And Appeals Data
         public const string RaaName = "Db FirstName Db LastName";
         public const string Raadob = "01 January 2001";
@@ -131,7 +131,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport
         public const string RaaOriginalGrade = "A";
         // City and Guillds
         //public const string CityAndGuildsProviderId_newEnv = "15399";
-        public const string CityAndGuildsProviderId = "16136";
+        public const string CityAndGuildsProviderId = "16486";
         public const string HeatingSpecialismId = "11";
         public const string VentilationSpecialismId = "16";
         public const string PathwayAssessmentSeriesId = "2";

@@ -95,11 +95,13 @@ testRunner.And("I click on \"Appeals\" link", ((string)(null)), ((TechTalk.SpecF
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3476 Verify search for learner page and click Back link")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3476VerifySearchForLearnerPageAndClickBackLink()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -151,11 +153,13 @@ testRunner.And("I have deleted LRS records from the database", ((string)(null)),
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3476 Press Back to home button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3476PressBackToHomeButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

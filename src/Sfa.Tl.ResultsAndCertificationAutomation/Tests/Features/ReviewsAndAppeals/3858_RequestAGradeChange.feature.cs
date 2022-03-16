@@ -90,11 +90,13 @@ testRunner.And("I have registration in final state", ((string)(null)), ((TechTal
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3858 Validate Request a change to this learner’s grade page - Access from Review " +
             "option")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3858ValidateRequestAChangeToThisLearnerSGradePage_AccessFromReviewOption()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -214,11 +216,13 @@ testRunner.And("the registration for this test is deleted", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3858 Validate error messages when pressing Send button without entering any text")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3858ValidateErrorMessagesWhenPressingSendButtonWithoutEnteringAnyText()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

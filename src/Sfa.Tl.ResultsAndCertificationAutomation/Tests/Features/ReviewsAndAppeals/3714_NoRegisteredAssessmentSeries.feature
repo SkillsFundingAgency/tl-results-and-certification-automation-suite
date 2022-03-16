@@ -8,7 +8,7 @@ Given I have logged in as a "ResultsEditor" user
 And I have a registration without assessment and result
 And I click on "Appeals" link
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3714 Verify no registered assessment series page
 And I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then I should see learner does not have assessment page
@@ -16,7 +16,7 @@ And Back link should takes back to seach learnerpage
 And clicking Search again button takes to serch learner page
 And the registration for this test is deleted
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3714 Verify back to home
 And I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then I should see learner does not have assessment page

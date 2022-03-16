@@ -32,7 +32,6 @@ Examples:
 Scenario: 4713_Navigate to Assessment Details page for a new learner with no specialism codes recorded
 When I enter the following <ULN>
 Then I am navigated to the Assessment Details page for <ULN>
-And the Core section will state "You cannot register this learner for a core component assessment until the summer 2022 window opens." 
 And the core code will display "Building Services Engineering (60369115)"
 And the specialism section will state "This learner does not have an occupational specialism recorded on this service"
 And when I click on the Add an occupational specialism recorded on this service link

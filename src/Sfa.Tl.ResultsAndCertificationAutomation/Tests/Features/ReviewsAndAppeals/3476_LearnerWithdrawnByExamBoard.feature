@@ -10,7 +10,7 @@ Given I have logged in as a "ResultsEditor" user
 And I have created a registration which is withdrawn, where 'MathEng not Achieved Min Standard Math-A Eng-NA' and 'IP completed' with a grade attached
 And I click on "Appeals" link
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3476 Verify search for learner page and click Back link
 When I click on "Continue" button in start page
 And I search for the ULN created for this test
@@ -19,7 +19,7 @@ And when I click the Back link on the Reviews and appeals Learner Withdrawn page
 Then I should see reviews and appeals search for learner page
 And I have deleted LRS records from the database
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3476 Press Back to home button
 When I click on "Continue" button in start page
 And I search for the ULN created for this test

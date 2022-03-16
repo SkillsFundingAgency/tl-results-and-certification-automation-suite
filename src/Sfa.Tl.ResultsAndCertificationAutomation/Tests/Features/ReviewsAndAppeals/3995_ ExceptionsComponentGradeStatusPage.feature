@@ -10,7 +10,7 @@ And I set the End date for the Autumn Assessment Series to a date in the past
 When I click on "Appeals" link
 
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3995_Verify Component grade status page when the date for appeal has passed
 Given I navigate to the Review and Appeals Learner Component Grade status page using the URL
 Then I am shown the component grade status page

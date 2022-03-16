@@ -86,11 +86,13 @@ testRunner.Given("I have logged in as a \"ResultsEditor\" user", ((string)(null)
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3773 Validate upload result update for a final state")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("ReviewsAndAppeals")]
         public virtual void _3773ValidateUploadResultUpdateForAFinalState()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "ReviewsAndAppeals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -118,12 +120,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
-                table90.AddRow(new string[] {
+                table100.AddRow(new string[] {
                             "9900000302"});
 #line 11
-testRunner.And("I have a registration in Final state for this Uln", ((string)(null)), table90, "And ");
+testRunner.And("I have a registration in Final state for this Uln", ((string)(null)), table100, "And ");
 #line hidden
 #line 14
 testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

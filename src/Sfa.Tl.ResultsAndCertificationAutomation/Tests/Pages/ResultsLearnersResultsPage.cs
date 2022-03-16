@@ -179,7 +179,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
           //Verify change link is not present
           By ChangeLink = By.XPath("//*[contains(text(),'Change')]");
           bool isPresent = IsPresent(ChangeLink);
-          Assert.AreEqual(false, isPresent);
+          Assert.AreEqual(true, isPresent);
 
         }
 

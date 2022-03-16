@@ -9,7 +9,7 @@ And I have a registration in Appealed state
 And I am on registration details page
 And click on change status link
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3742 Verify cannot withdraw registration page
 When I select withdraw registration and click continue
 Then I should see you cannot withdraw registration page

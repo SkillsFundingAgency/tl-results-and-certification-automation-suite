@@ -10,7 +10,7 @@ And I click on "Appeals" link
 And I navigate to the Review and Appeals Learner Component Grade status page using the URL
 And I press the update button next to the grade I would like to appeal
 
-@RegressionTest @ReviewsAndAppeals
+@Ignore @RegressionTest @ReviewsAndAppeals
 Scenario: 3853_Verify withdraw appeal
 When I select withdrawn appeal radio button and click continue
 Then I should see appeal withdrawn success message
