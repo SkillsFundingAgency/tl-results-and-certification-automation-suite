@@ -19,14 +19,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         private static By SelectGradeE { get; } = By.Id("selectedgradecode-5");
         private static By SelectGradeUnclassified { get; } = By.Id("selectedgradecode-6");
         private static By ContinueBtn { get; } = By.Id("continueButton");
-        public static void VerifyChangeTheGradeAfterRommPage()
+
+        protected static void VerifyChangeTheGradeAfterRommPage()
         {
             Assert.AreEqual(PageTitle,WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
             Assert.AreEqual(PageHeader,WebDriver.FindElement(PageHeaderElement).Text);
         }
 
-        public static void VerifyChangeTheGradeAfterRommErrorPage()
+        protected static void VerifyChangeTheGradeAfterRommErrorPage()
         {
             Assert.AreEqual(PageErrorTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));

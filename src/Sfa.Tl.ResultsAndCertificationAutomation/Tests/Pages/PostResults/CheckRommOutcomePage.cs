@@ -11,6 +11,7 @@ public class CheckRommOutcomePage : ElementHelper
     private static string PageHeader { get; } = "Check the ROMM outcome";
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
     private static readonly By BackLink = By.Id("backLink");
+    private static readonly By SubmitBtn = By.Id("submitButton");
 
     protected static void VerifyCheckRommOutcomePage()
     {
@@ -19,9 +20,11 @@ public class CheckRommOutcomePage : ElementHelper
         Assert.AreEqual(PageHeader,WebDriver.FindElement(PageHeaderElement).Text);
     }
 
-    public static void BackLinkToAddRommOutcomePage()
+    protected static void BackLinkToAddRommOutcomePage()
     {
         ClickElement(BackLink);
         AddRommOutcomePage.VerifyAddRommOutcomePage();
     }
+
+    public static void ClickSubmitBtn() => ClickButton(SubmitBtn);
 }

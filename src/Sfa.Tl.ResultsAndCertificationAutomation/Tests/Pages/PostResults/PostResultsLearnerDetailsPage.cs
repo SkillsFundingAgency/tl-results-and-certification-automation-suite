@@ -14,6 +14,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     private static readonly By MessageHeaderElement = By.XPath("//*[@id='main-content']//h3");
     private static readonly By CoreAddOutcomeBtn = By.XPath("//a[contains(text(), 'Add outcome')][1]");
     private static readonly By CoreAddRommBtn = By.XPath("//a[contains(text(), 'Add ROMM')][1]");
+    private static readonly By CoreAddAppealBtn = By.XPath("//a[contains(text(), 'Add appeal')][1]");
 
     public static void VerifyPostResultsLearnerDetailsPage()
     {
@@ -52,6 +53,22 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add outcome')]"));
         element[2].Click();
     }
+    private static void ClickCoreAddAppeal()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add appeal')]"));
+        element[0].Click();
+    }
+    private static void ClickAssessment1AddAppeal()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add appeal')]"));
+        element[1].Click();
+    }
+
+    private static void ClickAssessment2AddAppeal()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add appeal')]"));
+        element[2].Click();
+    }
     public static void AddRommBtn(string buttonName)
     {
         switch (buttonName)
@@ -73,6 +90,15 @@ public class PostResultsLearnerDetailsPage : ElementHelper
                 break;
             case "Add specialism2 outcome":
                 ClickAssessment2AddRommOutcome();
+                break;
+            case "Add core appeal":
+                ClickCoreAddAppeal();
+                break;
+            case "Add specialism1 appeal":
+                ClickAssessment1AddAppeal();
+                break;
+            case "Add specialism2 appeal":
+                ClickAssessment2AddAppeal();
                 break;
         }
     }
@@ -99,6 +125,11 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
         Assert.AreEqual("ROMM withdrawn", WebDriver.FindElement(MessageHeaderElement).Text);
     }
+    protected static void VerifyRommOutcomeRecordedSuccessfully()
+    {
+        Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
+        Assert.AreEqual("ROMM outcome recorded", WebDriver.FindElement(MessageHeaderElement).Text);
+    }
 
     protected static void IsCoreAddOutcomeBtnVisible()
     {
@@ -107,5 +138,9 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     protected static void IsCoreAdRommBtnVisible()
     {
         IsPresent(CoreAddRommBtn);
+    }
+    protected static void IsCoreAddAppealBtnVisible()
+    {
+        IsPresent(CoreAddAppealBtn);
     }
 }

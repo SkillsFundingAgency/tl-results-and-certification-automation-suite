@@ -36,6 +36,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             CommonPage.VerifyValidationSummaryMessages(table);
         }
+        [Given(@"I select ""([^""]*)"" option in romm outcome page")]
         [When(@"I select ""([^""]*)"" option in romm outcome page")]
         public void WhenISelectOptionInRommOutcomePage(string option)
         {
