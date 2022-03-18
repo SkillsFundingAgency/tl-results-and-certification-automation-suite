@@ -26,6 +26,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         }
 
-        public static void ClickSendBtn() => ClickButton(SendBtn);
+        protected static void ClickSendBtn() => ClickButton(SendBtn);
     }
 }

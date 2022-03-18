@@ -120,12 +120,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
-                table104.AddRow(new string[] {
+                table106.AddRow(new string[] {
                             "9900000302"});
 #line 11
-testRunner.And("I have a registration in Final state for this Uln", ((string)(null)), table104, "And ");
+testRunner.And("I have a registration in Final state for this Uln", ((string)(null)), table106, "And ");
 #line hidden
 #line 14
 testRunner.And("I am on results upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

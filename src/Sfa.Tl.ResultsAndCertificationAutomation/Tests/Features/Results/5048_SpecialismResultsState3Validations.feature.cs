@@ -108,12 +108,12 @@ testRunner.And("I upload assessment \"5048_AssessmentsValid.csv\" file", ((strin
 #line 15
 testRunner.And("I am on assessment entries home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
                         "Uln"});
-            table87.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "9500000005"});
 #line 16
-testRunner.And("I have moved following registration in to withdrawn state", ((string)(null)), table87, "And ");
+testRunner.And("I have moved following registration in to withdrawn state", ((string)(null)), table89, "And ");
 #line hidden
 #line 19
 testRunner.And("I am on Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
