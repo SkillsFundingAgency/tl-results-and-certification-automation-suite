@@ -147,7 +147,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         }
         private static void InsertCoreResultFinal(int coreAssessmentId, int grade)
         {
-            var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','" + grade + "',GETDATE(),NULL,3,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','" + grade + "',GETDATE(),NULL,4,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
             var updatePathwayResult = "Update TqPathwayResult set PrsStatus=4 where TqPathwayAssessmentId='" + coreAssessmentId + "'";
             SqlDatabaseConncetionHelper.UpdateSqlCommand(updatePathwayResult, ConnectionString);
@@ -164,7 +164,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
         }
         private static void InsertAssessmentResultFinal(int specialismAssessmentId, int grade)
         {
-            var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),NULL,3,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            var createPathwayResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),NULL,4,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
             var updateSpecialismAssessment = "Update TqSpecialismResult set PrsStatus=4 where TqSpecialismAssessmentId='" + specialismAssessmentId + "'";
             SqlDatabaseConncetionHelper.UpdateSqlCommand(updateSpecialismAssessment, ConnectionString);

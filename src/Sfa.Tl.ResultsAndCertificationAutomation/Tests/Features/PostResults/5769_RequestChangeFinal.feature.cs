@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.PostResults
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("5192_SelectSpecialismResultPage")]
-    public partial class _5192_SelectSpecialismResultPageFeature
+    [NUnit.Framework.DescriptionAttribute("5769_RequestChangeFinal")]
+    public partial class _5769_RequestChangeFinalFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "5192_SelectSpecialismResultPage.feature"
+#line 1 "5769_RequestChangeFinal.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Results", "5192_SelectSpecialismResultPage", "As an AO, I need the ability to add an Occupational Specialism grade for the desi" +
-                    "red ULN, so that I can update the ULN record with the determined grade.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/PostResults", "5769_RequestChangeFinal", "As an AO, I need the ability to request a grade to be changed after it has moved " +
+                    "into ‘FINAL’ , so that I am able to get the record updated before overall grade " +
+                    "calculation.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,24 +83,24 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
 testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
-testRunner.And("I have a registration with core and specialism assessments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have registration with results in final state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
-testRunner.And("I am on result details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am on post results learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("5192 Add specialism result page")]
+        [NUnit.Framework.DescriptionAttribute("5769 Verify request change a final grade page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public virtual void _5192AddSpecialismResultPage()
+        [NUnit.Framework.CategoryAttribute("PostResults")]
+        public virtual void _5769VerifyRequestChangeAFinalGradePage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "PostResults"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5192 Add specialism result page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5769 Verify request change a final grade page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -124,29 +125,29 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 12
- testRunner.When("I click \'Specialism1 add result\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click \"Core request change\" button in post result learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.Then("I should see add result page for Assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("requst change a final grade page is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 14
- testRunner.And("back link should take me to learner result page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("back link takes me to post result learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("5192 Add specialism result page validation")]
+        [NUnit.Framework.DescriptionAttribute("5769 Error validations request change a final grade page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public virtual void _5192AddSpecialismResultPageValidation()
+        [NUnit.Framework.CategoryAttribute("PostResults")]
+        public virtual void _5769ErrorValidationsRequestChangeAFinalGradePage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "PostResults"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5192 Add specialism result page validation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5769 Error validations request change a final grade page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -171,24 +172,24 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 18
- testRunner.When("I click \'Specialism1 add result\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click \"Core request change\" button in post result learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
- testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click on Send button without entering data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table92.AddRow(new string[] {
-                            "Please select the grade"});
+                TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error message"});
+                table41.AddRow(new string[] {
+                            "Please tell us what you need to change and why"});
 #line 20
- testRunner.Then("I should see the following error message on specialism result page", ((string)(null)), table92, "Then ");
+testRunner.Then("error message shown on request change a final grade page", ((string)(null)), table41, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table93.AddRow(new string[] {
-                            "Please select the grade"});
+                TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error summary"});
+                table42.AddRow(new string[] {
+                            "Please tell us what you need to change and why"});
 #line 23
- testRunner.And("I should see the following error summary messages", ((string)(null)), table93, "And ");
+testRunner.And("error summary shown on request change a final grade page", ((string)(null)), table42, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

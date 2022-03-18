@@ -69,6 +69,22 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Add appeal')]"));
         element[2].Click();
     }
+    private static void ClickCoreRequestChange()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Request change')]"));
+        element[0].Click();
+    }
+    private static void ClickAssessment1RequestChange()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Request change')]"));
+        element[1].Click();
+    }
+
+    private static void ClickAssessment2RequestChange()
+    {
+        IList<IWebElement> element = WebDriver.FindElements(By.XPath("//*[contains(text(),'Request change')]"));
+        element[2].Click();
+    }
     public static void AddRommBtn(string buttonName)
     {
         switch (buttonName)
@@ -99,6 +115,15 @@ public class PostResultsLearnerDetailsPage : ElementHelper
                 break;
             case "Add specialism2 appeal":
                 ClickAssessment2AddAppeal();
+                break;
+            case "Core request change":
+                ClickCoreRequestChange();
+                break;
+            case "Specialism1 request change":
+                ClickAssessment1RequestChange();
+                break;
+            case "Specialism2 request change":
+                ClickAssessment2RequestChange();
                 break;
         }
     }
