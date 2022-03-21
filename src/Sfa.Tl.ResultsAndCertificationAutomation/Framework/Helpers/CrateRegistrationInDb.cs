@@ -420,7 +420,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var profileId = SqlQueries.ReturnRegistrationProfileID(uln);
 
             //var createNewRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + "16133" + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
-            var createNewRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + Constants.pearsonTQProviderID + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            var createNewRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + Constants.PearsonTqProviderId + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
 
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createNewRegPathway, ConnectionString);
 

@@ -11,8 +11,8 @@ public class AddRommPage : ElementHelper
     private static string PageErrorTitle { get; } = "Error: Add a ROMM - Post-results – Manage T Level results – GOV.UK";
     private static string PageHeader { get; } = "Add a ROMM";
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
-    private static readonly By RadioBtnYes = By.Id("rommrequested");
-    private static readonly By RadioBtnNo = By.Id("rommrequested-no");
+    private static readonly By RadioBtnYes = By.Id("isrommrequested");
+    private static readonly By RadioBtnNo = By.Id("isrommrequested-no");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By BackLink = By.Id("backLink");
 

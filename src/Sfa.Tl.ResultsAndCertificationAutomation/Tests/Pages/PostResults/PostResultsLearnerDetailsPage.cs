@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using Microsoft.VisualBasic;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Constants = Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport.Constants;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults;
 
@@ -12,6 +14,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     private static By SearchAgainBtn { get; } = By.Id("buttonSearchAgain");
     private static readonly By SuccessBannerElement = By.XPath("//*[@id='main-content']//h2");
     private static readonly By MessageHeaderElement = By.XPath("//*[@id='main-content']//h3");
+    private static readonly By LearnerDetailsElement = By.XPath("//*[@id='main-content']/div[1]");
     private static readonly By CoreAddOutcomeBtn = By.XPath("//a[contains(text(), 'Add outcome')][1]");
     private static readonly By CoreAddRommBtn = By.XPath("//a[contains(text(), 'Add ROMM')][1]");
     private static readonly By CoreAddAppealBtn = By.XPath("//a[contains(text(), 'Add appeal')][1]");
@@ -167,5 +170,29 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     protected static void IsCoreAddAppealBtnVisible()
     {
         IsPresent(CoreAddAppealBtn);
+    }
+
+    public static void VerifyLearnerDetails()
+    {
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbProName));
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbUkprn));
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbTlevel));
+    }
+
+    public static void VerifyLearnerCoreDetails()
+    {
+        VerifyLearnerDetails();
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbCoreComponent));
+    }
+    public static void VerifyLearnerOs1Details()
+    {
+        VerifyLearnerDetails();
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbOs1Component));
+    }
+    public static void VerifyLearnerOs2Details()
+    {
+        VerifyLearnerDetails();
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbOs2Component));
     }
 }
