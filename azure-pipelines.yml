@@ -1,4 +1,3 @@
-schedules:
 resources:
   repositories:
     - repository: self
