@@ -42,5 +42,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             AddRommOutcomeOptions(option);
         }
+        [Then(@"specialism details shown in Os Romm outcome page")]
+        public void ThenSpecialismDetailsShownInOsRommOutcomePage()
+        {
+            VerifyLearnerOs1DetailsAdddRommOutcomePage();
+        }
+
     }
 }
