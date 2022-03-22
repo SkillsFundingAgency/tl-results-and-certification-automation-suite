@@ -256,4 +256,7 @@ public static class Constants
     public const string DbCoreComponent = "Building Services Engineering (60369115)";
     public const string DbOs1Component = "Heating Engineering (10202101)";
     public const string DbOs2Component = "Ventilation (10202105)";
+    public const string DbCoreComponentName = "Building Services Engineering";
+    public const string DbOs1ComponentName = "Heating Engineering";
+    public const string DbOs2ComponentName = "Ventilation";
 }
