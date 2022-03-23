@@ -16,4 +16,9 @@ public class _5754_RommRecordedSuccessfullyPageStepDefinitions : PostResultsLear
     {
         IsCoreAddOutcomeBtnVisible();
     }
+    [Then(@"Romm recorded success message for specialism is shown")]
+    public void ThenRommRecordedSuccessMessageForSpecialismIsShown()
+    {
+        VerifyRommRecordedForOs();
+    }
 }
