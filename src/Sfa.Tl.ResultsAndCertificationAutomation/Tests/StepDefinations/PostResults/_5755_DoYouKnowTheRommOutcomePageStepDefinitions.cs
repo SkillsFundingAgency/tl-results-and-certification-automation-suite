@@ -45,6 +45,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             CommonPage.VerifyValidationSummaryMessages(table);
         }
-
+        [Then(@"do you know the romm outcome for specialism page is shown")]
+        public void ThenDoYouKnowTheRommOutcomeForSpecialismPageIsShown()
+        {
+            VerifyLearnerOs1DoYouKnowRommOutcomePage();
+        }
     }
 }

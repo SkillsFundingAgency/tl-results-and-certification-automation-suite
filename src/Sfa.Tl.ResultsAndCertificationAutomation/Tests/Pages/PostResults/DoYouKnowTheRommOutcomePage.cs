@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
+using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
 {
@@ -11,6 +12,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         private static string PageErrorTitle { get; } = "Error: ROMM outcome - Post-results – Manage T Level results – GOV.UK";
         private static string PageHeader { get; } = "Do you know the ROMM outcome?";
         private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
+        private static readonly By LearnerDetailsElement = By.XPath("//*[@id='main-content']/div[1]");
         private static readonly By RadioNoGradeChanged = By.Id("rommoutcome");
         private static readonly By RadioGradeChanged = By.Id("rommoutcome-gradechanged");
         private static readonly By RadioGradeWithdrawn = By.Id("appealoutcome-withdraw");
@@ -48,5 +50,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         }
 
         protected static void ClickContinue() => ClickButton(ContinueBtn);
+        protected static void VerifyLearnerOs1DoYouKnowRommOutcomePage()
+        {
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbFirstName + " " + Constants.DbLastName));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbTlevel));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbOs1Component));
+        }
     }
 }
