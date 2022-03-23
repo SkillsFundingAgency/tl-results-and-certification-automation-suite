@@ -23,5 +23,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             IsCoreAdRommBtnVisible();
         }
+        [Then(@"Romm withdrawn successfully for specialism message is shown")]
+        public void ThenRommWithdrawnSuccessfullyForSpecialismMessageIsShown()
+        {
+            VerifyRommWithdrawnForOs();
+        }
     }
 }

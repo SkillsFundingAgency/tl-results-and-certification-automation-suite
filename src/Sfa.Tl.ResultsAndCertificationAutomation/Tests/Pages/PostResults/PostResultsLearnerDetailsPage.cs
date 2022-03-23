@@ -202,4 +202,11 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
         VerifyLearnerDetails();
     }
+    protected static void VerifyRommWithdrawnForOs()
+    {
+        VerifyRommWithdrawnSuccessfully();
+        const string successText = "You have withdrawn a ROMM for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbOs1Component + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
 }
