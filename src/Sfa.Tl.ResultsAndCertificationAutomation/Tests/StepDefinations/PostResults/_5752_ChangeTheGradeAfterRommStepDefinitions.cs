@@ -30,5 +30,10 @@ public class _5752_ChangeTheGradeAfterRommStepDefinitions : ChangeTheGradeAfterR
     {
         CommonPage.VerifyValidationSummaryMessages(table);
     }
+    [Then(@"specialism details shown in change the grade romm page")]
+    public void ThenSpecialismDetailsShownInChangeTheGradeRommPage()
+    {
+        VerifyLearnerOs1DetailsChangeGradeAfterRommPage();
+    }
 
 }
