@@ -44,6 +44,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             CommonPage.VerifyValidationSummaryMessages(table);
         }
+        [Then(@"specialism details shown on request change page")]
+        public void ThenSpecialismDetailsShownOnRequestChangePage()
+        {
+            ChangeTheGradeAfterRommPge.VerifyLearnerOs1DetailsChangeGradeAfterRommPage();
+        }
 
     }
 }

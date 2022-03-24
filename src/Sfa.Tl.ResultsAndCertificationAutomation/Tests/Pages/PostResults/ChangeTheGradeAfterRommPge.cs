@@ -68,7 +68,8 @@ public class ChangeTheGradeAfterRommPge : ElementHelper
                 break;
         }
     }
-    protected static void VerifyLearnerOs1DetailsChangeGradeAfterRommPage()
+
+    public static void VerifyLearnerOs1DetailsChangeGradeAfterRommPage()
     {
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbFirstName + " " + Constants.DbLastName));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
