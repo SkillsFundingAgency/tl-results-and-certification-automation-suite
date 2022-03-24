@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Microsoft.VisualBasic;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
@@ -172,7 +171,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         IsPresent(CoreAddAppealBtn);
     }
 
-    public static void VerifyLearnerDetails()
+    protected static void VerifyLearnerDetails()
     {
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbProName));

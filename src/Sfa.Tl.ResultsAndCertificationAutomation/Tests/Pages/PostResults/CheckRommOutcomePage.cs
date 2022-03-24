@@ -15,7 +15,7 @@ public class CheckRommOutcomePage : ElementHelper
     private static readonly By BackLink = By.Id("backLink");
     private static readonly By SubmitBtn = By.Id("submitButton");
 
-    protected static void VerifyCheckRommOutcomePage()
+    public static void VerifyCheckRommOutcomePage()
     {
         Assert.AreEqual(PageTitle,WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));

@@ -173,19 +173,19 @@ testRunner.And("I click \'Specialism2 change result\' link", ((string)(null)), (
 #line 18
 testRunner.When("I click on \"Change\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
-                table96.AddRow(new string[] {
+                table98.AddRow(new string[] {
                             "Please select the grade"});
 #line 19
-testRunner.Then("I should see the following error message on change specialism result page", ((string)(null)), table96, "Then ");
+testRunner.Then("I should see the following error message on change specialism result page", ((string)(null)), table98, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
-                table97.AddRow(new string[] {
+                table99.AddRow(new string[] {
                             "Please select the grade"});
 #line 22
-testRunner.And("I should see the following error summary messages", ((string)(null)), table97, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table99, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
