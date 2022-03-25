@@ -66,6 +66,22 @@ public class ChangeTheGradeAfterRommPge : ElementHelper
                 ClickElement(SelectGradeUnclassified);
                 ClickButton(ContinueBtn);
                 break;
+            case "Grade Distinction":
+                ClickElement(SelectGradeAStar);
+                ClickButton(ContinueBtn);
+                break;
+            case "Grade Merit":
+                ClickElement((SelectGradeA));
+                ClickButton(ContinueBtn);
+                break;
+            case "Grade Pass":
+                ClickElement(SelectGradeB);
+                ClickButton(ContinueBtn);
+                break;
+            case "Unclassified":
+                ClickElement(SelectGradeC);
+                ClickButton(ContinueBtn);
+                break;
         }
     }
 

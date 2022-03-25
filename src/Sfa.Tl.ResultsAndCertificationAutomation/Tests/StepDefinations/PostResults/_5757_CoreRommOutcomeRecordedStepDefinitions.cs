@@ -29,4 +29,10 @@ public class _5757_CoreRommOutcomeRecordedStepDefinitions : PostResultsLearnerDe
     {
         IsCoreAddAppealBtnVisible();
     }
+    [Then(@"Romm outcome recorded for specialism success message is shown")]
+    public void ThenRommOutcomeRecordedForSpecialismSuccessMessageIsShown()
+    {
+        VerifyRommOutcomeRecordedForOs();
+    }
+
 }

@@ -208,4 +208,11 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
         VerifyLearnerDetails();
     }
+    protected static void VerifyRommOutcomeRecordedForOs()
+    {
+        VerifyRommOutcomeRecordedSuccessfully();
+        const string successText = "You have recorded a ROMM outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbOs1Component + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
 }
