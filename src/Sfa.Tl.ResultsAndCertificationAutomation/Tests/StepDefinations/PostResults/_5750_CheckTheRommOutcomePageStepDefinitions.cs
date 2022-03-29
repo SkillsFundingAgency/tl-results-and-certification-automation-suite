@@ -17,4 +17,10 @@ public class _5750_CheckTheRommOutcomePageStepDefinitions : CheckRommOutcomePage
     {
         BackLinkToAddRommOutcomePage();
     }
+    [Then(@"specialism details shown in check the Romm oucome page")]
+    public void ThenSpecialismDetailsShownInCheckTheRommOucomePage()
+    {
+        VerifyLearnerOs1DetailsAdddRommOutcomePage();
+    }
+
 }

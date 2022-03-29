@@ -10,6 +10,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         public void ThenLearnerDetailsPageIsShown()
         {
             VerifyPostResultsLearnerDetailsPage();
+            VerifyLearnerDetails();
         }
 
         [Then(@"add ROMM button is enabled for current assessment series")]
