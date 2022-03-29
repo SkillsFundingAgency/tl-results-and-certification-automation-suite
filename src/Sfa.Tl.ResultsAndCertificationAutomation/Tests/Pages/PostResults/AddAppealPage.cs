@@ -44,7 +44,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         }
         protected static void VerifyLearnerCoreDetailsAddAppealPage()
         {
-            const string text = "Tell us that " + Constants.DbFirstName + " " + Constants.DbLastName + " has asked for an appeal of their " + Constants.DbCoreComponentName + "";
+            const string text = "Tell us that " + Constants.DbFirstName + " " + Constants.DbLastName + " has asked for an appeal of their " + Constants.DbCoreComponentName + " grade";
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(text));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbTlevel));
