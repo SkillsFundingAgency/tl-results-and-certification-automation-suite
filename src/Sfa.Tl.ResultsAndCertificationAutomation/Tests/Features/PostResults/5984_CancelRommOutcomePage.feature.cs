@@ -191,19 +191,19 @@ testRunner.And("I click the Cancel link", ((string)(null)), ((TechTalk.SpecFlow.
 #line 24
 testRunner.And("I click the Continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
-                table47.AddRow(new string[] {
+                table49.AddRow(new string[] {
                             "Please select whether you want to cancel the update to this ROMM"});
 #line 25
-testRunner.Then("error message shown on cancel romm outcome page", ((string)(null)), table47, "Then ");
+testRunner.Then("error message shown on cancel romm outcome page", ((string)(null)), table49, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
-                table48.AddRow(new string[] {
+                table50.AddRow(new string[] {
                             "Please select whether you want to cancel the update to this ROMM"});
 #line 28
-testRunner.And("error summary shown on cancel romm outcome page", ((string)(null)), table48, "And ");
+testRunner.And("error summary shown on cancel romm outcome page", ((string)(null)), table50, "And ");
 #line hidden
 #line 31
 testRunner.And("yes, cancel radio will takes me to learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

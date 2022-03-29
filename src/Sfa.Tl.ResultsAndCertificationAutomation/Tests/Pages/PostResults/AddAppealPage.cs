@@ -16,9 +16,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         private static readonly By RadioBtnYes = By.Id("isappealrequested");
         private static readonly By RadioBtnNo = By.Id("isappealrequested-no");
         private static readonly By ContinueBtn = By.Id("continueButton");
-        private static readonly By BackLink = By.Id("backLink");
-        protected static void ClickBackLink() => ClickElement(BackLink);
-        public static void ClickContinueBtn() => ClickButton(ContinueBtn);
 
         public static void VerifyAddAppealPage()
         {
@@ -40,7 +37,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
                     break;
             }
         }
-
         protected static void VerifyAddAppealErrorPage()
         {
             Assert.AreEqual(PageErrorTitle, WebDriver.Title);
