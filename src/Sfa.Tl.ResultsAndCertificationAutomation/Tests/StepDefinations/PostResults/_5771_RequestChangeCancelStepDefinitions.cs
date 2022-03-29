@@ -37,6 +37,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             CommonPage.VerifyValidationSummaryMessages(table);
         }
+        [Then(@"selecting yes radio option takes me to request to learner details page")]
+        public void ThenSelectingYesRadioOptionTakesMeToRequestToLearnerDetailsPage()
+        {
+            CheckYesCancelRadio();
+            PostResultsLearnerDetailsPage.VerifyPostResultsLearnerDetailsPage();
+        }
 
     }
 }

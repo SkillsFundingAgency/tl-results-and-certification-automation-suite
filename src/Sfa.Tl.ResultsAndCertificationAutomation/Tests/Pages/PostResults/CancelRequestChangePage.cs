@@ -11,6 +11,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         private static string PageErrorTitle { get; } = "Error: Cancel request to change a ‘final’ grade - Post-results – Manage T Level results – GOV.UK";
         private static string PageHeader { get; } = "Are you sure you want to cancel the request to change the grade?";
         private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
+        private static readonly By YesCancelRadio = By.Id("areyousuretocancel");
         private static readonly By NoCancelRadio = By.Id("areyousuretocancel-no");
         private static readonly By ContinueBtn = By.Id("continueButton");
 
@@ -30,6 +31,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         protected static void CheckNoCancelRadio()
         {
             ClickElement(NoCancelRadio);
+            ClickButton(ContinueBtn);
+        }
+        protected static void CheckYesCancelRadio()
+        {
+            ClickElement(YesCancelRadio);
             ClickButton(ContinueBtn);
         }
 
