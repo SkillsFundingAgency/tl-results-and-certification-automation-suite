@@ -177,11 +177,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var createPathwayResultRomm = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','" + grade + "',GETDATE(),NULL,1,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResultRomm, ConnectionString);
         }
+        private static void InsertCoreWithRommRecorded(int coreAssessmentId, int grade)
+        {
+            var createPathwayResult = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','" + grade + "',GETDATE(),GETDATE(),Null,0,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
+            var createPathwayResultRomm = "Insert into TqPathwayResult values ('" + coreAssessmentId + "','" + grade + "',GETDATE(),NULL,2,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResultRomm, ConnectionString);
+        }
         private static void InsertAssessmentResultWithRomm(int specialismAssessmentId, int grade)
         {
             var createSpecialismResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),GETDATE(),Null,0,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismResult, ConnectionString);
             var createSpecialismResultRomm = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),NULL,1,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismResultRomm, ConnectionString);
+        }
+        private static void InsertAssessmentWithRommRecorded(int specialismAssessmentId, int grade)
+        {
+            var createSpecialismResult = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),GETDATE(),Null,0,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismResult, ConnectionString);
+            var createSpecialismResultRomm = "Insert into TqSpecialismResult values ('" + specialismAssessmentId + "','" + grade + "',GETDATE(),NULL,2,1,0,GETDATE(),'SYSTEM',NULL,'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createSpecialismResultRomm, ConnectionString);
         }
 
@@ -355,6 +369,19 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             InsertCoreResultWithRomm(coreAssessmentId, 1);
             InsertAssessmentResultWithRomm(specialismAssessmentId1, 10);
             InsertAssessmentResultWithRomm(specialismAssessmentId2, 11);
+        }
+        public static void RegWithRommOutcomeRecorded(string uln)
+        {
+            var profileId = InsertRegistrationProfile(uln);
+            var pathwayId = InsertRegistrationPathway(profileId);
+            var specialismId1 = InsertRegistrationSpecialism1(pathwayId);
+            var specialismId2 = InsertRegistrationSpecialism2(pathwayId);
+            var coreAssessmentId = InsertCoreAssessment(pathwayId);
+            var specialismAssessmentId1 = InsertSpecialismAssessment1(specialismId1);
+            var specialismAssessmentId2 = InsertSpecialismAssessment2(specialismId2);
+            InsertCoreWithRommRecorded(coreAssessmentId, 1);
+            InsertAssessmentWithRommRecorded(specialismAssessmentId1, 10);
+            InsertAssessmentWithRommRecorded(specialismAssessmentId2, 11);
         }
     }
 }
