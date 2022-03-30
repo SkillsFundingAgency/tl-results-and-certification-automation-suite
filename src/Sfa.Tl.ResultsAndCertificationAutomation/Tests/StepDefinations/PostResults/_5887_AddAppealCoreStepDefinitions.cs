@@ -45,6 +45,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             CommonPage.VerifyValidationSummaryMessages(table);
         }
+        [Given(@"I select ""([^""]*)"" radio button on add appeal Page")]
         [When(@"I select ""([^""]*)"" radio button on add appeal Page")]
         public void WhenISelectRadioButtonOnAddAppealPage(string text)
         {
