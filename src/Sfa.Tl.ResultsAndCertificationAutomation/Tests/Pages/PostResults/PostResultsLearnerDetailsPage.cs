@@ -157,10 +157,16 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
         Assert.AreEqual("ROMM outcome recorded", WebDriver.FindElement(MessageHeaderElement).Text);
     }
-    protected static void VerifyAppealAddedSuccessfully()
+
+    private static void VerifyAppealAddedSuccessfully()
     {
         Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
         Assert.AreEqual("Appeal recorded", WebDriver.FindElement(MessageHeaderElement).Text);
+    }
+    protected static void VerifyAppealOutcomeRecordedSuccessfully()
+    {
+        Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
+        Assert.AreEqual("Appeal outcome recorded", WebDriver.FindElement(MessageHeaderElement).Text);
     }
     protected static void IsCoreAddOutcomeBtnVisible()
     {
@@ -231,6 +237,21 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     {
         VerifyAppealAddedSuccessfully();
         const string successText = "You have recorded that " + Constants.DbFirstName + " " + Constants.DbLastName + " raised an appeal for their Summer 2022 " + Constants.DbOs1Component + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+
+    public static void VerifyAppealOutcomeRecordedForCore()
+    {
+        VerifyAppealOutcomeRecordedSuccessfully();
+        const string successText = "You have recorded an appeal outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Autumn 2021 " + Constants.DbCoreComponent + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+    protected static void VerifyAppealOutcomeRecordedForOs()
+    {
+        VerifyAppealOutcomeRecordedSuccessfully();
+        const string successText = "You have recorded a ROMM outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbOs1Component + " grade";
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
         VerifyLearnerDetails();
     }
