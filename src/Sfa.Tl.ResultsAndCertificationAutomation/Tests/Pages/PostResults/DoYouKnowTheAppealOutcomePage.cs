@@ -19,7 +19,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
         private static readonly By ContinueBtn = By.Id("continueButton");
         private static readonly By BackLink = By.Id("backLink");
 
-        protected static void VerifyDoYouKnowTheAppealOutcomePage()
+        public static void VerifyDoYouKnowTheAppealOutcomePage()
         {
             Assert.AreEqual(PageTitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
