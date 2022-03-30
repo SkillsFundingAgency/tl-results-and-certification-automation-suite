@@ -5,51 +5,42 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Tests.TestSupport;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults;
 
-public class ChangeTheGradeAfterAppealPage : ElementHelper
+public class CheckAppealOutcomePage : ElementHelper
 {
-    private static string PageUrl { get; } = "post-results-appeal-change-grade";
-    private static string PageTitle { get; } = "Appeal grade change - Post-results – Manage T Level results – GOV.UK";
-    private static string PageErrorTitle { get; } = "Error: Appeal grade change - Post-results – Manage T Level results – GOV.UK";
-    private static string PageHeader { get; } = "Change the grade after an appeal";
+    private static string PageUrl { get; } = "post-results-appeal-check";
+    private static string PageTitle { get; } = "Check appeal outcome - Post-results – Manage T Level results – GOV.UK";
+    private static string PageHeader { get; } = "Check the appeal outcome";
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
     private static readonly By LearnerDetailsElement = By.XPath("//*[@id='main-content']/div[1]");
     private static readonly By BackLink = By.Id("backLink");
-
-    public static void VerifyChangeTheGradeAfterAppealPage()
+    private static readonly By SubmitBtn = By.Id("submitButton");
+    public static void ClickSubmitBtn() => ClickButton(SubmitBtn);
+    public static void VerifyCheckAppealOutcomePage()
     {
         Assert.AreEqual(PageTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         Assert.AreEqual(PageHeader, WebDriver.FindElement(PageHeaderElement).Text);
     }
-
-    protected static void VerifyChangeTheGradeAfterAppealErrorPage()
+    protected static void BackLinkToChangeTheGradeAfterAppealPage()
     {
-        Assert.AreEqual(PageErrorTitle, WebDriver.Title);
-        Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+        ClickElement(BackLink);
+        ChangeTheGradeAfterAppealPage.VerifyChangeTheGradeAfterAppealPage();
     }
-
     protected static void BackLinkToAddAppealOutcomePage()
     {
         ClickElement(BackLink);
         AddAppealOutcomePage.VerifyAddAppealOutcomePage();
     }
-    protected static void BackLinkToDoYouKnowAppealOutcomePage()
-    {
-        ClickElement(BackLink);
-        DoYouKnowTheAppealOutcomePage.VerifyDoYouKnowTheAppealOutcomePage();
-    }
-    protected static void VerifyLearnerCoreDetailsChangeGradeAfterAppealPage()
+    protected static void VerifyLearnerCoreDetailsCheckAppealOutcomePage()
     {
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbFirstName + " " + Constants.DbLastName));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbTlevel));
-        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbCoreComponent));
     }
-    public static void VerifyLearnerOsDetailsChangeGradeAfterAppealPage()
+    protected static void VerifyLearnerOs1DetailsCheckAppealOutcomePage()
     {
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbFirstName + " " + Constants.DbLastName));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbTlevel));
-        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbOs1Component));
     }
 }

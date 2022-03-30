@@ -34,7 +34,7 @@ public class AddAppealOutcomePage : ElementHelper
     {
         switch (optionName)
         {
-            case "No change to grade ":
+            case "No change to grade":
                 ClickElement(RadioNoGradeChange);
                 ClickButton(ContinueBtn);
                 break;

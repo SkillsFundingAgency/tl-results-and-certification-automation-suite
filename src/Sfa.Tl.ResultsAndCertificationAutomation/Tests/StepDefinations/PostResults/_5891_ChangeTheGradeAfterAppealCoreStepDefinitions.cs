@@ -21,7 +21,7 @@ public class _5891_ChangeTheGradeAfterAppealCoreStepDefinitions : ChangeTheGrade
         _scenarioContext["uln"] = uln;
         RegistrationCityAndGuilds.RegWithAppealRecord(uln);
     }
-
+    [Given(@"I select ""([^""]*)"" in appeal outcome page")]
     [When(@"I select ""([^""]*)"" in appeal outcome page")]
     public void WhenISelectInAppealOutcomePage(string option)
     {

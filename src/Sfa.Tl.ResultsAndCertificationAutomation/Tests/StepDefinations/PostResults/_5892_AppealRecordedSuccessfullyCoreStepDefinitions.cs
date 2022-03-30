@@ -6,6 +6,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
 [Binding]
 public class _5892_AppealRecordedSuccessfullyCoreStepDefinitions : PostResultsLearnerDetailsPage
 {
+    [Given(@"I select ""([^""]*)"" radio and click continue in do you know outcome appeal page")]
     [When(@"I select ""([^""]*)"" radio and click continue in do you know outcome appeal page")]
     public void WhenISelectRadioAndClickContinueInDoYouKnowOutcomeAppealPage(string radio)
     {
