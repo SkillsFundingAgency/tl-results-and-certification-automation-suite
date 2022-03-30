@@ -52,5 +52,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.PostResults
             const string requestAppealText = "Has " + Constants.DbFirstName + " " + Constants.DbLastName + " raised an appeal against this grade?";
             Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(requestAppealText));
         }
+        protected static void VerifyLearnerSpecialismDetailsAddAppealPage()
+        {
+            const string text = "Tell us that " + Constants.DbFirstName + " " + Constants.DbLastName + " has asked for an appeal of their " + Constants.DbOs1ComponentName + " grade";
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(text));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbTlevel));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbOs1Component));
+            const string requestAppealText = "Has " + Constants.DbFirstName + " " + Constants.DbLastName + " raised an appeal against this grade?";
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(requestAppealText));
+        }
     }
 }

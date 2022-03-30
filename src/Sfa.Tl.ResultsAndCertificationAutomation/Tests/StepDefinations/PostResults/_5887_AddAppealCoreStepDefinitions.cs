@@ -50,6 +50,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostRes
         {
             AddAppealBtn(text);
         }
+        [Then(@"specialism details shown in learner details")]
+        public void ThenSpecialismDetailsShownInLearnerDetails()
+        {
+            VerifyLearnerSpecialismDetailsAddAppealPage();
+        }
 
     }
 }
