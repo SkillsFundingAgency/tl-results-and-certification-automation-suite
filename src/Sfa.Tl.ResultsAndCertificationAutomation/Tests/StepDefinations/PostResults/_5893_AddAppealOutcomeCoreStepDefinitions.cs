@@ -17,6 +17,11 @@ public class _5893_AddAppealOutcomeCoreStepDefinitions : AddAppealOutcomePage
     {
         VerifyLearnerCoreDetailsAddAppealOutcomePage();
     }
+    [Then(@"specialism details shown on add appeal outcome page")]
+    public void ThenSpecialismDetailsShownOnAddAppealOutcomePage()
+    {
+        VerifyLearnerOs1DetailsAddAppealOutcomePage();
+    }
 
     [When(@"I click continue without selecting any radio options")]
     public void WhenIClickContinueWithoutSelectingAnyRadioOptions()
