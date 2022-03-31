@@ -132,19 +132,19 @@ testRunner.Then("change core result page is open", ((string)(null)), ((TechTalk.
 #line 14
 testRunner.And("I click on \"Change\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
-                table102.AddRow(new string[] {
+                table104.AddRow(new string[] {
                             "Please select the grade"});
 #line 15
-testRunner.Then("I should see the following error message on change core result page", ((string)(null)), table102, "Then ");
+testRunner.Then("I should see the following error message on change core result page", ((string)(null)), table104, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
-                table103.AddRow(new string[] {
+                table105.AddRow(new string[] {
                             "Please select the grade"});
 #line 18
-testRunner.And("I should see the following error summary messages", ((string)(null)), table103, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table105, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

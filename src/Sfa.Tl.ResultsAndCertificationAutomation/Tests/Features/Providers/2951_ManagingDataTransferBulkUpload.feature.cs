@@ -84,12 +84,12 @@ testRunner.Given("I have logged in as a \"RegistrationEditor\" user", ((string)(
 #line 8
 testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                         "Uln"});
-            table60.AddRow(new string[] {
+            table62.AddRow(new string[] {
                         "9900000011"});
 #line 9
-testRunner.And("I have a registration in Db with IP against Dudley provider", ((string)(null)), table60, "And ");
+testRunner.And("I have a registration in Db with IP against Dudley provider", ((string)(null)), table62, "And ");
 #line hidden
 #line 12
 testRunner.And("I am on Registration upload page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -148,26 +148,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table61.AddRow(new string[] {
-                            "9900000011"});
-#line 22
-testRunner.When("I search the learner record with Uln", ((string)(null)), table61, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Uln"});
-                table62.AddRow(new string[] {
-                            "9900000011"});
-#line 25
-testRunner.Then("I should see IP record for Uln is active for new provider", ((string)(null)), table62, "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
                 table63.AddRow(new string[] {
                             "9900000011"});
+#line 22
+testRunner.When("I search the learner record with Uln", ((string)(null)), table63, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table64.AddRow(new string[] {
+                            "9900000011"});
+#line 25
+testRunner.Then("I should see IP record for Uln is active for new provider", ((string)(null)), table64, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Uln"});
+                table65.AddRow(new string[] {
+                            "9900000011"});
 #line 28
-testRunner.And("I have deleted LRS data from the database for the Uln", ((string)(null)), table63, "And ");
+testRunner.And("I have deleted LRS data from the database for the Uln", ((string)(null)), table65, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

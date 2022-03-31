@@ -14,6 +14,8 @@ public class CheckAppealOutcomePage : ElementHelper
     private static readonly By LearnerDetailsElement = By.XPath("//*[@id='main-content']/div[1]");
     private static readonly By BackLink = By.Id("backLink");
     private static readonly By SubmitBtn = By.Id("submitButton");
+    private static readonly By CancelLink = By.Id("cancelLink");
+    public static void ClickCancelLink() => ClickElement(CancelLink);
     public static void ClickSubmitBtn() => ClickButton(SubmitBtn);
     public static void VerifyCheckAppealOutcomePage()
     {
