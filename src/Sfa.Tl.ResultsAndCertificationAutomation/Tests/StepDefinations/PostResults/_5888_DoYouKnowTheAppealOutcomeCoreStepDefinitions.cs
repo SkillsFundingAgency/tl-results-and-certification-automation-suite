@@ -18,6 +18,12 @@ public class _5888_DoYouKnowTheAppealOutcomeCoreStepDefinitions : DoYouKnowTheAp
     {
         VerifyLearnerCoreDoYouKnowAppealOutcomePage();
     }
+    [Then(@"specialism details shown on do you know the core appeal page")]
+    public void ThenSpecialismDetailsShownOnDoYouKnowTheCoreAppealPage()
+    {
+        VerifyLearnerOs1DoYouKnowAppealOutcomePage();
+    }
+
 
     [Then(@"back link takes me to add an appeal page")]
     public void ThenBackLinkTakesMeToAddAnAppealPage()
