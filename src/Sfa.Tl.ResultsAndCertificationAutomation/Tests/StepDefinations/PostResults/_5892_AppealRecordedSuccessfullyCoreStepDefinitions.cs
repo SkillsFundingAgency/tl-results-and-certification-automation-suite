@@ -18,4 +18,9 @@ public class _5892_AppealRecordedSuccessfullyCoreStepDefinitions : PostResultsLe
     {
         VerifyAppealRecordedForCore();
     }
+    [Then(@"appeal recorded successfully for specialism messgage shown on learner details page")]
+    public void ThenAppealRecordedSuccessfullyForSpecialismMessgageShownOnLearnerDetailsPage()
+    {
+        VerifyAppealRecordedForOs();
+    }
 }
