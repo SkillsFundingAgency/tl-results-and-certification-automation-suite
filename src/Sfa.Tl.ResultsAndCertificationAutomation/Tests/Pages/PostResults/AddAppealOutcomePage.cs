@@ -20,6 +20,7 @@ public class AddAppealOutcomePage : ElementHelper
     private static readonly By BackLink = By.Id("backLink");
     private static readonly By SubmitBtn = By.Id("submitButton");
     public static void ClickSubmitBtn() => ClickButton(SubmitBtn);
+    protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
     public static void VerifyAddAppealOutcomePage()
     {
         Assert.AreEqual(PageTitle, WebDriver.Title);
