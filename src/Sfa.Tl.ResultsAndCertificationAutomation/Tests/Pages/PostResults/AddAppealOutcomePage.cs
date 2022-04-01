@@ -17,7 +17,6 @@ public class AddAppealOutcomePage : ElementHelper
     private static readonly By RadioGradeChanged = By.Id("appealoutcome-gradechanged");
     private static readonly By RadioAppealWithdrawn = By.Id("appealoutcome-withdraw");
     private static readonly By ContinueBtn = By.Id("continueButton");
-    private static readonly By BackLink = By.Id("backLink");
     private static readonly By SubmitBtn = By.Id("submitButton");
     public static void ClickSubmitBtn() => ClickButton(SubmitBtn);
     protected static void ClickContinueBtn() => ClickButton(ContinueBtn);

@@ -27,7 +27,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "5294_RegistrationManual_RegistrationCanBeDeletedIfSpecialismAssessmentWithoutResult.feature"
 #line hidden
@@ -39,7 +39,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Registrations", "5294_REGISTRATION MANUAL: allow a registration to be deleted if a specialism has " +
                     "an active assessment entry (with no results)", @"		 As an AO, I want the ability to hard delete a registration (as long as there is no Industry placement and/or Pathway result), 
 		 so that this registration no longer exists within the Database.
-		 **2949_Managing Data - Delete feature has a test which confirms a reg with industry placement can't be deleted**", ProgrammingLanguage.CSharp, ((string[])(null)));
+		 **2949_Managing Data - Delete feature has a test which confirms a reg with industry placement can't be deleted**", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -51,28 +51,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Registrations
         }
         
         [NUnit.Framework.SetUpAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
         }
         
         [NUnit.Framework.TearDownAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -91,28 +91,18 @@ testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(
             "ous period with no result")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationDelete")]
-        public virtual void _5294AttemptToDeleteARegistrationWhichHasASpecialismAssessmentForPreviousPeriodWithNoResult()
+        public void _5294AttemptToDeleteARegistrationWhichHasASpecialismAssessmentForPreviousPeriodWithNoResult()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "RegistrationDelete"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5294 Attempt to delete a registration which has a specialism assessment for previ" +
-                    "ous period with no result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+                    "ous period with no result", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -142,28 +132,18 @@ testRunner.Then("I should see delete congirmation page", ((string)(null)), ((Tec
             "or previous period with no result")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationDelete")]
-        public virtual void _5294AttemptToDeleteARegistrationWhichHasACoupletSpecialismAssessmentForPreviousPeriodWithNoResult()
+        public void _5294AttemptToDeleteARegistrationWhichHasACoupletSpecialismAssessmentForPreviousPeriodWithNoResult()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "RegistrationDelete"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5294 Attempt to delete a registration which has a couplet specialism assessment f" +
-                    "or previous period with no result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+                    "or previous period with no result", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -193,28 +173,18 @@ testRunner.Then("I should see delete congirmation page", ((string)(null)), ((Tec
             "added with no results")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("RegistrationDelete")]
-        public virtual void _5294AttemptToDeleteARegistrationWhichHasASpecialismAndCoreAssessmentAddedWithNoResults()
+        public void _5294AttemptToDeleteARegistrationWhichHasASpecialismAndCoreAssessmentAddedWithNoResults()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "RegistrationDelete"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5294 Attempt to delete a registration which has a specialism and core assessment " +
-                    "added with no results", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+                    "added with no results", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }

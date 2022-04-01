@@ -27,7 +27,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "4764-CannotAddSpecialismAssessmentEntryUntilResultAddedToPreviousEntry.feature"
 #line hidden
@@ -39,7 +39,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/AssessmentEntries", "4764_MANUAL JOURNEY: ASSESSMENT ENTRY CHANGES - Details page -Specialism resits -" +
                     " cannot add assessment entry as no result added for previous entry", "\t\tACTION can add specialism to current open summer series if previous is closed (" +
                     "STATIC LINK)\r\n\t\tACTION need to add result to previous entry before being able to" +
-                    " add new entry to specialism (LINK TO RESULTS DASHBOARD)", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    " add new entry to specialism (LINK TO RESULTS DASHBOARD)", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -51,28 +51,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.AssessmentEntr
         }
         
         [NUnit.Framework.SetUpAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
         }
         
         [NUnit.Framework.TearDownAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -91,28 +91,18 @@ testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(
             "s specialism assessment series does not have a grade added")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
-        public virtual void _4764AttemptToAddASpecialismAssessmentEntryForCurrentSeriesWhenPreviousSpecialismAssessmentSeriesDoesNotHaveAGradeAdded()
+        public void _4764AttemptToAddASpecialismAssessmentEntryForCurrentSeriesWhenPreviousSpecialismAssessmentSeriesDoesNotHaveAGradeAdded()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4764 Attempt to add a specialism assessment entry for current series when previou" +
-                    "s specialism assessment series does not have a grade added", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+                    "s specialism assessment series does not have a grade added", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -148,28 +138,18 @@ testRunner.Then("the user will be able to add the current specialism assessment 
             "t series when previous specialism assessment series does not have a grade added")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
-        public virtual void _4764COUPLETSPECIALISM_AttemptToAddASpecialismAssessmentEntryForCurrentSeriesWhenPreviousSpecialismAssessmentSeriesDoesNotHaveAGradeAdded()
+        public void _4764COUPLETSPECIALISM_AttemptToAddASpecialismAssessmentEntryForCurrentSeriesWhenPreviousSpecialismAssessmentSeriesDoesNotHaveAGradeAdded()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
                     "Results"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4764 COUPLET SPECIALISM - Attempt to add a specialism assessment entry for curren" +
-                    "t series when previous specialism assessment series does not have a grade added", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+                    "t series when previous specialism assessment series does not have a grade added", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 19
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
