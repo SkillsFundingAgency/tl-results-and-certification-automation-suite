@@ -7,7 +7,7 @@
 Background: 
 Given I have logged in as a "CityAndGuildsAdmin" user
 
-@RegressionTest @Results
+@Ignore @RegressionTest @Results
 Scenario: 5045 Create a reg with resit core assess entry
 And I have a registration with resit core assessment series for <ULN>
 And I navigate to the result details page for <ULN> 
