@@ -33,5 +33,10 @@ public class _5890_CheckAppealOutcomeCoreStepDefinitions : CheckAppealOutcomePag
     {
         BackLinkToAddAppealOutcomePage();
     }
+    [Then(@"specialism details shown on check the appeal outcome page")]
+    public void ThenSpecialismDetailsShownOnCheckTheAppealOutcomePage()
+    {
+        VerifyLearnerOs1DetailsCheckAppealOutcomePage();
+    }
 
 }
