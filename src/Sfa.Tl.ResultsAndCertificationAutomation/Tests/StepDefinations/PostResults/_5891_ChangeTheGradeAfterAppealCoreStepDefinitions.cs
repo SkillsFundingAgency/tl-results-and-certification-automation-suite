@@ -61,5 +61,10 @@ public class _5891_ChangeTheGradeAfterAppealCoreStepDefinitions : ChangeTheGrade
     {
         BackLinkToDoYouKnowAppealOutcomePage();
     }
+    [Then(@"specialism deails shown on change the grade after appeal page")]
+    public void ThenSpecialismDeailsShownOnChangeTheGradeAfterAppealPage()
+    {
+        VerifyLearnerOsDetailsChangeGradeAfterAppealPage();
+    }
 
 }

@@ -45,7 +45,8 @@ public class ChangeTheGradeAfterAppealPage : ElementHelper
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbTlevel));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbCoreComponent));
     }
-    public static void VerifyLearnerOsDetailsChangeGradeAfterAppealPage()
+
+    protected static void VerifyLearnerOsDetailsChangeGradeAfterAppealPage()
     {
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbFirstName + " " + Constants.DbLastName));
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Constants.DbDateOfBirth));

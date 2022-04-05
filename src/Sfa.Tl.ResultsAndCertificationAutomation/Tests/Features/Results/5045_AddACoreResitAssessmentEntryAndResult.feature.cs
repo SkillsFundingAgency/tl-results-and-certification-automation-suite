@@ -90,12 +90,14 @@ testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("5045 Create a reg with resit core assess entry")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000019", null)]
         public void _5045CreateARegWithResitCoreAssessEntry(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))
