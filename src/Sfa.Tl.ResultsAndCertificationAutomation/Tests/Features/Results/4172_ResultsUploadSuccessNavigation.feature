@@ -62,7 +62,7 @@ And I cleared the data in DB
 @Ignore @RegressionTest @Results
 Scenario: 4172 Results upload Success - Verify upload another multiple registrations file link navigation
 Given I am on Registrations upload page
-And I upload "RegistrationsDataForAssessments.csv" file
+And I upload "RegistrationsDataForAessments.csv" file
 And I navigated Home page
 And I am on Assessment entries upload page
 When I upload "AssessmentEntrySuccessfulData.csv" file

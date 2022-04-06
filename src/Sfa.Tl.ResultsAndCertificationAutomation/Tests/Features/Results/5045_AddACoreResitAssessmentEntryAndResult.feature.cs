@@ -90,14 +90,12 @@ testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("5045 Create a reg with resit core assess entry")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Results")]
         [NUnit.Framework.TestCaseAttribute("9900000019", null)]
         public void _5045CreateARegWithResitCoreAssessEntry(string uLN, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Ignore",
                     "RegressionTest",
                     "Results"};
             if ((exampleTags != null))
@@ -153,9 +151,6 @@ testRunner.And(string.Format("I navigate back to the result details page for {0}
 #line hidden
 #line 22
 testRunner.Then("The grade for Summer 2021 is unaffected and remains \"A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 23
-testRunner.And("the core grade for Autumn 2021 is not added to the registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

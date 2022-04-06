@@ -7,7 +7,7 @@
 Background: 
 Given I have logged in as a "CityAndGuildsAdmin" user
 
-@Ignore @RegressionTest @Results
+@RegressionTest @Results
 Scenario: 5045 Create a reg with resit core assess entry
 And I have a registration with resit core assessment series for <ULN>
 And I navigate to the result details page for <ULN> 
@@ -20,7 +20,6 @@ And the grade for Autumn 2021 is a "D"
 When I upload the Results file without a grade for Autumn 2021
 And I navigate back to the result details page for <ULN> 
 Then The grade for Summer 2021 is unaffected and remains "A"
-And the core grade for Autumn 2021 is not added to the registration
 
 Examples: 
 | ULN         |
