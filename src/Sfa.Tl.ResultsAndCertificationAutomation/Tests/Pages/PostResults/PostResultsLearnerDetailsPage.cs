@@ -235,7 +235,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     protected static void VerifyAppealRecordedForCore()
     {
         VerifyAppealAddedSuccessfully();
-        const string successText = "You have recorded that " + Constants.DbFirstName + " " + Constants.DbLastName + " raised an appeal for their Autumn 2021 " + Constants.DbCoreComponent + " grade";
+        const string successText = "You have recorded that " + Constants.DbFirstName + " " + Constants.DbLastName + " raised an appeal for their Summer 2022 " + Constants.DbCoreComponent + " grade";
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
         VerifyLearnerDetails();
     }
@@ -250,7 +250,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     public static void VerifyAppealOutcomeRecordedForCore()
     {
         VerifyAppealOutcomeRecordedSuccessfully();
-        const string successText = "You have recorded an appeal outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Autumn 2021 " + Constants.DbCoreComponent + " grade";
+        const string successText = "You have recorded an appeal outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbCoreComponent + " grade";
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
         VerifyLearnerDetails();
     }
@@ -265,7 +265,7 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     protected static void VerifyAppealWithdrawnForCore()
     {
         VerifyAppealWithdrawnSuccessfully();
-        const string successText = "You have withdrawn an appeal for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Autumn 2021 " + Constants.DbCoreComponent + " grade";
+        const string successText = "You have withdrawn an appeal for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbCoreComponent + " grade";
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
         VerifyLearnerDetails();
     }
