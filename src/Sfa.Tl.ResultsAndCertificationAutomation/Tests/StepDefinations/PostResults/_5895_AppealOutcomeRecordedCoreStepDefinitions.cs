@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.PostResults;
 
 [Binding]
-public class _5895_AppealOutcomeRecordedCoreStepDefinitions
+public class _5895_AppealOutcomeRecordedCoreStepDefinitions : PostResultsLearnerDetailsPage
 {
     [When(@"I click submit in appeal outcome page")]
     public void WhenIClickSubmitInAppealOutcomePage()
@@ -15,6 +15,12 @@ public class _5895_AppealOutcomeRecordedCoreStepDefinitions
     [Then(@"appeal outcome recorded successfully messgage shown on learner details page")]
     public void ThenAppealOutcomeRecordedSuccessfullyMessgageShownOnLearnerDetailsPage()
     {
-        PostResultsLearnerDetailsPage.VerifyAppealOutcomeRecordedForCore();
+        VerifyAppealOutcomeRecordedForCore();
     }
+    [Then(@"appeal outcome recorded successfully messgage for OS shown on learner details page")]
+    public void ThenAppealOutcomeRecordedSuccessfullyMessgageForOSShownOnLearnerDetailsPage()
+    {
+        VerifyAppealOutcomeRecordedForOs();
+    }
+
 }
