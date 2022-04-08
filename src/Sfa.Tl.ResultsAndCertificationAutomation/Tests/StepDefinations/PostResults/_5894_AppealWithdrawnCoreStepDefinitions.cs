@@ -11,4 +11,10 @@ public class _5894_AppealWithdrawnCoreStepDefinitions : PostResultsLearnerDetail
     {
         VerifyAppealWithdrawnForCore();
     }
+    [Then(@"appeal withdrawn for specialism message is shown")]
+    public void ThenAppealWithdrawnForSpecialismMessageIsShown()
+    {
+        VerifyAppealWithdrawnForOs();
+    }
+
 }
