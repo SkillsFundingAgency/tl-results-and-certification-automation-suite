@@ -177,9 +177,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
           Assert.AreEqual(true, present);
 
           //Verify change link is not present
-          By ChangeLink = By.XPath("//*[contains(text(),'Change')]");
-          bool isPresent = IsPresent(ChangeLink);
-          Assert.AreEqual(true, isPresent);
+          //By ChangeLink = By.XPath("//*[contains(text(),'Change')]");
+          //bool isPresent = IsPresent(ChangeLink);
+          //Assert.AreEqual(true, isPresent);
 
         }
 
@@ -188,14 +188,14 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages
             Assert.AreEqual(Grade, WebDriver.FindElement(By.XPath("//*[@id='main-content']//table[1]/tbody/tr[1]/td[2]/span[2]/span")).Text);
             
             //Verify Change result link is present
-            By changeResultLink = By.XPath("//*[contains(text(),'Change')]");
-            bool present = IsPresent(changeResultLink);
-            Assert.AreEqual(true, present);
+            //By changeResultLink = By.XPath("//*[contains(text(),'Change')]");
+            //bool present = IsPresent(changeResultLink);
+            //Assert.AreEqual(true, present);
 
             //Verify Add result link is not present
-            By addResultLink = By.XPath("//*[contains(text(),'Add result')]");
-            bool isPresent = IsPresent(addResultLink);
-            Assert.AreEqual(false, isPresent);
+            //By addResultLink = By.XPath("//*[contains(text(),'Add result')]");
+            //bool isPresent = IsPresent(addResultLink);
+            //Assert.AreEqual(false, isPresent);
 
         }
 

@@ -3,18 +3,18 @@ schedules:
     displayName: Daily midnight build
     branches:
       include:
-        - feature/sprint-52
+        - feature/sprint-54
 resources:
   repositories:
     - repository: self
       persistCredentials: true
       clean: true
 
-    - repository: RESAC
-      type: github
-      endpoint: S126-Tlevelservice
-      name: SkillsFundingAgency/tl-results-and-certification
-      ref: feature/sprint-52
+#    - repository: RESAC
+#      type: github
+#      endpoint: S126-Tlevelservice
+#      name: SkillsFundingAgency/tl-results-and-certification
+#      ref: feature/sprint-54
 
     - repository: devopsTools
       type: github

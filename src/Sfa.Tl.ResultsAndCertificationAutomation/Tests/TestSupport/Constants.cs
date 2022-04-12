@@ -244,7 +244,7 @@ public static class Constants
     public const string CityAndGuildsProviderId = "16486";
     public const string HeatingSpecialismId = "11";
     public const string VentilationSpecialismId = "16";
-    public const string PathwayAssessmentSeriesId = "2";
+    public const string PathwayAssessmentSeriesId = "3";
 
     public const string GasEngineeringId = "12";
 

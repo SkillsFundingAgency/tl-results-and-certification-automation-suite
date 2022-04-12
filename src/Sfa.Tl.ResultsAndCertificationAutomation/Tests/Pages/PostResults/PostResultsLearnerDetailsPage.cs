@@ -158,6 +158,22 @@ public class PostResultsLearnerDetailsPage : ElementHelper
         Assert.AreEqual("ROMM outcome recorded", WebDriver.FindElement(MessageHeaderElement).Text);
     }
 
+    private static void VerifyAppealAddedSuccessfully()
+    {
+        Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
+        Assert.AreEqual("Appeal recorded", WebDriver.FindElement(MessageHeaderElement).Text);
+    }
+
+    private static void VerifyAppealOutcomeRecordedSuccessfully()
+    {
+        Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
+        Assert.AreEqual("Appeal outcome recorded", WebDriver.FindElement(MessageHeaderElement).Text);
+    }
+    private static void VerifyAppealWithdrawnSuccessfully()
+    {
+        Assert.AreEqual("Success", WebDriver.FindElement(SuccessBannerElement).Text);
+        Assert.AreEqual("Appeal withdrawn", WebDriver.FindElement(MessageHeaderElement).Text);
+    }
     protected static void IsCoreAddOutcomeBtnVisible()
     {
         IsPresent(CoreAddOutcomeBtn);
@@ -212,6 +228,52 @@ public class PostResultsLearnerDetailsPage : ElementHelper
     {
         VerifyRommOutcomeRecordedSuccessfully();
         const string successText = "You have recorded a ROMM outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbOs1Component + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+
+    protected static void VerifyAppealRecordedForCore()
+    {
+        VerifyAppealAddedSuccessfully();
+        const string successText = "You have recorded that " + Constants.DbFirstName + " " + Constants.DbLastName + " raised an appeal for their Summer 2022 " + Constants.DbCoreComponent + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+    protected static void VerifyAppealRecordedForOs()
+    {
+        VerifyAppealAddedSuccessfully();
+        const string successText = "You have recorded that " + Constants.DbFirstName + " " + Constants.DbLastName + " raised an appeal for their Summer 2022 " + Constants.DbOs1Component + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+
+    protected static void VerifyAppealOutcomeRecordedForCore()
+    {
+        VerifyAppealOutcomeRecordedSuccessfully();
+        const string successText = "You have recorded an appeal outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbCoreComponent + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+
+    protected static void VerifyAppealOutcomeRecordedForOs()
+    {
+        VerifyAppealOutcomeRecordedSuccessfully();
+        const string successText = "You have recorded an appeal outcome for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbOs1Component + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+
+    protected static void VerifyAppealWithdrawnForCore()
+    {
+        VerifyAppealWithdrawnSuccessfully();
+        const string successText = "You have withdrawn an appeal for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbCoreComponent + " grade";
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
+        VerifyLearnerDetails();
+    }
+    protected static void VerifyAppealWithdrawnForOs()
+    {
+        VerifyAppealWithdrawnSuccessfully();
+        const string successText = "You have withdrawn an appeal for " + Constants.DbFirstName + " " + Constants.DbLastName + "’s Summer 2022 " + Constants.DbOs1Component + " grade";
         Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(successText));
         VerifyLearnerDetails();
     }
