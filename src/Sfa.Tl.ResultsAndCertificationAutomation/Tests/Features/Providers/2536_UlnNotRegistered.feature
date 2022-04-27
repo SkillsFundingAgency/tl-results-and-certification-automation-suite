@@ -9,13 +9,13 @@ And I have an Uln not existed in DB
 And I click on "Manage learner T Level records" link
 And I click on "Add a new learner T Level record" link
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2536 Search for Uln not existed
 When I enter non existed Uln
 And I click on "Continue" button
 Then I should see Uln is not registered page
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2536 Check back link
 And I enter non existed Uln
 And I click on "Continue" button

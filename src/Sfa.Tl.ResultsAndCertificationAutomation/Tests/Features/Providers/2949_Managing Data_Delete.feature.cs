@@ -76,11 +76,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2949_Attempt to delete a registration with IP data")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2949_AttemptToDeleteARegistrationWithIPData()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -143,11 +145,13 @@ testRunner.And("I have deleted LRS records from the database", ((string)(null)),
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2949_Click back to registration details button on Registration cannot be deleted " +
             "page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2949_ClickBackToRegistrationDetailsButtonOnRegistrationCannotBeDeletedPage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -245,11 +249,13 @@ testRunner.Then("I am shown the Page Not Found page", ((string)(null)), ((TechTa
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2949_Delete a registration which has IP data added in parallel just before deleti" +
             "on")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2949_DeleteARegistrationWhichHasIPDataAddedInParallelJustBeforeDeletion()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

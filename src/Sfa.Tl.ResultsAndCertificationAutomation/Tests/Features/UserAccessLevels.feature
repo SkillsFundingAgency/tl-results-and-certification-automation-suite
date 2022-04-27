@@ -43,7 +43,7 @@ Scenario: Access level for No Service User
 Given I have logged in as a "NoServiceTole" user
 Then I should not get acces to TLevel Services
 
-@RegressionTest
+@Ignore @RegressionTest
 Scenario: AO user accessing provider page
 Given I have passed provider dashboard url in the browser
 When I enter any AO user account to login

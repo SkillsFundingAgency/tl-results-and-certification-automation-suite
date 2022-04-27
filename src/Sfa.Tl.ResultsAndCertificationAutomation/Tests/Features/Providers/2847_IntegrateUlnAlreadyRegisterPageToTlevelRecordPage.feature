@@ -10,7 +10,7 @@ And I click on "Manage learner T Level records" link
 And I click on "Add a new learner T Level record" link
 And I clear Uln data
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2847 Verify integrated Uln already been added page
 And I enter the Uln
 When I click on "Continue" button

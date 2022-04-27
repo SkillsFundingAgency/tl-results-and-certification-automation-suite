@@ -8,7 +8,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I deleted the address in database
 And I add an address for Barnsley
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3157_Verify Request Statmewnt of achievement confirmation page
 Given a registration is created for LRS where 'MathEng not Achieved Min Standard Math-A Eng-NA' and 'IP completed'
 And I navigate to Request statement of achievment - Check and submit page

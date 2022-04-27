@@ -9,7 +9,7 @@ And I click on "Manage learner T Level records" link
 And I click on "Add a new learner T Level record" link
 And I clear Uln data
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2535 Verify mandatory field validation
 When I click on "Continue" button
 Then I should see the following error message for the Uln
@@ -19,7 +19,7 @@ And I should see the following error summary messages
 | Error Messages |
 | Enter a ULN with 10 digits    |
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2535 Verify Uln field validation
 When I enter following data
 | Field name | Value   |

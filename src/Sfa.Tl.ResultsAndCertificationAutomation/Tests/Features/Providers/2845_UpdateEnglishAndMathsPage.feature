@@ -9,7 +9,7 @@ And I have a registraion with EM and IP from non LRS
 And I click on "Manage learner T Level records" link
 And I click on "Update a learner T Level record" link
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2845_Verify update English and Maths page
 When I enter uln and click search
 When I click on "Query" link in Learner record page

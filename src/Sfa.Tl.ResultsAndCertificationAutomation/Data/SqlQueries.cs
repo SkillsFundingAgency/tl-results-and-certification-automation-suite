@@ -80,7 +80,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
 
         public static int CreateRegistrationProfile(string uln)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,Null,Null,Null,GETDATE(),'System', GETDATE(),'System')";
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,Null,Null,Null,Null,Null,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='"+ uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
@@ -135,7 +135,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static int CreateRegistrationProfileForLrs(string uln)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,0,Null,1,1,GETDATE(),'System', GETDATE(),'System')";
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,0,Null,1,1,3,3,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
@@ -143,7 +143,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static int CreateRegistrationProfileForLrsWithEM(string uln)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,GETDATE(),'System', GETDATE(),'System')";
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,3,3,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
@@ -151,7 +151,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static int CreateRegistrationProfileForNonLrsWithEM(string uln)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,1,Null,1,GETDATE(),'System', GETDATE(),'System')";
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,1,Null,1,1,1,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
@@ -169,7 +169,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         public static int CreateRegistrationPathwayForDudley(int profileId)
         {
             var tqProviderId = Constants.DudleyProviderIdForLrs;
-            var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2021', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2021', GETDATE(),NULL,1,1,Null,Null,GETDATE(),'System',NULL,NULL)";
             var getRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegPathway, ConnectionString);
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);
@@ -270,7 +270,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
 
         public static int CreateRegistrationProfileForNonLRS(string uln)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,Null,Null,Null,GETDATE(),'System', GETDATE(),'System')";
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,Null,Null,Null,NULL,NULL,NULL,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
@@ -349,7 +349,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
 
         public static int CreateRegistrationProfileForLrsCombination(string uln, string IsLearnerVerified, string IsEmAchieved, string SendLearner, string IsRcFeed)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null," + IsLearnerVerified + "," + IsEmAchieved + "," + SendLearner + "," + IsRcFeed + ",GETDATE(),'System', GETDATE(),'System')";
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null," + IsLearnerVerified + "," + IsEmAchieved + "," + SendLearner + "," + IsRcFeed + ",3,3,GETDATE(),'System', GETDATE(),'System')";
             Console.WriteLine(createRegistrationProfile);
             string getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);

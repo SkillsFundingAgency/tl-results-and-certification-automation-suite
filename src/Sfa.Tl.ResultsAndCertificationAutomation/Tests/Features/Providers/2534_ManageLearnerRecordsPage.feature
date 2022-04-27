@@ -6,7 +6,7 @@
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2534 Manage Learner Records Page
 When I click on "Manage learner T Level records" link
 Then I should see Manage learner records page

@@ -12,21 +12,21 @@ And I enter the ULN
 And I click on "Continue" button
 And I select "Yes, completed" radio button and press Continue
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2749 Verify change IP status page
 When I click on IP change link
 Then I expect to see the learner completed Industry Placement change page
 And previously selected "Yes, completed" radio option is selected
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2749 Verify back link on change IP status page
 When I click on IP change link
 And I click on "Back" link
 Then I am shown the Check and submit page for the Add a new learner journey
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2749 change IP status option
 When I click on IP change link
 And I select "Yes, completed with special consideration" radio button and press change

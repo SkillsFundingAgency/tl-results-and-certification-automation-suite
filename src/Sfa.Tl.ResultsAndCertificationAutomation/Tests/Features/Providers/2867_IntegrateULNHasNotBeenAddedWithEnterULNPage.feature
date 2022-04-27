@@ -9,7 +9,7 @@ And I have a created a registration without LRS data
 And I click on "Manage learner T Level records" link
 And I click on "Update a learner T Level record" link
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2867 Verify integrated enter uln page
 When I enter uln and click search
 And I click on Continue button on Uln not added page

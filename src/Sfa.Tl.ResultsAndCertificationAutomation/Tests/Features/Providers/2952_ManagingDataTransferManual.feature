@@ -14,7 +14,7 @@ And I have logged in as a "ProviderBarnsleyPA" user
 And I click on "Manage learner T Level records" link
 And I click on "Update a learner T Level record" link
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2952_Learner record shows active IP with new provider 
 When I search the learner record
 Then I should see previous IP record is active for new provider

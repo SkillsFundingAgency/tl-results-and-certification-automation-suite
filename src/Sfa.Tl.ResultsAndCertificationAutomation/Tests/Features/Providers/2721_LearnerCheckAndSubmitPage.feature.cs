@@ -77,11 +77,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2721_Check and submit page - Yes, completed radio button selected and user not ac" +
             "heived Maths and English")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2721_CheckAndSubmitPage_YesCompletedRadioButtonSelectedAndUserNotAcheivedMathsAndEnglish()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -130,11 +132,13 @@ testRunner.And("I have deleted LRS records from the database", ((string)(null)),
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2721_Check and submit page - Yes, completed with special consideration radio butt" +
             "on selected and user not acheived Maths and English")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2721_CheckAndSubmitPage_YesCompletedWithSpecialConsiderationRadioButtonSelectedAndUserNotAcheivedMathsAndEnglish()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -185,11 +189,13 @@ testRunner.And("I have deleted LRS records from the database", ((string)(null)),
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2721_Check and submit page - No, still to be completed radio button selected and " +
             "user has acheived Maths and English")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2721_CheckAndSubmitPage_NoStillToBeCompletedRadioButtonSelectedAndUserHasAcheivedMathsAndEnglish()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

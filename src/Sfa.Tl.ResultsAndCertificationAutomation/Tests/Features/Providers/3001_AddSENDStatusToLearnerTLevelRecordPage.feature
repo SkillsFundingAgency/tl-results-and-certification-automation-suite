@@ -10,7 +10,7 @@ And I have a registraion from LRS with EM and IP
 And I click on "Manage learner T Level records" link
 And I click on "Update a learner T Level record" link
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider @Ignore
 Scenario:  3001_Validate Send status on Learner T Level record page
 When I enter uln and click search
 And I update the registration profile record so Send is "true" and IsEMAchieved is "true" and RCFeed is "false"

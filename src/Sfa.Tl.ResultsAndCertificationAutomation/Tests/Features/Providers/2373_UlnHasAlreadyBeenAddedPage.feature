@@ -10,7 +10,7 @@ And I click on "Manage learner T Level records" link
 And I click on "Add a new learner T Level record" link
 And I clear Uln data
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2373 Verify Uln already been added page
 And I enter the Uln
 When I click on "Continue" button
@@ -18,7 +18,7 @@ Then I should see Uln already been added page
 And I should see "Continue" button
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2373 Verify Back link on Uln already been added page
 And I enter the Uln
 And I click on "Continue" button

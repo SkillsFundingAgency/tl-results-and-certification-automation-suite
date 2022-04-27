@@ -94,11 +94,13 @@ testRunner.And("I add an address for Barnsley", ((string)(null)), ((TechTalk.Spe
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate SOA Request already submitted page for LRS registration (Maths achi" +
             "eved Eng not achieved)")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateSOARequestAlreadySubmittedPageForLRSRegistrationMathsAchievedEngNotAchieved()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -149,11 +151,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate SOA Request already submitted page for LRS registration (Maths Not " +
             "achieved Eng achieved)")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateSOARequestAlreadySubmittedPageForLRSRegistrationMathsNotAchievedEngAchieved()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -204,11 +208,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate SOA Request already submitted page for LRS registration (Maths and " +
             "English achieved)")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateSOARequestAlreadySubmittedPageForLRSRegistrationMathsAndEnglishAchieved()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -259,11 +265,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate SOA Request already submitted page for LRS registration (Maths and " +
             "English both not achieved)")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateSOARequestAlreadySubmittedPageForLRSRegistrationMathsAndEnglishBothNotAchieved()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -314,11 +322,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate breadcrumbs and Back to Home button on SOA Request already submitte" +
             "d page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateBreadcrumbsAndBackToHomeButtonOnSOARequestAlreadySubmittedPage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -397,11 +407,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate SOA Request already submitted page for NON LRS registration (Achiev" +
             "ed min standard)")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateSOARequestAlreadySubmittedPageForNONLRSRegistrationAchievedMinStandard()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -452,11 +464,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate SOA Request already submitted page for NON LRS registration (Achiev" +
             "ed min standard with SEND)")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateSOARequestAlreadySubmittedPageForNONLRSRegistrationAchievedMinStandardWithSEND()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -507,11 +521,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3108_Validate SOA Request already submitted page for NON LRS registration (Not ac" +
             "hieved min standard)")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3108_ValidateSOARequestAlreadySubmittedPageForNONLRSRegistrationNotAchievedMinStandard()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

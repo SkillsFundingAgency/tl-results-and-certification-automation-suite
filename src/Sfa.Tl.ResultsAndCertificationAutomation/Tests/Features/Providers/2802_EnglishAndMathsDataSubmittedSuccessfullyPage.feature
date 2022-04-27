@@ -12,7 +12,7 @@ And I click on "Manage learner T Level records" link
 And I click on "Add a new learner T Level record" link
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2802_Click Add another learner T Level record button and Validate page
 When I enter the ULN on the Add learner page
 And I select the "Achieved the minimum standard for learners with SEND" radio button on the Min standard for EM Page
@@ -22,7 +22,7 @@ When I click the Add another learner T Level record button
 Then I am navigated to the Learner Enter the Unique Learner Number page
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2802_Click Back to manage learner T Level records button
 When I enter the ULN on the Add learner page
 And I select the "Achieved the minimum standard for learners with SEND" radio button on the Min standard for EM Page

@@ -8,7 +8,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a registraion from LRS with EM and IP
 And I am on Learner record page
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2842_Verify Update Industry Placement page
 When I click on "Update" link in Learner record page
 Then I should see Update Industry placement page

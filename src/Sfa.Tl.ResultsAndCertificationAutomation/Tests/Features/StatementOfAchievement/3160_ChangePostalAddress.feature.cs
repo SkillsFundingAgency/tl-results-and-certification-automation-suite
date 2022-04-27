@@ -93,11 +93,13 @@ testRunner.And("I add an address for Barnsley", ((string)(null)), ((TechTalk.Spe
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3160_Validate Statement of Achievement - Change Learner\'s T-Level Component Achie" +
             "vements page and Back link")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3160_ValidateStatementOfAchievement_ChangeLearnersT_LevelComponentAchievementsPageAndBackLink()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -150,11 +152,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3160_Validate the Manage Learner T Level Record button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3160_ValidateTheManageLearnerTLevelRecordButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

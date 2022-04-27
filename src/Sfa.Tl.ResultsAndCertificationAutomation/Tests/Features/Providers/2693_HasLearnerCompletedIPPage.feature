@@ -9,7 +9,7 @@ And I have a created a registration with LRS qualifications
 And I click on "Manage learner T Level records" link
 And I click on "Add a new learner T Level record" link
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2693_Validate Has Learner Completed Industry Placement Page
 When I enter the ULN 
 And I click on "Continue" button
@@ -18,7 +18,7 @@ And the radio buttons are no populated on entry to the Has Learner Completed Ind
 And the Enter ULN Page is displayed when i click on Back link
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2693_Press the continue button without selecting a radio button
 When I enter the ULN 
 And I click on "Continue" button

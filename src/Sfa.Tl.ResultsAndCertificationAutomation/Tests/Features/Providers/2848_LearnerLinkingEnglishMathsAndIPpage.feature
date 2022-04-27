@@ -8,7 +8,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data
 And I navigate to the 'Has the learner achieved the required minimum standard for English and maths' page
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2848_Validate retention of radio buttons selection after pressing back link on IP page
 
 Given I select "Achieved the minimum standard" radio button on 'Min standard for English Maths' page and press Continue

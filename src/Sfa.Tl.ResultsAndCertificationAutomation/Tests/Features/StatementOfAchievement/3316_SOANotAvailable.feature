@@ -11,7 +11,7 @@ And I deleted the address in database
 And I add an address for Barnsley
 And I have created a registration which is withdrawn, IP is set to not complete and there is no grade attached 
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3316_Verify SOA not available page
 And I click on "Request statement of achievement" link
 And I click Continue on the Request SOA page
@@ -21,7 +21,7 @@ When I click the Back to Home button on the Statement of achievement not availab
 Then I will be navigated to the T Levels Dashboard page
 And I have deleted LRS records from the database
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3316_Verify breadcrumbs on SOA not available page
 And I click on "Request statement of achievement" link
 And I click Continue on the Request SOA page
@@ -37,7 +37,7 @@ And I click the 'Home' breadcrumb on the SOA not available - minimum requirement
 Then I will be navigated to the T Levels Dashboard page
 And I have deleted LRS records from the database
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3316_Verify the Update their learner T-Level record link
 And I click on "Request statement of achievement" link
 And I click Continue on the Request SOA page
