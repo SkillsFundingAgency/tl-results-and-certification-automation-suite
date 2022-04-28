@@ -101,9 +101,9 @@ testRunner.And("I click on \"Update a learner T Level record\" link", ((string)(
         public void _3001_ValidateSendStatusOnLearnerTLevelRecordPage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
-                    "Provider",
-                    "Ignore"};
+                    "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3001_Validate Send status on Learner T Level record page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 14
