@@ -8,7 +8,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a registraion from LRS with EM and IP
 And I am on Learner record page
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2839_ Verify Query English and Maths status page
 When I click on "Query" link in Learner record page
 Then I should see Query English and Maths status page

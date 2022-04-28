@@ -16,7 +16,7 @@ When I enter withdrawn Uln without IP data and click on Search button
 Then I should see SOA not available without Ip page
 And the registration for this test is deleted
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3109 Navigate to add learner page
 When I enter withdrawn Uln without IP data and click on Search button
 And I click on Add learner T Level record button on Soa not available page

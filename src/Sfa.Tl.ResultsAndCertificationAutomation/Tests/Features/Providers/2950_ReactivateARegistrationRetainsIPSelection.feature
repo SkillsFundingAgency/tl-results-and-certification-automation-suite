@@ -4,7 +4,7 @@
 	So that learner data is kept up to date
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2950_Withdraw and Reactivate a registration with IP status of "Yes, completed"
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data
@@ -18,7 +18,7 @@ And I withdraw the registration and then reactivate it
 Then the IndustryPlacement table will still have a status value of "1"
 And I have deleted LRS data from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2950_Withdraw and Reactivate a registration with IP status of "Yes, completed with special consideration"
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data
@@ -33,7 +33,7 @@ Then the IndustryPlacement table will still have a status value of "2"
 And I have deleted LRS data from the database
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2950_Withdraw and Reactivate a registration with IP status of "No, still to be completed"
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data

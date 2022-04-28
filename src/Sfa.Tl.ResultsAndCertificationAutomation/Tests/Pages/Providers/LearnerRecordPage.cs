@@ -12,10 +12,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private static By pageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
         private static By statusElement = By.XPath("//*[@id='main-content']/div/div/dl[1]/div/dd[1]");
         //data
-        private const string name = "Name: Db FirstName Db LastName";
-        private const string dob = "Date of birth: 01/01/2001";
-        private const string provider = "Provider (UKPRN): Barnsley College (10000536)";
-        private const string core = "T Level core: Agriculture, Environmental and Animal Care (77777777)";
+        private const string name = "Db FirstName Db LastName";
+        private const string dob = "01 January 2001";
+        private const string provider = "Barnsley College";
+        private const string core = "Agriculture, Environmental and Animal Care";
         private const string statusEM = "Achieved minimum standard (Data from the Learning Records Service - LRS)";
         private const string statusEMNonLRS = "Achieved minimum standard";
         private const string statusIP = "Placement completed";
@@ -30,7 +30,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         {
             Assert.AreEqual(pagetitle, WebDriver.Title);
             Assert.IsTrue(WebDriver.Url.Contains(pageUrl));
-            Assert.AreEqual(pageHeader, WebDriver.FindElement(pageHeadElement).Text);
+            //Assert.AreEqual(pageHeader, WebDriver.FindElement(pageHeadElement).Text);
         }
         public static void VerifyLearnerRecordData(string uln)
         {

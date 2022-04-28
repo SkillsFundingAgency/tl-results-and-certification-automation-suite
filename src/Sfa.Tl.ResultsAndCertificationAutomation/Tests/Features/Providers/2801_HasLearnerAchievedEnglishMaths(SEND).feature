@@ -13,7 +13,7 @@ And I click on "Add a new learner T Level record" link
 
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2801_Validate Page content and Back link
 When I enter the ULN on the Add learner page
 Then I am navigated to the 'Has the learner achieved the required minimum standard for English and maths?' page
@@ -23,7 +23,7 @@ Then I am shown the Provider - Enter a ULN page
 And the ULN is retained on the Provider - Enter a ULN page
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2801_Validate caption text is shown when Achieved radio button is selected
 When I enter the ULN on the Add learner page
 Then I am navigated to the 'Has the learner achieved the required minimum standard for English and maths?' page
@@ -36,7 +36,7 @@ Then no text is shown above above the Continue buttton on the Min standard for E
 And I have deleted LRS records from the database
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2801_Validate Error Messages
 When I enter the ULN on the Add learner page
 Then I am navigated to the 'Has the learner achieved the required minimum standard for English and maths?' page
@@ -44,14 +44,14 @@ Given I click submit without selecting a radio button on the Min standard for EM
 Then I am shown an error message stating "Select if the learner has achieved the minimum standard" on the Min standard for EM Page
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2801_Learner with SEND and non SEND qualifications 
 When I add non SEND qualifications to the registration
 And I enter the ULN on the Add learner page
 Then I am navigated to the Has the learner completed their industry placement? page
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2801_Learner with SEND qualification - ISSend flag is False or True 
 When I update the ISSend flag to "true"
 And I enter the ULN on the Add learner page

@@ -3,7 +3,7 @@
 	I need to be able to check learner data before submitting
 	So that I can ensure the data is correct
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2721_Check and submit page - Yes, completed radio button selected and user not acheived Maths and English
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration with LRS qualifications (Maths achieved and English not Achieved)
@@ -14,7 +14,7 @@ And the English and maths minimum standard status shows "Not achieved minimum st
 And the Industry placement status shows "Placement completed"
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2721_Check and submit page - Yes, completed with special consideration radio button selected and user not acheived Maths and English
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration with LRS qualifications (Maths not achieved and English achieved)
@@ -25,7 +25,7 @@ And the English and maths minimum standard status shows "Not achieved minimum st
 And the Industry placement status shows "Placement completed with special consideration"
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2721_Check and submit page - No, still to be completed radio button selected and user has acheived Maths and English
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration with LRS qualifications (Maths and English achieved)

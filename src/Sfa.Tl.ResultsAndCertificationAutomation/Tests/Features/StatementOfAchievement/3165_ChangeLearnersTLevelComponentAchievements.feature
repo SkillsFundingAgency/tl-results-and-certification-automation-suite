@@ -9,7 +9,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I deleted the address in database
 And I add an address for Barnsley
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3165_Validate Statement of Achievement - Change Learner's T-Level Component Achievements page and Back link
 Given a registration is created for LRS where 'MathEng not Achieved Min Standard Math-A Eng-NA' and 'IP completed'
 And I navigate to Request statement of achievment - Check and submit page
@@ -20,7 +20,7 @@ Then the learners T Level component achievement details display 'Not achieved mi
 And the learners registration and qualification details are shown
 And the registration is deleted for this test
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3165_Validate the Manage Learner T Level Record button
 Given a registration is created for LRS where 'MathEng not Achieved Min Standard Math-A Eng-NA' and 'IP completed'
 And I navigate to Request statement of achievment - Check and submit page

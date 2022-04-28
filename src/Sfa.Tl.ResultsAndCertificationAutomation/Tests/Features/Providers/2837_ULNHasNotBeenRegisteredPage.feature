@@ -9,7 +9,7 @@ And I have an Uln not existed in DB
 And I click on "Manage learner T Level records" link
 And I click on "Update a learner T Level record" link
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2837 Verify Uln has not registered page
 When I enter uln and click search
 Then I shoud see Uln has not been registrered page

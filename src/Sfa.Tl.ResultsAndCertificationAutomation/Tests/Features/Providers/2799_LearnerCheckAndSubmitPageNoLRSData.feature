@@ -8,7 +8,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data
 And I navigate to the 'Has the learner achieved the required minimum standard for English and maths' page
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2799_Check and Submit page - Non LRS - Selected "Achieved the minimum standard" 
 Given I select "Achieved the minimum standard" radio button on 'Min standard for English Maths' page and press Continue
 And I select "Yes, completed with special consideration" radio button and press Continue
@@ -17,7 +17,7 @@ And the English and maths minimum standard status shows "Achieved minimum standa
 And the Industry placement status shows "Placement completed with special consideration"
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2799_Check and Submit page - Non LRS - Selected "Achieved the minimum standard with SEND adjustments" 
 Given I select "Achieved the minimum standard for learners with SEND" radio button on 'Min standard for English Maths' page and press Continue
 And I select "Yes, completed with special consideration" radio button and press Continue
@@ -27,7 +27,7 @@ And the Industry placement status shows "Placement completed with special consid
 And I have deleted LRS records from the database
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2799_Check and Submit page - Non LRS - Selected "Not achieved minimum standard"
 Given I select "Not achieved the minimum standard" radio button on 'Min standard for English Maths' page and press Continue
 And I select "Yes, completed with special consideration" radio button and press Continue

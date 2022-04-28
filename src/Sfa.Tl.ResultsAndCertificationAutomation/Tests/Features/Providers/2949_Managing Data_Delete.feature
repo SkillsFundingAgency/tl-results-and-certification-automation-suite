@@ -4,7 +4,7 @@
 	So that learner data can be kept up to date
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2949_Attempt to delete a registration with IP data
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data
@@ -20,7 +20,7 @@ And when I click the back link on the Registration cannot be deleted page
 Then I am shown the Active options page
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2949_Click back to registration details button on Registration cannot be deleted page
 Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a created a registration without LRS data
@@ -42,7 +42,7 @@ Given I have logged in as a "SiteAdmin" user
 And I directly navigate to the Registration cannot be deleted page
 Then I am shown the Page Not Found page
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario:  2949_Delete a registration which has IP data added in parallel just before deletion
 Given I have logged in as a "RegistrationEditor" user
 And I have a created a registration without LRS data

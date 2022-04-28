@@ -93,11 +93,13 @@ testRunner.And("I navigate to the \'Has the learner achieved the required minimu
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2848_Validate retention of radio buttons selection after pressing back link on IP" +
             " page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2848_ValidateRetentionOfRadioButtonsSelectionAfterPressingBackLinkOnIPPage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

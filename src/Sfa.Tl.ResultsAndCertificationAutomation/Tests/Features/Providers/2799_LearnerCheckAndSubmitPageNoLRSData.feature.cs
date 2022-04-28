@@ -92,11 +92,13 @@ testRunner.And("I navigate to the \'Has the learner achieved the required minimu
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2799_Check and Submit page - Non LRS - Selected \"Achieved the minimum standard\"")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2799_CheckAndSubmitPage_NonLRS_SelectedAchievedTheMinimumStandard()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -142,11 +144,13 @@ testRunner.And("I have deleted LRS records from the database", ((string)(null)),
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2799_Check and Submit page - Non LRS - Selected \"Achieved the minimum standard wi" +
             "th SEND adjustments\"")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2799_CheckAndSubmitPage_NonLRS_SelectedAchievedTheMinimumStandardWithSENDAdjustments()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -193,11 +197,13 @@ testRunner.And("I have deleted LRS records from the database", ((string)(null)),
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2799_Check and Submit page - Non LRS - Selected \"Not achieved minimum standard\"")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("Provider")]
         public void _2799_CheckAndSubmitPage_NonLRS_SelectedNotAchievedMinimumStandard()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

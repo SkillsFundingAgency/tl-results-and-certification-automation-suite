@@ -8,7 +8,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I have a registraion from LRS with EM and IP
 And I am on Learner record page
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2843_Verify Ip status updated sucessfully 
 When I click on "Update" link in Learner record page
 And I change the radio option to "Yes, completed with special consideration"
@@ -17,7 +17,7 @@ And Learner record page should display "Placement completed with special conside
 And The Ip table is updated with "Yes, completed with special consideration"
 And I have deleted LRS records from the database
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 2843_Navigate to Manage learner page from update success page 
 When I click on "Update" link in Learner record page
 And I change the radio option to "No, still to be completed"
