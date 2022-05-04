@@ -57,7 +57,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenTheLearnerRecordPageIsDisplayedWithEMStatus(string expectedText)
         {
             ElementHelper.RefreshPage();
-            LearnerRecordPage.VerifyEMStatus(expectedText);
+            LearnerRecordPage_ToBeDeleted.VerifyEMStatus(expectedText);
         }
     }
 }

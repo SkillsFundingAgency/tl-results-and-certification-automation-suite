@@ -82,12 +82,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
 #line 6
 testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
                         "Uln"});
-            table110.AddRow(new string[] {
+            table112.AddRow(new string[] {
                         "9000000001"});
 #line 7
-testRunner.And("I have below registration with core and specialism assessments results", ((string)(null)), table110, "And ");
+testRunner.And("I have below registration with core and specialism assessments results", ((string)(null)), table112, "And ");
 #line hidden
 #line 10
 testRunner.And("I click on \"Registrations\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -130,26 +130,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
                             "Uln"});
-                table111.AddRow(new string[] {
+                table113.AddRow(new string[] {
                             "9000000001"});
 #line 18
-testRunner.When("I search the learner result", ((string)(null)), table111, "When ");
+testRunner.When("I search the learner result", ((string)(null)), table113, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
                             "Provider",
                             "Core_Grade",
                             "Assessment1_Grade",
                             "Assessment2_Grade"});
-                table112.AddRow(new string[] {
+                table114.AddRow(new string[] {
                             "Barnsley College",
                             "A*",
                             "Distinction",
                             "Merit"});
 #line 21
 testRunner.Then("I should see newly transferred Provider in learner detail page with all original " +
-                        "Grades", ((string)(null)), table112, "Then ");
+                        "Grades", ((string)(null)), table114, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

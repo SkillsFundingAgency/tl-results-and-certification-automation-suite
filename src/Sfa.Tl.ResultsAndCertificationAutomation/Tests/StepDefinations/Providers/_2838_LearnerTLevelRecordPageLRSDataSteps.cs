@@ -24,16 +24,16 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I should see Learner T Level Record page")]
         public void ThenIShouldSeeLearnerTLevelRecordPage()
         {
-            LearnerRecordPage.VerifyLearnerRecordPage();
-            LearnerRecordPage.VerifyEMAndIPStatus();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyEMAndIPStatus();
             var uln = _scenarioContext["uln"] as string;
-            LearnerRecordPage.VerifyLearnerRecordData(uln);
-            LearnerRecordPage.VerifyLinksOnLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordData(uln);
+            LearnerRecordPage_ToBeDeleted.VerifyLinksOnLearnerRecordPage();
         }
         [When(@"I click on ""(.*)"" breadcrumb")]
         public void WhenIClickOnBreadcrumb(string name)
         {
-            LearnerRecordPage.ClickBreadCrumb(name);
+            LearnerRecordPage_ToBeDeleted.ClickBreadCrumb(name);
         }
 
         [Then(@"I should see search for learner page")]

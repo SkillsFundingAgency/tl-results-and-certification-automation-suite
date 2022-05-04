@@ -73,10 +73,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Stateme
         [Then(@"I am shown the Leaner record page")]
         public void ThenIAmShownTheLeanerRecordPage()
         {
-            LearnerRecordPage.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
             var uln = _scenarioContext["uln"] as string;
-            LearnerRecordPage.VerifyLearnerRecordData(uln);
-            LearnerRecordPage.VerifyLinksOnLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordData(uln);
+            LearnerRecordPage_ToBeDeleted.VerifyLinksOnLearnerRecordPage();
         }
 
     }

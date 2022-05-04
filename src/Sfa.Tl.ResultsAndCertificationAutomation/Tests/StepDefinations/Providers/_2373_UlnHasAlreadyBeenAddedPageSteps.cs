@@ -59,9 +59,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I should see Learner T Level record page")]
         public void ThenIShouldSeeLearnerTLevelRecordPage()
         {
-            LearnerRecordPage.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
             string uln = _scenarioContext["uln"] as string;
-            LearnerRecordPage.VerifyLearnerRecordData(uln);
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordData(uln);
         }
     }
 }

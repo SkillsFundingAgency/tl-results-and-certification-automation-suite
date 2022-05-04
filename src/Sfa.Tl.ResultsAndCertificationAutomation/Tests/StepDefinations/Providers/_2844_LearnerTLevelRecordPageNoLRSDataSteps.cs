@@ -23,11 +23,11 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         [Then(@"I should see Learner T Level Record page for Non LRS")]
         public void ThenIShouldSeeLearnerTLevelRecordPageForLRS()
         {
-            LearnerRecordPage.VerifyLearnerRecordPage();
-            LearnerRecordPage.VerifyEMAndIPStatusForNonLRS();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyEMAndIPStatusForNonLRS();
             var uln = _scenarioContext["uln"] as string;
-            LearnerRecordPage.VerifyLearnerRecordData(uln);
-            LearnerRecordPage.VerifyLinksOnLearnerRecordNonLRSPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordData(uln);
+            LearnerRecordPage_ToBeDeleted.VerifyLinksOnLearnerRecordNonLRSPage();
         }
     }
 }

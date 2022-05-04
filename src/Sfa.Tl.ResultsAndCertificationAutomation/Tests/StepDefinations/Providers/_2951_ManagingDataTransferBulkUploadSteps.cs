@@ -37,9 +37,9 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             var row = table.Rows;
             var uln = row[0]["Uln"];
-            LearnerRecordPage.VerifyLearnerRecordPage();
-            LearnerRecordPage.VerifyLearnerRecordData(uln);
-            LearnerRecordPage.VerifyEMOrIPStatus("Placement completed");
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordData(uln);
+            LearnerRecordPage_ToBeDeleted.VerifyEMOrIPStatus("Placement completed");
         }
 
         [Then(@"I have deleted LRS data from the database for the Uln")]

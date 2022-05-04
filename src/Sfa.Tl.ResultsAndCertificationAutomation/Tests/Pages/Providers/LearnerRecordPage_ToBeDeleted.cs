@@ -4,18 +4,19 @@ using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 
 namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
 {
-    public class LearnerRecordPage : ElementHelper
+    public class LearnerRecordPage_ToBeDeleted : ElementHelper
     {
         private static string pageUrl { get; } = "learner-record-page";
         private static string pagetitle { get; } = "Learner T Level record page – Manage T Level results – GOV.UK";
-        private static string pageHeader { get; } = "Learner T Level record";
-        private static By pageHeadElement { get; } = By.XPath("//*[@id='main-content']//h1");
+
         private static By statusElement = By.XPath("//*[@id='main-content']/div/div/dl[1]/div/dd[1]");
+
+        private static By LearnerDetailsElement = By.XPath("//*[@id='main-content']/div/div/dl[1]");
         //data
         private const string name = "Db FirstName Db LastName";
         private const string dob = "01 January 2001";
         private const string provider = "Barnsley College";
-        private const string core = "Agriculture, Environmental and Animal Care";
+        private const string Tlevel = "T Level in Agriculture, Environmental and Animal Care";
         private const string statusEM = "Achieved minimum standard (Data from the Learning Records Service - LRS)";
         private const string statusEMNonLRS = "Achieved minimum standard";
         private const string statusIP = "Placement completed";
@@ -26,6 +27,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         private static By breadCrumb1 = By.Id("breadcrumb1");
         private static By breadCrumb2 = By.Id("breadcrumb2");
         private static By breadCrumb0 = By.Id("breadcrumb0");
+        private static By AddMathsLink = By.Id("mathsstatus");
+        private static By AddEnglishLink = By.Id("englishstatus");
+        private static By AddIpLink = By.Id("industryplacement");
+        private static By AddIpFromBanner = By.LinkText("Add industry placement details");
+        private static By AddMathsFromBanner = By.LinkText("Add maths level details");
+        private static By AddEnglishFromBanner = By.LinkText("Add English level details");
         public static void VerifyLearnerRecordPage()
         {
             Assert.AreEqual(pagetitle, WebDriver.Title);
@@ -34,11 +41,10 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.Providers
         }
         public static void VerifyLearnerRecordData(string uln)
         {
-            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains("ULN: " + uln + ""));
-            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(name));
-            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(dob));
-            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(provider));
-            Assert.IsTrue(WebDriver.FindElement(By.Id("main-content")).Text.Contains(core));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(name));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(dob));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(provider));
+            Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(Tlevel));
         }
         public static void VerifyEMAndIPStatus()
         {

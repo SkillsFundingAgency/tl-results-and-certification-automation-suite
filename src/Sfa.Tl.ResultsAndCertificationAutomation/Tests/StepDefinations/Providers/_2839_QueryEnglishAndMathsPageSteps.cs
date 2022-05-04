@@ -15,13 +15,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void GivenIAmOnLearnerRecordPage()
         {
             var uln = _scenarioContext["uln"] as string;
-            LearnerRecordPage.NavigateToLearnerRecordPage(uln);
+            LearnerRecordPage_ToBeDeleted.NavigateToLearnerRecordPage(uln);
         }
 
         [When(@"I click on ""(.*)"" link in Learner record page")]
         public void WhenIClickOnLinkInLearnerRecordPage(string text)
         {
-            LearnerRecordPage.Clicklink(text);
+            LearnerRecordPage_ToBeDeleted.Clicklink(text);
         }
 
 
@@ -35,15 +35,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenClickingOnBackToLearnerRecordButtonNavigatesToLearnerRecordPage()
         {
             ClickBackToLearnerBtn();
-            LearnerRecordPage.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
         }
         
         [Then(@"clicking on back link navigates to learner record page")]
         public void ThenClickingOnBackLinkNavigatesToLearnerRecordPage()
         {
-            LearnerRecordPage.Clicklink("Query");
+            LearnerRecordPage_ToBeDeleted.Clicklink("Query");
             ClickBackLink();
-            LearnerRecordPage.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
         }
     }
 }
