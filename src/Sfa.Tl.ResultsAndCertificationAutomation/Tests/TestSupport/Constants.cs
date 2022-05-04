@@ -259,4 +259,37 @@ public static class Constants
     public const string DbCoreComponentName = "Building Services Engineering";
     public const string DbOs1ComponentName = "Heating Engineering";
     public const string DbOs2ComponentName = "Ventilation";
+
+    //NCFE
+    //SOA data - Education childcare and Early Years Educator
+    public const string EducationChildcareProvider = "17251";
+    public const string EarlyYearsEducator = "17";
+    //SOA data - Health and Supporting health care
+    public const string HealthProvider = "17365";
+    public const string SupportingHealthCare = "29";
+    //SOA data - Science and Technical laboratory science
+    public const string ScienceProvider = "17366";
+    public const string TechLaboratory = "32";
+    //SOA data - Digital support services and Digital support
+    public const string DigitalServiceProvider = "17250";
+    public const string DigitalSupport = "24";
+    //SOA data - Digital business services and Digital Technician
+    public const string DigitalBusinessServiceProvider = "17367";
+    public const string DataTechnician = "25";
+
+    //Pearson
+    //SOA data - Digital production design and Digital Producation design
+    public const string DigitalProducationDesignProvider = "17368";
+    public const string DigitalDesignDev = "20";
+    //SOA data - Design survey planning and Civil Engineering
+    public const string DesignSurveyPlanningProvider = "17369";
+    public const string CivilEngineering = "2";
+
+    //City and Guilds
+    //SOA data - Building services engineering and Gas engineering
+    public const string BuildingServicesEngineeringProvider = "17275";
+    public const string GasEngineering = "12";
+    //SOA data - Onsite construction and Painting and Decor
+    public const string OnsiteConstructionProvider = "17276";
+    public const string Painting = "8";
 }
