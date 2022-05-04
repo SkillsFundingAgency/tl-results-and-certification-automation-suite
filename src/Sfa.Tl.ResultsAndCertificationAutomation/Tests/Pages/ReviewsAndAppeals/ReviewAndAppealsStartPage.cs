@@ -22,7 +22,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.ReviewsAndAppeals
             Assert.AreEqual(PageHeader, WebDriver.FindElement(PageHeaderElement).Text);
             Assert.AreEqual(SubPageHeader, WebDriver.FindElement(SubPageHeaderElement).Text);
         }
-        public static void ClickHomeBreadcrumb()
+
+        protected static void ClickHomeBreadcrumb()
         {
             ClickElement(HomeBreadcrumb);
             TlevelDashboardPage.VerifyDashboardpage();
