@@ -45,6 +45,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         {
             VerifyBackLink();
         }
+        [Then(@"click on '([^']*)' takes me to Has learner completed Ip page")]
+        public void ThenClickOnTakesMeToHasLearnerCompletedIpPage(string status)
+        {
+            LearnerDetailPage.AddEmip(status);
+            VerifyHasLearnerCompletedIpPage();
+        }
+
         [When(@"I click continue without selecting completed Ip option")]
         public void WhenIClickContinueWithoutSelectingCompletedIpOption()
         {

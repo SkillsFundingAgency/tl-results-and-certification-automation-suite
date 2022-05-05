@@ -122,6 +122,9 @@ testRunner.Then("Has learner completed Ip page is shown", ((string)(null)), ((Te
 #line 14
 testRunner.And("Bank link takes me back to learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 15
+testRunner.And("click on \'Add Ip link\' takes me to Has learner completed Ip page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -137,7 +140,7 @@ testRunner.And("Bank link takes me back to learner details page", ((string)(null
                     "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6245_Validate errors on has learner completed Ip page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -150,24 +153,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 18
+#line 19
 testRunner.When("I click \'Add Ip\' link on learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 20
 testRunner.And("I click continue without selecting completed Ip option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error message"});
                 table66.AddRow(new string[] {
                             "Tell us whether this learner has completed their industry placement"});
-#line 20
+#line 21
 testRunner.Then("the following error message shown on has learner completed Ip page", ((string)(null)), table66, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error summary"});
                 table67.AddRow(new string[] {
                             "Tell us whether this learner has completed their industry placement"});
-#line 23
+#line 24
 testRunner.And("the flowwing error summary shown on has learner completed Ip page", ((string)(null)), table67, "And ");
 #line hidden
             }

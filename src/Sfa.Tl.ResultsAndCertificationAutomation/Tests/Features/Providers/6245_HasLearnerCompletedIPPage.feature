@@ -12,6 +12,7 @@ Scenario: 6245_Verify has learner completed Ip page
 When I click 'Add Ip' link on learner details page
 Then Has learner completed Ip page is shown
 And Bank link takes me back to learner details page
+And click on 'Add Ip link' takes me to Has learner completed Ip page
 
 @RegressionTest @Provider
 Scenario: 6245_Validate errors on has learner completed Ip page
