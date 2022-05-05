@@ -29,6 +29,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         }
 
         [When(@"I click '([^']*)' link on learner details page")]
+        [Given(@"I click '([^']*)' link on learner details page")]
         public void WhenIClickLinkOnLearnerDetailsPage(string status)
         {
             LearnerDetailPage.AddEmip(status);
