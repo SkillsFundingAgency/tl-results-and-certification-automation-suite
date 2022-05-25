@@ -10,7 +10,7 @@ And I click 'Add Ip' link on learner details page
 And I select 'Yes, Completed' radio in has learner completed Ip page
 
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 6249_Verify was multiple employer used page
 When I select 'Yes, Ip model used' radio in was Ip model used page
 Then Multiple employer model used page is shown
