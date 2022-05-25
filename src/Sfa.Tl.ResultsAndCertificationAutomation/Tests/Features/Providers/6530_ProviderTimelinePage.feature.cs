@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2135_ResultsWithdrawnManual")]
-    public partial class _2135_ResultsWithdrawnManualFeature
+    [NUnit.Framework.DescriptionAttribute("6530_ProviderTimelinePage")]
+    public partial class _6530_ProviderTimelinePageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "2135_ResultsWithdrawnManual.feature"
+#line 1 "6530_ProviderTimelinePage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Results", "2135_ResultsWithdrawnManual", "\tAs a R&C Portal user\r\n\tI need results data to be updated after a record is withd" +
-                    "rawn\r\n\tSo that student data can be kept up to date", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "6530_ProviderTimelinePage", "As a Provider, I need understand what data I am entering onto the service so that" +
+                    " I ensure I am entering the correct data", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,33 +74,18 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line hidden
-#line 7
-testRunner.Given("I have logged in as a \"ResultsEditor\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
-testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
-testRunner.And("I have moved registration in to withdrawn state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2135_Resutls for withdrawn registration")]
+        [NUnit.Framework.DescriptionAttribute("6530_Verify provider timelines page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public void _2135_ResutlsForWithdrawnRegistration()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        public void _6530_VerifyProviderTimelinesPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2135_Resutls for withdrawn registration", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 12
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6530_Verify provider timelines page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -110,21 +95,18 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+#line 7
+testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 13
-testRunner.And("I click on \"Results\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.When("I click on \"Check what data you need to provide and when you need to provide it\" " +
+                        "link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
-testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
+testRunner.Then("provider timeline page is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Message"});
-                table89.AddRow(new string[] {
-                            "Learner has been withdrawn by the exam board"});
-#line 15
-testRunner.Then("I should see following message for that registration", ((string)(null)), table89, "Then ");
+#line 10
+testRunner.And("clicking on home breadcrumb takes me to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

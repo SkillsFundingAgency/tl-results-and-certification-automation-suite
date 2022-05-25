@@ -49,8 +49,8 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Stateme
         public void ThenTheLearnerRecordsPageIsDisplayedWithEngAndMathsStatusAndIPCompletionStatusAs(string EMStatus, string IPStatus)
         {
             var uln = _scenarioContext["uln"] as string;
-            LearnerRecordPage.VerifyLearnerRecordData(uln);
-            LearnerRecordPage.VerifyEMAndIPStatus(EMStatus, IPStatus);
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordData(uln);
+            LearnerRecordPage_ToBeDeleted.VerifyEMAndIPStatus(EMStatus, IPStatus);
         }
 
 

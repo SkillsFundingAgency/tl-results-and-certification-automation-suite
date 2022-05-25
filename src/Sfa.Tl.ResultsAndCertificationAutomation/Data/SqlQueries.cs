@@ -86,11 +86,28 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
             return (int)profileId.FirstOrDefault().FirstOrDefault();
         }
+        public static int CreateRegProfile(string uln)
+        {
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'John','Wilson','2001-01-01',Null,Null,Null,Null,Null,Null,Null,GETDATE(),'System', GETDATE(),'System')";
+            var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
+            var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
+            return (int)profileId.FirstOrDefault().FirstOrDefault();
+        }
         public static int CreateRegistrationPathway(int profileId)
         {
             var tqProviderId = Constants.TqProviderId;
             var createRegPathway = "Insert into TqRegistrationPathway values('"+ profileId +"', '" + tqProviderId + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
             var getRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '"+ profileId +"'";
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegPathway, ConnectionString);
+            var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);
+            return (int)pathwayId.FirstOrDefault().FirstOrDefault();
+        }
+        public static int CreateRegPathway(int profileId, int year)
+        {
+            var tqProviderId = Constants.TqProviderIdForLrs;
+            var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','" + year + "', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            var getRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegPathway, ConnectionString);
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);
             return (int)pathwayId.FirstOrDefault().FirstOrDefault();

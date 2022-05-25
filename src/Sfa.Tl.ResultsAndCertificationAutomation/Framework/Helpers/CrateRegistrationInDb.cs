@@ -18,6 +18,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers
             var pathwayId = SqlQueries.CreateRegistrationPathway(profileId);
             SqlQueries.CreateRegSpecialism(pathwayId);
         }
+
+        public static void RegistationWithoutEngMatIp(string uln, int year)
+        {
+            var profileId = SqlQueries.CreateRegProfile(uln);
+            var pathwayId = SqlQueries.CreateRegPathway(profileId, year);
+            SqlQueries.CreateRegSpecialism(pathwayId);
+        }
         public void CreateDbRegistationForLrs(string uln)
         {
             var profileId = SqlQueries.CreateRegistrationProfileForLrs(uln);

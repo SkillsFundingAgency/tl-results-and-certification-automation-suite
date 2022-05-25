@@ -30,7 +30,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenLearnerRecordPageShouldDisplayWhenIClickOnBackToLearnerRecordButton(string text)
         {
             ClickElement(backToLearnerRecordBtn);
-            LearnerRecordPage.VerifyEMOrIPStatus(text);
+            LearnerRecordPage_ToBeDeleted.VerifyEMOrIPStatus(text);
         }
         [Then(@"clicking on Back to manage learner link should take me to dashboard page")]
         public void ThenClickingOnBackToManageLearnerLinkShouldTakeMeToDashboardPage()

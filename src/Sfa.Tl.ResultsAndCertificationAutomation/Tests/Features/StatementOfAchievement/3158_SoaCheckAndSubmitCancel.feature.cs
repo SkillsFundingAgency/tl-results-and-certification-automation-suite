@@ -98,11 +98,13 @@ testRunner.And("I navigate to Request statement of achievment - Check and submit
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3158 Verify cancel SOA request page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3158VerifyCancelSOARequestPage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -138,11 +140,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3158 Cancel SOA request error validations")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3158CancelSOARequestErrorValidations()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -166,19 +170,19 @@ testRunner.When("I click on \"Cancel\" link", ((string)(null)), ((TechTalk.SpecF
 #line 23
 testRunner.And("I click on \"Continue\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table119.AddRow(new string[] {
+                table123.AddRow(new string[] {
                             "Select yes if you want to cancel this request"});
 #line 24
-testRunner.Then("I should see the following error summary messages", ((string)(null)), table119, "Then ");
+testRunner.Then("I should see the following error summary messages", ((string)(null)), table123, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error messages"});
-                table120.AddRow(new string[] {
+                table124.AddRow(new string[] {
                             "Select yes if you want to cancel this request"});
 #line 27
-testRunner.And("I should see the following error message", ((string)(null)), table120, "And ");
+testRunner.And("I should see the following error message", ((string)(null)), table124, "And ");
 #line hidden
 #line 30
 testRunner.And("the registration is deleted for this test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -189,11 +193,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3158 Do not cancel button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3158DoNotCancelButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -232,11 +238,13 @@ testRunner.And("the registration is deleted for this test", ((string)(null)), ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3158 Yes cancel button")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3158YesCancelButton()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

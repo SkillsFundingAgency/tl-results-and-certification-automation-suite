@@ -3,59 +3,64 @@ using OpenQA.Selenium;
 using Sfa.Tl.ResultsAndCertificationAutomation.Framework.Helpers;
 using System.Threading;
 
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.DataExport
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.DataExport;
+
+public class DataExportAssessmentsPage : ElementHelper
 {
-    public class DataExportAssessmentsPage : ElementHelper
+    private static string NoResultsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessments-no-records-found");
+    private static string NoResultsPageHeader { get; } = "No records found";
+    private static string NoResultsPageTitle { get; } = "No records found - Assessments – Manage T Level results – GOV.UK";
+    private static By PageHeaderElement { get; } = By.XPath("//*[@id='main-content']//h1");
+    private static string DownloadAssessmentsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessments-download-data");
+    private static string DownloadAssessmentsPageHeader { get; } = "Download assessments data";
+    private static string DownloadAssessmentsPageTitle { get; } = "Download data - Assessments – Manage T Level results – GOV.UK";
+    private static By BackToHomeBtn { get; } = By.Id("backToHomeButton");
+    private static By AddAssessmentsBtn { get; } = By.Id("backToAddAssessments");
+    private static By DownloadCoreAssessmentsLink { get; } = By.XPath("//a[contains(text(),'Core assessments data')]");
+    private static By DownloadSpecialismAssessmentsLink { get; } = By.XPath("//a[contains(text(),'Specialism assessments data')]");
+    private static By ManageTlevelLink { get; } = By.XPath("//a[contains(text(),'Manage T Level results')]");
+    protected static readonly string CoreAssessmentDownloadFile = string.Concat("Data\\", "4895_DownloadedCoreAssessmentsData.csv");
+    protected static readonly string SpecialismAssessmentDownloadFile = string.Concat("Data\\", "4895_DownloadedSpecialismAssessmentsData.csv");
+
+    protected static void VerifyNoAssessmentsRecordPage()
     {
-        private static string noResultsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessments-no-records-found");
-        private static string noResultsPageHeader { get; } = "No records found";
-        private static string noResultsPageTitle { get; } = "No records found - Assessments – Manage T Level results – GOV.UK";
-        private static By pageHeaderElement { get; } = By.XPath("//*[@id='main-content']//h1");
-        private static string downloadAssessmentsPageUrl { get; } = string.Concat(StartPage.StartPageUrl, "assessments-download-data");
-        private static string downloadAssessmentsPageHeader { get; } = "Download assessments data";
-        private static string downloadAssessmentsPageTitle { get; } = "Download data - Assessments – Manage T Level results – GOV.UK";
-        private static By backToHomeBtn { get; } = By.Id("backToHomeButton");
-        private static By addAssessmentsBtn { get; } = By.Id("backToAddAssessments");
-        private static By downloadCoreAssessmentsLink { get; } = By.XPath("//a[contains(text(),'Core assessments data')]");
-        private static By downloadSpecialismAssessmentsLink { get; } = By.XPath("//a[contains(text(),'Specialism assessments data')]");
-        private static By manageTlevelLink { get; } = By.XPath("//a[contains(text(),'Manage T Level results')]");
-        public static string CoreAssessmentDownloadFile = string.Concat("Data\\", "4895_DownloadedCoreAssessmentsData.csv");
-        public static string SpecialismAssessmentDownloadFile = string.Concat("Data\\", "4895_DownloadedSpecialismAssessmentsData.csv");
-        public static void VerifyNoAssessmentsRecordPage()
-        {
-            Assert.AreEqual(noResultsPageUrl, WebDriver.Url);
-            Assert.AreEqual(noResultsPageHeader, WebDriver.FindElement(pageHeaderElement).Text);
-            Assert.AreEqual(noResultsPageTitle, WebDriver.Title);
-        }
-        public static void VerifyDownloadAssessmentPage()
-        {
-            Assert.AreEqual(downloadAssessmentsPageUrl, WebDriver.Url);
-            Assert.AreEqual(downloadAssessmentsPageHeader, WebDriver.FindElement(pageHeaderElement).Text);
-            Assert.AreEqual(downloadAssessmentsPageTitle, WebDriver.Title);
-        }
-        public static void BackToHome()
-        {
-            ClickButton(backToHomeBtn);
-            TlevelDashboardPage.VerifyDashboardpage();
-        }
-        public static void AddAssessments()
-        {
-            ClickButton(addAssessmentsBtn);
-            AssessmentEntriesPage.VerifyAssessmentEntriesPage();
-        }
-        public static void ClickBanner()
-        {
-            ClickElement(manageTlevelLink);
-        }
-        public static void DownloadCoreAssessmentFile()
-        {
-            ClickElement(downloadCoreAssessmentsLink);
-            Thread.Sleep(5000);
-        }
-        public static void DownloadSpecialismAssessmentFile()
-        {
-            ClickElement(downloadSpecialismAssessmentsLink);
-            Thread.Sleep(5000);
-        }
+        Assert.AreEqual(NoResultsPageUrl, WebDriver.Url);
+        Assert.AreEqual(NoResultsPageHeader, WebDriver.FindElement(PageHeaderElement).Text);
+        Assert.AreEqual(NoResultsPageTitle, WebDriver.Title);
+    }
+
+    protected static void VerifyDownloadAssessmentPage()
+    {
+        Assert.AreEqual(DownloadAssessmentsPageUrl, WebDriver.Url);
+        Assert.AreEqual(DownloadAssessmentsPageHeader, WebDriver.FindElement(PageHeaderElement).Text);
+        Assert.AreEqual(DownloadAssessmentsPageTitle, WebDriver.Title);
+    }
+    public static void BackToHome()
+    {
+        ClickButton(BackToHomeBtn);
+        TlevelDashboardPage.VerifyDashboardpage();
+    }
+
+    protected static void AddAssessments()
+    {
+        ClickButton(AddAssessmentsBtn);
+        AssessmentEntriesPage.VerifyAssessmentEntriesPage();
+    }
+
+    protected static void ClickBanner()
+    {
+        ClickElement(ManageTlevelLink);
+    }
+
+    protected static void DownloadCoreAssessmentFile()
+    {
+        ClickElement(DownloadCoreAssessmentsLink);
+        Thread.Sleep(5000);
+    }
+
+    protected static void DownloadSpecialismAssessmentFile()
+    {
+        ClickElement(DownloadSpecialismAssessmentsLink);
+        Thread.Sleep(5000);
     }
 }

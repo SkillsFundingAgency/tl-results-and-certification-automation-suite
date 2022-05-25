@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("5192_SelectSpecialismResultPage")]
-    public partial class _5192_SelectSpecialismResultPageFeature
+    [NUnit.Framework.DescriptionAttribute("6249_WasMultipleEmployerUsed")]
+    public partial class _6249_WasMultipleEmployerUsedFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "5192_SelectSpecialismResultPage.feature"
+#line 1 "6249_WasMultipleEmployerUsed.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Results", "5192_SelectSpecialismResultPage", "As an AO, I need the ability to add an Occupational Specialism grade for the desi" +
-                    "red ULN, so that I can update the ULN record with the determined grade.", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "6249_WasMultipleEmployerUsed", "As a provider, I need to provide details whether multiple employer model was used" +
+                    " for the learner, so that I can update ESFA with the relevant details.", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,28 +79,34 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
 #line 5
 #line hidden
 #line 6
-testRunner.Given("I have logged in as a \"CityAndGuildsAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
-testRunner.And("I have a registration with core and specialism assessments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have registration without maths English and Ip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
-testRunner.And("I am on result details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am on learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
+testRunner.And("I click \'Add Ip\' link on learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+testRunner.And("I select \'Yes, Completed\' radio in has learner completed Ip page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("5192 Add specialism result page")]
+        [NUnit.Framework.DescriptionAttribute("6249_Verify was multiple employer used page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public void _5192AddSpecialismResultPage()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        public void _6249_VerifyWasMultipleEmployerUsedPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5192 Add specialism result page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6249_Verify was multiple employer used page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -113,31 +119,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 12
- testRunner.When("I click \'Specialism1 add result\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+testRunner.When("I select \'Yes, Ip model used\' radio in was Ip model used page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
- testRunner.Then("I should see add result page for Assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
+testRunner.Then("Multiple employer model used page is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 14
- testRunner.And("back link should take me to learner result page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+testRunner.And("Back link takes me back to was Ip model used page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("5192 Add specialism result page validation")]
+        [NUnit.Framework.DescriptionAttribute("6249_Validate was multiple employer used page")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public void _5192AddSpecialismResultPageValidation()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        public void _6249_ValidateWasMultipleEmployerUsedPage()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5192 Add specialism result page validation", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6249_Validate was multiple employer used page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -150,25 +156,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-#line 18
- testRunner.When("I click \'Specialism1 add result\' link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+testRunner.When("I select \'Yes, Ip model used\' radio in was Ip model used page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
- testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+testRunner.And("I click continue without selecting multiple employer option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table110.AddRow(new string[] {
-                            "Please select the grade"});
-#line 20
- testRunner.Then("I should see the following error message on specialism result page", ((string)(null)), table110, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table111.AddRow(new string[] {
-                            "Please select the grade"});
+                TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error message"});
+                table68.AddRow(new string[] {
+                            "Select yes if learner used the multiple employer model"});
 #line 23
- testRunner.And("I should see the following error summary messages", ((string)(null)), table111, "And ");
+testRunner.Then("the following error message shown on was multiple employer used page", ((string)(null)), table68, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error summary"});
+                table69.AddRow(new string[] {
+                            "Select yes if learner used the multiple employer model"});
+#line 26
+testRunner.And("the follwing error summary shown on was multiple employer used page", ((string)(null)), table69, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

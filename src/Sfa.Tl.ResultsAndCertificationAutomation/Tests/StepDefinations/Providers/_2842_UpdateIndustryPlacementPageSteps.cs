@@ -22,15 +22,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.Provide
         public void ThenClickingOnBackLinkNavigateBackToLearnerRecordPage()
         {
             QueryEnglishAndMathsStatusPage.ClickBackLink();
-            LearnerRecordPage.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
         }
 
         [Then(@"clicking on update button without changing radio option navigates to learner record page")]
         public void ThenClickingOnUpdateButtonWithoutChangingRadioOptionNavigatesToLearnerRecordPage()
         {
-            ClickElement(LearnerRecordPage.ipStatusLink);
+            ClickElement(LearnerRecordPage_ToBeDeleted.ipStatusLink);
             ClickElement(updateBtn);
-            LearnerRecordPage.VerifyLearnerRecordPage();
+            LearnerRecordPage_ToBeDeleted.VerifyLearnerRecordPage();
         }
     }
 }
