@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
+namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Providers
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("2413_ResultsTransferManual")]
-    public partial class _2413_ResultsTransferManualFeature
+    [NUnit.Framework.DescriptionAttribute("6545_WhichIpModelsWereUsed")]
+    public partial class _6545_WhichIpModelsWereUsedFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "2413_ResultsTransferManual.feature"
+#line 1 "6545_WhichIpModelsWereUsed.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Results", "2413_ResultsTransferManual", "\tAs a R&C Portal user\r\n\tI need results data to be updated after a transfer occurs" +
-                    "\r\n\tSo that student data can be kept up to date", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tests/Features/Providers", "6545_WhichIpModelsWereUsed", "As a provider, I need to provide details whether learner used any other industry " +
+                    "placement models, so that I can update ESFA with the relevant details.", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,28 +76,25 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Features.Results
         
         public virtual void FeatureBackground()
         {
+#line 5
+#line hidden
 #line 6
-#line hidden
-#line 7
-testRunner.Given("I have logged in as a \"SiteAdmin\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
-testRunner.And("I have a registration with result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I have logged in as a \"ProviderBarnsleyPA\" user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2413_Transfer result manual")]
+        [NUnit.Framework.DescriptionAttribute("6545_Which Ip models used by page_EducationAndChildCare")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public void _2413_TransferResultManual()
+        [NUnit.Framework.CategoryAttribute("Provider")]
+        public void _6545_WhichIpModelsUsedByPage_EducationAndChildCare()
         {
             string[] tagsOfScenario = new string[] {
                     "RegressionTest",
-                    "Results"};
+                    "Provider"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2413_Transfer result manual", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6545_Which Ip models used by page_EducationAndChildCare", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -107,37 +104,37 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
 this.FeatureBackground();
 #line hidden
+#line 10
+testRunner.And("I have registration for Education and Childcare without maths English and Ip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+testRunner.And("I am on learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 12
-testRunner.And("I search the registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I click \'Add Ip\' link on learner details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Provider"});
-                table104.AddRow(new string[] {
-                            "Automation Test2 (99999902)"});
 #line 13
-testRunner.And("I changed the provider", ((string)(null)), table104, "And ");
+testRunner.And("I select \'Yes, Completed\' radio in has learner completed Ip page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 14
+testRunner.And("I select \'Yes, Ip model used\' radio in was Ip model used page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+testRunner.When("I select \'No, Multiple employer used\' in multiple employer model page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Options"});
+                table70.AddRow(new string[] {
+                            "Relevant part-time work"});
+                table70.AddRow(new string[] {
+                            "On-site facilities for SEND students"});
+                table70.AddRow(new string[] {
+                            "On-site facilities for young people in young offender institutions"});
 #line 16
-testRunner.And("I am on results dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 17
-testRunner.When("I search the learner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Provider",
-                            "Grade"});
-                table105.AddRow(new string[] {
-                            "Automation Test2",
-                            "A"});
-#line 18
-testRunner.Then("I should see newly transferred Provider in learner detail page with original Grad" +
-                        "e", ((string)(null)), table105, "Then ");
-#line hidden
-#line 21
-testRunner.And("the registration for this test is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("the following radio options seen on which Ip models used by page", ((string)(null)), table70, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

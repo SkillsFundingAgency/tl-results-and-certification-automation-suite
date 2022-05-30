@@ -592,5 +592,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(deleteSummer2021SpecialismSeriesSQL, ConnectionString);
         }
 
+        public static string GetLearnerName(string ULN)
+        {
+            var getUserNameSQL = "select firstname + ' '  +  Lastname  from tqregistrationprofile where UniqueLearnerNumber =" + ULN;
+            var UserName = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getUserNameSQL, ConnectionString);
+            string UserName1 = Convert.ToString(UserName[0][0]);
+            return UserName1;
+        }
+
     }
 }

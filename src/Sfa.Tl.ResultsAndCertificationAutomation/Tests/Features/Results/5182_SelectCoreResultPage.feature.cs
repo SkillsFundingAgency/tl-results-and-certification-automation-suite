@@ -242,19 +242,19 @@ testRunner.When("I click \'Core add result\' link", ((string)(null)), ((TechTalk
 #line 35
 testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table106.AddRow(new string[] {
-                            "Please select the grade"});
-#line 36
-testRunner.Then("I should see the following error message on Core result page", ((string)(null)), table106, "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
                 table107.AddRow(new string[] {
                             "Please select the grade"});
+#line 36
+testRunner.Then("I should see the following error message on Core result page", ((string)(null)), table107, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error Messages"});
+                table108.AddRow(new string[] {
+                            "Please select the grade"});
 #line 39
-testRunner.And("I should see the following error summary messages", ((string)(null)), table107, "And ");
+testRunner.And("I should see the following error summary messages", ((string)(null)), table108, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

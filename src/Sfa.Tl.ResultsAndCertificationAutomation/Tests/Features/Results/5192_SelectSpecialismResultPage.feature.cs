@@ -156,19 +156,19 @@ this.FeatureBackground();
 #line 19
  testRunner.And("I click on \"Submit\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Error Messages"});
-                table110.AddRow(new string[] {
-                            "Please select the grade"});
-#line 20
- testRunner.Then("I should see the following error message on specialism result page", ((string)(null)), table110, "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
                             "Error Messages"});
                 table111.AddRow(new string[] {
                             "Please select the grade"});
+#line 20
+ testRunner.Then("I should see the following error message on specialism result page", ((string)(null)), table111, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Error Messages"});
+                table112.AddRow(new string[] {
+                            "Please select the grade"});
 #line 23
- testRunner.And("I should see the following error summary messages", ((string)(null)), table111, "And ");
+ testRunner.And("I should see the following error summary messages", ((string)(null)), table112, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
