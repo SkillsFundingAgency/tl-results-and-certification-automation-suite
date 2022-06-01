@@ -21,7 +21,7 @@ public class IndustryPlacementSpecialConsiderationReasonsPage : ElementHelper
     private static readonly By CheckboxUnsafePlacement= By.Id("isreasonselected-6");
     private static readonly By CheckboxPlacementWithdrawn = By.Id("isreasonselected-7");
     private static readonly By CheckboxCovid = By.Id("isreasonselected-8");
-    private static readonly By ContinueBtn = By.Id("continueButton");
+    private static readonly By ContinueBtn = By.Id("ContinueButton");
     private static readonly By backLink = By.Id("backLink");
  
 

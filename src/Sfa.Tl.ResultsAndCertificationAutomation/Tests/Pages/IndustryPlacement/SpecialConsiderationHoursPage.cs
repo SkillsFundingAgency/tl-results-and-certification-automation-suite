@@ -13,7 +13,7 @@ public class SpecialConsiderationHoursPage : ElementHelper
     private static string PageErrorTitle { get; } = "Error: Special consideration hours - Industry placement - Manage learner – Manage T Level results – GOV.UK";
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
     private static readonly By TextBoxHours = By.Id("hours");   
-    private static readonly By ContinueBtn = By.Id("continueButton");
+    private static readonly By ContinueBtn = By.Id("ContinueButton");
     private static readonly By backLink = By.Id("backLink");
  
 
@@ -39,6 +39,7 @@ public class SpecialConsiderationHoursPage : ElementHelper
     public static void EnterHours(string Hours)
     {
         WebDriver.FindElement(TextBoxHours).SendKeys(Hours);
+        WebDriver.FindElement(ContinueBtn).Click();
     }
 
 }

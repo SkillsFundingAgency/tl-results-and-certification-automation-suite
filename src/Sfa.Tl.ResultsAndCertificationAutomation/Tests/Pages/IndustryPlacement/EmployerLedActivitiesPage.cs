@@ -13,8 +13,8 @@ public class EmployerLedActivitiesPage : ElementHelper
     private static string PageErrorTitle { get; } = "Error: Employer-led activities or projects - Temporary flexibility - Industry placement - Manage learner – Manage T Level results – GOV.UK";
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
 
-    private static readonly By RadioYes = By.Id("ismultiemployermodelused");
-    private static readonly By RadioNo = By.Id("ismultiemployermodelused-no");
+    private static readonly By RadioYes = By.Id("isemployerledused");
+    private static readonly By RadioNo = By.Id("isemployerledused-no");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By backLink = By.Id("backLink");
  
@@ -24,7 +24,7 @@ public class EmployerLedActivitiesPage : ElementHelper
     protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
     public static void ClickBackLink() => ClickButton(backLink);
    
-    public static void VerifyIndustryPlacementCompletionPage(string ULN)
+    public static void VerifyEmployerLedActivitiesPage(string ULN)
     {
         string LearnerName = SqlQueries.GetLearnerName(ULN);
         string ExpectedHeader = "Did " + LearnerName + " use the employer-led activities/projects temporary flexibility?";
@@ -32,12 +32,6 @@ public class EmployerLedActivitiesPage : ElementHelper
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         Assert.AreEqual(ExpectedHeader, WebDriver.FindElement(PageHeaderElement).Text);
     }
-    protected static void VerifyEmployerLedActivitiesPage()
-    {
-        Assert.AreEqual(PageErrorTitle, WebDriver.Title);
-        Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
-    }
-
     protected static void VerifyErrorEmployerLedActivitiesPage()
     {
         Assert.AreEqual(PageErrorTitle, WebDriver.Title);

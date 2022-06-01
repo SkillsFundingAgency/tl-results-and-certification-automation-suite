@@ -13,7 +13,7 @@ public class BlendedPlacementTemporaryFlexibilityPage : ElementHelper
     private static string PageErrorTitle { get; } = "Error: Blended placement - Temporary flexibility - Industry placement - Manage learner – Manage T Level results – GOV.UK";
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
     private static readonly By RadioYes = By.Id("isblendedplacementused");
-    private static readonly By RadioNo = By.Id("isblendedplacementused-no-no");
+    private static readonly By RadioNo = By.Id("isblendedplacementused-no");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By backLink = By.Id("backLink");
  

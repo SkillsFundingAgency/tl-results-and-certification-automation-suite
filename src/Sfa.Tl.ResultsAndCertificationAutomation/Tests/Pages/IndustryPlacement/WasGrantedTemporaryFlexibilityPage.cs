@@ -25,7 +25,7 @@ public class WasGrantedTemporaryFlexibilityPage : ElementHelper
     public static void VerifyWasGrantedTemporaryFlexibilityPage(string ULN)
     {
         string LearnerName = SqlQueries.GetLearnerName(ULN);
-        string ExpectedHeader = "Was " + LearnerName + "granted a temporary flexibility?";
+        string ExpectedHeader = "Was " + LearnerName + " granted a temporary flexibility?";
         Assert.AreEqual(ExpectedHeader, WebDriver.FindElement(PageHeaderElement).Text);
         Assert.AreEqual(PageTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));

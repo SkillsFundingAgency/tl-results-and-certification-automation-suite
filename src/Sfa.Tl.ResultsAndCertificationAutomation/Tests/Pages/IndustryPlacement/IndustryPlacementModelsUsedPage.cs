@@ -9,14 +9,15 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.Pages.IndustryPlacement
 public class IndustryPlacementModelsUsedPage : ElementHelper
 {
     private static string PageUrl { get; } = "industry-placement-models";
-    private static string PageTitle { get; } = "Industry placement models - Industry placement - Manage learner – Manage T Level results – GOV.UK";
+    private static string PageTitle { get; } = "Industry placement models - Manage learner – Manage T Level results – GOV.UK";
     private static string errorPageTitle { get; } = "Error: Industry placement models - Industry placement - Manage learner – Manage T Level results – GOV.UK";
 
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
-    private static readonly By CheckboxRelevantPartTimeWork = By.Id("otherplacement");
-    private static readonly By CheckboxOnsiteSENDStudents = By.Id("otherplacement-1");
-    private static readonly By CheckboxOnsiteYoungPeople = By.Id("otherplacement-2");
-    private static readonly By CheckboxRouteLevelPlacements = By.Id("otherplacement-3");
+    private static readonly By CheckboxRelevantPartTimeWork = By.Id("isipmodelselected");
+    private static readonly By CheckboxOnsiteSENDStudents = By.Id("isipmodelselected-1");
+    private static readonly By CheckboxOnsiteYoungPeople = By.Id("isipmodelselected-2");
+    private static readonly By CheckboxRouteLevelPlacements = By.Id("isipmodelselected-3");
+    private static readonly By CheckboxUseOfSkillsHubs = By.Id("isipmodelselected-5");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By backLink = By.Id("backLink");
  
@@ -61,7 +62,10 @@ public class IndustryPlacementModelsUsedPage : ElementHelper
                 ClickElement(CheckboxRouteLevelPlacements);
                 ClickButton(ContinueBtn);
                 break;
-            
+            case "Use of skills hubs or employer training centres":
+                ClickElement(CheckboxUseOfSkillsHubs);
+                ClickButton(ContinueBtn);
+                break;
         }
     }
 

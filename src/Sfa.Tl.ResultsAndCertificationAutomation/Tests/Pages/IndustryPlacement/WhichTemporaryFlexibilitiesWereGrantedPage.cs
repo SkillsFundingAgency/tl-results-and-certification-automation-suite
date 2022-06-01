@@ -12,8 +12,8 @@ public class WhichTemporaryFlexibilitiesWereGrantedPage : ElementHelper
     private static string PageTitle { get; } = "Temporary flexibilities - Industry placement - Manage learner – Manage T Level results – GOV.UK";
     private static string ErrorPageTitle { get; } = "Error: Temporary flexibilities - Industry placement - Manage learner – Manage T Level results – GOV.UK";
     private static readonly By PageHeaderElement = By.XPath("//*[@id='main-content']//h1");
-    private static readonly By CheckboxPathwayLevel = By.Id("istempflexibilityselected");
-    private static readonly By BlendedPlacements = By.Id("istempflexibilityselected-1");
+    private static readonly By CheckboxJABQGRiskRatedApproach = By.Id("istempflexibilityselected");
+    private static readonly By CheckboxReductionInHours = By.Id("istempflexibilityselected-1");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By backLink = By.Id("backLink");
  
@@ -40,12 +40,12 @@ public class WhichTemporaryFlexibilitiesWereGrantedPage : ElementHelper
     {
         switch (optionName)
         {
-            case "Pathway level placements":
-                ClickElement(CheckboxPathwayLevel);
+            case "JABQG risk-rated approach":
+                ClickElement(CheckboxJABQGRiskRatedApproach);
                 ClickButton(ContinueBtn);
                 break;
-            case "Blended placements":
-                ClickElement(BlendedPlacements);
+            case "Reduction in hours":
+                ClickElement(CheckboxReductionInHours);
                 ClickButton(ContinueBtn);
                 break;            
         }

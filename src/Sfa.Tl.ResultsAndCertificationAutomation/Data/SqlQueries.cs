@@ -600,5 +600,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             return UserName1;
         }
 
+        public static void UpdateRegistrationAcademicYearTo2021(string ULN)
+        {
+            var getPathwayId = "select Id from TqRegistrationPathway where TqRegistrationProfileId in (select Id from tqregistrationprofile where uniquelearnernumber = " + ULN + ")";
+            var pathwayID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getPathwayId, ConnectionString);
+            int pathwayID1 = Convert.ToInt32(pathwayID[0][0]);
+            var updateAcademicYearSQL = "update TqRegistrationPathway set AcademicYear = 2021 where Id = " + pathwayID1;
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(updateAcademicYearSQL, ConnectionString);
+        }
     }
 }

@@ -22,15 +22,17 @@ public class CheckYourAnswersPage : ElementHelper
     private static readonly By BlendedChangeLink = By.Id("isblendedplacementused");
     private static readonly By EmployerLedActivitiesChangeLink = By.Id("anyothertempflexlist");
     private static readonly By SelectedTempFlexibilitiesChangeLink = By.Id("tempflexusedlist");
+    private static readonly By LearnerDetailsElement = By.XPath("//*[@id='main-content']");
 
 
-    protected static void ClickSubmitBtn() => ClickButton(SubmitBtn);
+    public static void ClickSubmitBtn() => ClickButton(SubmitBtn);
     public static void ClickBackLink() => ClickButton(backLink);
 
     public static void VerifyCheckYourAnswersPage(string ULN)
     {
         string LearnerName = SqlQueries.GetLearnerName(ULN);
-       
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(LearnerName));
+        Assert.IsTrue(WebDriver.FindElement(LearnerDetailsElement).Text.Contains(ULN));
         Assert.AreEqual(PageHeader, WebDriver.FindElement(PageHeaderElement).Text);
         Assert.AreEqual(PageTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
