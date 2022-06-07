@@ -17,11 +17,13 @@ public class EmployerLedActivitiesPage : ElementHelper
     private static readonly By RadioNo = By.Id("isemployerledused-no");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By backLink = By.Id("backLink");
- 
+    public static string ExpectedErrorMessage = "Select whether the learner used the employer-led activities/projects temporary flexibility";
+    public static By MainErrorMsg = By.XPath("//*[@id='main-content']//div[1]//div[1]//ul/li/a");
+    public static By SubErrorMsg = By.XPath("//*[@id='main-content']//div[2]//span");
 
 
 
-    protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
+    public static void ClickContinueBtn() => ClickButton(ContinueBtn);
     public static void ClickBackLink() => ClickButton(backLink);
    
     public static void VerifyEmployerLedActivitiesPage(string ULN)
@@ -32,10 +34,13 @@ public class EmployerLedActivitiesPage : ElementHelper
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         Assert.AreEqual(ExpectedHeader, WebDriver.FindElement(PageHeaderElement).Text);
     }
-    protected static void VerifyErrorEmployerLedActivitiesPage()
+
+    public static void VerifyErrorEmployerLedActivitiesPage()
     {
         Assert.AreEqual(PageErrorTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+        Assert.IsTrue(WebDriver.FindElement(MainErrorMsg).Text.Contains(ExpectedErrorMessage));
+        Assert.IsTrue(WebDriver.FindElement(SubErrorMsg).Text.Contains(ExpectedErrorMessage));
     }
 
     public static void ClickRadioButton(string optionName)

@@ -483,6 +483,61 @@ testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("13-IP E2E journey - Click NO on the Has learner completed their industry placemen" +
+            "t? page")]
+        [NUnit.Framework.CategoryAttribute("RegressionTest")]
+        [NUnit.Framework.CategoryAttribute("IndustryPlacement")]
+        public void _13_IPE2EJourney_ClickNOOnTheHasLearnerCompletedTheirIndustryPlacementPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "RegressionTest",
+                    "IndustryPlacement"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("13-IP E2E journey - Click NO on the Has learner completed their industry placemen" +
+                    "t? page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 104
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+#line 105
+testRunner.Given("I have an active registration with a Onsite Construction T Level T Level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 106
+testRunner.And("I update the registration to be 2021", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 107
+testRunner.And("I click on \"Manage learner records\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 108
+testRunner.When("I enter the ULN on the search page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 109
+testRunner.And("I click the following link \"Add Ip\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 110
+testRunner.And("I click \'No, still to be completed\' on the Has learner completed their industry p" +
+                        "lacement? page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 111
+testRunner.Then("the IP learner details page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 112
+testRunner.And("I cleared the data in DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

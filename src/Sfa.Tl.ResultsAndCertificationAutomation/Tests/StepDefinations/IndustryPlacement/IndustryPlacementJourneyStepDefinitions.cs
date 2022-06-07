@@ -113,6 +113,13 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation
             SpecialConsiderationHoursPage.EnterHours(Hours);
         }
 
+        [When(@"I enter invalid value of ""([^""]*)"" hours on the How many industry placement hours did learner complete\?")]
+        public void WhenIEnterInvlaidValueOfHoursOnTheHowManyIndustryPlacementHoursDidLearnerComplete(string Hours)
+        {
+            SpecialConsiderationHoursPage.EnterHours(Hours);
+        }
+
+
 
         [When(@"I click ""([^""]*)"" on Why was learner granted special consideration for their industry placement\? page")]
         public void WhenIClickOnWhyWasLearnerGrantedSpecialConsiderationForTheirIndustryPlacementPage(string Option)
@@ -194,12 +201,154 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation
         [Then(@"the learner details page is displayed with a success banner")]
         public void ThenTheLearnerDetailsPageIsDisplayedWithASuccessBanner()
         {
-            //var uln = _scenarioContext["uln"] as string;
+            var uln = _scenarioContext["uln"] as string;
             LearnerDetailsPage.VerifySuccessBanner();
             LearnerDetailsPage.VerifyAddIPLinkNotPresent();
-           // LearnerDetailsPage.VerifyLearnerDetails(uln);
+            LearnerDetailsPage.VerifyLearnerDetails(uln);
         }
 
+        [When(@"I click Continue on the Has learner completed their industry placement\? page")]
+        public void WhenIClickContinueOnTheHasLearnerCompletedTheirIndustryPlacementPage()
+        {
+            IndustryPlacementCompletionPage.ClickContinueBtn();
+        }
 
+        [Then(@"the user is shown an error message which says Tell us whether this learner has completed their industry placement")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysTellUsWhetherThisLearnerHasCompletedTheirIndustryPlacement()
+        {
+            IndustryPlacementCompletionPage.VerifyErrorIndustryPlacementCompletionPage();
+            IndustryPlacementCompletionPage.ClickRadioButton("Yes, completed with special consideration");
+        }
+
+        [When(@"I click Continue on the How many industry placement hours did learner complete\? page")]
+        public void WhenIClickContinueOnTheHowManyIndustryPlacementHoursDidLearnerCompletePage()
+        {
+            SpecialConsiderationHoursPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Enter number of hours the learner spent on placement")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysEnterNumberOfHoursTheLearnerSpentOnPlacement()
+        {
+            SpecialConsiderationHoursPage.VerifyNoHoursEnteredErrorMessage();
+        }
+
+        [Then(@"the user is shown an error message which says The placement duration must be a whole number between (.*) and (.*) hours")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysThePlacementDurationMustBeAWholeNumberBetweenAndHours(int p0, int p1)
+        {
+            SpecialConsiderationHoursPage.VerifyInvalidEntryErrorMessage();
+            SpecialConsiderationHoursPage.EnterHours("300");
+        }
+
+        [When(@"I click Continue on the Why was learner granted special consideration for their industry placement\? page")]
+        public void WhenIClickContinueOnTheWhyWasLearnerGrantedSpecialConsiderationForTheirIndustryPlacementPage()
+        {
+            IndustryPlacementSpecialConsiderationReasonsPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select one or more reasons for granting special consideration")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectOneOrMoreReasonsForGrantingSpecialConsideration()
+        {
+            IndustryPlacementSpecialConsiderationReasonsPage.VerifyErrorIndustryPlacementSpecialConsiderationReasonsPage();
+            IndustryPlacementSpecialConsiderationReasonsPage.ClickCheckBox("Learner's medical reasons");
+        }
+
+        [When(@"I click Continue on the Was an industry placement model used for learner\? page")]
+        public void WhenIClickContinueOnTheWasAnIndustryPlacementModelUsedForLearnerPage()
+        {
+            WasAnIndustryPlacementModelUsedPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select yes if learner used an industry placement model")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectYesIfLearnerUsedAnIndustryPlacementModel()
+        {
+            WasAnIndustryPlacementModelUsedPage.VerifyErrorMessage();
+            WasAnIndustryPlacementModelUsedPage.ClickRadioButton("Yes");
+        }
+
+        [When(@"I click Continue on the Was a multiple employer model used for learner page")]
+        public void WhenIClickContinueOnTheWasAMultipleEmployerModelUsedForLearnerPage()
+        {
+            WasMultipleEmployerModelUsedPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select yes if learner used the multiple employer model")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectYesIfLearnerUsedTheMultipleEmployerModel()
+        {
+            WasMultipleEmployerModelUsedPage.VerifyErrorWasMultipleEmployerModelUsedPage();
+            WasMultipleEmployerModelUsedPage.ClickRadioButton("Yes");
+        }
+
+        [When(@"I click Continue on the Was learner granted a temporary flexibility\? page")]
+        public void WhenIClickContinueOnTheWasLearnerGrantedATemporaryFlexibilityPage()
+        {
+            WasGrantedTemporaryFlexibilityPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select whether the learner was granted a temporary flexibility")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectWhetherTheLearnerWasGrantedATemporaryFlexibility()
+        {
+            WasGrantedTemporaryFlexibilityPage.VerifyWasGrantedTemporaryFlexibilityErrorPage();
+            WasGrantedTemporaryFlexibilityPage.ClickRadioButton("Yes");
+        }
+
+        [When(@"I click Continue on the Which temporary flexibilities were granted to learner page")]
+        public void WhenIClickContinueOnTheWhichTemporaryFlexibilitiesWereGrantedToLearnerPage()
+        {
+            WhichTemporaryFlexibilitiesWereGrantedPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select one or more temporary flexibilities")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectOneOrMoreTemporaryFlexibilities()
+        {
+            WhichTemporaryFlexibilitiesWereGrantedPage.VerifyErrorWhichTemporaryFlexibilitiesWereGrantedPage();
+            WhichTemporaryFlexibilitiesWereGrantedPage.ClickCheckBox("Reduction in hours");
+        }
+
+        [When(@"I click Continue on the Which industry placement models were used by learner\? page")]
+        public void WhenIClickContinueOnTheWhichIndustryPlacementModelsWereUsedByLearnerPage()
+        {
+            IndustryPlacementModelsUsedPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select one or more industry placement models")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectOneOrMoreIndustryPlacementModels()
+        {
+            IndustryPlacementModelsUsedPage.VerifyErrorIndustryPlacementModelsUsedPage();
+            IndustryPlacementModelsUsedPage.ClickCheckBox("Relevant part-time work");
+        }
+
+        [When(@"I click Continue on the blended placement temporary flexibility\? page")]
+        public void WhenIClickContinueOnTheBlendedPlacementTemporaryFlexibilityPage()
+        {
+            BlendedPlacementTemporaryFlexibilityPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select whether the learner has used the blended placement temporary flexibility")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectWhetherTheLearnerHasUsedTheBlendedPlacementTemporaryFlexibility()
+        {
+            BlendedPlacementTemporaryFlexibilityPage.VerifyErrorBlendedPlacementTemporaryFlexibilityPage();
+            BlendedPlacementTemporaryFlexibilityPage.ClickRadioButton("No");
+        }
+
+        [When(@"I click Continue on the employer-led activities/projects temporary flexibility\? page")]
+        public void WhenIClickContinueOnTheEmployer_LedActivitiesProjectsTemporaryFlexibilityPage()
+        {
+            EmployerLedActivitiesPage.ClickContinueBtn();
+        }
+
+        [Then(@"the user is shown an error message which says Select whether the learner used the employer-led activities/projects temporary flexibility")]
+        public void ThenTheUserIsShownAnErrorMessageWhichSaysSelectWhetherTheLearnerUsedTheEmployer_LedActivitiesProjectsTemporaryFlexibility()
+        {
+            EmployerLedActivitiesPage.VerifyErrorEmployerLedActivitiesPage();
+            EmployerLedActivitiesPage.ClickRadioButton("Yes");
+        }
+
+        [Then(@"the IP learner details page is displayed")]
+        public void ThenTheIPLearnerDetailsPageIsDisplayed()
+        {
+            var uln = _scenarioContext["uln"] as string;
+            LearnerDetailsPage.VerifyLearnerDetails(uln);
+            LearnerDetailsPage.VerifyAddIPLinkIsPresent();
+        }
     }
 }

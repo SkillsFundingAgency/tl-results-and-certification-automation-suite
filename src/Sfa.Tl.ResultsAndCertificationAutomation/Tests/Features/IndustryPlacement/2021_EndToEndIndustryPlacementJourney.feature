@@ -99,3 +99,14 @@ Then I am shown the IP Check your answer page
 And I click Submit on the Check your answers page
 Then the learner details page is displayed with a success banner
 And I cleared the data in DB
+
+@RegressionTest @IndustryPlacement 
+Scenario: 13-IP E2E journey - Click NO on the Has learner completed their industry placement? page
+Given I have an active registration with a Onsite Construction T Level T Level
+And I update the registration to be 2021
+And I click on "Manage learner records" link
+When I enter the ULN on the search page
+And I click the following link "Add Ip"
+And I click 'No, still to be completed' on the Has learner completed their industry placement? page
+Then the IP learner details page is displayed
+And I cleared the data in DB

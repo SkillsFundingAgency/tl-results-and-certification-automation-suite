@@ -16,14 +16,16 @@ public class IndustryPlacementCompletionPage : ElementHelper
     private static readonly By LearnerDetailsElement = By.XPath("//*[@id='main-content']/div[1]");
     private static readonly By RadioYes = By.Id("industryplacementstatus");
     private static readonly By RadioYesCWSC = By.Id("industryplacementstatus-cwspc");
-    private static readonly By RadioNo = By.Id("appealoutcome-withdraw");
+    private static readonly By RadioNo = By.Id("industryplacementstatus-notcompleted");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By backLink = By.Id("backLink");
- 
+
+    public static string ExpectedErrorMessage = "Tell us whether this learner has completed their industry placement";
+    public static By MainErrorMsg = By.XPath("//*[@id='main-content']//div[1]//div[1]//ul/li/a");
+    public static By SubErrorMsg = By.XPath("//*[@id='main-content']//div[2]//span");
 
 
-
-    protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
+    public static void ClickContinueBtn() => ClickButton(ContinueBtn);
     public static void ClickBackLink() => ClickButton(backLink);
     public static void VerifyIndustryPlacementCompletionPage(string ULN)
     {
@@ -33,11 +35,14 @@ public class IndustryPlacementCompletionPage : ElementHelper
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
         Assert.AreEqual(ExpectedHeader, WebDriver.FindElement(PageHeaderElement).Text);
     }
-    protected static void VerifyErrorIndustryPlacementCompletionPage()
+    public static void VerifyErrorIndustryPlacementCompletionPage()
     {
         Assert.AreEqual(PageErrorTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
-    }   
+        Assert.IsTrue(WebDriver.FindElement(MainErrorMsg).Text.Contains(ExpectedErrorMessage));
+        Assert.IsTrue(WebDriver.FindElement(SubErrorMsg).Text.Contains(ExpectedErrorMessage));
+
+    }
 
     public static void ClickRadioButton(string optionName)
     {

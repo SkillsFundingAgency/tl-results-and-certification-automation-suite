@@ -15,7 +15,10 @@ public class SpecialConsiderationHoursPage : ElementHelper
     private static readonly By TextBoxHours = By.Id("hours");   
     private static readonly By ContinueBtn = By.Id("ContinueButton");
     private static readonly By backLink = By.Id("backLink");
- 
+    public static string ExpectedNoEntryErrorMessage = "Enter number of hours the learner spent on placement";
+    public static string ExpectedInvalidEntryErrorMessage = "The placement duration must be a whole number between 1 and 999 hours";
+    public static By MainErrorMsg = By.XPath("//*[@id='main-content']//div[1]//div[1]//ul/li/a");
+    public static By SubErrorMsg = By.XPath("//*[@id='main-content']//div[2]//span");
 
 
 
@@ -30,14 +33,25 @@ public class SpecialConsiderationHoursPage : ElementHelper
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
      
     }
-    protected static void VerifyErrorSpecialConsiderationHoursPage()
+    public static void VerifyNoHoursEnteredErrorMessage()
     {
         Assert.AreEqual(PageErrorTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+        Assert.IsTrue(WebDriver.FindElement(MainErrorMsg).Text.Contains(ExpectedNoEntryErrorMessage));
+        Assert.IsTrue(WebDriver.FindElement(SubErrorMsg).Text.Contains(ExpectedNoEntryErrorMessage));
+    }
+
+    public static void VerifyInvalidEntryErrorMessage()
+    {
+        Assert.AreEqual(PageErrorTitle, WebDriver.Title);
+        Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+        Assert.IsTrue(WebDriver.FindElement(MainErrorMsg).Text.Contains(ExpectedInvalidEntryErrorMessage));
+       // Assert.IsTrue(WebDriver.FindElement(SubErrorMsg).Text.Contains(ExpectedInvalidEntryErrorMessage));
     }
 
     public static void EnterHours(string Hours)
     {
+        WebDriver.FindElement(TextBoxHours).Clear();
         WebDriver.FindElement(TextBoxHours).SendKeys(Hours);
         WebDriver.FindElement(ContinueBtn).Click();
     }

@@ -16,9 +16,12 @@ public class WhichTemporaryFlexibilitiesWereGrantedPage : ElementHelper
     private static readonly By CheckboxReductionInHours = By.Id("istempflexibilityselected-1");
     private static readonly By ContinueBtn = By.Id("continueButton");
     private static readonly By backLink = By.Id("backLink");
- 
+    public static string ExpectedErrorMessage = "Select one or more temporary flexibilities";
+    public static By MainErrorMsg = By.XPath("//*[@id='main-content']//div[1]//div[1]//ul/li/a");
+    public static By SubErrorMsg = By.XPath("//*[@id='main-content']//div[2]//span");
 
-    protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
+
+    public static void ClickContinueBtn() => ClickButton(ContinueBtn);
     public static void ClickBackLink() => ClickButton(backLink);
     public static void VerifyWhichTemporaryFlexibilitiesWereGrantedPage(string ULN)
     {
@@ -33,7 +36,8 @@ public class WhichTemporaryFlexibilitiesWereGrantedPage : ElementHelper
     {
         Assert.AreEqual(ErrorPageTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
-      
+        Assert.IsTrue(WebDriver.FindElement(MainErrorMsg).Text.Contains(ExpectedErrorMessage));
+        Assert.IsTrue(WebDriver.FindElement(SubErrorMsg).Text.Contains(ExpectedErrorMessage));
     }
 
     public static void ClickCheckBox(string optionName)

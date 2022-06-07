@@ -23,11 +23,14 @@ public class IndustryPlacementSpecialConsiderationReasonsPage : ElementHelper
     private static readonly By CheckboxCovid = By.Id("isreasonselected-8");
     private static readonly By ContinueBtn = By.Id("ContinueButton");
     private static readonly By backLink = By.Id("backLink");
- 
+    public static string ExpectedErrorMessage = "Select one or more reasons for granting special consideration";
+    public static By MainErrorMsg = By.XPath("//*[@id='main-content']//div[1]//div[1]//ul/li/a");
+    public static By SubErrorMsg = By.XPath("//*[@id='main-content']//div[2]//span");
 
 
 
-    protected static void ClickContinueBtn() => ClickButton(ContinueBtn);
+
+    public static void ClickContinueBtn() => ClickButton(ContinueBtn);
     public static void ClickBackLink() => ClickButton(backLink);
     public static void VerifyIndustryPlacementSpecialConsiderationReasonsPage(string ULN)
     {
@@ -37,10 +40,12 @@ public class IndustryPlacementSpecialConsiderationReasonsPage : ElementHelper
         Assert.AreEqual(PageTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
     }
-    protected static void VerifyErrorIndustryPlacementSpecialConsiderationReasonsPage()
+    public static void VerifyErrorIndustryPlacementSpecialConsiderationReasonsPage()
     {
         Assert.AreEqual(PageErrorTitle, WebDriver.Title);
         Assert.IsTrue(WebDriver.Url.Contains(PageUrl));
+        Assert.IsTrue(WebDriver.FindElement(MainErrorMsg).Text.Contains(ExpectedErrorMessage));
+      //Assert.IsTrue(WebDriver.FindElement(SubErrorMsg).Text.Contains(ExpectedErrorMessage));
     }   
 
     public static void ClickCheckBox(string optionName)
