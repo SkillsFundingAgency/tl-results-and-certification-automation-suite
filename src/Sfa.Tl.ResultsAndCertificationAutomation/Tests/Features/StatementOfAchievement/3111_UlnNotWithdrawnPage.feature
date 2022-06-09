@@ -10,7 +10,7 @@ And I add an address for Barnsley
 And I am on Search for learner page
 And I have a active registration in Bansley provider
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3111 Verify Uln not withdrawn page
 When I enter active Uln and click on Search button
 Then I should see Learner not withdrawn page

@@ -12,7 +12,7 @@ And I click on "Request statement of achievement" link
 And I click on Continue on the Request SOA page
 Then I will be navigated to the Request Statement of Achievement - Search for a learner page
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3106_Verify Request SOA - Search for a learner page and the ULN entry error messages
 Given I click Search without entering a ULN on the Request SOA - Search for a learner page
 Then the error message "Enter a ULN with 10 digits" is shown on the Request SOA - Search for a learner page
@@ -22,7 +22,7 @@ When I enter "ABCDEFGHIJ" in the Search ULN box on the Request SOA - Search for 
 Then the error message "Enter a valid 10-digit ULN" is shown on the Request SOA - Search for a learner page
 
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3106_Validate breadcrumbs on Request SOA - Search for a learner page
 Given I click the Request Statement of Achievement breadcrumb
 Then I am navigated to the Request SOA page if the date is greater than 10th August 2021

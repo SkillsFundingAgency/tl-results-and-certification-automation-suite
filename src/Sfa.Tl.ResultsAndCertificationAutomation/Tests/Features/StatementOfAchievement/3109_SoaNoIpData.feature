@@ -10,7 +10,7 @@ And I add an address for Barnsley
 And I am on Search for learner page
 And I have a withdrawn registration for Barsley with no IP data
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3109 Verify Soa not available without IP page
 When I enter withdrawn Uln without IP data and click on Search button
 Then I should see SOA not available without Ip page
@@ -23,7 +23,7 @@ And I click on Add learner T Level record button on Soa not available page
 Then I should see Add a new learner T Level record page
 And the registration for this test is deleted
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3109 Click Breadcrumbs
 When I enter withdrawn Uln without IP data and click on Search button
 And I click on "Search for a learner" breadcrumb

@@ -9,7 +9,7 @@ And I deleted the address in database
 And I add an address for Barnsley
 And I am on Search for learner page
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3107 Verify learner not registered page
 When I enter non existed Uln and click on Search button
 Then I should see Learner not registered page

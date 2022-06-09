@@ -104,11 +104,13 @@ testRunner.Then("I will be navigated to the Request Statement of Achievement - S
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3106_Verify Request SOA - Search for a learner page and the ULN entry error messa" +
             "ges")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3106_VerifyRequestSOA_SearchForALearnerPageAndTheULNEntryErrorMessages()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -157,11 +159,13 @@ testRunner.Then("the error message \"Enter a valid 10-digit ULN\" is shown on th
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("3106_Validate breadcrumbs on Request SOA - Search for a learner page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("RegressionTest")]
         [NUnit.Framework.CategoryAttribute("SOA")]
         public void _3106_ValidateBreadcrumbsOnRequestSOA_SearchForALearnerPage()
         {
             string[] tagsOfScenario = new string[] {
+                    "Ignore",
                     "RegressionTest",
                     "SOA"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
