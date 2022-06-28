@@ -216,13 +216,13 @@ public static class Constants
     //public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
 
     //public const string TqProviderId = "9479";
-    public const string TqProviderId = "17252";
+    public const string TqProviderId = "17798";
     public const string TlSpecialismId = "42";
     public const string TlAssessmentSeriesId = "7";
     //public const string TqProviderId2 = "15167";
-    public const string TqProviderIdForLrs = "17265";
+    public const string TqProviderIdForLrs = "17811";
     public const string DbProviderNameForLrs = "Barnsley College (10000536)";
-    public const string DudleyProviderIdForLrs = "17267";
+    public const string DudleyProviderIdForLrs = "17812";
     //public const string DudleyProviderNameForLrs = "Dudley College of Technology (10007924)";
 
     public const string PearsonTqProviderId = "17271";
@@ -241,7 +241,7 @@ public static class Constants
 
     // City and Guillds
     //public const string CityAndGuildsProviderId_newEnv = "15399";
-    public const string CityAndGuildsProviderId = "17273";
+    public const string CityAndGuildsProviderId = "17817";
     public const string HeatingSpecialismId = "11";
     public const string VentilationSpecialismId = "16";
     public const string PathwayAssessmentSeriesId = "3";
