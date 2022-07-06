@@ -11,7 +11,7 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I deleted the address in database
 And I add an address for Barnsley
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3105_Verify Request Statement of Achievement page and Back link
 Given I click on "Request statement of achievement" link
 Then I am navigated to the Request SOA page if the date is greater than 10th August 2021

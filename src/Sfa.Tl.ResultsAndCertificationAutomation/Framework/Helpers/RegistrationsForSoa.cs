@@ -16,7 +16,7 @@ public static class RegistrationsForSoa
     }
     private static int InsertRegistrationPathway(int profileId,string providerId)
     {
-        var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + providerId + "','2020', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+        var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + providerId + "','2020', GETDATE(),NULL,1,0,GETDATE(),'System',NULL,NULL)";
         var getRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
         SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegPathway, ConnectionString);
         var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);

@@ -71,7 +71,7 @@ And the record will be written to the database with '' '' '99 Test Street' '' 'L
 And when I press the Back to home link
 Then I am taken to the home page
 
-@RegressionTest @Provider @PostalAddress
+@Ignore @RegressionTest @Provider @PostalAddress
 Scenario: 3315 Navigate to SOA from Add Address confirmation page
 When I click on "Manage your organisation’s postal address" link
 And I click on "Add address"

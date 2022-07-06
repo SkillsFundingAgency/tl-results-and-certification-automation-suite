@@ -578,7 +578,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
 
         public static int InsertSummer2021SpecialismAssessSeries()
         {
-            var InsertSummer2021SpecialismSeriesSQL = "insert into assessmentSeries values (2,'Summer 2021', 'Summer 2021', '2021','2020-10-01','2021-08-01','2021-09-24','2021-11-17',GetDate(),'System',GetDate(),'System')";
+            var InsertSummer2021SpecialismSeriesSQL = "insert into assessmentSeries values (2,'Summer 2021', 'Summer 2021', '2021','2020-10-01','2021-08-01','2021-09-24','2021-11-17',Null,Null,GetDate(),'System',GetDate(),'System')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertSummer2021SpecialismSeriesSQL, ConnectionString);
             var getSummer2021SpecialismSeriesIDSQL = "select id from assessmentSeries where Name = 'Summer 2021' and ComponentType= 2";
             var Summer2021SeriesID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSummer2021SpecialismSeriesIDSQL, ConnectionString);
@@ -592,5 +592,21 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(deleteSummer2021SpecialismSeriesSQL, ConnectionString);
         }
 
+        public static string GetLearnerName(string ULN)
+        {
+            var getUserNameSQL = "select firstname + ' '  +  Lastname  from tqregistrationprofile where UniqueLearnerNumber =" + ULN;
+            var UserName = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getUserNameSQL, ConnectionString);
+            string UserName1 = Convert.ToString(UserName[0][0]);
+            return UserName1;
+        }
+
+        public static void UpdateRegistrationAcademicYearTo2021(string ULN)
+        {
+            var getPathwayId = "select Id from TqRegistrationPathway where TqRegistrationProfileId in (select Id from tqregistrationprofile where uniquelearnernumber = " + ULN + ")";
+            var pathwayID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getPathwayId, ConnectionString);
+            int pathwayID1 = Convert.ToInt32(pathwayID[0][0]);
+            var updateAcademicYearSQL = "update TqRegistrationPathway set AcademicYear = 2021 where Id = " + pathwayID1;
+            SqlDatabaseConncetionHelper.ExecuteSqlCommand(updateAcademicYearSQL, ConnectionString);
+        }
     }
 }

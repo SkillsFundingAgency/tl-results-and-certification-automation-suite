@@ -9,14 +9,14 @@ Given I have logged in as a "ProviderBarnsleyPA" user
 And I deleted the address in database
 
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3104_Verify Missing Postal Address page and Back link
 Given I click on "Request statement of achievement" link
 Then I am navigated to the Missing Postal Address page
 When I click the back link on the Missing Postal Address page
 Then I will be navigated to the T Levels Dashboard page
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3104_Click Add Address button on the Missing Postal Address page
 Given I click on "Request statement of achievement" link
 Then I am navigated to the Missing Postal Address page
@@ -25,7 +25,7 @@ Then I should see the 'What is your organisation's postal address?' page
 When I click the back link on the Add 'What is your organisation's postal address?' page
 Then I am navigated to the Missing Postal Address page
 
-@RegressionTest @SOA
+@Ignore @RegressionTest @SOA
 Scenario: 3104_Click Back to Home link on the Missing Postal Address page
 Given I click on "Request statement of achievement" link
 Then I am navigated to the Missing Postal Address page
