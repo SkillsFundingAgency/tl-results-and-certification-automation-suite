@@ -578,7 +578,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
 
         public static int InsertSummer2021SpecialismAssessSeries()
         {
-            var InsertSummer2021SpecialismSeriesSQL = "insert into assessmentSeries values (2,'Summer 2021', 'Summer 2021', '2021','2020-10-01','2021-08-01','2021-09-24','2021-11-17',GetDate(),'System',GetDate(),'System')";
+            var InsertSummer2021SpecialismSeriesSQL = "insert into assessmentSeries values (2,'Summer 2021', 'Summer 2021', '2021','2020-10-01','2021-08-01','2021-09-24','2021-11-17',Null,Null,GetDate(),'System',GetDate(),'System')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(InsertSummer2021SpecialismSeriesSQL, ConnectionString);
             var getSummer2021SpecialismSeriesIDSQL = "select id from assessmentSeries where Name = 'Summer 2021' and ComponentType= 2";
             var Summer2021SeriesID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getSummer2021SpecialismSeriesIDSQL, ConnectionString);

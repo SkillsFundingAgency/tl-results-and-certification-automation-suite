@@ -5,7 +5,7 @@ As a provider, I need to provide details whether learner used any other industry
 Background: 
 Given I have logged in as a "ProviderBarnsleyPA" user
 
-@RegressionTest @Provider
+@Ignore @RegressionTest @Provider
 Scenario: 6545_Which Ip models used by page_EducationAndChildCare
 And I have registration for Education and Childcare without maths English and Ip
 And I am on learner details page
