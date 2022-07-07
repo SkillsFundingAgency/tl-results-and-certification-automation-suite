@@ -608,5 +608,17 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
             var updateAcademicYearSQL = "update TqRegistrationPathway set AcademicYear = 2021 where Id = " + pathwayID1;
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(updateAcademicYearSQL, ConnectionString);
         }
+
+        public static String ReturnOverallGrade(string TLevel, string CoreGrade, string SpecialismGrade)
+        {
+            var SQLQuery1 = "Select tlup.Value from OverallGradeLookup og join TlPathway tp on og.TlPathwayId=tp.Id join TlLookup tl on og.TlLookupCoreGradeId=tl.id join TlLookup tlu on og.TlLookupSpecialismGradeId=tlu.id join TlLookup tlup on og.TlLookupOverallGradeId=tlup.id where ";
+            var SQLQuery2 = "tp.name = '" + TLevel + "' and tl.Value = '" + CoreGrade + "' and tlu.Value = '" + SpecialismGrade + "' order by tp.Name";
+            var SQLQuery3 = SQLQuery1 + SQLQuery2;
+
+            var OverallResult = SqlDatabaseConncetionHelper.ReadDataFromDataBase(SQLQuery3, ConnectionString);
+            string OverallResult1 = Convert.ToString(OverallResult[0][0]);
+            return OverallResult1;
+        }
+
     }
 }
