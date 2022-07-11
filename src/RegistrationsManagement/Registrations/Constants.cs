@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RegistrationsManagement.Registrations
 {
-    internal class Constants
+    public class Constants
     {
-     public const string TlSpecialismId = "42";
-     public const string TqProviderIdForLrs = "17811";
-    
+  
+     public static string ConnectionString = "";
+
     }
 }

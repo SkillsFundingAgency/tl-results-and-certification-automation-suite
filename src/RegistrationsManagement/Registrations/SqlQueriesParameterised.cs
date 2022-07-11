@@ -8,11 +8,10 @@ namespace RegistrationsManagement.Registrations
 {
     internal class SqlQueriesParameterised
     {
-        //Local DB Connection string
-        // private static readonly string ConnectionString = "";
+        
+        private static string ConnectionString = Constants.ConnectionString;
 
         //Test env DB Connection string
-        private static readonly string ConnectionString = "Server=(localdb)\\MSSQLLocalDB;Database=ResultsAndCertification;Integrated Security = True; MultipleActiveResultSets=True;";
         private const string UlnList = "select Id,UniqueLearnerNumber,Firstname,Lastname,DateofBirth from TqRegistrationProfile";
         //Delete from Registration Tables
         private const string DeleteRegistrationSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";

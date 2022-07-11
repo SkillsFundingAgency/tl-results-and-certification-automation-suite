@@ -8,9 +8,8 @@ namespace RegistrationsManagement.Registrations
 {
     internal class SqlQueries
     {
-
-        private static readonly string ConnectionString = "Server=tcp:s126t01-shared-sql.database.windows.net,1433;Database=s126t01-resac-db;User ID=resac-testsuite-rw-svc;Password=7kC#R*7bBwB;Trusted_Connection=False;Pooling=True;Connect Timeout=30;MultipleActiveResultSets=True";
-       
+        private static string ConnectionString = Constants.ConnectionString;
+           
         private const string UlnList = "select Id,UniqueLearnerNumber,Firstname,Lastname,DateofBirth from TqRegistrationProfile";
         //Delete from Registration Tables
         private const string DeleteRegistrationSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
@@ -49,7 +48,7 @@ namespace RegistrationsManagement.Registrations
            string DeleteSingleEmData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber=" + SingleULN;
 
 
-        SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleIpData, ConnectionString);
+        SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleIpData, Constants.);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleEmData, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleAssessmentResult, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSinglePathwayResults, ConnectionString);

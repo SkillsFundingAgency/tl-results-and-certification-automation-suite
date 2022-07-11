@@ -21,22 +21,6 @@ namespace RegistrationsManagement.Registrations
         public static void CreateParamRegistration()
         {
             
-            
-            Console.WriteLine("\r\nPlease enter your database connection string: \n");
-            ConnectionString = Convert.ToString(Console.ReadLine());
-            Console.WriteLine("Please confirm the following database connection string is correct: \n + ConnectionString \n");
-            Console.WriteLine("Please select Y or N to confirm");
-            ConnectionStringVerification = Console.ReadLine();
-
-            while (ConnectionStringVerification != "Y")
-            {
-                Console.WriteLine("\r\nPlease re-enter your database connection string: \n");
-                ConnectionString = Convert.ToString(Console.ReadLine());
-                Console.WriteLine("Please confirm the following database connection string is correct: \n + ConnectionString \n");
-                Console.WriteLine("Please select Y or N to confirm");
-                string ConnectionStringVerification = Console.ReadLine();
-            }
-
             Console.WriteLine("\r\nPlease select a T Level for your registration: \n");
             Console.WriteLine("\tA: Health");
             Console.WriteLine("\tB: Healthcare Science");
