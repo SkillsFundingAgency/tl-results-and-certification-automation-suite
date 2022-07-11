@@ -10,6 +10,9 @@ namespace RegistrationsManagement.Registrations
     {
   
      public static string ConnectionString = "";
+        public const string TlSpecialismId = "42";
+        public const string TqProviderIdForLrs = "17811";
+
 
     }
 }

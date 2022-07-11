@@ -48,7 +48,7 @@ namespace RegistrationsManagement.Registrations
            string DeleteSingleEmData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber=" + SingleULN;
 
 
-        SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleIpData, Constants.);
+        SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleIpData, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleEmData, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSingleAssessmentResult, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteSinglePathwayResults, ConnectionString);
