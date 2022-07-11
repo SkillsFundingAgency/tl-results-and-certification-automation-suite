@@ -1,0 +1,150 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RegistrationsManagement.Registrations
+{
+    internal class CreateParameterisedReg
+    {
+        public static string CoreGrade = "";
+        public static string SpecialismGrade = "";
+        public static string Answer = "";
+        public static string RegistrationYear = "";
+        public static string IPStatus = "";
+        public static string TLevelChosen = "";
+        public static string Provider = "";
+        public static Double NoOfRegistrations = 0;
+        public static string ConnectionString = "";
+        public static string ConnectionStringVerification = "";
+        public static void CreateParamRegistration()
+        {
+            
+            
+            Console.WriteLine("\r\nPlease enter your database connection string: \n");
+            ConnectionString = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Please confirm the following database connection string is correct: \n + ConnectionString \n");
+            Console.WriteLine("Please select Y or N to confirm");
+            ConnectionStringVerification = Console.ReadLine();
+
+            while (ConnectionStringVerification != "Y")
+            {
+                Console.WriteLine("\r\nPlease re-enter your database connection string: \n");
+                ConnectionString = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Please confirm the following database connection string is correct: \n + ConnectionString \n");
+                Console.WriteLine("Please select Y or N to confirm");
+                string ConnectionStringVerification = Console.ReadLine();
+            }
+
+            Console.WriteLine("\r\nPlease select a T Level for your registration: \n");
+            Console.WriteLine("\tA: Health");
+            Console.WriteLine("\tB: Healthcare Science");
+            Console.WriteLine("\tC: Digital production, design and development");
+            Console.WriteLine("\tD: Digital Business Services");
+            Console.WriteLine("\tE: Digital Support Services");
+            Console.WriteLine("\tF: Design, surveying and planning for construction");
+            Console.WriteLine("\tG: Education and childcare");
+            Console.WriteLine("\tH: Science");
+            Console.WriteLine("\tI: Onsite Construction");
+            Console.Write("Please enter the letter corresponding to your choice: ");
+
+            TLevelChosen = Convert.ToString(Console.ReadLine());
+
+            while ((TLevelChosen != "A" && TLevelChosen != "B" && TLevelChosen != "C" && TLevelChosen != "D" && TLevelChosen != "E" && TLevelChosen != "F" && TLevelChosen != "G" && TLevelChosen != "H" && TLevelChosen != "I"))
+            {
+                Console.WriteLine("\r\nPlease select a T Level for your registration: \n");
+                Console.WriteLine("\tA: Health");
+                Console.WriteLine("\tB: Healthcare Science");
+                Console.WriteLine("\tC: Digital production, design and development");
+                Console.WriteLine("\tD: Digital Business Services");
+                Console.WriteLine("\tE: Digital Support Services");
+                Console.WriteLine("\tF: Design, surveying and planning for construction");
+                Console.WriteLine("\tG: Education and childcare");
+                Console.WriteLine("\tH: Science");
+                Console.WriteLine("\tI: Onsite Construction");
+                Console.Write("Please only enter a letter corresponding to your choice: ");
+                TLevelChosen = Convert.ToString(Console.ReadLine());
+            }
+
+
+            Console.WriteLine("\r\nWhich year would do you want the registration for? (2020 or 2021): \n");
+            RegistrationYear = Convert.ToString(Console.ReadLine());
+
+            while ((RegistrationYear != "2020") && (RegistrationYear != "2021"))
+            {
+                Console.WriteLine("\r\nPlease enter either 2020 or 2021 only: \n");
+                RegistrationYear = Convert.ToString(Console.ReadLine());
+            }
+
+            Console.WriteLine("\r\nPlease select a provider for your registration: \n");
+            Console.WriteLine("\tA: Barnsley");
+            Console.WriteLine("\tB: Dudley");
+            Console.Write("Please enter the letter corresponding to your choice: ");
+            Provider = Convert.ToString(Console.ReadLine());
+
+            while (Provider != "A" && Provider != "B")
+            {
+                Console.WriteLine("\r\nPlease select a provider for your registration: \n");
+                Console.WriteLine("\tA: Barnsley");
+                Console.WriteLine("\tB: Dudley");
+                Console.Write("Please only enter the letter corresponding to your choice: ");
+                Provider = Convert.ToString(Console.ReadLine());
+            }
+
+            Console.WriteLine("\r\nWould you like to add a core result?: (Y or N) \n");
+            Answer = Convert.ToString(Console.ReadLine());
+
+            if (Answer == "Y")
+            {
+                Console.WriteLine("Choose an option from the following list:");
+                Console.WriteLine("\tA*");
+                Console.WriteLine("\tA");
+                Console.WriteLine("\tB");
+                Console.WriteLine("\tC");
+                Console.WriteLine("\tD");
+                Console.WriteLine("\tE");
+                Console.WriteLine("\tU");
+                Console.Write("Please select an option: ");
+                CoreGrade = Convert.ToString(Console.ReadLine());
+                Console.Write("\r\nCore Grade: " + CoreGrade);
+            }
+            else 
+            {
+                CoreGrade = "N";
+                Console.Write("\r\nCore Grade: " + CoreGrade);
+            }
+
+            Console.WriteLine("\r\nWould you like to add a specialism result?: (Y or N) \n");
+
+            Answer = Convert.ToString(Console.ReadLine());
+
+            if (Answer == "Y")
+            {
+                Console.WriteLine("Choose an option from the following list:");
+                Console.WriteLine("\tD - Distinciton");
+                Console.WriteLine("\tM - Merit");
+                Console.WriteLine("\tP - Pass");
+                Console.WriteLine("\tU - Unclassified");
+                Console.Write("Please select an option: ");
+                SpecialismGrade = Convert.ToString(Console.ReadLine());
+                Console.Write("\r\nSpecialism Grade: " + SpecialismGrade + "\n");
+            }
+            else
+            {
+                SpecialismGrade = "N";
+                Console.Write("\r\nSpecialism Grade: " + SpecialismGrade + "\n");
+            }
+
+            Console.Write("\r\nHow many registrations with the parameters provided would you like to create?: \n");
+            //NoOfRegistrations = Convert.ToString(Console.ReadLine());
+            while (!double.TryParse(Console.ReadLine(), out NoOfRegistrations))
+            {
+                Console.Write("This is not valid input. Please enter an integer value: ");
+            }
+            Console.WriteLine("You are creating " + NoOfRegistrations + " registrations");
+
+            CreateRegistrations.CreateRegistrationsParameterised(CoreGrade, SpecialismGrade, RegistrationYear, TLevelChosen, Provider, NoOfRegistrations);
+        }
+    }
+}
