@@ -11,190 +11,168 @@ namespace RegistrationsManagement.Registrations
         
         private static string ConnectionString = Constants.ConnectionString;
 
-        //Test env DB Connection string
         private const string UlnList = "select Id,UniqueLearnerNumber,Firstname,Lastname,DateofBirth from TqRegistrationProfile";
-        //Delete from Registration Tables
-        private const string DeleteRegistrationSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        private const string DeleteRegistrationPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '9%')";
-        private const string DeleteRegistrationProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber like '9%'";
-        private const string DeleteAssessmentPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        private const string DeleteAssessmentSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
-        private const string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        private const string DeleteAssessmentResult = "Delete sr from TqSpecialismResult sr join TqSpecialismAssessment sa on sr.TqSpecialismAssessmentId = sa.Id join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
-        private const string DeleteIpData = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id=pw.TqRegistrationProfileId where rp.UniqueLearnerNumber like '9%'";
-        private const string DeleteEmData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber like '9%'";
+        ////Delete from Registration Tables
+        //private const string DeleteRegistrationSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
+        //private const string DeleteRegistrationPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '9%')";
+        //private const string DeleteRegistrationProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber like '9%'";
+        //private const string DeleteAssessmentPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
+        //private const string DeleteAssessmentSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
+        //private const string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
+        //private const string DeleteAssessmentResult = "Delete sr from TqSpecialismResult sr join TqSpecialismAssessment sa on sr.TqSpecialismAssessmentId = sa.Id join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
+        //private const string DeleteIpData = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id=pw.TqRegistrationProfileId where rp.UniqueLearnerNumber like '9%'";
+        //private const string DeleteEmData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber like '9%'";
 
      
-        public static void CreateRegistration(string uln, string CreateCoreGrade, string CreateSpecialismGrade, string Year, String TLEVEL, string Provider)
+        public static void CreateRegistration(string uln, string CreateCoreGrade, string CreateSpecialismGrade, string Year, String TLEVEL, string Provider, int IPStatus)
         {
-            var profileId = CreateRegistrationProfileForLrsWithEM(uln);
+            var profileId = CreateRegistrationProfile(uln);
 
             string TQProviderID = "";
             string SpecialismID = "";
 
-            if (TLEVEL == "A")
+            //Work out which TQProviderID is required for the registration based on Provier and TLevel combination
+            switch (TLEVEL)
             {
-                if (Provider == "A") 
-                {
-                    TQProviderID =  GetTQProfileID("T Level in Health", "Barnsley College", "1");
-                    SpecialismID = "28";
-                }
-                    //TQProviderID = "17787"; SpecialismID = "28";}
+                case "A":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Health", "Barnsley College", "1");
+                        SpecialismID = "28";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Health", "Dudley College of Technology", "1");
+                        SpecialismID = "28";
+                    }
+                    break;
+                case "B":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Healthcare Science", "Barnsley College", "1");
+                        SpecialismID = "31";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Healthcare Science", "Dudley College of Technology", "1");
+                        SpecialismID = "31";
+                    }
+                    break;
+                case "C":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Barnsley College", "1");
+                        SpecialismID = "20";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Dudley College of Technology", "1");
+                        SpecialismID = "20";
+                    }
+                    break;
+                case "D":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Digital Business Services", "Barnsley College", "1");
+                        SpecialismID = "25";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Digital Business Services", "Dudley College of Technology", "1");
+                        SpecialismID = "25";
+                    }
+                    break;
+                case "E":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Digital Support Services", "Barnsley College", "1");
+                        SpecialismID = "23";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Digital Support Services", "Dudley College of Technology", "1");
+                        SpecialismID = "23";
+                    }
+                    break;
+                case "F":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Design, Surveying and Planning for Construction", "Barnsley College", "2");
+                        SpecialismID = "2";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Design, Surveying and Planning for Construction", "Dudley College of Technology", "2");
+                        SpecialismID = "2";
+                    }
+                    break;
+                case "G":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Education and Childcare", "Barnsley College", "1");
+                        SpecialismID = "17";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Education and Childcare", "Dudley College of Technology", "1");
+                        SpecialismID = "17";
+                    }
+                    break;
+                case "H":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Science", "Barnsley College", "1");
+                        SpecialismID = "32";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Science", "Dudley College of Technology", "1");
+                        SpecialismID = "32";
+                    }
+                    break;
+                case "I":
+                    if (Provider == "A")
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Onsite Construction", "Barnsley College", "3");
+                        SpecialismID = "6";
+                    }
+                    else
+                    {
+                        TQProviderID = GetTQProfileID("T Level in Onsite Construction", "Bath College", "3");
+                        SpecialismID = "6";
+                    }
+                    break;
+            }
 
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Health", "Dudley College of Technology", "1");
-                    SpecialismID = "28";
-                }
+            //Create the Registration Pathway record using the TQProvider ID worked out above
+            var pathwayId = CreateRegistrationPathway(profileId, Year, TQProviderID);
             
-            }   
-            else if (TLEVEL == "B")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Healthcare Science", "Barnsley College", "1");
-                    SpecialismID = "31";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Healthcare Science", "Dudley College of Technology", "1");
-                    SpecialismID = "31";
-                }
-            }
-
-
-            else if (TLEVEL == "C")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Barnsley College", "1");
-                    SpecialismID = "20";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Dudley College of Technology", "1");
-                    SpecialismID = "20";
-                }
-            }
-
-            else if (TLEVEL == "D")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Digital Business Services", "Barnsley College", "1");
-                    SpecialismID = "25";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Digital Business Services", "Dudley College of Technology", "1");
-                    SpecialismID = "25";
-                }
-            }
-            else if (TLEVEL == "E")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Digital Support Services", "Barnsley College", "1");
-                    SpecialismID = "23";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Digital Support Services", "Dudley College of Technology", "1");
-                    SpecialismID = "23";
-                }
-            }
-            else if (TLEVEL == "F")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Design, Surveying and Planning for Construction", "Barnsley College", "1");
-                    SpecialismID = "2";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Design, Surveying and Planning for Construction", "Dudley College of Technology", "1");
-                    SpecialismID = "2";
-                }
-            }
-            else if (TLEVEL == "G")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Education and Childcare", "Barnsley College", "1");
-                    SpecialismID = "17";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Education and Childcare", "Dudley College of Technology", "1");
-                    SpecialismID = "17";
-                }
-
-            }
-            else if (TLEVEL == "H")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Science", "Barnsley College", "1");
-                    SpecialismID = "32";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Science", "Dudley College of Technology", "1");
-                    SpecialismID = "32";
-                }
-            }
-            else if (TLEVEL == "I")
-            {
-                if (Provider == "A")
-                {
-                    TQProviderID = GetTQProfileID("T Level in Onsite Construction", "Barnsley College", "3");
-                    SpecialismID = "6";
-                }
-                //TQProviderID = "17787"; SpecialismID = "28";}
-
-                else
-                {
-                    TQProviderID = GetTQProfileID("T Level in Onsite Construction", "Bath College", "3");
-                    SpecialismID = "6";
-                }
-            }
-
-          
-            var pathwayId = CreateRegistrationPathwayForLrs(profileId, Year, TQProviderID);
-            var TQRegistrationspecialismId =  CreateRegSpecialismForLrs(pathwayId, SpecialismID);
+            //Create the specialism record for the registration
+            var TQRegistrationspecialismId =  CreateRegSpecialism(pathwayId, SpecialismID);
             
+            //Create the core assessment record
             var pathwayAssessmentId = CreatePathwayAssessment(pathwayId);
 
+            //Create the core grade if the user stated they wanted a core grade adding
             if (CreateCoreGrade != "N")
             {
              CreatePathwayResult(pathwayAssessmentId, CreateCoreGrade);
             }
 
+            //Create the specialism assessment record
             var SpecialismAssessmentID =  InsertSpecialismAssessment(TQRegistrationspecialismId);
 
+            //Create the specialism grade if the user stated they wanted a specialism grade adding
             if (CreateSpecialismGrade != "N")
             {
                 InsertSpecialismAssessmentResult(SpecialismAssessmentID, CreateSpecialismGrade);
             }
 
-            
+            //Create the industry placement record for the registration
+            CreateIndustryPlacement(pathwayId, Convert.ToInt32(IPStatus));
 
         }
-        public static int CreateRegistrationProfileForLrsWithEM(string uln)
+        public static int CreateRegistrationProfile(string uln)
         {
             var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,3,3,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
@@ -202,7 +180,7 @@ namespace RegistrationsManagement.Registrations
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
             return (int)profileId.FirstOrDefault().FirstOrDefault();
         }
-        public static int CreateRegistrationPathwayForLrs(int profileId, string Year, string tqProviderId)
+        public static int CreateRegistrationPathway(int profileId, string Year, string tqProviderId)
         {
             //var tqProviderId = Constants.TqProviderIdForLrs;
             var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','" + Year + "', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
@@ -212,7 +190,7 @@ namespace RegistrationsManagement.Registrations
             return (int)pathwayId.FirstOrDefault().FirstOrDefault();
         }
 
-        public static int CreateRegSpecialismForLrs(int pathwayId, string specialismID)
+        public static int CreateRegSpecialism(int pathwayId, string specialismID)
         {
             //var tlSpecialismId = Constants.TlSpecialismId;
             var createRegSpecialism = "Insert into TqRegistrationSpecialism values('" + pathwayId + "','" + specialismID + "',GETDATE(),NULL,1,0,GETDATE(),'System',Null,Null )";
@@ -248,18 +226,10 @@ namespace RegistrationsManagement.Registrations
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createPathwayResult, ConnectionString);
         }
 
-        public static void CreateQualificationAcheivedForLrs(int profileId)
-        {
-            var createQualificationAcheived = "Insert into QualificationAchieved values ('" + profileId + "',38,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
-            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createQualificationAcheived, ConnectionString);
-
-            var createQualificationAcheived1 = "Insert into QualificationAchieved values ('" + profileId + "',69,8,1,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
-            SqlDatabaseConncetionHelper.ExecuteSqlCommand(createQualificationAcheived1, ConnectionString);
-        }
 
         public static void CreateIndustryPlacement(int pathwayId, int status)
         {
-            var createIpData = "Insert into IndustryPlacement values ('" + pathwayId + "','" + status + "',GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            var createIpData = "Insert into IndustryPlacement values ('" + pathwayId + "','" + status + "',NULL,GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createIpData, ConnectionString);
         }
 

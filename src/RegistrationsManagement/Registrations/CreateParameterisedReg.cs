@@ -18,9 +18,16 @@ namespace RegistrationsManagement.Registrations
         public static Double NoOfRegistrations = 0;
         public static string ConnectionString = "";
         public static string ConnectionStringVerification = "";
+        public static int IndustryPlacementStatus = 0;
+
         public static void CreateParamRegistration()
         {
-            
+            Console.Clear();
+            // Display title for the create parameterised registration code.
+            Console.WriteLine("\r");
+            Console.WriteLine("Create Parameterised Registration\r");
+            Console.WriteLine("---------------------------------\n");
+
             Console.WriteLine("\r\nPlease select a T Level for your registration: \n");
             Console.WriteLine("\tA: Health");
             Console.WriteLine("\tB: Healthcare Science");
@@ -120,6 +127,31 @@ namespace RegistrationsManagement.Registrations
                 Console.Write("\r\nSpecialism Grade: " + SpecialismGrade + "\n");
             }
 
+            //Industry Placement Question
+            Console.WriteLine("\r\nPlease select an Industry Placement Status: \n");
+            Console.WriteLine("\r\n1: Completed");
+            Console.WriteLine("\r\n2: Completed with Special Consideration:");
+            Console.WriteLine("\r\n3: Not Completed:");
+
+            while (!int.TryParse(Console.ReadLine(), out IndustryPlacementStatus))
+            {
+                Console.Write("This is not valid input. Please enter an integer value: ");
+            }
+
+            if (IndustryPlacementStatus == 1)
+            {
+                IndustryPlacementStatus = 1;
+            }
+            else if (IndustryPlacementStatus == 2)
+            {
+                IndustryPlacementStatus = 2;
+            }
+            else if (IndustryPlacementStatus == 3)
+            {
+                IndustryPlacementStatus = 3;
+            }
+
+
             Console.Write("\r\nHow many registrations with the parameters provided would you like to create?: \n");
             //NoOfRegistrations = Convert.ToString(Console.ReadLine());
             while (!double.TryParse(Console.ReadLine(), out NoOfRegistrations))
@@ -128,7 +160,7 @@ namespace RegistrationsManagement.Registrations
             }
             Console.WriteLine("You are creating " + NoOfRegistrations + " registrations");
 
-            CreateRegistrations.CreateRegistrationsParameterised(CoreGrade, SpecialismGrade, RegistrationYear, TLevelChosen, Provider, NoOfRegistrations);
+            CreateRegistrations.CreateRegistrationsParameterised(CoreGrade, SpecialismGrade, RegistrationYear, TLevelChosen, Provider, NoOfRegistrations, IndustryPlacementStatus);
         }
     }
 }

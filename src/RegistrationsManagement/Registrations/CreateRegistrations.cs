@@ -20,13 +20,13 @@ namespace RegistrationsManagement.Registrations
 
         }
 
-        public static void CreateRegistrationsParameterised(string CoreGrade, string SpecialismGrade, string Year, string tlevel, string provider, double NoOfRegistrations)
+        public static void CreateRegistrationsParameterised(string CoreGrade, string SpecialismGrade, string Year, string tlevel, string provider, double NoOfRegistrations, int IPStatus)
         {
             //int NumberOfRegistrations = Convert.ToInt32(NoOfRegistrations);
             for (int i = 0; i < NoOfRegistrations; i++)
             {
                 var uln = UlnHelper.GenerateUln().ToString();
-                SqlQueriesParameterised.CreateRegistration(uln, CoreGrade, SpecialismGrade, Year, tlevel, provider);
+                SqlQueriesParameterised.CreateRegistration(uln, CoreGrade, SpecialismGrade, Year, tlevel, provider, IPStatus);
             }
         }
     }

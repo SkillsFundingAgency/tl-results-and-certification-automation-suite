@@ -13,6 +13,8 @@ namespace RegistrationsManagement.Registrations
         //parameters
         public static string CoreGrade = "";
         public static string SpecialismGrade = "";
+        public static string DatabaseConnectionString = "";
+        public static string DatabaseConnectionStringVerificationAnswer = "";
 
         public static void DisplayMenu1()
         {
@@ -65,6 +67,44 @@ namespace RegistrationsManagement.Registrations
                     Console.WriteLine("------------------------\n\n\n");
                     break;
             }
+
+            
+        }
+
+        public static void GetDatabaseConnectionString()
+        {
+            Console.WriteLine("Please enter your database connection string:\n");
+            DatabaseConnectionString = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Please check your connection string is correct:\n");
+            Console.WriteLine();
+            Console.WriteLine(DatabaseConnectionString);
+            Console.WriteLine();
+            Console.WriteLine("Please enter Y to accept or N to re-enter:");
+            Console.WriteLine();
+            DatabaseConnectionStringVerificationAnswer = Console.ReadLine();
+
+            while (DatabaseConnectionStringVerificationAnswer != "Y")
+            {
+                Console.WriteLine();
+                Console.WriteLine("Please re-enter your database connection string:\n");
+                DatabaseConnectionString = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine("Please check your entered connection string is correct:\n");
+                Console.WriteLine(DatabaseConnectionString);
+                Console.WriteLine();
+                Console.WriteLine("Please enter Y to accept or N to re-enter:");
+
+                DatabaseConnectionStringVerificationAnswer = Console.ReadLine();
+
+            }
+
+            Constants.ConnectionString = DatabaseConnectionString;
+            Console.WriteLine("Database connection string is now updated");
+            Console.WriteLine("Press Enter key to continue:");
+            Console.ReadLine();
+            Console.Clear();
+            DisplayMenu1();
         }
     }
 }
