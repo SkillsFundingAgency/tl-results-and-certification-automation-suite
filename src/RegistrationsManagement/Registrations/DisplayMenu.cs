@@ -25,22 +25,23 @@ namespace RegistrationsManagement.Registrations
 
             // Ask the user to choose an option.
             Console.WriteLine("Choose an option from the following list:");
-            Console.WriteLine("\t1 - Create Registrations");
+            Console.WriteLine("\t1 - Create Bulk Paramaterised Registrations");
             Console.WriteLine("\t2 - Delete All Registrations");
             Console.WriteLine("\t3 - Delete A Single Registration");
-            Console.WriteLine("\t4 - Create A Paramaterised Registration");
-            Console.WriteLine("\t5 - Exit Application");
+            Console.WriteLine("\t4 - Exit Application");
             Console.Write("Please select an option: ");
 
 
             switch (Console.ReadLine())
             {
-                case "1":
-                    Console.WriteLine("Type the number of registrations you wish to create, and then press Enter");
-                    num1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("You chose: " + num1);
-                    CreateRegistrations.CreateRegistrationsMethod(num1);
-                    Console.WriteLine("Your " + num1 + " registration/s have been created");
+                case "5":
+                    //Console.WriteLine("Type the number of registrations you wish to create, and then press Enter");
+                    //num1 = Convert.ToInt32(Console.ReadLine());
+                    //Console.WriteLine("You chose: " + num1);
+                    //CreateRegistrations.CreateRegistrationsMethod(num1);
+                    //Console.WriteLine("Your " + num1 + " registration/s have been created");
+                    //DisplayMenu1();
+                    Console.WriteLine("Please use option 4 - This option is now discontinued");
                     DisplayMenu1();
                     break;
                 case "2":
@@ -55,11 +56,11 @@ namespace RegistrationsManagement.Registrations
                     Console.WriteLine("Your registration with ULN: " + num3 + " has been deleted");
                     DisplayMenu1();
                     break;
-                case "4":
+                case "1":
                     Console.WriteLine("Please complete the following questions:\n");
                     CreateParameterisedReg.CreateParamRegistration();
                     break;
-                case "5":
+                case "4":
                     Console.WriteLine("\r");
                     Console.WriteLine("\r");
                     Console.WriteLine("------------------------\n");

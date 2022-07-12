@@ -10,23 +10,12 @@ namespace RegistrationsManagement.Registrations
     {
         
         private static string ConnectionString = Constants.ConnectionString;
-
+        
         private const string UlnList = "select Id,UniqueLearnerNumber,Firstname,Lastname,DateofBirth from TqRegistrationProfile";
-        ////Delete from Registration Tables
-        //private const string DeleteRegistrationSpecialism = "Delete rs from TqRegistrationSpecialism rs join TqRegistrationPathway rw ON rs.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        //private const string DeleteRegistrationPathway = "Delete from TqRegistrationPathway where TqRegistrationProfileId In (select Id from TqRegistrationProfile where UniqueLearnerNumber like '9%')";
-        //private const string DeleteRegistrationProfile = "Delete from TqRegistrationProfile where UniqueLearnerNumber like '9%'";
-        //private const string DeleteAssessmentPathway = "Delete pa from TqPathwayAssessment pa join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        //private const string DeleteAssessmentSpecialism = "Delete sa from TqSpecialismAssessment sa join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
-        //private const string DeletePathwayResults = "Delete pr from TqPathwayResult pr join TqPathwayAssessment pa on pr.TqPathwayAssessmentId = pa.Id join TqRegistrationPathway rw ON pa.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
-        //private const string DeleteAssessmentResult = "Delete sr from TqSpecialismResult sr join TqSpecialismAssessment sa on sr.TqSpecialismAssessmentId = sa.Id join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
-        //private const string DeleteIpData = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id=pw.TqRegistrationProfileId where rp.UniqueLearnerNumber like '9%'";
-        //private const string DeleteEmData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber like '9%'";
-
-     
-        public static void CreateRegistration(string uln, string CreateCoreGrade, string CreateSpecialismGrade, string Year, String TLEVEL, string Provider, int IPStatus)
+            
+        public static void CreateRegistration(string uln, string CreateCoreGrade, string CreateSpecialismGrade, string Year, String TLEVEL, string Provider, int IPStatus, string MathsStatus, String EnglishStatus)
         {
-            var profileId = CreateRegistrationProfile(uln);
+            var profileId = CreateRegistrationProfile(uln, MathsStatus, EnglishStatus);
 
             string TQProviderID = "";
             string SpecialismID = "";
@@ -169,12 +158,50 @@ namespace RegistrationsManagement.Registrations
             }
 
             //Create the industry placement record for the registration
-            CreateIndustryPlacement(pathwayId, Convert.ToInt32(IPStatus));
+            CreateIndustryPlacement(pathwayId, Convert.ToInt32(IPStatus));          
 
         }
-        public static int CreateRegistrationProfile(string uln)
+
+
+        public static int CreateRegistrationProfile(string uln, string MathsStatus, String EnglishStatus)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,3,3,GETDATE(),'System', GETDATE(),'System')";
+            //string MathsStatus = "Null";
+            //string EnglishStatus = "Null";
+            var createRegistrationProfile = "";
+            if (MathsStatus == "4")
+            {
+                MathsStatus = "Null";
+            }
+
+            if (EnglishStatus == "4")
+            {
+                EnglishStatus = "Null";
+            }
+
+            if (MathsStatus == "Null")
+            {
+                if (EnglishStatus == "Null")
+                {
+                    createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,Null,Null,GETDATE(),'System', GETDATE(),'System')";
+                }
+                else
+                {
+                    createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,Null," + EnglishStatus + "3,GETDATE(),'System', GETDATE(),'System')";
+
+                }
+            }
+            else if (EnglishStatus == "Null")
+            {                
+                    createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0," + MathsStatus + ",Null,GETDATE(),'System', GETDATE(),'System')";
+            }
+            else
+            {
+                    createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0," + MathsStatus + "," + EnglishStatus + ",GETDATE(),'System', GETDATE(),'System')";
+            }
+            
+
+
+           // var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'Db FirstName','Db LastName','2001-01-01',Null,1,1,Null,0,3,3,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);

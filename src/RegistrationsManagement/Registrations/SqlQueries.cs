@@ -127,7 +127,7 @@ namespace RegistrationsManagement.Registrations
 
         public static void CreateIndustryPlacement(int pathwayId, int status)
         {
-            var createIpData = "Insert into IndustryPlacement values ('" + pathwayId + "','" + status + "',GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
+            var createIpData = "Insert into IndustryPlacement values ('" + pathwayId + "','" + status + "', NULL, GETDATE(),'SYSTEM',GETDATE(),'SYSTEM')";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createIpData, ConnectionString);
         }
 

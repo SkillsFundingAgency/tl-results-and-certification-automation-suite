@@ -19,6 +19,8 @@ namespace RegistrationsManagement.Registrations
         public static string ConnectionString = "";
         public static string ConnectionStringVerification = "";
         public static int IndustryPlacementStatus = 0;
+        public static string MathsStatus = "";
+        public static string EnglishStatus = "";
 
         public static void CreateParamRegistration()
         {
@@ -67,6 +69,39 @@ namespace RegistrationsManagement.Registrations
                 Console.WriteLine("\r\nPlease enter either 2020 or 2021 only: \n");
                 RegistrationYear = Convert.ToString(Console.ReadLine());
             }
+
+           //Capture the Maths status
+            Console.WriteLine("\r\nPlease select the student's maths status: \n");
+            Console.WriteLine("\t1: Achieved ");
+            Console.WriteLine("\t2: Achieved With Send ");
+            Console.WriteLine("\t3: NotAchieved  ");
+            Console.WriteLine("\t4: Not Specified");
+            Console.Write("Please enter the number corresponding to your choice: ");
+            MathsStatus = Convert.ToString(Console.ReadLine());
+
+            while (MathsStatus != "1" && MathsStatus != "2" && MathsStatus != "3" && MathsStatus != "4")
+            {
+                Console.WriteLine();
+                Console.WriteLine("\r\nPlease enter a valid option: \n");
+                MathsStatus = Convert.ToString(Console.ReadLine());
+            }
+
+            //Capture the English status
+            Console.WriteLine("\r\nPlease select the student's English status: \n");
+            Console.WriteLine("\t1: Achieved ");
+            Console.WriteLine("\t2: Achieved With Send ");
+            Console.WriteLine("\t3: NotAchieved  ");
+            Console.WriteLine("\t4: Not Specified");
+            Console.Write("Please enter the number corresponding to your choice: ");
+            EnglishStatus = Convert.ToString(Console.ReadLine());
+
+            while (EnglishStatus != "1" && EnglishStatus != "2" && EnglishStatus != "3" && EnglishStatus != "4")
+            {
+                Console.WriteLine();
+                Console.WriteLine("\r\nPlease enter a valid option: \n");
+                EnglishStatus = Convert.ToString(Console.ReadLine());
+            }
+
 
             Console.WriteLine("\r\nPlease select a provider for your registration: \n");
             Console.WriteLine("\tA: Barnsley");
@@ -160,7 +195,7 @@ namespace RegistrationsManagement.Registrations
             }
             Console.WriteLine("You are creating " + NoOfRegistrations + " registrations");
 
-            CreateRegistrations.CreateRegistrationsParameterised(CoreGrade, SpecialismGrade, RegistrationYear, TLevelChosen, Provider, NoOfRegistrations, IndustryPlacementStatus);
+            CreateRegistrations.CreateRegistrationsParameterised(CoreGrade, SpecialismGrade, RegistrationYear, TLevelChosen, Provider, NoOfRegistrations, IndustryPlacementStatus, MathsStatus, EnglishStatus);
         }
     }
 }
