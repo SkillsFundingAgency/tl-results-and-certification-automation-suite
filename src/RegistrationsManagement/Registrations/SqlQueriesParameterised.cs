@@ -23,7 +23,7 @@ namespace RegistrationsManagement.Registrations
             //Work out which TQProviderID is required for the registration based on Provier and TLevel combination
             switch (TLEVEL)
             {
-                case "A":
+                case "8":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Health", "Barnsley College", "1");
@@ -35,7 +35,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "28";
                     }
                     break;
-                case "B":
+                case "9":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Healthcare Science", "Barnsley College", "1");
@@ -47,7 +47,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "31";
                     }
                     break;
-                case "C":
+                case "5":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Barnsley College", "1");
@@ -59,7 +59,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "20";
                     }
                     break;
-                case "D":
+                case "7":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Digital Business Services", "Barnsley College", "1");
@@ -71,7 +71,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "25";
                     }
                     break;
-                case "E":
+                case "6":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Digital Support Services", "Barnsley College", "1");
@@ -83,7 +83,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "23";
                     }
                     break;
-                case "F":
+                case "1":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Design, Surveying and Planning for Construction", "Barnsley College", "2");
@@ -95,7 +95,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "2";
                     }
                     break;
-                case "G":
+                case "4":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Education and Childcare", "Barnsley College", "1");
@@ -107,7 +107,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "17";
                     }
                     break;
-                case "H":
+                case "10":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Science", "Barnsley College", "1");
@@ -119,7 +119,7 @@ namespace RegistrationsManagement.Registrations
                         SpecialismID = "32";
                     }
                     break;
-                case "I":
+                case "2":
                     if (Provider == "A")
                     {
                         TQProviderID = GetTQProfileID("T Level in Onsite Construction", "Barnsley College", "3");
@@ -296,6 +296,64 @@ namespace RegistrationsManagement.Registrations
             var TQProviderID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetTQProviderID, ConnectionString);
             String TQProviderID1 = Convert.ToString(TQProviderID[0][0]);
             return TQProviderID1;
+        }
+
+        public static void CheckTQProviderTable (string TLevel, string Provider)
+        {
+            String ProviderName = "";
+            String TLProviderID = "";
+            string AO = "";
+
+            if (Provider == "A")
+            {
+                ProviderName = "Barnsley College";
+                var GetTLProviderIDSQL = "select id from tlprovider where Name = '" + ProviderName +"'";
+                var ProviderID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetTLProviderIDSQL, ConnectionString);
+                TLProviderID = Convert.ToString(ProviderID[0][0]);
+            }
+
+            else
+            {
+                ProviderName = "Dudley College of Technology";
+                var GetTLProviderIDSQL = "select id from tlprovider where Name = '" + ProviderName + "'"; 
+                var ProviderID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetTLProviderIDSQL, ConnectionString);
+                TLProviderID = Convert.ToString(ProviderID[0][0]);
+            }
+
+            if (TLevel == "2")
+            {
+                AO = "3";
+            }
+            else if (TLevel == "1")
+            {
+                AO = "2";
+            }
+            else
+            {
+                AO = "1";
+            }
+
+
+            var TQProviderTableCountSQL = "select count(*) from TqProvider TQP, TqAwardingOrganisation TQAO, TLProvider TLP, TlPathway TLPath where TQP.TlProviderId = TLP.Id and TQP.TqAwardingOrganisationId = TQAO.Id and TQAO.TlPathwayId = TLPath.Id ";
+            var TQProviderTableCount1SQL = TQProviderTableCountSQL + "and TLPath.ID =" + TLevel + " and TLP.Name = '" + ProviderName + "' and TQAO.TlAwardingOrganisatonId = " + AO;
+            var Count = SqlDatabaseConncetionHelper.ReadDataFromDataBase(TQProviderTableCount1SQL, ConnectionString);
+            string Count1 = Convert.ToString(Count[0][0]);
+
+            if (Count1 == "0")
+            {
+
+                // var CreateTqAwardingOrganisation = "insert into TqAwardingOrganisation values (" + AO + "," + TLevel + ",1,1,GETDATE(),'System',NULL, NULL)";
+                // var GetTQAwardingAOID = "select max(ID) from TqAwardingOrganisation";
+                // SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateTqAwardingOrganisation, ConnectionString);
+                var GetTQAwardingAOID = "select id from TqAwardingOrganisation where TlAwardingOrganisatonID = '" + AO + "' and TlPathwayId = '" + TLevel + "'";
+
+
+                var TQAOID = SqlDatabaseConncetionHelper.ReadDataFromDataBase(GetTQAwardingAOID, ConnectionString);
+                string TQAOID1 = Convert.ToString(TQAOID[0][0]);
+
+                var CreateTQProviderRecord = "insert into tqprovider values (" + TQAOID1 + "," + TLProviderID + ",1, GETDATE(), 'System', NULL, NULL)";
+                SqlDatabaseConncetionHelper.ExecuteSqlCommand(CreateTQProviderRecord, ConnectionString);
+            }
         }
 
 

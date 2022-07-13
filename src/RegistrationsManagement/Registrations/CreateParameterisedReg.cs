@@ -31,34 +31,52 @@ namespace RegistrationsManagement.Registrations
             Console.WriteLine("---------------------------------\n");
 
             Console.WriteLine("\r\nPlease select a T Level for your registration: \n");
-            Console.WriteLine("\tA: Health");
-            Console.WriteLine("\tB: Healthcare Science");
-            Console.WriteLine("\tC: Digital production, design and development");
-            Console.WriteLine("\tD: Digital Business Services");
-            Console.WriteLine("\tE: Digital Support Services");
-            Console.WriteLine("\tF: Design, surveying and planning for construction");
-            Console.WriteLine("\tG: Education and childcare");
-            Console.WriteLine("\tH: Science");
-            Console.WriteLine("\tI: Onsite Construction");
+            Console.WriteLine("\t1:  T Level in Design, Surveying and Planning for Construction");
+            Console.WriteLine("\t2:  T Level in Onsite Construction");
+            Console.WriteLine("\t4:  T Level in Education and Childcare");
+            Console.WriteLine("\t5:  T Level in Digital Production, Design and Development");
+            Console.WriteLine("\t6:  T Level in Digital Support Services");
+            Console.WriteLine("\t7:  T Level in Digital Business Services");
+            Console.WriteLine("\t8:  T Level in Health");
+            Console.WriteLine("\t9:  T Level in Healthcare Science");
+            Console.WriteLine("\t10: T Level in Science");
             Console.Write("Please enter the letter corresponding to your choice: ");
 
             TLevelChosen = Convert.ToString(Console.ReadLine());
 
-            while ((TLevelChosen != "A" && TLevelChosen != "B" && TLevelChosen != "C" && TLevelChosen != "D" && TLevelChosen != "E" && TLevelChosen != "F" && TLevelChosen != "G" && TLevelChosen != "H" && TLevelChosen != "I"))
+            while ((TLevelChosen != "1" && TLevelChosen != "2" && TLevelChosen != "4" && TLevelChosen != "5" && TLevelChosen != "6" && TLevelChosen != "7" && TLevelChosen != "8" && TLevelChosen != "9" && TLevelChosen != "10"))
             {
                 Console.WriteLine("\r\nPlease select a T Level for your registration: \n");
-                Console.WriteLine("\tA: Health");
-                Console.WriteLine("\tB: Healthcare Science");
-                Console.WriteLine("\tC: Digital production, design and development");
-                Console.WriteLine("\tD: Digital Business Services");
-                Console.WriteLine("\tE: Digital Support Services");
-                Console.WriteLine("\tF: Design, surveying and planning for construction");
-                Console.WriteLine("\tG: Education and childcare");
-                Console.WriteLine("\tH: Science");
-                Console.WriteLine("\tI: Onsite Construction");
+                Console.WriteLine("\t1:  T Level in Design, Surveying and Planning for Construction");
+                Console.WriteLine("\t2:  T Level in Onsite Construction");
+                Console.WriteLine("\t4:  T Level in Education and Childcare");
+                Console.WriteLine("\t5:  T Level in Digital Production, Design and Development");
+                Console.WriteLine("\t6:  T Level in Digital Support Services");
+                Console.WriteLine("\t7:  T Level in Digital Business Services");
+                Console.WriteLine("\t8:  T Level in Health");
+                Console.WriteLine("\t9:  T Level in Healthcare Science");
+                Console.WriteLine("\t10: T Level in Science");
                 Console.Write("Please only enter a letter corresponding to your choice: ");
                 TLevelChosen = Convert.ToString(Console.ReadLine());
             }
+
+
+            Console.WriteLine("\r\nPlease select a provider for your registration: \n");
+            Console.WriteLine("\tA: Barnsley");
+            Console.WriteLine("\tB: Dudley");
+            Console.Write("Please enter the letter corresponding to your choice: ");
+            Provider = Convert.ToString(Console.ReadLine());
+
+            while (Provider != "A" && Provider != "B")
+            {
+                Console.WriteLine("\r\nPlease select a provider for your registration: \n");
+                Console.WriteLine("\tA: Barnsley");
+                Console.WriteLine("\tB: Dudley");
+                Console.Write("Please only enter the letter corresponding to your choice: ");
+                Provider = Convert.ToString(Console.ReadLine());
+            }
+
+            SqlQueriesParameterised.CheckTQProviderTable(TLevelChosen, Provider);
 
 
             Console.WriteLine("\r\nWhich year would do you want the registration for? (2020 or 2021): \n");
@@ -103,20 +121,6 @@ namespace RegistrationsManagement.Registrations
             }
 
 
-            Console.WriteLine("\r\nPlease select a provider for your registration: \n");
-            Console.WriteLine("\tA: Barnsley");
-            Console.WriteLine("\tB: Dudley");
-            Console.Write("Please enter the letter corresponding to your choice: ");
-            Provider = Convert.ToString(Console.ReadLine());
-
-            while (Provider != "A" && Provider != "B")
-            {
-                Console.WriteLine("\r\nPlease select a provider for your registration: \n");
-                Console.WriteLine("\tA: Barnsley");
-                Console.WriteLine("\tB: Dudley");
-                Console.Write("Please only enter the letter corresponding to your choice: ");
-                Provider = Convert.ToString(Console.ReadLine());
-            }
 
             Console.WriteLine("\r\nWould you like to add a core result?: (Y or N) \n");
             Answer = Convert.ToString(Console.ReadLine());
