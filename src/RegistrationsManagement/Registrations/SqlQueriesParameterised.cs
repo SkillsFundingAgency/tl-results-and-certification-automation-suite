@@ -50,12 +50,12 @@ namespace RegistrationsManagement.Registrations
                 case "5":
                     if (Provider == "A")
                     {
-                        TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Barnsley College", "1");
+                        TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Barnsley College", "2");
                         SpecialismID = "20";
                     }
                     else
                     {
-                        TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Dudley College of Technology", "1");
+                        TQProviderID = GetTQProfileID("T Level in Digital Production, Design and Development", "Dudley College of Technology", "2");
                         SpecialismID = "20";
                     }
                     break;
@@ -324,7 +324,7 @@ namespace RegistrationsManagement.Registrations
             {
                 AO = "3";
             }
-            else if (TLevel == "1")
+            else if (TLevel == "1" || TLevel ==  "5" )
             {
                 AO = "2";
             }
