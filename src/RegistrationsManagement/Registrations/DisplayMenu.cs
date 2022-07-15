@@ -28,13 +28,14 @@ namespace RegistrationsManagement.Registrations
             Console.WriteLine("\t1 - Create Bulk Paramaterised Registrations");
             Console.WriteLine("\t2 - Delete All Registrations");
             Console.WriteLine("\t3 - Delete A Single Registration");
-            Console.WriteLine("\t4 - Exit Application");
+            Console.WriteLine("\t4 - Add Historical Results to a Registration");
+            Console.WriteLine("\t5 - Exit Application");
             Console.Write("Please select an option: ");
 
 
             switch (Console.ReadLine())
             {
-                case "5":
+                case "6":
                     //Console.WriteLine("Type the number of registrations you wish to create, and then press Enter");
                     //num1 = Convert.ToInt32(Console.ReadLine());
                     //Console.WriteLine("You chose: " + num1);
@@ -61,11 +62,15 @@ namespace RegistrationsManagement.Registrations
                     CreateParameterisedReg.CreateParamRegistration();
                     break;
                 case "4":
+                    AddHistoricalResults.AddResults();
+                    break;
+                case "5":
                     Console.WriteLine("\r");
                     Console.WriteLine("\r");
                     Console.WriteLine("------------------------\n");
                     Console.WriteLine("Exiting App \n");
                     Console.WriteLine("------------------------\n\n\n");
+                    Environment.Exit(0);
                     break;
             }
 
