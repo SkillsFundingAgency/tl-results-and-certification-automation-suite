@@ -21,9 +21,12 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         private const string DeleteAssessmentResult = "Delete sr from TqSpecialismResult sr join TqSpecialismAssessment sa on sr.TqSpecialismAssessmentId = sa.Id join TqRegistrationSpecialism rs ON sa.TqRegistrationSpecialismId = rs.Id join TqRegistrationPathway rp on  rs.TqRegistrationPathwayId=rp.Id join TqRegistrationProfile tr on  rp.TqRegistrationProfileId =tr.Id where UniqueLearnerNumber like '9%'";
         private const string DeleteIpData = "Delete ip from IndustryPlacement ip join TqRegistrationPathway pw on ip.TqRegistrationPathwayId = pw.Id join TqRegistrationProfile rp on rp.Id=pw.TqRegistrationProfileId where rp.UniqueLearnerNumber like '9%'";
         private const string DeleteEmData = "Delete qa from QualificationAchieved qa join TqRegistrationProfile rp on qa.TqRegistrationProfileId = rp.Id where rp.UniquelearnerNumber like '9%'";
+        private const string DeleteOverallResult = "Delete ore from OverallResult ore join TqRegistrationPathway rw ON ore.TqRegistrationPathwayId = rw.Id join TqRegistrationProfile rp on rw.TqRegistrationProfileId =rp.Id where UniqueLearnerNumber like '9%'";
+
 
         public static void DeleteFromRegistrationTables()
         {
+            SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteOverallResult, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteIpData, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteEmData, ConnectionString);
             SqlDatabaseConncetionHelper.ExecuteDeleteSqlCommand(DeleteAssessmentResult, ConnectionString);
@@ -88,7 +91,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         }
         public static int CreateRegProfile(string uln)
         {
-            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'John','Wilson','2001-01-01',Null,Null,Null,Null,Null,Null,Null,GETDATE(),'System', GETDATE(),'System')";
+            var createRegistrationProfile = "Insert into TqRegistrationProfile values(" + uln + ", 'John','Tester','2001-01-01',Null,Null,Null,Null,Null,Null,Null,GETDATE(),'System', GETDATE(),'System')";
             var getRegProfileId = "Select top 1 id from TqRegistrationProfile where UniqueLearnerNumber='" + uln + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegistrationProfile, ConnectionString);
             var profileId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegProfileId, ConnectionString);
@@ -106,7 +109,7 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Data
         public static int CreateRegPathway(int profileId, int year)
         {
             var tqProviderId = Constants.TqProviderIdForLrs;
-            var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','" + year + "', GETDATE(),NULL,1,1,GETDATE(),'System',NULL,NULL)";
+            var createRegPathway = "Insert into TqRegistrationPathway values('" + profileId + "', '" + tqProviderId + "','2020', GETDATE(),NULL,1,0,GETDATE(),'System',NULL,NULL)";
             var getRegPathwayId = "select top 1 id from TqRegistrationPathway where TqRegistrationProfileId = '" + profileId + "'";
             SqlDatabaseConncetionHelper.ExecuteSqlCommand(createRegPathway, ConnectionString);
             var pathwayId = SqlDatabaseConncetionHelper.ReadDataFromDataBase(getRegPathwayId, ConnectionString);

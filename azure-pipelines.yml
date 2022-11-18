@@ -54,6 +54,7 @@ stages:
       testAssemblyVer2: '**\SFA.Tl.ResultsAndCertificationAutomation.dll'
       searchFolder: '$(System.ArtifactsDirectory)/appdrop/tests/Sfa.Tl.ResultsAndCertificationAutomation/'
       filePath: '$(System.ArtifactsDirectory)/appdrop/src/Sfa.Tl.ResultsAndCertificationAutomation/Check-TestResults.ps1'
+      testFiltercriteria: 'TestCategory=SmokeTest'
       variableGroups:
         - 'Test Shared Resources'
         - 'Common Shared Resources'

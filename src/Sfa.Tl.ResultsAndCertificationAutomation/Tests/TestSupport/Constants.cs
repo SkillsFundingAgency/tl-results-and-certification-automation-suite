@@ -33,6 +33,7 @@ public static class Constants
     //Provider Error Page Titles
     public const string ErrorFindProvider = "Error: Manage providers – Manage T Level results – GOV.UK";
 
+
     public const string ErrorSelectProviderTlevel =
         "Error: Select provider’s T Levels page – Manage T Level results – GOV.UK";
 
@@ -216,7 +217,7 @@ public static class Constants
     //public const string DbCoreName = "Agriculture, Environmental and Animal Care (77777777)";
 
     //public const string TqProviderId = "9479";
-    public const string TqProviderId = "17798";
+    public const string TqProviderId = "18487";
     public const string TlSpecialismId = "42";
     public const string TlAssessmentSeriesId = "7";
     //public const string TqProviderId2 = "15167";
