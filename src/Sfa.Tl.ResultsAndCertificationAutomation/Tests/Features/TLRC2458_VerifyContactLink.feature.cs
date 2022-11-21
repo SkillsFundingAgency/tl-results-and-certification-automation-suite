@@ -106,9 +106,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
  testRunner.And("there will be no breadcrumbs present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
- testRunner.And("the support link will navigate to the Discussion forum", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -143,12 +140,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 20
  testRunner.And("there will be breadcrumbs present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 21
- testRunner.And("the support link will navigate to the Discussion forum", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 22
- testRunner.And("the Home breadcrumb will navigate to the Dasboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

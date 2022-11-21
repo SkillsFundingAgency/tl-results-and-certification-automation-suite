@@ -33,12 +33,6 @@ namespace Sfa.Tl.ResultsAndCertificationAutomation.Tests.StepDefinations.SmokeTe
             ContactUsPage.VerifyBreadcrumbsNotPresent();
         }
         
-        [Then(@"the support link will navigate to the Discussion forum")]
-        public void ThenTheSupportLinkWillNavigateToTheDiscussionForum()
-        {
-            ContactUsPage.SupportLink();
-        }
-        
         [Then(@"there will be breadcrumbs present")]
         public void ThenThereWillBeBreadcrumbsPresent()
         {
